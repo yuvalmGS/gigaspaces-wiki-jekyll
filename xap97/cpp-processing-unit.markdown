@@ -181,13 +181,13 @@ CommandObjectPtr CppService::run(CommandObjectPtr Object)
       while(true)
       {
             Task task = proxy->take(&taskTemplate, NULL_TX, Lease::FOREVER);
-            Result result = task->excute();
+            Result result = task->execute();
             proxy->write(result, NULL_TX, Lease::FOREVER);
        }
 }
 {% endhighlight %}
 
-The above code injects the space proxy (the proxy could be remote or embedded, single or clustered), performs blocking take using the taskTemplate object, executes the Task::excute() method, and returns back into the space the Result object of the execution.  Once this cycle is completed, another one starts all over again.
+The above code injects the space proxy (the proxy could be remote or embedded, single or clustered), performs blocking take using the taskTemplate object, executes the Task::execute() method, and returns back into the space the Result object of the execution.  Once this cycle is completed, another one starts all over again.
 
 # The Processing Unit Declaration
 

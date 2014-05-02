@@ -305,7 +305,7 @@ public class ProcessedTweetsFilter {
 # Dynamic Template Definition
 
 When removing objects from the space a dynamic template can be used. A method providing a dynamic template is called before each take operation, and can return a different object in each call.
-The event temaplate object has the same syntax rules as with @EventTemplate.
+The event template object has the same syntax rules as with @EventTemplate.
 See [Configuration](#Configuration) for a complete example
 
 # Batch Operations

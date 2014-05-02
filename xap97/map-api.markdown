@@ -257,7 +257,7 @@ gigaMap.unlock(key);
 
 # Time to Live - TTL
 
-An entry within the cache is emortal by default. You can specify as part of the put operation a specific time for the entry to be alive within the cache. Once this time elapsed, it will be expired automaticaly. The time unit to specify the TTL is millseconds.
+An entry within the cache is emortal by default. You can specify as part of the put operation a specific time for the entry to be alive within the cache. Once this time elapsed, it will be expired automatically. The time unit to specify the TTL is millseconds.
 
 {% highlight java %}
 GigaMap gigaMap = ...

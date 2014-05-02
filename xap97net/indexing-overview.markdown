@@ -26,7 +26,7 @@ Basic index types
 - [Indexing Netsted properties](./indexing-nested-properties.html){%wbr%}
 An index can be defined on a nested property to improve performance of nested queries.
 
-- [Indexing colletions](./indexing-collections.html){%wbr%}
+- [Indexing collections](./indexing-collections.html){%wbr%}
 An index can be defined on a Collection property.
 
 

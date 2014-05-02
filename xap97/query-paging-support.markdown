@@ -159,7 +159,7 @@ GSIterator Constructor
 
 ## Initialization
 
-When a `GSIterator` is created, a match set is formulated. The match set initially contains all of the objects witin the space that match one or more of the collection templates and are not locked by conflicting transactions (unless using the `FUTURE` IteratorScope mode, i.e., no initial contents). Each element of the matched set will be returned at most once.
+When a `GSIterator` is created, a match set is formulated. The match set initially contains all of the objects within the space that match one or more of the collection templates and are not locked by conflicting transactions (unless using the `FUTURE` IteratorScope mode, i.e., no initial contents). Each element of the matched set will be returned at most once.
 
 ## hasNext(), next() and next(timeout)
 

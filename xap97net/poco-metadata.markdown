@@ -12,9 +12,9 @@ weight: 400
 
 In general, every object can be stored in the space - it does not have to inherit from a base class, implement an interface, or have any attributes decorating it. It doesn't even have to be Serializable, although it is recommended as a design practice, to keep in-line with .NET standards. The only requirement is to have a parameterless constructor.
 
-However, in many cases this generic approach is not enough. For example, you may want to exclude a specific field from being stored in the space, or specify that a certain property should be indexed for faster matching performance. In such cases (and others), you can use a set of attributes to customize the object's behaviour in the space.
+However, in many cases this generic approach is not enough. For example, you may want to exclude a specific field from being stored in the space, or specify that a certain property should be indexed for faster matching performance. In such cases (and others), you can use a set of attributes to customize the object's behavior in the space.
 
-If you don't want to (or can't) use XAP.NET attributes in your classes code, you can create an xml file that defines those behaviours, commonly called `gs.xml`.
+If you don't want to (or can't) use XAP.NET attributes in your classes code, you can create an xml file that defines those behaviors, commonly called `gs.xml`.
 
 {% info %}
 Since working with attributes is usually simpler and easier, this page demonstrates all the features using attributes. However, every feature shown here can also be achieved using [`gs.xml`](./poco-gs.xml-metadata.html).
@@ -22,15 +22,15 @@ Since working with attributes is usually simpler and easier, this page demonstra
 
 # Including/Excluding Content from the Space
 
-By default, all public members (fields and properties) in a class are stored in the space, whereas non-public members are ignored. Since classes are usually designed with private/protected fields and public properties wrapping them, in most cases the default behaviour is also the desired one.
+By default, all public members (fields and properties) in a class are stored in the space, whereas non-public members are ignored. Since classes are usually designed with private/protected fields and public properties wrapping them, in most cases the default behavior is also the desired one.
 
-To change this behaviour for a specific class, apply a `[SpaceClass]` attribute on that class, and use `IncludeProperties` and/or `IncludeFields` to specify which members should be included in the space. Both `IncludeProperties` and `IncludeFields` are an `IncludeMembers` enumeration, which can receive the following values:
+To change this behavior for a specific class, apply a `[SpaceClass]` attribute on that class, and use `IncludeProperties` and/or `IncludeFields` to specify which members should be included in the space. Both `IncludeProperties` and `IncludeFields` are an `IncludeMembers` enumeration, which can receive the following values:
 
 - `IncludeMembers.All` -- all members are stored.
 - `IncludeMembers.Public` -- public members are stored, and non-public members are ignored
 - `IncludeMembers.None` -- all members are ignored.
 
-#### Example 1 -- The default behaviour
+#### Example 1 -- The default behavior
 
 {% highlight csharp %}
 public class Person {...}
@@ -61,7 +61,7 @@ Read-only properties (getter without setter) are stored in the space, but when t
 - Access protection -- the class designer wishes to protect the property from outside changes. This is probably a problem since the field value is lost. To prevent this problem, consider adding a private setter, or excluding the property and including the field (as explained next).
 {% endinfo %}
 
-To change the behaviour of a specific field/property, apply a `[SpaceProperty]` to include it, or a `[SpaceExclude]` to exclude it. These settings override the class-level settings.
+To change the behavior of a specific field/property, apply a `[SpaceProperty]` to include it, or a `[SpaceExclude]` to exclude it. These settings override the class-level settings.
 
 #### Example 3 -- Storing all the Person properties except the Password property
 
@@ -109,7 +109,7 @@ There is no need to explicitly index a field which is marked as SpaceID, because
 
 # Routing
 
-When working with a clustered space, one of the properties in a class is used to determine the routing behaviour of that class within the cluster (i.e. how instances of that class are partitioned across the cluster's nodes). The routing property is determined according to the following rules:
+When working with a clustered space, one of the properties in a class is used to determine the routing behavior of that class within the cluster (i.e. how instances of that class are partitioned across the cluster's nodes). The routing property is determined according to the following rules:
 
 1. The property marked with `[SpaceRouting]` attribute.
 2. Otherwise, the property marked with `[SpaceID]` is used.

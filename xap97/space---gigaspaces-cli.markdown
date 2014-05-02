@@ -163,7 +163,7 @@ Using `-c` (or `-cluster`) with a URL of a clustered space displays configuratio
 {: .table .table-bordered}
 | Option | Description | Value Format |
 |:-------|:------------|:-------------|
-| `url` | The URL of the space you want to view, or of the container -- shows the configuraion details of spaces under that container. | Container URL: `jini://localhost/my_container`{% wbr %}{% wbr %}`rmi://localhost:10098/my_container`{% wbr %}{% wbr %}Space URL: `jini://localhost/my_container/mySpace`{% wbr %}{% wbr %}`rmi://localhost:10098/my_container` |
+| `url` | The URL of the space you want to view, or of the container -- shows the configuration details of spaces under that container. | Container URL: `jini://localhost/my_container`{% wbr %}{% wbr %}`rmi://localhost:10098/my_container`{% wbr %}{% wbr %}Space URL: `jini://localhost/my_container/mySpace`{% wbr %}{% wbr %}`rmi://localhost:10098/my_container` |
 | `cluster` \ `c` | Displays the configuration details of all cluster members. | |
 | `help` \ `h` | Prints help -- the command's usage and options. | |
 
@@ -185,8 +185,8 @@ It is also possible to retrieve space connections using the GigaSpaces UI **[Con
 The information that is shown:
 
 - The space and container name
-- The server IP adress
-- The client(s) IP adress and port
+- The server IP address
+- The client(s) IP address and port
 - Connection time -- when the server connected to the space
 
 You can view the connections of spaces in a specific container (see the options below) -- specifying a container URL prints a numbered list of all the spaces in that container, and you can choose a space to view by its number, or all spaces (restart all spaces).
@@ -321,7 +321,7 @@ Using `-c` (or `-cluster`) with a URL of a clustered space pings **all** cluster
 |:-------|:------------|:-------------|
 | `url` | The URL of the space you want to restart, or of the container -- pings the spaces under that container. | Container URL: `jini://localhost/my_container`{% wbr %}{% wbr %}`rmi://localhost:10098/my_container`{% wbr %}{% wbr %}Space URL: `jini://localhost/my_container/mySpace`{% wbr %}{% wbr %}`rmi://localhost:10098/my_container` |
 | `cluster` / `c` | Pings all cluster members. | |
-| `t` |  Sets the message objects' lease timout (in `[ms]`). Default is `FOREVER`. | `1000` |
+| `t` |  Sets the message objects' lease timeout (in `[ms]`). Default is `FOREVER`. | `1000` |
 | `ft` | Sets a a timeout (in `[ms]`) for the Jini protocol. | `1000` |
 | `s` | Sets the byte size of the object. | `128` |
 | `i` |  Sets the iteration number. Default is `5`. | `10` |

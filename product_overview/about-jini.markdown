@@ -198,7 +198,7 @@ Transactions, Entries and notifications use the leasing mechanism.
 
 For dynamic network environments,  the notifications of events from remote objects may arrive in different orders on different clients, or may not arrive at all. Further, the object requiring the event notification may not want to have that notification as soon as possible, but only on a schedule determined by the recipient and may want the notification of the event to be sent to a third network party.
 
-The Jini technlogy remote event model extends the local event model to dynamic network architectures. It allows an object in one network location to register interest in an event occurring in an object in another network location, and to designate a third network object to receive a notification when an event of that kind occurs.
+The Jini technology remote event model extends the local event model to dynamic network architectures. It allows an object in one network location to register interest in an event occurring in an object in another network location, and to designate a third network object to receive a notification when an event of that kind occurs.
 
 For the three network entities:
 

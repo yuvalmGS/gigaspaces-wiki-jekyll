@@ -8,7 +8,7 @@ parent: document-overview.html
 
 
 
-While documents provide us with a dynamic schema, they force us to give up .NET type-safety for working with typeless key-value pairs. GigaSpaces supports extending the SpaceDocument class to provide a type-safe wrapper for documents which is much easier to code with, while maintaining the dynamic schema.
+While documents provide us with a dynamic schema, they force us to give up .NET type-safety for working with type less key-value pairs. GigaSpaces supports extending the SpaceDocument class to provide a type-safe wrapper for documents which is much easier to code with, while maintaining the dynamic schema.
 
 {% note %}
 Do not confuse this with [Document-Object interoperability](./document-object-interoperability.html), which is a different feature.

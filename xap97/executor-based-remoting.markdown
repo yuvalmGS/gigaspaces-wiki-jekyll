@@ -928,7 +928,7 @@ dataRemoting.setDataProcessor(dataProcessor);
 
 ## The Remote Result Reducer
 
-When broadcasting remote invocations to all active cluster members, and the remote method returns a result, on the client side an array of all remote results needs to be processed. By default, the first result is returned, and it can be overriden using the `return-first-result` flag (which will then return the array of responses). The executor remoting proxy allows for a pluggable remote result reducer that can reduce a collection of remoting results into a single one. Here is the defined interface:
+When broadcasting remote invocations to all active cluster members, and the remote method returns a result, on the client side an array of all remote results needs to be processed. By default, the first result is returned, and it can be overridden using the `return-first-result` flag (which will then return the array of responses). The executor remoting proxy allows for a pluggable remote result reducer that can reduce a collection of remoting results into a single one. Here is the defined interface:
 
 {% highlight java %}
 public interface RemoteResultReducer<T, Y> {

@@ -133,7 +133,7 @@ public class MySpaceDataSource extends SpaceDataSource {
 
 The space data source API includes the `getById` method which gets invoked whenever the space needs to read an object from the data source by its Id. An example for this case is when a write operation has been executed and the space needs to make sure the written object does not already exist in the data source (LRU mode).
 
-This is great because many data source solutions, mainly NoSQL ones, are optimized for reading entries by their Ids. `SpaceDataSource.getById` does not have to be overriden and implemented since the default implementation delegates the `getById` method to the `getDataIterator` method which is good enough for most RDBMS data sources.
+This is great because many data source solutions, mainly NoSQL ones, are optimized for reading entries by their Ids. `SpaceDataSource.getById` does not have to be overridden and implemented since the default implementation delegates the `getById` method to the `getDataIterator` method which is good enough for most RDBMS data sources.
 
 The following example shows a `SpaceDataSource.getById` implementation which creates an SQL query from the provided `DataSourceIdQuery` parameter:
 

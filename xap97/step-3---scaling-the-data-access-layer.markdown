@@ -261,7 +261,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
 {% endhighlight %}
 
 This code connects to a remote space named `mySpace` using the jini discovery protocol.
-Typically this code will be included inside the web application's initialization sequence in a `ServletContextListener` implementation, or inside a servlet's `init()` method, storing the GigaSpace reference inside the `ServletContext` or as an instance variable in the serlvet class.
+Typically this code will be included inside the web application's initialization sequence in a `ServletContextListener` implementation, or inside a servlet's `init()` method, storing the GigaSpace reference inside the `ServletContext` or as an instance variable in the servlet class.
 Note that the space proxy is thread-safe, so you can freely share it across threads (in fact, you only need one proxy for the entire application).
 
 Another way to initialize the Space, is to configure it inside the `pu.xml` file in your .war file (located either at the root or under `META-INF/spring` in your .war file). This file is used to configure various GigaSpaces-specific elements, most notably the Space proxy.

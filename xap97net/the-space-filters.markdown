@@ -249,7 +249,7 @@ Note, if using actual types, this delegate filters out all the types that are no
 - Two parameters: the first one maps to the previous option, the second one is the `FilterOperation` - e.g. `ReportBeforeWrite(SimpleMessage message, FilterOperation operation)`.
 - Three parameters: the first two map to the previous option, the third one is a `SecurityContext` - e.g.  `ReportBeforeWrite(SimpleMessage message, FilterOperation operation, SecurityContext securityContext)`.
 
-Some filter operations have two entries, and therefore have a similiar, but different structure:
+Some filter operations have two entries, and therefore have a similar, but different structure:
 
 - A no parameter method callback - e.g. `ReportAfterUpdate()`
 - A single parameter: the parameter can either be an `ISpaceFilterEntry` or the actual template object wrapped by the entry.
@@ -447,7 +447,7 @@ public class MessageCensorshipMethodNamesFilter : MessageCensorship, IDisposable
 }
 {% endhighlight %}
 
-This filter implementation is very similiar to the attribute-based one`, except that there are no marker attributes. The method that needs to be invoked according to the filter operation, is specified by name when creating the `MethodNameSpaceFilterConfigFactory`  that creates the `SpaceFilterConfig` for this filter.
+This filter implementation is very similar to the attribute-based one`, except that there are no marker attributes. The method that needs to be invoked according to the filter operation, is specified by name when creating the `MethodNameSpaceFilterConfigFactory`  that creates the `SpaceFilterConfig` for this filter.
 
 {% highlight csharp %}
 //Create a method based space filter delegate configurer

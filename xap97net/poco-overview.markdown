@@ -23,7 +23,7 @@ XAP allows you to store and retrieve PONO's from and to the space. We will intro
 Using PONO's as space objects.
 
 - [Dynamic Properties](./poco-dynamic-properties.html){%wbr%}
-Customizing object behaviour using annotations.
+Customizing object behavior using annotations.
 
 <hr/>
 

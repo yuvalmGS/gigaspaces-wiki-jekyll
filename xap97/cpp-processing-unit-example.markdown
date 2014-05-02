@@ -244,7 +244,7 @@ BUILD SUCCESSFUL
 Total time: 26 seconds
 {% endhighlight %}
 
-The gs-agnet console will have the following output:
+The gs-agent console will have the following output:
 
 {% highlight console %}
 [gsc][5/5352]   ----Find Proxy ------

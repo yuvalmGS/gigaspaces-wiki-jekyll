@@ -197,7 +197,7 @@ Make sure you place the right host name and port.
 4. Set a break point.
 
 5. Click the Debug button.
-The debuuger will stop at the specified break point once the application will call the relevant method.
+The debugger will stop at the specified break point once the application will call the relevant method.
 
 {% tip %}
 You can debug a deployed PU instance, by starting a GSC in debug mode and move the running PU instance to the newly started GSC. You can use the GS-UI Hosts tab to move the PU instance by dragging and dropping the PU instance from its existing GSC to the GSC running in debug mode.

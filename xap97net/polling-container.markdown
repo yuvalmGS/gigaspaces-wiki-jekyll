@@ -467,7 +467,7 @@ The above example uses a receive timeout of 10 seconds (10000 milliseconds). The
 
 Sometimes it is better to use batch events, for instance to improve network traffic. This is done by subscribing to the [BatchDataEventArrived event](./event-listener-container.html#BatchDataEventArrived). This event receives a batch of event data objects in one invocation.
 
-A prime example is the `TakeReceiveOperationHandler`, which when [BatchDataEventArrived event](./event-listener-container.html#BatchDataEventArrived) are used, returns an array as a result of a `TakeMultiple` operation . The batch size is determined by the `ReceiveBatchSize` configuration attribute or property, it is set similiar to the above properties modifications.
+A prime example is the `TakeReceiveOperationHandler`, which when [BatchDataEventArrived event](./event-listener-container.html#BatchDataEventArrived) are used, returns an array as a result of a `TakeMultiple` operation . The batch size is determined by the `ReceiveBatchSize` configuration attribute or property, it is set similar to the above properties modifications.
 
 Here is an example of batch notifications using `ReadReceiveOperationHandler`:
 

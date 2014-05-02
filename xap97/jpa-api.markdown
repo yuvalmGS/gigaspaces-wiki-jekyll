@@ -31,7 +31,7 @@ It is also recommended that you take the [XAP PetClinic JPA Tutorial](./your-fir
 
 ### OpenJPA
 
-OpenJPA's jar file is included with the GigaSpaces ditribution (provided under `<GigaSpaces root>/lib/platform/jpa`), and the GigaSpaces-specific JPA implementation classes are part of the OpenSpaces jar (located under `<GigaSpaces root>/lib/required/gs-openspaces.jar`).
+OpenJPA's jar file is included with the GigaSpaces distribution (provided under `<GigaSpaces root>/lib/platform/jpa`), and the GigaSpaces-specific JPA implementation classes are part of the OpenSpaces jar (located under `<GigaSpaces root>/lib/required/gs-openspaces.jar`).
 Maven users should define the following dependency in their `pom.xml` file:
 
 {% highlight xml %}

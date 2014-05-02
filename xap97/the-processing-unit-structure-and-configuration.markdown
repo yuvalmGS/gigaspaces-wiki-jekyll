@@ -199,7 +199,7 @@ The `pu-common` directory may contain a jar file with a manifest file as describ
 ## Further details
 
 1. If an entry points to a non existing location, it will be ignored.
-1. If an entry included the `${SOME_ENV_VAL}` placeholder and there is no enviroment variable named `SOME_ENV_VAL`, it will be ignored.
+1. If an entry included the `${SOME_ENV_VAL}` placeholder and there is no environment variable named `SOME_ENV_VAL`, it will be ignored.
 1. Only file URLs are supported. (i.e http, etc... will be ignored)
 
 Further details about the manifest file can be found [here](http://docs.oracle.com/javase/6/docs/technotes/guides/jar/jar.html#JAR%20Manifest).

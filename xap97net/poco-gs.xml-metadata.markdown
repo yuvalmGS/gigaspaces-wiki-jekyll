@@ -62,7 +62,7 @@ See blow an example of `Car` class's space metadata definitions in GS.XML
 | `name` | (Required) Contains the full qualified name of the specified class. There can only be one `class` element defined per class. |
 | `persist` | This property indicates the persistency mode of the object. When a space is defined as persistent, a `true` value for this property persists objects of this type. {% refer %}For more details, refer to the [.NET Persistency](./space-persistency-overview.html) section. {% endrefer %} |
 | `fifo` | Indicates whether the POJO should be saved in FIFO order in the space. To enable FIFO-based notifications and take operations, this annotation should be `true`. {% refer %}For more details, refer to the [FIFO operations](./fifo-support.html) section.{% endrefer %} |
-| `replicate` | Valid only in cluster toplogies that have replication defined. In this case, it specifies whether each class should be replicated or not |
+| `replicate` | Valid only in cluster topologies that have replication defined. In this case, it specifies whether each class should be replicated or not |
 | `include-properties` |Gives the ability to expose or hide properties from the space (default is public).
 For more details, see: [Object Metadata](./poco-metadata.html) |
 | `include-fields` |Gives the ability to expose or hide fields from the space (default is public) {% refer %}For more details, see: [Object Metadata](./poco-metadata.html){% endrefer %} |
@@ -76,7 +76,7 @@ For more details, see: [Object Metadata](./poco-metadata.html) |
 | Attribute | Description |
 | `name` | (Required) Maps to the relevant class's field name. |
 | `index` | Indicates if the field is indexed in the space. |
-| `null-value` | Represents a `null` value for the current field. Applicable mainly for primitive type fields that does not have explicit null vallue. |
+| `null-value` | Represents a `null` value for the current field. Applicable mainly for primitive type fields that does not have explicit null value. |
 | `alias-name` | Defines the name the field will have when stored to the space. |
 | `storage-type` | Defines the storage format the field will have once stored to the space. See [this](./poco-storage-type.html) page for details|
 

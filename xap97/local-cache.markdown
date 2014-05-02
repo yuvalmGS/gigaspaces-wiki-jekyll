@@ -27,7 +27,7 @@ For additional client side caching options, refer to [Client Side Caching](./cli
 
 # Usage
 
-Creating a local cache is similar to creating a GigaSpace, except that we wrap the space with a local cache before handing it to the GigaSpace. The local cache can be configured at design time using `LocalCacheSpaceFactoryBean`, or at runtime using `LocalCacheSpaceConfigurer`. For exmaple:
+Creating a local cache is similar to creating a GigaSpace, except that we wrap the space with a local cache before handing it to the GigaSpace. The local cache can be configured at design time using `LocalCacheSpaceFactoryBean`, or at runtime using `LocalCacheSpaceConfigurer`. For example:
 
 {% inittab os_simple_space|top %}
 {% tabcontent Spring Namespace Configuration %}
@@ -336,7 +336,7 @@ The following table summarizes the configuration changes made in 8.0.5:
 |batch-size| When the batch size reaches this value, the batch is sent to the client| 1000 | operations|
 |batch-timeout| When the oldest event in the batch reaches this value, the batch is sent to the client.|100 | milliseconds |
 |update-mode | Local cache update mode. Options: PULL , PUSH , None | PULL| |
-|max-time-to-live | Time to live for objects witin the local cache | 300000| milliseconds|
+|max-time-to-live | Time to live for objects within the local cache | 300000| milliseconds|
 
 {% endtabcontent %}
 {% endinittab %}

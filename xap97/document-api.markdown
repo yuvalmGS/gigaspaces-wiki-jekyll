@@ -213,7 +213,7 @@ public void writeProduct2(GigaSpace gigaspace) {
 {% note %}
 - The `GigaSpace.writeMultiple` method can be used to write a batch of documents.
 - Update semantics are the same as POJO, except **partial update** that is not currently supported.
-- Use only alphanumeric characters (a-z, A-Z, 0-9) and the underscore ('_') to construct properties keys. Other characters might have special behaviours in GigaSpaces (for example: the dot ('.') is used to distinguish nested paths).
+- Use only alphanumeric characters (a-z, A-Z, 0-9) and the underscore ('_') to construct properties keys. Other characters might have a special behavior in GigaSpaces (for example: the dot ('.') is used to distinguish nested paths).
 {%endnote%}
 
 # Reading and Removing Documents

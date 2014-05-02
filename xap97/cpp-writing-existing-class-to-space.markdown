@@ -96,7 +96,7 @@ Step 4. Optional -- add a smart pointer:
 typedef boost::shared_ptr<UserMessage>    UserMessagePtr;
 {% endhighlight %}
 
-Step 5. Handle the c++ serializer code generation, build the shared library (DLL) from this code, and place the library in the appropiate directory (`<GigaSpaces Root>\lib\platform\native`).
+Step 5. Handle the c++ serializer code generation, build the shared library (DLL) from this code, and place the library in the appropriate directory (`<GigaSpaces Root>\lib\platform\native`).
 The following instructions show you how to do this in Visual Studio using the supplied makefile (`<Example Root>/makefileSerializer.mk`):
 
 Step 6. Create a custom build for `PocoFromExistingClass.gs.xml`:

@@ -29,7 +29,7 @@ The following example illustrates how you can construct a simple processing unit
 
 The activities to scale up the application could be: starting a new GSC on remote machines, and starting additional application instances. In the same way, the scaling agent can be extended to scale down the application to terminate running GSCs, and reduce the amount of application instances.
 
-{% refer %}This page assumes knowledge of the processing unit concept. If you are unfamilar with it, please refer to
+{% refer %}This page assumes knowledge of the processing unit concept. If you are unfamiliar with it, please refer to
 the [SBA Example] first.{% endrefer %}
 
 {% align center %}![scaling agent .net.jpg](/attachment_files/dotnet/scaling agent .net.jpg){% endalign %}

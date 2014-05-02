@@ -34,7 +34,7 @@ Each configuration can be configured for all gateways or specifically per each g
 |:-------|:----------|:------|
 |bulk-size|Specifies the size of each replication bulk in terms of replication packets| 100 packets |
 |pending-operation-threshold|Specifies the threshold of number of packets that are pending replication that once breached, a replication bulk will be transmitted | 100 packets |
-|idle-time-threshold|Specifies the maximum time to wait since the last time a replication bulk was transmitted, once elapsed, a replication bulk will be transmitted even if the `pending-operation-threshold` is not reached| 1000 miliseconds |
+|idle-time-threshold|Specifies the maximum time to wait since the last time a replication bulk was transmitted, once elapsed, a replication bulk will be transmitted even if the `pending-operation-threshold` is not reached| 1000 milliseconds |
 |max-redo-log-capacity|Specifies the maximum number of packets that should be held in the redo-log for a replication gateway (-1 means unlimited) | 100,000,000 |
 |on-redo-log-capacity-exceeded| `drop-oldest` will result in dropping the oldest packet in the redo-log once the capacity is exceeded, `block-operations` will result in blocking all new replicated operations by denying such new operation by throwing an exception to the operation invoker. | `drop-oldest` |
 

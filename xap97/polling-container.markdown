@@ -389,7 +389,7 @@ SimplePollingEventListenerContainer pollingEventListenerContainer =
 # Dynamic Template Definition
 
 When performing polling receive operations, a dynamic template can be used. A method providing a dynamic template is called before each receive operation, and can return a different object in each call.
-The event temaplate object has the same syntax rules as with @EventTemplate.
+The event template object has the same syntax rules as with @EventTemplate.
 
 {% inittab os_simple_space|top %}
 {% tabcontent Annotation %}

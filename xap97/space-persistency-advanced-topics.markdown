@@ -21,7 +21,7 @@ Here are the Space Persistency Properties:
 | Property | Description | Default |
 |:---------|:------------|:--------|
 |space-config.external-data-source.shared-iterator.enabled| This attribute enables shared iterator mode which tries to optimize data source access by sharing the same iterator for the same query operations when possible. |true|
-|space-config.external-data-source.shared-iterator.time-to-live| This attribute specify for how long in miliseconds an iterator can be shared in shared iterator mode. If two equivalent queries are done concurrently, but the time that elapsed between the first query and the second query exceeds the time to live, the second query will open a new iterator on the data source and will not share the first one.|10000|
+|space-config.external-data-source.shared-iterator.time-to-live| This attribute specify for how long in milliseconds an iterator can be shared in shared iterator mode. If two equivalent queries are done concurrently, but the time that elapsed between the first query and the second query exceeds the time to live, the second query will open a new iterator on the data source and will not share the first one.|10000|
 |space-config.external-data-source.init-properties-file| This properties file content is passed directly to the data source implementation in the `init()` method. This file can be used to pass any custom parameters to the data source. | |
 |cluster-config.cache-loader.external-data-source| Provides cluster-wide support. |true|
 |cluster-config.cache-loader.central-data-source| Provides clustered database wide support. |true|

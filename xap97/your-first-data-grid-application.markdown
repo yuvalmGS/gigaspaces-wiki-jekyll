@@ -122,7 +122,7 @@ public class Person {
 }
 {% endhighlight %}
 
-Note that we've annotated the `ssn` property's getter with a custom XAP annotation (`@SpaceId`) to mark it as the entry'd ID.
+Note that we've annotated the `ssn` property's getter with a custom XAP annotation `@SpaceId` to mark it as the entry's ID.
 
 {%info%}
 The full source code of `Person` is available [at the end](#source) of this tutorial.

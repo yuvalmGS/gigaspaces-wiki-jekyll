@@ -20,7 +20,7 @@ A new GigaSpaces developer is not required to fully understand all the terms and
 
 # Including/Excluding Data from an Entry
 
-By default, all public members (fields and properties) in a class are included in the entry, whereas non-public members are excluded. Since the common design practice is to expose data via public properties that encapsulate protected/private fields, usually there's no need to adjust this behaviour. However, it can be adjusted for exceptional cases.
+By default, all public members (fields and properties) in a class are included in the entry, whereas non-public members are excluded. Since the common design practice is to expose data via public properties that encapsulate protected/private fields, usually there's no need to adjust this behavior. However, it can be adjusted for exceptional cases.
 
 ## Customizing a Specific Class
 
@@ -30,7 +30,7 @@ To customize a specific class, apply a `[SpaceClass]` attribute on the class, an
 - `IncludeMembers.Public` -- public members are included, and non-public members are excluded.
 - `IncludeMembers.None` -- all members are excluded.
 
-#### Example 1.1 -- The default behaviour
+#### Example 1.1 -- The default behavior
 
 {% highlight csharp %}
 public class Person {...}
@@ -77,7 +77,7 @@ Read-only properties (getter, without setter), are included in the entry, but wh
 
 # Indexing
 
-If a property is used frequently when quering the space, you can instruct the space to index it for faster retrieval, by using the `[SpaceProperty]` attribute, and specifing `Index=SpaceIndexType.Basic`. For example:
+If a property is used frequently when querying the space, you can instruct the space to index it for faster retrieval, by using the `[SpaceProperty]` attribute, and specifing `Index=SpaceIndexType.Basic`. For example:
 
 {% highlight csharp %}
 public class Person
@@ -172,7 +172,7 @@ Mapping a .NET object to a space entry does not involve .NET serialization, whic
 
 # Routing
 
-When working with a clustered space, one of the properties in a class is used to determine the routing behaviour of that class within the cluster (i.e. how instances of that class are partitioned across the cluster's nodes). The routing property is determined according to the following rules:
+When working with a clustered space, one of the properties in a class is used to determine the routing behavior of that class within the cluster (i.e. how instances of that class are partitioned across the cluster's nodes). The routing property is determined according to the following rules:
 
 1. The property marked with `[SpaceRouting]` attribute is used.
 2. Otherwise, the property marked with `[SpaceID]` is used.

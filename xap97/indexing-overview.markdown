@@ -27,7 +27,7 @@ Basic index types
 - [Indexing Netsted properties](./indexing-nested-properties.html){%wbr%}
 An index can be defined on a nested property to improve performance of nested queries.
 
-- [Indexing colletions](./indexing-collections.html){%wbr%}
+- [Indexing collections](./indexing-collections.html){%wbr%}
 An index can be defined on a Collection property (java.util.Collection implementation).
 
 
@@ -50,7 +50,7 @@ One might wonder why properties are not always indexed, or why all the propertie
 
 # When to Use Indexing
 
-Naturally the question arises of when to use indexing. Usually it is recommended to index properties that are used in common queries. However, in some scenarios one might favour less footprint, or faster performance for a specific query, and adding/removing an index should be considered.
+Naturally the question arises of when to use indexing. Usually it is recommended to index properties that are used in common queries. However, in some scenarios one might favor less footprint, or faster performance for a specific query, and adding/removing an index should be considered.
 
 {% warning %}  Remember that "Premature optimization is the root of all evil". It is always recommended to benchmark your code to get better results. {%endwarning%}
 

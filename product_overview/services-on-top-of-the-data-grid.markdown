@@ -44,7 +44,7 @@ See the [Task Execution over the Space]({%currentjavaurl%}/task-execution-over-t
 
 ## Messaging and Events
 
-The Space's Messaging and Events support provides messaging handlers that simplify event driven programming. With this framework you select an event based on its content and designate a method that would be triggered as a result of that event, all through a simple and non-intrusive configuration. There are two main event handlers that are avaliable:
+The Space's Messaging and Events support provides messaging handlers that simplify event driven programming. With this framework you select an event based on its content and designate a method that would be triggered as a result of that event, all through a simple and non-intrusive configuration. There are two main event handlers that are available:
 
 ### Notify Container
 

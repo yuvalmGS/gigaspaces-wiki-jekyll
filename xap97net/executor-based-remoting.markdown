@@ -190,7 +190,7 @@ If the regular method looks as follows:
 `T DoSomething(String arg)`, T being the return value type, then the asynchronous method should have the following two methods:
 `IAsyncResult BeginDoSomething(String arg, AsyncCallback callback, Object stateObject)`.
 `T EndDoSomething(IAsyncResult asyncResult)`
-In other words, the regular method should be wrapped with two additional methods, one is prefixed with `Begin` and the return value should be an `IAsyncResult`, this method starts the asynchornous invocation. And an additional method prefixed with `End` and the return value is of the synchronous method which receives the `IAsyncResult` as its single parameter.
+In other words, the regular method should be wrapped with two additional methods, one is prefixed with `Begin` and the return value should be an `IAsyncResult`, this method starts the asynchronous  invocation. And an additional method prefixed with `End` and the return value is of the synchronous method which receives the `IAsyncResult` as its single parameter.
 
 # Transactional Execution
 
@@ -221,11 +221,11 @@ public interface ISimpleService
 }
 {% endhighlight %}
 
-A one way operation must have a return type of void and by its nature, has no guarantee that the operation was executed succesfully, if an exception is thrown during the execution at the server side, it will not be propogated to the client.
+A one way operation must have a return type of void and by its nature, has no guarantee that the operation was executed successfully, if an exception is thrown during the execution at the server side, it will not be propagated to the client.
 
 # Execution Aspects
 
-Space based remoting allows you to inject different "aspects" that can wrap the invocation of a remote method on the client side, as well as wrapping the execution of an invocation on the server side. The different aspect can add custom logic to the execution, for instance, loggings or security.
+Space based remoting allows you to inject different "aspects" that can wrap the invocation of a remote method on the client side, as well as wrapping the execution of an invocation on the server side. The different aspect can add custom logic to the execution, for instance, logging or security.
 
 ## The Client Invocation Aspect
 

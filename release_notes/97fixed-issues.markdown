@@ -38,7 +38,7 @@ Below is a list of issues that have been fixed in GigaSpaces 9.7.X.
 | GS-11305 | ArrayIndexOutOfBoundsException may be thrown when working with more than one class defining FIFO Group in rare condition | 9.5.0 patch2, 9.6.2, 9.7.0 | 8243 | Java, .Net |
 | GS-11312 | Last replicated packet is kept on thread local cache which could hold up significant memory | 9.6.1, 9.7.0 | 8237 | All |
 | GS-11315 | FifoGroups is not working with inheritance when the fifo groups annotation is configured on the son class | 9.7.0 | | Java, .Net |
-| GS-11317 | Typo in class name UniqueConstraintViolationExecption | 9.7.0 | | Java |
+| GS-11317 | Typo in class name UniqueConstraintViolationException | 9.7.0 | | Java |
 | GS-11331 | NPE is thrown when trying to perform admin operation with non-secured admin on secured grid | 9.7.0 | | Java, .Net |
 | GS-11339 | Blocked update may throw wrong kind of execption or stay blocked in case of an internal error | 9.7.0 | | All |
 | GS-11345 | XAP pu.xml should use current xml schema | 9.7.0 | | Java |
