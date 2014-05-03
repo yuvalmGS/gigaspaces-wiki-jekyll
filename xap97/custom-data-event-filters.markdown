@@ -12,7 +12,7 @@ weight: 300
 The session messaging API allows for space-side notify filtering. To control the events delivered to the client, implement the `INotifyDelegatorFilter` interface, pass the object implementing the `INotifyDelegatorFilter`, and return a `false` value from the `INotifyDelegatorFilter.process` for events you do not want to be sent to the registered client.
 
 {% indent %}
-![SessionBasedMessagingAPI1.jpg](/attachment_files/SessionBasedMessagingAPI1.jpg)
+![SessionBasedMessagingAPI1.jpg](/attachment_files/sessionbasedmessagingapi11.jpg)
 {% endindent %}
 
 # INotifyDelegatorFilter
