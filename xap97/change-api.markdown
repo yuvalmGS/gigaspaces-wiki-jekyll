@@ -236,13 +236,12 @@ The above example will set the lease of the changed object to be one second from
 
 # Change with Timeout
 
-A timeout can be passed to the `change` operation, this timeout will only be used if any of the objects that needs to be changed is locked under a transaction which is not from the
-current thread context. In that case, all objects which are not locked will be changed and the operation will block until either one of the two happens, which ever comes first:
+A timeout can be passed to the `change` operation, this timeout will only be used if any of the objects that needs to be changed is locked under a transaction which is not from the current thread context. In that case, all objects which are not locked will be changed and the operation will block until either one of the two happens, which ever comes first:
 
-1. the transaction lock is released - in that case the the change operation will be applied on the objects that were locked but now available.
-1. the timeout elapsed - the change operation will return with an exception. Like all other failures, the exception will be a `ChangeException` which will contain the successful changes, and all the objects that remained locked when the timeout elapsed will be part of the `getFailedChanges` property of the exception, each with a failure reason of `UpdateOperationTimeoutException`.
+1. The transaction lock is released - in this case the the change operation will be applied on the objects that were locked but now available.
+2. The timeout elapsed - the change operation will return with an exception. Like all other failures, the exception will be a `ChangeException` which will contain the successful changes, and all the objects that remained locked when the timeout elapsed will be part of the `getFailedChanges` property of the exception, each with a failure reason of `UpdateOperationTimeoutException`.
 
-If there were no matching objects for the specified template, the operation will return immediately without waiting for the timeout to elapse. This is similar to the `(read/take)IfExists` operation semantic.
+If there were no matching objects for the specified template/Query, the operation will return immediately without waiting for the timeout to elapse. This is similar to the `(read/take)IfExists` operation semantic.
 
 {% highlight java %}
 GigaSpace space = // ... obtain a space reference
