@@ -345,7 +345,7 @@ int result = stmt.executeUpdate("UPDATE PERSON SET VERSION = VERSION + 1 WHERE I
 {% endhighlight %}
 
 {% warning %}
-Field incrementation is only supported for `Integer` fields using a '+' operator.
+Field incrementing is only supported for `Integer` fields using a '+' operator.
 {% endwarning %}
 
 {% endgcloak %}

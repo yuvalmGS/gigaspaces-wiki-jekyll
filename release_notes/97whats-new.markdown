@@ -14,11 +14,11 @@ This page lists the main new features in XAP 9.7 (Java and .Net editions). It's 
 
 # MongoDB External Data Source
 
-[MongoDB](http://www.mongodb.org) is an extermely popular and powerful NoSQL database. XAP 9.7 introduces full support for using Mongo as a write behind data store for the space, and as a source for initial data load and read through scenario. This means that you can now use Mongo as an extension to the space, allowing two-way integration between XAP and Mongo. 
+[MongoDB](http://www.mongodb.org) is an extremely popular and powerful NoSQL database. XAP 9.7 introduces full support for using Mongo as a write behind data store for the space, and as a source for initial data load and read through scenario. This means that you can now use Mongo as an extension to the space, allowing two-way integration between XAP and Mongo.
 
 # LINQ Support for XAP.NET 
 
-LINQ (which stands for Language-Integrated Query) is a feature of the .Net framework and allows the user to use SQL like syntax within their code to filter and select subsets information from various data sources (relational and non relational databases, arrays, collections, etc.). XAP.NET 9.7 implements a custom LINQ provider which allows the developer to use LINQ experessions to query the space. Here's an example: 
+LINQ (which stands for Language-Integrated Query) is a feature of the .Net framework and allows the user to use SQL like syntax within their code to filter and select subsets information from various data sources (relational and non relational databases, arrays, collections, etc.). XAP.NET 9.7 implements a custom LINQ provider which allows the developer to use LINQ expressions to query the space. Here's an example:
 
 {% highlight csharp %}
 var query = from p in spaceProxy.Query<Person>() 
@@ -73,7 +73,7 @@ public class Person
 
 # Deterministic Deployment across Zones 
 
-Zones provide a powerful tagging mechanism for GSC which allow users to group together multiple GSCs and restrict processing unit intances only to these GSC. They also support SLA restrictions to make sure a primary and a backup of the same partition never end up in the same zone. This can be used to tag racks or data centers and make sure that high availability is maintained across them. When using the latter functionility, in many cases one zone has prioroty over another (e.g. the data center which is represents is geographically closer to your application's end users). 9.7 adds support for prioritized zones. When tagging as zone as prioritized for a specific processing unit, the GSM will extend its best effort to make sure that all primary instances of that processing unit will be started on the prioritized zone. You can refer to the [Deterministic Deployment Section](/xap97/configuring-the-processing-unit-sla.html#deterministic-deployment) in the docs for more details. 
+Zones provide a powerful tagging mechanism for GSC which allow users to group together multiple GSCs and restrict processing unit instances only to these GSC. They also support SLA restrictions to make sure a primary and a backup of the same partition never end up in the same zone. This can be used to tag racks or data centers and make sure that high availability is maintained across them. When using the latter functionality, in many cases one zone has priority over another (e.g. the data center which is represents is geographically closer to your application's end users). 9.7 adds support for prioritized zones. When tagging as zone as prioritized for a specific processing unit, the GSM will extend its best effort to make sure that all primary instances of that processing unit will be started on the prioritized zone. You can refer to the [Deterministic Deployment Section](/xap97/configuring-the-processing-unit-sla.html#deterministic-deployment) in the docs for more details.
 
 # Change API Enhancements
 The change API now includes an option to get the previous value ofa changed field. XAP 9.7 also includes a new mechanism called [Change Extension](/xap97/change-api.html) that encapsulates common usage patterns (such as Add and Get) into simpler to use API calls. Here's an example for an add and get operation that uses the change extenstion mechanism:

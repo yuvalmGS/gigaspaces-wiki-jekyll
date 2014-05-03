@@ -118,7 +118,7 @@ public class Person
 }
 {% endhighlight %}
 
-Note that we've annotated the `Ssn` property with a custom XAP.NET attribute (`[SpaceID]`) to mark it as the entry'd ID.
+Note that we've annotated the `Ssn` property with a custom XAP.NET attribute (`[SpaceID]`) to mark it as the entries ID.
 
 ### Interacting with the grid
 

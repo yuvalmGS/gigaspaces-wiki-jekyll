@@ -31,7 +31,7 @@ Below is a list of known issues in GigaSpaces 9.7.X.
 | GS-11463 | Need to restart the ESM if it cannot detect any lookup service during initialization | | 9.7.0 | | Java |
 | GS-11484 | Space name can not contain the word "localview" | | 9.7.0 | | All |
 | GS-11506 | WAN Gateway should have cascading replication | | 9.7.0 | | All |
-| GS-11511 | Select count(*) query from Web-ui which should retrun 0 throws NullPointerException | 8535 | 9.7.0 | | All |
+| GS-11511 | Select count(*) query from Web-ui which should return 0 throws NullPointerException | 8535 | 9.7.0 | | All |
 | GS-11518 | No backup for pu deployment, if one of the two GSM was in recovery process while deployment | 8513 | 9.7.0 | | All |
 | GS-11519 | Web-ui logs - Feature Requests | | 9.7.0 | | All |
 | GS-11520 | Web-ui logs - buttons are not working | | 9.7.0 | | All |

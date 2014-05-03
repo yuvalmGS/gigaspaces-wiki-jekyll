@@ -6,7 +6,7 @@ parent: jpa-api.html
 weight: 100
 ---
 
-{% summary %}This page explains the various supported options for mapping the identifier property of your JPA enntities.{% endsummary %}
+{% summary %}This page explains the various supported options for mapping the identifier property of your JPA entities.{% endsummary %}
 
 # User-Defined Id
 

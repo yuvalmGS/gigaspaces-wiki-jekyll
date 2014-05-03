@@ -45,7 +45,7 @@ There are multiple runtime configurations you may use when caching your data wit
 
 ## GigaMap with a Remote Space
 
-A client communicating with a remote space performs all its operation via a remote conenction. The remote space can be partitioned (with or without backups) or replicated (sync or async replication based).
+A client communicating with a remote space performs all its operation via a remote connection. The remote space can be partitioned (with or without backups) or replicated (sync or async replication based).
 
 {% indent %}
 ![remote-space-map.jpg](/attachment_files/remote-space-map.jpg)
@@ -92,13 +92,13 @@ GigaMap gigaMap = new GigaMapConfigurer(map).gigaMap();
 
 ## GigaMap with an Embedded Space
 
-A client comunicating with a an embedded space performs all its operation via local conenction. There is no network overhead when using this approach.
+A client communicating with a an embedded space performs all its operation via local connection. There is no network overhead when using this approach.
 
 {% indent %}
 ![embedded-space-map.jpg](/attachment_files/embedded-space-map.jpg)
 {% endindent %}
 
-To create a `GigaMap` for a colocated (embedded) space the space URL should use embedded space URL format:
+To create a `GigaMap` for a co-located (embedded) space the space URL should use embedded space URL format:
 
 {% inittab os_simple_space|top %}
 {% tabcontent Namespace %}
@@ -149,7 +149,7 @@ A simple way to use the embedded space in a clustered architecture would be by p
 
 ## GigaMap with a Local (Near) Cache
 
-The `GigaMap` support [Local Cache](./local-cache.html) (near cache) configuration. This provides a front-end client side cache that will be used with the `get` operations implictly. The local cache will be loaded on demand or when you perform a `put` operation (when the **putFirst** option is activated).
+The `GigaMap` support [Local Cache](./local-cache.html) (near cache) configuration. This provides a front-end client side cache that will be used with the `get` operations implicitly. The local cache will be loaded on demand or when you perform a `put` operation (when the **putFirst** option is activated).
 
 {% indent %}
 ![local_cache-map.jpg](/attachment_files/local_cache-map.jpg)
@@ -231,7 +231,7 @@ The local cache support the following properties:
 {: .table .table-bordered}
 |Property Name|Description|Default|
 |:------------|:----------|:------|
-|evictionStrategy| An implemenation of the EvictionStrategy interface|com.j_spaces.map.eviction.FIFOEvictionStrategy  |
+|evictionStrategy| An implementation of the EvictionStrategy interface|com.j_spaces.map.eviction.FIFOEvictionStrategy  |
 |putFirst| Boolean value. If true will cache the value on put operation| true|
 |sizeLimit| Integer value. The maximum amount of entries within the local cache. |100000 |
 |updateModeName| Controls the update mode of the local cache. Posible options UpdateMode.PULL or UpdateMode.PUSH.| PULL |
@@ -239,7 +239,7 @@ The local cache support the following properties:
 
 # Multiple GigaMaps
 
-You mat have several `GigaMap` used with your application, each with different characteristics , all will be interacting with the same rmeote space. In this case each `GigaMap` should use different set of keys. If you want to use same keys for these different maps, each should use a different space.
+You mat have several `GigaMap` used with your application, each with different characteristics , all will be interacting with the same remote space. In this case each `GigaMap` should use different set of keys. If you want to use same keys for these different maps, each should use a different space.
 
 # GigaMap Operations
 
@@ -257,7 +257,7 @@ gigaMap.unlock(key);
 
 # Time to Live - TTL
 
-An entry within the cache is emortal by default. You can specify as part of the put operation a specific time for the entry to be alive within the cache. Once this time elapsed, it will be expired automatically. The time unit to specify the TTL is millseconds.
+An entry within the cache is immortal by default. You can specify as part of the put operation a specific time for the entry to be alive within the cache. Once this time elapsed, it will be expired automatically. The time unit to specify the TTL is milliseconds.
 
 {% highlight java %}
 GigaMap gigaMap = ...

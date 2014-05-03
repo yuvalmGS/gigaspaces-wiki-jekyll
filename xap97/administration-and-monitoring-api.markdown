@@ -506,7 +506,7 @@ Last, the `Admin` interface provides a one stop method called `addEventListener`
 
 # Space Runtime Statistics
 
-The space maintains statistics information about all the data types (e.ge. space class types) it stores and the amount of space objects stored in memory for each data type. Below example how to retrieve this data. This approach avoiding the need to use the `GigaSpace.Count()` that is relatively expensive with spaces that store large number of objects.
+The space maintains statistics information about all the data types (e.g. space class types) it stores and the amount of space objects stored in memory for each data type. Below example how to retrieve this data. This approach avoiding the need to use the `GigaSpace.Count()` that is relatively expensive with spaces that store large number of objects.
 
 {% highlight java %}
 public static void printAllClassInstanceCountForAllPartitions (String spaceName) throws Exception

@@ -213,7 +213,7 @@ The  round-trip-time setting can be configured using the `space-config.dist-cach
 
 #### Cache Policy
 
-When using a local cache with `GigaSpace`, the cache policy is hard-writed to `LRU` and cannot be changed. When using the local cache with `GigaMap`, the default cache policy is `com.j_spaces.map.eviction.FIFOEvictionStrategy`, and other policies may be used by setting the `space-config.dist-cache.eviction-strategy` custom property. For more details refer to the [Map API](./map-api.html#GigaMap with a Local (Near) Cache).
+When using a local cache with `GigaSpace`, the cache policy is set to `LRU` and cannot be changed. When using the local cache with `GigaMap`, the default cache policy is `com.j_spaces.map.eviction.FIFOEvictionStrategy`, and other policies may be used by setting the `space-config.dist-cache.eviction-strategy` custom property. For more details refer to the [Map API](./map-api.html#GigaMap with a Local (Near) Cache).
 
 #### Memory Configuration Properties
 
@@ -222,15 +222,15 @@ In order to properly configure the local cache eviction mechanism, you should co
 {: .table .table-bordered}
 |Parameter|Suggested Value|
 |:--------|:--------------|
-|space-config.engine.cache\_size|5000000|
-|space-config.engine.memory\_usage.high\_watermark\_percentage|75 |
-|space-config.engine.memory\_usage.write\_only\_block\_percentage|73|
-|space-config.engine.memory\_usage.write\_only\_check\_percentage|71|
-|space-config.engine.memory\_usage.low\_watermark\_percentage|50|
-|space-config.engine.memory\_usage.eviction\_batch\_size|1000|
-|space-config.engine.memory\_usage.retry\_count |20|
-|space-config.engine.memory\_usage.explicit-gc|false|
-|space-config.engine.memory\_usage.retry\_yield\_time|100|
+|space-config.engine.cache_size|5000000|
+|space-config.engine.memory_usage.high_watermark_percentage|75 |
+|space-config.engine.memory_usage.write_only_block_percentage|73|
+|space-config.engine.memory_usage.write_only_check_percentage|71|
+|space-config.engine.memory_usage.low_watermark_percentage|50|
+|space-config.engine.memory_usage.eviction_batch_size|1000|
+|space-config.engine.memory_usage.retry_count |20|
+|space-config.engine.memory_usage.explicit-gc|false|
+|space-config.engine.memory_usage.retry_yield_time|100|
 
 See the [Memory Management Facilities](./memory-management-facilities.html) for additional details on these configuration properties.
 

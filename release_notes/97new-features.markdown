@@ -29,8 +29,8 @@ Below is a list of new features and improvements in GigaSpaces 9.7.X.
 | GS-11225 | Expose space remote activities in Web-ui | 9.7.0 | | | All |
 | GS-11232 | Display used lookup group and locator in XAP Web-ui after login | 9.7.0 | | | All |
 | GS-11242 | Server execution aspect doesn't expose the invoked Method | 9.6.1, 9.7.0 | 8102 | | Java |
-| GS-11246 | Gs-ui should resolve custom security paramters | 9.6.1, 9.7.0 | 7904 | | All |
-| GS-11250 | Seperate SpaceTask execution to a seperate thread pool from other operations | 9.7.0 | | | Java, .Net |
+| GS-11246 | Gs-ui should resolve custom security parameters | 9.6.1, 9.7.0 | 7904 | | All |
+| GS-11250 | Seperate SpaceTask execution to a separate thread pool from other operations | 9.7.0 | | | Java, .Net |
 | GS-11252 | Improve XAP.Net configuration to support multiple GSA configurations | 9.6.1, 9.7.0 | | | .Net |
 | GS-11253 | Unique index support | 9.7.0 | | | Java, .Net |
 | GS-11262 | Upgrade Spring (not including security) to 3.2.4 | 9.7.0 | | | Java |
@@ -46,7 +46,7 @@ Below is a list of new features and improvements in GigaSpaces 9.7.X.
 | GS-11309 | Deprecation - EventSessionFactory - use GigaSpace.newDataEventSession() instead | 9.7.0 | | | Java |
 | GS-11311 | Expose PID and host in LRMIProxyMonitoringDetails | 9.7.0 | | | Java |
 | GS-11324 | The ESM cannot start in secure mode | 9.5.0 patch3, 9.7.0 | 8254 | | Java |
-| GS-11338 | LRMINoSuchObjectException is logged repeatedly after restart/rellocation | 9.6.2 patch1, 9.7.0 | | | All |
+| GS-11338 | LRMINoSuchObjectException is logged repeatedly after restart/relocation | 9.6.2 patch1, 9.7.0 | | | All |
 | GS-11343 | Enhanced XAP.Net installer to include VC runtime files required by JDK7 | 9.6.1, 9.7.0 | | | .Net |
 | GS-11350 | Add support for "<>" in the Cassandra space data source | 9.6.1 patch1, 9_6_2, 9.7.0 | 8298 | | Java |
 | GS-11362 | Add support for Mule OpenSpaces queue connector attributes place holders | 9.5.2 patch3, 9.6.2, 9.7.0 | | | Java |

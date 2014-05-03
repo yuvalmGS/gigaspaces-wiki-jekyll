@@ -51,7 +51,7 @@ Another way to look at the above modules is to compare them to a database client
 In order for the web application to access the remote interface, we need to add a configuration file, exposing the Clinic DAO instances across the data grid cluster as a remote service to the web application. You can learn more about XAP Remoting services [here]({%latestjavaurl%}/executor-based-remoting.html)
 #####The Application Data Model
 Now let's review the considerations and changes in the application data model when accommodating it for partitioned deployment.
-The application domain model class diagram is depicted in the following digram:
+The application domain model class diagram is depicted in the following diagram:
 
 ![class_diagram.jpg](/attachment_files/class_diagram.jpg)
 

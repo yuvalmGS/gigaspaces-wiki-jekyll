@@ -63,12 +63,12 @@ In the previous scenario, a target space instance might become unavailable becau
 
 # Controlling the Asynchronous worker
 
-The asynchronous worker of the channel can wakeup and start replicating for two reasons:
+The asynchronous worker of the channel can wake up and start replicating for two reasons:
 
 1. The predefined interval has elapsed
 1. The predefined number of pending operations is exceeded.
 
-The worker will wakeup and replicate if either of these two occurs. The following parameters controls these behavior and a few more options:
+The worker will wake up and replicate if either of these two occurs. The following parameters controls these behavior and a few more options:
 
 {: .table .table-bordered}
 | Property | Description | Default Value |

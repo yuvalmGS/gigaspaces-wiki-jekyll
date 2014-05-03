@@ -676,9 +676,9 @@ During the life-cycle of the polling container, two types of exceptions might be
 
 A User Exception is an exception that occurs during the invocation of the user event listener. A Container Exception is an exception that occurs anywhere else during the life-cycle of the container (for example, during the receive or trigger operation handler).
 
-## Subscribing to the ContainerExceptionOccured Event
+## Subscribing to the ContainerExceptionOccurred Event
 
-It is possible to be notified when a container exception occured, by subscribing to the ContainerExceptionOccured event, and get a reference to the exception.
+It is possible to be notified when a container exception occurred, by subscribing to the ContainerExceptionOccurred event, and get a reference to the exception.
 
 Here is an example of how to subscribe to this event:
 
@@ -725,7 +725,7 @@ public void ExceptionHandler(object sender, ContainerExceptionEventArgs e)
 
 ## Subscribing to the UserExceptionOccured Event
 
-It is possible to be notified when a user exception occured, by subscribing to the UserExceptionOccured event. This arguments of this event contain the entire DataEventArgs of the original DataEventArrived. By default, any event that is thrown inside the event listener scope, results in transaction rollback if the container is set to be transactional. This can be overriden if the user exception handler sets the event state to: ignored.
+It is possible to be notified when a user exception occurred, by subscribing to the UserExceptionOccurred event. This arguments of this event contain the entire DataEventArgs of the original DataEventArrived. By default, any event that is thrown inside the event listener scope, results in transaction rollback if the container is set to be transactional. This can be overriden if the user exception handler sets the event state to: ignored.
 
 Here is an example of how to subscribe to this event:
 

@@ -178,4 +178,4 @@ public class IdGeneratorImpl implements IdGenerator {
 
 ![Jump arrow green.bmp](/attachment_files/Jump arrow green.bmp)
 {% color green %}Step Three{% endcolor %}
- - [Building and Running the Application](./step-3---building-and-running-the-application.html) - Shows how to build, package and deploy the application while taking advatage of XAP's dynamic load balancing capabilities and the Space as a highly `HttpSession` store.
+ - [Building and Running the Application](./step-3---building-and-running-the-application.html) - Shows how to build, package and deploy the application while taking advantage of XAP's dynamic load balancing capabilities and the Space as a highly `HttpSession` store.

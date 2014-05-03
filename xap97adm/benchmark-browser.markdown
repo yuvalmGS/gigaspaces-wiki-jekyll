@@ -63,7 +63,7 @@ These areas are detailed in the sections below.
 
 The Benchmark view **Options** area provides the following options:
 
-- **Object type** -- type of object writtten to the space, possible options: **Entry**, **POJO**, **JMS**, **Externalizable**, **Serializable**, **FIFO**, **POJO Externalizable**, **MetaDataEntry Externalizable**, **FIFO Externalizable**, **UID Externalizable**. The selected object type is explained in the **Description** area.
+- **Object type** -- type of object written to the space, possible options: **Entry**, **POJO**, **JMS**, **Externalizable**, **Serializable**, **FIFO**, **POJO Externalizable**, **MetaDataEntry Externalizable**, **FIFO Externalizable**, **UID Externalizable**. The selected object type is explained in the **Description** area.
 - **Threads** -- the number of concurrent threads that run the test. This allows you to run multiple threads that call the selected operation at the same time.
 
 {% tip %} If you define that 1000 Entries be written to the space, and have 5 threads defined as part of the threads box, you will end up with 5000 Entries inside the space.

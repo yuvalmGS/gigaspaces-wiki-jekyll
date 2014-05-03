@@ -221,7 +221,7 @@ The `RemoteEventListener` interface is implemented by any object that wants to r
 
 The `EventRegistration` class is a utility class for use as a return value for event-interest registration methods.
 
-The `RemoteEvent` class represents the event, including ID, registration handback object and sequence number.
+The `RemoteEvent` class represents the event, including ID, registration hand back object and sequence number.
 
 {% tip %}
 The `NotifyDelegator` uses the above interfaces and classes.

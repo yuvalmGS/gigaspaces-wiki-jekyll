@@ -108,20 +108,20 @@ Alternatively, a service can be hosted under specific types instead of querying 
 DomainServiceHost.Host.Publish(new DataProcessor(), typeof(IDataProcessor), typeof(IMyService));
 {% endhighlight %}
 
-# Unpublishing a Service
+# Un publishing a Service
 
 Once the processing unit that hosts the service is unloaded, all the services within that pu are also removed.
-However, it is possible to explicitly unpublish a service during the processing unit life cycle if needed, this is done by the `Unpublish` method, with the specific registration of the service that we want to unpublish.
+However, it is possible to explicitly un publish a service during the processing unit life cycle if needed, this is done by the `Unpublish` method, with the specific registration of the service that we want to un publish.
 
 {% highlight csharp %}
 IServiceRegistration registration = DomainServiceHost.Host.Publish(new DataProcessor());
 ...
-DomainServiceHost.Host.Unpublish(registration);
+DomainServiceHost.Host.Un publish(registration);
 {% endhighlight %}
 
 # Execution Aspects
 
-Space based remoting allows you to inject different "aspects" that can wrap the invocation of a remote method on the client side, as well as wrapping the execution of an invocation on the server side. The different aspect can add custom logic to the execution, for instance, loggings or security.
+Space based remoting allows you to inject different "aspects" that can wrap the invocation of a remote method on the client side, as well as wrapping the execution of an invocation on the server side. The different aspect can add custom logic to the execution, for instance, logging or security.
 
 The server side invocation aspect interface is shown below. You should implement this interface and wire it to the `DomainServiceHost` (this is the component that is responsible for hosting and exposing your service to remote clients):
 
@@ -140,7 +140,7 @@ public interface IServiceExecutionAspect
 }
 {% endhighlight %}
 
-Here is an example of a security aspect implemention
+Here is an example of a security aspect implementation
 
 {% highlight csharp %}
 public class SecurityExecutionAspect : IServiceExecutionAspect
@@ -165,4 +165,4 @@ DomainServiceHost.Initialize(new ExecutionLoggingAspect(), new SecurityExecution
 
 The different execution aspects can be wired only once, and that is when the DomainServiceHost is initialized, which means before publishing any service in it.
 
-The execution of the aspects follows a pattern of pipeline execution of all the aspects followed by the order in which they were set. Each aspect can decide whether to continue with the pipeline execution using the `invocation.Proceed()` method. It can either alter a return value of the next aspect in line by setting the `invocation.ReturnValue` or it can immidiately return the execution result without continuing to the next aspect by setting the return value using the `invocation.ReturnValue` property and not calling the `invocation.Proceed()` method. The final service execution it self is an aspect which is the last one to be executed. Plugging custom aspects can decide according to the aspect implementation whether to execute the actual operation on the service or not.
+The execution of the aspects follows a pattern of pipeline execution of all the aspects followed by the order in which they were set. Each aspect can decide whether to continue with the pipeline execution using the `invocation.Proceed()` method. It can either alter a return value of the next aspect in line by setting the `invocation.ReturnValue` or it can immediately return the execution result without continuing to the next aspect by setting the return value using the `invocation.ReturnValue` property and not calling the `invocation.Proceed()` method. The final service execution it self is an aspect which is the last one to be executed. Plugging custom aspects can decide according to the aspect implementation whether to execute the actual operation on the service or not.

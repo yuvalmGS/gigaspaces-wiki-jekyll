@@ -111,7 +111,7 @@ The [integration with the Jetty web container]({%latestjavaurl%}/web-jetty-proce
 
 ## Microsoft .NET container
 
-The .NET SBA application takes advantage of the ability to run business services and .NET code, colocated with the data stored within the space.
+The .NET SBA application takes advantage of the ability to run business services and .NET code, co located with the data stored within the space.
 
 The [.NET container]({%latestneturl%}/programmers-guide.html) bridges the technical gap and provides a native .NET experience for .NET applications.
 
@@ -242,7 +242,7 @@ The ability to support a unified clustering model is a direct result of the unde
 
 ## Scaling
 
-In space-based architecture, adding additional cluster nodes results in a linear addition of compute power and memory capacity. This results in the application's ablility to support a higher workload, without adding to latency or application complexity.
+In space-based architecture, adding additional cluster nodes results in a linear addition of compute power and memory capacity. This results in the application's ability to support a higher workload, without adding to latency or application complexity.
 
 ## Data Load Balancing and Partitioning
 

@@ -322,7 +322,7 @@ This topology requires XAP Premium Edition.
 {%endinfo%}
 
 {% indent 2 %}
-![Hibernate with 2 emedded replicated.jpg](/attachment_files/Hibernate with 2 emedded replicated.jpg)
+![Hibernate with 2 emedded replicated.jpg](/attachment_files/Hibernate with 2 embedded replicated.jpg)
 {% endindent %}
 
 **To use the embedded replicated topology with two replicated instances:**

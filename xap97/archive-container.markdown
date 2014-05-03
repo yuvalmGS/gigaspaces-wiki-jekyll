@@ -227,7 +227,7 @@ The example above removes (takeMultiple) objects with a certain timestamp member
 The takeMultiple operations are performed on the configured [GigaSpace](./the-gigaspace-interface.html) bean (in this case, if working in a clustered topology, it is performed directly on the cluster member).
 The archive operation is performed on the bean that implements the ArchiveOpertaionHandler interface, in this case the CassandraArchiveOperationHandler bean.
 
-For a  real-world example consult the streaming-bigdata example :
+For a  real-world example consult the streaming big data example :
 
 - [Big-Data example spring xml file](https://github.com/CloudifySource/cloudify-recipes/blob/master/apps/streaming-bigdata/processor/src/main/resources/META-INF/spring/pu.xml)
 - [Custom Archive Container template and error handler](https://github.com/CloudifySource/cloudify-recipes/blob/master/apps/streaming-bigdata/processor/src/main/java/org/openspaces/bigdata/processor/TweetArchiveFilter.java )
@@ -314,7 +314,7 @@ Archiving in batches may improve the processing throughput performance. Instead 
 
 The archive operation handler determines if it can archive more than one object at a time by implementing `ArchiveOperationHandler.supportsBatchArchiving()`.
 If the archive handler supports batch archiving then multiple objects are removed from the space using takeMultiple and handed over to the `ArchiveOperationHandler.archive()` method.
-If the archive handler does not support batch archiving, or if the archive conainer batch-size is 1, then batch operation is disabled. Otherwise, batch operation is enabled.
+If the archive handler does not support batch archiving, or if the archive container batch-size is 1, then batch operation is disabled. Otherwise, batch operation is enabled.
 
 # Transaction Support
 

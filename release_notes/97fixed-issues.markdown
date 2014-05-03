@@ -40,7 +40,7 @@ Below is a list of issues that have been fixed in GigaSpaces 9.7.X.
 | GS-11315 | FifoGroups is not working with inheritance when the fifo groups annotation is configured on the son class | 9.7.0 | | Java, .Net |
 | GS-11317 | Typo in class name UniqueConstraintViolationException | 9.7.0 | | Java |
 | GS-11331 | NPE is thrown when trying to perform admin operation with non-secured admin on secured grid | 9.7.0 | | Java, .Net |
-| GS-11339 | Blocked update may throw wrong kind of execption or stay blocked in case of an internal error | 9.7.0 | | All |
+| GS-11339 | Blocked update may throw wrong kind of exception or stay blocked in case of an internal error | 9.7.0 | | All |
 | GS-11345 | XAP pu.xml should use current xml schema | 9.7.0 | | Java |
 | GS-11355 | "Insufficient Data In Class" might appear in log while starting local view after failovers | 9.6.1 patch1, 9.6.2, 9.7.0 | 8282 | All |
 | GS-11357 | Increment by zero in change operation, causes to UnMarshallingException | 9.6.2, 9.7.0 | | Java, .Net |
@@ -59,13 +59,13 @@ Below is a list of issues that have been fixed in GigaSpaces 9.7.X.
 | GS-11402 | When a cancel/renew multiple leases operation fails, the exceptions are ignored | 9.7.0 | | All |
 | GS-11411 | XSD 9.6 schemas are not provided - require internet  | 9.6.2, 9.7.0 | 8342 | All |
 | GS-11414 | ESM may not start if failed communicating with management GSA | 9.7.0 | | Java |
-| GS-11415 | Hide newsfeed button if not available | 9.6.2, 9.7.0 | | All |
+| GS-11415 | Hide news feed button if not available | 9.6.2, 9.7.0 | | All |
 | GS-11419 | Cassandra Space Synchronization Endpoint - writing space documents with id autogenerate=true might cause data corruption | 9.7.0 | | Java |
 | GS-11431 | NPE when overriding a setter method and no getter is available | 9.6.2, 9.7.0 | 8349 | Java |
 | GS-11433 | "useLocalCache" in url definition, result in ClassCastException after reconnecting to master space | 8.0.7 patch3, 9.7.0 | 8385 | All |
 | GS-11435 | Add missing LRMI monitoring admin API in .Net | 9.7.0 | | .Net |
 | GS-11440 | Notify container leaseListener attribute of the @NotifyLease annotation, causes compilation errors | 9.7.0 | | Java |
-| GS-11442 | ClassCastException may occur in reliable async target if replication backlog is overflown | 9.7.0 | | All |
+| GS-11442 | ClassCastException may occur in reliable async target if replication backlog is over flown | 9.7.0 | | All |
 | GS-11445 | ESM failing to shutdown after the GSA has been stopped | 9.7.0 | 8406 | Java |
 | GS-11451 | ESM mistakenly kills containers not registered with LUS, when it failed to start a container on that machine | 9.7.0 | | Java |
 | GS-11452 | NPE replicating change operation in rare conditions | 9.7.0 | 8439 | Java, .NEet|

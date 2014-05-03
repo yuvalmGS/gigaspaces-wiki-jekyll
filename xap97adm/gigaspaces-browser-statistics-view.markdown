@@ -15,7 +15,7 @@ The Statistics view provides graphical representation of space operations perfor
 
 # Operations Statistics Status
 
-The **Operations Statistics Status** area displays the total number of operations performed in the space. The **Legend** on the right side, apart from color indication, provides a check box for every opertion, allowing you to remove it from the graph.
+The **Operations Statistics Status** area displays the total number of operations performed in the space. The **Legend** on the right side, apart from color indication, provides a check box for every operation, allowing you to remove it from the graph.
 
 # TP Statistics History
 

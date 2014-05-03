@@ -354,7 +354,7 @@ public void registerPollingListener() {
 When you run this code you should see that the PU deployed onto the IMDG is processing the event, changes the status of the payment to PROCESSED and writes the event back into the space. The client then will receive an event because it has registered a listener that listens for processed payment events.
 
 #### Deploy a PU with the WEB Admin UI
-There is complete example available of  aPU on GitHub. You can download, build and deploy this example. Here is an example how you deploy a PU with the WEB admin UI:
+There is complete example available of  a PU on GitHub. You can download, build and deploy this example. Here is an example how you deploy a PU with the WEB admin UI:
 
 {%section%}
 {%column%}
@@ -392,7 +392,7 @@ Statistics
 One of our non functional requirements for our online payment system is that it is highly available and it can handle a large amount of concurrent transactions. This can be accomplish in a couple of ways. We can deploy the PU with multiple concurrent threads and or multiple PU instances on top of the grid.
 
 #### Multi threaded PU
-By default the PU is single threaded. With a simple annotation you can tell XAP how many threaders the PU should run with.
+By default the PU is single threaded. With a simple annotation you can tell XAP how many threads the PU should run with.
 {%highlight java%}
 @EventDriven
 @Polling @Polling(concurrentConsumers = 3, maxConcurrentConsumers = 10)

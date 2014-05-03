@@ -30,10 +30,10 @@ The `executor-proxy` include the following properties:
 |gigaSpace | GigaSpace | giga-space | Yes |Sets the GigaSpace interface that will be used to work with the space as the transport layer for executions of Space tasks.| |
 |timeout | long |  Yes | timeout | Sets the timeout that will be used to wait for the remote invocation response. The timeout value is in milliseconds.  | 60000 (60 seconds).|
 |remoteRoutingHandler | RemoteRoutingHandler | No | routing-handler |In case of remote invocation over a partitioned space the default partitioned routing index will be random (the hashCode of the newly created remote invocation). This RemoteRoutingHandler allows for custom routing computation (for example, based on one of the service method parameters).| |
-|metaArgumentsHandler | MetaArgumentsHandler | No | meta-arguments-handler | Allows to set the meta arguemnts handler controlling the meta arguments passed with each remote invocation.| |
+|metaArgumentsHandler | MetaArgumentsHandler | No | meta-arguments-handler | Allows to set the meta arguments handler controlling the meta arguments passed with each remote invocation.| |
 |asyncMethodPrefix | String |
 |broadcast | boolean | No | broadcast| If set the true (defaults to false) causes the remote invocation to be called on all active (primary) cluster members.| |
-|returnFirstResult | boolean |No | return-first-result | When set to true (defaults to true) will return the first result when using broadcast. If set to false, an array of results will be retuned. Note, this only applies when not setting a reducer.| |
+|returnFirstResult | boolean |No | return-first-result | When set to true (defaults to true) will return the first result when using broadcast. If set to false, an array of results will be returned. Note, this only applies when not setting a reducer.| |
 |remoteResultReducer | RemoteResultReducer |No| result-reducer | When using broadcast set to true, allows to plug a custom reducer that can reduce the array of result objects into another response object.| |
 | remoteInvocationAspect | RemoteInvocationAspect |No| Allows to set a aspect around each service execution.| |
 |serviceProxy | Object |

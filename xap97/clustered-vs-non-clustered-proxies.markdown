@@ -50,7 +50,7 @@ IJSpace space = // get Space either by injection or code creation
 GigaSpace gigaSpace = new GigaSpaceConfigurer(space).clustered(true).gigaSpace();
 {%endhighlight%}
 
-An example of a Remoting Service with a clustered and non-clustred proxy:
+An example of a Remoting Service with a clustered and non-clustered proxy:
 {%highlight java%}
 @RemotingService
 public class MyService implements ClusterInfoAware, IMyService{
@@ -61,7 +61,7 @@ GigaSpace gigaSpaceClustered;
 }
 {%endhighlight%}
 
-Here is how the clustred proxy is constructed:
+Here is how the clustered proxy is constructed:
 {%highlight java%}
 @PostPrimary
 public void postPrimary() {
@@ -70,7 +70,7 @@ gigaSpaceClustered=gigaSpaceEmbedNonClustered.getClustered();
 }
 {%endhighlight%}
 
-An example of a `DistributedTask` implementation with a clustered and non-clustred proxy:
+An example of a `DistributedTask` implementation with a clustered and non-clustered proxy:
 {%highlight java%}
 public class MyTask implements ClusterInfoAware , DistributedTask<Integer, Integer>{
 @TaskGigaSpace
@@ -80,7 +80,7 @@ transient GigaSpace gigaSpaceClustered;
 }
 {%endhighlight%}
 
-Here is how the clustred proxy is constructed:
+Here is how the clustered proxy is constructed:
 {%highlight java%}
 public Integer execute() throws Exception {
 gigaSpaceClustered=gigaSpaceEmbedNonClustered.getClustered();

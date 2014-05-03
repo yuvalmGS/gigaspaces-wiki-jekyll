@@ -6,7 +6,7 @@ weight: 300
 parent: your-first-jpa-application.html
 ---
 
-{% summary %}This step shows how to build, package and deploy the application while taking advatage of XAP's dynamic load balancing capabilities and the Space as a highly HttpSession store{% endsummary %}
+{% summary %}This step shows how to build, package and deploy the application while taking advantage of XAP's dynamic load balancing capabilities and the Space as a highly HttpSession store{% endsummary %}
 
 # Before You Begin
 

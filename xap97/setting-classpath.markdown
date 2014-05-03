@@ -45,4 +45,4 @@ When running a standalone client which accesses GigaSpaces XAP, please ensure th
 - `commons-logging.jar`
 - Spring framework jars (all start with `com.spring*`)
 
-This also holds true for remote Space clients which are used from another JVM (such as a standalone web container). In case your client is a JEE web application that is not running within the GigaSpaces runtime environment, or more sepcifically a GSC, you will have to include these jars in your application's `WEB-INF/lib` directory.
+This also holds true for remote Space clients which are used from another JVM (such as a standalone web container). In case your client is a JEE web application that is not running within the GigaSpaces runtime environment, or more specifically a GSC, you will have to include these jars in your application's `WEB-INF/lib` directory.
