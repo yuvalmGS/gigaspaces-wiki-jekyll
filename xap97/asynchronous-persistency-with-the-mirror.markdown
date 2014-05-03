@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Asynchronous Persistency
+title:  Asynchronous Persistency - Write Behind
 categories: XAP97
 parent: space-persistency-overview.html
 weight: 600
