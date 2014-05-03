@@ -11,6 +11,10 @@ weight: 500
 {: .table .table-bordered}
 | Property name | Description | Default value |
 |:--------------|:------------|:--------------|
+| `com.gs.home` | GigaSpaces home directory. {% wbr %}Not required, if not set explicitly, it is resolved | `JSHOMEDIR` |
+| `com.gs.grid.secured` | Security property indicating whether the GSM and GSC should be loaded in a secured mode.  | false (non-secured) |
+| `com.gs.deploy` | The location of the deploy directory of the GSM. | `GSHOME/deploy` |
+| `com.gs.work` | The location of the work directory of the GSM and GSC. | `GSHOME/work` |
 | `com.gs.active_election.timeout` | Defines the sleep timeout between iterations in the Active election algorithm | 1000 msec |
 | `com.gs.replication.disable-duplicate-filtering` | Disables the duplication filtering mechanism used to avoid double processing of packets after recovery. | false |
 | `com.gs.cluster.cache-loader.external-data-source` | Boolean property. Must be set to `true` when working with external data source | `false` |
@@ -25,14 +29,13 @@ weight: 500
 | `com.gs.browser.unicast_discovery` | Sets the Space Browser unicast discovery using `hostname:port` URL. `com.gs.browser.unicast_discovery=` `<ip-address>` can be used if multicast is disabled on the local machine. In such a case, the unicast protocol is used for the lookup discovery (unicast discovery is disabled by default). | By default it is not set |
 | `com.gs.cluster.url-protocol-prefix` | Used in clustered configuration to provide same prefix for all cluster members URL 0 i.e. `rmi:RMIRegistryMachineHostName`\. | Not set by default |
 | `com.gs.clusterXML.debug` | Boolean value. If `true`, display cluster configuration when space started. | `False` |
-| `com.gs.container.name` | Container name used only by `JSpaceServiceImpl` | Not set by default. |
 | `com.gs.dbcache.debug` | Used in hibernate cache plugin. | |
 | `com.gs.debug` | Used in examples - benchmark , query, p2p , p2p fifo , p2p JMS, `SimpleQueueReceiver, SimpleQueueSender, SimpleTopicPublisher, SimpleTopicSubscriber`. | `False` |
 | `com.gs.embeddedQP.enabled` | Boolean value. Used at JDBC driver. If `true`, running query processor embedded within the application. | `False` |
 | `com.gs.embeddedQP.properties` | Used at JDBC driver. Properties file location. | |
 | `com.gs.env.report` | Allows you to view all the runtime configuration settings. | |
 | `com.gs.EvictionStrategy` | Local Cache property. | {% anchor standby %} |
-| `com.gs.home` | GigaSpaces home directory. {% wbr %}Since 5.0 not required, if not set explicitly, it is resolved as the parent directory of the `JSpaces.jar` file. | |
+as the parent directory of the `JSpaces.jar` file. | |
 | `com.gs.jms.compressionMinSize` | Compresses a JMS text message's data if its size is larger than a configured value (threshold). The message data is compressed when sent, and decompressed when received. The value assigned should be in bytes. | `500000` (0.5 MB) |
 | `com.gs.jmx.enabled` | System property that determines JMX supporting. | `true` |
 | `com.gs.licensekey` | License key string. | |
@@ -68,10 +71,6 @@ weight: 500
 | `com.gs.cluster.cache-loader.shared-data-source` | Used by the cluster schemas for the `CacheLoader`. | |
 | `com.gs.cluster.livenessMonitorFrequency` | Defines the frequency in which liveness of 'live' members in a cluster is monitored. See [Viewing Clustered Space Status]({%currentadmurl%}/troubleshooting-viewing-clustered-space-status.html) for more details. | Default 10000 ms&nbsp; |
 | `com.gs.cluster.livenessDetectorFrequency` | Defines the frequency in which liveness of members in a cluster is detected. See [Viewing Clustered Space Status]({%currentadmurl%}/troubleshooting-viewing-clustered-space-status.html) | Default 5000 ms |
-| `com.gs.number_implicit_indexs` | Used by default space schema. | the default number of implicit indexes: for `MemorySpace = 2`, `PersistentSpace = 1` |
 | `com.gs.callGC` | Boolean value.{% wbr %}Call garbage collection when performing eviction. This used when running in LRU cache policy and also at client side when using local cache. | `false` |
 | `com.gs.replication.disable_multicast_adaptor` | Boolean value.{% wbr %}Force disabling replication multicast adaptor. | `false` {% anchor xa %} |
 | `com.gs.xa.failOnInvalidRollback` | Boolean value.{% wbr %}When set to `false`, the `XAResource` does not throw an error when attempting to roll back a non-existing transaction or a transaction the has already been rolled back. For more details, see {% wbr %}[Javadoc](http://docs.oracle.com/javase/1.5.0/docs/api/javax/transaction/xa/XAResource.html) | `true` {% anchor maxbuffer %} |
-| `com.gs.grid.secured` | Security property indicating whether the GSM and GSC should be loaded in a secured mode.  | false (non-secured) |
-| `com.gs.deploy` | The location of the deploy directory of the GSM. | `GSHOME/deploy` |
-| `com.gs.work` | The location of the work directory of the GSM and GSC. | `GSHOME/work` |
