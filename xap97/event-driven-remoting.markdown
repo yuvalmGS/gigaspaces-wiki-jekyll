@@ -460,7 +460,7 @@ public class Value implements ClusterInfoAware {
 {% endhighlight %}
 
 {% info %}
-Note the fact that `clusterInfo` is transient, so it won't be marshalled after injection back to the client.
+Note the fact that `clusterInfo` is transient, so it won't be marshaled after injection back to the client.
 {%endinfo%}
 
 Another example is injecting another service that is defined in the server side directly into the parameter, for example, using Spring `@Autowired` annotation.

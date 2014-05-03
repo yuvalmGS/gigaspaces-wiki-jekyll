@@ -76,7 +76,7 @@ WordCount wordount = space.readById(WordCount.class , idQuery);
 int counterValue = wordount.getMycounter();
 {% endhighlight %}
 
-Another way geting the Counter value without reading the space object back to the client would be via a [Task](./task-execution-over-the-space.html):
+Another way getting the Counter value without reading the space object back to the client would be via a [Task](./task-execution-over-the-space.html):
 
 {% highlight java %}
 public class GetCounterTask implements Task<Integer> {

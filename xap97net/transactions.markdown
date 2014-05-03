@@ -108,7 +108,7 @@ When performing read operations with transactions the transaction isolation leve
 |ExclusiveReadLock | Allows read operations to have exclusive visibility of entities that are not locked by active transactions. |  |
 |ReadCommitted | Allows read operations to have visibility of already committed entities, regardless of the fact that these entities might be updated (with a newer version) or taken under an uncommitted transaction. |This modifier cannot be used together with: RepeatableRead, DirtyRead
 
-Here is an example that shows the use of isalotaion levels;
+Here is an example that shows the use of isolation levels;
 
 {%highlight csharp%}
 
