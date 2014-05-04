@@ -283,7 +283,7 @@ A new Grid Service Manager starts on your local machine, and its output can be v
 A new Grid Service Containers start on your local machine, and its output can be viewed by clicking their names **gsc-1**/**gsc-2** inside the **Hosts** tab.
 The Grid Service Manger automatically detects the Grid Service Containers. Now we have a Service Grid with one manager and two containers up and running!
 
-1. Start +one more+ local **Grid Service Container**, by rigt-clicking **gsa-1** in the **Hosts** tab and selecting **Start GSC**.
+1. Start +one more+ local **Grid Service Container**, by right-clicking **gsa-1** in the **Hosts** tab and selecting **Start GSC**.
 The Service Grid now has 3 **Grid Service Containers**.
 
 {% sub %}(The Service Grid Components started here are _local_ services, all running on your own machine. Naturally, in a production environment, you start them on separate machines, using the startup scripts that the product provides.){% endsub %}
