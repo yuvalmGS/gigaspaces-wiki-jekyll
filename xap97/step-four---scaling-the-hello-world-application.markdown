@@ -181,7 +181,7 @@ First we scale it to 3 instances (Figure 3), and then into 4 instances, divided 
 
 #### Scalability
 
-**Scalability** is the ability to +grow your application+ - i.e. increase its throughput, +without changing code+, and +without sacrificing service levels (latency)+.
+**Scalability** is the ability to grow your application - i.e. increase its throughput, without changing code, and without sacrificing service levels (latency).
 
 **Linear scalability** is the ability to grow as much as needed at fixed hardware/software unit per capacity unit: Adding X hardware unit = getting additional X throughput (again, without sacrificing service levels)- see Figure 5.
 
@@ -283,7 +283,7 @@ A new Grid Service Manager starts on your local machine, and its output can be v
 A new Grid Service Containers start on your local machine, and its output can be viewed by clicking their names **gsc-1**/**gsc-2** inside the **Hosts** tab.
 The Grid Service Manger automatically detects the Grid Service Containers. Now we have a Service Grid with one manager and two containers up and running!
 
-1. Start +one more+ local **Grid Service Container**, by right-clicking **gsa-1** in the **Hosts** tab and selecting **Start GSC**.
+1. Start one more local **Grid Service Container**, by right-clicking **gsa-1** in the **Hosts** tab and selecting **Start GSC**.
 The Service Grid now has 3 **Grid Service Containers**.
 
 {% sub %}(The Service Grid Components started here are _local_ services, all running on your own machine. Naturally, in a production environment, you start them on separate machines, using the startup scripts that the product provides.){% endsub %}
@@ -346,7 +346,7 @@ Before deploying the application with a backup, we first undeploy the currently 
 **Configuring scaling to be partitioned over 2 instances, with 1 backup each**
 
 1. Edit the processor's  **pu.xml** configuration file located under `<GigaSpaces root>/examples/helloworld/processor/src/META-INF/spring` folder.
-1. Uncomment, or add the following SLA bean definition, which contains the deployment configuration, to the **pu.xml** file (the number-of-backups sets the number of backups +per instance+):
+1. Uncomment, or add the following SLA bean definition, which contains the deployment configuration, to the **pu.xml** file (the number-of-backups sets the number of backups per instance):
 
 {% highlight xml %}
 <os-sla:sla
@@ -363,7 +363,7 @@ This compiles the processor into a JAR file, ready for deployment located under 
 {% anchor Deploy 2 with backup %}
 **Deploy the Hello World Processor with 2 Primary and 2 Backup Instances**
 
-1. Start +one more+ local **Grid Service Containers**, by right-clicking **gsa-1** in the **Hosts** tab and selecting **Start GSC**. The Service Grid should now have 4 Grid Service Containers.
+1. Start one more local **Grid Service Containers**, by right-clicking **gsa-1** in the **Hosts** tab and selecting **Start GSC**. The Service Grid should now have 4 Grid Service Containers.
 1. Click the **Deploy Processing Unit Button** ![deploy_processing_unit_button.jpg](/attachment_files/deploy_processing_unit_button.jpg) to open the **Deployment Wizard** dialog.
 1. Click the **Processing Unit** field **...** button to browse for the processing unit JAR file.
 1. Browse to the **hello-processor.jar** JAR file located at `<Example Root>/Processor/PU` folder and select it.
@@ -381,7 +381,7 @@ Our Service Grid consists of 4 Grid Service Containers. When deploying the appli
 (If only 3 Grid Service Containers are available, one of them would have contain two Processing Units and the other two would have contain the remaining 2 Processing Units)
 {% endcomment %}
 
-The naming convention used for such deployments is: <_Processing unit name_>.PU.<_partition ID_> \[_<backup ID>_ (if relevant)\]. Since the mode of a certain Processing Unit instance can change over time, you can determine whether it's actually in primary or backup mode by checking the mode of the space contained in it. This can be done by clicking the **+** sign to the left of the Processing Unit name, to view the space inside it.  The icon ![space_primary2.gif](/attachment_files/space_primary2.gif) represents a space in primary mode, and the icon ![space_backup3.gif](/attachment_files/space_backup3.gif) represents a space in backup mode. When a Processing Unit instance contains an embedded space, its mode (primary/backup) is determined by that of the space.
+The naming convention used for such deployments is: `<Processing unit name>.PU.<partition ID> [<backup ID> (if relevant)]`. Since the mode of a certain Processing Unit instance can change over time, you can determine whether it's actually in primary or backup mode by checking the mode of the space contained in it. This can be done by clicking the **+** sign to the left of the Processing Unit name, to view the space inside it.  The icon ![space_primary2.gif](/attachment_files/space_primary2.gif) represents a space in primary mode, and the icon ![space_backup3.gif](/attachment_files/space_backup3.gif) represents a space in backup mode. When a Processing Unit instance contains an embedded space, its mode (primary/backup) is determined by that of the space.
 In the **GSC* and *GSC-1** tabs in the UI, you can see the Grid Service Containers hosting the primary Processing Units instances. We can see their outputs: each one processes its own subset of the objects.
 
 {% align center %}![output 2.jpg](/attachment_files/output 2.jpg)
