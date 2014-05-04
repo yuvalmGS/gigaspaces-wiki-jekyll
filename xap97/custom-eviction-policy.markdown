@@ -7,9 +7,9 @@ weight: 300
 ---
 
 
-{% summary %}Explains how to manage memory using a Custom Eviction Policy using the SpaceEvictionStrategy Class{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 To manage the eviction activity when running in LRU cache policy mode, you can use the Custom eviction policy API.
 

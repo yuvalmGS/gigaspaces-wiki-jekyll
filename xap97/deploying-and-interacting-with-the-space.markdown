@@ -6,9 +6,9 @@ parent: administrators-guide.html
 weight: 110
 ---
 
-{% summary %}Overview of GigaSpaces in-memory data grid - how to create a data grid, connect to it, and interact with it.{% endsummary %}
+{% summary %}  {% endsummary %}
 
-# Overview
+
 
 This section covers the main APIs of GigaSpaces XAP. It explains how to:
 
@@ -73,15 +73,15 @@ The Space can be instantiated in a number of ways:
 
 {% toczone minLevel=2|maxLevel=3|type=list|separator=pipe|location=top %}
 
-With the first approach, you deploy a Space onto the GigaSpaces Service Grid infrastructure (using the management GUI, the [CLI](./deploy---gigaspaces-cli.html) or the [administration and monitoring API](./administration-and-monitoring-api.html)).
-With the second approach, you create a processing unit that contains an embedded Space, and deploy it onto the GigaSpaces Service Grid infrastructure (using the management GUI, the [CLI](./deploy---gigaspaces-cli.html) or the [administration and monitoring API](./administration-and-monitoring-api.html)).
+With the first approach, you deploy a Space onto the GigaSpaces Service Grid infrastructure (using the management GUI, the [CLI](./deploy-command-line-interface.html) or the [administration and monitoring API](./administration-and-monitoring-api.html)).
+With the second approach, you create a processing unit that contains an embedded Space, and deploy it onto the GigaSpaces Service Grid infrastructure (using the management GUI, the [CLI](./deploy-command-line-interface.html) or the [administration and monitoring API](./administration-and-monitoring-api.html)).
 
 The last two ways of instantiating a space are from within your own application, using Spring or from plain Java code. In both cases, you have to manually start each Space instance.
 
 ## Deploying a Space onto the Service Grid Infrastructure
 
-The service grid infrastructure is composed of one or more [GigaSpaces Containers](./service-grid.html#gsc) (GSCs) and at least one [GigaSpaces Manager](./service-grid.html#gsm). When deploying onto the service grid, the deployment tool you use connects to the GSM and instructs it to provision Space instances to the running GSCs, based on the deployment details (Space topology, number of instances, etc.).
-After starting the appropriate amount of GSCs and GSMs in your cluster (note that as of version 7.0 you can use [The Grid Service Agent](./service-grid.html#gsa) for this), there are a number of tools that can be used to deploy a Space onto the service grid:
+The service grid infrastructure is composed of one or more [GigaSpaces Containers](/product_overview/service-grid.html#gsc) (GSCs) and at least one [GigaSpaces Manager](/product_overview/service-grid.html#gsm). When deploying onto the service grid, the deployment tool you use connects to the GSM and instructs it to provision Space instances to the running GSCs, based on the deployment details (Space topology, number of instances, etc.).
+After starting the appropriate amount of GSCs and GSMs in your cluster (note that as of version 7.0 you can use [The Grid Service Agent](/product_overview/service-grid.html#gsa) for this), there are a number of tools that can be used to deploy a Space onto the service grid:
 
 - [Using the Management UI](#app)
 - [Using the CLI](#cli)
@@ -161,7 +161,7 @@ Partitioned cluster with 2 nodes and a backup for each node:
 gs deploy-space -cluster schema=partitioned-sync2backup total_members=2,1 mySpace
 {% endhighlight %}
 
-To see the full list of options available with this command, refer to [this page](./deploy-space-gigaspaces-cli.html).
+To see the full list of options available with this command, refer to [this page](./deploy-command-line-interface.html).
 
 {% anchor api %}
 
@@ -231,14 +231,14 @@ A-Synchronous replicated cluster should have the following:
   <os-sla:sla cluster-schema="async_replicated" number-of-instances="2" />
 {%endhighlight%}
 
-Refer to [this page](./the-space-component.html) for more details on how to configure the Space component, and to [this page](./configuring-the-processing-unit-sla.html) for more details about the SLA definitions.
+Refer to [this page](./the-gigaspace-interface-overview.html) for more details on how to configure the Space component, and to [this page](./configuring-the-processing-unit-sla.html) for more details about the SLA definitions.
 Once packaged, the processing unit can be deployed onto the service grid using one of the deployment tools (UI, CLI, admin API).
 Refer to [this page](./deploying-onto-the-service-grid.html) for more details on how to deploy your processing unit onto the service grid.
 
 ## Creating the Space via Spring
 
 If you would like to create a Space within your own Spring application, and do not wish to deploy it as a processing unit onto the GigaSpaces service grid, you can create an embedded Space instance within the application's JVM much the same way you would do in a regular processing unit configuration. The main difference with this approach is that when deploying on to the service grid, the GSM automatically starts the right amount of Space instances for you, and assigns the instance ID to each of the instances.
-When creating the Space instance in your own application, you have to provide the instance ID on your own, as described in the [Space URL](./space-url.html) section. Therefore this option is not recommended for large Space clusters.
+When creating the Space instance in your own application, you have to provide the instance ID on your own, as described in the [Space URL](./the-space-configuration.html) section. Therefore this option is not recommended for large Space clusters.
 
 {% highlight xml %}
 <os-core:space id="space" url="/./mySpace?total_members=2&id=1"/>
@@ -252,14 +252,14 @@ ClusterInfo clusterInfo = new ClusterInfo("sync_replicated", 1, null, 10, null);
 IJSpace space = new UrlSpaceConfigurer("/./mySpace").clusterInfo(clusterInfo).space();
 {% endhighlight %}
 
-Refer to [this page](./the-space-component.html) for more details on how to configure the Space component programmatically (click the **Code** tabs in all of the examples).
+Refer to [this page](./the-gigaspace-interface-overview.html) for more details on how to configure the Space component programmatically (click the **Code** tabs in all of the examples).
 
 {% endtoczone %}
 
 # Accessing the Space
 
 The handle to the Space is represented by the low level `IJSpace` interface. When creating the Space in one of the above ways (programmatically, via Spring or within a processing unit), you get a handle to the local Space instance within your JVM.
-If you are connecting to the Space from a remote JVM, you can use all of the above methods, with the exception that [the Space URL](./space-url.html) you should use is a remote URL (using the `jini://` discovery protocol), and you don't have to specify the clustering topology or the instance ID (since your code in that case does not create the Space, it simply connects to an already running Space).
+If you are connecting to the Space from a remote JVM, you can use all of the above methods, with the exception that [the Space URL](./the-space-configuration.html) you should use is a remote URL (using the `jini://` discovery protocol), and you don't have to specify the clustering topology or the instance ID (since your code in that case does not create the Space, it simply connects to an already running Space).
 Here is an example of how you would do this programmatically, or via Spring configuration (from within a processing unit or a plain Spring application):
 
 {% inittab simple_Space|top %}
@@ -333,7 +333,7 @@ As with the read operation, the `GigaSpace` interface also supports asynchronous
 
 - **Clear**: Removes the matched object(s) from the Space, but does not return them to the client like the take operation. Use this operation when you would like to delete certain objects from the Space, but your application does not need to access the removed objects. In general, the clear operation is a bit faster than take, since it does not return anything to the client.
 
-- **Change**: The Change operation allows you to change a specific content of an existing object(s) in the space. Unlike the write operation that may update an existing object, the change operation does not require reading the object and later sending its updated copy with the operation back to the space. The Change operation allow you to [manipulate numerical fields](./counters.html) directly (increment , decrements) directly on the space without reading these back to the client and later writing these back.
+- **Change**: The Change operation allows you to change a specific content of an existing object(s) in the space. Unlike the write operation that may update an existing object, the change operation does not require reading the object and later sending its updated copy with the operation back to the space. The Change operation allow you to [manipulate numerical fields](./the-space-counters.html) directly (increment , decrements) directly on the space without reading these back to the client and later writing these back.
 
 {% info title=Using the Space as a Messaging Bus %}
 The Space can also be used to deliver events (messages) to your application. This is based on its ability to support blocking operations, and the Space's built-in notification API. This section only deals with the data access aspects of the Space. Refer to [this section](./messaging-support.html) for details about the Space's messaging capabilities.

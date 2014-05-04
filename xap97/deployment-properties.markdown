@@ -2,13 +2,13 @@
 layout: post97
 title:  Deployment Properties
 categories: XAP97
-parent: deploying-and-running-the-processing-unit.html
-weight: 10
+parent: deploying-and-running-overview.html
+weight: 400
 ---
 
- {% summary   %}The processing unit can be injected with dynamic property values at deployment time. The mechanism leverages Spring's [`PropertyPlaceholderConfigurer`](http://static.springframework.org/spring/docs/2.5.x/reference/beans.html#beans-factory-placeholderconfigurer) to provide powerful and simple properties-based injection.{% endsummary %}
+ {% summary   %} {% endsummary %}
 
-# Overview
+
 
 When a processing unit is deployed and provisioned, you can inject property values to it only known at deployment time, or in order to further configure the processing unit elements. Injected properties can be either properties that have been explicitly externalized from the [processing unit configuration file](./configuring-processing-unit-elements.html) or properties related to one the platform components (e.g. a space) that can be configured at deployment time. This mechanism is built on top of Spring's support for an externalized properties configuration called [PropertyPlaceholderConfigurer](http://static.springframework.org/spring/docs/2.5.x/reference/beans.html#beans-factory-placeholderconfigurer). This mechanism has been enhanced to provide a powerful yet simple property injection.
 

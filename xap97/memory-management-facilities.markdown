@@ -1,15 +1,18 @@
 ---
 layout: post97
-title:  Memory Management
+title:  Overview
 categories: XAP97
-parent: administrators-guide.html
-weight: 240
+parent: memory-management-overview.html
+weight: 100
 ---
 
+{%summary%}{%endsummary%}
 
+{%comment%}
 {% summary %}Setting Space cache policy, memory usage, and rules for exceeding physical memory capacity.{% endsummary %}
 
 # Overview
+{%endcomment%}
 
 The Memory Management facility is used to assist the client in avoiding a situation where a space server gets into an out-of-memory failure scenario. Based on the configured cache policy, the memory manager protects the space (and the application, in the case it is running collocated with the space) from consuming memory beyond a defined threshold.
 
@@ -171,4 +174,4 @@ The following properties used to control the memory manager.
 A `com.j_spaces.core.MemoryShortageException` or an `org.openspaces.core.SpaceMemoryShortageException` are thrown only when the JVM garbage collection and the eviction mechanism do not evict enough memory. This can happen if the `space-config.engine.memory_usage.low_watermark_percentage` value is too high.
 {%endnote%}
 
-{% children %}
+

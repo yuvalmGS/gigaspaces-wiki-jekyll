@@ -1,16 +1,13 @@
 ---
 layout: post97
-title:  Replication Topologies
+title:  Topologies
 categories: XAP97
 parent: replication.html
 weight: 100
 ---
 
-{% summary %}This page provides a brief description for the different replication topologies{% endsummary %}
+{% summary %} {% endsummary %}
 
-{% info %}
-This page covers details which are specific to replication topologies which are not covered in the [Replication](./replication.html) page. Please be sure to read it before reading this page.
-{% endinfo %}
 
 # Primary Backup Topology
 

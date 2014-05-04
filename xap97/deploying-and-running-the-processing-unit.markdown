@@ -1,14 +1,15 @@
 ---
 layout: post97
-title:  Deploying and Running the Processing Unit
+title:  Overview
 categories: XAP97
-parent: packaging-and-deployment.html
-weight: 200
+parent: deploying-and-running-overview.html
+weight: 100
 ---
 
-{% summary %}This section describes the various options to debug and run your processing units{% endsummary %}
 
+{%comment%}
 # Supporting Multiple Runtime Modes via Processing Unit Containers
+{%endcomment%}
 
 In production, your processing units run on the GigaSpaces service grid, taking advantage of its SLA and monitoring capabilities. However, when developing the application, you typically want to run it from within your IDE or in a more lightweight mode that will not require you to start a complete runtime environment.
 
@@ -33,4 +34,4 @@ The following table summarizes when to use each of the runtime modes
 | Unit test your processing unit or run it in an unmanaged environment | [Standalone](./running-in-standalone-mode.html) | Standalone Processing Unit Container |
 | Run your processing unit in production or to conduct full-blown integration tests | [Managed by the Service Grid](./deploying-onto-the-service-grid.html) | Service Grid Processing Unit Container |
 
-{% children %}
+

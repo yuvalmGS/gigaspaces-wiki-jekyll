@@ -7,9 +7,9 @@ weight: 300
 ---
 
 
-{% summary %}This section describes GigaSpaces IMDG Failover facilities.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 Failover is the mechanism used to route user operations to alternate spaces in case the target space (of the original operation) fails.
 

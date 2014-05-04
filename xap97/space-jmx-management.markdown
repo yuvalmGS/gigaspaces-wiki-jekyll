@@ -2,13 +2,13 @@
 layout: post97
 title:  JMX Management
 categories: XAP97
-parent: managing-and-monitoring-a-running-system.html
-weight: 500
+parent: administration-tools.html
+weight: 600
 ---
 
-{% summary %}Controlling space attributes and operations using the JMX console. {% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
+
 
 The Java Management Extensions (JMX specification) describe an architecture, design patterns, API's, and services for application and network management in the Java programming language. JMX functions beyond a simple API since it can specify the architecture as to how that API is used. It provides the means to construct Java code, create smart Java agents, implement distributed management middleware and managers, and integrate these solutions smoothly into existing management systems. You can integrate such solutions with either HTML or industry standards such as SNMP and WBEM. JMX is dynamic, allowing the monitoring and management of resources in real time while they are created, installed, and implemented. The JMX also works along with JVM, the Java Virtual Machine.
 

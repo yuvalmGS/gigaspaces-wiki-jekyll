@@ -2,13 +2,11 @@
 layout: post97
 title:  ALL IN CACHE-Cache Policy
 categories: XAP97
-parent: memory-management-facilities.html
-weight: 100
+parent: memory-management-overview.html
+weight: 200
 ---
 
-{% summary %}The ALL-In-Cache Cache policy{% endsummary %}
 
-# Overview
 
 When running in `ALL_IN_CACHE` cache policy mode, the space uses only the available physical memory. When running in a persistent space mode and having [Space Persistency](./space-persistency.html) defined, the space data is backed with the underlying database, but the overall capacity of the space does not exceed the capacity of the available physical memory.
 

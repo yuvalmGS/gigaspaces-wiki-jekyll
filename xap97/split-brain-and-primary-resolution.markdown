@@ -6,9 +6,9 @@ parent: data-grid-clustering.html
 weight: 500
 ---
 
-{% summary %}This section describes Data-Grid cluster split brain and primary resolution flow.{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
+
 
 Split brain occurs when there are two or more primary instances running for the same partition. In most cases the reason for such behavior would be a network disruption that does not allow each space instance to communicate with all lookup services running. Usually you will have each space instance communicating with a different lookup service rather all of them (two in most cases).
 

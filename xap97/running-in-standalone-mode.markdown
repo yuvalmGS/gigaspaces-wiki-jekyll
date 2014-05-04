@@ -1,15 +1,15 @@
 ---
 layout: post97
-title:  Running in Standalone Mode
+title:  Standalone Mode
 categories: XAP97
-parent: deploying-and-running-the-processing-unit.html
-weight: 100
+parent: deploying-and-running-overview.html
+weight: 200
 ---
 
-{% compositionsetup %}
-{% summary page|60 %}Explains how to run your processing unit in standalone mode, which means that the processing unit is run under its own self-constructed classloader, based on the processing unit's directory  structure.{% endsummary %}
 
-# Overview
+{% summary %}  {% endsummary %}
+
+
 
 The standalone processing unit container allows you to run a processing unit in standalone mode, which means that the processing unit constructs its own dedicated classloader, and automatically includes it its classpath all of the jar files located under the processing unit's `lib` directory.
 It's implementation class is [`org.openspaces.pu.container.standalone.StandaloneProcessingUnitContainer`](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/pu/container/standalone/StandaloneProcessingUnitContainer.html).

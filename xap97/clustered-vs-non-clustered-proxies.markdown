@@ -3,12 +3,12 @@ layout: post97
 title:  Clustered vs Non-Clustered Proxies
 categories: XAP97
 parent: data-grid-clustering.html
-weight: 50
+weight: 70
 ---
 
-{%summary%}Clustered versus Non-clustered proxies{%endsummary%}
+{%summary%} {%endsummary%}
 
-# Introduction
+
 
 When deploying a Processing Unit(PU) configured with an embedded [Space](./the-space-configuration.html) with a clustered SLA or when running a remote clustered space, a clustered `GigaSpace` proxy is created.
 
@@ -50,7 +50,7 @@ IJSpace space = // get Space either by injection or code creation
 GigaSpace gigaSpace = new GigaSpaceConfigurer(space).clustered(true).gigaSpace();
 {%endhighlight%}
 
-An example of a Remoting Service with a clustered and non-clustered proxy:
+An example of a Remoting Service with a clustered and non-clustred proxy:
 {%highlight java%}
 @RemotingService
 public class MyService implements ClusterInfoAware, IMyService{
@@ -61,7 +61,7 @@ GigaSpace gigaSpaceClustered;
 }
 {%endhighlight%}
 
-Here is how the clustered proxy is constructed:
+Here is how the clustred proxy is constructed:
 {%highlight java%}
 @PostPrimary
 public void postPrimary() {
@@ -70,7 +70,7 @@ gigaSpaceClustered=gigaSpaceEmbedNonClustered.getClustered();
 }
 {%endhighlight%}
 
-An example of a `DistributedTask` implementation with a clustered and non-clustered proxy:
+An example of a `DistributedTask` implementation with a clustered and non-clustred proxy:
 {%highlight java%}
 public class MyTask implements ClusterInfoAware , DistributedTask<Integer, Integer>{
 @TaskGigaSpace
@@ -80,7 +80,7 @@ transient GigaSpace gigaSpaceClustered;
 }
 {%endhighlight%}
 
-Here is how the clustered proxy is constructed:
+Here is how the clustred proxy is constructed:
 {%highlight java%}
 public Integer execute() throws Exception {
 gigaSpaceClustered=gigaSpaceEmbedNonClustered.getClustered();

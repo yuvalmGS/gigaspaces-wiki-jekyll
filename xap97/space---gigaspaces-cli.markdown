@@ -2,12 +2,11 @@
 layout: post97
 title:  Space Command Line Interface
 categories: XAP97
-parent: command-line-interface.html
-weight: 1600
+parent: administration-tools.html
+weight: 20
 ---
 
-{%summary%}Space command line interface  {%endsummary%}
-
+{%summary%}{%endsummary%}
 
 # clean
 

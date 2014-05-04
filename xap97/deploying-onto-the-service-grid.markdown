@@ -1,14 +1,14 @@
 ---
 layout: post97
-title:  Deploying onto the Service Grid
+title:  Deploying onto the Grid
 categories: XAP97
-parent: deploying-and-running-the-processing-unit.html
-weight: 200
+parent: deploying-and-running-overview.html
+weight: 300
 ---
 
-{% summary%}Explains how to deploy your processing unit onto the GigaSpaces [Service Grid](./the-runtime-environment.html) to get automated SLA management and self-healing capabilities{% endsummary %}
+{% summary%}{% endsummary %}
 
-# Overview
+
 
 Deploying your processing unit to the [service grid](./the-runtime-environment.html) is the preferred way to run in your production environment. The service grid provides the following main benefits to every processing unit deployed onto it:
 

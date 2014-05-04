@@ -2,13 +2,13 @@
 layout: post97
 title:  LRU-Cache Policy
 categories: XAP97
-parent: memory-management-facilities.html
-weight: 200
+parent: memory-management-overview.html
+weight: 300
 ---
 
-{% summary %}The LRU Cache policy{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 When running in LRU cache policy mode, the space evicts the "oldest" objects from its memory. "Oldest" objects are determined by the time they were written, updated or read in the space. In a persistent space mode, evicting a space object means that a space object is  simply be removed from the space memory, but is still be available through the underlying RDBMS. The space reloads this object back into the space memory only if it was requested by a specific read operation.
 

@@ -7,9 +7,9 @@ weight: 450
 ---
 
 
-{% summary %}How to call custom business logic when data is replicated in a replicated cluster topology.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 When constructing a replicated space topology you may need to call some business logic when data is replicated. GigaSpaces provides the `IReplicationFilter` plug-in interface [com.j_spaces.core.cluster.IReplicationFilter](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/cluster/IReplicationFilter.html), that allows you to build business logic that is called when data is sent through the replication channel.
 

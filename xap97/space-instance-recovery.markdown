@@ -6,9 +6,9 @@ parent: replication.html
 weight: 400
 ---
 
-{% compositionsetup %}{% summary %}How space instance recovers its data when first started, relocated or after an unexpected failure.{% endsummary %}
+ {% summary %} {% endsummary %}
 
-# Overview
+
 
 Recovery is a process that happens on space instance startup or relocation and used to synchronize the space instance data with another space instance in its replication group.
 

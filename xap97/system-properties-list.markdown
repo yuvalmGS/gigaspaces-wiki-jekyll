@@ -2,8 +2,8 @@
 layout: post97
 title:  System Properties List
 categories: XAP97
-parent: configuring-the-system.html
-weight: 500
+parent: administration-tools.html
+weight: 200
 ---
 
 {% refer %}Refer to the [SystemProperties](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/kernel/SystemProperties.html) class for more details.{% endrefer %}

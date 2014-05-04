@@ -2,11 +2,11 @@
 layout: post97
 title:  Monitoring Tools
 categories: XAP97
-parent: managing-and-monitoring-a-running-system.html
-weight: 600
+parent: administration-tools.html
+weight: 700
 ---
 
-{% summary %}Suggested list of monitoring tools.{% endsummary %}
+
 
 # Suggested Monitoring Tools
 

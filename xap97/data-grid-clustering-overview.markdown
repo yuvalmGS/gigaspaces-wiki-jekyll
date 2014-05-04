@@ -1,17 +1,21 @@
 ---
 layout: post97
-title:  Data Grid Clustering
+title:  Overview
 categories: XAP97
-parent: administrators-guide.html
-weight: 300
+parent: data-grid-clustering.html
+weight: 50
 ---
 
 
-{% summary %}This section describe into details how the In-Memory-Data-Grid clustering works. It goes into the details of the fail-over, load-balancing, and replication facilities used.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 GigaSpaces Data-Grid clustering Scalability and High-Availability are based on the following concepts:
+
+
+
+
 
 ## Scalability
 
@@ -159,3 +163,5 @@ If we choose to use a proper disaster recovery site setup where we ensure that p
 ### Recovery from a Total Failure
 
 When the entire system crashes, it will boot itself from the long-term persistent storage or from a snapshot (new). In that case we may lose some of the data that was kept in memory and wasn't yet delivered to the  long term persistent storage. It is important to note that in a disaster recovery setup that event can happen only when both sites goes down at the same time.  In that case the system would recover itself from the data that was last updated in the long-term storage.
+
+

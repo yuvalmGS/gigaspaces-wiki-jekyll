@@ -6,13 +6,9 @@ parent: replication.html
 weight: 200
 ---
 
-{% summary %}This page describe what is synchronous replication and how to configure it{% endsummary %}
+{% summary %} {% endsummary %}
 
-{% info %}
-This page covers details which are specific to synchronous replication which are not covered in the [Replication](./replication.html) page, the previous page should be read before this one.
-{% endinfo %}
 
-# Overview
 
 In a synchronous replication, the client receives acknowledgement for any replicated operations only after all the space instances in the replication group have performed the operation. This topology is most fitting for the Primary backup topology, where the application needs a guarantee that during a failure of the primary space instance, no already executed operations or saved data will be lost. As a result, this replication type has the highest performance penalty because each operation is not completed until all the target space instances in the group have received and acknowledge the operation.
 
@@ -77,8 +73,12 @@ This throttling can be configured with the following parameters:
 {: .table .table-bordered}
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
-| `cluster-config.groups.group.repl-policy.sync-replication.throttle-when-inactive` | Boolean value. Set to `true` if you want to throttle replicated operations when the channel is in-active (disconnection) | `true` in primary backup `false` in full sync replicated |.
-| `cluster-config.groups.group.repl-policy.sync-replication.max-throttle-tp-when-inactive` | Integer value. If the above is true, this will specify the maximum operations per second the throttle will maintain when the channel is in-active (disconnection), if the last measured throughput when the channel was active was higher than that, the measured throughput will be used instead. | 50,000 operations/second |.
+| `throttle-when-inactive` | Boolean value. Set to `true` if you want to throttle replicated operations when the channel is in-active (disconnection) | `true` in primary backup `false` in full sync replicated |.
+| `max-throttle-tp-when-inactive` | Integer value. If the above is true, this will specify the maximum operations per second the throttle will maintain when the channel is in-active (disconnection), if the last measured throughput when the channel was active was higher than that, the measured throughput will be used instead. | 50,000 operations/second |.
+
+{%note%}
+Prefix the property with 'cluster-config.groups.group.repl-policy.sync-replication.`
+{%endnote%}
 
 To change the default replication settings you should modify the space properties when deployed. You may set these properties via the pu.xml or programmatically. Here is an example how you can set the replication parameters when using the pu.xml:
 
@@ -99,8 +99,12 @@ While the replication channel is operating at asynchronous state due to the reas
 {: .table .table-bordered}
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
-| `cluster-config.groups.group.repl-policy.async-replication.repl-chunk-size` | Number of packets that are replicated as a single chuck each time. | 500 |
-| `cluster-config.groups.group.repl-policy.async-replication.repl-interval-millis` | Time (in milliseconds) to wait from last replication iteration if there are no more packets to replicate (while disconnected) or if the last iteration was not successful due to error | 3000 \[ms\] |
+| `repl-chunk-size` | Number of packets that are replicated as a single chuck each time. | 500 |
+| `repl-interval-millis` | Time (in milliseconds) to wait from last replication iteration if there are no more packets to replicate (while disconnected) or if the last iteration was not successful due to error | 3000 \[ms\] |
+
+{%note%}
+Prefix the property with 'cluster-config.groups.group.repl-policy.async-replication.`
+{%endnote%}
 
 ## Splitting Replication of Large Batches into Smaller Batches
 
@@ -118,4 +122,6 @@ Splitting large batches into chunks is defined using the `cluster-config.groups.
 </os-core:space>
 {% endhighlight %}
 
-{% exclamation %} Splitting large batches into smaller chunks is not supported for transactional operations.
+{% note %}
+Splitting large batches into smaller chunks is not supported for transactional operations.
+{%endnote%}

@@ -7,9 +7,9 @@ weight: 200
 ---
 
 
-{% summary %}This section describes GigaSpaces IMDG Load-balancing and data-partitioning facilities.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Data Load-balancing
+
 
 Load-balancing is essential in any truly scalable architecture, as it enables scaling beyond the physical resources of a single-server machine. In GigaSpaces, load-balancing is the mechanism used by the clustered proxy to distribute space operations among the different cluster members. Each cluster member can run on a different physical machine.
 
@@ -63,7 +63,7 @@ The routing field must implement the `hashCode` method and will be used both whe
 Converting a numeric value to a String and using the string representation as the routing key will give a different load balancing in comparison to a numeric value.
 {% endwarning %}
 
-## Example
+# Example
 
 A cluster is defined with 3 partitions where each partition has one primary and one backup space.
 

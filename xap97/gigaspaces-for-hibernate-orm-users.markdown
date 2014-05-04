@@ -44,7 +44,7 @@ XAP fully supports the [Spring Framework](http://www.springframework.org), and c
 
 Your existing Hibernate-based database integration probably looks like the following: the application uses Hibernate to persist its data directly to the database.
 
-![Hibernate with EhCache.jpg](/attachment_files/Hibernate with EhCache.jpg)
+![Hibernate with EhCache.jpg](/attachment_files/hibernate-with-ehcache.jpg)
 
 ## Step 1: Getting a Free Distributed Two-Level Cache
 
@@ -215,6 +215,7 @@ You must include the following JARs from the Hibernate distribution package:
 
 5. Since your Hibernate objects and their custom type will be eventually be serialized across to wire stored on remote space or replicated into a backup space In-Memoery, these need to be serialized. You should make all your Hibernate objects and their custom fields will be implementing `Serializable`.
 6. Launch your application. The application should instantiate a local cache based on an embedded GigaSpaces space.
+
 ![Hibernate with embedded gs.jpg](/attachment_files/Hibernate with embedded gs.jpg)
 
 7. If you want to use GigaSpaces as a distributed cache, select the distributed topology that interests you from the tabs below.
@@ -322,7 +323,7 @@ This topology requires XAP Premium Edition.
 {%endinfo%}
 
 {% indent 2 %}
-![Hibernate with 2 emedded replicated.jpg](/attachment_files/Hibernate with 2 embedded replicated.jpg)
+![Hibernate with 2 emedded replicated.jpg](/attachment_files/hibernate-with-2-embedded-replicated.jpg)
 {% endindent %}
 
 **To use the embedded replicated topology with two replicated instances:**

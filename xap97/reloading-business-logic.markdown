@@ -7,9 +7,7 @@ weight: 250
 ---
 
 
-{% summary  %}Service reloading allows you to reload business logic without bringing down the Processing Unit.{% endsummary %}
-
-# Overview
+{%summary%}{%endsummary%}
 
 The service reloading feature allows you to reload business logic (Spring beans) without shutting down the application or undeploying a Processing Unit. In order to do this, any reloadable business logic needs to be defined in a special Spring XML file. The Spring XML file is then referenced very similar to the [Space Mode Context Loader](./space-mode-context-loader.html) from inside the pu.xml.
 

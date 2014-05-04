@@ -8,7 +8,7 @@ weight: 10
 
 {%summary%} {%endsummary%}
 
-# Overview
+
 
 GigaSpaces provides an interactive command line tool as part of the product. This can be started using gs.sh/bat command (referred to as **GigaSpaces CLI**).
 

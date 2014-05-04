@@ -6,9 +6,9 @@ parent: replication.html
 weight: 600
 ---
 
-{% summary %} This section describes how to control the replication queue (aka the redo log), what options it provides, and what are the trade-offs involved with each option.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Replication Redo Log
+
 
 On replicated clusters, each member, which is a source that sends replication events to its targets, has a replication redo log. This is a list of pending replication packets that need to be dispatched to the different targets.
 

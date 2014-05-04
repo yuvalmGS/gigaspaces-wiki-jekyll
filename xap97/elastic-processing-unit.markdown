@@ -2,40 +2,33 @@
 layout: post97
 title:  Elastic Processing Unit
 categories: XAP97
-parent: deploying-and-running-the-processing-unit.html
-weight: 300
+parent: packaging-and-deployment.html
+weight: 250
 ---
 
 
-{% summary page %}Explains how to deploy and manage an Elastic Processing Unit (EPU){% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
 
-{% section %}
-{% column width=50% %}
+
 An Elastic Processing Unit (EPU) is a Processing Unit with additional capabilities that simplify its deployment across multiple machines. Containers and machine resources such as Memory and CPU are automatically provisioned based on Memory and CPU requirements. When a machine failure occurs, or when scale requirements change, new machines are provisioned and the Processing Unit deployment distribution is balanced automatically. The PU scale is triggered by modifying the requirements through an API call. From that point in time the EPU continuously maintains the specified capacity (indefinitely, or until the next scale trigger).
-{%endcolumn%}
-{% column width=45% %}
-![archi_elastic.jpg](/attachment_files/archi_elastic.jpg)
-{%endcolumn%}
-{% endsection %}
 
-{% section %}
-{% column width=50% %}
+
+
+
 The EPU has following features:
 
+{%vbar%}
 - SLA based deployment where required memory and cores can be specified.
 - Automatic container lifecycle management.
-- Automatic rebalancing (repartitioning).
+- Automatic re-balancing (repartitioning).
 - Automatic partition count calculation.
 - Scale up/down or in/out without system downtime.
 - Eager and manual scale strategies.
 - Automatic machine provisioning plug-in.
-{% endcolumn %}
-{% column widt=45% %}
-![colored_bands.jpg](/attachment_files/colored_bands.jpg)
-{% endcolumn %}
-{% endsection %}
+{%endvbar%}
+
+
 
 
 Basic steps when using the EPU:

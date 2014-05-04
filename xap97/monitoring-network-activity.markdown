@@ -2,14 +2,14 @@
 layout: post97
 title:  Network Monitoring
 categories: XAP97
-parent: managing-and-monitoring-a-running-system.html
+parent: administration-tools.html
 weight: 500
 ---
 
 
-{% summary %}Monitoring network and usage activity used by the [LRMI]({%currentadmurl%}/tuning-communication-protocol.html) layer between GigaSpaces component.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 Monitoring network and usage activity during runtime gives you the ability to track which client is invoking which methods on each service (e.g a space serving remote client request such as read/write). Which can be very useful to identify issues, such as which remote proxy is causing a high load on a specific space. Or investigating version conflicts and so on. This monitoring exposes the details for both inbound and outbound communication, allowing you to track the activity of the remote clients on services hosted on a specific Jvm, or alternatively track the activity of the proxies in a specific Jvm on remote services.
 

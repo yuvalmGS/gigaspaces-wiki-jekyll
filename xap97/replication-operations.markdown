@@ -6,9 +6,9 @@ parent: replication.html
 weight: 500
 ---
 
-{% summary %} This section describes in detail how each space operation is replicated provides relevant configuration and optimizations .{% endsummary %}
+{% summary %}  {% endsummary %}
 
-# Overview
+
 
 The replication module used to synchronize the data and state between two space instances, but each space operations is handled slightly different to achieve maximum reliability and performance.
 
@@ -75,8 +75,10 @@ For example:
 
 In the example above, the `take` and `update` operations are not replicated , while the `write`, `extend_lease`, `lease_expiration`, and `notify_registration` operations are replicated to all spaces.
 
-{% exclamation %} all possible operations  are - write, take, extend_lease, update, discard, lease_expiration, notify
-{% exclamation %} An empty value means no operations to be replicated.
+{% note %}
+All possible operations  are - write, take, extend_lease, update, discard, lease_expiration, notify
+An empty value means no operations to be replicated.
+{%endnote%}
 
 - **Instance level granularity** - [replication filters](#Replication Filters) can be used to control which objects are replicate and which are not, per object instance.
 

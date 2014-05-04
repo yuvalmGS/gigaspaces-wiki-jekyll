@@ -1,14 +1,14 @@
 ---
 layout: post97
-title:  Obtaining Cluster Information
+title:  Cluster Information
 categories: XAP97
 parent: packaging-and-deployment.html
 weight: 400
 ---
 
-{% summary %}Obtaining information about the clustering topology, member id and other cluster related information can be useful in many cases. Cluster information can be provided to the processing unit instances at deployment time via the class `org.openspaces.core.cluster.ClusterInfo`, which can be injected into the processing unit components{% endsummary %}
+{% summary %}  {% endsummary %}
 
-# Overview
+
 
 One of the core concepts of GigaSpaces processing units is the fact that the clustering topology of the processing unit is determined at deployment time. Therefore, when building a processing unit, there is almost no need to be aware of the actual clustering topology with which the processing unit is deployed.
 However, in some cases you may want your processing unit to be aware of it.
