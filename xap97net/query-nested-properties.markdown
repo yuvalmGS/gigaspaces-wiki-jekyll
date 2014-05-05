@@ -182,9 +182,6 @@ The following example queries for a **Dealer** which contains a **Car** which co
 ... = new SqlQuery<Dealer>("Cars[*].Tags[*] = 'Convertible'");
 {% endhighlight %}
 
-#### Here is a graphical representation of this query:
-
-![/attachment_files/nestedquery.jpg](/attachment_files/nestedquery.jpg)
 
 {%wbr%}
 
@@ -198,12 +195,13 @@ The following example queries for a **Dealer** which has both a **Honda** and a 
 ... = new SqlQuery<Dealer>("Cars[*].Company = 'Honda' AND Cars[*].Company = 'Subaru'");
 {% endhighlight %}
 
-You can use parentheses to specify multiple conditions on the same collection item.
+You can use parentheses to specify multiple conditions on the same collection item. See examples:
 The following example queries for a **Dealer** which has a **Car** whose *company* equals "**Honda**" and **color** equals "**Red**":
 
 {% highlight csharp %}
 ... = new SqlQuery<Dealer>("Cars[*](Company = 'Honda' AND Color = 'Red')");
 {% endhighlight %}
+
 
 {% note title=Caution %}
 Writing that last query without parentheses will yield results which are somewhat confusing:
@@ -215,6 +213,15 @@ Writing that last query without parentheses will yield results which are somewha
 
 This query will match any **Dealer** with a **Honda** car and a **red** car, but not necessarily the same car (e.g. a blue **Honda** and a **red** Subaru).
 {% endnote %}
+
+The following example queries for a **Dealer** which has a **Car** whose *company* equals "**Honda**" and **color** equals "**Red**" and one of the Car nested **Tags** List equals to "Convertible":
+{% highlight csharp %}
+... = new SqlQuery<Dealer>("Cars[*](Company = 'Honda' AND Color = 'Red' AND Tags[*] = 'Convertible')");
+{% endhighlight %}
+
+#### Here is a graphical representation of this query:
+
+![/attachment_files/nestedquery.jpg](/attachment_files/nestedquery.jpg)
 
 ## Indexing
 
