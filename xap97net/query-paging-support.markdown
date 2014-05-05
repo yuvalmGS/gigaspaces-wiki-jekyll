@@ -10,16 +10,7 @@ weight: 600
 
 The [ISpaceIterator](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_ISpaceIterator_1.htm) with the [SpaceIteratorConfig](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_SpaceIteratorConfig.htm)  provides the ability to exhaustively read through all of the objects from the space that match one or more SQLQuery/templates.
 
-{%comment%}
-{%section%}
-{%column width=70% %}
-The [ISpaceIterator](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/IteratorBuilder.html) with the [SpaceIteratorConfig](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/j_spaces/core/client/ISpaceIterator.html)  provides the ability to exhaustively read through all of the objects from the space that match one or more SQLQuery/templates.
-{%endcolumn%}
-{%column width=30% %}
-![paging-iteratorBuilder.jpg](/attachment_files/paging-iteratorBuilder.jpg)
-{%endcolumn%}
-{%endsection%}
-{%endcomment%}
+
 
 
 There are scenarios where the conventional read operation that returns a single space object does not fit and there is a need to return a collection of entries from the space. Generally, an iterator should be used in cases where returning all the entries in one result with the `ReadMultiple` operation will consume too much memory on the client or introduce too much latency before the first space object could be processed.

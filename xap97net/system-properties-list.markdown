@@ -7,8 +7,9 @@ weight: 200
 ---
 
 
-
-{% refer %}Refer to the [SystemProperties](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/kernel/SystemProperties.html) class for more details.{% endrefer %}
+{%comment%}
+{% refer %}Refer to the [SystemProperties](http://www.gigaspaces.com/docs/ {% currentversion %}/com/j_spaces/kernel/SystemProperties.html) class for more details.{% endrefer %}
+{%endcomment%}
 
 {: .table .table-bordered}
 | Property name  | Description | Default value  |

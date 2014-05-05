@@ -484,12 +484,12 @@ gigaSpace.write(someObject, gigaSpace.getDefaultWriteModifiers().add(WriteModifi
 
 For further details on each of the available modifiers see:
 
-- [ReadModifiers]({%javadoc com/gigaspaces/client/ReadModifiers %})
-- [WriteModifiers]({%javadoc com/gigaspaces/client/WriteModifiers%})
-- [TakeModifiers]({%javadoc com/gigaspaces/client/TakeModifiers%})
-- [CountModifiers]({%javadoc com/gigaspaces/client/CountModifiers%})
-- [ClearModifiers]({%javadoc com/gigaspaces/client/ClearModifiers%})
-- [{%color green%}ChangeModifiers{%endcolor%}]({%javadoc com/gigaspaces/client/ChangeModifiers%})
+- [ReadModifiers]({ com/gigaspaces/client/ReadModifiers %})
+- [WriteModifiers]({com/gigaspaces/client/WriteModifiers%})
+- [TakeModifiers]({com/gigaspaces/client/TakeModifiers%})
+- [CountModifiers]({com/gigaspaces/client/CountModifiers%})
+- [ClearModifiers]({ com/gigaspaces/client/ClearModifiers%})
+- [ChangeModifiers]( com/gigaspaces/client/ChangeModifiers%})
 
 # Exception Hierarchy
 
@@ -510,11 +510,11 @@ A default implementation of the exception translator is automatically used, whic
 
 Batch operations many throw the following Exceptions. Make sure you catch these and act appropriately:
 
-- [WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/WriteMultiplePartialFailureException.html)
-- [WriteMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/WriteMultipleException.html)
-- [ReadMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/ReadMultipleException.html)
-- [TakeMultipleException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/TakeMultipleException.html)
-- [ClearException](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/core/ClearException.html)
+- [WriteMultiplePartialFailureException](http://www.gigaspaces.com/docs/{% currentversion %}/index.html?org/openspaces/core/WriteMultiplePartialFailureException.html)
+- [WriteMultipleException](http://www.gigaspaces.com/docs/{% currentversion %}/index.html?org/openspaces/core/WriteMultipleException.html)
+- [ReadMultipleException](http://www.gigaspaces.com/docs/{% currentversion %}/index.html?org/openspaces/core/ReadMultipleException.html)
+- [TakeMultipleException](http://www.gigaspaces.com/docs/{% currentversion %}/index.html?org/openspaces/core/TakeMultipleException.html)
+- [ClearException](http://www.gigaspaces.com/docs/{% currentversion %}/index.html?org/openspaces/core/ClearException.html)
 
 
 # Basic Guidelines

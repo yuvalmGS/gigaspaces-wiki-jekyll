@@ -60,46 +60,7 @@ spaceProxy.TypeManager.RegisterTypeDescriptor(typeDescriptor);
 ILeaseContext<SpaceDocument> lc = spaceProxy.Write (document);
 {%endhighlight%}
 
-{%comment%}
-#### Delta Update
 
-You may update selected space object fields (delta) using the [WriteModifiers.PARTIAL_UPDATE](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?com/gigaspaces/client/WriteModifiers.html) modifier. This option is useful when having objects with large number of fields where you would like to update only few of the space object fields. This optimizes the network utilization and avoids serializing/de-serializing the entire object fields when interacting with a remote space.
-
-#### How to Perform Delta Updates?
-
-When using this modifier, fields that you do not want be update **should have the value `null`**. This means that only fields which are set will be sent from the client into the space to replace the existing field's value. In case of a backup (replica) space, the primary space will replicate only the updated fields (delta) to the replica space. Make sure the updated object include its ID when using this option.
-
-{% note %}
-To use Delta updates you don't have to implement any special interface or have special serialization code. You can use regular POJO as usual.
-{%endnote%}
-
-When updating an object, you can specify 0 (ZERO) as the lease time. This will instruct the space to use the original lease time used when the object has been written into the space.
-
-`PARTIAL_UPDATE` Example:
-
-{% highlight csharp %}
-// initial insert
-Employee emp = new Employee( );
-emp.Id=1;
-emp.FirstName="FirstName";
-emp.LastName="LastName";
-emp.Age= 22;
-
-spaceProxy.Write(emp);
-
-// reading object back from the space
-Employee emp2 = spaceProxy.ReadById<Employee>(1);
-
-// updating only lastName
-emp2.FirstName=null;
-emp2.LastName="LastName2";
-emp2.Age=null;
-
-spaceProxy.Write(emp2, WriteModifiers.PartialUpdate);
-{% endhighlight %}
-
-Alternatively, you can use the [change](./change-api.html) operation and update specific fields or even nested fields or modify collections and maps without having to supply the entire collection or map upon such update.
-{%endcomment%}
 
 #### Time To Live
 
