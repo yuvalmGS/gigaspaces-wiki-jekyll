@@ -16,7 +16,7 @@ Below is a list of new features and improvements in GigaSpaces 10.0.X.
 
 
 {: .table .table-bordered}
-|Key|Summary|Since Version|SalesForce ID|Documentation Link| Platform/s
+| Key | Summary | Fixed in Version | SalesForce ID | Documentation Link | Platform/s
 |:--|:------|:------------|:------------|:-----------------|:----------|
 | GS-11446 | End of life IRemoteJSpaceAdmin.start/stop/restart() operations | 10.0.0 | 8407 | | All |
 | GS-11549 | Remove standalone service grid launchers (GSM, GSC, LUS) from XAP.NET | 10.0.0 |  | | .NET |
@@ -33,5 +33,9 @@ Below is a list of new features and improvements in GigaSpaces 10.0.X.
 | GS-11645 | Configure CHMAP segments for entries, default | 10.0.0 | | | Java |
 | GS-11656 | Notification event triggering is moved to a custom LRMI thread pool (together with space tasks) | 10.0.0 | | | All |
 | GS-11657 | Change lrmi.space-task threadpool system properties to lrmi.custom | 10.0.0 | | | All |
+| GS-11666 | Pojo to Document Conversion should not convert Class,URI,Locale types | 9.7.1, 10.0.0 | | | Java |
 | GS-11659 | .Net add documentation regarding types of local cache | 10.0.0 | 8740 | | .NET |
 | GS-11693 | Enhance nHibernate EDS to support overriding initial load | 10.0.0 | | | .NET |
+| GS-11702 | Added support for configuring a persistent space without custom code in XAP.NET | 9.7.1, 10.0.0 | | | .NET |
+| GS-11706 | Added static ProcessingUnitContainer.Current to provide cluster info to any pu component | 9.7.1, 10.0.0 | | | .NET |
+| GS-11710 | Simplify processing unit configuration in XAP.NET | 9.7.1, 10.0.0 | | | .NET |
