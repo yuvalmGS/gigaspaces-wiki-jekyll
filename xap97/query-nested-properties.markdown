@@ -190,6 +190,13 @@ The following example queries for a **Dealer** which contains a **car** which co
 ... = new SQLQuery<Dealer>(Dealer.class, "cars[*].tags[*] = 'Convertible'");
 {% endhighlight %}
 
+
+#### Here is a graphical representation of this query:
+
+![/attachment_files/nestedquery.jpg](/attachment_files/nestedquery.jpg)
+
+{%wbr%}
+
 ## Multiple Conditions On Collection Items
 
 The scope of the `[*]` operand is bounded to the predicate it participates in. When using it more than once, each occurrence is evaluated separately.

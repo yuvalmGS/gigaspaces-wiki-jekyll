@@ -76,9 +76,9 @@ This throttling can be configured with the following parameters:
 | `throttle-when-inactive` | Boolean value. Set to `true` if you want to throttle replicated operations when the channel is in-active (disconnection) | `true` in primary backup `false` in full sync replicated |.
 | `max-throttle-tp-when-inactive` | Integer value. If the above is true, this will specify the maximum operations per second the throttle will maintain when the channel is in-active (disconnection), if the last measured throughput when the channel was active was higher than that, the measured throughput will be used instead. | 50,000 operations/second |.
 
-{%note%}
+{%warning%}
 Prefix the property with 'cluster-config.groups.group.repl-policy.sync-replication.`
-{%endnote%}
+{%endwarning%}
 
 To change the default replication settings you should modify the space properties when deployed. You may set these properties via the pu.xml or programmatically. Here is an example how you can set the replication parameters when using the pu.xml:
 
@@ -102,9 +102,9 @@ While the replication channel is operating at asynchronous state due to the reas
 | `repl-chunk-size` | Number of packets that are replicated as a single chuck each time. | 500 |
 | `repl-interval-millis` | Time (in milliseconds) to wait from last replication iteration if there are no more packets to replicate (while disconnected) or if the last iteration was not successful due to error | 3000 \[ms\] |
 
-{%note%}
+{%warning%}
 Prefix the property with 'cluster-config.groups.group.repl-policy.async-replication.`
-{%endnote%}
+{%endwarning%}
 
 ## Splitting Replication of Large Batches into Smaller Batches
 

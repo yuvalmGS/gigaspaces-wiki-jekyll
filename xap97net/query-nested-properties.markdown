@@ -182,6 +182,12 @@ The following example queries for a **Dealer** which contains a **Car** which co
 ... = new SqlQuery<Dealer>("Cars[*].Tags[*] = 'Convertible'");
 {% endhighlight %}
 
+#### Here is a graphical representation of this query:
+
+![/attachment_files/nestedquery.jpg](/attachment_files/nestedquery.jpg)
+
+{%wbr%}
+
 ## Multiple Conditions On Collection Items
 
 The scope of the `[*]` operand is bounded to the predicate it participates in. When using it more than once, each occurrence is evaluated separately.
