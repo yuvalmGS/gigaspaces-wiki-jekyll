@@ -191,10 +191,6 @@ The following example queries for a **Dealer** which contains a **car** which co
 {% endhighlight %}
 
 
-#### Here is a graphical representation of this query:
-
-![/attachment_files/nestedquery.jpg](/attachment_files/nestedquery.jpg)
-
 {%wbr%}
 
 ## Multiple Conditions On Collection Items
@@ -207,7 +203,7 @@ The following example queries for a **Dealer** which has both a **Honda** and a 
 ... = new SQLQuery<Dealer>(Dealer.class, "cars[*].company = 'Honda' AND cars[*].company = 'Subaru'");
 {% endhighlight %}
 
-You can use parentheses to specify multiple conditions on the same collection item.
+You can use parentheses to specify multiple conditions on the same collection item. See examples below:
 The following example queries for a **Dealer** which has a **Car** whose *company* equals "**Honda**" and **color** equals "**Red**":
 
 {% highlight java %}
@@ -222,8 +218,18 @@ Writing that last query without parentheses will yield results which are somewha
 {% endhighlight %}
 
 
-This query will match any **Dealer** with a **Honda** car and a **red** car, but not necessarily the same car (e.g. a blue **Honda** and a **red** Subaru).
+This query will match any **Dealer** with a **Honda** car and a **Red** car, but not necessarily the same car (e.g. a blue **Honda** and a **Red** Subaru).
 {% endnote %}
+
+The following example queries for a **Dealer** which has a **Car** whose *company* equals "**Honda**" and **color** equals "**Red**" and one of the Car nested **Tags** List equals to "Convertible":
+{% highlight java %}
+... = new SqlQuery<Dealer>("Cars[*](company = 'Honda' AND color = 'Red' AND tags[*] = 'Convertible')");
+{% endhighlight %}
+
+#### Here is a graphical representation of this query:
+
+![/attachment_files/nestedquery.jpg](/attachment_files/nestedquery.jpg)
+
 
 ## Indexing
 
