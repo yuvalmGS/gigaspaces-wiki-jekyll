@@ -17,6 +17,8 @@ Below is a list of issues that have been fixed in GigaSpaces 10.0.X.
 | GS-11505 | StandaloneProcessingUnitContainerProvider#close() raise Interruption that cause problems in unit tests | 10.0.0 | 8518 | Java |
 | GS-11536 | LRMI threads cause JVM-wide slowdown with parallel reads | 10.0.0 | 8527 | Java |
 | GS-11587 | Concurrency bug in LRU/Off-heap - unpin is called when entry not locked when ifExists waiting templates removed | 10.0.0 | | All |
+| GS-11606 | Deterministic Deployment is not working on secured grid | 10.0.0 | 8642 | All |
+| GS-11615 | SpaceDataSourceSplitter#initialMetadataLoad might causes NPE | 9.7.1, 10.0.0 | 8655 | All |
 | GS-11616 | ReadModifiers missing default constructor | 9.7.1, 10.0.0 | 8657 | Java |
 | GS-11631 | PrimaryZoneController.afterPropertiesSet() throws NullPointerException | 10.0.0 | | Java |
 | GS-11633 | Add Multi thread support to XAResourceImpl | 10.0.0 | 8698 | Java |
@@ -28,4 +30,5 @@ Below is a list of issues that have been fixed in GigaSpaces 10.0.X.
 | GS-11640 | Installmavenrep.bat fails because POMGenerator doesn't generate mongo-datasource pom | 10.0.0 | | Java |
 | GS-11667 | Storing http-sessions in the space is broken | 10.0.0 | | Java |
 | GS-11668 | Jetty shared mode doesn't work | 10.0.0 | | Java |
+| GS-11689 | Protective mode primitiveWithoutNullValue is thrown from replication | 9.7.1, 10.0.0 | 8808 | All |
 | GS-11690 | Linq expressions without where clause throw exception | 9.7.1, 10.0.0 | | .NET |
