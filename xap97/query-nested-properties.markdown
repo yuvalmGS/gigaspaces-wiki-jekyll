@@ -13,7 +13,7 @@ weight: 400
 
 {% summary %}{% endsummary %}
 
-The [SQL Query](./query-sql.html) page shows how to express complex queries on flat space entries (i.e entries which are composed of scalar types like integers and strings), but in reality space entries are often composed of more complex types.
+The [SQL Query](./query-sql.html) page shows how to express complex queries on flat space entries (e.g. entries which are composed of scalar types like integers and strings), but in reality space entries are often composed of more complex types.
 For example, a **Person** class may have:
 
 - An **address** property of type **Address**, which is a user-defined class encapsulating address details (e.g. city, street).

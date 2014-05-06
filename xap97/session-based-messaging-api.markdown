@@ -104,7 +104,7 @@ DataEventSession newDataEventSession(EventSessionConfig, Transaction)
 {% endtabcontent   %}
 
 {% tabcontent  Simple Template Registration%}
-Here is an example for getting an `EventSessionFactory`, generating a `DataEventSession`, and registering for notifications using simple template and cancelling the registeration:
+Here is an example for getting an `EventSessionFactory`, generating a `DataEventSession`, and registering for notifications using simple template and cancelling the registration:
 
 {%highlight java%}
 public class DataSessionEventExample implements RemoteEventListener
@@ -376,7 +376,7 @@ To cancel the notify registration, call the following:
   DataEventSession removeListener(EventRegistration registration)
 {%endhighlight  %}
 
-This frees the relevant resources allocated to manage the notify registration, such as cancelling the automatic lease renewal, unexporting object client stubs, and releasing the client FIFO thread.
+This frees the relevant resources allocated to manage the notify registration, such as cancelling the automatic lease renewal, un exporting object client stubs, and releasing the client FIFO thread.
 {% endtabcontent   %}
 
 {% tabcontent Closing the Session%}
@@ -503,7 +503,7 @@ The `INotifyDelegatorFilter` implementation class should be part of the space cl
 {%endcomment%}
 
 ## Registering Large Number of Listeners
-When having a system that requirs large number of listeners (above few hundreds) the `Multiplex` communication mode should be used. With this mode the amount of resources (threads) used to invoke the listener are shared between all the session listeners. This approach reduces the memory footprint of the client considerably. This option avoiding the need to construct multiple [notify containers|notify container] that may consume large amount of resources when having many of these created. See below how the `MULTIPLEX` communication mode should be used:
+When having a system that requiers large number of listeners (above few hundreds) the `Multiplex` communication mode should be used. With this mode the amount of resources (threads) used to invoke the listener are shared between all the session listeners. This approach reduces the memory footprint of the client considerably. This option avoiding the need to construct multiple [notify containers|notify container] that may consume large amount of resources when having many of these created. See below how the `MULTIPLEX` communication mode should be used:
 {%highlight java%}
  EventSessionFactory factory = EventSessionFactory.getFactory(space.getSpace());
  EventSessionConfig config = new EventSessionConfig();
@@ -529,7 +529,7 @@ To allow a remote client using an Event Session to continue and receive notifica
 
 With this approach we assume the space will be available is some point to acknowledge the registration and continue and send notifications for the matching events back to the client.
 
-See below `com.gigaspaces.events.EventSessionConfig` methods you should use passing the `LeaseListener` implemenation:
+See below `com.gigaspaces.events.EventSessionConfig` methods you should use passing the `LeaseListener` implemetnation:
 {%highlight java%}
 setAutoRenew(boolean renew, net.jini.lease.LeaseListener listener)
 setAutoRenew(boolean renew, net.jini.lease.LeaseListener listener, long renewExpiration, long renewDuration, long renewRTT)
@@ -671,7 +671,7 @@ For further details see [Durable Notifications](./durable-notifications.html).
 ## The UNMATCHED NotifyActionType
 The `UNMATCHED` `NotifyActionType` should be used when you would like to receive notifications for objects which got their value been updated where the object that was initially matches the template no longer matches the template.
 Example:
-You would like to maintain within the client side a list for all the objects which got their status as `true`. You registe for notifications using a template which had the status field as `true`.
+You would like to maintain within the client side a list for all the objects which got their status as `true`. You register for notifications using a template which had the status field as `true`.
 
 An object with status as `true` is written into the space. This triggers a notification about the existence of this object. In some point the object is read from the space, the status field value changed from `true` to `false` and the object is written back into the space with its updated data.
 

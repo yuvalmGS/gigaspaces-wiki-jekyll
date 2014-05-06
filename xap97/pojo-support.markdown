@@ -142,7 +142,7 @@ To force GigaSpaces to ignore a POJO field when the space class is introduced to
 - Use the `@SpaceExclude` annotation on the getter method for the fields you don't want to be included as part of the space class.
 - Use the `@SpaceClass(includeProperties=IncludeProperties.EXPLICIT)` class level annotation and use the `@SpaceProperty()` with each getter method for fields you would like to be considered as part of the space class.
 
-## Space POJO Class medata data files
+## Space POJO Class metadata data file
 
 POJO space mapping files `gs.xml` files can be loaded from:
 

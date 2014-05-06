@@ -164,7 +164,7 @@ LeaseRenewalManager supports [Configuration](http://www.gigaspaces.com/docs/Jini
 
 The time at which a lease is scheduled for renewal is based on the expiration time of the lease, possibly adjusted to account for the latency of the renewal call. The configuration entry roundTripTime, which defaults to ten seconds, represents the total time to make the remote call.
 
-The following pseudocode was derived from the code which computes the renewal time. In this code, rtt represents the value of the roundTripTime:
+The following pseudo code was derived from the code which computes the renewal time. In this code, rtt represents the value of the roundTripTime:
 
 {% highlight java %}
   endTime = lease.getExpiration();
@@ -189,7 +189,7 @@ It is important to note that delta is never less than rtt when the renewal time 
  The use of very short lease durations (at or below rtt) can cause the renewal manager to effectively ignore the lease duration and repeatedly schedule the lease for immediate renewal.
 {% endnote %}
 
-If an attempt to renew a lease fails with an indefinite exception, a renewal is rescheduled with an updated renewal time as computed by the following pseudocode:
+If an attempt to renew a lease fails with an indefinite exception, a renewal is rescheduled with an updated renewal time as computed by the following pseudo code:
 
 {% highlight java %}
   delta = endTime - renew;

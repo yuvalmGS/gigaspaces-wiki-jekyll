@@ -26,7 +26,7 @@ To use the Local View/Cache JMX Monitor:
 
 1. Download the [GSClientCacheJMXMonitorXAP9.jar](/download_files/GSClientCacheJMXMonitorXAP9.jar) and add it into your application classpath.
 2. Add into your local view/cache configuration the `space-config.filters.Statistics.enabled` parameter as demonstrated below.
-3. Add into your application Spring file the `gsClientCacheMonitor` bean. The following example assums you have an application using two master spaces, each has its own client local cache proxy. See how the `GigaSpacesClientCacheJMXMonitor` is configured to specify the different proxies used by the application:
+3. Add into your application Spring file the `gsClientCacheMonitor` bean. The following example assumes you have an application using two master spaces, each has its own client local cache proxy. See how the `GigaSpacesClientCacheJMXMonitor` is configured to specify the different proxies used by the application:
 
 {% highlight java %}
 <os-core:space id="space" url="jini://*/*/mySpace" />

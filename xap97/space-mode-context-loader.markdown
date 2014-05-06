@@ -106,7 +106,7 @@ with the following Processing Unit definition:
 {% endinittab %}
 
 {% tip %}
-If there is more then one gigaSpace proxy in the pu you should bind the context to the gigaSpace instance by setting the giga-space property e.g:
+If there is more then one gigaSpace proxy in the pu you should bind the context to the gigaSpace instance by setting the giga-space property e.g.:
 <os-core:context-loader id="modeExample" location="classpath:/META-INF/spring/mode/mode.xml" giga-space="gigaSpace">
 {% endtip %}
 

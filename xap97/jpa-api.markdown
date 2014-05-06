@@ -58,7 +58,7 @@ If from some reason one needs an OpenJPA maven dependency set, make sure to set 
 
 To enable the GigaSpaces JPA implementation you should specify  the following 3 mandatory properties in your `persistence.xml`:
 
-- `BrokerFactory` should be set to `"abstractstore"` which tells OpenJPA that an alternate `StoreManager` (the layer responsible for interaction with underlying dfatabase) is going to be used.
+- `BrokerFactory` should be set to `"abstractstore"` which tells OpenJPA that an alternate `StoreManager` (the layer responsible for interaction with underlying database) is going to be used.
 - `abstractstore.AbstractStoreManager` should be set to `"org.openspaces.jpa.StoreManager"` which tells OpenJPA to use the OpenSpaces `StoreManager`.
 - `LockManager` should be set to `"none"` since OpenJPA's default lock manager is set to `"version"` (Optimistic locking) which is currently unsupported (it will be supported in one of the future 8.0 service packs)
 
@@ -228,7 +228,7 @@ JPA classes are monitored at runtime for automatic dirty detection. To be transp
 OpenJPA offers 3 options to do so:
 
 1. Enhance at build time using an Ant or a Maven script.
-1. Enahnce at runtime by using OpenJPA's javaagent enhancer.
+1. Enahnce at runtime by using OpenJPA's java agent enhancer.
 1. When using Spring, you can [specify a `LoadTimeWeaver`](http://static.springsource.org/spring/docs/3.0.x/reference/orm.html#orm-jpa-setup-lcemfb) that will enhance the classes at load time.
 
 {% info %}
@@ -431,7 +431,7 @@ emf.close();
 
 # Persisting Enum Properties
 
-JPA allows to persist Enum proeprties using the `@Enumerated` annotation, as shown below:
+JPA allows to persist Enum properties using the `@Enumerated` annotation, as shown below:
 
 {% highlight java %}
 // A Vehicle entity which has an Enum property

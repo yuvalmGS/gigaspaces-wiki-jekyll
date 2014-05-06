@@ -19,7 +19,7 @@ JMS messages implementation; supported and unsupported message types; message co
 The following message types are supported by GigaSpaces:
 
 - **`Message`** -- a simple message that doesn't contain any payload (body).
-- **`BytesMessage`** -- transports a stream of uninterpreted bytes, typically used to duplicate the body of one of the other message types. `BytesMessages` are useful when reading raw data from a disk file, and transferring it 'as is' to another machine and/or location.
+- **`BytesMessage`** -- transports a stream of un interpreted bytes, typically used to duplicate the body of one of the other message types. `BytesMessages` are useful when reading raw data from a disk file, and transferring it 'as is' to another machine and/or location.
 - **`TextMessage`** -- contains a `java.lang.string` for transporting string objects, especially XML documents.
 - **`ObjectMessage`** -- transports any serializable Java object.
 - **`MapMessage`** -- transports a self-defining set of name-value pairs, where names equal strings and values equal Java primitive types.

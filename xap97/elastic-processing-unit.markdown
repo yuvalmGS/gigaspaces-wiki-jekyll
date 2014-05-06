@@ -400,7 +400,7 @@ pu.scale(new EagerScaleConfigurer().create());
 The Eager trigger has the following limitations:
 
 - Number of maximum machines is limited to the number of partitions calculated/defined during the deployment time. This limitation does not exist for stateless processing units.
-- Multiple Eager EPUs can run on the same [Lookup Service](/product_overview/service-grid.html#lus) but on different machines. Machines are marked by starting a Grid Service Agent with a specific zone (With a commandline argument -Dcom.gs.zones=zone1).
+- Multiple Eager EPUs can run on the same [Lookup Service](/product_overview/service-grid.html#lus) but on different machines. Machines are marked by starting a Grid Service Agent with a specific zone (With a command line argument -Dcom.gs.zones=zone1).
 
 {% highlight java %}
 ProcessingUnit pu1 = gsm.deploy(
@@ -593,7 +593,7 @@ numberOfPartitions X numberOfCpuCoresPerMachine
 
 .
 
-- The maximum ammount of memory that can be used by the primary and backup instances is:
+- The maximum amount of memory that can be used by the primary and backup instances is:
 
 {% highlight java %}
 numberOfPartitions X ( 1 + numberOfBackupsPerPartition ) X memoryCapacityPerContainer
@@ -687,7 +687,7 @@ Here are the main configuration properties you may use with the [EagerScaleConfi
 |:-------|:-----|:-----------|:--------|:---------|
 |memoryCapacityInMB|int|Specifies the total memory capacity of the processing unit.| |Yes|
 |numberOfCpuCores|int|Specifies the total CPU cores for the processing unit.| |No|
-|maxConcurrentRelocationsPerMachine|int|Specifies the number of processing unit instance relocations each machine can handle concurrently. By setting this value higher than 1, processing unit rebalancing completes faster, by using more machine cpu and network resources|1|No|
+|maxConcurrentRelocationsPerMachine|int|Specifies the number of processing unit instance relocations each machine can handle concurrently. By setting this value higher than 1, processing unit re balancing completes faster, by using more machine cpu and network resources|1|No|
 |reservedMemoryCapacityPerMachineInMB|int|Sets the expected amount of memory per machine that is reserved for processes other than grid containers. These include Grid Service Manager, Lookup Service or any other daemon running on the system.|1024 MB|No|
 
 # EPU Example

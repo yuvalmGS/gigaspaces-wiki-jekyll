@@ -89,7 +89,7 @@ IDataEventSession dataEventSession = proxy.CreateDataEventSession(eventSessionCo
 An event listener that is registered for an event might be disconnected for the following reasons:
 
 - The space that holds the listener registration template, is no longer available.
-- The proxy that receives the notifications can't handle the amount of incomming events, and creates a [slow consumer]({% currentjavaurl %}/slow-consumer.html) scenario, which causes the space to disconnect the listener.
+- The proxy that receives the notifications can't handle the amount of incoming events, and creates a [slow consumer]({% currentjavaurl %}/slow-consumer.html) scenario, which causes the space to disconnect the listener.
 
 In order to detect and handle listener disconnection, the **auto renewal** mechanism can be used.
 
@@ -97,7 +97,7 @@ When adding a new listener, one of the parameters is the leaseTime. A leaseTime 
 
 The auto renewal idea is that the listener is added with a limited lease, for example 10 seconds, and the proxy automatically renews the lease before it expires. The client can register to the `EventSessionConfig.AutoRenewalFailed` event, and be notified if the auto renewal failed. This approach solves the following issues:
 
-- The client process terminated unexpectedly, and didn't unregister its listener. After the lease expires, the notify template is removed from the space, instead of staying alive forever.
+- The client process terminated unexpectedly, and didn't un register its listener. After the lease expires, the notify template is removed from the space, instead of staying alive forever.
 - If the space is no longer available, then the client is notified that it couldn't renew the listener lease.
 - If the client causes a [slow consumer]({% currentjavaurl %}/slow-consumer.html) scenario, and as a result its listener has been disconnected by the space, then the client is notified that it couldn't renew the listener lease, and it can reregister to the event.
 
@@ -127,7 +127,7 @@ When a notification is sent from the space to the client, the callback method is
 It is possible to reduce network traffic, and concurrent threads that handle notifications, by using the batch notification mechanism. Instead of sending each notification separately, notifications are grouped together in the space, and sent as one batch.
 
 **Configuring data event session with batch notifications**
-Batch notification behavior is determined by the `EventSessionConfig.Batch` property, in conjuction with the `EventSessionConfig.BatchSize` and `EventSessionConfig.BatchTime` properties.
+Batch notification behavior is determined by the `EventSessionConfig.Batch` property, in conjunction with the `EventSessionConfig.BatchSize` and `EventSessionConfig.BatchTime` properties.
 
 The batch notification is sent when either one of these two parameters has been reached or exceeded. Either the pending notification size has reached the `BatchSize`, or the time, in milliseconds, that elapsed from the last sent notification batch, exceeds `BatchTime`.
 

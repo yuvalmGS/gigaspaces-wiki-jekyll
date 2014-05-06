@@ -165,8 +165,8 @@ The relevant Hibernate JAR file and its third party dependencies should be avail
 
 ## Mirror Undeploy
 
-When cluster is undeployed, the mirror service must be undeployed last. This will ensure that all data is persisted properly through mirror async persistency.
-Before primary space is undeployed/redeployed, all data changes are flushed to mirror. This operation is limited by timeout that can be configured using the following property:
+When cluster is un deployed, the mirror service must be un deployed last. This will ensure that all data is persisted properly through mirror async persistency.
+Before primary space is un deployed/redeployed, all data changes are flushed to mirror. This operation is limited by timeout that can be configured using the following property:
 
 {% highlight xml %}
 <!-- default value is 5 minutes -->
@@ -193,7 +193,7 @@ You might want to tune the IMDG and the Mirror activity to push data into the da
 <prop key="cluster-config.mirror-service.interval-opers">50000</prop>
 {% endhighlight %}
 
-With the above configuration the primary partition will replicate its redo log activitities to the Mirror service every 5 seconds or every 50,000 operations. The replication will occure in batches of 10,000 objects per batch.
+With the above configuration the primary partition will replicate its redo log activities to the Mirror service every 5 seconds or every 50,000 operations. The replication will occur in batches of 10,000 objects per batch.
 
 - Tune the data source to commit data into the database in batches.
 - Optimize the database transaction support.

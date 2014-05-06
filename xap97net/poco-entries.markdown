@@ -69,7 +69,7 @@ Starting with .NET 2.0, properties can have separate accessors for getters and s
 {% endinfo %}
 
 {% info title=Read-Only Properties %}
-Read-only properties (getter, without setter), are included in the entry, but when the object is deserialized, the value is not restored, since there's no setter. This enables the space to be queried using such properties. There are two common scenarios for read-only properties:
+Read-only properties (getter, without setter), are included in the entry, but when the object is de serialized, the value is not restored, since there's no setter. This enables the space to be queried using such properties. There are two common scenarios for read-only properties:
 
 - Calculated value -- the property returns a calculated value based on other fields/properties. This isn't a problem, since no data is lost due to the 'missing' setter.
 - Access protection -- the class designer wishes to protect the property from outside changes. This is likely to be a problem, since the field value is lost. To prevent this problem, consider adding a private setter, or excluding the property, and including the field (as explained next).
@@ -77,7 +77,7 @@ Read-only properties (getter, without setter), are included in the entry, but wh
 
 # Indexing
 
-If a property is used frequently when querying the space, you can instruct the space to index it for faster retrieval, by using the `[SpaceProperty]` attribute, and specifing `Index=SpaceIndexType.Basic`. For example:
+If a property is used frequently when querying the space, you can instruct the space to index it for faster retrieval, by using the `[SpaceProperty]` attribute, and specifying `Index=SpaceIndexType.Basic`. For example:
 
 {% highlight csharp %}
 public class Person
@@ -160,12 +160,12 @@ There is no need to explicitly index a field which is marked as SpaceID, because
 
 # Under the Hood
 
-Each public property/field in the object is mapped to a property of the same name and type in the entry. Non-public properties and fields are ignored. This means that any object can be stored in the space - it does not have to inherit from a specific base class, implement an interface, or have any attributes. The only requirement is to have a parameterless constructor (it doesn't have to be public), so the object can be created when being retrieved from the space.
+Each public property/field in the object is mapped to a property of the same name and type in the entry. Non-public properties and fields are ignored. This means that any object can be stored in the space - it does not have to inherit from a specific base class, implement an interface, or have any attributes. The only requirement is to have a parameter less constructor (it doesn't have to be public), so the object can be created when being retrieved from the space.
 
 While this generic approach solves simple scenarios easily, in some cases it is not enough. For example, you may want to exclude a specific property from being stored in the space, or specify that a certain property should be indexed for faster performance. For that end, you can use a set of .NET attributes to control how an object is mapped to an entry. If you don't want to (or can't) use XAP.NET attributes in your code, you can create an xml file that defines those behaviors, commonly called `gs.xml`.
 
 {% info %}
-Since working with .NET attributes is usually simpler and easier thant working with external xml files, this page demonstrates all the features using attributes. However, every feature shown here can also be implemented using `gs.xml`.
+Since working with .NET attributes is usually simpler and easier than working with external xml files, this page demonstrates all the features using attributes. However, every feature shown here can also be implemented using `gs.xml`.
 
 Mapping a .NET object to a space entry does not involve .NET serialization, which means that the `[Serializable]` indication is not required, and in fact ignored. Even so, it is a good design practice to mark all objects stored in the space as `[Serializable]`, to keep in-line with .NET standards.
 {%endinfo%}
@@ -254,7 +254,7 @@ public class Person {...}
 
 # Replication
 
-Some cluster toplogies have replication defined, which means that some or all of the data is replicated between the spaces. In this case, it can be specified whether each class should be replicated or not, by using the `[SpaceClass(Replicate=true)]` or `[SpaceClass(Replicate=false)]` class level attribute. The default is `[SpaceClass(Replicate=true)]`.
+Some cluster topologies have replication defined, which means that some or all of the data is replicated between the spaces. In this case, it can be specified whether each class should be replicated or not, by using the `[SpaceClass(Replicate=true)]` or `[SpaceClass(Replicate=false)]` class level attribute. The default is `[SpaceClass(Replicate=true)]`.
 
 {% highlight csharp %}
 [SpaceClass(Replicate=false)]

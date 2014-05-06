@@ -100,7 +100,7 @@ Deploying via the CLI is based on the `deploy` command. This command accepts var
 
 # Elastic Processing Unit Deployment using the Admin API
 
-When deploying a partitioned Processing Unit or a paritioned Space it is recommended to use the new [Elastic Processing Unit](./elastic-processing-unit.html). This can be done via the [Admin API](./administration-and-monitoring-api.html). The following example shows how to deploy a processing unit as an Elastic PU.
+When deploying a partitioned Processing Unit or a partitioned Space it is recommended to use the new [Elastic Processing Unit](./elastic-processing-unit.html). This can be done via the [Admin API](./administration-and-monitoring-api.html). The following example shows how to deploy a processing unit as an Elastic PU.
 
 ## Step 1 - Start a GigaSpaces agent on each machine:
 
@@ -187,9 +187,9 @@ if (pu != null) {
 }
 {% endhighlight %}
 
-Since we are undeploying an Elastic Processing Unit, this will also terminate all the GSCs hosting the PU.
+Since we are un deploying an Elastic Processing Unit, this will also terminate all the GSCs hosting the PU.
 
-Running the deployment code from the command line is very convinient. Rename the java file extension to groovy, and run it using the following command:
+Running the deployment code from the command line is very convenient. Rename the java file extension to groovy, and run it using the following command:
 
 {% inittab deckName2|top %}
 {% tabcontent Windows %}
@@ -197,7 +197,7 @@ Running the deployment code from the command line is very convinient. Rename the
 {% highlight java %}
 %JSHOMEDIR%\tools\groovy\bin\groovy deploy.groovy
 {% endhighlight %}
-
+                                                                                                                convinient
 {% endtabcontent %}
 
 {% tabcontent Linux %}
@@ -564,7 +564,7 @@ Here is the content of the application.xml file (that resides alongside feeder.j
 
 ## Undeployment Order
 
-When it is time to undeploy dataApp, we would like the feeder to undeploy first, and only then the space. This would reduce the number of false warnings in the feeder complaining that the space is not available. The command `dataApp.undeployAndWait(3, TimeUnit.MINUTES)` undeploys the application in reverse dependency order and waits for at most 3 minutes for all processing unit instances to gracefully shutdown.
+When it is time to undeploy dataApp, we would like the feeder to undeploy first, and only then the space. This would reduce the number of false warnings in the feeder complaining that the space is not available. The command `dataApp.undeployAndWait(3, TimeUnit.MINUTES)` un deploys the application in reverse dependency order and waits for at most 3 minutes for all processing unit instances to gracefully shutdown.
 
 In the example above, the feeder instance will complete the teardown of all the spring beans, and only then the space would undeploy.
 

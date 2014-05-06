@@ -80,7 +80,7 @@ public class Person
 
 # Limitations
 
-*	Supported only for ALL_IN_CACHE cache policy, not supported for LRU and other evictable cache policies
+*	Supported only for ALL_IN_CACHE cache policy, not supported for LRU and other evict able cache policies
 *	Not supported for local-cache/local-view since its only per-partition enforcement
 *	Currently not supported for dynamic (on-the-fly) indices.
 

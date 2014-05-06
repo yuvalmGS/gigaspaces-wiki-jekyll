@@ -168,7 +168,7 @@ public enum SpaceTaskFilterDecision
 }
 {% endhighlight %}
 
-The filter can be used to control if a result should be used or not (the `Skip` decision). If we have enough results and we can move to the reduce phase (the `Break` decision). If we should continue accumulating results (the `Continue` decision). Or if we dont want to use the current result and move to the reduce phase (the `SkipAndBreak` decision).
+The filter can be used to control if a result should be used or not (the `Skip` decision). If we have enough results and we can move to the reduce phase (the `Break` decision). If we should continue accumulating results (the `Continue` decision). Or if we don't want to use the current result and move to the reduce phase (the `SkipAndBreak` decision).
 
 The filter can also be used as a way to be identify that results have arrived and we can do something within our application as a result of that. Note, in this case, make sure that heavy processing should be performed on a separate (probably pooled) thread.
 
@@ -177,7 +177,7 @@ The filter can also be used as a way to be identify that results have arrived an
 Space tasks fully support transactions, an execute request can receive a
 transaction from the client and it will be delegated into the task execution it self once it is being executed at the space node.
 
-When executing a single space task, usally a local transaction will suffice, while when executing a distributed space task, a distributed transaction will be required.
+When executing a single space task, usually a local transaction will suffice, while when executing a distributed space task, a distributed transaction will be required.
 
 The transaction creation, commit and abort normally should be done at the client according to the result.
 

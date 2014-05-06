@@ -193,7 +193,7 @@ The default is `[SpaceClass(Persist=true)]`.
 
 # Replication
 
-Some cluster toplogies have replication defined, which means that some or all of the data is replicated between the spaces. In this case, it can be specified whether each class should be replicated or not, by using the `[SpaceClass(Replicate=true)]` or `[SpaceClass(Replicate=false)]` class level attribute.
+Some cluster topologies  have replication defined, which means that some or all of the data is replicated between the spaces. In this case, it can be specified whether each class should be replicated or not, by using the `[SpaceClass(Replicate=true)]` or `[SpaceClass(Replicate=false)]` class level attribute.
 
 {% highlight csharp %}
 [SpaceClass(Replicate=false)]

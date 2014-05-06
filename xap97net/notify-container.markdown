@@ -591,7 +591,7 @@ public Data ProcessData(IEventListenerContainer sender, DataEventArgs<Data> e)
 
 When a notification is received, it occurs asynchronously in a separate thread. That thread is part of the space proxy resource pool that is in charge of receiving and executing notifications code. As a result, special care should be taken when the event listening method execution is not very short, because it could hold the proxy resource for too long, and eventually exhaust it, which causes notifications to get lost. If the event listening method needs to execute code that takes some time, it is recommended to use the `QueuedEventHandling` feature.
 
-When this feature is enabled, each event that is received is put into a queue, and the notifiying thread is released immediately. The queue is processed by a different thread or threads. Doing this keeps the proxy resource pool free. The number of threads that are processing the events together, can be determined using the `QueuedEventHandlersPoolSize` property. The queue size limit is configured using the `QueuedEventsSizeLimitProperty`. When the limit is reached, the notify thread blocks until it can insert the event into the queue. This is done in order to avoid the client running out of memory when it process events too slowly, and the queue keeps accumulating.
+When this feature is enabled, each event that is received is put into a queue, and the notifying thread is released immediately. The queue is processed by a different thread or threads. Doing this keeps the proxy resource pool free. The number of threads that are processing the events together, can be determined using the `QueuedEventHandlersPoolSize` property. The queue size limit is configured using the `QueuedEventsSizeLimitProperty`. When the limit is reached, the notify thread blocks until it can insert the event into the queue. This is done in order to avoid the client running out of memory when it process events too slowly, and the queue keeps accumulating.
 
 Here is how the notify container can be configured:
 
@@ -725,7 +725,7 @@ public void ExceptionHandler(object sender, ContainerExceptionEventArgs e)
 
 ## Subscribing to the UserExceptionOccured Event
 
-It is possible to be notified when a user exception occurred, by subscribing to the UserExceptionOccurred event. This arguments of this event contain the entire DataEventArgs of the original DataEventArrived. By default, any event that is thrown inside the event listener scope, results in transaction rollback if the container is set to be transactional. This can be overriden if the user exception handler sets the event state to: ignored.
+It is possible to be notified when a user exception occurred, by subscribing to the UserExceptionOccurred event. This arguments of this event contain the entire DataEventArgs of the original DataEventArrived. By default, any event that is thrown inside the event listener scope, results in transaction rollback if the container is set to be transactional. This can be overridden if the user exception handler sets the event state to: ignored.
 
 Here is an example of how to subscribe to this event:
 

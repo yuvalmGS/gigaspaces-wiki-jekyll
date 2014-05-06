@@ -35,7 +35,7 @@ The application is designed to record orders placed for specific accounts. The o
 
 An order also has a status which reflects its current state. The states an order can be in include:
 
-1. New (nonterminal state; an order has been placed, but no validation or processing of the order has occurred)
+1. New (non terminal state; an order has been placed, but no validation or processing of the order has occurred)
 1. Account not found (terminal state; an order has been placed with an invalid account key)
 1. Pending (nonterminal state; the order has been found to have a valid account key)
 1. Insufficient funds (terminal state; at the time of processing, the account did not have a balance large enough to process a "buy" order)
@@ -492,7 +492,7 @@ After we pass the first aspect of our test, we call the `Validator` again with a
 This test has no reliance whatsoever on the data grid. Due to how the event modeling in GigaSpaces XAP is configured, however, we can assert that our `Validator` event handler is working as specified. The only question left is whether our event handler is configured properly; we can set up a test for this, too, although it requires a Spring configuration.
 
 {% tip %}
-Actually, it doesn't require a Spring configuration. But since our deployment environment **will** be Spring, we should use Spring to set up our configuration for testing. This allows the test to serve as an example of the configuration reqiurements as well as serving as a test of the event handler itself.
+Actually, it doesn't require a Spring configuration. But since our deployment environment **will** be Spring, we should use Spring to set up our configuration for testing. This allows the test to serve as an example of the configuration requirements as well as serving as a test of the event handler itself.
 {% endtip %}
 
 What's happening here?

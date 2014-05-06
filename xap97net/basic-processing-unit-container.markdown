@@ -48,7 +48,7 @@ This configuration file specifies that the container that should be deployed is 
 
 # Automatic Space Proxy Creation And Management
 
-The container can create and manage the lifecycle of space proxies, and reduces the need from the user to properly dispose proxies or shutdown embedded spaces when the container is undeployed. A managed space proxy can also be created in the container by configuring it with a configuration file.
+The container can create and manage the lifecycle of space proxies, and reduces the need from the user to properly dispose proxies or shutdown embedded spaces when the container is un deployed. A managed space proxy can also be created in the container by configuring it with a configuration file.
 
 The following config file will cause the container to create and manage an embedded space proxy:
 
@@ -76,7 +76,7 @@ The following config file will cause the container to create and manage an embed
 
 # Basic Processing Unit Components
 
-There can be different user components that are part of the processing unit. Such components can be automatically generated and managed by the container by creating a class, which represent the logical component, and marking it with the \[BasicProcessingUnitComponent\] attribute. Optionally, the component can mark methods with the \[ContainerInitializing\] and \[ContainerInitialized\] which will be called when the managing basic ontainer is initializing and after it is initialized correspondigly. Moreover, it can implement the `IDisposable` interface which will be called once the managing container is disposing upon undeployment.
+There can be different user components that are part of the processing unit. Such components can be automatically generated and managed by the container by creating a class, which represent the logical component, and marking it with the \[BasicProcessingUnitComponent\] attribute. Optionally, the component can mark methods with the \[ContainerInitializing\] and \[ContainerInitialized\] which will be called when the managing basic container is initializing and after it is initialized correspondingly. Moreover, it can implement the `IDisposable` interface which will be called once the managing container is disposing upon undeployment.
 
 Here's an example of a basic component which keeps a reference to a space proxy which is managed by the container:
 

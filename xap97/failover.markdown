@@ -27,7 +27,7 @@ Failover and Recovery process includes the following steps (we assume spaces dep
 6. Backup read existing space objects from the primary space (aka memory recovery). This might take some time with few million space objects. GigaSpaces using multiple threads with this activity. You can tune this by modifying the recovery batch size and also the amount of recovery threads.
 7. Primary clears its redo log (During the above step) and starts to accumulate incoming destructive events (write , update , take) within its redo log. This is one of the reasons why the redo log size can have limited size in many cases. You can use the redo-log-capacity to configure the redo-log size. For example: If the recovery takes 30 sec and the client performs 1000 destructive operations/sec -- your redo log size can be 30,000.
 8. Backup completes reading space objects from primary.
-9. Primary replicates redo log content to the backup (via the async replication channel) -- In this point backup getting also sycn replication events from primary. You can control the redo log replication speed using the async replication batch size.
+9. Primary replicates redo log content to the backup (via the async replication channel) -- In this point backup getting also sync replication events from primary. You can control the redo log replication speed using the async replication batch size.
 10. Once the redo replication completed -- Recovery done. Backup is ready to act as a primary.
 
 To speed up the recovery time you can override the following properties:

@@ -147,7 +147,7 @@ In the next step we are creating the NHibernate mapping file:
 
 ## NHibernate Session Factory Configuration File
 
-NHibernate requires a session factory that creates new sessions over the database for each operation executed on it. You can create such a session factory, either with a configuration file or by code. This walkthrough demonstrates a simple configuration file for the session factory, over a MySQL database server into a database named dotnetpersistency. These parameters are configured in the `Connection` string property.
+NHibernate requires a session factory that creates new sessions over the database for each operation executed on it. You can create such a session factory, either with a configuration file or by code. This walkthrough demonstrates a simple configuration file for the session factory, over a MySQL database server into a database named `dotnetpersistency`. These parameters are configured in the `Connection` string property.
 
 
 {% highlight xml %}

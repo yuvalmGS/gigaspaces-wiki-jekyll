@@ -80,7 +80,7 @@ application.xml file describes the application dependencies:
 {% endgcloak %}
 
 
-# undeply application
+# undeploy application
 
 #### Syntax
 

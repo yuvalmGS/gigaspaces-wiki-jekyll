@@ -39,7 +39,7 @@ This section describes in detail how each space operation is replicated provides
 This section describes how to control the replication queue (aka the redo log), what options it provides, and what are the trade-offs involved with each option.
 
 
-- [Replication paremeters](./replication-parameters.html){%wbr%}
+- [Replication parameters](./replication-parameters.html){%wbr%}
 This page contains all the parameters that can be configured as part of the replication configuration.
 
 

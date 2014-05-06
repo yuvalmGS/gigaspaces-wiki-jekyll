@@ -106,7 +106,7 @@ When using client cache, you use a two-layered cache architecture: The first lay
 
 ![side_cache-lazy-localcache.jpg](/attachment_files/side_cache-lazy-localcache.jpg)
 
-The client cache size is limited to the client process heap size. The client-side cache is updated automaticaly once the master copy of the object within the IMDG is updated. The client cache can be implemented using the following configurations:
+The client cache size is limited to the client process heap size. The client-side cache is updated automatically once the master copy of the object within the IMDG is updated. The client cache can be implemented using the following configurations:
 
 - [Local Cache]({%latestjavaurl%}/local-cache.html) - On-demand client cache loading data based on client activity. This type of client cache evicts data once the client available memory drops below a configurable value.
 - [Local View]({%latestjavaurl%}/local-view.html) - Pre-fetch client cache loading data based on set of SQL queries. This client cache does not evict data. This client cache is designed to be read-only and support both queries and reads based on ID.
