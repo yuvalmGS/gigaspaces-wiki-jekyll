@@ -68,7 +68,7 @@ Step 2. Package the installed files into a zip file (or any other compression to
 Step 3. Unzip the package on the target machine(s) wherever you prefer.
 
 {% note %}
-If you plan to use XAP.NET with .NET 4.0, make sure that the **Visual C++ 2010 Redistributable Package** [x86](http://www.microsoft.com/download/en/details.aspx?id=5555)  [x64](http://www.microsoft.com/download/en/details.aspx?id=14632)) is installed on the target machine (this is required only for manual installation - if the msi is installed the C++ redist package is installed automatically if needed).
+If you plan to use XAP.NET with .NET 4.0, make sure that the **Visual C++ 2010 Redistributable Package** [x86](http://www.microsoft.com/download/en/details.aspx?id=5555)  [x64](http://www.microsoft.com/download/en/details.aspx?id=14632)) is installed on the target machine (this is required only for manual installation - if the msi is installed the C++ redistribution package is installed automatically if needed).
 {%endnote%}
 
 The final touch is to configure the location of XAP.NET. This can be achieved in one of the following ways:

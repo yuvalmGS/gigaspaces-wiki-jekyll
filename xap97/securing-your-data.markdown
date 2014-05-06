@@ -264,7 +264,7 @@ GigaSpace localView = new GigaSpaceConfigurer(configurer.localView()).gigaSpace(
 
 # Space Filters
 
-{% refer %}[OpenSpaces Space Filter support]./the-space-component.html#SpaceFilters), [Space Filters](./space-filters.html){% endrefer %}
+{% refer %}[OpenSpaces Space Filter support]./the-space-component.html#SpaceFilters), [Space Filters](./the-space-filters.html){% endrefer %}
 
 Filters are interceptors inside the GigaSpaces Space which allow implementation of user-defined logic based on Space events. Some filters need to perform operations on the embedded Space. If secured, the filter needs to have sufficient privileges for its operations.
 
@@ -384,7 +384,7 @@ public class SimpleFilter {
 
 # Custom Access Control
 
-Custom Access control using Space Filters allows for access decisions based on user/role/data relationships. The `SpaceContext` filter invocation parameter holds the `SecurityContext` of the current operation. This context provides you with `UserDetails`, the `Authentication` and `AuditDetails`. Based on these, you can enforce custom access decisions (ie allow or disallow the operation).
+Custom Access control using Space Filters allows for access decisions based on user/role/data relationships. The `SpaceContext` filter invocation parameter holds the `SecurityContext` of the current operation. This context provides you with `UserDetails`, the `Authentication` and `AuditDetails`. Based on these, you can enforce custom access decisions (e.g. allow or disallow the operation).
 
 {% info %}
 Note that the `SpaceContext` may be `null` in cases related to replication/recovery and filter operations such as "`notify-trigger`". In these cases, there is no user context.

@@ -167,7 +167,7 @@ var query = from p in spaceProxy.Query<Person>()
             select p; 
 {% endhighlight %}
 
-Another option is to test if the member is part of a collection, (a.k.a IN clause in traditional SQL). For example, to query for entries whose *Name* is one of the items of a given array: 
+Another option is to test if the member is part of a collection, (aka IN clause in traditional SQL). For example, to query for entries whose *Name* is one of the items of a given array:
 {% highlight csharp   %}
 var query = from p in spaceProxy.Query<Person>() 
             where new String[] {"Smith", "Doe"}.Contains(p.Name) 

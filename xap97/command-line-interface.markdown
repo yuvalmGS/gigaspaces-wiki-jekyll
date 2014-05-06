@@ -23,7 +23,7 @@ This tool provides many commands that can be used to manage and gather informati
 
 #### Description
 
-The `help` comand displays the syntax of a specified CLI command, or a list of all available commands.
+The `help` command displays the syntax of a specified CLI command, or a list of all available commands.
 
 #### Options
 
@@ -94,7 +94,7 @@ The following prints a numbered list of GSA services, and you can choose a GSA s
 
     Enter a number of service to gsa start-gsc or "c" to cancel :
 
-Example fo gsa shutdown when specific host name provided:
+Example for gsa shutdown when specific host name provided:
 
     gs> gsa shutdown -host pc-lab43
     total 1
@@ -255,7 +255,7 @@ Each option adds to (or subtracts from) the default information listed. You can 
 
 The `list` command uses the lookup service to extract the information regarding the services.
 
-A service's entry in the lookup is leased and kept until the next renewal attempt fails. If the service is not properly shutdown, i.e. abruptly terminated, it doesn't unregister itself from the lookup service. Thus, attempts to call `list` will still display the service until its lease expires.
+A service's entry in the lookup is leased and kept until the next renewal attempt fails. If the service is not properly shutdown, i.e. abruptly terminated, it doesn't un register itself from the lookup service. Thus, attempts to call `list` will still display the service until its lease expires.
 
 For defaults and configuration options, refer to [Jini Lookup Service configuration]({%currentadmurl%}/network-lookup-service-configuration.html) settings for `minMaxServiceLease` property.
 
@@ -344,7 +344,7 @@ None.
 
 #### Description
 
-The `set` comand sets the Service Grid system environment variables.
+The `set` command sets the Service Grid system environment variables.
 
 #### Options
 
@@ -402,7 +402,7 @@ This example sets new locations for the properties `com.gigaspaces.lib` and `com
 
 #### Description
 
-The `stats` comand provides statistics from the Grid Service Container (GSC) and Grid Service Monitor (GSM) of the local machine. The following statistics are reported:
+The `stats` command provides statistics from the Grid Service Container (GSC) and Grid Service Monitor (GSM) of the local machine. The following statistics are reported:
 
 {: .table .table-bordered}
 | Statistic | Decription |

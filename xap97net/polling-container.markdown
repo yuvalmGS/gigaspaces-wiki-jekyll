@@ -341,9 +341,9 @@ XAP.NET comes with several built-in receive operation-handler implementations:
 
 {: .table .table-bordered}
 |Receive Operation Handler|Description|
-| `TakeReceiveOperationHandler` |Performs a single blocking Take operation, with the receive timeout. When used in conjuction with batch events, first tries to perform TakeMultiple. If no values are returned, performs a blocking Take operation, with the receive timeout.|
-| `ReadReceiveOperationHandler` |Performs a single blocking Read operation, with the receive timeout. When used in conjuction with batch events, first tries to perform ReadMultiple. If no values are returned, performs a blocking Read operation, with the receive timeout.|
-| `ExclusiveReadReceiveOperationHandler` |Performs a single Read operation, under an exclusive read lock (similar to "select for update" in databases), with the receive timeout. Exclusive read lock mimics the Take operation, without actually taking the Entry from the space. When used in conjuction with batch events, First tries to perform ReadMultiple. If no values are returned, performs a blocking Read operation, with the receive timeout.
+| `TakeReceiveOperationHandler` |Performs a single blocking Take operation, with the receive timeout. When used in conjunction with batch events, first tries to perform TakeMultiple. If no values are returned, performs a blocking Take operation, with the receive timeout.|
+| `ReadReceiveOperationHandler` |Performs a single blocking Read operation, with the receive timeout. When used in conjunction with batch events, first tries to perform ReadMultiple. If no values are returned, performs a blocking Read operation, with the receive timeout.|
+| `ExclusiveReadReceiveOperationHandler` |Performs a single Read operation, under an exclusive read lock (similar to "select for update" in databases), with the receive timeout. Exclusive read lock mimics the Take operation, without actually taking the Entry from the space. When used in conjunction with batch events, First tries to perform ReadMultiple. If no values are returned, performs a blocking Read operation, with the receive timeout.
 
 {% warning %}
 This receive operation handler must be used within a transaction.|
@@ -633,7 +633,7 @@ pollingEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAd
 
 # Trigger Receive Operation
 
-When configuring the polling event container to perform its receive operation, and event actions under a transaction, a transaction is started and commited for each unsuccessful receive operation, which results in a higher load on the space. The polling event container allows pluggable logic to be used in order to decide if the actual receive operation should be performed or not. This logic, called the trigger receive operation, is performed outside the receive transaction boundaries. The following interface is provided for custom implementation of this logic:
+When configuring the polling event container to perform its receive operation, and event actions under a transaction, a transaction is started and committed for each unsuccessful receive operation, which results in a higher load on the space. The polling event container allows pluggable logic to be used in order to decide if the actual receive operation should be performed or not. This logic, called the trigger receive operation, is performed outside the receive transaction boundaries. The following interface is provided for custom implementation of this logic:
 
 {% highlight csharp %}
 public interface ITriggerOperationHandler<TData>
@@ -727,9 +727,9 @@ During the life-cycle of the polling container, two types of exceptions might be
 
 The User Exception is an exception that occurs during the invocation of the user event listener. The Container Exception is an exception that occurs anywhere else during the life-cycle of the container (e.g. during the receive or trigger operation handler).
 
-## Subscribing to Container Exception Occured Event
+## Subscribing to Container Exception Occurred Event
 
-It is possible to be notified when a container exception occured, by subscribing to the ContainerExceptionOccured event, and get a reference to the exception.
+It is possible to be notified when a container exception occurred, by subscribing to the ContainerExceptionOccurred event, and get a reference to the exception.
 
 Here is an example of how to subscribe to this event:
 
@@ -759,7 +759,7 @@ public class SimpleListener
 {% highlight csharp %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
-pollingEventListenerContainer.ContainerExceptionOccured += ExceptionHandler;
+pollingEventListenerContainer.ContainerExceptionOccurred += ExceptionHandler;
 {% endhighlight %}
 
 {% highlight csharp %}
@@ -774,9 +774,9 @@ public void ExceptionHandler(object sender, ContainerExceptionEventArgs e)
 
 {% endinittab %}
 
-## Subscribing to User Exception Occured Event
+## Subscribing to User Exception Occurred Event
 
-It is possible to be notified when a user exception occured, by subscribing to the UserExceptionOccured event. This arguments of this event contain the entire DataEventArgs of the original DataEventArrived. By default, any event that is thrown inside the event listener scope results in a transaction rollback, if the container is set to be transactional. This can be overriden if the user exception handler sets the event state to: ignored.
+It is possible to be notified when a user exception occurred, by subscribing to the UserExceptionOccurred event. This arguments of this event contain the entire DataEventArgs of the original DataEventArrived. By default, any event that is thrown inside the event listener scope results in a transaction rollback, if the container is set to be transactional. This can be overridden if the user exception handler sets the event state to: ignored.
 
 Here is an example of how to subscribe to this event:
 
@@ -806,7 +806,7 @@ public class SimpleListener
 {% highlight csharp %}
 PollingEventListenerContainer<Data> pollingEventListenerContainer = // create or obtain a reference to a polling container
 
-pollingEventListenerContainer.UserExceptionOccured += ExceptionHandler;
+pollingEventListenerContainer.UserExceptionOccurred += ExceptionHandler;
 {% endhighlight %}
 
 {% highlight csharp %}

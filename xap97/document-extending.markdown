@@ -12,7 +12,7 @@ weight: 200
 # Overview
 {%endcomment%}
 
-While documents provide us with a dynamic schema, they force us to give up Java's type-safety for working with typeless key-value pairs. GigaSpaces supports extending the SpaceDocument class to provide a type-safe wrapper for documents which is much easier to code with, while maintaining the dynamic schema.
+While documents provide us with a dynamic schema, they force us to give up Java's type-safety for working with type less key-value pairs. GigaSpaces supports extending the SpaceDocument class to provide a type-safe wrapper for documents which is much easier to code with, while maintaining the dynamic schema.
 
 {% comment %}
 ![document_arch.jpg](/attachment_files/document_arch.jpg)
@@ -26,7 +26,7 @@ While documents provide us with a dynamic schema, they force us to give up Java'
 
 Let's create a type-safe document wrapper for the **Product** type described in the [Document Support](./document-api.html) page. The extensions are:
 
-- Provide a parameterless constructor, since the type name is fixed.
+- Provide a parameter less constructor, since the type name is fixed.
 - Provide type-safe properties, but instead of using private fields to store/retrieve the values, use the getProperty/setProperty methods from the SpaceDocument class.
 
 Here's an example (only parts of the properties have been implemented to keep the example short):

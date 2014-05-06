@@ -122,21 +122,21 @@ When the connection between two nodes fails, the primary node logs all the trans
 
 ### Network partition with the long term persistency
 
-If the communication with the long-term persistency datastore fails, the replica will log all the operations till the connection gets re-established. The log is also replicated to a backup node to ensure that the data won't be lost in case the primary partition fails before the data was successfully committed to the long-term storage.
+If the communication with the long-term persistency data store fails, the replica will log all the operations till the connection gets re-established. The log is also replicated to a backup node to ensure that the data won't be lost in case the primary partition fails before the data was successfully committed to the long-term storage.
 
 ### Network partition between two or more data center sites
 
 Most people referred to scenarios where two sites can live in two separate locations and continue to work independently in a case of network partition as THE reference scenario for partition tolerance. It is important to note that there are two class of multi-site deployments that are fundamentally different as it relates to the network partition:
 
 - Disaster Recovery Site - This often located in close geographical proximity to the primary site and is backed by high-bandwidth and redundant network.
-- Geographically Distributed Sites over Internet WAN - In this case we have multiple sites that are spread over the globe. Unlike disaster recovery sites those sites tend to operate under lower SLA's and significantly higher latency. The recommended approach for dealing with multisite network partition would be fairly different in each of the categories that are mentioned above:
+- Geographically Distributed Sites over Internet WAN - In this case we have multiple sites that are spread over the globe. Unlike disaster recovery sites those sites tend to operate under lower SLA's and significantly higher latency. The recommended approach for dealing with multi site network partition would be fairly different in each of the categories that are mentioned above:
 
 ### Disaster Recovery Site
 
 Disaster recovery sites are very much like any node in a local network but often live in different network segments and with higher latency than local networks. Nodes within a cluster can be tagged with a zones tag to mark their data-center affinity. The system can use this information to automatically provision primary and backup nodes between the two sites. It will use the zone tag to ensure that primary and backup are always spread between two data centers.
 Consistency & Availability - The consistency and availability mode would be just the same as LAN based deployment as described above but the performance and throughput per partition would be lower due to the higher latency associated with the synchronous replication.
 
-- Partition Tolerance - The system will continue to function even in a case where entire site fails or become disconnected. The system will continue to work through the available site.  The system will also rebalance itself as soon as the communication between both sites gets re-established in order that the load will be evenly distributed between the sites.
+- Partition Tolerance - The system will continue to function even in a case where entire site fails or become disconnected. The system will continue to work through the available site.  The system will also re balance itself as soon as the communication between both sites gets re-established in order that the load will be evenly distributed between the sites.
 
 ### Geographically Distributed sites over internet WAN
 

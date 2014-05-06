@@ -128,4 +128,4 @@ public class MyReplicationFilter implements IReplicationFilter {
 
 # Change and Space Filters
 
-[Space Filter](./space-filters.html) can intercept a `FilterOperationCodes.BEFORE_CHANGE` and `FilterOperationCodes.AFTER_CHANGE` events, and in that events the `DataSyncChangeSet` can be extracted from the ISpaceFilterEntry using the `ChangeDataSyncOperation.getChangeSet(IFilterEntry)` method.
+[Space Filter](./the-space-filters.html) can intercept a `FilterOperationCodes.BEFORE_CHANGE` and `FilterOperationCodes.AFTER_CHANGE` events, and in that events the `DataSyncChangeSet` can be extracted from the ISpaceFilterEntry using the `ChangeDataSyncOperation.getChangeSet(IFilterEntry)` method.

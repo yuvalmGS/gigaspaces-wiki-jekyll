@@ -207,7 +207,8 @@ Supported queries:
 
 - `name is NOT NULL`
 
-note: java types Short, Float, BigDecimal and BigInt supported only =,<> quieries >,<,>=,<= is not supported.
+note: java types Short, Float, BigDecimal and BigInt supported only =,<> queries >,<,>=,<= is not supported.
 
-Unsupported quieries:
+Unsupported queries:
+Unsupported queries:
 - Contains is unsupported

@@ -18,7 +18,7 @@ There are 5 parameters that control the scaling behavior:
 | MaxConcurrentConsumers  | Maximum number of consumers that wait and process events. | 1 |
 | DynamicScaleSampleRate  | After how many iterations the scaling detection mechanism should work. | 10 |
 | IdleIterationsThreshold | After how many idle iterations a consumer is considered idle. | 1 |
-| BusyIterationsThreshold | After how many unidle iterations a consumer is considered busy. | 10 |
+| BusyIterationsThreshold | After how many un idle iterations a consumer is considered busy. | 10 |
 
 The scaling is managed by a single consumer, which is considered as the main consumer. There is always at least one active consumer, therefore the main consumer is always alive. After the `DynamicScaleSampleRate` number of iterations, the main consumer checks if all the other consumers are busy. A consumer is considered busy if it processed an event in the last `BusyIterationsThreshold` number of iterations. If all the consumers are busy, and the active number of consumers is less than the `MaxConcurrentConsumers`, a new consumer is spawned. If there is a consumer which is not busy, the main consumer checks if there is a need to scale down the number of consumers. It does so by iterating over all the active consumers, and checking if one of them is idle. A consumer is considered idle if for the last `IdleIterationsThreshold` number of iterations, it did not process a single event. If there is at least one consumer which is idle, then one (and only one) of the currently idle consumers is stopped.
 Here is an example of how these properties can be configured:

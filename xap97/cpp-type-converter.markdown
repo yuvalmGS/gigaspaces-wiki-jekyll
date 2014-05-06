@@ -73,7 +73,7 @@ void	UserMessageSerializer::PostDeserialize(IEntry* pNewObject)
 {% endhighlight %}
 
 {% info %}
-These functions extend the functionality of the generated serializer (`UserMessageSerializer.cpp`). The first function `PreSerialize` converts the map field to two vectors before the serialization. The second function `PostDeserialize` converts the two vectors back to a map field after the desrealization.
+These functions extend the functionality of the generated serializer (`UserMessageSerializer.cpp`). The first function `PreSerialize` converts the map field to two vectors before the serialization. The second function `PostDeserialize` converts the two vectors back to a map field after the de serialization.
 {%endinfo%}
 
 Step 3. Handle the c++ serializer code generation, build the shared library (DLL) from your extension code, and place the library in the appropriate directory.

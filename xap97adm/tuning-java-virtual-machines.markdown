@@ -90,7 +90,7 @@ The `UseBiasedLocking` JVM option impacts GigaSpaces performance when running sy
 For more details, see the [Java Tuning White Paper](http://java.sun.com/performance/reference/whitepapers/tuning.html).
 {% endtip %}
 
-`-XX:+UseBiasedLocking` enables a technique for improving the performance of uncontended synchronization. An object is "biased" toward the thread which first acquires its monitor via a monitorenter bytecode or synchronized method invocation; subsequent monitor-related operations performed by that thread are relatively much faster on multiprocessor machines. Some applications with significant amounts of uncontended synchronization may attain significant speedups with this flag enabled; some applications with certain patterns of locking may see slowdowns, though attempts have been made to minimize the negative impact.
+`-XX:+UseBiasedLocking` enables a technique for improving the performance of un contended synchronization. An object is "biased" toward the thread which first acquires its monitor via a monitorenter byte code or synchronized method invocation; subsequent monitor-related operations performed by that thread are relatively much faster on multiprocessor machines. Some applications with significant amounts of un contended synchronization may attain significant speedups with this flag enabled; some applications with certain patterns of locking may see slowdowns, though attempts have been made to minimize the negative impact.
 
 # Tuning 64-bit JVM
 

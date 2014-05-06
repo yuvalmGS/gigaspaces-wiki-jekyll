@@ -28,7 +28,7 @@ Starting with XAP 8.0, all GigaSpaces threads running within the JVM, using the 
 |LRMI Selector Read and Write#| See the [Communication Protocol](./tuning-communication-protocol.html) for details. |com.gs.transport_protocol.lrmi.selector.threads |Server|
 |LRMI async Selector#|Client side, handles async invocation, i.e executors, asyncRead/take. |4 Threads|Server|
 |Pending Answers-pool#| Responsible for sending a callback to template based waiting  operations (read/take). |space-config.engine.min\_threads, space-config.engine.max\_threads|Server|
-|Notifier-pool#| Responsible to dispath notification to client side. Used with the [Notify Container]({%currentjavaurl%}/notify-container.html) and [Session Based Messaging API]({%currentjavaurl%}/session-based-messaging-api.html). See the [Scaling Notification Delivery]({%currentjavaurl%}/notify-container.html#Scaling Notification Delivery) for details.| space-config.engine.notify\_min\_threads , space-config.engine.notify\_max\_threads| Server|
+|Notifier-pool#| Responsible to dispatch notification to client side. Used with the [Notify Container]({%currentjavaurl%}/notify-container.html) and [Session Based Messaging API]({%currentjavaurl%}/session-based-messaging-api.html). See the [Scaling Notification Delivery]({%currentjavaurl%}/notify-container.html#Scaling Notification Delivery) for details.| space-config.engine.notify\_min\_threads , space-config.engine.notify\_max\_threads| Server|
 |Processor-pool#|Pool for space operations post processing that can be done asynchronously to user operation. Transaction cleanup, notifications etc.  |space-config.engine.min\_threads , space-config.engine.max\_threads |Server|
 |SG LeaseReaper  | Used by the Service Grid | Single Thread |Server|
 |Template Expiration Manager Timer | The main thread of expiration manager. Wakes up on each expiration period to find the expired templates. | Single Thread per space | Server|
@@ -59,7 +59,7 @@ Starting with XAP 8.0, all GigaSpaces threads running within the JVM, using the 
 |Scheduled System Boot Thread|Used when the system starts|Single Thread| Server|
 |SLAThresholdTaskPool#|Used by the Service Grid|Single Thread| Server|
 |CapabilityChannel|Used by the Service Grid|Single Thread| Server|
-|DynamicSmartStub-InvHandlerCache-SelfCleaningTable$Cleaner|Used by LRMI for backround cleanup|Single Thread|Server|
+|DynamicSmartStub-InvHandlerCache-SelfCleaningTable$Cleaner|Used by LRMI for background cleanup|Single Thread|Server|
 |ClassLoaderCache-SelfCleaningTable$Cleaner|Used by LRMI to cleanup unused classes|Single Thread|Server|
 |ProvisionFailurePool#|Used by the Service Grid. Monitors the running services| |Server - GSM|
 |ProvisionPool#|Used by the Service Grid. Monitors the running services| |Server - GSM|

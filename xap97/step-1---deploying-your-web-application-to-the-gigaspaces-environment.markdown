@@ -21,7 +21,7 @@ parent: your-first-web-application.html
 {% endcomment %}
 
 {% excerpt %}
-**Step summary**: Learn how to **deploy an existing stadard web application into the GigaSpaces environment**, benefitting from the platform's self healing and dynamic load blanacing capabilities{% endexcerpt %}
+**Step summary**: Learn how to **deploy an existing standard web application into the GigaSpaces environment**, benefitting from the platform's self healing and dynamic load balancing capabilities{% endexcerpt %}
 
 {% comment %}
 ========================================================================================
@@ -150,7 +150,7 @@ Here's the code snippet from `SessionContents.jsp` that displays the session att
 </html>
 {% endhighlight %}
 
-When openning this page in a web browser, it looks as follows:
+When opening this page in a web browser, it looks as follows:
 
 ![plain-welcome.jpg](/attachment_files/plain-welcome.jpg)
 {% endgcloak %}
@@ -216,7 +216,7 @@ web.threadPool.minThreads=15
 web.threadPool.maxThreads=100
 {% endhighlight %}
 
-- By using the command line (when deploying using the command line). You can add deployment properties as arguments to the pudeploy command. These arguments will override the values in the `pu.properties` file. This can be done as follows:
+- By using the command line (when deploying using the command line). You can add deployment properties as arguments to the pu deploy command. These arguments will override the values in the `pu.properties` file. This can be done as follows:
 `<gs root>/bin/gs.(sh/bat) pudeploy -properties embed://web.port=8080;web.sslPort=9443 <.war file path>`
 
 - By using the GUI (when deploying using the GUI). In the deployment wizard, click **Next**, and then the "+" button in the next screen. You can then specify the deploy properties you want (these will override the values in the `pu.properties` file):
@@ -287,7 +287,7 @@ The solution for this is the GigaSpaces **Apache Load Balancing Agent**. This ag
 
 To configure Apache to work with the load balancing agent you should do the following:
 
-1. Make sure Apache loads the load balancing module. This is done by adding the following statements to the Apache configuration, typically located under `<Apache home>/conf/httpd.conf` (usually these statements are already there, some of them might be commented out so you need to uncomment them):
+1. Make sure Apache loads the load balancing module. This is done by adding the following statements to the Apache configuration, typically located under `<Apache home>/conf/httpd.conf` (usually these statements are already there, some of them might be commented out so you need to un comment them):
 
 {% highlight java %}
 LoadModule proxy_module modules/mod_proxy.so
@@ -334,7 +334,7 @@ In the next section you will learn how to start the load balancing agent and tie
 # Putting It All Together
 
 Now that we've gone over all the details, let's see everything in action. In this section we will start multiple GSCs and deploy 3 application instances on them. We will then start Apache HTTP server and the Apache load balancer agent, and connect to the application from the load balancer. We will also verify that the load balancer is aware of all the running instances.
-Finally, we will terminate one of the running containers and watch the failover and self-healing process in action. Note that we will not use the GigaSpaces Agent this time, simply because the following steps are better illustrared without it. Let's get started:
+Finally, we will terminate one of the running containers and watch the failover and self-healing process in action. Note that we will not use the GigaSpaces Agent this time, simply because the following steps are better illustrated without it. Let's get started:
 
 1. Build the application [as described earlier in this tutorial](#BuildDirections)
 1. Start the GigaSpaces agent by calling `<gs root>/bin/gs-agent.(sh/bat)`.

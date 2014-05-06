@@ -43,7 +43,7 @@ Since java properties start with a lowercase letter, whereas .Net properties usu
 Arrays of these types are supported as well.
 You can also use .NET enumerations, which are treated as their underlying .NET type. Java enums are not supported.
 If your class contains a field whose type is not in the table, you can use `SpaceExclude` to exclude it from the space.
-Some of the types have different charactaristics in .NET and Java (signed\unsigned, nullable\not nullable, precision, etc.) This can lead to runtime exceptions (e.g. trying to store `null` in a .NET structure) or unexpected results (e.g. copying values between signed and unsigned fields).
+Some of the types have different characteristics in .NET and Java (signed\unsigned, nullable\not nullable, precision, etc.) This can lead to runtime exceptions (e.g. trying to store `null` in a .NET structure) or unexpected results (e.g. copying values between signed and unsigned fields).
 {%endvbar%}
 
 
@@ -79,7 +79,7 @@ The following types are supported by the space for matching and interoperability
 1. In .Net a `byte` is unsigned, whereas in java a `byte` is signed.
 2. These types can be either nullable or not nullable in .Net, whereas in java they are always nullable.
 3. In .Net a `DateTime` is measured in ticks (=100 nanoseconds) since 1/1/0001, whereas in java a `Date` is a measured in milliseconds since 1/1/1970.
-4. The types `Decimal` (.Net) and `BigDecimal` (java) have different precision and range (see .Net and java documentation for more details). In addition, be aware that serialization/deserialization of these types is relatively slow, compared to other numeric types. As a rule of thumb these types should not be used, unless the other numeric types presicion/range is not satisfactory.
+4. The types `Decimal` (.Net) and `BigDecimal` (java) have different precision and range (see .Net and java documentation for more details). In addition, be aware that serialization/de serialization of these types is relatively slow, compared to other numeric types. As a rule of thumb these types should not be used, unless the other numeric types precision/range is not satisfactory.
 
 # Arrays and Collections support
 

@@ -65,7 +65,7 @@ Machines with Multi-Core CPUs can leverage this functionality in an optimal mann
 
 ## Min Latency and Max Throughput
 
-Both of the resource pools elements might have different lifespan. Usually, once a connection is established between a client and a server, it will be open as long as the client is still running. The connection will be terminated once a client will be terminated or when the client will not perform any network activity for some time and the connection will be identified as idle. See the watchdog description below how this behavior should be configured. The same goes for LRMI connection thread, it will be available as long as there are clients accessing the server. A connection thread will return into the pool and the pool will shrink itself once there would not be any remote activity for some time. This timeout is configured via the  `com.gs.transport_protocol.lrmi.threadpool.idle_timeout`. LRMI threads and connection are used also for server to server communication such as data replication.
+Both of the resource pools elements might have different life span. Usually, once a connection is established between a client and a server, it will be open as long as the client is still running. The connection will be terminated once a client will be terminated or when the client will not perform any network activity for some time and the connection will be identified as idle. See the watchdog description below how this behavior should be configured. The same goes for LRMI connection thread, it will be available as long as there are clients accessing the server. A connection thread will return into the pool and the pool will shrink itself once there would not be any remote activity for some time. This timeout is configured via the  `com.gs.transport_protocol.lrmi.threadpool.idle_timeout`. LRMI threads and connection are used also for server to server communication such as data replication.
 
 The size of the LRMI connection pool and LRMI thread pool will impact the latency response time for a remote request. Once any of these pools is fully exhausted a client request will be suspended until a free connection or thread will be available.
 
@@ -125,7 +125,7 @@ To allow the above , the client must set the `java.rmi.server.hostname` property
 
 # LRMI Configuration
 
-The `LRMI` configuration options set as system proprties. They are listed below:
+The `LRMI` configuration options set as system properties. They are listed below:
 
 {: .table .table-bordered}
 | System Property | Description | Default value | Server/Client Setting | Unit | Can be overridden at the client side|

@@ -76,7 +76,7 @@ public class Person
 Zones provide a powerful tagging mechanism for GSC which allow users to group together multiple GSCs and restrict processing unit instances only to these GSC. They also support SLA restrictions to make sure a primary and a backup of the same partition never end up in the same zone. This can be used to tag racks or data centers and make sure that high availability is maintained across them. When using the latter functionality, in many cases one zone has priority over another (e.g. the data center which is represents is geographically closer to your application's end users). 9.7 adds support for prioritized zones. When tagging as zone as prioritized for a specific processing unit, the GSM will extend its best effort to make sure that all primary instances of that processing unit will be started on the prioritized zone. You can refer to the [Deterministic Deployment Section](/xap97/configuring-the-processing-unit-sla.html#deterministic-deployment) in the docs for more details.
 
 # Change API Enhancements
-The change API now includes an option to get the previous value ofa changed field. XAP 9.7 also includes a new mechanism called [Change Extension](/xap97/change-api.html) that encapsulates common usage patterns (such as Add and Get) into simpler to use API calls. Here's an example for an add and get operation that uses the change extenstion mechanism:
+The change API now includes an option to get the previous value of a changed field. XAP 9.7 also includes a new mechanism called [Change Extension](/xap97/change-api.html) that encapsulates common usage patterns (such as Add and Get) into simpler to use API calls. Here's an example for an add and get operation that uses the change extension mechanism:
 
 {% highlight java %}
 GigaSpace space = // ... obtain a space reference
@@ -105,7 +105,7 @@ The web UI has a new functionality that enables you to view the activity in the 
 
 # Better Separation of Thread Pools 
 
-Starting from version 9.7, XAP implements separate thread pools for client notifications and task executions, and these operations no longer use the same thread pool as regular CRUD operations. This makes the space more robust and less sensitive to excesive load of tasks and notification clients. 
+Starting from version 9.7, XAP implements separate thread pools for client notifications and task executions, and these operations no longer use the same thread pool as regular CRUD operations. This makes the space more robust and less sensitive to excessive load of tasks and notification clients.
 
 # New Documentation Infrastructure and Enhanced Search 
 

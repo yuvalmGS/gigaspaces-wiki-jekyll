@@ -177,7 +177,7 @@ Core runtime for the space component of GigaSpaces, above loggers relate to this
 com.gigaspaces.filters.level = INFO
 {% endhighlight %}
 
-Space filters are described [here]({%currentjavaurl%}/space-filters.html)
+Space filters are described [here]({%currentjavaurl%}/the-space-filters.html)
 
 ### Space Persistency
 

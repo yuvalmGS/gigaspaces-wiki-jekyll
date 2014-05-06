@@ -193,7 +193,7 @@ The shared instantiation mode creates a single Jetty instance per GSC (JVM). Its
 
 The main difficulties when working with this mode come from the fact that it is possible that more than one web application instance will be running on the same GSC (JVM). In order to solve this problem, by default, when working in shared mode, the web context path is the actual web context, appended by a running number. For example, when deploying two instances of a petclinic web application, the first instance will be deployed under `petclinic_1` web app context, while the second will be deployed under `petclinic_2`.
 
-The ServiceGrid itself allows you to configure that only a single instance of a web application will be deployed on a GSC, using the **max-instnaces-per-vm** parameter. In this case, the default behavior of appending a running number to the context is not needed, and it can be disabled by changing the deploy time property `web.context.unique` to `true`.
+The ServiceGrid itself allows you to configure that only a single instance of a web application will be deployed on a GSC, using the **max-instances-per-vm** parameter. In this case, the default behavior of appending a running number to the context is not needed, and it can be disabled by changing the deploy time property `web.context.unique` to `true`.
 
 There are many features that are exposed and can control how the shared instantiation model can be used. Following is an explanation of all the different parts within the **jetty.shared.pu.xml** and their nature.
 

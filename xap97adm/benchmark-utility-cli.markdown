@@ -102,7 +102,7 @@ Other possible values are:
 |-writerate [Max Rate msg/sec] |will limit the first operation rate (msg in 1 second) for all threads |
 |-notify |registers for notifications on all events |
 |-parallel |parallel execution of the operations |
-|-clusteredoperation |This parameter indicates if operation will be performed using a clusterd proxy |
+|-clusteredoperation |This parameter indicates if operation will be performed using a clustered proxy |
 |-returnlease |This parameter indicates if write operation will return a lease object|
 
 

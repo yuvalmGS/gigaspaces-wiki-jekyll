@@ -28,7 +28,7 @@ The mapping can be configured differently on each machine. If, for example, this
 
 In other words, each machine in the network needs to have a translation file for each _other_ machine it needs to connect to - if those machines use network-translated IPs.
 
-The location of the mapping file (file should be located within the class path) can be overriden by using the following system property:
+The location of the mapping file (file should be located within the class path) can be overridden by using the following system property:
 
     com.gs.transport_protocol.lrmi.network-mapping-file=<file location>
 .

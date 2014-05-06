@@ -11,7 +11,7 @@ weight: 100
 {% summary %}Describing the built-in BasicProcessingUnitContainer which is an extension of the AbstractProcessingUnitContainer class.{% endsummary %}
 
 {% info %}
-This page coveres additional details about the BasicProcessingUnitContainer which are not covered in [Basic Processing Unit Container](./basic-processing-unit-container.html) page, the previous page should be read before this one.
+This page covers additional details about the BasicProcessingUnitContainer which are not covered in [Basic Processing Unit Container](./basic-processing-unit-container.html) page, the previous page should be read before this one.
 {% endinfo %}
 
 # Configuring The Container Automatic Scanning
@@ -190,7 +190,7 @@ public class Feeder
 The method which has one of the attributes \[ContainerInitialized\] or \[ContainerInitializing\] can have zero arguments or one argument which will be injected with the managing container
 {%endnote%}
 
-# Creating a Space Proxy Programatically
+# Creating a Space Proxy Programmatically
 
 In same cases, the `SpaceProxies` config element does not suffice in order to construct a space proxy. For instance if you want to start a space with an external data source, or some other custom properties. In these cases, the `CreateSpaceProxy` method should be used in one of the container initialization events. If this proxy is used by other components in the processing unit, it should be put in the `ContainerInitializing` event in order for it to be available for the other components when they are created, otherwise you can put it in the `ContainerInitialized` just as well. Here's a simple example of how to use the `CreateSpaceProxy`:
 
@@ -251,4 +251,4 @@ For full API please read the API documentation file.
 
 # Security
 
-When the processing unit is deployed with injected security properties (Using the Management Center or the [Service Grid admin api](./administration-and-monitoring-api.html)), the basic processing unit container will automatically attach this security context to all the proxies that it manages. Both for proxies that are created automatically from the configuration and proxies that are created programatically using the container `CreateSpaceProxy` method.
+When the processing unit is deployed with injected security properties (Using the Management Center or the [Service Grid admin api](./administration-and-monitoring-api.html)), the basic processing unit container will automatically attach this security context to all the proxies that it manages. Both for proxies that are created automatically from the configuration and proxies that are created programmatically using the container `CreateSpaceProxy` method.

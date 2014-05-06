@@ -222,7 +222,7 @@ GigaSpaces c++ API is compatible with other important GigaSpaces components and 
 The GigaSpaces c++ package includes the following components:
 
 - **Examples** -- this is in fact most of the package. It includes a simple hello world example, c++ benchmark, and a full c++ SBA example. For more details, see the [c++ homepage](./xap-cpp.html).
-- **Documentation** -- Doxygen ([http://www.stack.nl/~dimitri/doxygen](http://www.stack.nl/~dimitri/doxygen)) and CHM-based API reference documentaion.
+- **Documentation** -- Doxygen ([http://www.stack.nl/~dimitri/doxygen](http://www.stack.nl/~dimitri/doxygen)) and CHM-based API reference documentation.
 - Open-source and GigaSpaces API `h` files.
 - **Runtime libraries** -- core c++ API, memory allocator library, and a dynamic loader library used when deploying your c++ application into the Grid.
 - **Compile scripts and source code** -- the GigaSpaces c++ package is provided out-of-the-box for Windows and Linux 32 and 64-bit platforms. If you are using other platforms, such as MaxOS, HP, AIX, etc., it is possible to build the c++ libraries on your own. Full source code and compile scripts can be provided.

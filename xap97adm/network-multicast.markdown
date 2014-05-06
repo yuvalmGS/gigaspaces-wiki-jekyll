@@ -12,7 +12,7 @@ weight: 200
 
 Multicast is the delivery of information to a group of destinations simultaneously, using the most efficient strategy to deliver messages over each link of the network only once, and create copies only when the links to the destinations split.
 
-The word "multicast" is typically used to refer to IP Multicast, the implementation of the multicast concept on the IP routing level, where routers create optimal spanning tree distribution paths for datagrams sent to a multicast destination address in realtime. However, there are also other implementations of the multicast distribution strategy listed below.
+The word "multicast" is typically used to refer to IP Multicast, the implementation of the multicast concept on the IP routing level, where routers create optimal spanning tree distribution paths for data grams sent to a multicast destination address in realtime. However, there are also other implementations of the multicast distribution strategy listed below.
 (Source - wikipedia: [http://en.wikipedia.org/wiki/Multicast](http://en.wikipedia.org/wiki/Multicast)).
 
 GigaSpaces uses multicast in the following cases:
@@ -47,14 +47,14 @@ When multicast is disabled global lookup service should not be use. You should u
 gs-agent gsa.global.lus 0 gsa.lus 1 gsa.gsm.global 0 gsa.gsm 1
 {% endhighlight %}
 
-Machines not running the lookup service should have thier agent started using:
+Machines not running the lookup service should have their agent started using:
 {% highlight bash %}
 gs-agent gsa.global.lus 0 gsa.lus 0 gsa.gsm.global 0 gsa.gsm 0
 {% endhighlight %}
 
 The GSC count should be added to the commands above above as usual.
 
-If you can't have multicast enabled within your network you should disable it on the client side and on the service grid side. It will save some CPU actvity performed continously.
+If you can't have multicast enabled within your network you should disable it on the client side and on the service grid side. It will save some CPU activity performed continuously.
 
 # Configuring Multicast on Linux
 
