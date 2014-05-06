@@ -20,7 +20,7 @@ The `com.gs.transport_protocol.lrmi.maxBufferSize` system property controls the 
 
 ## Memory Allocation Behavior
 
-During the data transfer activity the space leverage none-heap buffers to transfer the data (NIO direct buffer) into the target process, but due-to the serialization behavior, the entire data object maintained for a short duration within the JVM heap. These in-transit buffers will be cleared once the JVM garbage collector will request these (weak reference). To allow this activity to have enough memory headroom, you should increase the Space and client heap size to accommodate these transit buffers. The heap size headroom required would be:
+During the data transfer activity the space leverage non-heap buffers to transfer the data (NIO direct buffer) into the target process, but due-to the serialization behavior, the entire data object maintained for a short duration within the JVM heap. These in-transit buffers will be cleared once the JVM garbage collector will request these (weak reference). To allow this activity to have enough memory headroom, you should increase the Space and client heap size to accommodate these transit buffers. The heap size headroom required would be:
 
 {% highlight java %}
 Maximum number of concurrent connections X Maximum Object size
