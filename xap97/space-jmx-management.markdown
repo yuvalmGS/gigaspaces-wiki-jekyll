@@ -20,37 +20,68 @@ A JMX manageable resource can be an application, an implementation of a service,
 
 # Opening JMX
 
-1. The easiest way to open JConsole for a specific service is through the GigaSpaces Management Center:
-    - In the Deployments tab, right-click the GSC, GSM, or LookupService tree node, or
-    - In the Space Browser tab:
-        - In the Grid Tree, right-click the relevant [space container node]({%currentadmurl%}/gigaspaces-browser-tree-panel-and-configuration-panel.html#Container Node), or {% wbr %} ![space_JMX_1_GMC_space_LaunchingJConsoleFromContainerNode_6.5.jpg](/attachment_files/space_JMX_1_GMC_space_LaunchingJConsoleFromContainerNode_6.5.jpg)
-        - Right-click the relevant [space node]({%currentadmurl%}/gigaspaces-browser-tree-panel-and-configuration-panel.html#Space Node) or clustered space node, or {% wbr %}![space_JMX_2_GMC_space_LaunchingJConsoleFromSpaceNode_6.5.jpg](/attachment_files/space_JMX_2_GMC_space_LaunchingJConsoleFromSpaceNode_6.5.jpg)
-        - Right-click the relevant space from the [space network view]({%currentadmurl%}/gigaspaces-browser-tree-panel-and-configuration-panel.html#Spaces Network View):{% wbr %}![space_JMX_3_GMC_space_network_LaunchingJconsole_6.5.jpg](/attachment_files/space_JMX_3_GMC_space_network_LaunchingJconsole_6.5.jpg)
+Step 1. The easiest way to open JConsole for a specific service is through the GigaSpaces Management Center: {%wbr%}
+ - In the Deployments tab, right-click the GSC, GSM, or LookupService tree node, or {%wbr%}
+ - In the Space Browser tab: {%wbr%}
+ - In the Grid Tree, right-click the relevant [space container node]({%currentadmurl%}/gigaspaces-browser-tree-panel-and-configuration-panel.html#Container Node), or {%wbr%}
 
-1. Click **Launch JConsole**.
-1. This opens the JConsole (only if you are running JDK 1.5 and above) of the selected process.
-1. You can browse the various MBeans.
-1. Make sure you have a deployed space.
-1. Open a console and type the following command:{% wbr %}`jconsole`{% wbr %}{% infosign %} By default, operations in the MBeans **Operations** tab which have GigaSpaces classes as their type are disabled. To enable these, type{% wbr %}`jconsole -J-Djava.class.path=%JAVA_HOME%\lib\jconsole.jar;GS_HOME\lib\JSpaces.jar`{% wbr %}in your console. Instead of `GS_HOME`, type the directory in which GigaSpaces is installed on your computer.
+![space_JMX_1_GMC_space_LaunchingJConsoleFromContainerNode_6.5.jpg](/attachment_files/space_JMX_1_GMC_space_LaunchingJConsoleFromContainerNode_6.5.jpg) {%wbr%}
 
-1. Connect to the MBean server (choose one of the following options):
-    - Using the **Advanced** tab:
-        1. The JConsole: Connect to Agent window appears. Select the **Advanced** tab.
-        1. In the **JMX URL** text box, copy the URL in the log message displayed in your GigaSpaces Server, for example:{% wbr %}INFO:{% wbr %}`New JMXConnectionServer was successfully registered into the MBeanServer using service url:{% wbr %}service:jmx:rmi:///jndi/rmi://localhost:10098/jmxrmi`{% wbr %}
-            ![space_JMX_4_space_JMX_IMG992.gif](/attachment_files/space_JMX_4_space_JMX_IMG992.gif)
-        1. Press **Connect**.
-    - Using the **Remote** tab:
-        1. The JConsole: Connect to Agent window appears. Select the **Remote** tab.
-        1. In the **Host or IP** text box, copy the host name/IP address from JNDI URL text field in the container configuration.
-        1. In the **Port** text box, copy the port value from the same JNDI URL text field in the container configuration.{% wbr %}
-            ![space_JMX_5_GMC_space_containerNodeSelected_directoy_services_tab_6.1.jpg](/attachment_files/space_JMX_5_GMC_space_containerNodeSelected_directoy_services_tab_6.1.jpg){% wbr %}
-            ![space_JMX_6_jconsole_connect.jpg](/attachment_files/space_JMX_6_jconsole_connect.jpg)
-        1. Press **Connect**.{% wbr %}Here is a code example of implementing such an approach:{% wbr %}
-            `IJSpace spaceProxy = ( IJSpace )SpaceFinder.find( "jini://mySpace_container/mySpace");`{% wbr %}
-            `System.out.println( "Space found: " + spaceProxy.toString() );`{% wbr %}
-            `ContainerConfig containerConfig = ( ( IJSpaceContainerAdmin )spaceProxy.getContainer() ).getConfig();`{% wbr %}
-            `String jndiURL = containerConfig.jndiUrl;`{% wbr %}
-            `Runtime.getRuntime().exec( "jconsole " + jndiURL );`{% wbr %}
+ - Right-click the relevant [space node]({%currentadmurl%}/gigaspaces-browser-tree-panel-and-configuration-panel.html#Space Node) or clustered space node, or {%wbr%}
+
+![space_JMX_2_GMC_space_LaunchingJConsoleFromSpaceNode_6.5.jpg](/attachment_files/space_JMX_2_GMC_space_LaunchingJConsoleFromSpaceNode_6.5.jpg) {%wbr%}
+
+ - Right-click the relevant space from the [space network view]({%currentadmurl%}/gigaspaces-browser-tree-panel-and-configuration-panel.html#Spaces Network View): {%wbr%}
+
+![space_JMX_3_GMC_space_network_LaunchingJconsole_6.5.jpg](/attachment_files/space_JMX_3_GMC_space_network_LaunchingJconsole_6.5.jpg)  {%wbr%}
+
+Step 2. Click **Launch JConsole**. {%wbr%}
+Step 3. This opens the JConsole (only if you are running JDK 1.5 and above) of the selected process.{%wbr%}
+Step 4. You can browse the various MBeans.{%wbr%}
+Step 5. Make sure you have a deployed space.   {%wbr%}
+Step 6. Open a console and type the following command: `jconsole`{%wbr%}
+
+{% info %}
+By default, operations in the MBeans **Operations** tab which have GigaSpaces classes as their type are disabled. To enable these, type `jconsole -J-Djava.class.path=%JAVA_HOME%\lib\jconsole.jar;GS_HOME\lib\JSpaces.jar`in your console. Instead of `GS_HOME`, type the directory in which GigaSpaces is installed on your computer.
+{%endinfo%}
+
+Step 7. Connect to the MBean server (choose one of the following options):
+
+- Using the **Advanced** tab:
+    a. The JConsole: Connect to Agent window appears. Select the **Advanced** tab.
+
+    b. In the **JMX URL** text box, copy the URL in the log message displayed in your GigaSpaces Server,for example:
+
+{%highlight bash%}
+INFO:
+ New JMXConnectionServer was successfully registered into the MBeanServer
+ using service url: service:jmx:rmi:///jndi/rmi://localhost:10098/jmxrmi
+{%endhighlight%}
+
+![space_JMX_4_space_JMX_IMG992.gif](/attachment_files/space_JMX_4_space_JMX_IMG992.gif)  {%wbr%}
+    c. Press **Connect**. {%wbr%}
+
+- Using the **Remote** tab:
+
+    a. The JConsole: Connect to Agent window appears. Select the **Remote** tab.
+
+    b. In the **Host or IP** text box, copy the host name/IP address from JNDI URL text field in the container configuration.
+
+    c. In the **Port** text box, copy the port value from the same JNDI URL text field in the container configuration.
+
+![space_JMX_5_GMC_space_containerNodeSelected_directoy_services_tab_6.1.jpg](/attachment_files/space_JMX_5_GMC_space_containerNodeSelected_directoy_services_tab_6.1.jpg){% wbr %}
+
+![space_JMX_6_jconsole_connect.jpg](/attachment_files/space_JMX_6_jconsole_connect.jpg)
+
+Step 8. Press **Connect**.{% wbr %}Here is a code example of implementing such an approach:{% wbr %}
+
+{%highlight java %}
+IJSpace spaceProxy = ( IJSpace )SpaceFinder.find( "jini://mySpace_container/mySpace");
+System.out.println( "Space found: " + spaceProxy.toString() );
+ContainerConfig containerConfig = ( ( IJSpaceContainerAdmin )spaceProxy.getContainer() ).getConfig();
+String jndiURL = containerConfig.jndiUrl;
+Runtime.getRuntime().exec( "jconsole " + jndiURL );
+{%endhighlight%}
 
 {% include /COM/jconsolejmapwarning.markdown %}
 
@@ -58,7 +89,9 @@ A JMX manageable resource can be an application, an implementation of a service,
 
 In order to enable monitoring and management from remote systems using JMX jconsole set the following system properties or use the setenv shell variable **REMOTE_JMX**
 
-    REMOTE_JMX=-Dcom.sun.management.jmxremote.port=5001 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false
+{%highlight console%}
+REMOTE_JMX=-Dcom.sun.management.jmxremote.port=5001 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false
+{%endhighlight%}
 
 # Viewing Thread CPU Usage with JDK 1.6
 
