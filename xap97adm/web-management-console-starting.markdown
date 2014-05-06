@@ -115,7 +115,7 @@ It is possible to set up a reverse proxy for the management console. This can be
 
 #### Configuring The Proxy
 
-Enable the relevant modules, by uncommenting (or adding) the following lines inside `httpd.conf`:
+Enable the relevant modules, by un-commenting (or adding) the following lines inside `httpd.conf`:
 
 {% highlight console %}
 LoadModule  proxy_module         modules/mod_proxy.so

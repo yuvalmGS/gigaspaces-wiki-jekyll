@@ -44,7 +44,7 @@ public class CustomUserDetails extends com.gigaspaces.security.directory.User {
 Note that since `User` is `Serializable`, the `customPayload` field is automatically serialized along with the default credentials.
 
 {% info%}
-When a proxy sends a `UserDetails` instance to the server over the wire, it is implicitly encrypted before serialization and decrypted post deserialization. This encryption is internal to GigaSpaces and is intended only to secure the transport layer. In addition, a custom security implementation may choose to encrypt some/all of the data in the **UserDetails** instance (For example, the default file-based security implementation hashes the user password and encrypts the file contents when persisting data to the disk).
+When a proxy sends a `UserDetails` instance to the server over the wire, it is implicitly encrypted before serialization and decrypted post de-serialization. This encryption is internal to GigaSpaces and is intended only to secure the transport layer. In addition, a custom security implementation may choose to encrypt some/all of the data in the **UserDetails** instance (For example, the default file-based security implementation hashes the user password and encrypts the file contents when persisting data to the disk).
 {%endinfo%}
 
 # The Client side

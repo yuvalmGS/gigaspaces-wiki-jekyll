@@ -84,7 +84,7 @@ The benchmark program is located at:
 <XAP Root>\cpp\examples\benchmark\
 {%endhighlight%}
 
-The benchmark classes xml decalration file is located at:
+The benchmark classes xml declaration file is located at:
 
 {% highlight console %}
 <XAP Root>\cpp\examples\benchmark\serializer\benchmark.gs.xml

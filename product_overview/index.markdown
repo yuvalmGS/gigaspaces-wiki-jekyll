@@ -102,7 +102,7 @@ The Space-Based Architecture (SBA) can be viewed as a special case of SOA/EDA, d
 
 A classic SOA is based on the Enterprise Service Bus (ESB) model, as shown in the diagram above. In this model, services become loosely-coupled through the use of a messaging bus. Scaling is done by adding more services into the bus and load-balancing the requests between them.
 
-Most implementations of this model rely on web services to handle message flow between the services. These implementations cannot handle statefulness of the services. So while the loosely-coupled concept of SOA can be promising for simplifying and scaling of services over the network, most existing implementations of this model are not suited for handling high-performance applications, especially not in the context of stateful services.
+Most implementations of this model rely on web services to handle message flow between the services. These implementations cannot handle state-fullness of the services. So while the loosely-coupled concept of SOA can be promising for simplifying and scaling of services over the network, most existing implementations of this model are not suited for handling high-performance applications, especially not in the context of stateful services.
 
 With SBA, a similar model can be implemented using the space. The space functions as an in-memory messaging bus -- an ESB for delivering and routing transactions -- but also as an In-Memory Data Grid which can support stateful services.
 

@@ -21,20 +21,20 @@ Evicting an object from the space requires the space engine to lock the LRU chai
 
 # When LRU Cache Policy Should be Used
 
-For applications that use a very large backend database, leveraging the space as a frontend distributed cache using the `LRU` cache policy can speed up read activity while keeping some of the data in memory. In this case - the motivation is to **access the database in the most optimal manner** when performing data access operations against the space to reduce the load on the database as much as you can.
+For applications that use a very large backend database, leveraging the space as a front-end distributed cache using the `LRU` cache policy can speed up read activity while keeping some of the data in memory. In this case - the motivation is to **access the database in the most optimal manner** when performing data access operations against the space to reduce the load on the database as much as you can.
 
-When using `read`, `readById` or `readByIds` operations performing a lookup for a single specific object(s), that cannot be found within the space (this is often refered to as a "cache miss"), the database access by the space is very optimal. Only one row is retrieved from the database per object lookup via the Space Data Source implementation. This will be conducted from the relevant partition only.
+When using `read`, `readById` or `readByIds` operations performing a lookup for a single specific object(s), that cannot be found within the space (this is often referred to as a "cache miss"), the database access by the space is very optimal. Only one row is retrieved from the database per object lookup via the Space Data Source implementation. This will be conducted from the relevant partition only.
 
 But when performing queries using `readMultiple` or `GSIterator` with a template or a `SQLQuery`, the returned result set that may involve relatively large amount of objects. In such case, a space running with the `LRU` cache policy is very likely to retrieve large amount of data from the database:
 
 - When using `readMultiple` having `Integer.MAX_VALUE` as the `max_objects` parameter, every partition will access the database (parallel database access). This may overload the database.
 - When using `readMultiple` having `max_objects` < `Integer.MAX_VALUE` the database might be accessed even if there are enough objects matching the query criteria across all the space partitions.
 - When loading data from the database, a data eviction process may be triggered. This may impact the performance.
-- Database access may involve reading objects that will not be loaded into the space (result set with non-matching routing value that are filtred out by the partition).
+- Database access may involve reading objects that will not be loaded into the space (result set with non-matching routing value that are filtered out by the partition).
 
 In order to minimize the potential database overhead above, the `LRU` cache policy is recommended mostly for applications that use the `read`, `readById` or `readByIds` operations.
 
-Constructing read operations using `SQLQuery` with `Order by`, `Group by` is not recommended either, because in many cases it requires traversing the entire result data set on the client side. In such cases, the preffered option is to perform the query directly against the database and select only the IDs, and then retreive the actual data from space using the `readById` or `readByIds` operations. When working with a partitioned space, it is recommended to store the routing value in a separate database column, and select it as so that the `readById` or `readByIds` operations will be more efficient.
+Constructing read operations using `SQLQuery` with `Order by`, `Group by` is not recommended either, because in many cases it requires traversing the entire result data set on the client side. In such cases, the preferred option is to perform the query directly against the database and select only the IDs, and then retrieve the actual data from space using the `readById` or `readByIds` operations. When working with a partitioned space, it is recommended to store the routing value in a separate database column, and select it as so that the `readById` or `readByIds` operations will be more efficient.
 
 # The `MEMORY_ONLY_SEARCH` Modifier
 
@@ -75,7 +75,7 @@ gigaspace.clear(query , ClearModifiers.EVICT_ONLY.add(ClearModifiers.MEMORY_ONLY
 Data result3[] = gigaspace.takeMultiple(query , 1000 , TakeModifiers.EVICT_ONLY.add(TakeModifiers.MEMORY_ONLY_SEARCH));
 {% endhighlight %}
 
-The `TakeModifiers.EVICT_ONLY` and `ClearModifiers.EVICT_ONLY` should be used as well with the `take` and `clear` operations to remove matching entries only from the memory and not from the persitent store.
+The `TakeModifiers.EVICT_ONLY` and `ClearModifiers.EVICT_ONLY` should be used as well with the `take` and `clear` operations to remove matching entries only from the memory and not from the persistent store.
 
 # How LRU Eviction Works
 

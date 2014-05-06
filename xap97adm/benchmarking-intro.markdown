@@ -11,7 +11,7 @@ weight: 50
 
 Performance benchmarks with XAP's In-Memory Data Grid mainly involve testing latency and throughput. Since XAP offers data access routines for remote data access as well as colocated data access, you should test latency and throughput in both cases (as appropriate for your architecture and deployment topology).
 
-In addition, you should also test transactional and non-transactional operations, single and batch operations, synchronous and aynchronous options, as all of these are basic building blocks for any application.
+In addition, you should also test transactional and non-transactional operations, single and batch operations, synchronous and asynchronous options, as all of these are basic building blocks for any application.
 
 Benchmarks should test simple and complex queries as GigaSpaces supports both simple and complex data models and provides indexes to speed up query execution time.
 

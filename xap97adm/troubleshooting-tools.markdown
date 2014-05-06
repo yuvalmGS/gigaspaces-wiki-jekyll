@@ -73,7 +73,7 @@ done
 Debugging Tools for Windows is GUI wrapper for debugging tools that could be used to simplify process identification, debugging, dump reading, it shows stack per each thread, etc.
 Both tools are well tested and common in Windows environment.
 
-1. **jstack Utility** - (part of JDK 1.6, including Windows) which shows thread stack and locking state per thread. It is non-disruptive and is very light with almost immediate execution (subsecond; tested), so it should not be a problem to run it even in pretty loaded environment
+1. **jstack Utility** - (part of JDK 1.6, including Windows) which shows thread stack and locking state per thread. It is non-disruptive and is very light with almost immediate execution (sub-second; tested), so it should not be a problem to run it even in pretty loaded environment
 1. **Performance Monitor** - As trigger to shoot jstack when CPU goes up, built-in Windows XP Performance Monitor could be used (Control Panel/Administrative Tools/Performance). It has alerts on any of resource events, including CPU. Alert could start any program when chosen metric comes to the predefined value. It should start jstack-based script producing each time the file with the unique name (timestamp+). To avoid overloading the system with jstack runs, sampling interval could be set to 1min in alert definition.
 1. **JRockit Mission Control** - When we'll get stacks of the process, likely, it will be not that easy to interpret it, as we should know what are the threads with most of activity. It could be done with no impact on performance with BEA JRockit "Mission Control" profiler, for example.
 

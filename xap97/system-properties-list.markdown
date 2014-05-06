@@ -52,7 +52,7 @@ as the parent directory of the `JSpaces.jar` file. | |
 | `com.gs.url` | Cache factory. | |
 | `com.gs.xmlschema.validation` | Boolean value. If `false`, does not validate cluster XML config schema. | `true` |
 | `com.gs.resourcepool.debug` | Boolean value `com.gs.resourcepool.debug=true` to set debug mode. | |
-| `line.separator` | The GS logging formater Line separator string.&nbsp; This is the value of the `line.separator` property at the moment that the `SimpleFormatter` was created. | |
+| `line.separator` | The GS logging formatter Line separator string.&nbsp; This is the value of the `line.separator` property at the moment that the `SimpleFormatter` was created. | |
 | `com.gigaspaces.start.jmx` | JMX property. | |
 | `com.gigaspaces.start.container` | JMX property. | |
 | `com.gigaspaces.start.httpPort` | Webster http port definition | default 0 - free port |
