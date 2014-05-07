@@ -1,15 +1,14 @@
 ---
 layout: post97
-title:  Space Persistency
+title:  Cassandra Persistency
 categories: XAP97
 parent: cassandra.html
 weight: 100
 ---
 
+{% summary %} Cassandra Space Persistency Solution {% endsummary %}
 
-
-
-
+# Overview
 
 XAP comes with built in implementations of [Space Data Source](./space-data-source-api.html) and [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html) for Cassandra, called `CassandraSpaceDataSource` and `CassandraSpaceSynchronizationEndpoint`, respectively.
 
