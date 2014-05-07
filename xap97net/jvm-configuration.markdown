@@ -3,16 +3,16 @@ layout: post97
 title:  Jvm Configuration
 categories: XAP97NET
 parent: configuration.html
-weight: 300
+weight: 500
 ---
 
-{% summary %}.Net Client application JVM Settings Configuration.{% endsummary %}
+{% summary %} {% endsummary %}
 
 {% comment %}
 ![NewinXAP66.gif](/attachment_files/dotnet/NewinXAP66.gif)
 {% endcomment %}
 
-# Overview
+
 
 This page explains how to configure jvm settings for XAP.NET applications. In general, the development phase of a XAP.NET application does not require meddling with jvm settings as the defaults are usually satisfactory. In later testing and production phases, however, it is sometimes required to customize the default configuration.
 

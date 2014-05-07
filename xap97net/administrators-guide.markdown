@@ -6,20 +6,22 @@ parent: none
 weight: 400
 ---
 
+{%wbr%}
 As the administrator of your organization's computing applications, you are responsible for setting up and running a system that is critical to your corporate mission. You must plan how to maximize the performance and reliability of your GigaSpaces XAP, and then make it happen.
 
-The primary focus of the Administrator's Guide, is to provide both a basic, as well as more advanced overview of the GigaSpaces XAP administration and operation components.
 
-{%comment%}
-After reading this guide, administrators and operators will be able to set up, validate, configure, monitor and troubleshoot various aspects of the GigaSpaces XAP platform.
+<hr/>
+
+- [The runtime environment](./the-runtime-environment.html){%wbr%}
+This section gives a detailed description of the GigaSpaces deployment & runtime environment.
+
+- [The Processing Unit](./processing-units.html){%wbr%}
+The processing unit is the unit of packaging and deployment in the GigaSpaces XAP platform. This section describes the details of the processing unit.
+
+- [Configurations](./configuration.html){%wbr%}
+This section describes configuration parameters.
 
 
-{% note %}
-Note that this guide is specific to XAP.NET administration. For instructions on how to use the Management Center, Web Management Console, Network Configuration, Performance Tuning and Troubleshooting please refer to the [Administrator's Guide]({%currentadmurl%}/).
-{%endnote%}
 
-{%endcomment%}
+<hr/>
 
-## High Level Topics
-
-{% children %}

@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Processing Unit Container
+title:  PU Container
 categories: XAP97NET
 parent: processing-units.html
 weight: 100
@@ -8,9 +8,9 @@ weight: 100
 
 
 
-{% summary %}Describing the .NET Processing Unit Container and how to create and deploy it.{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
+
 
 The .NET Processing Unit Container is based on the [OpenSpaces Processing Unit](./processing-units.html), and allows you to write a .NET component that can be managed by the service grid.
 

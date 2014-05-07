@@ -1,14 +1,14 @@
 ---
 layout: post97
-title:  Processing Unit
+title:  Interoperability PU
 categories: XAP97NET
 parent: processing-units.html
-weight: 300
+weight: 400
 ---
 
-{% summary %}Creating and deploying a multi language processing unit{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 It is possible to create a processing unit which is part .NET part Java and part C++.
 This page assumes knowledge of creating and using [OpenSpaces Processing Unit]({% currentjavaurl %}/the-processing-unit-structure-and-configuration.html) and creating and using [.NET Processing Unit Container](./processing-unit-container.html). It will cover how to properly create deployment files and directory structure for a mixed processing unit.

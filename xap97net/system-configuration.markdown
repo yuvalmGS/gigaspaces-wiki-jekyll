@@ -3,12 +3,12 @@ layout: post97
 title:  System Configuration
 categories: XAP97NET
 parent: configuration.html
-weight: 100
+weight: 200
 ---
 
-{% summary %}Using System Properties to configure XAP.NET{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 GigaSpaces XAP.NET offers a collection of system properties which can be used to tweak the system's behavior. For a list of system properties refer to [System Properties List](./system-properties-list.html). This page discusses various options of defining and overriding system properties configuration.
 

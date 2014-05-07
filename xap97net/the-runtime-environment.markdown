@@ -6,7 +6,7 @@ parent: administrators-guide.html
 weight: 100
 ---
 
-{% summary %}This section gives a detailed description of the GigaSpaces deployment & runtime environment.{% endsummary %}
+{% summary %}{% endsummary %}
 
 {% anchor GSRuntimeEnv %}
 

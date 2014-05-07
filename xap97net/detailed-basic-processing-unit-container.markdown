@@ -1,14 +1,14 @@
 ---
 layout: post97
-title:  Detailed Basic Processing Unit Container
+title:  Detailed PU Container
 categories: XAP97NET
-parent: basic-processing-unit-container.html
-weight: 100
+parent: processing-units.html
+weight: 300
 ---
 
 
 
-{% summary %}Describing the built-in BasicProcessingUnitContainer which is an extension of the AbstractProcessingUnitContainer class.{% endsummary %}
+{% summary %}  {% endsummary %}
 
 {% info %}
 This page covers additional details about the BasicProcessingUnitContainer which are not covered in [Basic Processing Unit Container](./basic-processing-unit-container.html) page, the previous page should be read before this one.

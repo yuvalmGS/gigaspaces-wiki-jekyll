@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Basic Processing Unit Container
+title:  Base PU Container
 categories: XAP97NET
 parent: processing-units.html
 weight: 200
@@ -8,9 +8,8 @@ weight: 200
 
 
 
-{% summary %}Describing the built-in BasicProcessingUnitContainer which is an extension of the AbstractProcessingUnitContainer class.{% endsummary %}
+{% summary %}  {% endsummary %}
 
-# Overview
 
 A [processing unit container](./processing-unit-container.html) is a component implemented by the user and deployed and managed by the service grid. XAP.NET comes with a built-in type implementation of the processing unit container called the `BasicProcessingUnitContainer` which provides basic implementations for common activities, and allows the user to focus on business logic and less with GigaSpaces internals.
 
