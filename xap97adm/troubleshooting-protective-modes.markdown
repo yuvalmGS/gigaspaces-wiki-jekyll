@@ -13,17 +13,23 @@ For such cases the **Protective Mode** was introduced. The validation is on by d
 
 ## Disabling the Protective Mode
 To disable a protective mode you will need to use the relevant system property. See below example how this can be applied:
-**XAP for Java - Linux:**
+
+{% inittab %}
+{% tabcontent Java %}
+{%panel%}
+**Linux:**
 {%highlight bash%}
 export GSC_JAVA_OPTIONS='-Dcom.gs.protectiveMode.typeWithoutId=false -Dcom.gs.protectiveMode.wrongEntryRoutingUsage=false -Dcom.gs.protectiveMode.primitiveWithoutNullValue=false'
 {%endhighlight%}
 
-**XAP for Java - Windows:**
+**Windows:**
 {%highlight bash%}
 set GSC_JAVA_OPTIONS=-Dcom.gs.protectiveMode.typeWithoutId=false -Dcom.gs.protectiveMode.wrongEntryRoutingUsage=false -Dcom.gs.protectiveMode.primitiveWithoutNullValue=false
 {%endhighlight%}
-
-**XAP.NET:**
+{%endpanel%}
+{%endtabcontent%}
+{% tabcontent .NET %}
+{%panel%}
 The `ServiceGrid.config` should have the following
 {%highlight bash%}
 <JvmSettings>
@@ -34,7 +40,9 @@ The `ServiceGrid.config` should have the following
    </JvmCustomOptions>
 </JvmSettings>
 {%endhighlight%}
-
+{%endpanel%}
+{%endtabcontent%}
+{%endinittab%}
 
 # SpaceId property Decoration Validation
 
