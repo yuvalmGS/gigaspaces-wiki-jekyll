@@ -290,7 +290,7 @@ If your client application loses its connection to the server, you can follow a 
 
 
 
-#. Monitoring LRMI via the Administration API
+# Monitoring LRMI via the Administration API
 
 You may monitor the remote communication activity via the [Administration and Monitoring API]. You may receive information in real-time about every aspect of the communication and transport activity. Below example demonstrating the usage of the API consuming this information.
 
