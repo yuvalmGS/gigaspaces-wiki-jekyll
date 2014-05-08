@@ -6,7 +6,7 @@ weight: 500
 parent: none
 ---
 
-{% summary %}This section describes the GigaSpaces Application Layer.{% endsummary %}
+{% summary %}{% endsummary %}
 Applications deployed on GigaSpaces XAP are very much like JEE or OSGi distributed server-side applications.
 
 Each application is composed of one or more scalable modules, and contains one or more business logic code components, domain model objects (entries), in-memory data storage, messaging, and event processing code.

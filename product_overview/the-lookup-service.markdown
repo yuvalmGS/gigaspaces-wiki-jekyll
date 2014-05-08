@@ -2,14 +2,14 @@
 layout: post
 title:  The Lookup Service
 categories: PRODUCT_OVERVIEW
-parent: service-grid.html
-weight: 100
+weight: 200
+parent: the-runtime-environment.html
 ---
 
 
-{% summary  %}A registry of services (GSM, GSC, Space Instances, Processing Unit Instances) that can be lookup up using it.{% endsummary %}
+{% summary  %} {% endsummary %}
 
-# Overview
+
 
 The Lookup Service (LUS) provides a leased based registry holding Service Grid level services advertised on it. Some of the services exposed on the LUS are [GigaSpaces Agent](./service-grid.html#gsa), [GigaSpaces Manager](./service-grid.html#gsm), [GigaSpaces Container](./service-grid.html#gsc), Space Instances (actual instances of a Space that form a topology), and Processing Unit Instances (actual instances of a deployed Processing Unit).
 

@@ -4,22 +4,15 @@ title:  The In-Memory Data Grid
 categories: XAP97
 categories: PRODUCT_OVERVIEW
 parent: none
-weight: 1100
+weight: 560
 ---
 
 
-{% summary  %}Explains the concepts of the GigaSpaces in-memory data grid (the Space), how to access it, and how to configure advanced capabilities, such as persistency, eviction, etc.{% endsummary %}
+{% summary  %}   {% endsummary %}
 
-# Overview
 
-{%section%}
-{%column width=50% %}
-This section describes the Space, GigaSpaces in-memory data grid implementation. The Space enables your application to read data from it, and write data to it in various ways. It also deals with various configuration aspects, such as space topologies, persistency to an external data source and memory management facilities.
-{%endcolumn%}
-{%column width=45% %}
-![archi_imdg.jpg](/attachment_files/archi_imdg.jpg)
-{%endcolumn%}
-{%endsection%}
+The Space enables your application to read data from it, and write data to it in various ways. It also deals with various configuration aspects, such as space topologies, persistency to an external data source and memory management facilities.
+
 
 # The Space as the System of Record
 
@@ -65,7 +58,7 @@ With asynchronous replication, this replication is done in a separate thread, an
 
 The space is an in-memory data grid. As such its capacity is limited to the sum of the memory capacity of all the JVMs on which the space instances run.
 In many cases, you have to deal with larger portions of data, or load a subset of a larger data set, which resides in an external data source such as a relational database, into the space.
-The space supports many [persistency options](./persistency.html), allowing you to easily configure how it interacts with an external relational database, or a more exotic source of data.
+The space supports many [persistency options](./database-integration.html), allowing you to easily configure how it interacts with an external relational database, or a more exotic source of data.
 It supports the following options, from which you can choose:
 
 - Cache warm-up: load data from an external data source on startup.

@@ -2,13 +2,13 @@
 layout: post
 title:  Product Architecture
 categories: PRODUCT_OVERVIEW
-weight: 400
+weight: 420
 parent: none
 ---
 
-{% summary %}This section describes the architecture of the GigaSpaces XAP product.{% endsummary %}
+{% summary %}{% endsummary %}
 
-GigaSpaces XAP is built from the following sub-systems:
+### GigaSpaces XAP is built from the following sub-systems:
 
 ![archi_overview.jpg](/attachment_files/archi_overview.jpg)
 

@@ -147,7 +147,7 @@ It's important to note the following about the `TakeModifiers.EVICT_ONLY` modifi
 The overall space capacity is not necessarily limited to the capacity of its physical memory. Currently there are two options for exceeding this limit:
 
 - **Using an LRU and [Space Persistency](./space-persistency.html)** - in this mode, all the space data is kept in the database and therefore the space capacity is dependent on the database capacity rather than the memory capacity. The space maintains in memory, a partial image of the persistent view in an LRU basis.
-- **Using [Partitioned Space](/product_overview/terminology---data-grid-topologies.html)** - in this mode, the space utilizes the physical memory of multiple JVMs. This means the application using the space is able to access all the space instances transparently, as if they were a single space with higher memory capacity.
+- **Using [Partitioned Space](/product_overview/terminology.html)** - in this mode, the space utilizes the physical memory of multiple JVMs. This means the application using the space is able to access all the space instances transparently, as if they were a single space with higher memory capacity.
 
 # Memory Manager Parameters
 

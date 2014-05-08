@@ -1,24 +1,24 @@
 ---
 layout: post
-title:  Services on Top of the Grid
+title:  Services on top of the Grid
 categories: PRODUCT_OVERVIEW
-parent: none
-weight: 800
+weight: 300
+parent: the-runtime-environment.html
 ---
 
 
 
-{% summary   %}This page provides an overview of the various service components that are available on top of the GigSpaces DataGrid framework. It also outlines when to choose each one of them{% endsummary %}
+{% summary   %}  {% endsummary %}
 
-# Overview
+
 
 GigaSpaces includes a set of built-in service components such as Task execution service components, Messaging services components, each implementing commonly used pattern and framework. It was designed to make the programming of distributed applications on-top of the space based API simpler and less intrusive.  All services follow the POJO/Spring based abstraction approach which include dependency injection and annotations. The GigaSpaces DataGrid is used as a shared clustering framework for all those components. The shared clustering provides general purpose solution that ensures the high availability, scalability, and transaction integrity of all those API's.
 
-# Choosing the Correct Service Component
+### Choosing the Correct Service Component
 
 This section explains when you should use each of the service components:
 
-## Task Execution
+# Task Execution
 
 
 Task Execution {%latestjavanet task-execution-over-the-space.html%} provides a fine-grained API for performing ad-hoc parallel execution of user defined tasks. You should use this framework in the following scenarios:
@@ -40,7 +40,7 @@ Java Tasks can be more efficient in terms of performance and tend to be more typ
 
 
 
-## Messaging and Events
+# Messaging and Events
 
 The Space's Messaging and Events support provides messaging handlers that simplify event driven programming. With this framework you select an event based on its content and designate a method that would be triggered as a result of that event, all through a simple and non-intrusive configuration. There are two main event handlers that are available:
 
@@ -64,7 +64,7 @@ In addition to the polling containers you can also use a [JMS facade]({%latestja
 
 See [Messaging Support]({%latestjavaurl%}/messaging-support.html) for details.
 
-## Space Based Remoting
+# Space Based Remoting
 
 Space Based Remoting is the equivalent to JEE Session Beans or to Java RMI. It leverages the space as a reliable and scalable transport mechanism that is used as a communication bus between POJO based services and their clients. Unlike Tasks and Polling Containers the Remoting mechanism exposes a more type-safe and static interface. If you have already built your business logic using a remoting approach you would find it easier to use this model to scale your services without rewriting your client side access code. It is also the least intrusive mechanism in terms of Space API usage.
 

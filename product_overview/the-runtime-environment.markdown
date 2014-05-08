@@ -1,32 +1,28 @@
 ---
 layout: post
-title:  The Runtime Environment
+title:  The Service Grid
 categories: PRODUCT_OVERVIEW
 parent: none
-weight: 1500
+weight: 550
 ---
 
-{% summary %}This section gives a detailed description of the GigaSpaces deployment & runtime environment.{% endsummary %}
+{% summary %}{% endsummary %}
 
 {% anchor GSRuntimeEnv %}
 
-# Overview
 
-{%section%}
-{%column width=50% %}
+
+
 The basic unit of deployment in the GigaSpaces XAP platform is the [Processing Unit]({%latestjavaurl%}/packaging-and-deployment.html).
 
 Once packaged, a processing unit is deployed onto the GigaSpaces runtime environment, which is called the *Service Grid*. It is responsible for materializing the processing unit's configuration, provisioning its instances to the runtime infrastructure and making sure they continue to run properly over time.
-{%endcolumn%}
 
-{%column width=45% %}
-![archi_deployenv.jpg](/attachment_files/archi_deployenv.jpg)
-{%endcolumn%}
-{%endsection%}
 
-{% info %}When developing your processing unit, you can [run and debug the processing unit within your IDE]({%latestjavaurl%}/running-and-debugging-within-your-ide.html). You will typically deploy it to the GigaSpaces runtime environment when it's ready for production or when you want to run it in the real-life runtime environment{% endinfo %}
+{% info %}
+When developing your processing unit, you can [run and debug the processing unit within your IDE]({%latestjavaurl%}/running-and-debugging-within-your-ide.html). You will typically deploy it to the GigaSpaces runtime environment when it's ready for production or when you want to run it in the real-life runtime environment
+{% endinfo %}
 
-# Service Grid Architecture
+# Architecture
 
 The service grid is composed of a number of components:
 
@@ -34,7 +30,7 @@ The service grid is composed of a number of components:
 
 
 
-## Core Components
+# Core Components
 
 A processing unit can be deployed to the Service Grid using one of GigaSpaces deployment tools (UI, CLI, API), which uploads it to the *GSM* [Grid Service Manager](./service-grid.html#gsm), the component which manages the deployment and life cycle of the processing unit). The GSM analyzes the deployment descriptor and determines how many instances of the processing unit should be created, and which containers should run them. It then ships the processing unit code to the running *GSC*'s [Grid Service Container](./service-grid.html#gsc) and instructs them to instantiate the processing unit instances. The GSC provides an isolated runtime for the processing unit instance, and exposes its state to the GSM for monitoring. This phase in the deployment process is called *provisioning*.
 
@@ -46,7 +42,7 @@ Finally, the *GSA* [Grid Service Agent](./service-grid.html#gsa) component is us
 
 All of the above components are fully manageable from the GigaSpaces management interfaces such as the [UI]({%latestadmurl%}/gigaspaces-management-center.html), CLI and [Admin API]({%latestjavaurl%}/administration-and-monitoring-api.html).
 
-## Optional Components
+# Optional Components
 
 * The Elastic Service Manager (ESM) manages the [Elastic Processing Unit]({%latestjavaurl%}/elastic-processing-unit.html) together with the GSM.
 
@@ -54,6 +50,3 @@ All of the above components are fully manageable from the GigaSpaces management 
 
 * The Transaction Manager (TXM) is an optional component. When executing transactions that spans multiple space partitions you should use the Jini Transaction Manager or the Distributed Transaction Manager. See the [Transaction Management]({%latestjavaurl%}/transaction-management.html) section for details.
 
-
-
-{% children %}

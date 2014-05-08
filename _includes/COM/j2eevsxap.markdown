@@ -1,4 +1,6 @@
+{%comment%}
 # J2EE vs. XAP
+{%endcomment%}
 
 Here is a simple mapping between the J2EE common components and equivalent XAP components:
 

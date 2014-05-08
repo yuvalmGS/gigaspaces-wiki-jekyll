@@ -2,13 +2,13 @@
 layout: post
 title:  Client Side Caching
 categories: PRODUCT_OVERVIEW
-parent: caching-scenarios.html
-weight: 100
+parent: the-in-memory-data-grid.html
+weight: 200
 ---
 
-{% summary %}A client application may run a local cache (near cache), which caches data in local memory of the client application. There are two variations provided: local cache and local view. Both allow the client application to cache specific or recently used data within client JVM and have it updated automatically by the space when that data changes.{% endsummary %}
 
 
+A client application may run a local cache (near cache), which caches data in local memory of the client application. There are two variations provided: local cache and local view. Both allow the client application to cache specific or recently used data within client JVM and have it updated automatically by the space when that data changes.
 
 GigaSpaces supports client side caching of space data within the client application's JVM. When using client-side caching, the user essentially uses a two-layer cache architecture: The first layer is stored locally, within the client's JVM, and the second layer is stored within the remote master space. The remote master space may be used with any of the supported deployment topologies.
 

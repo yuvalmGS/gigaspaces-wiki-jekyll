@@ -106,7 +106,7 @@ namespace Entities
 
 # Starting the Spaces with NHibernate External Data Source
 
-This walk through demonstrates how to start the spaces with the NHibernate External Data Source from code, using a cluster in a [partitioned-sync2backup](/product_overview/terminology---data-grid-topologies.html) topology.
+This walk through demonstrates how to start the spaces with the NHibernate External Data Source from code, using a cluster in a [partitioned-sync2backup](/product_overview/terminology.html) topology.
 Our cluster is 2,1 and a mirror. Therefore it consists of:
 
 - 2 partitioned primary spaces

@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  Service Grid
+title:  Service Grid Components
 categories: PRODUCT_OVERVIEW
 weight: 100
 parent: the-runtime-environment.html
 ---
 
-{% summary %}Overview of Service Grid Components{% endsummary %}
+{% summary %}{% endsummary %}
 
 {% anchor gsm %}
 

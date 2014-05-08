@@ -2,13 +2,13 @@
 layout: post
 title:  Caching Scenarios
 categories: PRODUCT_OVERVIEW
-parent: none
-weight: 1000
+parent: the-in-memory-data-grid.html
+weight: 100
 ---
 
-{% summary %}GigaSpaces IMDG supports three different caching mechanisms: In-line Cache, Side Cache and Client Side Cache.{% endsummary %}
+{% summary %}  {% endsummary %}
 
-# Overview
+
 
 GigaSpaces IMDG supports three kinds of caching mechanisms:In-line Cache, Side Cache and Client Side Cache. Using GigaSpaces IMDG as a cache provides you the following benefits:
 
@@ -17,7 +17,7 @@ GigaSpaces IMDG supports three kinds of caching mechanisms:In-line Cache, Side C
 - Less load on the database layer - Since the cache will isolate the database from the application somewhat, you will have less contention generated at the database layer.
 - Continuous High-Availability - Zero downtime of your data access layer with the ability to survive system failures without any data loss.
 
-Both the In-line cache and the Side cache support the common deployment topologies: [replicated](./terminology---data-grid-topologies.html#Primary Backup Data Grid), [partitioned](./terminology---data-grid-topologies.html#Partitioned Data Grid) and [primary-backup partitioned](./terminology---data-grid-topologies.html#Primary Backup Partitioned Data Grid).
+Both the In-line cache and the Side cache support the common deployment topologies: [replicated](./terminology.html#Primary Backup Data Grid), [partitioned](./terminology.html#Partitioned Data Grid) and [primary-backup partitioned](./terminology.html#Primary Backup Partitioned Data Grid).
 
 # In-line Cache
 

@@ -1,15 +1,15 @@
 ---
 layout: post
-title:  Space Topologies
+title:  Topologies
 categories: PRODUCT_OVERVIEW
-parent: none
-weight: 900
+parent: the-in-memory-data-grid.html
+weight: 10
 ---
 
 
-{% summary  %}Explains the topologies and clustering mechanism of the GigaSpaces in-memory data grid (the Space){% endsummary %}
+{% summary  %}{% endsummary %}
 
-# Overview
+
 
 Different applications might have different caching requirements. Some applications require on-demand loading from an external, slower data source, due to limited memory; others use the cache for read-mostly purposes; transactional applications need a cache that handles both write and read operations, maintains consistency and serves as the application's system of record.
 
@@ -52,17 +52,18 @@ For more details on how to configure the replication mechanisms of the Space, pl
 
 GigaSpaces XAP supports the following data grid topologies:
 
+
+
 {: .table .table-bordered}
 | Topology and Description | Common Use | Options |
 |:-------------------------|:-----------|:--------|
-| **Replicated** ([view diagram](/attachment_files/dg_a_topology2a.gif)){% wbr %} Two or more space instances with replication between them. | Allowing two or more applications to work with their own dedicated data store, while working on the same data as the other applications. Also allows for load distribution between multiple space instances in read-intensive scenarios | * Replication can be synchronous (slower but with better consistency) or asynchronous (faster but less reliable, as it does not guarantee consistency and immediate replication).{% wbr %}- Space instances can run on the same JVM as the application (embedded - allows faster read access) or in a separate process (remote - allows multiple applications to use the space, easier management). |
+| **Replicated**  ([view diagram](/attachment_files/dg_a_topology2a.gif)){% wbr %} Two or more space instances with replication between them. | Allowing two or more applications to work with their own dedicated data store, while working on the same data as the other applications. Also allows for load distribution between multiple space instances in read-intensive scenarios | * Replication can be synchronous (slower but with better consistency) or asynchronous (faster but less reliable, as it does not guarantee consistency and immediate replication).{% wbr %}- Space instances can run on the same JVM as the application (embedded - allows faster read access) or in a separate process (remote - allows multiple applications to use the space, easier management). |
 | **Partitioned** ([view diagram](/attachment_files/dg_a_topology3.gif)){% wbr %} Data and operations are split between two or more space instances (partitions) according to a routing field defined in the data. | Allows the In-Memory Data Grid to hold large volumes of data, even if it is larger than the memory of a single machine, by splitting the data across several partitions. | * With/without backup space instance for each partition.{% wbr %}- Business logic can be collocated with each partition and act on the data of the local partition. This is one of the principles of the SBA paradigm |
 | **Local Cache** ([view diagram](/attachment_files/dg_a_topology4.gif)){% wbr %} Each client has a lightweight, embedded cache (space instance), which is initially empty. Upon the first time data is read, it is loaded from a master space to the local cache (this is called lazy loading); the next time the same data is read, it is fetched quickly from the local cache without network access. Later on data is either updated from the master or evicted from the cache. For more information see [Local Cache]({%latestjavaurl%}/local-cache.html).{% wbr %}| Boosting read performance for frequently used data. A useful rule of thumb is to use a local cache when over 80% of all operations are repetitive read operations. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc. |
 | **Local View** ([view diagram](/attachment_files/dg_a_topology5.gif)){% wbr %}  Each client has a lightweight, embedded cache (space instance), which contains a subset of the mater space's data. The client defines which data is cached using a collection of SQL queries, and the master space pushes the matching data to the client's cache. For more information see [Local View]({%latestjavaurl%}/local-view.html). | Achieving maximal read performance for a predetermined subset of the data. | * The master cache can be clustered in any of the other topologies: replicated, partitioned, etc.|
 
 {% info %}
 The topologies above are provided in the GigaSpaces product as predefined cluster schemas. The schema names are:
-
 
 - Synchronous replication - `sync-replicated`
 - Asynchronous replication - `async-replicated`

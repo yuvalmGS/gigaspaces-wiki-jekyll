@@ -2,13 +2,11 @@
 layout: post
 title:  A Typical SBA Application
 categories: PRODUCT_OVERVIEW
-weight: 700
-parent: none
+weight: 100
+parent: space-based-architecture.html
 ---
 
-{% summary %}A Typical Space-Based Application {% endsummary %}
-
-# Overview
+{%summary%}{%endsummary%}
 
 This section describes SBA from an application development perspective. It focuses on developing a high-throughput, event-driven, service-oriented application using GigaSpaces XAP and Space-Based Architecture.
 
@@ -187,5 +185,5 @@ The following is a snippet taken from the example SLA definition section of the 
 
 {% endtoczone %}
 
-{% include /COM/j2eevsxap.markdown %}
+
 

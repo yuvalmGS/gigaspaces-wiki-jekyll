@@ -2,19 +2,12 @@
 layout: post
 title:  About Jini
 categories: PRODUCT_OVERVIEW
-weight: 200
+weight: 1240
 parent: none
 ---
 
-{% summary %}Jini is an open architecture that allows the implementation of network services - One such service is JavaSpaces.{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
-
-{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
-
-## About Jini
-
-Jini is both an architecture and a technology, as explained in the following definition.
 
 Jini is a network architecture for the construction of distributed systems where scale, rate of change and complexity of interactions within and between networks are extremely important and cannot be satisfactorily addressed by existing technologies. Jini technology provides a flexible infrastructure for delivering services in a network and for creating spontaneous interactions between clients that use these services regardless of their hardware or software implementations.
 
@@ -73,11 +66,11 @@ The diagram above shows that the Jini services are layered on the Java language,
 For more details, refer to the [JavaSpaces](#2) section below.
 {% endtip %}
 
-{% endtoczone %}
+
 
 # Jini Architecture
 
-{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
+
 
 ## Registering a Service
 
@@ -112,13 +105,13 @@ The service proxy is copied by the provider to the Lookup Service at registratio
 ![about_jini4.gif](/attachment_files/about_jini4.gif)
 {% endindent %}
 
-{% endtoczone %}
+
 
 {% anchor 1 %}
 
 # Key Jini Services
 
-{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
+
 
 This section discusses the key Jini services and their role in creating a dynamic service oriented architecture.
 
@@ -246,7 +239,7 @@ The `TransactionFactory` class contains methods to create transactions.
 
 The `TransactionManager` interface is used for managers of the two-phase commit protocol for top-level transactions and contains methods to create, abort, and commit transactions, and to join a transaction that is managed by this transaction manager.
 
-{% endtoczone %}
+
 
 {% anchor 2 %}
 

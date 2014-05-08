@@ -6,7 +6,7 @@ parent: none
 weight: 400
 ---
 
-{% summary %}This section describes the main concepts underlying GigaSpaces XAP.{% endsummary %}
+{% summary %}{% endsummary %}
 
 GigaSpaces XAP (pronounced zap) is a scale-out application server. Developers and architects who are looking to develop web-based, transactional applications, with high-throughput, low-latency and scalability, may want to use it to build their next generation class of applications.
 

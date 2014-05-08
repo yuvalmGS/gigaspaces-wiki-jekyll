@@ -4,6 +4,7 @@ title:  Product Overview
 categories: PRODUCT_OVERVIEW
 ---
 
+{%summary%}{%endsummary%}
 
 GigaSpaces XAP is a platform that scales out stateful applications in high-performance low-latency environments. It is designed to support eXtreme transactional applications such as OMS (Order Management Systems), pre-paid systems, trading, and market data; and real-time analytics applications such as profit-and-loss analysis, reconciliation, and Value at Risk.
 
@@ -165,6 +166,4 @@ From a runtime perspective, there are several ways remote clients can interact w
 - **[.NET]({%latestjavaurl%}/index.html)**, **[C++]({%latestjavaurl%}/xap-cpp.html)** -- GigaSpaces provides .NET and C++ libraries that enable direct interaction with services via the space, just like a POJO client.
 
 ![Remote Clients.jpg](/attachment_files/Remote Clients.jpg)
-
-{% include /COM/j2eevsxap.markdown %}
 
