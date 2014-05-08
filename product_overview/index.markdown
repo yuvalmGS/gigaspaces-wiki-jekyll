@@ -65,7 +65,7 @@ XAP relies on the JavaSpaces (space-based) model as its core middleware, and pro
 | Real-time event notification -- application instances can selectively subscribe to specific events. | Provides capabilities usually offered by messaging systems, including slow-consumer support, FIFO, batching, pub/sub, content-based routing. |
 
 - **Messaging Grid** -- enables services to communicate and share information across the distributed In-Memory Data Grid. Supports a variety of messaging scenarios using the JavaSpaces or JMS API.
-- **[*Parallel Processing*]({%currentjavaurl%}/xap-order-management-tutorial.html)** -- enables parallel execution of low latency, high-throughput business transactions, using the Master-Worker pattern.
+- **[*Parallel Processing*]({%latestjavaurl%}/xap-order-management-tutorial.html)** -- enables parallel execution of low latency, high-throughput business transactions, using the Master-Worker pattern.
 
 ## SLA-Driven Container
 
