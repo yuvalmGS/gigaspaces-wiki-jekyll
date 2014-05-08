@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Jvm Configuration
+title:  Runtime Configuration
 categories: XAP97NET
 parent: configuration.html
 weight: 500
@@ -14,7 +14,7 @@ weight: 500
 
 
 
-This page explains how to configure jvm settings for XAP.NET applications. In general, the development phase of a XAP.NET application does not require meddling with jvm settings as the defaults are usually satisfactory. In later testing and production phases, however, it is sometimes required to customize the default configuration.
+This page explains how to configure runtime settings for XAP.NET applications. In general, the development phase of a XAP.NET based application does not require runtime tunning settings as the defaults are usually satisfactory. In later testing and production phases, however, it is sometimes required to customize the default configuration.
 
 {% anchor JvmLocation %}
 
