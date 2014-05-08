@@ -20,7 +20,7 @@ XAP .Net provides an explicit transaction management programing model. It allows
 
 <hr/>
 
-- [Transaction interface](./transactions.html){%wbr%}
+- [Transaction interface](./transaction-management.html){%wbr%}
 Transaction concept and API
 
 - [Locking and Blocking](./transaction-locking-and-blocking.html){%wbr%}

@@ -105,7 +105,7 @@ If you must use primitive property types, then assign null values. This is enfor
 
 When querying the space using template matching {%currentjavanet query-template-matching.html %}, `null` properties are ignored and `non-null` properties are matched. Since primitive properties cannot be set to `null`, a `nullValue` can be assigned to a property to indicate a value which will be treated as null when using template matching.
 
-See primitive types matching {%currentjavanet /query-template-matching.html#primitive-types %}
+See primitive types matching {%currentjavanet query-template-matching.html#primitive-types %}
 
 Starting XAP 9.7 a new protective mode has been added to protect against querying with a template which contains one or more primitive properties without a `nullValue`, since such templates are likely to produce unexpected results. 
 

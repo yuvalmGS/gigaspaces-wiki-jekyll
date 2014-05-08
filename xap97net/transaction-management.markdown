@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Transaction API
+title:  Transaction Management
 categories: XAP97NET
 parent: transaction-overview.html
 weight: 100
