@@ -12,7 +12,7 @@ weight: 300
 
 One of the first concerns people have when encountering space-based architecture is that the role of the database seems to be diminished. That makes sense. In SBA, the role of the database is different than in typical tier-based architecture - where the database is considered the only system of record and is more important than all of the other moving parts.
 
-The location of the data should be considered, based on its life-span. For example, transaction state, which is only valid for a short itme, should not be stored in a database to achieve fault-tolerance. In SBA, this type of information is stored in memory, and the space provides fault-tolerance capabilities.
+The location of the data should be considered, based on its life-span. For example, transaction state, which is only valid for a short time, should not be stored in a database to achieve fault-tolerance. In SBA, this type of information is stored in memory, and the space provides fault-tolerance capabilities.
 
 In space-based architectures, databases should be used to store information that has a much longer life cycle, i.e., data that doesn't change rapidly. As a general rule, information that is accessed and changed often is stored in the space - and thus, in memory - and data that's become static in some way, is stored in a traditional relational database, where reporting engines and other tabular access mechanisms can access it.
 

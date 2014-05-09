@@ -33,7 +33,7 @@ The GigaSpaces cache instance that holds data objects in memory.
 ![term_verbs.jpg](/attachment_files/term_verbs.jpg)
 {% endcolumn %}
 {% column width=70% %}
-A set of methods used to read, write, take, and register for notification on objects that are stored in the space. Execute allows sending Tasks to be executed within the space. Read and Take critera can be specified via a query or a template (an example object).
+A set of methods used to read, write, take, and register for notification on objects that are stored in the space. Execute allows sending Tasks to be executed within the space. Read and Take criteria can be specified via a query or a template (an example object).
 {% endcolumn %}
 {% endsection %}
 
@@ -94,7 +94,7 @@ A deployable package containing one or more services. In the GigaSpaces context,
 {% endcolumn %}
 {% column width=70% %}
 A deployable, independent, scalable unit, which is the building block of [Space-Based Architecture](./space-based-architecture.html).
-Client application (which can also be other processing units) write objects to the space, and the processing unit which contains this space consumes these objects or is notified about them and triggeres a related services.
+Client application (which can also be other processing units) write objects to the space, and the processing unit which contains this space consumes these objects or is notified about them and triggers a related services.
 {% endcolumn %}
 {% endsection %}
 
@@ -275,7 +275,7 @@ A machine can run one or more [GSC](#gsc) processes. Each GSC communicates with 
 {% endcolumn %}
 {% column width=70% %}
 The [GSM](#gsm) is a [Service Grid](#Service Grid) component which manages a set of [GigaSpaces Containers (GSC)](#gsc).
-A GSM has an API for deploying/undeploying processing units. When a GSM is instructed to deploy a Processing Unit, it finds an appropriate, available GSC and tells that GSC to run an instance of that processing unit. It then continuously monitors that processing unit instance to verify that it's alive, and that the SLA is not breached.
+A GSM has an API for deploying/un deploying processing units. When a GSM is instructed to deploy a Processing Unit, it finds an appropriate, available GSC and tells that GSC to run an instance of that processing unit. It then continuously monitors that processing unit instance to verify that it's alive, and that the SLA is not breached.
 {% endcolumn %}
 {% endsection %}
 
