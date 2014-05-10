@@ -59,7 +59,7 @@ public class MyTask implements Task<Integer> {
 }
 {% endhighlight %}
 
-Executing the task uses the GigaSpace API with a routing value of 2 (the second parameter):
+Executing the task uses the `GigaSpace` API with a routing value of 2 (the second parameter):
 
 {% highlight java %}
 AsyncFuture<Integer> future = gigaSpace.execute(new MyTask(2), 2);
