@@ -174,62 +174,38 @@ After you execute the above command, open a browser and goto to http://your_host
  
 {%section%}
 {%column%}
-Login
+{%popup /attachment_files/qsg/Shot0.png | Login %}
+{%endcolumn%}
+{%column%}
 
-[<img src="/attachment_files/qsg/Shot0.png" width="120" height="80">](/attachment_files/qsg/Shot0.png)
 
+{%popup /attachment_files/qsg/Shot1.png|Dashboard%}
+{%endcolumn%}
+{%column%}
+{%popup /attachment_files/qsg/Shot11.png|Deployed Applications%}
 {%endcolumn%}
 
 {%column%}
-Dashboard
-
-[<img src="/attachment_files/qsg/Shot1.png" width="120" height="80">](/attachment_files/qsg/Shot1.png)
-
-{%endcolumn%}
-
-{%column%}
-Deployed Applications
-
-[<img src="/attachment_files/qsg/Shot11.png" width="120" height="80">](/attachment_files/qsg/Shot11.png)
-
-{%endcolumn%}
-
-{%column%}
-Hosts (GSA,GSC,GSM,LUS)
-
-[<img src="/attachment_files/qsg/Shot2.png" width="120" height="80">](/attachment_files/qsg/Shot2.png)
-
+{%popup /attachment_files/qsg/Shot2.png|Hosts (GSA,GSC,GSM,LUS)%}
 {%endcolumn%}
 {%endsection%}
  
 
 {%section%}
 {%column%}
-Deployed Data Grids
-
-[<img src="/attachment_files/qsg/Shot3.png" width="120" height="80">](/attachment_files/qsg/Shot3.png)
-
+{%popup /attachment_files/qsg/Shot3.png|Deployed Data Grids%}
 {%endcolumn%}
 
 {%column%}
-Classes in Space
-
-[<img src="/attachment_files/qsg/Shot4.png" width="120" height="80">](/attachment_files/qsg/Shot4.png)
-
+{%popup /attachment_files/qsg/Shot4.png|Classes in Space%}
 {%endcolumn%}
 
 {%column%}
-Class attributes
-
-[<img src="/attachment_files/qsg/Shot5.png" width="120" height="80">](/attachment_files/qsg/Shot5.png)
-
+{%popup /attachment_files/qsg/Shot5.png|Class attributes%}
 {%endcolumn%}
 
 {%column%}
-Space Query
-
-[<img src="/attachment_files/qsg/Shot6.png" width="120" height="80">](/attachment_files/qsg/Shot6.png)
-
+{%popup /attachment_files/qsg/Shot6.png|Space Query%}
 {%endcolumn%}
 {%endsection%}
  

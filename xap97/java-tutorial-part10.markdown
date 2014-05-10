@@ -95,38 +95,24 @@ The default username and password for the security are admin/admin.
 
 {%section%}
 {%column%}
-Start UI Admin
-
-[<img src="/attachment_files/qsg/Admin0.png" width="120" height="100">](/attachment_files/qsg/Admin0.png)
-
-
+{%popup /attachment_files/qsg/Admin0.png | Start UI Admin%}
 {%endcolumn%}
 {%column%}
-Select Security options
-
-[<img src="/attachment_files/qsg/Security-select.png" width="120" height="100">](/attachment_files/qsg/Security-select.png)
-
-
+{%popup /attachment_files/qsg/Security-select.png | Select Security options %}
 {%endcolumn%}
 {%column%}
-Login admin/admin default
-
-[<img src="/attachment_files/qsg/SecurityLogin.png" width="120" height="100">](/attachment_files/qsg/SecurityLogin.png)
-
+{%popup /attachment_files/qsg/SecurityLogin.png | Login admin/admin default %}
 {%endcolumn%}
 {%column%}
-Create a Role
-
-[<img src="/attachment_files/qsg/CreateRole.png" width="120" height="100">](/attachment_files/qsg/CreateRole.png)
-
-{%endcolumn%}
-{%column%}
-Display Roles
-
-[<img src="/attachment_files/qsg/CreateRole2.png" width="120" height="100">](/attachment_files/qsg/CreateRole2.png)
-
+{%popup /attachment_files/qsg/CreateRole.png | Create a Role %}
 {%endcolumn%}
 {%endsection%}
+{%section%}
+{%column%}
+{%popup /attachment_files/qsg/CreateRole2.png | Display Roles %}
+{%endcolumn%}
+{%endsection%}
+
 You may have noticed that you can assign fine grained access control for space operations (read/write/etc) per space class(slide 4).
 
 {%learn%}{%latestjavaurl%}/gigaspaces-management-center-(ui)-security.html{%endlearn%}
@@ -137,24 +123,15 @@ A user is assigned roles. You can create new roles and users with a configuratio
 
 {%section%}
 {%column%}
-Login
-
-[<img src="/attachment_files/qsg/SecurityLogin.png" width="120" height="100">](/attachment_files/qsg/SecurityLogin.png)
-
-
+{%popup /attachment_files/qsg/SecurityLogin.png | Login %}
 {%endcolumn%}
 
 {%column%}
-Create User
-
-[<img src="/attachment_files/qsg/CreateUser1.png" width="120" height="100">](/attachment_files/qsg/CreateUser1.png)
+{%popup /attachment_files/qsg/CreateUser1.png | Create User %}
 {%endcolumn%}
 
 {%column%}
-Display Users
-
-[<img src="/attachment_files/qsg/CreateUser2.png" width="120" height="100">](/attachment_files/qsg/CreateUser2.png)
-
+{%popup /attachment_files/qsg/CreateUser2.png | Display Users%}
 {%endcolumn%}
 {%endsection%}
 

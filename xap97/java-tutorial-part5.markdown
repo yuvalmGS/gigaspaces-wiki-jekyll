@@ -360,28 +360,28 @@ There is complete example available of  a PU on GitHub. You can download, build 
 {%column%}
 Deploy PU
 
-[<img src="/attachment_files/qsg/EventPU1.png" width="120" height="100">](/attachment_files/qsg/EventPU1.png)
+{%popup /attachment_files/qsg/EventPU1.png %}
 
 {%endcolumn%}
 
 {%column%}
 Applications deployed
 
-[<img src="/attachment_files/qsg/EventPU2.png" width="120" height="100">](/attachment_files/qsg/EventPU2.png)
+{%popup /attachment_files/qsg/EventPU2.png%}
 
 {%endcolumn%}
 
 {%column%}
 Data Grid
 
-[<img src="/attachment_files/qsg/EventPU3.png" width="120" height="100">](/attachment_files/qsg/EventPU3.png)
+{%popup /attachment_files/qsg/EventPU3.png%}
 
 {%endcolumn%}
 
 {%column%}
 Statistics
 
-[<img src="/attachment_files/qsg/EventPU4.png" width="120" height="100">](/attachment_files/qsg/EventPU4.png)
+{%popup /attachment_files/qsg/EventPU4.png%}
 
 {%endcolumn%}
 {%endsection%}

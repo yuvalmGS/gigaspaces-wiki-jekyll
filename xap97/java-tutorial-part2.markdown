@@ -166,28 +166,28 @@ After you execute the above command, open a browser and goto to http://your_host
 {%column%}
 Login
 
-[<img src="/attachment_files/qsg/Shot0.png" width="120" height="80">](/attachment_files/qsg/Shot0.png)
+{%popup /attachment_files/qsg/Shot0.png %}
 
 {%endcolumn%}
 
 {%column%}
 Dashboard
 
-[<img src="/attachment_files/qsg/Shot1.png" width="120" height="80">](/attachment_files/qsg/Shot1.png)
+{%popup /attachment_files/qsg/Shot1.png%}
 
 {%endcolumn%}
 
 {%column%}
 Deployed Applications
 
-[<img src="/attachment_files/qsg/Shot11.png" width="120" height="80">](/attachment_files/qsg/Shot11.png)
+{%popup /attachment_files/qsg/Shot11.png%}
 
 {%endcolumn%}
 
 {%column%}
 Hosts (GSA,GSC,GSM,LUS)
 
-[<img src="/attachment_files/qsg/Shot2.png" width="120" height="80">](/attachment_files/qsg/Shot2.png)
+{%popup /attachment_files/qsg/Shot2.png%}
 
 {%endcolumn%}
 {%endsection%}
@@ -197,28 +197,28 @@ Hosts (GSA,GSC,GSM,LUS)
 {%column%}
 Deployed Data Grids
 
-[<img src="/attachment_files/qsg/Shot3.png" width="120" height="80">](/attachment_files/qsg/Shot3.png)
+{%popup /attachment_files/qsg/Shot3.png%}
 
 {%endcolumn%}
 
 {%column%}
 Classes in Space
 
-[<img src="/attachment_files/qsg/Shot4.png" width="120" height="80">](/attachment_files/qsg/Shot4.png)
+{%popup /attachment_files/qsg/Shot4.png%}
 
 {%endcolumn%}
 
 {%column%}
 Class attributes
 
-[<img src="/attachment_files/qsg/Shot5.png" width="120" height="80">](/attachment_files/qsg/Shot5.png)
+{%popup /attachment_files/qsg/Shot5.png%}
 
 {%endcolumn%}
 
 {%column%}
 Space Query
 
-[<img src="/attachment_files/qsg/Shot6.png" width="120" height="80">](/attachment_files/qsg/Shot6.png)
+{%popup /attachment_files/qsg/Shot6.png%}
 
 {%endcolumn%}
 {%endsection%}

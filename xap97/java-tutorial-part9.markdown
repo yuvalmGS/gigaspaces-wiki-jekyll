@@ -142,54 +142,36 @@ There is a fully working example on GitHub. You can download, build and execute 
 
 {%section%}
 {%column%}
-Start deploy
-
-[<img src="/attachment_files/qsg/Cassandra1.png" width="120" height="100">](/attachment_files/qsg/Cassandra1.png)
-
+{%popup /attachment_files/qsg/Cassandra1.png | Start deploy%}
 {%endcolumn%}
 
 {%column%}
-Deploy Cassandra PU
-
-[<img src="/attachment_files/qsg/Cassandra2.png" width="120" height="100">](/attachment_files/qsg/Cassandra2.png)
+{%popup /attachment_files/qsg/Cassandra2.png |Deploy Cassandra PU %}
 {%endcolumn%}
 
 {%column%}
-Applications
-
-[<img src="/attachment_files/qsg/Cassandra3.png" width="120" height="100">](/attachment_files/qsg/Cassandra3.png)
+{%popup /attachment_files/qsg/Cassandra3.png | Applications%}
 {%endcolumn%}
 
 {%column%}
-Data Grid
-
-[<img src="/attachment_files/qsg/Cassandra4.png" width="120" height="100">](/attachment_files/qsg/Cassandra4.png)
+{%popup /attachment_files/qsg/Cassandra4.png | Data Grid%}
 {%endcolumn%}
-
 {%endsection%}
 
 {%section%}
 {%column%}
-OpsCenter
-
-[<img src="/attachment_files/qsg/OpsCenter1.png" width="120" height="100">](/attachment_files/qsg/OpsCenter1.png)
+{%popup /attachment_files/qsg/OpsCenter1.png | OpsCenter%}
 {%endcolumn%}
 {%column%}
-OpsCenter schema
-
-[<img src="/attachment_files/qsg/OpsCenter2.png" width="120" height="100">](/attachment_files/qsg/OpsCenter2.png)
+{%popup /attachment_files/qsg/OpsCenter2.png | OpsCenter schema%}
 {%endcolumn%}
 
 {%column%}
-Keyspace
-
-[<img src="/attachment_files/qsg/OpsCenter3.png" width="120" height="100">](/attachment_files/qsg/OpsCenter3.png)
+{%popup /attachment_files/qsg/OpsCenter3.png | Keyspace%}
 {%endcolumn%}
 
 {%column%}
-Data Explorer
-
-[<img src="/attachment_files/qsg/OpsCenter4.png" width="120" height="100">](/attachment_files/qsg/OpsCenter4.png)
+{%popup /attachment_files/qsg/OpsCenter4.png | Data Explorer%}
 {%endcolumn%}
 {%endsection%}
 
