@@ -7,10 +7,9 @@ weight: 100
 ---
 
 {%summary%}{%endsummary%}
-
 {%section%}
 {%column width=70% %}
-OpenSpaces comes with support for executing tasks in a collocated asynchronous manner with the Space (processing unit that started an embedded Space). Tasks can be executed directly on a specific cluster member using typical routing declarations. Tasks can also be executed in a "broadcast" mode on all the primary cluster members concurrently and reduced to a single result on the client side. Tasks are completely dynamic both in terms of content and class definitions (the task class definition does not have to be defined within the space classpath).
+OpenSpaces supports `Task` execution in an asynchronous manner, collocated with the Space (Processing Unit that started an embedded Space). `Tasks` can be executed directly on a specific cluster member using routing declarations. `Tasks` can also be executed in "broadcast" mode on all the primary cluster members concurrently and reduced to a single result on the client-side. `Tasks` are dynamic in terms of content and class definition. (The `Task` does not have to be available within the space classpath.)
 {%endcolumn%}
 
 {%column width=30% %}
@@ -19,7 +18,7 @@ OpenSpaces comes with support for executing tasks in a collocated asynchronous m
 {%endsection%}
 
 {% tip %}
-The following [example](/sbp/map-reduce-pattern---executors-example.html) demonstrates how to use the task execution API
+The following [example](/sbp/map-reduce-pattern---executors-example.html) demonstrates how to use the `Task` Execution API
 {% endtip %}
 
 {%comment%}
@@ -60,7 +59,7 @@ public class MyTask implements Task<Integer> {
 }
 {% endhighlight %}
 
-Executing the task itself uses the GigaSpace API with a routing value of 2 (the second parameter):
+Executing the task uses the GigaSpace API with a routing value of 2 (the second parameter):
 
 {% highlight java %}
 AsyncFuture<Integer> future = gigaSpace.execute(new MyTask(2), 2);
@@ -69,9 +68,9 @@ int result = future.get();
 
 # Async API
 
-`Task` execution is asynchronous in nature, returning an `AyncFuture` as the result of the execution allowing to get the result at a later stage in the code. `AsyncFuture` itself extends `java.util.concurrent.Future`.
+`Task` execution is asynchronous in nature, returning an `AyncFuture`. This allows the result to be retrieved at a later stage. `AsyncFuture` allows registration of an `AsyncFutureListener` that will execute specified logic when the `Task` completes. 
 
-The main deficiency of `java.util.concurrent.Future` is the fact that a call to `get` results in a blocking call (either indefinitely or for a specific timeout) causing the execution of a `Task` to not be completely asynchronous in terms of user API flow. `AsyncFuture` adds the ability to register an `AsyncFutureListener` which will be executed once a result arrives. Here are the interfaces for both `AsyncFuture` and `AsyncFutureListener`:
+Here are the interfaces for both `AsyncFuture` and `AsyncFutureListener`:
 
 {% highlight java %}
 public interface AsyncFuture<V> extends Future<V> {
@@ -88,9 +87,9 @@ public interface AsyncFutureListener<T> {
 }
 {% endhighlight %}
 
-Passing the listener can be done by setting it on the `AsyncFuture` or when executing a task using the `GigaSpace` API as an additional parameter.
+Passing the listener can be done by setting it on the `AsyncFuture` or when executing a `Task` using the `GigaSpace` API as an additional parameter.
 
-`AsyncResult` can be used to extract the result or the exception of the execution. Here it is:
+`AsyncResult` can be used to extract the result or the exception of the execution:
 
 {% highlight java %}
 public interface AsyncResult<T> {
@@ -112,14 +111,14 @@ public interface AsyncResult<T> {
 
 # Task Routing
 
-When executing a single `Task` there are several ways its routing can be controlled. The simplest form is by passing the routing information as a parameter to the execute command, for example:
+When executing a single `Task`, there are several ways its routing can be controlled. Passing the routing information as a parameter to the execute command is the simplest form:
 
 {% highlight java %}
 AsyncFuture<Integer> future = gigaSpace.execute(new MyTask(2), 2);
 int result = future.get();
 {% endhighlight %}
 
-The routing parameter value will be used as the routing value. In case it is a POJO defined with a @SpaceRouting on one of its properties, the value of that property will be used as the routing information when passed as a parameter. For example:
+Alternatively, it is sufficient to define a POJO property annotated `@SpaceRouting`. The value of that property will be used to route any `Tasks` defined in this way. For example:
 
 {% highlight java %}
 public void Order {
@@ -130,6 +129,7 @@ public void Order {
   public Integer getOrderRouting() {
     // ...
   }
+  
 }
 
 Order order = new Order();
@@ -137,7 +137,10 @@ AsyncFuture<Integer> future = gigaSpace.execute(new MyTask(2), order);
 int result = future.get();
 {% endhighlight %}
 
-Routing information can also be defined on the `Task` itself either using `@SpaceRouting` annotation or using the optional `TaskRoutingProvider` interface (for non annotations based configuration). Here are how they can be used:
+Routing information can also be defined at the `Task`-level, in two ways:
+
+1. Provide an instance property and annotate the getter with the `@SpaceRouting` annotation.
+1. Implement the `TaskRoutingProvider` interface (for non annotations based configuration). 
 
 {% inittab os_simple_space|top %}
 {% tabcontent Annotation %}
@@ -189,7 +192,7 @@ public class MyTask implements Task<Integer> implements TaskRoutingProvider {
 {% endtabcontent %}
 {% endinittab %}
 
-Once the routing information is defined on the `Task`, it can be executed (without the need for additional parameters):
+Using either mechanism to define routing at the the `Task`-level removes the need for the routing parameter:
 
 {% highlight java %}
 AsyncFuture<Integer> future = gigaSpace.execute(new MyTask(2));
@@ -198,7 +201,7 @@ int result = future.get();
 
 # DistributedTask API
 
-A `DistributedTask` is a task that ends up executing more than once (concurrently) and returns a result that is a reduced operation of all the different executions.
+A `DistributedTask` is a `Task` that is executed more than once (concurrently). It returns a result that is the reduced product of all operations. This reduction is calculated in the `Task`'s `reduce(...)` method. 
 
 {% section %}
 {% column width=45% %}
@@ -217,6 +220,7 @@ Here is the `DistributedTask` API:
 public interface AsyncResultsReducer<T, R> {
 
   R reduce(List<AsyncResult<T>> results) throws Exception;
+  
 }
 
 public interface DistributedTask<T extends Serializable, R> extends Task<T>, AsyncResultsReducer<T, R> {
@@ -247,25 +251,25 @@ public class MyDistTask implements DistributedTask<Integer, Long> {
 }
 {% endhighlight %}
 
-The above task simply returns `1` for its `execute` operation, and the reducer simply sums all the executions. If there was an exception thrown during the `execute` operation (in our case, it will never happen), the exception will be throws back to the user during the `reduce` operation.
+`MyDistTask` returns `1` for each of its `execute` operations, and the reducer sums all of the executions. If there was an exception thrown during the `execute` operation (in our case, it will never happen), the exception will be throws back to the user during the `reduce` operation.
 
-A distributed task is used when either executing a task the is directed to several nodes based on different routing values, or one that is broadcast to all the primary nodes of the cluster. Executing a distributed task on several nodes based on different routing values can be done as follows:
+A `DistributedTask` can be broadcast to all primary nodes of the cluster or routed selectively. Executing a distributed task on several nodes could be done as follows:
 
 {% highlight java %}
 AsyncFuture<Long> future = gigaSpace.execute(new MyDistTask(), 1, 4, 6, 7);
-long result = future.get(); // result will be 4
+long result = future.get(); // result will be 18
 {% endhighlight %}
 
-In the above case, the distributed task is executed (concurrently and asynchronously) on 4 nodes that correspond to routing values of `1`, `4`, `6`, and `7`.
+In this case, `MyDistTask` is executed concurrently and asynchronously on the nodes that correspond to routing values of `1`, `4`, `6`, and `7`.
 
-Broadcasting the execution to all current primary nodes can be done by simply executing **just** the distributed task. Here is an example:
+Broadcasting the execution to all current primary nodes can be done by simply executing **just** the `DistributedTask`. Here is an example:
 
 {% highlight java %}
 AsyncFuture<Long> future = gigaSpace.execute(new MyDistTask());
 long result = future.get(); // result will be the number of primary spaces
 {% endhighlight %}
 
-In this case, the distributed task will be executed on all the primary spaces of the cluster.
+In this case, the `DistributedTask` is executed on all primary spaces of the cluster.
 
 ## AsyncResultFilter
 
