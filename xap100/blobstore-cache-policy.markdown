@@ -1,6 +1,6 @@
 ---
 layout: post10
-title:  Blob Store - Cache Policy
+title:  BLOB STORE - Cache Policy
 categories: XAP10
 parent: memory-management-overview.html
 weight: 600
@@ -15,8 +15,10 @@ When running in BLOB-STORE cache policy mode, the space uses its available physi
 ![data-grid-xap.jpg](/attachment_files/data-grid-async-persist.jpg)
 {% endindent %}
 
-XAP is using [SanDisk Flash Data Fabric (FDF)](http://www.sandisk.com/) which enables direct flash access for In-Memory performance, When a user write an object to the space it's indexes are stored in the space and its data is stored at the flash device using FDF.
-With blob store cache policy the space (RAM) can store much more data, while quering the space overhead remains the same.
+XAP is using [SanDisk Flash Data Fabric (FDF)](http://www.sandisk.com/) which enables direct flash access for In-Memory performance which eliminate any other storage interface, When a user write an object to the space it's indexes are stored in the space and its data is stored at the flash device using FDF, FDF enable to interact with any flash technology from any vendor.
+The indexes maintain in RAM allowing the XAP query engine to evaluate the query without accessing the raw data stored on the flash device. This allows XAP to execute SQL based queries extremely efficiently even across large number of nodes.
+All XAP Data Grid API are supported with BlobStore policy, it also fully support Data Grid distributed transactions.
+
 
 {%note title=Supported OS%}Current version support only CentOS 5.8-5.10{%endnote%}
 
@@ -50,6 +52,12 @@ The IMDG BlobStore settings includes the following options:{%wbr%}
 
 # Usage
 
+
+{%fontsize 20%}**installation**{%endfontsize%}
+Need to add how the user download the rpm/jar?
+
+
+{%fontsize 20%}**configuration**{%endfontsize%}
 Creating a BlobStore GigaSpace is similar to creating a GigaSpace, except that we inject a blobstore implementation to the GigaSpace. The BlobStore can be configured at design time using `SanDiskBlobStoreDataPolicyFactoryBean`, or at runtime using `SanDiskBlobStoreConfigurer`. For example:
 
 
@@ -175,6 +183,4 @@ public class Person {
 }
 {% endhighlight %}
 
-
 If you wish to add Async Persistency - Mirror to your IMDG please refer to [Async Persistency with Mirror](./asynchronous-persistency-with-the-mirror.html).
-
