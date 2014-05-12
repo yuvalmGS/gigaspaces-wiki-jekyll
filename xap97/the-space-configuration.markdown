@@ -49,7 +49,7 @@ jini://LookupServiceHostname/*/mySpace{%wbr%}
 
 **Accessing Remote Space Using the Jini Lookup Service - Multicast Discovery**{%wbr%}
 {%highlight xml%}
-jini://*/*/mySpace{%wbr%}
+jini://*/*/mySpace
 {%endhighlight%}
 
 **Starting Embedded Space Using the Java Protocol**{%wbr%}
