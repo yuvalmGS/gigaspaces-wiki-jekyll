@@ -109,7 +109,7 @@ You can choose to refresh the Space Network view periodically. Select the desire
 
 - **Refresh** -- refreshes the tree panel display.
 - **Runtime Configuration Report** -- displays the current configuration of the selected space container (see [Runtime Configuration Report](./gigaspaces-browser-managing-space-container.html#Runtime Configuration Report)).
-- **Launch JConsole** -- launches a [JConsole]({%currentjavaurl%}/space-jmx-management.html) for the selected space container.
+- **Launch JConsole** -- launches a [JConsole](./space-jmx-management.html) for the selected space container.
 
 When the space container node is selected, its configuration data is displayed in the configuration panel on the right side.
 

@@ -1,9 +1,9 @@
 ---
-layout: post97
+layout: post97adm
 title:  Monitoring Tools
-categories: XAP97
-parent: administration-tools.html
-weight: 700
+categories: XAP97ADM
+parent: monitoring.html
+weight: 300
 ---
 
 

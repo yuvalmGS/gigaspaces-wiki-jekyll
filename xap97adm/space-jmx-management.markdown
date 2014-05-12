@@ -1,9 +1,9 @@
 ---
-layout: post97
+layout: post97adm
 title:  JMX Management
-categories: XAP97
-parent: administration-tools.html
-weight: 600
+categories: XAP97ADM
+parent: monitoring.html
+weight: 200
 ---
 
 {% summary %}{% endsummary %}

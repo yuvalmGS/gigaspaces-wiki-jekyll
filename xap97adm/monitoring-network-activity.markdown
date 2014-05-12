@@ -1,9 +1,9 @@
 ---
-layout: post97
+layout: post97adm
 title:  Network Monitoring
-categories: XAP97
-parent: administration-tools.html
-weight: 500
+categories: XAP97ADM
+parent: monitoring.html
+weight: 100
 ---
 
 
@@ -55,7 +55,7 @@ There are three ways to retrieve the LRMI monitoring details, all of which requi
 
 ## Using Dump
 
-When generating a [Dump](./dump.html) and the LRMI monitoring is enabled if the network dump is selected then the dump will include the LRMI monitoring details. When generating the dump it should include the `Network Dump` in it in order to contain the LRMI monitoring details. In the generated dump the 'network.txt' file will include, among other things, the LRMI monitoring details and it will look similar to this:
+When generating a [Dump]({%currentjavaurl%}/dump.html) and the LRMI monitoring is enabled if the network dump is selected then the dump will include the LRMI monitoring details. When generating the dump it should include the `Network Dump` in it in order to contain the LRMI monitoring details. In the generated dump the 'network.txt' file will include, among other things, the LRMI monitoring details and it will look similar to this:
 
 {% highlight bash %}
 ===== LRMI =====

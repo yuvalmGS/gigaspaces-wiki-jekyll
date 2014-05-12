@@ -70,7 +70,7 @@ The two multicast addresses allow you to completely separate two different GigaS
 
 # Troubleshooting the Discovery/Group Configuration
 
-Using the [list LUS ]({%currentjavaurl%}/command-line-interface.html) CLI option, run from `<GigaSpaces Root>\bin\gs.bat/sh`, you can search for available Jini Lookup Services in the network.
+Using the [list LUS ](./command-line-interface.html) CLI option, run from `<GigaSpaces Root>\bin\gs.bat/sh`, you can search for available Jini Lookup Services in the network.
 `<GigaSpaces Root>\bin\gs.bat/sh` list lus
 
 The following result examples appear on the console:

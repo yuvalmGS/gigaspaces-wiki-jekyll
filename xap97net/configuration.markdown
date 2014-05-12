@@ -18,8 +18,10 @@ At some point there's a need to tweak the configuration.
 - [System configuration](./system-configuration.html){%wbr%}
 Using System Properties to configure XAP.NET.
 
+{%comment%}
 - [Systems properties](./system-properties-list.html){%wbr%}
 A list of properties that can be configured.
+{%endcomment%}
 
 - [Platform configuration](./system-configuration-list.html){%wbr%}
 This page explains how to configure XAP.NET Grid environment.

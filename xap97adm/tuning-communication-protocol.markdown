@@ -177,7 +177,7 @@ The value of this property represents the host name string that must be associat
 
 # Monitoring
 
-You can monitor network and usage activity during runtime to track which client is invoking which methods on each space serving remote client requests such as read/write. For more information on monitoring see [Monitoring Network Activity]({%currentjavaurl%}/monitoring-network-activity.html)
+You can monitor network and usage activity during runtime to track which client is invoking which methods on each space serving remote client requests such as read/write. For more information on monitoring see [Monitoring Network Activity](./monitoring-network-activity.html)
 
 # Troubleshooting
 

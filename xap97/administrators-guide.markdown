@@ -35,8 +35,6 @@ This section describe into details how the In-Memory-Data-Grid clustering works.
 - [Command line deployment](./deploy-command-line-interface.html){%wbr%}
 GigaSpaces provides an interactive command line tool as part of the product. This can be started using gs.sh/bat command (referred to as GigaSpaces CLI).
 
-- [Administration tools](./administration-tools.html){%wbr%}
-This guide will explain the command line interface and present the Web Management Console.The web management console is a new user interface for XAP allowing users to deploy, manage and monitor their Processing Units and Applications
 
 
 <hr/>

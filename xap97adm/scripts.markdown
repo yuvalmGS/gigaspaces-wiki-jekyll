@@ -1,20 +1,20 @@
 ---
-layout: post97
+layout: post97adm
 title:  Scripts
-categories: XAP97
+categories: XAP97ADM
 parent: administration-tools.html
 weight: 450
 ---
 
 {% summary page%}{% endsummary %}
 
-The `<gigaspaces root>/bin` folder includes scripts to manage and monitor [GigaSpaces Runtime](./the-runtime-environment.html) Components and Applications:
+The `<gigaspaces root>/bin` folder includes scripts to manage and monitor [GigaSpaces Runtime]({%currentjavaurl%}/the-runtime-environment.html) Components and Applications:
 
-- **setenv** - Used by all scripts to configure and load [Common Environment Variables](./common-environment-variables.html).
+- **setenv** - Used by all scripts to configure and load [Common Environment Variables]({%currentjavaurl%}/common-environment-variables.html).
 - **gs** - starts the GigaSpaces [interactive shell](./command-line-interface.html).
-- **gs-ui** - starts the [GigaSpaces Management Center]({%currentadmurl%}/gigaspaces-management-center.html).
-- **gs-webui** - starts the [Web Management Console]({%currentadmurl%}/web-management-console.html).
-- **gs-agent** - Starts the [GigaSpaces runtime environment](./the-runtime-environment.html) via the [Grid Service Agent](/product_overview/service-grid.html#gsa) (GSA), which starts and manages the [Service Grid](/product_overview/service-grid.html) components.
+- **gs-ui** - starts the [GigaSpaces Management Center](./gigaspaces-management-center.html).
+- **gs-webui** - starts the [Web Management Console](./web-management-console.html).
+- **gs-agent** - Starts the [GigaSpaces runtime environment]({%currentjavaurl%}/the-runtime-environment.html) via the [Grid Service Agent](/product_overview/service-grid.html#gsa) (GSA), which starts and manages the [Service Grid](/product_overview/service-grid.html) components.
 
 
 In addition to the scripts described [here](./scripts.html), the `bin` folder contains **advanced_scripts.zip** for additional tasks, usually for development and troubleshooting
@@ -27,13 +27,13 @@ If you need to start the [Service Grid](/product_overview/service-grid.html) com
 - **gsc** - starts an instance of the [GSC](/product_overview/service-grid.html#gsc).
 - **gsm** - starts an instance of the [GSM](/product_overview/service-grid.html#gsm) and [LUS](/product_overview/service-grid.html#lus).
 - **gsm_nolus** - starts an instance of the [GSM](/product_overview/service-grid.html#gsm).
-- **esm** - starts an instance of the [ESM](./elastic-processing-unit.html).
+- **esm** - starts an instance of the [ESM]({%currentjavaurl%}/elastic-processing-unit.html).
 - **startJiniTX_Mahalo** - starts an instance of the Distributed transaction manager.
 
 # Processing Units
 - **puInstance** - starts a standalone, un managed instance of a processing unit.
 - **gsInstance** - starts a standalone, un managed instance of a space. Used usually in development.
-- **gs-memcached** - starts standalone, un managed instance of [Memcached API](./memcached-api.html) listener.
+- **gs-memcached** - starts standalone, un managed instance of [Memcached API]({%currentjavaurl%}/memcached-api.html) listener.
 
 # Misc
 - **lookupbrowser** - Used with for special debug scenarios to inspect the lookup service.

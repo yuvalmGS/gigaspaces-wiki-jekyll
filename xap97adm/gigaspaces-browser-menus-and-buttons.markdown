@@ -122,7 +122,7 @@ Selecting a Jini group defines which services (containers, spaces, GSCs, GSMs) a
 
 ## Configured System Properties Window
 
-The **System Properties** option opens a window listing all configured [system properties]({%currentjavaurl%}/system-properties-list.html). The Configured System Properties window allows you to edit existing system properties, and add new properties.
+The **System Properties** option opens a window listing all configured [system properties](./runtime-configuration.html). The Configured System Properties window allows you to edit existing system properties, and add new properties.
 
 ![GMC_space_SettingsMenuOption_Settings_ConfiguredSystemProp_Window_6.5.jpg](/attachment_files/GMC_space_SettingsMenuOption_Settings_ConfiguredSystemProp_Window_6.5.jpg)
 

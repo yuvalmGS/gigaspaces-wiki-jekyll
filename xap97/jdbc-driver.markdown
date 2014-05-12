@@ -28,7 +28,7 @@ JDBC support in XAP is centered around the Space-Based Architecture - its main m
 GigaSpaces is not a full-fledged relational database and it does not support the full SQL92 standard (see [JDBC Supported Features](#Supported Features)). However, the existing SQL support is extremely useful for applications that need to execute queries on a space for real-time queries.
 
 {% tip %}
-You can use the [SQL Command Line](./space---gigaspaces-cli.html) to query and fetch data from the IMDG. The SQL Command Line using the GigaSpaces JDBC Driver when accessing the IMDG.
+You can use the [SQL Command Line]({%currentadmurl%}/space---gigaspaces-cli.html) to query and fetch data from the IMDG. The SQL Command Line using the GigaSpaces JDBC Driver when accessing the IMDG.
 {% endtip %}
 
 ## Using Existing SQL Code and Porting to External Systems
