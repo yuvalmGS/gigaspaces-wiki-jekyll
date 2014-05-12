@@ -137,7 +137,7 @@ Here is an example of a space working in FIFO mode, using specific lookup groups
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-  <os-core:space id="space" url="/./space" fifo="true" lookup-groups="test" />
+  <os-core:space id="space" url="/./space" lookup-groups="test" lookup-timeout="10000"  lookup-locators="myHost" versioned="true" />
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -146,8 +146,10 @@ Here is an example of a space working in FIFO mode, using specific lookup groups
 {% highlight xml %}
 <bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
     <property name="url" value="/./space" />
-    <property name="fifo" value="true" />
+    <property name="versioned" value="true" />
     <property name="lookupGroups" value="test" />
+    <property name="lookupTimeout" value="20000" />
+    
 </bean>
 {% endhighlight %}
 
@@ -157,10 +159,10 @@ Here is an example of a space working in FIFO mode, using specific lookup groups
 {% highlight java %}
 
    // Create the url
-   UrlSpaceConfigurer spaceConfigurer = new UrlSpaceConfigurer("/./space").fifo(true)
-                                                                       .lookupGroups("test");
+   UrlSpaceConfigurer spaceConfigurer = new UrlSpaceConfigurer("/./space").lookupGroups("test").lookupTimeout(20000);
+
    // Create the url with arguments
-   UrlSpaceConfigurer spaceConfigurer = new UrlSpaceConfigurer("/./space?fifo=true&lookupGroups=test");
+   UrlSpaceConfigurer spaceConfigurer = new UrlSpaceConfigurer("/./space?groups=test&timeout=20000");
 
    // Create the url with properties
    UrlSpaceConfigurer spaceConfigurer = new UrlSpaceConfigurer("/./space")
@@ -242,7 +244,7 @@ Popular overrides:
 
 {%anchor proxy%}
 
-# The Space Proxy
+# The Space Proxy - The GigaSpace Bean
 
 The `GigaSpace` Spring Bean provides a simple way to configure a proxy to be injected into the relevant Bean.
 
