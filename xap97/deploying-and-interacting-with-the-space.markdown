@@ -73,8 +73,8 @@ The Space can be instantiated in a number of ways:
 
 {% toczone minLevel=2|maxLevel=3|type=list|separator=pipe|location=top %}
 
-With the first approach, you deploy a Space onto the GigaSpaces Service Grid infrastructure (using the management GUI, the [CLI](./deploy-command-line-interface.html) or the [administration and monitoring API](./administration-and-monitoring-api.html)).
-With the second approach, you create a processing unit that contains an embedded Space, and deploy it onto the GigaSpaces Service Grid infrastructure (using the management GUI, the [CLI](./deploy-command-line-interface.html) or the [administration and monitoring API](./administration-and-monitoring-api.html)).
+With the first approach, you deploy a Space onto the GigaSpaces Service Grid infrastructure (using the management GUI, the [CLI]({%currentadmurl%}/deploy-command-line-interface.html) or the [administration and monitoring API](./administration-and-monitoring-api.html)).
+With the second approach, you create a processing unit that contains an embedded Space, and deploy it onto the GigaSpaces Service Grid infrastructure (using the management GUI, the [CLI]({%currentadmurl%}/deploy-command-line-interface.html) or the [administration and monitoring API](./administration-and-monitoring-api.html)).
 
 The last two ways of instantiating a space are from within your own application, using Spring or from plain Java code. In both cases, you have to manually start each Space instance.
 
@@ -161,7 +161,7 @@ Partitioned cluster with 2 nodes and a backup for each node:
 gs deploy-space -cluster schema=partitioned-sync2backup total_members=2,1 mySpace
 {% endhighlight %}
 
-To see the full list of options available with this command, refer to [this page](./deploy-command-line-interface.html).
+To see the full list of options available with this command, refer to [this page]({%currentadmurl%}/deploy-command-line-interface.html).
 
 {% anchor api %}
 

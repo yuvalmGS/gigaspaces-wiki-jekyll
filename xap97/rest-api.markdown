@@ -119,4 +119,4 @@ See that Item3 does not exists:
 
 3.Package the project using maven: "mvn package". This will run the unit tests and package the project to a war file located at /target/RESTData.war
 
-4.[Deploy](./deploy-command-line-interface.html) the war file.
+4.[Deploy]({%currentadmurl%}/deploy-command-line-interface.html) the war file.

@@ -3,7 +3,7 @@ layout: post97adm
 title:  Space Command Line Interface
 categories: XAP97ADM
 parent: administration-tools.html
-weight: 20
+weight: 300
 ---
 
 {%summary%}{%endsummary%}

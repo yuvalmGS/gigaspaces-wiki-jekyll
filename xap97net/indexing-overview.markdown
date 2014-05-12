@@ -31,11 +31,11 @@ An index can be defined on a Collection property.
 
 
 - [Compound index](./indexing-compound.html){%wbr%}
-Compound indexes can be defined using annotations.
+Compound indexes can be defined using multiple class properties.
 
 
 - [Unique index](./indexing-unique.html){%wbr%}
-Unique constraints can be defined for an attribute or attributes of a space class.
+Unique constraints can be defined for a property or properties of a space class.
 <hr/>
 
 

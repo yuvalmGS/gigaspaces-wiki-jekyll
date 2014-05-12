@@ -372,7 +372,7 @@ With a stateless PU
 Deploying with the command line options will override the sla definitions
 {%endnote%}
 
-{%learn%}{%latestjavaurl%}/deploy-command-line-interface.html{%endlearn%}
+{%learn%}{%latestadmurl%}/deploy-command-line-interface.html{%endlearn%}
 
 
 

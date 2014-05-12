@@ -18,8 +18,8 @@ The `type` property is mandatory in case the `property` element is defined.
 
 The gs.xml file allows you to define c++ classes in the space. To learn how to do this, see the [CPP API Code Generator](./cpp-api-code-generator.html) section.
 
-{% note %}
-To find out about the **supported c++ types**, see [below](#type--Supported-Types).
+{%note%}
+For the latest supported configurations please consult the [api documentation](/api_documentation/xap-{%currentversion%}.html)
 {%endnote%}
 
 The `*.gs.xml` configuration needs to reside in a `<Root Folder>\config\mapping` folder where the `<Root Folder>` should be part of the application classpath.

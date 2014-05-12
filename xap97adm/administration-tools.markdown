@@ -15,18 +15,18 @@ This guide will explain the command line interface that is used to deploy, manag
 
 <hr/>
 
-- [Command Line Interface](./command-line-interface.html){%wbr%}
-This tool provides many commands that can be used to manage and gather information about the various GigaSpaces runtime components.
-
-- [Space Command Line Interface](./space---gigaspaces-cli.html){%wbr%}
-Space command line interface
-
 - [Scripts](./scripts.html){%wbr%}
-Overview of the scripts included in the <gigaspaces root>/bin folder
+Overview of the scripts included in the <XAP root>/bin folder
+
+- [Command line interface](./command-line-interface.html){%wbr%}
+This tool provides many commands that can be used to manage and gather information about the various XAP runtime components.
+
+- [Deploy command line interface](./deploy-command-line-interface.html){%wbr%}
+XAP provides an interactive command line tool as part of the product. This can be started using gs.sh/bat command (referred to as XAP CLI).
+
+- [Space command line interface](./space---gigaspaces-cli.html){%wbr%}
+Space command line interface
 
 
 <hr/>
 
-{%comment%}
-<iframe width="640" height="360" src="//www.youtube.com/embed/9nFkfj2o5hk?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
-{%endcomment%}

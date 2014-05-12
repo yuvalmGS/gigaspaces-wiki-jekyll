@@ -3,7 +3,7 @@ layout: post97adm
 title:  Scripts
 categories: XAP97ADM
 parent: administration-tools.html
-weight: 450
+weight: 50
 ---
 
 {% summary page%}{% endsummary %}

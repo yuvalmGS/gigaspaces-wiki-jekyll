@@ -3,7 +3,7 @@ layout: post97adm
 title:  Command Line Interface
 categories: XAP97ADM
 parent: administration-tools.html
-weight: 10
+weight: 100
 ---
 
 {%summary%} {%endsummary%}

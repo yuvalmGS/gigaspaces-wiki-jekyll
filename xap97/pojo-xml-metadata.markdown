@@ -14,6 +14,10 @@ weight: 130
 
 The space mapping configuration file `gs.xml` allows you to define space class metadata when using a POJO class with getter or setter methods. Space mapping files are also required when using POJO objects with the `ExternalDataSource` interface. The `gs.xml` configuration file is loaded when the application and space are started. `gs.xml` files can be edited to include GigaSpaces specific attributes.
 
+{%note%}
+For the latest supported configurations please consult the [api documentation](/api_documentation/xap-{%currentversion%}.html)
+{%endnote%}
+
 
 # Class Level Tags
 

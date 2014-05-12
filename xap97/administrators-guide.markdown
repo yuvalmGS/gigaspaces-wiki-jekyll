@@ -32,9 +32,6 @@ The service reloading feature allows you to reload business logic (Spring beans)
 This section describe into details how the In-Memory-Data-Grid clustering works. It goes into the details of the fail-over, load-balancing, and replication facilities used.
 
 
-- [Command line deployment](./deploy-command-line-interface.html){%wbr%}
-GigaSpaces provides an interactive command line tool as part of the product. This can be started using gs.sh/bat command (referred to as GigaSpaces CLI).
-
 
 
 <hr/>

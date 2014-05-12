@@ -382,5 +382,3 @@ The smallest set of space objects is the list of objects to perform the matching
 {% infosign %} Class fields that are not indexed are not used to construct the candidates list.
 {%endcomment%}
 
-
-{%children%}

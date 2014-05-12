@@ -639,7 +639,7 @@ export GSC_JAVA_OPTIONS=-Dcom.gs.zones="B"
 ### Deploy the PU
 
 Deploy your PU from CLI or UI.
-[See CLI example](./deploy-command-line-interface.html#deploy-pu).
+[See CLI example]({%currentadmurl%}/deploy-command-line-interface.html#deploy-pu).
 
 When deployed all primary instances will be allocated in zone `A` and backups in zone `B`. If primary fails the order will be restored by using restart.
 

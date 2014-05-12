@@ -217,7 +217,7 @@ To deploy the IMDG start the GigaSpaces agent using the `gs-agent` and run the f
 
 gs deploy-space sessionSpace
 
-{% tip %}See the [deploy-space]({%latestjavaurl%}/deploy-command-line-interface.html) command for details.{% endtip %}
+{% tip %}See the [deploy-space]({%latestadmurl%}/deploy-command-line-interface.html) command for details.{% endtip %}
 
 ### The WAN Gateway
 
