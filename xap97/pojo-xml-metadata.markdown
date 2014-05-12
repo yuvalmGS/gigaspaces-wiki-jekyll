@@ -46,7 +46,7 @@ All the fields are written automatically into space. If the field is a reference
 - **`<null-value>`** - a value that will represent a `null`. Relevant for primitive fields (int, long).
 
 {% highlight java %}
-<class name="com.j_spaces.examples.hellospacepojo.Person"
+<class name="com.examples.Person"
         persist="false" replicate="false">
     <property name="int_Field" null-value="-1" />
     <property name="long_Field" null-value="-1" />
