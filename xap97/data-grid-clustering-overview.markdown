@@ -19,7 +19,7 @@ GigaSpaces Data-Grid clustering Scalability and High-Availability are based on t
 
 ## Scalability
 
-1. Data is segmented into [partitions](./data-partitioning.html). Each partition includes a primary instance and ZERO or more backups instances. A partition (primary or a backup) hosted within a single [Grid Service container](./the-runtime-environment.html).
+1. Data is segmented into [partitions](./data-partitioning.html). Each partition includes a primary instance and ZERO or more backups instances. A partition (primary or a backup) hosted within a single [Grid Service container]({%currentadmurl%}/the-runtime-environment.html).
 1. Data access is load-balanced across the different partitions using a routing field or a [routing value](./routing-in-partitioned-spaces.html) specified as part of the space object or as part of the read/execute request. This allows the application to control the data distribution in a transparent manner.
 1. Some operations such as batch read or [execute](./task-execution-over-the-space.html) support [map-reduce](./space-based-remoting.html) behavior allowing the application to access multiple partitions in parallel.
 1. Partition maximum size would be the Grid Service container heap size. GigaSpaces support large heap size (up to 100GB in RAM). A Grid Service container may host multiple partitions (primary or backup instances).

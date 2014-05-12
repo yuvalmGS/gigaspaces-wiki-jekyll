@@ -1,8 +1,8 @@
 ---
-layout: post97
+layout: post97adm
 title:  The Runtime Environment
-categories: XAP97
-parent: administrators-guide.html
+categories: XAP97ADM
+parent: runtime-configuration.html
 weight: 100
 ---
 
@@ -84,7 +84,7 @@ The following are the process types that come out of the box:
 |gsm|Defines a [Grid Service Manager](/product_overview/service-grid.html#gsm)|gsm.xml|gsm.properties|
 |lus|Defines a [Lookup Service](/product_overview/service-grid.html#lus)| lus.xml|lus.properties|
 |gsm_lus|Defines a [Grid Service Manager](/product_overview/service-grid.html#gs) and [Lookup Service](/product_overview/service-grid.html#lus) within the same JVM|gsm_lus.xml|gsm_lus.properties|
-|esm|Defines an Elastic Service Manager which is required for deploying [Elastic Processing Unit](./elastic-processing-unit.html)|esm.xml|esm.properties |
+|esm|Defines an Elastic Service Manager which is required for deploying [Elastic Processing Unit]({%currentjavaurl%}/elastic-processing-unit.html)|esm.xml|esm.properties |
 
 Here is an example of the gsc xml configuration file:
 

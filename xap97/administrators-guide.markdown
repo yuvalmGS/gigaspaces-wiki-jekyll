@@ -13,9 +13,6 @@ The primary focus of the Administrator's Guide, is to provide both a basic, as w
 
 
 
-- [The runtime environment](./the-runtime-environment.html){%wbr%}
-This section gives a detailed description of the XAP deployment & runtime environment.
-
 - [Deploying and interacting with the space](./deploying-and-interacting-with-the-space.html){%wbr%}
 Overview of GigaSpaces in-memory data grid - how to create a data grid, connect to it, and interact with it.
 

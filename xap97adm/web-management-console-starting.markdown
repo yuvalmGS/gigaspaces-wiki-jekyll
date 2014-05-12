@@ -61,7 +61,7 @@ Note that you can also use the `WEBUI_JAVA_OPTIONS` environment variable to set 
 
 ### Deploying the Management Console Web Application to the XAP Runtime Environment
 
-To deploy the management console web application to the XAP [Runtime Environment]{%currentjavaurl%}/the-runtime-environment.html), you should simply point your deployment tool of choice (CLI, Admin API or the standalone Java-based UI) to the `<XAP root>/tools/gs-webui/gs-webui.war` file and deploy it.
+To deploy the management console web application to the XAP [Runtime Environment](./the-runtime-environment.html), you should simply point your deployment tool of choice (CLI, Admin API or the standalone Java-based UI) to the `<XAP root>/tools/gs-webui/gs-webui.war` file and deploy it.
 
 Note that in this case the management console application actually monitors the runtime environment on which it runs.
 
@@ -81,7 +81,7 @@ For more details on XAP's web application support, please refer to [this page]({
 It is also possible to deploy the web application to a 3rd party servlet container (e.g. Apache Tomcat). Please consult your web container documentation for deployment instructions.
 
 {% info%}
-When deploying to a 3rd party web container like tomcat, you will need to repackage the `gs-webui.war` file and add all the `.jar` files located under `<XAP root>/lib/required` to the `WEB-INF/lib` directory of the `gs-webui.war` file. By default, they are not part of the the `gs-webui.war` file since they are automatically included in the classpath of both the standalone container and the XAP [Runtime Environment]({%currentjavaurl%}/the-runtime-environment.html)
+When deploying to a 3rd party web container like tomcat, you will need to repackage the `gs-webui.war` file and add all the `.jar` files located under `<XAP root>/lib/required` to the `WEB-INF/lib` directory of the `gs-webui.war` file. By default, they are not part of the the `gs-webui.war` file since they are automatically included in the classpath of both the standalone container and the XAP [Runtime Environment](./the-runtime-environment.html)
 {% endinfo %}
 
 #### Logging into the Web Dashboard

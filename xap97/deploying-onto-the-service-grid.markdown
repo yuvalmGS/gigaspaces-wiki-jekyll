@@ -10,9 +10,9 @@ weight: 300
 
 
 
-Deploying your processing unit to the [service grid](./the-runtime-environment.html) is the preferred way to run in your production environment. The service grid provides the following main benefits to every processing unit deployed onto it:
+Deploying your processing unit to the [service grid]({%currentadmurl%}/the-runtime-environment.html) is the preferred way to run in your production environment. The service grid provides the following main benefits to every processing unit deployed onto it:
 
-- Automatic distribution and provisioning of the processing unit instances: When deploying to the [service grid](./the-runtime-environment.html) the [GigaSpaces Manager](/product_overview/service-grid.html#gsm) identifies the relevant [GigaSpaces Containers](/product_overview/service-grid.html#gsc) and takes care of distributing the processing unit binaries to them. You do not need to manually install the processing unit anywhere on the cluster - only into the service grid.
+- Automatic distribution and provisioning of the processing unit instances: When deploying to the [service grid]({%currentadmurl%}/the-runtime-environment.html) the [GigaSpaces Manager](/product_overview/service-grid.html#gsm) identifies the relevant [GigaSpaces Containers](/product_overview/service-grid.html#gsc) and takes care of distributing the processing unit binaries to them. You do not need to manually install the processing unit anywhere on the cluster - only into the service grid.
 
 - SLA enforcement: The [GigaSpaces Manager](/product_overview/service-grid.html#gsm) is also responsible for enforcing your processing unit's [Service Level Agreement](./configuring-the-processing-unit-sla.html), or SLA. At deployment time, it will create a specified number of processing unit instances (based on the SLA) and provision them to the running containers while enforcing all the [deployment requirements](./configuring-the-processing-unit-sla.html#deployment-reqs), such as memory and CPU utilization, or specific deployment zones. At runtime, it will monitor the processing unit instances, and if any of them fail to fulfill the SLA or become unavailable it will re-instantiate the processing unit automatically on another container.
 

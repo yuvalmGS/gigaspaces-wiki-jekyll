@@ -12,9 +12,6 @@ As the administrator of your organization's computing applications, you are resp
 
 <hr/>
 
-- [The runtime environment](./the-runtime-environment.html){%wbr%}
-This section gives a detailed description of the GigaSpaces deployment & runtime environment.
-
 - [The Processing Unit](./processing-units.html){%wbr%}
 The processing unit is the unit of packaging and deployment in the GigaSpaces XAP platform. This section describes the details of the processing unit.
 

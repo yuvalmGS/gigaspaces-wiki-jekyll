@@ -3,7 +3,7 @@ layout: post97adm
 title:  Java System Properties
 categories: XAP97ADM
 parent: runtime-configuration.html
-weight: 100
+weight: 200
 ---
 
 {% refer %}Refer to the [SystemProperties](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/kernel/SystemProperties.html) class for more details.{% endrefer %}

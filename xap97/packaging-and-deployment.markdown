@@ -49,7 +49,7 @@ GigaSpaces XAP deployment configuration utilizes the [Spring Framework](http://w
 
 The SLA can determine the amount of processing unit instances, the deployment constraints for it (e.g. specific IP range), the topology of the data grid contained in it (see below) and more.
 
-When a processing unit is deployed to [the GigaSpaces runtime environment](./the-runtime-environment.html), one or more **processing unit instances** are created and provisioned to the running [GigaSpaces containers](/product_overview/service-grid.html#gsc). The amount of processing unit instances depends on the configuration of the processing unit.
+When a processing unit is deployed to [the GigaSpaces runtime environment]({%currentadmurl%}/the-runtime-environment.html), one or more **processing unit instances** are created and provisioned to the running [GigaSpaces containers](/product_overview/service-grid.html#gsc). The amount of processing unit instances depends on the configuration of the processing unit.
 
 In general, there are 3 types of processing units: Data only, business-logic only and mixed processing units (which contain both data and business logic). The data container for processing units is GigaSpaces' in memory data grid (IMDG) implementation, which is called the **Space**.
 

@@ -25,7 +25,7 @@ To compile and run code that interacts with the Space from within the IDE, you s
 - commons-logging.jar
 - Spring framework core jars
 
-If you run your Space client as a [Processing Unit](./the-processing-unit-structure-and-configuration.html) within the GigaSpaces [runtime environment](./the-runtime-environment.html), GigaSpaces classes and interfaces are part of the JVM's classpath by default. If you run in standalone mode (from within your IDE or non-GigaSpaces JVM), you should include the above thirteen JARs in your classpath.
+If you run your Space client as a [Processing Unit](./the-processing-unit-structure-and-configuration.html) within the GigaSpaces [runtime environment]({%currentadmurl%}/the-runtime-environment.html), GigaSpaces classes and interfaces are part of the JVM's classpath by default. If you run in standalone mode (from within your IDE or non-GigaSpaces JVM), you should include the above thirteen JARs in your classpath.
 
 {% warning %}
 If you're running Java 6, you can use a shorthand to include directories of jars: `java -classpath /installation/lib/required/*.jar mypackage.myClass`, for example.
@@ -392,7 +392,7 @@ There are two types of resources associated with space instances and space clien
 
 1. **Thread and memory resources**: If your space client or embedded space are running within a Spring-enabled environment (e.g. the GigaSpaces service grid or a standalone Spring application), and are configured in a Spring application context, these resources will be cleaned up automatically when the Spring application context is destroyed. <br/> However, if you start the space client or space instance programmatically, you must call the `UrlSpaceConfigurer` method when your application no longer uses the space instance / space client.
 1. **Communication resources**: All communication related resources in GigaSpaces are are shared between all the GigaSpaces components
-at the Java classloader level. If you're using the [GigasSpaces service grid](./the-runtime-environment.html) to run your GigaSpaces application you do not need to handle communication resources cleanup explicitly. But if your application runs on a standalone environment or another hosted environment (e.g. a JEE application server) you will need to explicitly clean up those resources.
+at the Java classloader level. If you're using the [GigasSpaces service grid]({%currentadmurl%}/the-runtime-environment.html) to run your GigaSpaces application you do not need to handle communication resources cleanup explicitly. But if your application runs on a standalone environment or another hosted environment (e.g. a JEE application server) you will need to explicitly clean up those resources.
 You should make sure to shutdown these resources explicitly when your application no longer uses the GigaSpaces components (e.g. when it's un deployed from the application server). This is done by calling the static method [LRMIManager](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/lrmi/LRMIManager.html).
 Note that if the JVM process is shut down anyway, you do not need to do explicitly shut down the communication resources.
 {% endnote %}

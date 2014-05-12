@@ -236,7 +236,7 @@ In this topology each application accessing a remote cache.
 - Set your `gigaspaces.hibernate.cache.url` property to {% wbr %}
     `jini://*/*/dataGrid`
 - Copy `dom4j.jar` and `hibernate3.jar` and all relevant Hibernate distribution package libraries into the `<GigaSpaces Root>/lib/platform/ext` folder.
-- Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment](./the-runtime-environment.html).
+- Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment]({%currentadmurl%}/the-runtime-environment.html).
 - Run the deploy command to deploy the remote space:
     <GigaSpaces root>\bin\gs.bat deploy-space datagrid
 Wait to see the following output:
@@ -263,7 +263,7 @@ In this topology each application has a lightweight, embedded cache, which is in
     jini://*/*/dataGrid?useLocalCache
 
 - Copy `dom4j.jar` and `hibernate3.jar` and all relevant Hibernate distribution package libraries into the `<GigaSpaces Root>/lib/platform/ext` folder.
-- Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment](./the-runtime-environment.html).
+- Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment]({%currentadmurl%}/the-runtime-environment.html).
 - Run the deploy command to deploy the master space:
     <GigaSpaces root>\bin\gs.bat deploy-space datagrid
 
@@ -295,7 +295,7 @@ This topology requires XAP Premium Edition.
     jini://*/*/dataGrid?useLocalCache
 
 - Copy `dom4j.jar` and `hibernate3.jar` from Hibernate distribution package into the `<GigaSpaces Root>/lib/platform/ext` folder.
-- Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment](./the-runtime-environment.html).
+- Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment]({%currentadmurl%}/the-runtime-environment.html).
 - Run the deploy command to deploy the master space in cluster of two partitions topology:
     <GigaSpaces root>\bin\gs.bat deploy-space -cluster schema=partitioned total_members=2,0 datagrid
 

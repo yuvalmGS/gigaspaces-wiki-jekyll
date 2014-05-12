@@ -102,13 +102,13 @@ When coming to choose the right option for your system, the following should be 
 
 The processing unit can [run](./deploying-and-running-the-processing-unit.html) in multiple modes.
 
-When deployed on to the [GigaSpaces runtime environment](./the-runtime-environment.html) or when running in [standalone mode](./running-in-standalone-mode.html), all the jars under the `lib` directory of your processing unit jar, will be automatically added to the processing unit's classpath.
+When deployed on to the [GigaSpaces runtime environment]({%currentadmurl%}/the-runtime-environment.html) or when running in [standalone mode](./running-in-standalone-mode.html), all the jars under the `lib` directory of your processing unit jar, will be automatically added to the processing unit's classpath.
 
 When [running within your IDE](./running-and-debugging-within-your-ide.html), it is similar to any other Java application, i.e. you should make sure all the dependent jars are part of your project classpath.
 
 # Deploying the Processing Unit to the GigaSpaces Service Grid
 
-When deploying the processing unit to [GigaSpaces Service Grid](./the-runtime-environment.html), the processing unit jar file is uploaded to the [GigaSpaces Manager (GSM)](/product_overview/service-grid.html#gsm) and extracted to the `deploy` directory of the local GigaSpaces installation (located by default under `<GigaSpaces Root>/deploy`).
+When deploying the processing unit to [GigaSpaces Service Grid]({%currentadmurl%}/the-runtime-environment.html), the processing unit jar file is uploaded to the [GigaSpaces Manager (GSM)](/product_overview/service-grid.html#gsm) and extracted to the `deploy` directory of the local GigaSpaces installation (located by default under `<GigaSpaces Root>/deploy`).
 
 Once extracted, the [GSM](/product_overview/service-grid.html#gsm) processes the deployment descriptor and based on that provisions processing unit instances to the running [GigaSpaces containers](/product_overview/service-grid.html#gsc).
 
