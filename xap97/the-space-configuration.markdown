@@ -41,22 +41,22 @@ Make sure your network and machines running GigaSpaces are configured to have mu
 
 ### Examples
 
-**Accessing Remote Space Using Jini Lookup Service - Unicast Discovery**{%wbr%}
-{%highlight xml%}
-jini://LookupServiceHostname/*/mySpace{%wbr%}
+**Accessing Remote Space Using Jini Lookup Service - Unicast Discovery**
+{%highlight console%}
+jini://LookupServiceHostname/*/mySpace
 {%endhighlight%}
 
 
-**Accessing Remote Space Using the Jini Lookup Service - Multicast Discovery**{%wbr%}
-{%highlight xml%}
+**Accessing Remote Space Using the Jini Lookup Service - Multicast Discovery**
+{%highlight console%}
 jini://*/*/mySpace
 {%endhighlight%}
 
-**Starting Embedded Space Using the Java Protocol**{%wbr%}
-{%highlight xml%}
-/./mySpace (which translates to java://localhost:10098/containerName/mySpace?schema=default){%wbr%}
+**Starting Embedded Space Using the Java Protocol**
+{%highlight console%}
+/./mySpace (which translates to java://localhost:10098/containerName/mySpace?schema=default)
 /./mySpace?schema=cache (which translates to java://localhost:10098/containerName/mySpace?schema=cache)
-java://LookupServiceHostName:port/myContainerName/spaceName{%wbr%}
+java://LookupServiceHostName:port/myContainerName/spaceName
 {%endhighlight%}
 
 
@@ -78,14 +78,16 @@ jini://LookupServiceHostName1:port1/*/space name?locators=LookupServiceHostName1
 The Space URL uses the following notation to start a space: `/./<Space Name>`. For example: `/./mySpace`
 
 When using that space URL the system will instantiate (create) a space instance named `mySpace` using the default schema configuration. The default schema is set to transient space configuration and it is equivalent to using the following URL:
+{%highlight console%}
 java://localhost:10098/mySpace_container/mySpace?schema=default
+{%endhighlight%}
 
 {% tip %}
 You can use "." as the container name in the space URL. A value of "." as the container name will be translated to `<space name>_container` name. In the above example the container name is explicitly defined as `mySpace_container`.
 {% endtip %}
 
 When a URL is provided without the protocol (java) and host name (localhost), the following URL is created /./mySpace as:
-{%highlight xml%}
+{%highlight console%}
 java://localhost:10098/mySpace_container/mySpace?schema=default
 {%endhighlight%}
 
@@ -122,6 +124,7 @@ Example for space URL using options:
 
 {% highlight java %}
 jini://*/*/mySpace?useLocalCache&versioned=false
+
 /./mySpace?cluster_schema=partitioned&total_members=4&id=1
 {% endhighlight %}
 
@@ -369,7 +372,7 @@ Here are some examples on how to configure the Space URL and the proxy:
 
 Declaring a remote space with a transaction manager:
 
-{% highlight java %}
+{% highlight xml %}
 <tx:annotation-driven transaction-manager="transactionManager"/>
 
 <os-core:space id="space" url="jini://*/*/space" />
@@ -379,7 +382,7 @@ Declaring a remote space with a transaction manager:
 
 Declaring a remote space with a transaction manager and creating an embedded space:
 
-{% highlight java %}
+{% highlight xml %}
 <os-core:space id="spaceRemote" url="jini://*/*/space" />
 <os-core:giga-space id="gigaSpaceRemote" space=" spaceRemote"  tx-manager="transactionManager1"/>
 
@@ -389,7 +392,7 @@ Declaring a remote space with a transaction manager and creating an embedded spa
 
 Declaring a remote space creating a local view:
 
-{% highlight java %}
+{% highlight xml %}
 <os-core:space id="spaceRemote" url="jini://*/*/space" />
 <os-core:local-view id="localViewSpace" space="spaceRemote">
 	<os-core:view-query class="com.example.Message1" where="processed = true"/>
@@ -399,7 +402,7 @@ Declaring a remote space creating a local view:
 
 Declaring a remote space with a local view , a regular remote space (without a view) and an embedded space:
 
-{% highlight java %}
+{% highlight xml %}
 <os-core:space id="spaceRemote" url="jini://*/*/space" />
 	<os-core:local-view id="localViewSpace" space="spaceRemote">
 	<os-core:view-query class="com.example.Message1" where="processed = true"/>
