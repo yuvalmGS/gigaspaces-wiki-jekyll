@@ -82,11 +82,16 @@ The following parameters in the cluster schema [active election](#Active Electio
 {: .table .table-bordered}
 |Parameter|Parameter Description|Default Value| Unit |
 |:--------|:--------------------|:------------|:-----|
-| `cluster-config.groups.group.fail-over-policy.active-election.yield-time` |This parameter allows you to configure the time it takes to yield to other participants between every election phase. | `1000` | millisec |
-| `cluster-config.groups.group.fail-over-policy.active-election.fault-detector.invocation-delay` |This parameter limits the amount of time the backup space waits between each ping to the primary space. | `1000`| millisec |
-| `cluster-config.groups.group.fail-over-policy.active-election.fault-detector.retry-count` |Related to the `cluster-config.groups.group.fail-over-policy.active-election.fault-detector.invocation-delay` parameter, defines the number of times the backup checks if the primary space has failed | `3`|   |
-| `cluster-config.groups.group.fail-over-policy.active-election.fault-detector.retry-timeout` |Related to the `retry-count` parameter, defines the time between retries the backup checks if the primary space has failed | `100`| millisec |
-| `cluster-config.groups.group.fail-over-policy.active-election.connection-retries` | Defines the number of times the space instance will try to establish connection with the lookup service. The wait time in between retries is defined by the `yield-time` parameter | `60` | |
+| -`yield-time` |This parameter allows you to configure the time it takes to yield to other participants between every election phase. | `1000` | millisec |
+| -`fault-detector.invocation-delay` |This parameter limits the amount of time the backup space waits between each ping to the primary space. | `1000`| millisec |
+| -`fault-detector.retry-count` |Related to the `fault-detector.invocation-delay` parameter, defines the number of times the backup checks if the primary space has failed | `3`|   |
+| -`fault-detector.retry-timeout` |Related to the `retry-count` parameter, defines the time between retries the backup checks if the primary space has failed | `100`| millisec |
+| -`connection-retries` | Defines the number of times the space instance will try to establish connection with the lookup service. The wait time in between retries is defined by the `yield-time` parameter | `60` | |
+
+
+{%warning%}
+- Prefix the property with: cluster-config.groups.group.fail-over-policy.active-election.
+{%endwarning%}
 
 ## Client Side Parameters
 
