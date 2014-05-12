@@ -38,7 +38,7 @@ A wrapper around the XAP API provides some sugaring on top of the GigaSpace#exec
 <hr/>
 
 {% info %}
-The minimum Scala version required in order to use the Scala Openspaces extension is 2.10
+The Scala version required in order to use the Scala Openspaces extension is 2.10.x
 {% endinfo %}
 
 Assuming there is a scala installation under `$SCALA_HOME`, the jars under `$SCALA_HOME/lib` should be copied to `$GS_HOME/lib/platform/scala/lib`.
