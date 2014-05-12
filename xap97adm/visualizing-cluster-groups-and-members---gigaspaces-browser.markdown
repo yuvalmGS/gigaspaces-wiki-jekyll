@@ -8,7 +8,7 @@ weight: 400
 
 {% summary %}Viewing clustered groups, clustered spaces and URLs, and accessing information views for a clustered space.{% endsummary %}
 
-# Overview
+
 
 When you click the cluster node in the Cluster Tree, the visual display area shows groups as gray ovals, while the information panel shows the names and URLs of members.
 

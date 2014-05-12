@@ -8,8 +8,6 @@ weight: 500
 
 {%summary%} {%endsummary%}
 
-# Overview
-
 GigaSpaces provides an interactive command line tool as part of the product. This can be started using gs.sh/bat command (referred to as **GigaSpaces CLI**).
 
 This tool provides many commands that can be used to manage and gather information about the various GigaSpaces runtime components. This section describes the commands supported by GigaSpaces CLI.
@@ -18,7 +16,9 @@ This tool provides many commands that can be used to manage and gather informati
 
 #### Syntax
 
-    gs> deploy-application [-user xxx -password yyy] [-secured true/false] application_directory_or_zipfile
+{%highlight bash%}
+gs> deploy-application [-user xxx -password yyy] [-secured true/false] application_directory_or_zipfile
+{%endhighlight%}
 
 #### Description
 
@@ -84,7 +84,9 @@ application.xml file describes the application dependencies:
 
 #### Syntax
 
-    gs> undeploy-application application_name
+{%highlight bash%}
+gs> undeploy-application application_name
+{%endhighlight%}
 
 #### Description
 
@@ -116,7 +118,9 @@ The following undeploys the data-app example application (which includes a feede
 
 #### Syntax
 
-    gs> deploy [processing unit jar file / directory location / name]
+{%highlight bash%}
+gs> deploy [processing unit jar file / directory location / name]
+{%endhighlight%}
 
 {% note %}
 The `deploy` command replaces the `pudeploy` command and is identical to it in terms of supported arguments and options.
@@ -201,7 +205,9 @@ Multiple deployment properties can be injected by having ; between each property
 
 #### Syntax
 
-    gs> undeploy-application application_name
+{%highlight bash%}
+gs> undeploy-application application_name
+{%endhighlight  %}
 
 #### Description
 
@@ -234,7 +240,9 @@ The following undeploys the data-app example application (which includes a feede
 
 #### Syntax
 
-    gs> deploy-memcached [-sla ...] [-cluster ...] [-properties ...] [-user xxx -password yyy] [-secured true/false] space_url
+{%highlight bash%}
+gs> deploy-memcached [-sla ...] [-cluster ...] [-properties ...] [-user xxx -password yyy] [-secured true/false] space_url
+{%endhighlight  %}
 
 #### Description
 
@@ -246,7 +254,7 @@ Deploys a [memcached-enabled space](./memcached-api.html), which exposes the [me
 |Option|Description|Value Format|
 |:-----|:----------|:-----------|
 | space_url | The url of the space, can be embedded, eg: `/./myMemcachedSpace`, or remote eg: `jini://*/*/myMemcachedSpace` | |
-| `-cluster` |Allows you to control the clustering characteristics of the processing unit. {% wbr %}The cluster option is a simplified option that overrides the cluster part of the processing unit's built in SLA (if such exists). {% wbr %}The following options are available (used automatically by any embedded space included in the Processing Unit):{% wbr %}- `schema` -- the cluster schema used by the Processing Unit.{% wbr %}- `total_members` -- the number of instances, optionally followed by the number of backups {% wbr %}(number of backups is required only if the `partitioned-sync2backup` schema is used). | `-cluster schema=[schema name] total_members=numberOfInstances[,numberOfBackups]` |
+| `-cluster` |Allows you to control the clustering characteristics of the processing unit. {% wbr %}The cluster option is a simplified option that overrides the cluster part of the processing unit's built in SLA (if such exists). {% wbr %}The following options are available (used automatically by any embedded space included in the Processing Unit):{% wbr %}- `schema` -- the cluster schema used by the Processing Unit.{% wbr %}- `total_members` -- the number of instances, optionally followed by the number of backups {% wbr %}(number of backups is required only if the `partitioned-sync2backup` schema is used). | `-cluster schema=[schema name]`{%wbr%} `total_members=numberOfInstances[,numberOfBackups]` |
 | `-properties` | Allows you to control [deployment properties](./deployment-properties.html). | `-properties [bean name] location` |
 | `-sla` | Allows you to specify a link (defaults to file-system) to a Spring XML configuration, holding the SLA definition. | `-sla [slaLocation]` |
 | `-zones` | Allows you to specify a list of deployment zones that are to restrict that the deployment to specific GSCs. | `-zones [zoneName1, zoneName2 ... ]` |
@@ -278,8 +286,9 @@ The following deploys a memcached-enabled space called `mySpace` using an SLA el
 # deploy space
 
 #### Syntax
-
-    gs> deploy-space [space name]
+{%highlight bash%}
+gs> deploy-space [space name]
+{%endhighlight  %}
 
 #### Description
 
@@ -327,8 +336,9 @@ The following deploys a space called `mySpace` using an SLA element read from an
 # task
 
 #### Syntax
-
-    usage: task ant-file [target=target-name]
+{%highlight bash%}
+usage: task ant-file [target=target-name]
+{%endhighlight  %}
 
 #### Description
 

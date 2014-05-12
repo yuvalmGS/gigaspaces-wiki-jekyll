@@ -6,9 +6,9 @@ parent: working-with-clusters---gigaspaces-browser.html
 weight: 100
 ---
 
-{% summary %}Using Cluster View areas: Cluster Tree, visual display, legend, and information panel.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 Cluster View presents a graphic representation of the spaces in a cluster, the groups they comprise (replication, failover and load-balancing groups), and the relationships among them.
 Cluster View complements the visualization provided by the Container Tree panel, because it uses the cluster configuration file, as well as the GigaSpaces Server, as a reference. As a result, you can visualize spaces whether they are online or offline, without loading their containers. While the Container Tree panel is a good way to see which spaces are currently running, Cluster View gives you a larger picture of the space architecture.

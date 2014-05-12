@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Runtime Configuration
+title:  JVM Configuration
 categories: XAP97NET
 parent: configuration.html
 weight: 500

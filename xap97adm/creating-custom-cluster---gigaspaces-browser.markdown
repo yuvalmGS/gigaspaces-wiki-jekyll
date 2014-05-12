@@ -6,12 +6,12 @@ parent: working-with-clusters---gigaspaces-browser.html
 weight: 200
 ---
 
-{% summary %}Building a custom cluster from a standard cluster schema.{% endsummary %}
+{% summary %} {% endsummary %}
 
-# Overview
+
 
 {% warning %}
-This section intended only for advanced users interested with a special data-grid cluster topology that is not provided with the out of the box [supported topologies](./space-topologies.html). The supported out of the box data-grid cluster topologies are: synchronous replicated , a-synchronous replicated , partitioned , partitioned+ synchronous replicated. Any out of the box cluster topology can be deployed via the GS-UI or the [deploy CLI](./deploy-space-gigaspaces-cli.html) without the need to generate cluster configuration file as described below.
+This section intended only for advanced users interested with a special data-grid cluster topology that is not provided with the out of the box [supported topologies](/product_overview/space-topologies.html). The supported out of the box data-grid cluster topologies are: synchronous replicated , a-synchronous replicated , partitioned , partitioned+ synchronous replicated. Any out of the box cluster topology can be deployed via the GS-UI or the [deploy CLI]({%currentjavaurl%}/deploy-command-line-interface.html) without the need to generate cluster configuration file as described below.
 {% endwarning %}
 
 **To build a custom cluster from a standard cluster schema:**

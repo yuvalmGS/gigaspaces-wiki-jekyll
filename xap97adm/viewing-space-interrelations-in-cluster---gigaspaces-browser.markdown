@@ -1,6 +1,6 @@
 ---
 layout: post97adm
-title:  Space Interrelations
+title:  Space Inter-relations
 categories: XAP97ADM
 parent: cluster-view---gigaspaces-browser.html
 weight: 300
@@ -8,7 +8,7 @@ weight: 300
 
 {% summary %}Viewing spaces in different cluster policy groups and how they relate to each other.{% endsummary %}
 
-# Overview
+
 
 When you click a group (![Viewing Space Interrelations4.gif](/attachment_files/Viewing Space Interrelations4.gif)) in the cluster tree, the visual display area shows all the spaces in the group you clicked (or in the group of the space you clicked). If you clicked an individual space, the visual display focuses on that space, and the information panel shows detailed information about it.
 

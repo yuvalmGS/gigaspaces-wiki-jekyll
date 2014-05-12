@@ -8,7 +8,7 @@ weight: 200
 
 {% summary %}How to view replication, load-balancing and failover settings for a space in Cluster View. {% endsummary %}
 
-# Overview
+
 
 When you select a space node in the Cluster Tree, the information panel shows configuration details for that space, in the context of the attributes of its group. For example, if a space belongs to a replication and load balancing group, the information panel shows its replication and load balancing settings.
 
