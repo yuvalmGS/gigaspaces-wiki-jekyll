@@ -13,7 +13,7 @@ weight: 400
 ![data-access.jpg](/attachment_files/subject/data-access.png)
 {%endcolumn%}
 {%column width=90% %}
-When a space is looking for a match for a read or take operation, it iterates over non-null values in the template, looking for matches in the space. This process can be time consuming, especially when there are many potential matches. To improve performance, it is possible to index one or more properties. The space maintains additional data for indexed properties, which shortens the time required to determine a match, thus improving performance.
+For read and take operations, XAP iterates non-null values that match template or SQLQuery criteria, returning matches from the Space. This process can be time consuming, especially when there are many potential matches. To improve performance, it is possible to index one or more `@SpaceClass` properties. The Space maintains additional data for indexed properties, which shortens the time required to determine a match, thus improving performance.
 
 {%endcolumn%}
 {%endsection%}
@@ -50,15 +50,15 @@ One might wonder why properties are not always indexed, or why all the propertie
 
 # When to Use Indexing
 
-Naturally the question arises of when to use indexing. Usually it is recommended to index properties that are used in common queries. However, in some scenarios one might favor less footprint, or faster performance for a specific query, and adding/removing an index should be considered.
+Naturally the question arises of when to use indexing. Usually it is advisable to index properties that are used in common queries. However, in some scenarios one might favor less footprint, or faster performance for a specific query, and adding/removing an index should be considered.
 
-{% warning %}  Remember that "Premature optimization is the root of all evil". It is always recommended to benchmark your code to get better results. {%endwarning%}
+{% warning %}  Remember that "Premature optimization is the root of all evil". It is advisable to benchmark your code to get better results. {%endwarning%}
 
 # Index Types
 
 The index type is determined by the **`SpaceIndexType`** enumeration. The index types are:
 
-**`NONE`** - No indexing is used.
+**`NONE`** - No index is created.
 
 **`BASIC`** - Basic index is used - this speeds up equality matches (equal to/not equal to).
 
@@ -66,7 +66,7 @@ The index type is determined by the **`SpaceIndexType`** enumeration. The index 
 
 # Indexing at Design-time
 
-Specifying which properties of a class are indexed is done using annotations or gs.xml.
+Indexes are specified for properties of a `@SpaceClass` using annotations or gs.xml.
 
 {% inittab %}
 {% tabcontent Annotations %}
