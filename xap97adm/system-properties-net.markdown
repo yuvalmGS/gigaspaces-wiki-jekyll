@@ -24,7 +24,7 @@ weight: 200
 | `com.gs.transport_protocol.lrmi.tcp-receive-buffer-size` | Set the TCP receive Buffer size (SO_RCVBUF). | OS default |
 | `com.gs.transport_protocol.lrmi.tcp-keep-alive` | Set the TCP keep alive mode (SO_KEEPALIVE). | true |
 | `com.gs.transport_protocol.lrmi.timeout_resolution` | Resolution in percents. Timeout resolution indicates the accuracy of the request timeout.<br/>{% exclamation %}Overrides `services.config` file settings. | 10 |
-| `com.gs.transport_protocol.lrmi.connect_timeout` | LRMI timout on the Socket connect. Default connect timeout in seconds is 0 - infinite timeout. By default time unit is in seconds.<br/>{% exclamation %}Overrides `services.config` file settings. | 0 |
+| `com.gs.transport_protocol.lrmi.connect_timeout` | LRMI timeout on the Socket connect. Default connect timeout in seconds is 0 - infinite timeout. By default time unit is in seconds.<br/>{% exclamation %}Overrides `services.config` file settings. | 0 |
 | `com.gs.transport_protocol.lrmi.request_timeout` | Watchdog parameter - Occurs when the client sends a request to the space and doesn't get a reply for the defined timeout. By default time unit is seconds. Defaults to 30s.<br/>{% exclamation %}Overrides `services.config` file settings. | 30 |
 | `com.gs.transport_protocol.lrmi.listening_timeout` | Watchdog parameter.<br/>{% exclamation %}Overrides `services.config` file settings. Defaults to 5m | 300 |
 | `com.gs.transport_protocol.lrmi.idle_connection_timeout` | Watchdog parameter.<br/>{% exclamation %}Overrides `services.config` file settings. Defaults to 15m. | 900 |
@@ -74,7 +74,7 @@ Since 5.0 not required, if not set explicitly, it is resolved as the parent dire
 | `com.gs.xmlschema.validation` | Boolean value. If `false`, does not validate cluster XML config schema. | `true` |
 | `com.gs.resourcepool.debug` | Boolean value `com.gs.resourcepool.debug=true` to set debug mode. | |
 | `com.gs.instanceID` | Used in J2EE `ReplicatedSessionBean` example to indicate&nbsp; the clustered space node instance to return. | |
-| `line.separator` | The GS logging formater Line separator string.&nbsp; This is the value of the `line.separator` property at the moment that the `SimpleFormatter` was created. | |
+| `line.separator` | The GS logging formatter Line separator string.&nbsp; This is the value of the `line.separator` property at the moment that the `SimpleFormatter` was created. | |
 | `com.gigaspaces.start.jmx` | JMX property. | |
 | `com.gigaspaces.start.container` | JMX property. | |
 | `com.gigaspaces.start.httpPort` | Webster http port definition  | default 0 - free port  |
