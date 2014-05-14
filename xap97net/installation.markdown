@@ -22,7 +22,7 @@ Recommended: [Microsoft .NET Framework 2.0 Service Pack 2](http://www.microsoft.
 
 GigaSpaces XAP.NET is packaged as a standard Windows Installer package (.msi file). To start the installation simply double-click the msi file, and the installation wizard will pop up and guide you through the installation process.
 
-Once you accept the licence agreement, you will be asked to choose a setup type. Select 'Complete' to install all the features in the default path (C:\GigaSpaces\XAP.NET 9.5.0). Selecting 'Custom' will allow you to customize the installation path, which features will be installed, and more.
+Once you accept the license agreement, you will be asked to choose a setup type. Select 'Complete' to install all the features in the default path (C:\GigaSpaces\XAP.NET 9.5.0). Selecting 'Custom' will allow you to customize the installation path, which features will be installed, and more.
 
 ## Other Installation Options
 
