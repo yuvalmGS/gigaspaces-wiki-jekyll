@@ -217,7 +217,7 @@ web.threadPool.maxThreads=100
 {% endhighlight %}
 
 - By using the command line (when deploying using the command line). You can add deployment properties as arguments to the pu deploy command. These arguments will override the values in the `pu.properties` file. This can be done as follows:
-`<gs root>/bin/gs.(sh/bat) pudeploy -properties embed://web.port=8080;web.sslPort=9443 <.war file path>`
+`<gs root>/bin/gs.(sh/bat) pudeploy -properties "embed://web.port=8080;web.sslPort=9443" <.war file path>`
 
 - By using the GUI (when deploying using the GUI). In the deployment wizard, click **Next**, and then the "+" button in the next screen. You can then specify the deploy properties you want (these will override the values in the `pu.properties` file):
 
