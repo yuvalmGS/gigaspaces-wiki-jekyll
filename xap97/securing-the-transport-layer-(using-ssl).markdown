@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Transport Layer
+title:  Securing the Transport Layer
 categories: XAP97
 parent: securing-xap-components.html
 weight: 300
