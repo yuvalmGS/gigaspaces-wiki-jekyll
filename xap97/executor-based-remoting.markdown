@@ -14,13 +14,13 @@ weight: 200
 # Overview
 {%endcomment%}
 
-Executor based remoting uses [Executors](./task-execution-over-the-space.html) to implement remoting capabilities on top of the space. Executor based remoting allows for direct invocation of services in an asynchronous manner as well as broadcast capabilities. Executor remoting works with services that are exposed within a processing unit that started a collocated space.
+*Executor Based Remoting* uses [Executors](./task-execution-over-the-space.html) to provided remoting capabilities on top of the Space. Executor Based Remoting allows for direct invocation of services in an asynchronous manner in a broadcast or routed manner. Executor Remoting works with services that are deployed in a Processing Unit and execute within a collocated space.
 
 ![Executor.jpg](/attachment_files/Executor.jpg)
 
 # The executor-proxy
 
-The `executor-proxy` should be created at the client side to interact with the remote service. It can be created via Spring namespace , Sppring Bean or via API .
+The `executor-proxy` should be created on the client side to interact with the remote service. It can be created via Spring namespace, Spring Bean or via API.
 
 The `executor-proxy` include the following properties:
 
@@ -29,16 +29,16 @@ The `executor-proxy` include the following properties:
 |:--------|:-----------|:---------|:---------------|:------------|:--------|
 |gigaSpace | GigaSpace | giga-space | Yes |Sets the GigaSpace interface that will be used to work with the space as the transport layer for executions of Space tasks.| |
 |timeout | long |  Yes | timeout | Sets the timeout that will be used to wait for the remote invocation response. The timeout value is in milliseconds.  | 60000 (60 seconds).|
-|remoteRoutingHandler | RemoteRoutingHandler | No | routing-handler |In case of remote invocation over a partitioned space the default partitioned routing index will be random (the hashCode of the newly created remote invocation). This RemoteRoutingHandler allows for custom routing computation (for example, based on one of the service method parameters).| |
-|metaArgumentsHandler | MetaArgumentsHandler | No | meta-arguments-handler | Allows to set the meta arguments handler controlling the meta arguments passed with each remote invocation.| |
+|remoteRoutingHandler | RemoteRoutingHandler | No | routing-handler |In case of remote invocation over a partitioned space,  the default partitioned routing index will be random (the hashCode of the newly created remote invocation). This RemoteRoutingHandler allows for custom routing computation (for example, based on one of the service method parameters).| |
+|metaArgumentsHandler | MetaArgumentsHandler | No | meta-arguments-handler | Allows the meta arguments handler to be set, which will process the meta-arguments passed on each remote invocation.| |
 |asyncMethodPrefix | String |
-|broadcast | boolean | No | broadcast| If set the true (defaults to false) causes the remote invocation to be called on all active (primary) cluster members.| |
-|returnFirstResult | boolean |No | return-first-result | When set to true (defaults to true) will return the first result when using broadcast. If set to false, an array of results will be returned. Note, this only applies when not setting a reducer.| |
-|remoteResultReducer | RemoteResultReducer |No| result-reducer | When using broadcast set to true, allows to plug a custom reducer that can reduce the array of result objects into another response object.| |
-| remoteInvocationAspect | RemoteInvocationAspect |No| Allows to set a aspect around each service execution.| |
+|broadcast | boolean | No | broadcast| If set the true (defaults to false), the remote invocation will be called on all active (primary) cluster members.| |
+|returnFirstResult | boolean |No | return-first-result | When set to true (defaults to true), the first result will be returned (when using broadcast). If set to false, an array of results will be returned. Note, this only applies when no reducer is provided.| |
+|remoteResultReducer | RemoteResultReducer |No| result-reducer | When using broadcast is set to true, a custom reducer can be provided to reduce the array of result objects into a calculated response object.| |
+| remoteInvocationAspect | RemoteInvocationAspect |No| An Aspect that will be executed around each service invocation.| |
 |serviceProxy | Object |
 | methodHashLookup | Map<Method, MethodHash> |
-|interface | Class | Yes | | The interface (fully qualified class name) that this remoting proxy will proxy. Also controls which service will be invoked in the "server".| |
+|interface | Class | Yes | | The interface (fully qualified class name) that this remoting proxy implements. Also controls which service will be invoked in the "server" (Processing Unit).| |
 
 Example:
 {% highlight xml %}
@@ -121,7 +121,7 @@ The XML tab corresponds to exporting the service using an xml configuration (exp
 
 # Exporting the Service Over the Space
 
-The next step is exporting the service over the space. Exporting the service is done on the server side. As with other Spring remoting support, exporting the service and the method of exporting the service is a configuration-time decision. Here is an example of a Spring XML configuration:
+The next step is exporting the service over the space. Exporting the service is done on the server side. As with other Spring remoting support, exporting the service and the mechanism of exporting the service is a configuration-time decision. Here is an example of a Spring XML configuration:
 
 {% inittab os_simple_space|top %}
 {% tabcontent Annotation %}
@@ -181,7 +181,7 @@ The next step is exporting the service over the space. Exporting the service is 
 {% endtabcontent %}
 {% endinittab %}
 
-The name/id of the `SpaceRemotingServiceExporter` bean is important when using executor based remoting. By default, the `Task` representing the remote invocation searches for a service exporter named `serviceExporter`, otherwise, it uses the first bean that is of the type `SpaceRemotingServiceExporter`.
+The name/id of the `SpaceRemotingServiceExporter` bean is important when using Executor Based Remoting. By default, the `Task` representing the remote invocation searches for a service exporter named `serviceExporter`, otherwise, it uses the first bean that is of the type `SpaceRemotingServiceExporter`.
 
 {% note %}
 Exporting services is done on a Processing Unit (or a Spring application context) that starts an embedded space.
@@ -263,7 +263,7 @@ dataRemoting.setDataProcessor(dataProcessor);
 {% endtabcontent %}
 {% endinittab %}
 
-The above example uses the `executor-proxy` bean in order to create the remoting proxy which can then be injected into the `DataRemoting` object. OpenSpaces remoting also allows you to inject the remoting proxy directly on the remoting service property using annotations. Here is an example using the `DataRemoting` class:
+The example above uses the `executor-proxy` bean in order to create the remoting proxy which can later be injected into the `DataRemoting` object. OpenSpaces remoting also allows injection of the remoting proxy into the remoting service property using annotations. Here is an example of annotating the `DataRemoting` class:
 
 {% highlight java %}
 public class DataRemoting {
@@ -395,7 +395,7 @@ dataRemoting.setDataProcessor(dataProcessor);
 
 ## Routing Annotation
 
-The above option of using the remote routing handler is very handy when not using annotations. OpenSpaces remoting supports the `@Routing` annotation in order to define which of the parameters control the routing. Here is an example:
+The option, above, using the remote routing handler is very handy when not using annotations (broadcasting). OpenSpaces remoting also supports the `@Routing` annotation in order to define which parameter controls the routing. Here is an example:
 
 {% highlight java %}
 public interface MyService {
@@ -404,7 +404,7 @@ public interface MyService {
 }
 {% endhighlight %}
 
-In the above example, the routing is done using the param1 value. When using complex objects, a method name can be specified to be invoked on the parameter, in order to get the actual routing index. Here is an example:
+In the example above, the routing is done using the param1 value. In complex objects, a method name can be specified to be invoked on the parameter, in order to get the actual routing index. Here is an example:
 
 {% highlight java %}
 public interface MyService {
@@ -413,10 +413,10 @@ public interface MyService {
 }
 {% endhighlight %}
 
-In the above example, the `getProperty` method is called on the `Value` object, and its return value is used to extract the routing index.
+In the example, the `getProperty` method is called on the `Value` object, and its return value is subsequently used to extract the routing index.
 
 {% note %}
-**Note:** Using a [SpaceDocument](./document-api.html) as the annotated routing argument will cause an exception since the `SpaceDocument` class does not define a getter method for each property, but rather a generic getter method to get a property value by its name. The solution is either to extend the `SpaceDocument` class as described in [Extending Space Documents](./document-extending.html), and define the relevant `getProperty` method in the extension class, or use the `RemoteRoutingHandler` mentioned above.
+**Note:** Using a [SpaceDocument](./document-api.html) as the annotated routing argument will cause an Exception since the `SpaceDocument` class does not define a getter method for each property, but rather a generic getter method to get a property value by its name. To avoid the Exception, simply extend the `SpaceDocument` class as described in [Extending Space Documents](./document-extending.html) and then define the relevant `getProperty` method in the extension class. Alternatively, an Exception can be avoided by implementing a `RemoteRoutingHandler`, as described above.
 {%endnote%}
 
 # Asynchronous Execution
@@ -979,3 +979,7 @@ public class DataProcessorServiceReducer implements RemoteResultReducer<Integer,
 	}
 }
 {% endhighlight %}
+
+# Working Examples
+
+1. [This repository](https://github.com/jasonnerothin/gs-executor-remoting/) provides both a [service exporter](https://github.com/jasonnerothin/gs-executor-remoting/blob/master/src/main/resources/META-INF/Spring/pu.xml#L23) and a [service consumer](https://github.com/jasonnerothin/gs-executor-remoting/blob/master/src/test/resources/com/gigaspaces/sbp/WatchRepairClient.xml#L24). Test code dispatches a remoted request right [here](https://github.com/jasonnerothin/gs-executor-remoting/blob/master/src/test/scala/com/gigaspaces/sbp/WatchRepairSuite.scala#L95).
