@@ -142,7 +142,7 @@ How to create, deploy, run and monitor your Processing Unit
 
 {% endcolumn %}
 {% column width=35% %}
-[**Deploying the Hello World Application onto the ServiceGrid**]({%currentjavaurl%}/deploying-onto-the-service-grid.html)
+[**Deploying the Hello World Application onto the ServiceGrid**](./step-three---deploying-onto-the-service-grid.html)
 {% color grey %}~10 minutes{% endcolor %}
 How to deploy the _Hello World Processing Unit_ onto the grid enabled infrastructure (the ServiceGrid) to enable instant fail-over, recovery, SLA management and runtime monitoring capabilities for your application
 
