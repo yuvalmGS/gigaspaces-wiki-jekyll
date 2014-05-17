@@ -35,12 +35,12 @@ In some cases, you might want to monitor the activity of the JVM running as part
 3. Once the `jconsole` is started, select the **Local** tab:
 
 {% indent %}
-![jcon1.jpg](/attachment_files/dotnet/jcon1.jpg)
+![jcon1.jpg](/attachment_files/dotnet/jcon11.jpg)
 {% endindent %}
 
 4. This shows the status of the JVM running in your .NET application:
 
-![jcon2.jpg](/attachment_files/dotnet/jcon2.jpg)
+![jcon2.jpg](/attachment_files/dotnet/jcon21.jpg)
 
 {% refer %}For more details on JMX and `jconsole`, refer to:{% endrefer %}
 

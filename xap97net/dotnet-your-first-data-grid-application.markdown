@@ -225,6 +225,6 @@ Read more about the GigaSpaces runtime environment, how to model your data in a 
 
 - [Elastic Processing Unit]({%currentneturl%}/elastic-processing-unit.html)
 - [Modeling and Accessing Your Data](/sbp/modeling-and-accessing-your-data.html)
-- [Deploying and Interacting with the Space]({%currentneturl%}/deploying-and-interacting-with-the-space.html)
+- [Deploying and Interacting with the Space]({%currentjavaurl%}/deploying-and-interacting-with-the-space.html)
 - [The GigaSpaces Runtime Environment]({%currentadmurl%}/the-runtime-environment.html)
 {%endcomment%}
