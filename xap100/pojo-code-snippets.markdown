@@ -383,7 +383,7 @@ space.writeMultiple(employees, Lease.FOREVER, WriteModifiers.PARTIAL_UPDATE);
 
 ## Changing an Object
 
-{% include xap97/change-api-code-snippet.markdown %}
+{% include xap100/change-api-code-snippet.markdown %}
 {% endtabcontent %}
 {% endinittab %}
 
