@@ -9,12 +9,12 @@ weight: 800
 {% summary %}{% endsummary %}
 
 {%comment%}
-{% summary %}This page describes how you can obtain partial results when querying the space to improve application performance and reduce memory footprint.{% endsummary %}
+{% summary %}This page describes how you can obtain partial results when querying the Space in order to improve application performance and reduce memory footprint.{% endsummary %}
 
 # Overview
 {% section %}
 {% column width=70% %}
-In some cases when querying the space for objects, only specific properties of that objects are required and not the entire object (delta read). The same scenario is also relevant when subscribing for notifications on space data changes, where only specific properties are of interest to the subscriber. For that purpose the Projection API can be used where one can specify which properties are of interest and the space will only populate these properties with the actual data when the result is returned back to the user. This approach reduces network overhead , garbage memory generation and serialization CPU overhead.
+In some cases, when querying the Space for `Objects`, only certain properties of those `Objects` are required (a.k.a. delta read). The same scenario is also relevant when subscribing for notifications on Space data changes, where only specific properties are of interest to the subscriber. For that purpose, the *Projection API* can be used, where one can declare which properties are of interest. The space will only populate these properties on the returned data. This approach reduces network overhead, garbage memory generation and CPU overhead due to serialization.
 {% endcolumn %}
 {% column width=30% %}
 ![space-projections.jpg](/attachment_files/space-projections.jpg)
@@ -22,12 +22,12 @@ In some cases when querying the space for objects, only specific properties of t
 {% endsection %}
 {%endcomment%}
 
-In some cases when querying the space for objects, only specific properties of that objects are required and not the entire object (delta read). The same scenario is also relevant when subscribing for notifications on space data changes, where only specific properties are of interest to the subscriber. For that purpose the Projection API can be used where one can specify which properties are of interest and the space will only populate these properties with the actual data when the result is returned back to the user. This approach reduces network overhead , garbage memory generation and serialization CPU overhead.
+In some cases, when querying the Space for `Objects`, only certain properties of those `Objects` are required (a.k.a. delta read). The same scenario is also relevant when subscribing for notifications on Space data changes, where only specific properties are of interest to the subscriber. For that purpose, the *Projection API* can be used, where one can declare which properties are of interest. The space will only populate these properties on the returned data. This approach reduces network overhead, garbage memory generation and CPU overhead due to serialization.
 
 
 # Example
 
-Projection supported using a [SQLQuery](./query-sql.html) or [Id Queries](./query-by-id.html). Below a simple example reading a `Person` object where only the 'firstName' and 'lastName' properties are returned with the query result array. All other `Person` properties will not be returned:
+Projection supports using a [SQLQuery](./query-sql.html) or [Id Queries](./query-by-id.html). Below is a simple example reading a `Person` Object where only the 'firstName' and 'lastName' properties are returned in the array or results. All other `Person` properties will not be populated:
 
 {% highlight java %}
 public class Person
@@ -60,7 +60,7 @@ IdsQuery<Person> idsQuery = new IdsQuery<Person>(Person.class, new Long[]{id1,id
 Person result[] = space.readByIds(idsQuery).getResultsArray();
 {% endhighlight %}
 
-The [SpaceDocument](./document-api.html) support projections as well:
+The [SpaceDocument API](./document-api.html) supports projection as well:
 
 {% highlight java %}
 SQLQuery<SpaceDocument> docQuery = new SQLQuery<SpaceDocument>(Person.class.getName() ,"",
@@ -70,19 +70,23 @@ SpaceDocument docresult[] = gigaSpace.readMultiple(docQuery);
 
 # Supported Operations
 
-The projection is defined for any operation that return data from the space. Therefore ID Based or Query based operations supporting projections. You can use with `read`,`take`,`readById`,`takeById`,`readMultiple` and `takeMultiple` operations. When performing a `take` operation with projection the entire object will be removed from the space, but the result returned to the user will contain only the projected properties.
+A projection is defined for any operation that returns data from the Space. Therefore id-based or query-based operations support projections. You can use the Projection API with `read`,`take`,`readById`,`takeById`,`readMultiple` and `takeMultiple` operations. When performing a `take` operation with projection, the entire Object will be removed from the space, but the result returned to the user will contain only the projected properties.
 
 
-You can use projections with the [Notify Container](./notify-container.html) when subscribing to notifications, or with the [Polling Container](./polling-container.html) when consuming space objects. You can also create a [Local View](./local-view.html) with templates or a `View` using projections. The local view will maintain the relevant objects, but with the projected data - only with the projected properties.
-Projected properties can specify both dynamic or fixed properties and the usage is the same. As a result, when providing a projected property name which is not part of the fixed properties set, it will be treated as a dynamic property. If there is no dynamic property present with that name on an object which is a result of the query - that projection property will be ignored (and no exception will be raised). Please note that a result may contain multiple objects, each with different set of properties (fixed and dynamic), each object will be treated individually when applying the projections on it.
+You can use projections with a [Notify Container](./notify-container.html), when subscribing to notifications. You can use it with a [Polling Container](./polling-container.html), when consuming Space Objects. You can also create a [Local View](./local-view.html) with templates or a `View` using projections. The local view will maintain the relevant objects, but the view of the data will contain only the projected properties.
+Both dynamic and fixed properties can be specified - the syntax is the same. As a result, when providing a property name which is not part of the property set, it will be treated as a dynamic property: That is, if there is no like-named dynamic property present on a query result Object, then the property will be ignored entirely (and no Exception will be thrown). Please note that a result may contain multiple objects, each with a different combination of properties (fixed and/or dynamic) - each object will be treated individually when applying projections to it.
 
 # Considerations
 
-1. You can't use a projection on [Local Cache](./local-cache.html) as the local cache needs to contain the fully constructed objects, and reconstructing it locally with projection will only impact performance.
-1. You can't use a projection to query a Local View for the same reason as Local Cache, however, You can create the local view with projection template and the Local View will be contain the objects in their projected form.
+1. You can't use a projection on [Local Cache](./local-cache.html), as the Local Cache needs to contain fully constructed objects. Reconstructing an Object locally with projection would only negatively impact performance.
+1. You can't use a projection to query a Local View for the same reason as for Local Cache. However, you can create a Local View with a projection template in which case the Local View will contain the Objects in their projected form.
 
+# Working Examples
+
+1. [This repository](https://github.com/GigaSpaces/gs-executor-remoting/) contains an integration test (described in some detail [here](./scala-i10-scalatest.html)) that performs projection on a query in the context of [Executor Based Remoting](http://docs.gigaspaces.com/xap97/executor-based-remoting.html). Relevant lines of code (Scala) are [here](https://github.com/GigaSpaces/gs-executor-remoting/blob/master/src/test/scala/com/gigaspaces/sbp/WatchRepairSuite.scala#L124).
 
 <ul class="pager">
   <li class="previous"><a href="./query-paging-support.html">&larr; Paging Support</a></li>
   <li class="next"><a href="./querying-the-space.html">Querying the Space &rarr;</a></li>
 </ul>
+
