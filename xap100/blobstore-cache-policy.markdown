@@ -1,14 +1,14 @@
 ---
-layout: post10
-title:  Enterprise flash drives IMDG Storage - BlobStore
-categories: XAP10
+layout: post100
+title:  Flash drive IMDG Storage
+categories: XAP100
 parent: memory-management-overview.html
-weight: 600
+weight: 400
 ---
 
-{% summary page %}Enterprise flash drives IMDG Storage using SanDisk Flash Universal library to extend IMDG memory space to support grid based large capacity data management and server consolidation.{% endsummary %}
+{% summary %}  {% endsummary %}
 
-# Introduction
+
 
 XAP 10 introduces a new Storage interface allowing Blob/Block/external type storage to act as a natural memory space for the IMDG. This storage model allows the IMDG to interact with the Storage interface as an integral data space together with the RAM/Heap based memory space. 
 
@@ -40,7 +40,7 @@ Yes. All Enterprise flash drives are supported. SanDisk, Fusion-IO, Intel® SSD 
 {% endindent %}
 
 ## How it Works?
-XAP is using [SanDisk Flash Data Fabric (FDF)](http://www.sandisk.com/) which enables direct flash access for In-Memory performance. It eliminate any other storage interface, when writing an object to the space , its indexed data maintained on Heap where the Storage interface implementing using the FDF libraries to interact with the undelying flash drive. The indexes maintain in RAM allowing the XAP query engine to evaluate the query without accessing the raw data stored on the flash device. This allows XAP to execute SQL based queries extremely efficiently even across large number of nodes. All XAP Data Grid APIs are supported including distributed transactions, leasing (Time To live) , FIFO , batch operations ,etc. All clustering topologies supported. All client side cache options are supported.
+XAP is using [SanDisk Flash Data Fabric (FDF)](http://www.sandisk.com/) which enables direct flash access for In-Memory performance. It eliminate any other storage interface, when writing an object to the space , its indexed data maintained on Heap where the Storage interface implementing using the FDF libraries to interact with the underlying flash drive. The indexes maintain in RAM allowing the XAP query engine to evaluate the query without accessing the raw data stored on the flash device. This allows XAP to execute SQL based queries extremely efficiently even across large number of nodes. All XAP Data Grid APIs are supported including distributed transactions, leasing (Time To live) , FIFO , batch operations ,etc. All clustering topologies supported. All client side cache options are supported.
 
 # The BlobStore Configuration
 
@@ -49,7 +49,7 @@ The BlobStore settings includes the following options:
 {: .table .table-bordered}
 | Property               | Description                                               | Default | Use |
 |:-----------------------|:----------------------------------------------------------|:--------|:--------|
-| devices | Flash devices. Comma seperated available devices. The list used as a search path from left to right. The first one exists will be used. |  | required |
+| devices | Flash devices. Comma separated available devices. The list used as a search path from left to right. The first one exists will be used. |  | required |
 | volume-dir | Directory path which contains a link to the the SSD device. | | required |
 | blob-store-capacity-GB | Flash device allocation size in Gigabytes. | 200 | optional |
 | blob-store-capacity-MB | Flash device allocation size in Megabytes. | 204800 | optional |
@@ -58,7 +58,7 @@ The BlobStore settings includes the following options:
 | enable-admin | Whether to start an FDF admin agent or not. FDF admin provides a simple command line interface (CLI) through a TCP port. The FDF CLI uses port 51350 by default. This port can be changed through the configuration parameter FDF_ADMIN_PORT. | true |
 | statistics-interval | Applications can optionally enable periodic dumping of statistics to a specified file (XAP_HOME/logs). This is disabled by default. | | optional |
 | durability-level | PERIODIC: sync storage every 1024	writes. Up to 1024 objects can be lost in the event of application crash.{%wbr%}SW_CRASH_SAFE: This policy guarantees no data loss in the event of software crashes. But some data might be lost in the event of hardware failure.{%wbr%}HW_CRASH_SAFE: This policy guarantees no data loss if the hardware crashes.Since there are performance implication it is recommended to work with NVRAM device and configure log-flash-dir to a folder on this device. | PERIODIC | optional |
-| log-flush-dir | In case of HW_CRASH_SAFE, directory in a filesystem on top of NVRAM backed disk. This directory must be unique per space, you can add ${clusterInfo.runningNumber} as suffix | /tmp | optional |
+| log-flush-dir | In case of HW_CRASH_SAFE, directory in a file system on top of NVRAM backed disk. This directory must be unique per space, you can add ${clusterInfo.runningNumber} as suffix | /tmp | optional |
 
 The IMDG BlobStore settings includes the following options:{%wbr%}
 
@@ -210,16 +210,16 @@ The `BlobStoreStorageHandler` Interface provides the following methods. You may 
 {% highlight java %}
 abstract class BlobStoreStorageHandler 
 {
-public void initialize(String spaceName, Properties properties, boolean warmStart){};
-public abstract Object add(java.io.Serializable id,java.io.Serializable data, BlobStoreObjectType objectType);
-public abstract  java.io.Serializable get(java.io.Serializable id, Object position,  BlobStoreObjectType objectType);
-public abstract  Object replace(java.io.Serializable id,java.io.Serializable data,  Object position,  BlobStoreObjectType objectType);
-public abstract void  remove(java.io.Serializable id, Object position, BlobStoreObjectType objectType);
-public List<BlobStoreBulkOperationResult> executeBulk(List<BlobStoreBulkOperationRequest> operations, BlobStoreObjectType objectType, boolean transactional)
-public  DataIterator<BlobStoreGetBulkOperationResult> iterator(BlobStoreObjectType objectType)
-public Properties getProperties(){};
-public void close(){};
-
- {% endhighlight %}
+  public void initialize(String spaceName, Properties properties, boolean warmStart){};
+  public abstract Object add(java.io.Serializable id,java.io.Serializable data, BlobStoreObjectType objectType);
+  public abstract  java.io.Serializable get(java.io.Serializable id, Object position,  BlobStoreObjectType objectType);
+  public abstract  Object replace(java.io.Serializable id,java.io.Serializable data,  Object position,  BlobStoreObjectType objectType);
+  public abstract void  remove(java.io.Serializable id, Object position, BlobStoreObjectType objectType);
+  public List<BlobStoreBulkOperationResult> executeBulk(List<BlobStoreBulkOperationRequest> operations, BlobStoreObjectType objectType, boolean transactional)
+  public  DataIterator<BlobStoreGetBulkOperationResult> iterator(BlobStoreObjectType objectType)
+  public Properties getProperties(){};
+  public void close(){};
+}
+{% endhighlight %}
 
 If you wish to add Async Persistency - Mirror to your IMDG please refer to [Async Persistency with Mirror](./asynchronous-persistency-with-the-mirror.html).

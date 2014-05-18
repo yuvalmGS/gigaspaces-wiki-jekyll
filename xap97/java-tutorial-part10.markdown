@@ -82,7 +82,7 @@ Note that the monitoring is secured only by the 'tooling' (CLI/UI).
 |Monitor PU	 |Monitoring of Processing Units (classes, connections, statistics, etc.)|
 {%endindent%}
 
-{%learn%}{%latestjavaurl%}/security-authorities.html{%endlearn%}
+{%learn%}./security-authorities.html{%endlearn%}
 
 
 # Managing Roles
@@ -115,7 +115,7 @@ The default username and password for the security are admin/admin.
 
 You may have noticed that you can assign fine grained access control for space operations (read/write/etc) per space class(slide 4).
 
-{%learn%}{%latestjavaurl%}/gigaspaces-management-center-(ui)-security.html{%endlearn%}
+{%learn%}./gigaspaces-management-center-(ui)-security.html{%endlearn%}
 
 
 # Managing Users
@@ -174,7 +174,7 @@ private Role createRole() {
 {% endtabcontent  %}
 {% endinittab %}
 
-{%learn%}{%latestjavaurl%}/gigaspaces-management-center-(ui)-security.html{%endlearn%}
+{%learn%}./gigaspaces-management-center-(ui)-security.html{%endlearn%}
 
 
 # Securing XAP Components
@@ -237,7 +237,7 @@ public void setupSpace()
 
 
 
-{%learn%}{%latestjavaurl%}/securing-your-data.html{%endlearn%}
+{%learn%}./securing-your-data.html{%endlearn%}
 
 
 
@@ -253,17 +253,17 @@ Grid Security is enabled in XAP by setting a global system property. This system
 
 This property affects the GSA, GSM, GSC and standalone PU instances with a space.
 
-{%learn%}{%latestjavaurl%}/securing-the-grid-services.html{%endlearn%}
+{%learn%}./securing-the-grid-services.html{%endlearn%}
 
 
 
 ### Transport Security
 The transport layer can be secured using an SSL communication filter.
 
-{%learn%}{%latestjavaurl%}/securing-the-transport-layer-(using-ssl).html{%endlearn%}
+{%learn%}./securing-the-transport-layer-(using-ssl).html{%endlearn%}
 
 
-{%info%}This concludes this tutorial. For more detailed information of the XAP platform and its API please consult the [Programmers Guide]({%latestjavaurl%}/programmers-guide.html) {%endinfo%}
+{%info%}This concludes this tutorial. For more detailed information of the XAP platform and its API please consult the [Programmers Guide](./programmers-guide.html) {%endinfo%}
 
 
 <ul class="pager">

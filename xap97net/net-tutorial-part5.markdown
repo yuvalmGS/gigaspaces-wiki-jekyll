@@ -114,7 +114,7 @@ Here is an example of a pu.conf file:
 </configuration>
 {%endhighlight%}
 
-{%learn%}{%latestjavaurl%}/configuring-processing-unit-elements.html{%endlearn%}
+{%learn%}{%currentjavaurl%}/configuring-processing-unit-elements.html{%endlearn%}
 
 
 
@@ -139,7 +139,7 @@ A sample SLA definition is shown below:
 </beans>
 {%endhighlight%}
 
-{%learn%}{%latestjavaurl%}/configuring-the-processing-unit-sla.html{%endlearn%}
+{%learn%}{%currentjavaurl%}/configuring-the-processing-unit-sla.html{%endlearn%}
 
 
 
@@ -372,7 +372,7 @@ With a stateless PU
 Deploying with the command line options will override the sla definitions
 {%endnote%}
 
-{%learn%}{%latestadmurl%}/deploy-command-line-interface.html{%endlearn%}
+{%learn%}{%currentadmurl%}/deploy-command-line-interface.html{%endlearn%}
 
 
 

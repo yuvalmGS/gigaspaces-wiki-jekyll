@@ -1,16 +1,15 @@
 ---
-layout: post10
-title:  Custom Change Operation
-categories: XAP10
+layout: post100
+title:  Custom Change
+categories: XAP100
 parent: change-api.html
 weight: 100
 ---
 
-{% summary %}This page describes how to implement a custom change operation and how to use it.{% endsummary %}
+{% summary %}{% endsummary %}
 
-# What Is a Custom Change Operation
 
-A custom change operation lets the user implement her own change operation in case the built-in operations (increment, add, remove, set, etc.) do not suffice. This is a very powerful capability but it must be used with extreme care.
+A custom change operation lets the user implement his own change operation in case the built-in operations (increment, add, remove, set, etc.) do not suffice. This is a very powerful capability but it must be used with extreme caution.
 
 # Implementing and Using a Custom Change Operation
 
@@ -61,13 +60,14 @@ gigaSpace.change(query, new ChangeSet().custom(new MultiplyIntegerChangeOperatio
 
 # The Name of a Custom Change Operation 
 
-The custom operation is treated like the built-in change operations (in fact the build in implementations are using the same the same mechanism), therefore the operation should have a unique name which is used in all the relevant places as described in the [Change API Advanced Page](./change-api-advanced.html), such as configuring which operations are supported by a `SpaceSynchronizationEndpoint` implementation, using it inside space and replication filters to identify which custom change operation is executed, etc.
+The custom operation is treated like the built-in change operations (in fact the build in implementations are using the same mechanism), therefore the operation should have a unique name which is used in all the relevant places as described in the [Change API Advanced Page](./change-api-advanced.html), such as configuring which operations are supported by a `SpaceSynchronizationEndpoint` implementation, using it inside space and replication filters to identify which custom change operation is executed, etc.
 
 # Mandatory Implementation Requirements 
 
-When implementing a custom change operation the following guidliness must be followed and fully understood.
-1. The provided {% javadoc com.gigaspaces.sync.change.MutableServerEntry %} is wrapping the actual object which is kept in space, therefore it is crucial to understand when a value is retrieved from the entry 
-it points to the actual reference in the data structure of the space. The content of this reference should not be changed as it will directly affect the object in space and will break data integrity, transaction management and visibility scoping (e.g. transaction abort will not restore the previous value). Changing a value should always be done via the [MutableServerEntry](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/sync/change/MutableServerEntry.html#setPathValue(String, Object)). 
+When implementing a custom change operation, the following guidelines must be followed:
+
+The provided `MutableServerEntry` is wrapping the actual object which is kept in space, therefore it is crucial to understand when a value is retrieved from the entry
+it points to the actual reference in the data structure of the Space. The content of this reference should not be changed as it will directly affect the object in Space and will break data integrity, transaction management and visibility scoping (e.g. transaction abort will not restore the previous value). Changing a value should always be done via the [MutableServerEntry](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/sync/change/MutableServerEntry.html#setPathValue(String, Object)).
 Moreover, if you want to change a property within that value by invoking a method on that object (e.g. if the value is a list, adding an item to the list), you must first clone the fetched value, and then invoke the method on the cloned copy. Otherwise, you will change the existing data structure in the space without going through the proper data update mechanism and will potentially break data integrity.
 
 Below you can find an example that adds the element 2 into an ArrayList that exists in the entry under a property named "listProperty". The result sent to client (if requested) is the size of the collection after the change. Note that we clone the ArrayList before modifying it as explained above.
@@ -102,7 +102,7 @@ Custom change operation lets you run custom code on the space, hence the space s
 
 # Custom Operation and Space Integration Points
 
-Using a custom operation with a [Replication Filter](./cluster-replication-filters.html), [Space Filter](./space-filters.html) and [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html) is supported
+Using a custom operation with a [Replication Filter](./cluster-replication-filters.html), [Space Filter](./the-space-filters.html) and [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html) is supported
 and behaves the same as the built-in operations. You can get a reference to the instance of the `CustomChangeOperation` by checking its name (or `instanceof`) and casting to the specific type.
 
 {% highlight java %}
@@ -117,3 +117,4 @@ for(ChangeOperation operation : operations) {
   //...
 }
 {% endhighlight %}
+

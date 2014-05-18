@@ -42,7 +42,7 @@ String url ="jini://*/*/xapTutorialSpace";
 
 You can configure the Space URL with several options.
 
-{%learn%}{%latestneturl%}/the-space-configuration.html{%endlearn%}
+{%learn%}./the-space-configuration.html{%endlearn%}
 
 
 When a client connects to a space, a proxy is created that holds a connection which implements the space API. All client interaction is performed through this proxy.
@@ -56,7 +56,7 @@ In both cases, updates are performed (objects are added/updated/removed) on the 
 
 These two scenarios are only applicable for remote clients.
 
-{%learn%}{%latestneturl%}/client-side-caching.html{%endlearn%}
+{%learn%}./client-side-caching.html{%endlearn%}
 
 
 
@@ -107,7 +107,7 @@ The space generates a unique identifier (UID) for every object in one of the fol
 #### Compound SpaceId
 You might need to construct a space id that will be comprised from a user defined class rather than using a Numeric or String type field. In such a case your user defined class used as the SpaceId data type must implement the ToString , GetHashCode and Equals methods. The compound ID class must implement a ToString method that return a unique String for each ID.
 
-{%learn%}{%latestneturl%}/poco-object-id.html{%endlearn%}
+{%learn%}./poco-object-id.html{%endlearn%}
 
 
 #### Defining Routing
@@ -117,7 +117,7 @@ Partitioning is used when the total number of objects is too big to be stored in
 
 {%info%}The routing attribute can be explicitly set using the `[SpaceRouting]` annotation for PONO entries or via the SpaceTypeDescriptorBuilder for document entries. If the routing attribute is not explicitly set, the space id attribute is used for routing. If the space id attribute is not defined, the first indexed attribute (alphabetically) is used for routing, otherwise the first attribute (alphabetically) is used for routing.{%endinfo%}
 
-{%learn%}{%latestjavaurl%}/data-partitioning.html{%endlearn%}
+{%learn%}{%currentjavaurl%}/data-partitioning.html{%endlearn%}
 
 
 
@@ -181,7 +181,7 @@ Only properties with special roles like ID and Routing are part of the schema de
 
 {%info%}It is possible to write a PONO to the space and read it back as a document, and vice versa. This scenario is useful when you want to read or modify PONO objects without loading the concrete C# classes.{%endinfo%}
 
-{%learn%}{%latestneturl%}/document-object-interoperability.html{%endlearn%}
+{%learn%}./document-object-interoperability.html{%endlearn%}
 
 
 
@@ -245,7 +245,7 @@ public void writeOnlyWithLease() {
 
 In this example, we are writing an object to the space with zero delay, 10 seconds to live and write only if the object does not already exist in the space. If the object already exists, an exception will be thrown.
 
-{%learn%}{%latestneturl%}/the-space-operations.html{%endlearn%}
+{%learn%}./the-space-operations.html{%endlearn%}
 
 
 #### Updating an object in space
@@ -272,7 +272,7 @@ public void changeSet() {
 
 There are several other change operations available; 'increment', 'decrement', 'addToCollection', 'removeFromCollection' etc.
 
-{%learn%}{%latestneturl%}/change-api.html{%endlearn%}
+{%learn%}./change-api.html{%endlearn%}
 
 # Querying the Space
 
@@ -385,7 +385,7 @@ Many times a class has embedded classes as attributes. You can query for attribu
 By default, nested objects are kept in a binary form inside the space. In order to support nested matching, the relevant property should be stored as document, or as object if it is in an interoperability scenario and it has a corresponding Java class.
 {%endnote%}
 
-{%learn%}{%latestneturl%}/poco-storage-type.html{%endlearn%}
+{%learn%}./poco-storage-type.html{%endlearn%}
 
 Here is an example how you would annotate a class to enable nested queries:
 
@@ -441,7 +441,7 @@ public User[] findUsersByGroup() {
 
 There are several additional query options available. For example you can query Nested Maps by key,query with Regular Expression, Enum attributes and others.
 
-{%learn%}{%latestneturl%}/query-sql.html{%endlearn%}
+{%learn%}./query-sql.html{%endlearn%}
 
 
 #### Query returning partial results
@@ -486,7 +486,7 @@ public SpaceDocument[] readProductsBySQL() {
 }
 {%endhighlight  %}
 
-{%learn%}{%latestneturl%}/document-api.html{%endlearn%}
+{%learn%}./document-api.html{%endlearn%}
 
 #### LINQ Queries
 XAP includes a custom LINQ provider, which enables developers to take advantage of their existing C# skills to query the space without learning a new language.  Here is an example :
@@ -504,7 +504,7 @@ using GigaSpaces.Core.Linq;
    }
 {% endhighlight %}
 
-{%learn%}{%latestneturl%}/query-linq.html{%endlearn%}
+{%learn%}./query-linq.html{%endlearn%}
 
 
 #### Removing Objects from Space
@@ -649,7 +649,7 @@ SqlQuery<User> query = new SqlQuery<User>("Name = 'John Dow' AND CreditLimit > 1
 
 There are several additional indexing options available. For example you can index nested attributes, Nested Dictionaries, Collections, nested attributes within a Collection, free text search and others.
 
-{%learn%}{%latestneturl%}/indexing.html{%endlearn%}
+{%learn%}./indexing.html{%endlearn%}
 
 
 # Best Practice

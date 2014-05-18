@@ -43,7 +43,7 @@ When running in direct persistency mode the IMDG interacts with the data source 
 {%endcolumn%}
 {%endsection%}
 
-{%learn%}{%latestneturl%}/space-persistency-overview.html{%endlearn%}
+{%learn%}./space-persistency-overview.html{%endlearn%}
 
 
 
@@ -60,7 +60,7 @@ The XAP Mirror Service provides reliable asynchronous persistency. This allows y
 {%endcolumn%}
 {%endsection%}
 
-{%learn%}{%latestneturl%}/hibernate-space-persistency.html{%endlearn%}
+{%learn%}./hibernate-space-persistency.html{%endlearn%}
 
  
 
@@ -83,17 +83,17 @@ XAP comes with a built in implementation of Space Persistency for NHibernate. Th
 - Cassandra adapter
 XAP comes with built in implementations of Space Data Source and Space Synchronization Endpoint for Cassandra, called CassandraSpaceDataSource and CassandraSpaceSynchronizationEndpoint, respectively.
 
-{%learn%}{%latestjavaurl%}/cassandra.html{%endlearn%}
+{%learn%}{%currentjavaurl%}/cassandra.html{%endlearn%}
 
 - MongoDB adapter
 XAP comes with built in implementations of Space Data Source and Space Synchronization Endpoint for MongoDB, called MongoSpaceDataSource and MongoSpaceSynchronizationEndpoint, respectively.
 
 
-{%learn%}{%latestjavaurl%}/mongodb.html{%endlearn%}
+{%learn%}{%currentjavaurl%}/mongodb.html{%endlearn%}
 
 - Hibernate adapter
 
-{%learn%}{%latestjavaurl%}./hibernate-space-persistency.html{%endlearn%}
+{%learn%}{%currentjavaurl%}./hibernate-space-persistency.html{%endlearn%}
 {%endcomment%}
 
 
@@ -212,7 +212,7 @@ Before using the `ExternalDataSource.NHibernate` practice, compile it by calling
 {%endnote%}
 
 
-{%learn%}{%latestneturl%}/hibernate-space-persistency.html{%endlearn%}
+{%learn%}./hibernate-space-persistency.html{%endlearn%}
 
 
 <ul class="pager">

@@ -69,7 +69,7 @@ To have an initial sample data set to work with, simply click the "Create Dummy 
 
 # Monitoring the Deployed Application
 
-To monitor  the application, start the GigaSpaces UI using the `<GigaSpaces root>/bin/gs-ui.sh(bat)` or the GigaSpaces [Web UI]({%latestadmurl%}/web-management-console.html).
+To monitor  the application, start the GigaSpaces UI using the `<GigaSpaces root>/bin/gs-ui.sh(bat)` or the GigaSpaces [Web UI]({%currentadmurl%}/web-management-console.html).
 
 ![web-ui-pc.png](/attachment_files/web-ui-pc.png)
 

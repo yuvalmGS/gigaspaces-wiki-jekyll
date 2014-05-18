@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: videos
 title:  XAP Videos 
 categories:
 parent: none

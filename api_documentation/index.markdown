@@ -7,6 +7,7 @@ categories: API_DOCUMENTATION
 {%summary%}Links to API documentation for the XAP platform{%endsummary%}
 
 
+[XAP 10.0](./xap-10.0.html)
 
 [XAP 9.7](./xap-9.7.html)
 

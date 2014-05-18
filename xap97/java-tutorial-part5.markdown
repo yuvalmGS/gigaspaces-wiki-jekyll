@@ -414,7 +414,7 @@ With a stateless PU
 ./gs.sh deploy -cluster total_members=4 -max-instances-per-machine 2 eventPU.jar
 {%endhighlight%}
 
-{%learn%}{%latestadmurl%}/deploy-command-line-interface.html{%endlearn%}
+{%learn%}{%currentadmurl%}/deploy-command-line-interface.html{%endlearn%}
 
 
 

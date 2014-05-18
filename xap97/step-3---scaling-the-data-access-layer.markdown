@@ -251,7 +251,7 @@ Total time: 4 seconds
 
 In order to access the space from your application's code you need to get a reference to a _Space Proxy_. Similar to a database connection, the space proxy enables you to perform various operations on the space, such as writing to and reading from it, registering for notifications, etc.
 The space proxy can reference an **embedded space**, which means that the space instance is running within the same memory space (JVM) as your application, or a **remote space**, which means that the space is running in separate JVM(s) from your application's JVM. Regardless, the space proxy's API remains the same and is manifested in the [GigaSpace interface](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html).
-The example application in this tutorial references a remote space, but the techniques presented below are also applicable when accessing an embedded space. The main difference between an embedded and a remote space proxy configuration is the [Space URL]({%latestjavaurl%}/the-space-configuration.html).
+The example application in this tutorial references a remote space, but the techniques presented below are also applicable when accessing an embedded space. The main difference between an embedded and a remote space proxy configuration is the [Space URL](./the-space-configuration.html).
 There are several ways to access the Space from within your web application.
 The most obvious one is to explicitly create a space proxy inside the web application's code. This is the approach we use in the sample application:
 
@@ -296,8 +296,8 @@ If you're application is Spring based and uses the Spring MVC framework, you can
 
 The Space API is very straightforward. In general, it has the following operations:
 
-- `read` - Enables you to read objects from the space. You can use the `readMultiple` methods if you're expecting more than one result. Read criteria is specified via a template (which is an example object whose non-null fields will be matched against existing objects in the space), or via a [query]({%latestjavaurl%}/query-sql.html) with a SQL syntax.
-- `write` - Enables you to write objects to the space. In general you can write any instance to the remote space so long that each of its non-transient fields can be serialized over the wire (i.e. implement `Serializable` or `Externalizable`). You can determine various characteristics of the objects written to the space, such as indexing, partitioning, etc. by [annotating the object's class or by using XML]({%latestjavaurl%}/pojo-support.html). The `write` operation also allows you to batch the writing of multiple objects to the space for optimized performance via the `writeMultiple` methods.
+- `read` - Enables you to read objects from the space. You can use the `readMultiple` methods if you're expecting more than one result. Read criteria is specified via a template (which is an example object whose non-null fields will be matched against existing objects in the space), or via a [query](./query-sql.html) with a SQL syntax.
+- `write` - Enables you to write objects to the space. In general you can write any instance to the remote space so long that each of its non-transient fields can be serialized over the wire (i.e. implement `Serializable` or `Externalizable`). You can determine various characteristics of the objects written to the space, such as indexing, partitioning, etc. by [annotating the object's class or by using XML](./pojo-support.html). The `write` operation also allows you to batch the writing of multiple objects to the space for optimized performance via the `writeMultiple` methods.
 - `take` - Enables you to remove objects from the space (similar to the `Map#remove` method). As with the read operation, the criteria are specified via a template or a query.
 - `notify` - Enables you to register for notifications on changes made to the space (objects written, taken or updated). Upon registration, you can specify a filter using a template or a query.
 - `execute` - Enables you to send tasks for execution on the data grid, utilizing the collocation with the data. Tasks can be sent to one, a few, or all members of the data grid. Results received from the task can then be reduced and returned back to the calling code (this pattern is known as Map/Reduce).
@@ -474,4 +474,4 @@ Now let's deliberately terminate one of the GSCs on which the application is dep
 # What's Next?
 
 ![Jump arrow green.bmp](/attachment_files/Jump arrow green.bmp) You have completed the web application scaling tutorial.
-Click here to view [other tutorials](./index.html) or go directly to the [GigaSpaces XAP programmer's guide]({%latestjavaurl%}/programmers-guide.html).
+Click here to view [other tutorials](./index.html) or go directly to the [GigaSpaces XAP programmer's guide](./programmers-guide.html).

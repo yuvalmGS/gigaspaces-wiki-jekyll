@@ -95,10 +95,10 @@ To implement our solution, we use Cassandra (or a local file) as the historical 
 {% endcolumn %}
 {% endsection %}
 
-- The [`processor`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/processor) module is a XAP [processing unit]({%latestjavaurl%}/the-processing-unit-structure-and-configuration.html) that contains the Space and performs the real-time workflow of processing the incoming tweets. The processing of data objects is performed using event containers.
+- The [`processor`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/processor) module is a XAP [processing unit](./the-processing-unit-structure-and-configuration.html) that contains the Space and performs the real-time workflow of processing the incoming tweets. The processing of data objects is performed using event containers.
 
 - The [`feeder`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/feeder) module is implemented as a processing unit thereby enabling the dynamic deployment of multiple instances of the feeder across multiple nodes, increasing the load it can manage, and thus the ability handle larger tweet streams. The processing unit contains the following feeder strategies:
-    - The [`TwitterHomeTimelineFeederTask`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/feeder/src/main/java/org/openspaces/bigdata/feeder/TwitterHomeTimelineFeederTask.java) class, which feeds in tweets from Twitter's public timeline using [Spring Social](http://www.springsource.org/spring-social), converting them to a canonical [Space Document]({%latestjavaurl%}/document-api.html) representation, and writes them to the Space ,which in turn invokes the relevant event processors of the processor module.
+    - The [`TwitterHomeTimelineFeederTask`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/feeder/src/main/java/org/openspaces/bigdata/feeder/TwitterHomeTimelineFeederTask.java) class, which feeds in tweets from Twitter's public timeline using [Spring Social](http://www.springsource.org/spring-social), converting them to a canonical [Space Document](./document-api.html) representation, and writes them to the Space ,which in turn invokes the relevant event processors of the processor module.
     - The [`ListBasedFeederTask`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/feeder/src/main/java/org/openspaces/bigdata/feeder/ListBasedFeederTask.java) class is a simulation feeder for testing purposes, which simulates tweets locally, avoiding the need to connect to the Twitter API over the Internet.
 
 - Optionally, the [`common`](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata/common) module for including items that are shared between the feeder and the processor modules (e.g. common interfaces, shared data model, etc.).
@@ -251,7 +251,7 @@ rt-feeder project run configuration:
 
 - In IntelliJ, create two run configurations, with [`org.openspaces.pu.container.integrated.IntegratedProcessingUnitContainer`](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/pu/container/integrated/IntegratedProcessingUnitContainer.html) as the main class, and make sure that the feeder configuration uses the classpath of the `feeder` module, and that the processor configuration uses that of the `processor` module.
 
-For more information about the `IntegratedProcessingUnitContainer` class (runs the processing units within your IDE), see [Running and Debugging Within Your IDE]({%latestjavaurl%}/running-and-debugging-within-your-ide.html).
+For more information about the `IntegratedProcessingUnitContainer` class (runs the processing units within your IDE), see [Running and Debugging Within Your IDE](./running-and-debugging-within-your-ide.html).
 
 {% tip %}
 Make sure you have updated **gslicense.xml** located under the GigaSpaces XAP root folder with the license key provided as part of the email sent to you after downloading GigaSpaces XAP.
@@ -300,7 +300,7 @@ Since the [Twitter API uses rate limiting](https://dev.twitter.com/docs/rate-lim
 
 The following are step-by-step instructions for running the application in XAP:
 
-1. [Download](http://www.gigaspaces.com/LatestProductVersion) and [install]({%latestjavaurl%}/installation.html) XAP.
+1. [Download](http://www.gigaspaces.com/LatestProductVersion) and [install](./installation.html) XAP.
 1. Edit `<XapInstallationRoot>/gslicense.xml>` and place the license key file provided with the email sent to you after downloading GigaSpaces XAP as the `<licensekey>` value.
 1. Start a shell prompt in the `<XapInstallationRoot>/recipes/apps/streaming-bigdata` folder.
 1. Run
@@ -436,7 +436,7 @@ Once the application is running, you can use the XAP UI tools to view your appli
 - For the Rich Based UI run gs-ui.bat/sh
 
 {% info title=More Deployment Options %}
-To learn about additional options for deploying your XAP processing units, please see [Deploying onto the Service Grid]({%latestjavaurl%}/deploying-onto-the-service-grid.html)
+To learn about additional options for deploying your XAP processing units, please see [Deploying onto the Service Grid](./deploying-onto-the-service-grid.html)
 {% endinfo %}
 
 # Viewing Most Popular Words on Twitter
@@ -460,7 +460,7 @@ You can re-execute the query just by clicking the ![rt-tw5.jpg](/attachment_file
 Once raw tweets are processed, they are moved from the Space to the historical data backend store. By default, this points to a **simple flat file archiver** storage implemented with the `FileArchiveOperationHandler`. The example application also includes a Cassandra driver `CassandraArchiveHandler`.
 
 {% tip %}
-For more advanced persistency implementation see the [Cassandra Space Persistency Solution]({%latestjavaurl%}/cassandra-space-persistency.html).
+For more advanced persistency implementation see the [Cassandra Space Persistency Solution](./cassandra-space-persistency.html).
 {% endtip %}
 
 {% tip %}
@@ -701,7 +701,7 @@ public class TwitterHomeTimelineFeederTask implement Runnable {
 
 We have the raw data but we need to tokenize and filter it, and then update the local counters - these are the tasks performed by the **Map** phase of the **Map** / **Reduce** algorithm.
 
-To generate this real-time flow, XAP uses the [event driven architecture of the event container]({%latestjavaurl%}/messaging-support.html). Specifically, we use a [Polling Container]({%latestxaprelease%}/polling-container.html) to listen for events relating to the writing of raw tweets to the Space. These events are configured using the `SQLQuery` returned by the `unprocessedTweet` method marked as `@EventTemplate`. Then, we tokenize & filter the tweet using the `@SpaceDataEvent` to mark the event handling method. The result is an object of type `TokenizedTweet` written to the Space.
+To generate this real-time flow, XAP uses the [event driven architecture of the event container](./messaging-support.html). Specifically, we use a [Polling Container]({%latestxaprelease%}/polling-container.html) to listen for events relating to the writing of raw tweets to the Space. These events are configured using the `SQLQuery` returned by the `unprocessedTweet` method marked as `@EventTemplate`. Then, we tokenize & filter the tweet using the `@SpaceDataEvent` to mark the event handling method. The result is an object of type `TokenizedTweet` written to the Space.
 
 The following snippet shows the relevant `TweetParser` sections.
 

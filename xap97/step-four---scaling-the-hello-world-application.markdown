@@ -213,7 +213,7 @@ This is achieved by dividing the application data into partitions (each partitio
 **Routing Index** - When writing an object to a cluster of Processing Units which contains multiple partitions, the routing of that object to a specific partition, is calculated based on the value of one of the object's properties. This property is designated using the `@SpaceRouting` annotation, and is referred to as the **Routing Index**.
 
 {% tip %}
-For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit]({%latestjavaurl%}/elastic-processing-unit.html) section.
+For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](./elastic-processing-unit.html) section.
 {% endtip %}
 
 {% comment %}

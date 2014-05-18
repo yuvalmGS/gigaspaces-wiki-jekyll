@@ -36,7 +36,7 @@ Task execution comes in two flavors:
 - Java Tasks - In this mode you can pass Java code from the client to the cluster to be executed on the data grid nodes. The code is dynamically introduced to the server nodes classpath.
 - Dynamic language tasks - Tasks can be defined using one of the dynamic languages supported by the JVM (JSR-223) and be compiled and executed on the fly. In this part of the tutorial we will not cover Dynamic language tasks.
 
-{%learn%}{%latestneturl%}/dynamic-language-tasks.html{%endlearn%}
+{%learn%}./dynamic-language-tasks.html{%endlearn%}
 
 
 Java Tasks can be more efficient in terms of performance and tend to be more type-safe then dynamic tasks. Dynamic tasks on the other hand can be changed more frequently without causing class version conflicts and are more concise given the nature of dynamic languages..
@@ -144,7 +144,7 @@ public void executeTaskWithRouting() throws InterruptedException, ExecutionExcep
 
 There are other options available for task routing
 .
-{%learn%}{%latestneturl%}/task-execution-over-the-space.html{%endlearn%}
+{%learn%}./task-execution-over-the-space.html{%endlearn%}
 
 {%endcomment%}
 
@@ -223,14 +223,14 @@ By default, the task is broad casted to all primary nodes. You can also execute 
 
 XAP provides out of the box Aggregator Tasks.
 
-{%learn%}{%latestneturl%}/aggregators.html{%endlearn%}
+{%learn%}./aggregators.html{%endlearn%}
 {%endcomment%}
 
 {%comment%}
 #### ExecutorBuilder
 The executor builder allows to combine several task executions (both distributed ones and non distributed ones) into a seemingly single execution (with a reduce phase).
 
-{%learn%}{%latestneturl%}/task-execution-over-the-space.html{%endlearn%}
+{%learn%}./task-execution-over-the-space.html{%endlearn%}
 {%endcomment%}
 
 # Asynchronous Task
@@ -253,7 +253,7 @@ public void executeDistributedTaskAsync()
 }
 {%endhighlight%}
 
-{%learn%}{%latestneturl%}/task-execution-over-the-space.html{%endlearn%}
+{%learn%}./task-execution-over-the-space.html{%endlearn%}
 
 {%comment%}
 # Space Based Remoting
@@ -341,7 +341,7 @@ public class RemoteService {
 }
 {%endhighlight%}
 
-{%learn%}{%latestneturl%}/space-based-remoting.html{%endlearn%}
+{%learn%}./space-based-remoting.html{%endlearn%}
 
 {%endcomment%}
 
