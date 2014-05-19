@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Examples
+title:  CPP Examples
 categories: XAP97
 parent: xap-cpp.html
 weight: 500
@@ -24,5 +24,8 @@ The Processing Unit example.
 
 - [Using existing classes](./cpp-writing-existing-class-to-space.html){%wbr%}
 This example shows you how to write your own c++ class to the space (as opposed to writing a class that is generated from a XML file).
+
+- [Benchmark](./benchmark-c++.html){%wbr%}
+The XAP C++ API benchmark framework allows you to test all common Space operations in different scenarios. 
 
 <hr/>
