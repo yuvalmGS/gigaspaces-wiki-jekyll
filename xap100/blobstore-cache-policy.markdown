@@ -8,7 +8,21 @@ weight: 400
 
 {% summary %}  {% endsummary %}
 
-XAP 10 introduces a new Storage interface allowing Blob/Block/external type storage to act as a natural memory space for the IMDG. This storage model allows the IMDG to interact with the Storage interface as an integral data space together with the RAM/Heap based memory space. 
+
+
+
+{% section %}
+{% column  width=10% %}
+
+![flash-imdg.png](/attachment_files/subject/flash-imdg.png)
+{% endcolumn %}
+XAP 10 introduces a new Storage interface allowing Blob/Block/external type storage to act as a natural memory space for the IMDG. This storage model allows the IMDG to interact with the Storage interface as an integral data space together with the RAM/Heap based memory space.
+
+{% column width=90% %}
+
+{% endcolumn %}
+{% endsection %}
+
 
 This storage model allows you to leverage high capacity storage such as Enterprise flash drives (SSD) as the IMDG memory storage area instead of the IMDG container Process (Heap). This storage model leveraging the RAM (Heap) to store indexes and SSD for the raw data in a serialized form.  
 
