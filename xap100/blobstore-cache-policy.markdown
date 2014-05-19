@@ -12,7 +12,7 @@ XAP 10 introduces a new Storage interface allowing Blob/Block/external type stor
 
 This storage model allows you to leverage high capacity storage such as Enterprise flash drives (SSD) as the IMDG memory storage area instead of the IMDG container Process (Heap). This storage model leveraging the RAM (Heap) to store indexes and SSD for the raw data in a serialized form.  
 
-![blobstore1.jpg](https://dl.dropboxusercontent.com/u/7390820/blobstore1.jpg)
+![blobstore1.jpg](/attachment_files/blobstore1.jpg)
 
 Heap (RAM) used also as a first level cache for frequently used data. Read operations (ById, Template or SQL based) for the same data will be first loaded from the SSD and later will be served from the RAM based cache.
 
@@ -40,7 +40,7 @@ Yes. All Enterprise flash drives are supported. SanDisk, Fusion-IO, Intel® SSD 
 XAP is using [SanDisk Flash Data Fabric (FDF)](http://www.sandisk.com/) which enables direct flash access for In-Memory performance. It eliminate any other storage interface, when writing an object to the space , its indexed data maintained on Heap where the Storage interface implementing using the FDF libraries to interact with the underlying flash drive. 
 
 
-![blobstore2.jpg](https://dl.dropboxusercontent.com/u/7390820/blobstore2.jpg)
+![blobstore2.jpg](/attachment_files/blobstore2.jpg)
 
 The indexes maintain in RAM allowing the XAP query engine to evaluate the query without accessing the raw data stored on the flash device. This allows XAP to execute SQL based queries extremely efficiently even across large number of nodes. All XAP Data Grid APIs are supported including distributed transactions, leasing (Time To live) , FIFO , batch operations ,etc. All clustering topologies supported. All client side cache options are supported.
 
