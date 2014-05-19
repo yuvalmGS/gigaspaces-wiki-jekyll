@@ -1,14 +1,75 @@
 ---
-layout: post100
-title:  Overview
-categories: XAP100
-parent: replication.html
-weight: 50
+layout: post100adm
+title:  Replication
+categories: XAP100ADM
+parent: data-grid-clustering.html
+weight: 400
 ---
 
-{% summary %}  {% endsummary %}
+{%wbr%}
+
+{%section%}
+{%column width=10% %}
+![replication.png](/attachment_files/subject/replication.png)
+{%endcolumn%}
+{%column width=90% %}
+This section gives a detailed description of the Space's replication mechanism, and how to configure and optimize it.
+{%endcolumn%}
+{%endsection%}
+
+<hr/>
 
 
+- [Overview](./replication-overview.html){%wbr%}
+This section gives a detailed description of the Space’s replication mechanism, and how to configure and optimize it.
+
+- [Replication topologies](./replication-topologies.html){%wbr%}
+This page provides a brief description for the different replication topologies.
+
+- [Synchronous replication](./synchronous-replication.html){%wbr%}
+This page describe what is synchronous replication and how to configure it.
+
+- [Asynchronous replication](./asynchronous-replication.html){%wbr%}
+This page describe what is asynchronous replication and how to configure it.
+
+- [Space instance recovery](./space-instance-recovery.html){%wbr%}
+How space instance recovers its data when first started, relocated or after an unexpected failure.
+
+- [Replication filters](./cluster-replication-filters.html){%wbr%}
+How to call custom business logic when data is replicated in a replicated cluster topology.
+
+- [Replication operations](./replication-operations.html){%wbr%}
+This section describes in detail how each space operation is replicated provides relevant configuration and optimizations .
+
+- [Controlling the replication redo log](./controlling-the-replication-redo-log.html){%wbr%}
+This section describes how to control the replication queue (aka the redo log), what options it provides, and what are the trade-offs involved with each option.
+
+
+- [Replication parameters](./replication-parameters.html){%wbr%}
+This page contains all the parameters that can be configured as part of the replication configuration.
+
+
+
+
+
+
+
+
+
+<hr/>
+
+
+
+
+
+
+
+
+
+{%comment%}
+{% summary %}This section gives a detailed description of the Space's replication mechanism, and how to configure and optimize it.{% endsummary %}
+
+# Overview
 
 Replication is the process of duplicating or copying application data and operations, from a source space to a target space, or to multiple target spaces. Replication is used mainly for high-availability, where a replica space is running in backup mode or for sharing local site data with remote sites. The operations that are replicated are the modifying operations, i.e. those that actually affect the data that is stored in the space instance, such as Write/Take/Update and Lease cancel/renewal.
 
@@ -80,3 +141,6 @@ There are many parameters that configure the replication behavior. For a full li
 
 The replication module can be monitored and exposes various statistics using the [Administration and Monitoring API](./administration-and-monitoring-api.html) via [Replication Statistics](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/core/filters/ReplicationStatistics.html)
 
+# Pages in This Section
+
+{%endcomment%}

@@ -1,7 +1,7 @@
 ---
-layout: post100
+layout: post100adm
 title:  Consistency Level
-categories: XAP100
+categories: XAP100ADM
 parent: data-grid-clustering.html
 weight: 100
 ---

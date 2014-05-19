@@ -1,7 +1,7 @@
 ---
-layout: post100
+layout: post100adm
 title:  Overview
-categories: XAP100
+categories: XAP100ADM
 parent: data-grid-clustering.html
 weight: 50
 ---
@@ -20,23 +20,23 @@ GigaSpaces Data-Grid clustering Scalability and High-Availability are based on t
 ## Scalability
 
 1. Data is segmented into [partitions](./data-partitioning.html). Each partition includes a primary instance and ZERO or more backups instances. A partition (primary or a backup) hosted within a single [Grid Service container]({%currentadmurl%}/the-runtime-environment.html).
-1. Data access is load-balanced across the different partitions using a routing field or a [routing value](./routing-in-partitioned-spaces.html) specified as part of the space object or as part of the read/execute request. This allows the application to control the data distribution in a transparent manner.
-1. Some operations such as batch read or [execute](./task-execution-over-the-space.html) support [map-reduce](./space-based-remoting.html) behavior allowing the application to access multiple partitions in parallel.
+1. Data access is load-balanced across the different partitions using a routing field or a [routing value]({%currentjavaurl%}/routing-in-partitioned-spaces.html) specified as part of the space object or as part of the read/execute request. This allows the application to control the data distribution in a transparent manner.
+1. Some operations such as batch read or [execute]({%currentjavaurl%}/task-execution-over-the-space.html) support [map-reduce]({%currentjavaurl%}/space-based-remoting.html) behavior allowing the application to access multiple partitions in parallel.
 1. Partition maximum size would be the Grid Service container heap size. GigaSpaces support large heap size (up to 100GB in RAM). A Grid Service container may host multiple partitions (primary or backup instances).
 1. A Data-Grid may have unlimited number of partitions. In reality the number of partition will be in the same magnitude as the number of Grid Service containers or servers that will be running the Data-Grid. This allows the data-grid to scale dynamically and re-balance itself across more Grid Service containers.
-1. The number of Data-Grid partitions is determined at the deployment time. The number of Grid Service containers hosting the Data-Grid partitions is dynamic and may change in runtime. It can scale in an [elastic](./elastic-processing-unit.html) manner when using the ESM.
+1. The number of Data-Grid partitions is determined at the deployment time. The number of Grid Service containers hosting the Data-Grid partitions is dynamic and may change in runtime. It can scale in an [elastic]({%currentjavaurl%}/elastic-processing-unit.html) manner when using the ESM.
 
 ## High-Availability
 
 1. Data Availability using [synchronous replication](./synchronous-replication.html) to remote in-memory backups.
 1. Backup instances are always running on different physical machines than the ones running primary instances
-1. Persistency to database/disk done in a reliable [Asynchronous manner](./asynchronous-persistency-with-the-mirror.html).
+1. Persistency to database/disk done in a reliable [Asynchronous manner]({%currentjavaurl%}/asynchronous-persistency-with-the-mirror.html).
 1. Once an instance of the system [fails](./failover.html) a new one recreated on-the-fly on some available machine. If the instance is primary, the existing backup turn into primary and a new backup is created.
 1. You can have more than a single backup copy per partition.
-1. Backup can be on the LAN or WAN. For remote WAN, special replication module is provided called the [replication Gateway](./multi-site-replication-over-the-wan.html ).
+1. Backup can be on the LAN or WAN. For remote WAN, special replication module is provided called the [replication Gateway]({%currentjavaurl%}/multi-site-replication-over-the-wan.html ).
 1. Backup instances cannot be accessed by clients for write/read. This ensures total data consistency and avoids conflicts.
 1. Once a backup is not available the primary will log all activities (on file or [overflow to disk](./controlling-the-replication-redo-log.html)) and send these to the backup once it will be available (send only delta). With a long disconnection total recovery of the backup will be conducted.
-1. Transaction boundary preserved when data is replicated from primary instance to the backup, when persisting the data or when replicating the data into remote site over the WAN ([WAN Gateway](./multi-site-replication-over-the-wan.html)).
+1. Transaction boundary preserved when data is replicated from primary instance to the backup, when persisting the data or when replicating the data into remote site over the WAN ([WAN Gateway]({%currentjavaurl%}/multi-site-replication-over-the-wan.html)).
 
 {% indent %}
 ![data-grid-clustering-explained.jpg](/attachment_files/data-grid-clustering-explained.jpg)

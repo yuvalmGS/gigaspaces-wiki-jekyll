@@ -1,7 +1,7 @@
 ---
-layout: post100
+layout: post100adm
 title:  Space Instance Recovery
-categories: XAP100
+categories: XAP100ADM
 parent: replication.html
 weight: 400
 ---
@@ -75,7 +75,7 @@ If there are other space instances in the same replication group, they don't rep
 
 Primary and Backup space instances use the same database to stored their data. The space is the system of record. The data is usually persisted through the Mirror service.
 Which data is recovered depends on the space caching policy.
-There is special handling for [Transient Entries](./transient-entries.html) (`persist=false`), since they can't be persisted - they are always recovered from the primary.
+There is special handling for [Transient Entries]({%currentjavaurl%}/transient-entries.html) (`persist=false`), since they can't be persisted - they are always recovered from the primary.
 
 ### All In Cache Policy
 
@@ -99,7 +99,7 @@ If the primary space is unavailable for some reason - recovery will be retried  
 - the primary gets reconnected and then the recovery continues normally.
 - the space itself becomes primary and then no recovery is necessary.
 
-Any other failure - [SpaceMemoryShortageException](./all-in-cache-cache-policy.html#SpaceMemoryShortageException), Database not available etc. is retried 3 times before failing.
+Any other failure - [SpaceMemoryShortageException]({%currentjavaurl%}/all-in-cache-cache-policy.html#SpaceMemoryShortageException), Database not available etc. is retried 3 times before failing.
 
 # Active-Active Topology
 
@@ -119,7 +119,7 @@ With this scenario:
 1. If the database is empty --> target space instance recovers everything from the source.
 1. If database has data --> recover persistent objects from the database + recover transient objects from the source.
 
-For further info and configuration options see [Distributed Databases](./direct-persistency.html#Distributed Databases)
+For further info and configuration options see [Distributed Databases]({%currentjavaurl%}/direct-persistency.html#Distributed Databases)
 
 ## Space Instance Recovery Failure Handling
 

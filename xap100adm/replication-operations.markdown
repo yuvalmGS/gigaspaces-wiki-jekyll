@@ -1,7 +1,7 @@
 ---
-layout: post100
+layout: post100adm
 title:  Replication Operations
-categories: XAP100
+categories: XAP100ADM
 parent: replication.html
 weight: 500
 ---
@@ -142,7 +142,7 @@ For example the take operation only replicates the object ID to minimize the net
 Additional optimizations that can affect the replication performance is the update operation. Regular object updates replicate the whole object state - all the properties even those that were not changed. This can be optimized by using `WriteModifier.PARTIAL_UPDATE` modifier when performing the object update. When this modifier is used, the replication will replicate only the changed properties and not the whole object.
 
 {% info %}
-When mirror is used additional settings are required to support the partial update. See [Optimizing the Mirror Activity](./asynchronous-persistency-with-the-mirror.html#Optimizing the Mirror Activity).
+When mirror is used additional settings are required to support the partial update. See [Optimizing the Mirror Activity]({%currentjavaurl%}/asynchronous-persistency-with-the-mirror.html#Optimizing the Mirror Activity).
 {%endinfo%}
 
 # Replication Filters

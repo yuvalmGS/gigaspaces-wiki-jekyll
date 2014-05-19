@@ -108,7 +108,7 @@ For the common use case you can use the [Change Extension](./change-extension.ht
 
 # Change and Replication Filters
 
-When using [Replication Filter](./cluster-replication-filters.html), one can extract the `DataSyncChangeSet` from the `IReplicationFilterEntry` in the same way as extracting it from a `DataSyncOperation` by using the
+When using [Replication Filter]({%currentadmurl%}/cluster-replication-filters.html), one can extract the `DataSyncChangeSet` from the `IReplicationFilterEntry` in the same way as extracting it from a `DataSyncOperation` by using the
 `ChangeDataSyncOperation` class in the following way:
 
 {% highlight java %}

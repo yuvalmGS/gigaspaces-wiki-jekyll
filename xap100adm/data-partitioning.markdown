@@ -1,7 +1,7 @@
 ---
-layout: post100
+layout: post100adm
 title:  Data-Partitioning
-categories: XAP100
+categories: XAP100ADM
 parent: data-grid-clustering.html
 weight: 200
 ---
@@ -18,7 +18,7 @@ If a space belongs to a load-balancing group, the clustered proxy originating fr
 ![load_balancing_basic.gif](/attachment_files/load_balancing_basic.gif)
 
 {% tip %}
-For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](./elastic-processing-unit.html) section.
+For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit]({%currentjavaurl%}/elastic-processing-unit.html) section.
 {% endtip %}
 
 # Partitioning Types

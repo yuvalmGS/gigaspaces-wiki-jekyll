@@ -68,7 +68,7 @@ public class Employee {
 }
 {%endhighlight%}
 {% endgcloak %}
-{%learn%}./data-partitioning.html{%endlearn%}
+{%learn%}{%currentadmurl%}/data-partitioning.html{%endlearn%}
 
 
 # SpaceProperty

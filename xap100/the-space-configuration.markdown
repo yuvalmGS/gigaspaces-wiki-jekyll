@@ -236,8 +236,8 @@ The general properties are used to override various components such as the space
 Popular overrides:
 
 - [Memory Manager Settings](./memory-management-facilities.html#Memory Manager Parameters)
-- [Replication Settings](./replication-parameters.html)
-- [Replication Redo-log Settings](./controlling-the-replication-redo-log.html#Redo Log Capacity Configuration)
+- [Replication Settings]({%currentadmurl%}/replication-parameters.html)
+- [Replication Redo-log Settings]({%currentadmurl%}/controlling-the-replication-redo-log.html#Redo Log Capacity Configuration)
 - [Proxy Connectivity Settings]({%currentadmurl%}/tuning-proxy-connectivity.html#Configuration)
 - [Persistency Settings](./space-persistency-advanced-topics.html#Properties)
 
@@ -299,7 +299,7 @@ The `GigaSpace` Bean can have the following elements:
 |Element|Description|Required|Default Value|
 |:------|:----------|:-------|:------------|
 |space|This can be an embedded space , remote space , local view or local cache. |YES| |
-|clustered|Boolean. [Cluster flag](./clustered-vs-non-clustered-proxies.html). Controlling if this GigaSpace will work with a clustered view of the space or directly with a cluster member. By default if this flag is not set it will be set automatically by this factory. It will be set to true if the space is an embedded one AND the space is not a local cache proxy. It will be set to false otherwise (i.e. the space is not an embedded space OR the space is a local cache proxy)| NO | true for remote proxy , false for embedded proxy|
+|clustered|Boolean. [Cluster flag]({%currentadmurl%}/clustered-vs-non-clustered-proxies.html). Controlling if this GigaSpace will work with a clustered view of the space or directly with a cluster member. By default if this flag is not set it will be set automatically by this factory. It will be set to true if the space is an embedded one AND the space is not a local cache proxy. It will be set to false otherwise (i.e. the space is not an embedded space OR the space is a local cache proxy)| NO | true for remote proxy , false for embedded proxy|
 |default-read-timeout|Numerical Value. Sets the default read timeout for `read(Object)` and `readIfExists(Object)` operations.|NO| 0 (NO_WAIT). TimeUnit:millsec|
 |default-take-timeout|Numerical Value. Sets the default take timeout for `take(Object)` and `takeIfExists(Object)` operations.|NO| 0 (NO_WAIT). TimeUnit:millsec|
 |default-write-lease| Numerical Value. Sets the default [space object lease](./leases-automatic-expiration.html) (TTL) for `write(Object)` operation. |NO| FOREVER. TimeUnit:millsec|

@@ -1,7 +1,7 @@
 ---
-layout: post100
+layout: post100adm
 title:  Replication Parameters
-categories: XAP100
+categories: XAP100ADM
 parent: replication.html
 weight: 700
 ---
@@ -16,7 +16,7 @@ weight: 700
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | `replication-mode` | Optional values: `sync`, `async`.{% wbr %}- The `async` mode replicates space operations to target space after the client receives the acknowledgment from the source space for the operation.{% wbr %}- The `sync` mode replicates space operations to target space before the client receives the acknowledgment from the source space for the operation. The client getting the acknowledgment for the operation only after all target spaces confirms the arrival of the replicated data.| `async` used with the async-replicated schema. {% wbr %}   `sync` used with the sync-replicated, primary-backup and partitioned-sync2backup cluster schema|
-| `policy-type` | Optional values:{% wbr %}  full-replication - all objects are replicated. {% wbr %}  partial-replication - Object that their @SpaceClass configured(replicate = false) will not be replicated. See the [POJO Metadata](./the-space-configuration.html) page for details. This allows you to control replication at a class base level. | partial-replication |
+| `policy-type` | Optional values:{% wbr %}  full-replication - all objects are replicated. {% wbr %}  partial-replication - Object that their @SpaceClass configured(replicate = false) will not be replicated. See the [POJO Metadata]({%currentjavaurl%}/the-space-configuration.html) page for details. This allows you to control replication at a class base level. | partial-replication |
 | `repl-find-timeout` | Timeout (in milliseconds) to wait for the lookup of a peer space. This parameter applies only when the space is searched in a Jini Lookup Service. | 5000 \[ms\] |
 | `repl-full-take` | If set to `true` the entire object is replicated when take operations is called. If set to `false` only the ID, class information and primitive fields are replicated. This option is valid only when replicating data into a Mirror Service or a backup in non-central DB topology. | false |
 | `replicate-notify-templates` | Boolean value. If set to true, the notify templates are replicated to the target space. | true |

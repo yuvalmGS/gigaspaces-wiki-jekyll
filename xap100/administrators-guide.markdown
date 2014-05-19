@@ -25,8 +25,6 @@ In this section we will explain the different Space cache policies, memory usage
 - [Reloading business logic](./reloading-business-logic.html){%wbr%}
 The service reloading feature allows you to reload business logic (Spring beans) without shutting down the application or undeploying a Processing Unit.
 
-- [Data grid clustering](./data-grid-clustering.html){%wbr%}
-This section describe into details how the In-Memory-Data-Grid clustering works. It goes into the details of the fail-over, load-balancing, and replication facilities used.
 
 
 

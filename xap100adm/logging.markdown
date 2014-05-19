@@ -231,7 +231,7 @@ com.gigaspaces.core.cluster.sync_replication.level = INFO
 {% endhighlight %}
 
 When a cluster topology is replicated, replication functionality is enabled. More information about topologies is [here](/product_overview/space-topologies.html).
-Replication between spaces is one of the core features of GigaSpaces and is explained in detail [here]({%currentjavaurl%}/replication.html).
+Replication between spaces is one of the core features of GigaSpaces and is explained in detail [here](./replication.html).
 
 ### Space Partitioning
 
@@ -247,7 +247,7 @@ When cluster uses partitioned topology, data is partitioned across multiple inst
 com.gigaspaces.cluster.active_election.level = INFO
 {% endhighlight %}
 
-When multiple instances (primary/backup(s)), Active Election process is used by cluster members to determine which member acts as a primary. Additional information regarding active election process is [here]({%currentjavaurl%}/split-brain-and-primary-resolution.html).
+When multiple instances (primary/backup(s)), Active Election process is used by cluster members to determine which member acts as a primary. Additional information regarding active election process is [here](./split-brain-and-primary-resolution.html).
 
 ### POJO
 

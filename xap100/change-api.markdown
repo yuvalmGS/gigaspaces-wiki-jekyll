@@ -370,7 +370,7 @@ For more information on how to implement it please read [Change API Advanced](./
 
 # Replication Filter
 
-Change passes through [Replication Filter](./cluster-replication-filters.html) like other operations and for example can be discarded on replication level.
+Change passes through [Replication Filter]({%currentadmurl%}/cluster-replication-filters.html) like other operations and for example can be discarded on replication level.
 
 {% refer %}For more information on how to handle change in replication filters please read to [Change API Advanced](./change-api-advanced.html).{% endrefer %}
 

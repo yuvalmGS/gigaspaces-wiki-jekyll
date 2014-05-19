@@ -1,9 +1,9 @@
 ---
-layout: post100
+layout: post100adm
 title:  Data Grid Clustering
-categories: XAP100
-parent: administrators-guide.html
-weight: 300
+categories: XAP100ADM
+weight: 710
+parent: none
 ---
 
 {%wbr%}

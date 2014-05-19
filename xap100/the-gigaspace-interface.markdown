@@ -76,7 +76,7 @@ The Embedded space can be used in a distributed architecture such as the replica
 ![replicated-space1.jpg](/attachment_files/replicated-space1.jpg)
 {% endindent %}
 
-A simple way to use the embedded space in a clustered architecture would be by deploying a [clustered space](./data-grid-clustering.html) or packaging your application as a [Processing Unit](./packaging-and-deployment.html) and deploy it using the relevant SLA.
+A simple way to use the embedded space in a clustered architecture would be by deploying a [clustered space]({%currentadmurl%}/data-grid-clustering.html) or packaging your application as a [Processing Unit](./packaging-and-deployment.html) and deploy it using the relevant SLA.
 
 
 

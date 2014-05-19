@@ -1,7 +1,7 @@
 ---
-layout: post100
+layout: post100adm
 title:  Controlling the Replication Redo Log
-categories: XAP100
+categories: XAP100ADM
 parent: replication.html
 weight: 600
 ---

@@ -1,7 +1,7 @@
 ---
-layout: post100
+layout: post100adm
 title:  Clustered vs Non-Clustered Proxies
-categories: XAP100
+categories: XAP100ADM
 parent: data-grid-clustering.html
 weight: 70
 ---
@@ -10,7 +10,7 @@ weight: 70
 
 
 
-When deploying a Processing Unit(PU) configured with an embedded [Space](./the-space-configuration.html) with a clustered SLA or when running a remote clustered space, a clustered `GigaSpace` proxy is created.
+When deploying a Processing Unit(PU) configured with an embedded [Space]({%currentjavaurl%}/the-space-configuration.html) with a clustered SLA or when running a remote clustered space, a clustered `GigaSpace` proxy is created.
 
 A clustered proxy is a smart proxy that performs operations against the entire cluster when needed.
 * The `write` operation will be routed based on the routing field value to the relevant partition (using the routing field hashcode to calculate the the target partition).
@@ -28,13 +28,13 @@ Many times, especially when working with a PU that starts an embedded space, ope
 
 The decision of working directly with a cluster member or against the whole cluster is done in the `GigaSpace` level. The `GigaSpacesFactoryBean` provides a clustered flag with the following logic as the default value: If the space is started in embedded mode (for example, `/./space`), the clustered flag is set to `false`. When the space is looked up in a remote protocol (i.e. `jini://*/*/space`, the clustered flag is set to `true`.
 
-You can use the `clustered` property to control this behavior or use the API to use a non-clustered embedded proxy to create a clustered proxy. This allows the collocated business logic to access the entire cluster to perform cluster wide operations. Clustered and Non-Clustered proxies may be used with Collocated a [Task](./task-execution-over-the-space.html), [Service](./executor-based-remoting.html), [Notify Container](./notify-container.html) , [Polling Container](./polling-container.html) and any other Collocated business logic.
+You can use the `clustered` property to control this behavior or use the API to use a non-clustered embedded proxy to create a clustered proxy. This allows the collocated business logic to access the entire cluster to perform cluster wide operations. Clustered and Non-Clustered proxies may be used with Collocated a [Task]({%currentjavaurl%}/task-execution-over-the-space.html), [Service]({%currentjavaurl%}/executor-based-remoting.html), [Notify Container]({%currentjavaurl%}/notify-container.html) , [Polling Container]({%currentjavaurl%}/polling-container.html) and any other Collocated business logic.
 
 # How to Create a Clustered Proxy?
 You may use Spring based configuration or API to create a Clustered Proxy.
 
 ## Using Spring
-When using a Spring based `pu.xml` to construct the [GigaSpace](./the-gigaspace-interface.html) bean to be injected into the relevant other beans the following should be used to create a clustered and a non-clustered `GigaSpace` bean:
+When using a Spring based `pu.xml` to construct the [GigaSpace]({%currentjavaurl%}/the-gigaspace-interface.html) bean to be injected into the relevant other beans the following should be used to create a clustered and a non-clustered `GigaSpace` bean:
 {%highlight java%}
 <os-core:space id="space" url="/./space" />
 <os-core:giga-space id="nonClusteredGigaSpace" space="space"/>
@@ -149,7 +149,7 @@ With this example the `pu.xml` includes the following:
 <os-remoting:service-exporter id="serviceExporter" />
 {%endhighlight%}
 
-Our Service using the [@PostPrimary](./the-space-notifications.html) to decorate the method that constructs the clustered proxy from the non-clustered proxy and also the [@ClusterInfoContext](./obtaining-cluster-information.html) that provides information about the cluster topology and the local partition ID.
+Our Service using the [@PostPrimary]({%currentjavaurl%}/the-space-notifications.html) to decorate the method that constructs the clustered proxy from the non-clustered proxy and also the [@ClusterInfoContext]({%currentjavaurl%}/obtaining-cluster-information.html) that provides information about the cluster topology and the local partition ID.
 
 Here is how the service interface looks like:
 {%highlight java %}
@@ -248,7 +248,7 @@ Service call - routing 1 partition 2 gigaSpaceEmbed - total visible objects:1
 
 ## A DistributedTask Usage of a Clustered and a Non-Clustered Proxy
 
-Our `DistributedTask` implements the [ClusterInfoAware](./obtaining-cluster-information.html). This allows it to be injected with the `ClusterInfo` that provides information about the cluster topology and the local partition ID. Here is how the `DistributedTask` looks like:
+Our `DistributedTask` implements the [ClusterInfoAware]({%currentjavaurl%}/obtaining-cluster-information.html). This allows it to be injected with the `ClusterInfo` that provides information about the cluster topology and the local partition ID. Here is how the `DistributedTask` looks like:
 
 The `pu.xml` includes the following:
 {%highlight java %}
@@ -345,7 +345,7 @@ With this example the `pu.xml` includes the following:
 <context:component-scan base-package="com.test"/>
 {%endhighlight%}
 
-Our Event Container (notify container) using the [@PostPrimary](./the-space-notifications.html#Primary Backup Notifications) to decorate the method that constructs the clustered proxy from the non-clustered proxy and also the [@ClusterInfoContext](./obtaining-cluster-information.html) that provides information about the cluster topology and the local partition ID.
+Our Event Container (notify container) using the [@PostPrimary]({%currentjavaurl%}/the-space-notifications.html#Primary Backup Notifications) to decorate the method that constructs the clustered proxy from the non-clustered proxy and also the [@ClusterInfoContext]({%currentjavaurl%}/obtaining-cluster-information.html) that provides information about the cluster topology and the local partition ID.
 
 Here is how the event container looks like:
 {%highlight java %}
@@ -379,19 +379,19 @@ return template;
 
 @SpaceDataEvent
 public void eventListener(Data event) {
-//process Data here
-String preMes = "From Notify Container - partition " + clusterInfo.getInstanceId() ;
-System.out.println("Got event! " + event);
-System.out.println(preMes + " Counting total space objects using a Clustered proxy" );
-gigaSpaceEmbedNonClustered.count(null);
+ //process Data here
+ String preMes = "From Notify Container - partition " + clusterInfo.getInstanceId() ;
+ System.out.println("Got event! " + event);
+ System.out.println(preMes + " Counting total space objects using a Clustered proxy" );
+ gigaSpaceEmbedNonClustered.count(null);
 }
 
 @PostPrimary
 public void postPrimary() {
-String preMes = "From Notify Container - partition " + clusterInfo.getInstanceId() ;
-System.out.println(preMes+ " - Cluster info " + clusterInfo);
-System.out.println(preMes+ " Getting Remote Clustered proxy from the embedded Non-Clustered");
-gigaSpaceClustered= gigaSpaceEmbedNonClustered.getClustered();
+ String preMes = "From Notify Container - partition " + clusterInfo.getInstanceId() ;
+ System.out.println(preMes+ " - Cluster info " + clusterInfo);
+ System.out.println(preMes+ " Getting Remote Clustered proxy from the embedded Non-Clustered");
+ gigaSpaceClustered= gigaSpaceEmbedNonClustered.getClustered();
 }
 }
 {%endhighlight%}
@@ -406,7 +406,7 @@ space.write(d);
 {%endhighlight%}
 
 Event Container output:
-{%highlight java %}
+{%highlight console %}
 ...
 From Notify Container - partition 1 - Cluster info name[null] schema[partitioned] numberOfInstances[2] numberOfBackups[null] instanceId[1] backupId[null]
 From Notify Container - partition 1 Getting Remote Clustered proxy from the embedded Non-Clustered
@@ -430,66 +430,69 @@ With such an approach you can load large number of objects into the space very q
 
 {%highlight java %}
 public class LoadTask implements DistributedTask<Integer, Integer> ,ClusterInfoAware{
-int safeABS( int value)
-{
-return value == Integer.MIN_VALUE ? Integer.MAX_VALUE : Math.abs(value);
-}
-public LoadTask(int maxObjects)
-{
-this.maxObjects = maxObjects;
-}
-int maxObjects;
-int routing;
 
-@TaskGigaSpace
-transient GigaSpace space;
+    int safeABS( int value)
+    {
+    return value == Integer.MIN_VALUE ? Integer.MAX_VALUE : Math.abs(value);
+    }
 
-transient ClusterInfo clusterInfo;
+    public LoadTask(int maxObjects)
+    {
+     this.maxObjects = maxObjects;
+    }
+    int maxObjects;
+    int routing;
 
-@Override
-public Integer execute() throws Exception {
-int partitions = clusterInfo.getNumberOfInstances();
-int partitionId = clusterInfo.getInstanceId();
+    @TaskGigaSpace
+    transient GigaSpace space;
 
-int count = 0;
-for(int i=0;i<maxObjects;i++){
-String id = "12345678901234567890123456789"+i;
-int targetPartition = safeABS(id.hashCode()) % (partitions);
-if (targetPartition == (partitionId -1))
-{
-count ++;
-MySpaceObject myobj=...
-myobj.setRouting(targetPartition);
-space.write(myobj);
+    transient ClusterInfo clusterInfo;
 
-}
-}
-return null;
-}
+    @Override
+    public Integer execute() throws Exception {
+        int partitions = clusterInfo.getNumberOfInstances();
+        int partitionId = clusterInfo.getInstanceId();
 
-public Integer reduce(List<AsyncResult<Integer>> arg0) throws Exception {
-return null;
-}
+        int count = 0;
+        for(int i=0;i<maxObjects;i++)
+        {
+            String id = "12345678901234567890123456789"+i;
+            int targetPartition = safeABS(id.hashCode()) % (partitions);
+            if (targetPartition == (partitionId -1))
+            {
+                count ++;
+                MySpaceObject myobj=...
+                myobj.setRouting(targetPartition);
+                space.write(myobj);
+            }
+        }
+        return null;
+    }
 
-@Override
-public void setClusterInfo(ClusterInfo clusterInfo) {
-this.clusterInfo = clusterInfo;
-}
+    public Integer reduce(List<AsyncResult<Integer>> arg0) throws Exception {
+        return null;
+    }
 
-public int getMax() {
-return maxObjects;
-}
+    @Override
+    public void setClusterInfo(ClusterInfo clusterInfo) {
+       this.clusterInfo = clusterInfo;
+    }
 
-public void setMax(int maxObjects) {
-this.maxObjects = maxObjects;
-}
+    public int getMax() {
+      return maxObjects;
+    }
 
-@SpaceRouting
-public int getRouting() {
-return routing;
-}
-public void setRouting(int routing) {
-this.routing = routing;
-}
+    public void setMax(int maxObjects) {
+      this.maxObjects = maxObjects;
+    }
+
+    @SpaceRouting
+    public int getRouting() {
+       return routing;
+    }
+
+    public void setRouting(int routing) {
+        this.routing = routing;
+    }
 }
 {%endhighlight%}

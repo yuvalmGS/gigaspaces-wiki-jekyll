@@ -13,7 +13,7 @@ weight: 500
 A group can define a replication policy. If it does, then no other group that contains at least one space belonging to this group can define a replication policy. If a group defines a replication policy, we call it a "replication group".(A replication group can also be a failover group, etc.).
 When a replication policy is defined for a group, the members of the group are synchronized according to that policy. The policy is independent of operations and transparent to the clustered proxy. The space members themselves cooperate to achieve synchronization.
 
-See the [Replication]({%currentjavaurl%}/replication.html) section for details.
+See the [Replication](./replication.html) section for details.
 
 # Common Settings
 

@@ -1,7 +1,7 @@
 ---
-layout: post100
+layout: post100adm
 title:  Asynchronous Replication
-categories: XAP100
+categories: XAP100ADM
 parent: replication.html
 weight: 300
 ---

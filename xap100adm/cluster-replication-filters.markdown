@@ -1,7 +1,7 @@
 ---
-layout: post100
+layout: post100adm
 title:  Replication Filters
-categories: XAP100
+categories: XAP100ADM
 parent: replication.html
 weight: 450
 ---
@@ -41,6 +41,8 @@ The replication filter can be used to monitor or alter the data passed through t
 
 The following example will start two spaces replicating data to each other. The replication filter will display the replicated data that is passed through the replication channel. The example displays all objects sent via the output filter. When an object with the data **Block me** is passed, it is blocking by setting the replication Operation Type to `ReplicationOperationType.DISCARD`.
 
+
+
 {% inittab code stuff|top %}
 {% tabcontent The Space Class %}
 
@@ -74,9 +76,7 @@ public class MyClass {
 		}
 }
 {% endhighlight %}
-
 {% endtabcontent %}
-
 {% tabcontent The Application %}
 
 {% highlight java %}
@@ -207,10 +207,10 @@ public class RepFilter implements IReplicationFilter{
 	}
 }
 {% endhighlight %}
-
 {% endtabcontent %}
-
 {% endinittab %}
+
+
 
 {% comment %}
 # Example - The XML Replication Filter

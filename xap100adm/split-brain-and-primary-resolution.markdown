@@ -1,7 +1,7 @@
 ---
-layout: post100
+layout: post100adm
 title:  Split Brain and Primary Resolution
-categories: XAP100
+categories: XAP100ADM
 parent: data-grid-clustering.html
 weight: 500
 ---
@@ -19,7 +19,7 @@ Once the connection between all instances of a given partition and all lookup se
 The primary resolution may involves few steps. Each tries to calculate the most recent primary and its data consistency level. If the first step can't determine who is primary (tie) the second step executed (tie break). If the second step can't determine who is primary the third one is executed (second tie break). Once a primary is elected the other instance moved into a backup mode and recover its entire data from the existing primary.
 
 {% tip %}
-Data resolution occurs between two different clusters using the WAN gateway as a replication channel. In this case a [conflict resolution](./multi-site-conflict-resolution.html) is executed.
+Data resolution occurs between two different clusters using the WAN gateway as a replication channel. In this case a [conflict resolution]({%currentjavaurl%}/multi-site-conflict-resolution.html) is executed.
 {% endtip %}
 
 # Primary Resolution
