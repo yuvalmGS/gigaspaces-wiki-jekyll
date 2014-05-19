@@ -236,7 +236,7 @@ FDF available Statistics:
 
 Applications can optionally enable periodic dumping of statistics to a specified file. This is disabled by default. It can be enabled using the configuration parameter `FDF_STATS_FILE=<filepath>`. The dump interval can be configured using `FDF_STATS_DUMP_INTERVAL=<interval in secs>`. The dump interval can also be dynamically changed through the CLI. below shows typical statistics output:
 
-{% highlight java %}
+{% highlight console %}
 Per Container Statistics
 Container Properties:
 	name = e12e3940
@@ -347,7 +347,7 @@ FDF provides a simple command line interface (CLI) through a TCP port. The FDF C
 |quit |Quits the telnet session|
 
 Below sample FDF CLI usage:
-{% highlight java %}
+{% highlight console %}
 [root@xen200v03]~# telnet localhost 51350
 Trying 127.0.0.1...
 Connected to localhost.localdomain (127.0.0.1).
