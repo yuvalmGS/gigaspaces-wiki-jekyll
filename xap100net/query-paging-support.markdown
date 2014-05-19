@@ -186,9 +186,3 @@ Updates do affect the iterator.
 {% endcomment %}
 
 
-{%comment%}
-<ul class="pager">
-  <li class="previous"><a href="./query-user-defined-classes.html">&larr; User Defined Class</a></li>
-  <li class="next"><a href="./query-partial-results.html">Partial Results &rarr;</a></li>
-</ul>
-{%endcomment%}

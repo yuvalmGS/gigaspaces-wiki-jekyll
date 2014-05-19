@@ -116,3 +116,4 @@ It is highly recommended to use the  primitive wrapper classes instead of primit
 # Nested Template Matching
 
 Nested template matching is not supported - to match nested properties, collections and arrays use [SQLQuery](./query-sql.html).
+

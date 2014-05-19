@@ -234,3 +234,4 @@ The `Batch()` extension method instructs the provider to retrieve the results in
 {%info%}
 Batching is suitable for large result sets, but on small ones it actually slows performance down, as it require multiple remote calls to the space to retrieve the data instead of fetching it all at once.
 {%endinfo%}
+

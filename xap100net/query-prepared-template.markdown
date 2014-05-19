@@ -48,3 +48,4 @@ After creating the prepared template, it can be passed as a template to the Read
     Person person = proxy.Take(preparedTemplate);
 {% endhighlight %}
 
+
