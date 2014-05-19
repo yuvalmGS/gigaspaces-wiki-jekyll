@@ -9,8 +9,6 @@ weight: 400
 {% summary %}  {% endsummary %}
 
 
-
-
 {% section %}
 {% column  width=10% %}
 
@@ -41,18 +39,21 @@ With the Storage Model the entire data is kept on SSD. The assumption is the SSD
 
 Real time analytics applications , Big Data applications , Customer 360 degree information applications would find the XAP Solid-State Drive flash-based IMDG Storage very useful. As these applications consume relatively large data capacity and have relatively fast data access requirements, reducing database dependency and leveraging distributed In-memory storage fabric to improve their performance, scalability, reliability and overall cost is important.
 
-## Would Garbage Collection Activity will be affected?
+## Reduced Garbage Collection Activity
 
-Yes. Since the IMDG raw data is stored outside the Heap (SSD) the Garbage collector would not need to manage this memory. This is reducing pauses related to garbage collection. The SSD BlobStore increasing the amount of data an IMDG node can manage to the local SSD capacity (several TB) rather the maximum heap size (hundreds of GB). This allows you to manage hundreds of TB just with few IMDG nodes.
+Since the IMDG raw data is stored outside the Heap (SSD) the Garbage collector would not need to manage this memory. This is reducing pauses related to garbage collection. The SSD BlobStore increasing the amount of data an IMDG node can manage to the local SSD capacity (several TB) rather the maximum heap size (hundreds of GB). This allows you to manage hundreds of TB just with few IMDG nodes.
 
-## Are all SSD Vendors Supported?
+## All SSD Vendors Supported
 
-Yes. All Enterprise flash drives are supported. SanDisk, Fusion-IO, Intel® SSD , etc are supported with the IMDG Storage technology. Central SSD (RAID) devices such as Tegile, Cisco Whiptail , DSSD , Violin Memory are also supported.
+All Enterprise flash drives are supported. SanDisk, Fusion-IO, Intel® SSD , etc are supported with the IMDG Storage technology. Central SSD (RAID) devices such as Tegile, Cisco Whiptail , DSSD , Violin Memory are also supported.
+
+## ALL APIs Supported
+
+All XAP APIs are supported with the BlobStore configuration. By default Space API (POJO and Document), JDBC API , JPA API , JMS API , Map API, MemCache API data items are BlobStore enabled. If the data grid is Blobstore enabled its data no matter the API used will be stored within the SSD.
 
 
 ## How it Works?
 XAP is using [SanDisk Flash Data Fabric (FDF)](http://www.sandisk.com/) which enables direct flash access for In-Memory performance. It eliminate any other storage interface, when writing an object to the space , its indexed data maintained on Heap where the Storage interface implementing using the FDF libraries to interact with the underlying flash drive. 
-
 
 ![blobstore2.jpg](/attachment_files/blobstore2.jpg)
 
@@ -66,11 +67,11 @@ The BlobStore settings includes the following options:
 | Property               | Description                                               | Default | Use |
 |:-----------------------|:----------------------------------------------------------|:--------|:--------|
 | devices | Flash devices. Comma separated available devices. The list used as a search path from left to right. The first one exists will be used. |  | required |
-| volume-dir | Directory path which contains a link to the the SSD device. | | required |
+| volume-dir | Directory path contains a symbolic link to the the SSD device. | | required |
 | blob-store-capacity-GB | Flash device allocation size in Gigabytes. | 200 | optional |
 | blob-store-capacity-MB | Flash device allocation size in Megabytes. | 204800 | optional |
 | blob-store-cache-size-MB | FDF internal cache size in Megabytes. | 100 | optional |
-| blob-store-reformat | Whether to clear all SSD data in the space initialization phase or not. | false | optional |
+| blob-store-reformat | Whether to clear all SSD data on space initialization phase or not. | false | optional |
 | enable-admin | Whether to start an FDF admin agent or not. FDF admin provides a simple command line interface (CLI) through a TCP port. The FDF CLI uses port 51350 by default. This port can be changed through the configuration parameter FDF_ADMIN_PORT. | true |
 | statistics-interval | Applications can optionally enable periodic dumping of statistics to a specified file (XAP_HOME/logs). This is disabled by default. | | optional |
 | durability-level | PERIODIC: sync storage every 1024	writes. Up to 1024 objects can be lost in the event of application crash.{%wbr%}SW_CRASH_SAFE: This policy guarantees no data loss in the event of software crashes. But some data might be lost in the event of hardware failure.{%wbr%}HW_CRASH_SAFE: This policy guarantees no data loss if the hardware crashes.Since there are performance implication it is recommended to work with NVRAM device and configure log-flash-dir to a folder on this device. | PERIODIC | optional |
@@ -157,7 +158,7 @@ Configuring an IMDG (Space) with BlobStore should be done via the `SanDiskBlobSt
 
 
 ## Programmatic API
-Programmatic approach to start a space using the `SanDiskBlobStoreConfigurer`:
+Programmatic approach to start a BlobStore space:
 {% highlight java %}
 SanDiskBlobStoreConfigurer configurer = new SanDiskBlobStoreConfigurer();
 configurer.addDevices("/dev/xvdb,/dev/xvdc");
@@ -185,41 +186,221 @@ The above example:
 - Configures the SanDisk BlobStore bean.{%wbr%}
 - Configures the Space to use the above blobStore implementation also configure the cache size, in this LRU cache the space store also the data objects and not just the object indexes in RAM.
 
-# Controlling BlobStore at the Space Class Level
-When writing POJO to the Space, you may specify if the space class instances will be stored as the `BlobStore` or only in Memory.
+# Controlling blobStore mode at the Space Class Level
+By default any Space Data Type is `blobStore` enabled. When decorating the space class with its meta data you may turn off the `blobStore` behavior using the `@SpaceClass blobStore` annotation or gs.xml `blobStore` tag.
 
-Here is a sample POJO class disabling `BlobStore` for the Class `Person`:
+Here is a sample annotation disabling `blobStore` mode:
 
 {% highlight java %}
-@SpaceClass(BlobStore = false)
+@SpaceClass(blobStore = false)
 public class Person {
-    private Integer id;
-    private String name;
-    private String lastName;
-    private int age;
-
-    ...
-    public Person() {}
-
-    @SpaceId(autoGenerate=false)
-    @SpaceRouting
-    public Integer getId() { return id;}
-
-    public void setId(Integer id) {  this.id = id; }
-
-    @SpaceProperty(index=BASIC)
-    public Long getLastName() { return lastName; }
-
-    public void setLastName(String type) { this.lastName = lastName; }
-
-    @SpaceProperty(nullValue="-1")
-    public int getAge(){ return age; }
-
     .......
 }
 {% endhighlight %}
 
+Here is a sample xml decoration for POJO class disabling `blobStore` mode:
+{% highlight java %}
+<gigaspaces-mapping>
+    <class name="com.test.Person" "blobstore"="false" >
+     .....
+     </class>
+</gigaspaces-mapping>
+{% endhighlight %}
 
+
+# BlobStore Management
+
+You may use the FDF Management command line to access underlaying SSD storage runtime. This allows you to access statistics that can be used to tune performance and analyze performance problems. These statistics counters used to monitore events within the FDF subsystem. Most events are counted on a per FDF container basis as well as for all containers within the FDF instance. 
+
+
+## Statistics
+
+FDF available Statistics:
+
+- Counts of FDF access types
+- Counts of various flash activities
+- Histogram of key sizes
+- Histogram of data sizes in bytes
+- Histogram of access latencies in microseconds
+- Number of events , Minimum , Maximum , Average , Geometric mean , Standard deviation
+- Overwrite/Write-­‐Through Statistics
+- Total number of created objects
+- Number of get/put/delete operations
+- Number of hash/flash/invalid evictions
+- Number of objects in flash
+- Number of soft/hard overflows in hast table
+- Number of pending IO’s
+- Flash space allocated/consumed in bytes
+- Number of overwrites
+- Number of hash collisions for get/set operations
+
+Applications can optionally enable periodic dumping of statistics to a specified file. This is disabled by default. It can be enabled using the configuration parameter `FDF_STATS_FILE=<filepath>`. The dump interval can be configured using `FDF_STATS_DUMP_INTERVAL=<interval in secs>`. The dump interval can also be dynamically changed through the CLI. below shows typical statistics output:
+
+{% highlight java %}
+Per Container Statistics
+Container Properties:
+	name = e12e3940
+	cguid = 419
+	Size = 0 kbytes
+	persistence = enabled
+	eviction = disabled
+	writethrough = enabled
+	fifo = disabled
+	async_writes = disabled
+	durability = Periodic sync
+	num_objs = 7645
+	used_space = 3914240
+	Application requests:
+	num_set_objs_with_expiry = 7645
+	completed_enumerations = 1
+	active_enumerations = 1
+	objects_enumerated = 402
+	cached_objects_enumerated = 402
+	Overwrite and write-through statistics:
+	num_new_entries = 7645
+	num_writethrus_to_flash = 7645
+	Cache to Flash Manager requests:
+	cache_misses = 0
+	cache_hits = 0
+	num_set_objs_and_put = 7645
+Flash Manager responses to cache:
+	num_set_objs_completed = 7645
+Flash Manager requests/responses:
+	num_set_objs = 7645
+Flash layer return codes:
+	num_success = 7645
+Overall FDF Statistics
+Flash statistics:
+	num_items_flash = 2167157
+	num_items_created = 2188567
+	num_overwrites = 21410
+	num_put_ops = 2188567
+	flash_space_allocated = 1409286144
+	flash_space_consumed = 36186112
+Flash layout:
+	flash_class_map 27 15 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+	flash_slab_map 1705845 461327 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+Application requests:
+	num_put_objs = 1233
+	num_set_objs_with_expiry = 72018
+	num_get_objs = 419
+	num_del_objs = 1221
+	num_flush_objs = 2479
+	num_sync_to_flash = 2479
+	num_flush_container = 408
+Overwrite and write-through statistics:
+Cache to Flash Manager requests:
+	cache_misses = 0
+	cache_hits = 0
+	num_delete_objs = 1221
+	num_get_objs_to_read = 419
+	num_put_objs = 1233
+	num_set_objs_and_put = 72018
+Flash Manager responses to cache:
+	FDF Programming Guide – 1.2 Sandisk Confidential 35
+	num_delete_objs_completed = 1221
+	num_get_objs_to_read_failed = 419
+	num_put_objs_completed = 1233
+	num_set_objs_completed = 72018
+Flash Manager requests/responses:
+	num_get_objs = 419
+	num_get_objs_failed = 419
+	num_delete_objs = 1221
+	num_delete_completed = 1221
+	num_set_objs = 73251
+Flash layer return codes:
+	num_success = 74472
+	num_errors_objects_not_found = 419
+Cache statistics:
+	num_hash_buckets_in_cache = 100000
+	num_cache_partitions = 10000
+	num_objects_in_cache = 66252
+	max_cache_capacity = 100000000
+	current_data_size_in_cache = 14434903
+	current_key_and_data_size_in_cache = 19129759
+	num_modified_objs_in_cache = 4601
+	num_bytes_of_modified_objs_in_cache = 889931
+	num_mod_objs_flushed = 245891
+	num_mod_objs_flushed_by_bgflush = 838438
+	background_flush_progress = 93
+	num_background_flushes = 363
+	max_parallel_flushes = 8
+	max_parallel_bg_flushes = 8
+	time_to_wait_after_bgflush_for_nodirty_data = 1000
+	max_percent_limit_on_modifiable_cache = 100
+	num_cache_ops_in_progress = 18
+{% endhighlight %}
+
+## Command Line Interface
+
+FDF provides a simple command line interface (CLI) through a TCP port. The FDF CLI uses port `51350` by default. This port can be changed through the configuration parameter `FDF_ADMIN_PORT=<port number>`. The CLI functionality can be disabled by setting configuration property `FDF_ADMIN_ENABLED=0`. The CLI supports the following commands.
+
+{: .table .table-bordered}
+| Command | Description | 
+|:--------|:------------|
+|container list|Lists all of the container names|
+|container stats `<container name>[v]` | Prints stats of the given container. The option v (verbose) prints extended stats.|
+|container `stats_dump <container name|all> [v]` | Prints stats of a given container or all containers to the stats file configured through `FDF_STATS_FILE`. The option v(verbose) prints extended stats.
+|container autodump `<enable/disable/interval/printcfg> [interval in secs]`  | This command enables or disables periodic stats dump, and configures the dump interval.|
+|log_level `<set/get> [fatal/error/warning/info/diagnostic/ debug/trace/trace_low/devel]`| Sets the log level| 
+|help | Prints help for all supported commands|
+|quit |Quits the telnet session|
+
+Below sample FDF CLI usage:
+{% highlight java %}
+[root@xen200v03]~# telnet localhost 51350
+Trying 127.0.0.1...
+Connected to localhost.localdomain (127.0.0.1).
+Escape character is '^]'.
+help
+Supported commands:
+container stats <container name> [v]
+container stats_dump <container name|all> [v]
+container autodump <enable/disable/interval/printcfg> [interval in secs]
+container list
+log_level <set/get> [fatal/error/warning/info/diagnostic/debug/trace/trace_low/devel]
+help
+quit
+container list
+container-4819c940
+container stats container-4819c940
+Timestamp:Tue May 7 12:06:45 2013
+Per Container Statistics
+	Container Properties:
+		name = container-4819c940
+		cguid = 4
+		Size = 1048576 kbytes
+		persistence = enabled
+		eviction = disabled
+		writethrough = enabled
+		fifo = disabled
+		async_writes = disabled
+		durability = Periodic sync
+		num_objs = 1
+		used_space = 512
+	Application requests:
+		num_set_objs_with_expiry = 1
+		num_get_objs_and_check_expiry = 1
+		completed_enumerations = 1
+		objects_enumerated = 1
+		cached_objects_enumerated = 1
+	Overwrite and write-through statistics:
+		num_new_entries = 1
+		num_writethrus_to_flash = 1
+	Cache to Flash Manager requests:
+		cache_misses = 0
+		cache_hits = 1
+	num_set_objs_and_put = 1
+	Flash Manager responses to cache:
+		num_set_objs_completed = 1
+	Flash Manager requests/responses:
+		num_set_objs = 1
+	Flash layer return codes:
+		num_success = 1
+{% endhighlight %}
+		
+		
+		
 # The BlobStoreStorageHandler Interface
 
 The `BlobStoreStorageHandler` Interface provides the following methods. You may customize it to have your specific functionality:  
@@ -238,4 +419,3 @@ abstract class BlobStoreStorageHandler
 }
 {% endhighlight %}
 
-If you wish to add Async Persistency - Mirror to your IMDG please refer to [Async Persistency with Mirror](./asynchronous-persistency-with-the-mirror.html).
