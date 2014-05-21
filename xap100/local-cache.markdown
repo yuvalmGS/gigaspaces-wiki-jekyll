@@ -232,7 +232,7 @@ In order to properly configure the local cache eviction mechanism, you should co
 |space-config.engine.memory_usage.explicit-gc|false|
 |space-config.engine.memory_usage.retry_yield_time|100|
 
-See the [Memory Management Facilities](./memory-management-facilities.html) for additional details on these configuration properties.
+See the [Memory Management Facilities]({%currentadmurl%}/memory-management-facilities.html) for additional details on these configuration properties.
 
 {% tip %}
 Having the property `space-config.engine.memory_usage.explicit-gc` set to 'enabled' is recommended only in extreme cases when there is high load on the system, with large amount of concurrent users accessing the local cache and when the amount of CPUs/Cores is relatively small.

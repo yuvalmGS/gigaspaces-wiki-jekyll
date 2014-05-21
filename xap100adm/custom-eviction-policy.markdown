@@ -1,7 +1,7 @@
 ---
-layout: post100
+layout: post100adm
 title:  Custom Eviction Policy
-categories: XAP100
+categories: XAP100ADM
 parent: lru-cache-policy.html
 weight: 300
 ---

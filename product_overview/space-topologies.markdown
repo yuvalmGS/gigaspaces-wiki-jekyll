@@ -26,7 +26,7 @@ This section explains the topologies supported by XAP - replicated, partitioned 
 
 ![DGA-GigaSpacesDataGrid.jpg](/attachment_files/DGA-GigaSpacesDataGrid.jpg)
 
-- **GigaSpaces Container (GSC)** - a generic container that can run one or more [processing units]({%latestjavaurl%}/packaging-and-deployment.html). A space instances usually runs within processing unit. The GSC is launched on each machine that participates in the space cluster, and hosts the space instances.
+- **GigaSpaces Container (GSC)** - a generic container that can run one or more [processing units]({%latestjavaurl%}/the-processing-unit-overview.html). A space instances usually runs within processing unit. The GSC is launched on each machine that participates in the space cluster, and hosts the space instances.
    ![DGA-ServiceGridDataGrid.jpg](/attachment_files/DGA-ServiceGridDataGrid.jpg)
 
 - **Remote vs. Collocated** - The Space can be remote to the application or collocated with the application. With Remote mode any space operation involves network usage. With collocated mode there is no network utilization. This mode improves the performance and latency with activities that performs space operations.

@@ -16,7 +16,7 @@ Deploying your processing unit to the [service grid]({%currentadmurl%}/the-runti
 
 - SLA enforcement: The [GigaSpaces Manager](/product_overview/service-grid.html#gsm) is also responsible for enforcing your processing unit's [Service Level Agreement](./configuring-the-processing-unit-sla.html), or SLA. At deployment time, it will create a specified number of processing unit instances (based on the SLA) and provision them to the running containers while enforcing all the [deployment requirements](./configuring-the-processing-unit-sla.html#deployment-reqs), such as memory and CPU utilization, or specific deployment zones. At runtime, it will monitor the processing unit instances, and if any of them fail to fulfill the SLA or become unavailable it will re-instantiate the processing unit automatically on another container.
 
-- Automatic machine provisioning and dynamic SLA enforcement: Elastic Processing Units are a new type of [Processing Unit](./packaging-and-deployment.html). Elastic PUs provision machines and start [GigaSpaces Containers](/product_overview/service-grid.html#gsc) automatically based on the processing units' Memory and CPU requirements. When the available machines do not meet the requirements, the manager provisions new machines and balances the Processing Unit deployment across machines. This also occurs when a machine fails, or when the requirements changes while the application is running.
+- Automatic machine provisioning and dynamic SLA enforcement: Elastic Processing Units are a new type of [Processing Unit](./the-processing-unit-overview.html). Elastic PUs provision machines and start [GigaSpaces Containers](/product_overview/service-grid.html#gsc) automatically based on the processing units' Memory and CPU requirements. When the available machines do not meet the requirements, the manager provisions new machines and balances the Processing Unit deployment across machines. This also occurs when a machine fails, or when the requirements changes while the application is running.
 
 {% tip %}
 You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to deploy complex multi processing unit applications.
@@ -26,7 +26,7 @@ You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to
 
 Once built according to the processing unit [directory structure](./the-processing-unit-structure-and-configuration.html), the processing unit can be deployed via the various deployment tools available in GigaSpaces XAP ([UI]({%currentadmurl%}/gigaspaces-management-center.html), [CLI]({%currentadmurl%}/deploy-command-line-interface.html), Ant, [Maven](./maven-plugin.html) or the [Admin API](./administration-and-monitoring-api.html)).
 
-After you [package](./packaging-and-deployment.html) the processing unit and deploy it via one of the deployment tools, the deployment tool uploads it to all the running [GSMs](/product_overview/service-grid.html#gsm), where it is extracted and provisioned to the [GSCs](/product_overview/service-grid.html#gsc).
+After you [package](./the-processing-unit-overview.html) the processing unit and deploy it via one of the deployment tools, the deployment tool uploads it to all the running [GSMs](/product_overview/service-grid.html#gsm), where it is extracted and provisioned to the [GSCs](/product_overview/service-grid.html#gsc).
 
 {% info title=To Jar or Not to Jar %}
 The recommended way to deploy the processing unit is by packaging it into a .jar or a .zip archive and specifying the location of the packaged file to the deployment tool in use.

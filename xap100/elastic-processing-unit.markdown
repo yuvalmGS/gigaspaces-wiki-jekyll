@@ -2,8 +2,8 @@
 layout: post100
 title:  Elastic Processing Unit
 categories: XAP100
-parent: packaging-and-deployment.html
-weight: 250
+parent: the-processing-unit-overview.html
+weight: 500
 ---
 
 

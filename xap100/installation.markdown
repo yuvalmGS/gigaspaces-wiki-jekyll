@@ -3,7 +3,7 @@ layout: post100
 title:  Installation
 categories: XAP100
 parent: none
-weight: 50
+weight: 100
 ---
 
 {%wbr%}

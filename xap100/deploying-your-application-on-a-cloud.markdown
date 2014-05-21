@@ -2,8 +2,8 @@
 layout: post100
 title:  Deploying on a Cloud
 categories: XAP100
-parent: packaging-and-deployment.html
-weight: 300
+parent: administrators-guide.html
+weight: 500
 ---
 
 {%summary%}{%endsummary%}

@@ -191,7 +191,7 @@ Component specific configuration can be set using system properties (follows the
 
 {%section%}
 {%column width=50% %}
-The basic unit of deployment in the GigaSpaces XAP platform is the [Processing Unit](./packaging-and-deployment.html).
+The basic unit of deployment in the GigaSpaces XAP platform is the [Processing Unit](./the-processing-unit-overview.html).
 
 Once packaged, a processing unit is deployed onto the GigaSpaces runtime environment, which is called the *Service Grid*. It is responsible for materializing the processing unit's configuration, provisioning its instances to the runtime infrastructure and making sure they continue to run properly over time.
 {%endcolumn%}

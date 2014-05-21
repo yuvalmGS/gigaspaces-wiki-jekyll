@@ -3,7 +3,7 @@ layout: post100
 title:  Reloading Business Logic
 categories: XAP100
 parent: administrators-guide.html
-weight: 250
+weight: 700
 ---
 
 

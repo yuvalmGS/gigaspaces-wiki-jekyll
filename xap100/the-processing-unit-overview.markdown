@@ -2,8 +2,8 @@
 layout: post100
 title:  The Processing Unit
 categories: XAP100
-parent: packaging-and-deployment.html
-weight: 100
+parent: administrators-guide.html
+weight: 200
 ---
 
 {%wbr%}
@@ -25,6 +25,10 @@ The XAP runtime environment provides SLA-driven capabilities when deploying and 
 
 - [Custom Processing Unit](./custom-processing-unit-details-and-monitors.html){%wbr%}
 A Processing Unit can implement the ServiceDetailsProvider and ServiceMonitorsProvider interfaces to expose information to calling APIs or to be viewable in the web-UI.
+
+- [Elastic Processing Unit](./elastic-processing-unit.html){%wbr%}
+Explains how to deploy and manage an Elastic Processing Unit (EPU)
+
 
 <hr/>
 

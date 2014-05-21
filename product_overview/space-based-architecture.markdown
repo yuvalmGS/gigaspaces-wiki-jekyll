@@ -50,7 +50,7 @@ Once a [Processing Unit library]({%latestjavaurl%}/the-processing-unit-structure
 - JVM - Java process. Native OS process.
 - Processing unit - Deployable package (bundle).
 - GigaSpaces Container - Hosting deployed PU.
-- [Processing unit Instance]({%latestjavaurl%}/packaging-and-deployment.html) - deployed instantiated PU.
+- [Processing unit Instance]({%latestjavaurl%}/the-processing-unit-overview.html) - deployed instantiated PU.
 - [Space Partition](./terminology.html) - Data-Grid Member. Store data in-memory.
 - Data-Grid - Collection of Space Partitions.
 - Local Proxy - Access to collocated space partition.

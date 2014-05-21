@@ -1,7 +1,7 @@
 ---
-layout: post100
+layout: post100adm
 title:  Overview
-categories: XAP100
+categories: XAP100ADM
 parent: memory-management-overview.html
 weight: 100
 ---
@@ -45,7 +45,7 @@ The space supports two cache eviction policies: [LRU-Cache Policy](./lru-cache-p
 
 - [ALL IN CACHE-Cache Policy](./all-in-cache-cache-policy.html) - Assumes the JVM hosting the space instance has enough heap to hold all data in memory.
 - [LRU-Cache Policy](./lru-cache-policy.html) - Assumes the JVM hosting the space instance does not have enough heap to hold all data in memory.
-By default ALL IN CACHE policy is used for an in-memory data grid,and LRU-Cache Policy is used for a persistent space with [Space Persistency](./space-persistency.html) enabled.
+By default ALL IN CACHE policy is used for an in-memory data grid,and LRU-Cache Policy is used for a persistent space with [Space Persistency]({%currentjavaurl%}/space-persistency.html) enabled.
 
 # Calculating the Available Memory
 
@@ -107,7 +107,7 @@ Since LRU eviction can be costly, it is done in asynchronously by the memory man
 
 # Explicit Eviction of Objects from the Space
 
-Objects can be evicted explicitly from the space by calling the `takeMultiple` or `clear` operations on [the GigaSpace interface](./the-gigaspace-interface.html) combined with the [`TakeModifiers.EVICT_ONLY`](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/core/client/TakeModifiers.html) modifier. The `clear` operation only returns the number of objects actually evicted from the space. The `takeMultiple` operation returns the actual objects that were evicted. Here's usage example:
+Objects can be evicted explicitly from the space by calling the `takeMultiple` or `clear` operations on [the GigaSpace interface]({%currentjavaurl%}/the-gigaspace-interface.html) combined with the [`TakeModifiers.EVICT_ONLY`](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/core/client/TakeModifiers.html) modifier. The `clear` operation only returns the number of objects actually evicted from the space. The `takeMultiple` operation returns the actual objects that were evicted. Here's usage example:
 
 {% inittab %}
 {% tabcontent Using clear %}
@@ -146,7 +146,7 @@ It's important to note the following about the `TakeModifiers.EVICT_ONLY` modifi
 
 The overall space capacity is not necessarily limited to the capacity of its physical memory. Currently there are two options for exceeding this limit:
 
-- **Using an LRU and [Space Persistency](./space-persistency.html)** - in this mode, all the space data is kept in the database and therefore the space capacity is dependent on the database capacity rather than the memory capacity. The space maintains in memory, a partial image of the persistent view in an LRU basis.
+- **Using an LRU and [Space Persistency]({%currentjavaurl%}/space-persistency.html)** - in this mode, all the space data is kept in the database and therefore the space capacity is dependent on the database capacity rather than the memory capacity. The space maintains in memory, a partial image of the persistent view in an LRU basis.
 - **Using [Partitioned Space](/product_overview/terminology.html)** - in this mode, the space utilizes the physical memory of multiple JVMs. This means the application using the space is able to access all the space instances transparently, as if they were a single space with higher memory capacity.
 
 # Memory Manager Parameters

@@ -203,7 +203,7 @@ GigaSpaces supports SQL queries on the data in space and logger corresponds to t
 com.gigaspaces.cache.level = INFO
 {% endhighlight %}
 
-More information about LRU policy and Eviction behavior is [here]({%currentjavaurl%}/lru-cache-policy.html)
+More information about LRU policy and Eviction behavior is [here](./lru-cache-policy.html)
 
 ### Space Notifications
 

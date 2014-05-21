@@ -3,7 +3,7 @@ layout: post100
 title:  Getting Started
 categories: XAP100
 parent: none
-weight: 150
+weight: 200
 ---
 
 {%wbr%}

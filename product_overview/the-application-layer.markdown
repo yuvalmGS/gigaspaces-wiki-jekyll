@@ -15,7 +15,7 @@ A module in SBA is called a Processing Unit. This is the smallest unit for cross
 
 # Processing Unit
 
-A [Processing Unit]({%latestjavaurl%}/packaging-and-deployment.html) is the unit of scale. It is an application component, provided by the application developer, which is deployed to be run on several GSC instances.
+A [Processing Unit]({%latestjavaurl%}/the-processing-unit-overview.html) is the unit of scale. It is an application component, provided by the application developer, which is deployed to be run on several GSC instances.
 
 The Service Grid is responsible for taking a single copy of a Processing Unit, and creating several instances on multiple GSCs.
 
@@ -23,7 +23,7 @@ In technical details, a Processing Unit is a collection of classes and a configu
 
 **There are several types of Processing Units**:
 
-- [**Java** Processing Unit]({%latestjavaurl%}/packaging-and-deployment.html) - has code components in Java, and may contain a space component.
+- [**Java** Processing Unit]({%latestjavaurl%}/the-processing-unit-overview.html) - has code components in Java, and may contain a space component.
 - [**.NET** Processing Unit]({%latestneturl%}/processing-unit-container.html) -  has its code components in .NET, and may contain a space component.
 - [**Web** Processing Unit]({%latestjavaurl%}/web-application-support.html) - contains web applications. This Processing Unit can be packaged as a standard JEE WAR (Web Archive) file, and may contain a space component.
 - [**EDG** Processing Unit]({%latestjavaurl%}/the-processing-unit-structure-and-configuration.html#dataOnlyPUs) - contains space component(s) only.

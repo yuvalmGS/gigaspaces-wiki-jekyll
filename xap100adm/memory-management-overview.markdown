@@ -1,9 +1,9 @@
 ---
-layout: post100
+layout: post100adm
 title:  Memory Management
-categories: XAP100
-parent: administrators-guide.html
-weight: 240
+categories: XAP100ADM
+weight: 720
+parent: none
 ---
 
 

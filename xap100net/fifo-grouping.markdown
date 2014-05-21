@@ -266,7 +266,7 @@ For example, declaring `SpaceFifoGroupingIndex(Path="a")`, overriding in subclas
 
 # Considerations
 
-- FG not supported with a Space using [LRU-Cache Policy]({% currentjavaurl %}/lru-cache-policy.html) over [EDS]({% currentjavaurl %}/space-data-source-api.html).
+- FG not supported with a Space using [LRU-Cache Policy]({% currentadmurl %}/lru-cache-policy.html) over [EDS]({% currentjavaurl %}/space-data-source-api.html).
 - Cross partitioning of groups is not supported (same limitation as in regular FIFO operations).
 - `SpaceFifoGroupingProperty` and `SpaceFifoGroupingIndex` cannot be used as dynamic indexes.
 - `SpaceFifoGroupingProperty` and `SpaceFifoGroupingIndex` cannot be used  as collection indexes.

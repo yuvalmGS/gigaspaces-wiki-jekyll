@@ -1,7 +1,7 @@
 ---
-layout: post100
+layout: post100adm
 title:  Flash drive IMDG Storage
-categories: XAP100
+categories: XAP100ADM
 parent: memory-management-overview.html
 weight: 400
 ---

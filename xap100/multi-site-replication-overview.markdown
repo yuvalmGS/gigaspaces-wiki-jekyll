@@ -3,7 +3,7 @@ layout: post100
 title:  Multi Site Replication
 categories: XAP100
 parent: none
-weight: 1000
+weight: 900
 ---
 
 

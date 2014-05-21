@@ -37,7 +37,7 @@ Open Spaces is the primary framework for developing applications in GigaSpaces. 
 
 To achieve these goals, Open Spaces adds the following components to the Spring development environment:
 
-- **[Processing Unit]({%latestjavaurl%}/packaging-and-deployment.html)** -- the core unit of work. Encapsulates the middleware together with the business logic in a single unit of scaling and failover.
+- **[Processing Unit]({%latestjavaurl%}/the-processing-unit-overview.html)** -- the core unit of work. Encapsulates the middleware together with the business logic in a single unit of scaling and failover.
 - **[SLA-Driven Container](./service-grid.html#gsc)** -- a lightweight container that enables dynamic deployment of Processing Units over a pool of machines, based on machine availability, CPU utilization, and other hardware and software criteria.
 - [In-Memory Data Grid](./the-in-memory-data-grid.html) -- provides in-memory distributed data storage.
 - **[Declarative Event Containers]({%latestjavaurl%}/messaging-support.html)** -- for triggering events from the space into POJOs in pull or push mode.

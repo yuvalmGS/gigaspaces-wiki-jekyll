@@ -3,7 +3,7 @@ layout: post100
 title:  Deploying and Interacting with the Space
 categories: XAP100
 parent: administrators-guide.html
-weight: 110
+weight: 100
 ---
 
 {% summary %}  {% endsummary %}

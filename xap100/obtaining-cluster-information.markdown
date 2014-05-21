@@ -2,8 +2,8 @@
 layout: post100
 title:  Cluster Information
 categories: XAP100
-parent: packaging-and-deployment.html
-weight: 400
+parent: administrators-guide.html
+weight: 600
 ---
 
 {% summary %}  {% endsummary %}
