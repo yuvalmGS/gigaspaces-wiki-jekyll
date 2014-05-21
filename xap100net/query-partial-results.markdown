@@ -38,7 +38,7 @@ With the above example a specific Person is being read but only its 'FirstName' 
 You may use the same approach with the `SqlQuery` or `IdsQuery`:
 
 {% highlight csharp %}
-SqlQuery<Person> query = new SqlQuery<Person>("") {Projections = new []{"FirstName", "LastName"});
+SqlQuery<Person> query = new SqlQuery<Person>("") {Projections = new []{"FirstName", "LastName"}};
 Person result[] = space.ReadMultiple(query);
 
 IdsQuery<Person> idsQuery = new IdsQuery<Person>(new Long[]{id1,id2}) {Projections = new []{"FirstName", "LastName"};
@@ -48,7 +48,7 @@ Person result[] = space.ReadByIds(idsQuery).ResultsArray;
 The [SpaceDocument](./document-api.html) support projections as well:
 
 {% highlight csharp %}
-SqlQuery<SpaceDocument> docQuery = new SqlQuery<SpaceDocument>(typeof(Person).Name ,"") {Projections = new []{"FirstName", "LastName"};
+SqlQuery<SpaceDocument> docQuery = new SqlQuery<SpaceDocument>(typeof(Person).Name ,"") {Projections = new []{"FirstName", "LastName"}};
 SpaceDocument docresult[] = space.ReadMultiple(docQuery);
 {% endhighlight %}
 

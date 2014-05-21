@@ -1,8 +1,107 @@
 ---
 layout: post
 title:  Test Page
-categories: none
+categories: HOWTO
 ---
+
+
+
+<div class="panel-group" id="accordion1">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+          Collapsible Group Item #1
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse ">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo">
+          Collapsible Group Item #2
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion1" href="#collapseThree">
+          Collapsible Group Item #3
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse">
+      <div class="panel-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+# Tab in Tab
+
+{% accordion id=chrisroffler%}
+{% accord Java  %}
+dfdsfdnfndfnnd,sf
+ dsfdfdkfkldkfkd;lf
+ fkdskfldkflkdlf
+{% endaccord%}
+{% accord C#  %}
+hggjgjgjgjgj
+{% endaccord%}
+{% accord c++ %}
+fdskfkdsfkjdksjfjdf
+kfdlkflkdl;fkl;dsf
+kfdskflkdlfkldklfd
+{% endaccord%}
+{% accord Scala %}
+fdskfkdsfkjdksjfjdf
+kfdlkflkdl;fkl;dsf
+kfdskflkdlfkldklfd
+{% endaccord%}
+{% endaccordion %}
+
+
+# Tab in Tab2
+
+{% accordion id=chrisroffler1%}
+{% accord Java %}
+dfdsfdnfndfnnd,sf
+ dsfdfdkfkldkfkd;lf
+ fkdskfldkflkdlf
+{% endaccord%}
+{% accord C#  %}
+{% endaccord%}
+{% accord c++ %}
+fdskfkdsfkjdksjfjdf
+kfdlkflkdl;fkl;dsf
+kfdskflkdlfkldklfd
+{% endaccord%}
+{% accord Scala %}
+fdskfkdsfkjdksjfjdf
+kfdlkflkdl;fkl;dsf
+kfdskflkdlfkldklfd
+{% endaccord%}
+{% endaccordion %}
+
+
 
 
 
@@ -149,10 +248,16 @@ IMG200.png
 
 
 
+{%comment%}
 ### Platform Configuration
 
 You will find the platform specific configuration under GS_HOME\NET v....\Config\Settings.xml.
 
 
 {%include /xap97source/dotnet/Settings-xml.markdown %}
+
+{%endcomment%}
+
+
+
 
