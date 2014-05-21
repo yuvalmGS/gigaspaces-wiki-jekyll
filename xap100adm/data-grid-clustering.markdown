@@ -7,7 +7,7 @@ parent: none
 ---
 
 {%wbr%}
- This section describe into details how the In-Memory-Data-Grid clustering works. It goes into the details of the fail-over, load-balancing, and replication facilities used.
+This section describes in detail how In-Memory-Data-Grid clustering works. It covers fail-over, load-balancing and replication facilities.
 
 
 <hr/>

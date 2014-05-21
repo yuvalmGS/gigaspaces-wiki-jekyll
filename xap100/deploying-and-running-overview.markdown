@@ -2,8 +2,8 @@
 layout: post100
 title:  Deploying and Running
 categories: XAP100
-parent: administrators-guide.html
-weight: 300
+parent: the-processing-unit-overview.html
+weight: 600
 ---
 
 {%wbr%}
