@@ -107,7 +107,7 @@ When running the processing unit in any of the [runtime modes](./deploying-and-r
 </bean>
 {% endhighlight %}
 
-In the above example, the value of the `connectionUrl` property of `myBean` is  built based on the `runningNumber` provided by the `ClusterInfo` instance. Here is a list mapping the `ClusterInfo` properties to their equivalent `$\{clusterInfo.*\`} syntax:
+In the above example, the value of the `connectionUrl` property of `myBean` is  built based on the `runningNumber` provided by the `ClusterInfo` instance. Here is a list mapping the `ClusterInfo` properties to their equivalent `${clusterInfo.*`} syntax:
 
 {: .table .table-bordered}
 |ClusterInfo|Space URL|
@@ -125,7 +125,7 @@ In the above example, the value of the `connectionUrl` property of `myBean` is  
 Each of the [runtime modes](./deploying-and-running-the-processing-unit.html) supports the injection of `ClusterInfo`. However, when running in [standalone mode](./running-in-standalone-mode.html) or [within your IDE](./running-and-debugging-within-your-ide.html), the `-cluster` parameter controls the clustering aspects of the processing unit instance(s). Below is a list of the parameters you can specify for the standalone and IDE runtime modes, and how they are mapped the `ClusterInfo` properties:
 
 - `schema clusterSchemaName`: Maps to `ClusterInfo#setSchema`.
-- `total_members numberOfInstances\[,numberOfBackups\]`: Maps to `ClusterInfo#setNumberOfInstances`, and optionally `ClusterInfo#setNumberOfBackups`.
+- `total_members numberOfInstances[,numberOfBackups]`: Maps to `ClusterInfo#setNumberOfInstances`, and optionally `ClusterInfo#setNumberOfBackups`.
 - `id instanceId`: Maps to `ClusterInfo#setInstanceId`.
 - `backup_id backupId`: Maps to `ClusterInfo#setBackupId`.
 

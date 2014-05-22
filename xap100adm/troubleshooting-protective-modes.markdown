@@ -14,9 +14,8 @@ For such cases the **Protective Mode** was introduced. The validation is on by d
 ## Disabling the Protective Mode
 To disable a protective mode you will need to use the relevant system property. See below example how this can be applied:
 
-{% inittab %}
-{% tabcontent Java %}
-{%panel%}
+{% accordion id=acc1 %}
+{% accord title=Java | parent=acc1%}
 **Linux:**
 {%highlight bash%}
 export GSC_JAVA_OPTIONS=-Dcom.gs.protectiveMode.typeWithoutId=false -Dcom.gs.protectiveMode.wrongEntryRoutingUsage=false -Dcom.gs.protectiveMode.primitiveWithoutNullValue=false
@@ -26,10 +25,8 @@ export GSC_JAVA_OPTIONS=-Dcom.gs.protectiveMode.typeWithoutId=false -Dcom.gs.pro
 {%highlight bash%}
 set GSC_JAVA_OPTIONS=-Dcom.gs.protectiveMode.typeWithoutId=false -Dcom.gs.protectiveMode.wrongEntryRoutingUsage=false -Dcom.gs.protectiveMode.primitiveWithoutNullValue=false
 {%endhighlight%}
-{%endpanel%}
-{%endtabcontent%}
-{% tabcontent .NET %}
-{%panel%}
+{%endaccord%}
+{% accord title=.NET | parent=acc1 %}
 The `ServiceGrid.config` should have the following
 {%highlight bash%}
 <JvmSettings>
@@ -40,9 +37,8 @@ The `ServiceGrid.config` should have the following
    </JvmCustomOptions>
 </JvmSettings>
 {%endhighlight%}
-{%endpanel%}
-{%endtabcontent%}
-{%endinittab%}
+{%endaccord%}
+{%endaccordion%}
 
 # SpaceId property Decoration Validation
 

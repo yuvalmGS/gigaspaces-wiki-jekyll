@@ -6,32 +6,21 @@ module Jekyll
     class Accordion < Liquid::Block
       include Liquid::StandardFilters
 
-      @@id = nil
-
-    def Accordion.id
-        return @@id
-    end
-
-     def Accordion.id= (x)
-         @@id = x
-     end
-
       def initialize(tag_name, markup, tokens)
         super
         if markup.empty?
-          $div_id = "generic"
+          @div_id = "generic"
         else
-          @@id  = markup.strip.sub("id=", "")
+          @div_id  = markup.strip.sub("id=", "")
         end
       end
 
       def render(context)
-      	add_togglecloak(context, super)
+      	add_accordion(context, super)
       end
 
-      def add_togglecloak(context, content)
-#        output = "<div class='panel-group' id='#{$div_id}'>"
-         output = "<div class='panel-group' id='#{Accordion.id}'>"
+      def add_accordion(context, content)
+        output = "<div class='panel-group' id='#{@div_id}'>"
         output << Kramdown::Document.new(content).to_html
         output << "</div>"
       end
@@ -42,23 +31,31 @@ module Jekyll
 
       def initialize(tag_name, markup, tokens)
         super
-        @title = markup.strip
+
+
+         markups = markup.split("|")
+
+         title   = markups.select {|x| x =~ /title/}[0]
+         parent  = markups.select {|x| x =~ /parent/}[0]
+
+         @title  = title.sub("title=", "") if title
+         @parent = parent.strip.sub("parent=", "") if parent
       end
 
       def render(context)
-      	add_gcloak(context, super)
+      	add_accord(context, super)
       end
 
 
 
-      def add_gcloak(context, content)
+      def add_accord(context, content)
 
         random_string = SecureRandom.hex
 
         output =   "<div class='panel panel-default'>
                      <div class='panel-heading'>
                        <h4 class='panel-title'>
-                         <a data-toggle='collapse' data-parent='##{Accordion.id}' href='##{random_string}'>
+                         <a data-toggle='collapse' data-parent='##{@parent}' href='##{random_string}'>
                           #{@title}
                          </a>
                        </h4>

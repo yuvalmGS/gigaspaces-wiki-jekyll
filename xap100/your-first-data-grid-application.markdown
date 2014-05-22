@@ -151,8 +151,8 @@ If you're using the web console mentioned above to see what's going on, you'll s
 
 ### {% anchor source %} Full Source Code
 
-{% togglecloak id=1 %}`Program.java`{% endtogglecloak %}
-{% gcloak 1 %}
+{% accordion id=acc1 %}
+{% accord title=Program.java | parent=acc1 %}
 {% highlight java %}
 package com.gigaspaces.demo;
 
@@ -189,10 +189,9 @@ public class Program {
     }
 }
 {% endhighlight %}
-{% endgcloak %}
+{% endaccord %}
 
-{% togglecloak id=2 %}`Person.java`{% endtogglecloak %}
-{% gcloak 2 %}
+{% accord title=Person.java | parent=acc1 %}
 
 {% highlight java %}
 package com.gigaspaces.demo;
@@ -243,7 +242,8 @@ public class Person {
     }
 }
 {% endhighlight %}
-{% endgcloak %}
+{% endaccord %}
+{%endaccordion%}
 
 # What's Next?
 

@@ -57,21 +57,21 @@ categories: HOWTO
 
 # Tab in Tab
 
-{% accordion id=chrisroffler%}
-{% accord Java  %}
+{% accordion id=chris%}
+{% accord title=Java | parent=chris %}
 dfdsfdnfndfnnd,sf
  dsfdfdkfkldkfkd;lf
  fkdskfldkflkdlf
 {% endaccord%}
-{% accord C#  %}
+{% accord title=C#  | parent=chris%}
 hggjgjgjgjgj
 {% endaccord%}
-{% accord c++ %}
+{% accord title=c++ | parent=chris%}
 fdskfkdsfkjdksjfjdf
 kfdlkflkdl;fkl;dsf
 kfdskflkdlfkldklfd
 {% endaccord%}
-{% accord Scala %}
+{% accord title=Scala | parent=chris%}
 fdskfkdsfkjdksjfjdf
 kfdlkflkdl;fkl;dsf
 kfdskflkdlfkldklfd
@@ -79,22 +79,37 @@ kfdskflkdlfkldklfd
 {% endaccordion %}
 
 
-# Tab in Tab2
 
-{% accordion id=chrisroffler1%}
-{% accord Java %}
+# Tab in Tab  2
+
+{% accordion id=chrisroffler%}
+{% accord title=Java1 | parent=chrisroffler %}
 dfdsfdnfndfnnd,sf
  dsfdfdkfkldkfkd;lf
  fkdskfldkflkdlf
 {% endaccord%}
-{% accord C#  %}
+{% accord title=C#1  | parent=chrisroffler%}
+hggjgjgjgjgj
 {% endaccord%}
-{% accord c++ %}
+{% accord title=c++1 | parent=chrisroffler%}
 fdskfkdsfkjdksjfjdf
 kfdlkflkdl;fkl;dsf
 kfdskflkdlfkldklfd
+sadsad
+dsad
+sad
+sa
+dsa
+d
+sad
+sa
+d
+sad
+sad
+sa
+
 {% endaccord%}
-{% accord Scala %}
+{% accord title=Scala1 | parent=chrisroffler%}
 fdskfkdsfkjdksjfjdf
 kfdlkflkdl;fkl;dsf
 kfdskflkdlfkldklfd
