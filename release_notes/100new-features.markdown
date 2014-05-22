@@ -35,7 +35,10 @@ Below is a list of new features and improvements in GigaSpaces 10.0.X.
 | GS-11657 | Change lrmi.space-task threadpool system properties to lrmi.custom | 10.0.0 | | | All |
 | GS-11666 | Pojo to Document Conversion should not convert Class,URI,Locale types | 9.7.1, 10.0.0 | | | Java |
 | GS-11659 | .Net add documentation regarding types of local cache | 10.0.0 | 8740 | | .NET |
+| GS-11691 | Create a setting to skip authentication for transaction commit/abort | 9.7.1, 10.0.0 | 8765 | | ALL |
 | GS-11693 | Enhance nHibernate EDS to support overriding initial load | 10.0.0 | | | .NET |
 | GS-11702 | Added support for configuring a persistent space without custom code in XAP.NET | 9.7.1, 10.0.0 | | | .NET |
 | GS-11706 | Added static ProcessingUnitContainer.Current to provide cluster info to any pu component | 9.7.1, 10.0.0 | | | .NET |
 | GS-11710 | Simplify processing unit configuration in XAP.NET | 9.7.1, 10.0.0 | | | .NET |
+| GS-11731 | Simplify mirror configuration in XAP.NET | 9.7.1, 10.0.0 | | | .NET |
+| GS-11737 | Enhance XAP.NET processing unit to support properties replacement | 9.7.1, 10.0.0 | | | .NET |
