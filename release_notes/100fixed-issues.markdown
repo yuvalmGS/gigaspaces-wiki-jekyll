@@ -20,6 +20,7 @@ Below is a list of issues that have been fixed in GigaSpaces 10.0.X.
 | GS-11606 | Deterministic Deployment is not working on secured grid | 10.0.0 | 8642 | All |
 | GS-11615 | SpaceDataSourceSplitter#initialMetadataLoad might causes NPE | 9.7.1, 10.0.0 | 8655 | All |
 | GS-11616 | ReadModifiers missing default constructor | 9.7.1, 10.0.0 | 8657 | Java |
+| GS-11617 | XAP benchmark fails on primitiveWithoutNullValue protective mode | 9.7.1, 10.0.0 |  | All |
 | GS-11631 | PrimaryZoneController.afterPropertiesSet() throws NullPointerException | 10.0.0 | | Java |
 | GS-11633 | Add Multi thread support to XAResourceImpl | 10.0.0 | 8698 | Java |
 | GS-11641 | Default Notifications may not consume all concurrent resources when it could have | 9.7.0 patch3, 10.0.0 | 8635 | All |

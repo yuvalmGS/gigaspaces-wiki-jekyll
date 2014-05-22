@@ -43,3 +43,10 @@ Below is a list of known issues in GigaSpaces 10.0.X.
 | GS-11714 | XAP.NET Default.config max/min heap size | | 10.0.0 | | .NET |
 | GS-11715 | Change GS UI Query default limit to 100 | | 10.0.0 | | All |
 | GS-11716 | Rename XAP.NET GigaSpaces.NetToJava.dll and GigaSpaces.Jav | | 10.0.0 | | .NET |
+| GS-11718 | Special config property for redo log swap files location | | 10.0.0 | | All |
+| GS-11719 | gigaspace.getTypeManager().getTypeDescriptor(type) returns the outdated type descriptor from the server | | 10.0.0 | | Java |
+| GS-11720 | GS-UI: Hidden progressbar in relocation window | | 10.0.0 | | Java |
+| GS-11727 | com.gigaspaces.management.space.SpaceQueryDetails JavaDoc missing | | 10.0.0 | | Java |
+| GS-11728 | Syntax error message in DotNetException.java class | 8927 | 10.0.0 | | Java, .NET |
+| GS-11732 | Disributed transaction over multiple clusters might cause consolidations problems | 8935 | 10.0.0 | | All |
+| GS-11736 | Can't see space in gs-ui when running gsInstance.bat when using jdk 7u55 | | 10.0.0 | | Java |
