@@ -1,6 +1,6 @@
 ---
 layout: post100adm
-title:  Flash drive IMDG Storage
+title:  Flash drive IMDG Storage - MemoryXtend for SSD
 categories: XAP100ADM
 parent: memory-management-overview.html
 weight: 400
@@ -87,8 +87,19 @@ The IMDG BlobStore settings includes the following options:{%wbr%}
 | avg-object-size-KB |  Average object size. | 5KB | optional |
 
 # Installation
-The SSD Storage library can be download from:
-To apply the library simply copy it to :
+
+Step 1. 
+Install XAP as usual.
+
+Step 2. 
+Install FDF libraries:
+
+{% highlight xml %}
+sudo XAP_HOME=<XAP HOME> sh -c "rpm -ivh /blobstore-1.0-SNAPSHOT20140XXXXXXXXX.noarch.rpm"
+{% endhighlight %}
+
+Step 3. 
+Use the `XAP HOME\bin\gs-agent-blobstore.sh` to start GigaSpaces Grid Agent that configured to load the FDF libraries.
 
 {%note title=Supported OS%}XAP Flash Storage library is supported only CentOS 5.8-5.10{%endnote%}
 
@@ -210,7 +221,7 @@ Here is a sample xml decoration for POJO class disabling `blobStore` mode:
 
 # BlobStore Management
 
-You may use the FDF Management command line to access underlaying SSD storage runtime. This allows you to access statistics that can be used to tune performance and analyze performance problems. These statistics counters used to monitore events within the FDF subsystem. Most events are counted on a per FDF container basis as well as for all containers within the FDF instance. 
+You may use the FDF Management command line to access underlaying SSD storage runtime. This allows you to access statistics that can be used to tune performance and analyze performance problems. These statistics counters used to monitor events within the FDF subsystem. Most events are counted on a per FDF container basis as well as for all containers within the FDF instance. 
 
 
 ## Statistics
@@ -234,8 +245,10 @@ FDF available Statistics:
 - Number of overwrites
 - Number of hash collisions for get/set operations
 
-Applications can optionally enable periodic dumping of statistics to a specified file. This is disabled by default. It can be enabled using the configuration parameter `FDF_STATS_FILE=<filepath>`. The dump interval can be configured using `FDF_STATS_DUMP_INTERVAL=<interval in secs>`. The dump interval can also be dynamically changed through the CLI. below shows typical statistics output:
+Applications can optionally enable periodic dumping of statistics to a specified file. This is disabled by default. It can be enabled using the configuration parameter `FDF_STATS_FILE=<filepath>`. The dump interval can be configured using `FDF_STATS_DUMP_INTERVAL=<interval in secs>`. The dump interval can also be dynamically changed through the CLI.
 
+{%accordion id=acc0%}
+{%accord title=Typical statistics output | parent=acc0%}
 {% highlight console %}
 Per Container Statistics
 Container Properties:
@@ -330,6 +343,8 @@ Cache statistics:
 	max_percent_limit_on_modifiable_cache = 100
 	num_cache_ops_in_progress = 18
 {% endhighlight %}
+{%endaccord%}
+{%endaccordion%}
 
 ## Command Line Interface
 
@@ -346,7 +361,9 @@ FDF provides a simple command line interface (CLI) through a TCP port. The FDF C
 |help | Prints help for all supported commands|
 |quit |Quits the telnet session|
 
-Below sample FDF CLI usage:
+{%accordion id=acc1%}
+{%accord title=Sample FDF CLI usage | parent=acc1%}
+
 {% highlight console %}
 [root@xen200v03]~# telnet localhost 51350
 Trying 127.0.0.1...
@@ -398,6 +415,8 @@ Per Container Statistics
 	Flash layer return codes:
 		num_success = 1
 {% endhighlight %}
+{%endaccord%}
+{%endaccordion%}
 		
 		
 		
@@ -419,3 +438,7 @@ abstract class BlobStoreStorageHandler
 }
 {% endhighlight %}
 
+
+{%info%}
+Answers to frequently asked questions about MemoryXtend for SSD can be found [here](/faq/blobstore-cache-policy-faq.html)
+{%endinfo%}

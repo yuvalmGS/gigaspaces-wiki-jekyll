@@ -31,7 +31,7 @@ Replications starts with the local site cluster. Updates in the form of replicat
 
 {%anchor 2%}
 
-### What happens when Gateway fails or is restarted?**
+### What happens when Gateway fails or is restarted?
 Gateway component is stateless and does not save any state. When this PU is missing because of a failure (hardware, OS or process failure), GSM will restart the PU in a available container. Once it is active, it will start replicating the changes that where it left off.
 
 {%anchor 3%}

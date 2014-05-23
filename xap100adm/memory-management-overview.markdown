@@ -36,7 +36,6 @@ The LRU Cache policy.
 
 
 - [Flash drive Storage](./blobstore-cache-policy.html){%wbr%}
-Enterprise flash drives IMDG Storage using SanDisk Flash Universal library to extend IMDG memory space to support grid based large capacity data management and server consolidation.
-
+XAP 10 introduces a new Storage interface allowing Blob/Block/external type storage to act as a natural memory space for the IMDG.
 
 <hr/>
