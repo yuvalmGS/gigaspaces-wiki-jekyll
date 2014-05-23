@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  OpenSpaces FAQ
+title:  OpenSpaces
 categories: FAQ
 weight: 100
 parent: none

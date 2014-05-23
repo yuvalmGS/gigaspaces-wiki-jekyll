@@ -56,7 +56,7 @@ Custom interceptors at the gateway which can be used to implement custom logic u
 - [Known Limitations](./multi-site-replication-limitations.html){%wbr%}
 Known issues and limitations
 
-- [FAQ](./multi-site-replication-over-the-wan---faq.html){%wbr%}
+- [FAQ](/faq/multi-site-replication-over-the-wan-faq.html){%wbr%}
 Frequently asked questions.
 
 <hr/>

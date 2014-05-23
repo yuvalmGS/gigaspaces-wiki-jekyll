@@ -11,7 +11,8 @@ Here you will find answers to frequently asked questions about OpenSpaces and th
 {% wbr %}
 
 
-- [OpenSpaces FAQ](./openspaces-faq.html)
+- [OpenSpaces](./openspaces-faq.html)
 
+- [XAP Community](./xap-community-faq.html)
 
-- [XAP Community FAQ](./xap-community-faq.html)
+- [Multi site replication over the wan](./multi-site-replication-over-the-wan-faq.html)
