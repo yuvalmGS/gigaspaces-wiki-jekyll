@@ -209,8 +209,28 @@ Markdown:
 </table>
 
 
-{% popup /attachment_files/qsg/class_diagram.png| Class Diagram| Class Diagram %}
+# Image Popup
 
-{%comment%}
-{%include scrolltop.html %}
-{%endcomment%}
+<table border="1" cellpadding="10">
+<colgroup><col span="1" style="width: 50%;"/><col span="1" style="width: 50%;"/></colgroup>
+<tr><th> Example </th><th> Markdown </th></tr>
+<tr><td>{% popup /attachment_files/qsg/class_diagram.png| Class Diagram| Class Diagram %}</td><td>{%raw%} {% popup /attachment_files/qsg/class_diagram.png| Class Diagram| Class Diagram %} {%endraw%}</td></tr>
+</table>
+
+
+# Youtube Video
+
+<table border="1" cellpadding="10">
+<colgroup><col span="1" style="width: 50%;"/><col span="1" style="width: 50%;"/></colgroup>
+<tr><th> Example </th><th> Markdown </th></tr>
+<tr><td>{%youtube V7rbbmWo3JU | Multi Site Deployment%}</td><td>{%raw%} {%youtube V7rbbmWo3JU | Multi Site Deployment%} {%endraw%}</td></tr>
+</table>
+
+# Accordion
+
+<table border="1" cellpadding="10">
+<colgroup><col span="1" style="width: 50%;"/><col span="1" style="width: 50%;"/></colgroup>
+<tr><th> Example </th><th> Markdown </th></tr>
+<tr><td>{%accordion id=acc1%}{%accord title=Java | parent=acc1%}Java Code{%endaccord%}{%accord title=c# | parent=acc1%}c# Code{%endaccord%}{%endaccordion%}</td><td>{%raw%} {%accordion id=acc1%}{%accord title=Java | parent=acc1%}Java Code{%endaccord%}{%accord title=c# | parent=acc1%}c# Code{%endaccord%}{%endaccordion%} {%endraw%}</td></tr>
+</table>
+

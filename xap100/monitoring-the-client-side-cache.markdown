@@ -1,6 +1,6 @@
 ---
 layout: post100
-title:  Monitoring
+title:  Monitoring Client Side Cache
 categories: XAP100
 parent: client-side-caching.html
 weight: 400
