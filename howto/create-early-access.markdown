@@ -56,7 +56,7 @@ and replace the text to  `Early Access XAP 10.0 Documentation`.
 
 ####  Copy the `/xap97` folder and rename it to `xap100`
 
-In this new directory `/xap100` replace in all files the `post` and `categories` with `100`.
+In this new directory `/xap100` replace in all files the  yaml front matter `post` and `categories` tags with `100`.
 
 Example:
 
@@ -92,7 +92,7 @@ parent: none
 
 ####  Copy the `/xap97adm` folder and rename it to `xap100adm`
 
-In this new directory `/xap100adm` replace in all files the `post` and `categories` with `100`.
+In this new directory `/xap100adm` replace in all files the  yaml front matter `post` and `categories` tags with `100`.
 
 Example:
 
@@ -128,7 +128,7 @@ parent: none
 
 #### Copy the `/xap97net` folder and rename it to `xap100net`
 
- In this new directory `/xap100net` replace in all files the `post` and `categories` with `100`.
+ In this new directory `/xap100net` replace in all files the  yaml front matter tags `post` and `categories` with `100`.
 
  Example:
 

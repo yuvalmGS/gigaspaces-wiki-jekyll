@@ -3,7 +3,7 @@ layout: post100
 title:  The Processing Unit
 categories: XAP100
 parent: none
-weight: 350
+weight: 400
 ---
 
 {%wbr%}

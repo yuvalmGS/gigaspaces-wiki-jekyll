@@ -134,9 +134,6 @@ Creates a summary section at the top of the page. The section will include the t
 {%endcomment%}
 
 
-## Chapters in this Guide
-
-{% children %}
 
 
 

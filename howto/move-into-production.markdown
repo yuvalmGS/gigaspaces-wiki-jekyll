@@ -9,6 +9,7 @@ categories: HOWTO
 
 To make a current early access release the official GA release, you should perform the following steps: 
 
+{%comment%}
 ### Modify `_config.yaml`
 
 {%highlight xml%}
@@ -23,6 +24,8 @@ latest_default_lookup_group: "gigaspaces-9.7.0-XAPPremium-ga"
 latest_java_url: "/xap97"
 latest_net_url: "/xap97net"
 {%endhighlight%}
+{%endcomment%}
+
 
 
 

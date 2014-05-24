@@ -3,7 +3,7 @@ layout: post97
 title:  License Key
 categories: XAP97
 parent: installation.html
-weight: 200
+weight: 100
 ---
 
 {% summary %}{% endsummary %}

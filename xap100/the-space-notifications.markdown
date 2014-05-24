@@ -2,7 +2,7 @@
 layout: post100
 title:  Notifications
 categories: XAP100
-weight: 500
+weight: 550
 parent: the-gigaspace-interface-overview.html
 ---
 
