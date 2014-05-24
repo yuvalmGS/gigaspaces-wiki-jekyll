@@ -3,7 +3,7 @@ layout: post100
 title:  Authorities
 categories: XAP100
 parent: security-overview.html
-weight: 120
+weight: 300
 ---
 
 {% summary %}{% endsummary %}

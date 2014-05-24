@@ -2,7 +2,7 @@
 layout: post100adm
 title:  Runtime Configuration
 categories: XAP100ADM
-weight: 770
+weight: 700
 parent: none
 ---
 

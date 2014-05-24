@@ -3,7 +3,7 @@ layout: post100adm
 title:  Browser View
 categories: XAP100ADM
 parent: benchmarking.html
-weight: 200
+weight: 300
 ---
 
 {% summary %} {% endsummary %}

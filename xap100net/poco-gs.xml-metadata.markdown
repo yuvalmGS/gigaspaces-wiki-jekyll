@@ -3,7 +3,7 @@ layout: post100
 title:  File based Metadata
 categories: XAP100NET
 parent: modeling-your-data.html
-weight: 500
+weight: 300
 ---
 
 {% summary %} {% endsummary %}

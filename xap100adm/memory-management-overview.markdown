@@ -2,7 +2,7 @@
 layout: post100adm
 title:  Memory Management
 categories: XAP100ADM
-weight: 720
+weight: 400
 parent: none
 ---
 

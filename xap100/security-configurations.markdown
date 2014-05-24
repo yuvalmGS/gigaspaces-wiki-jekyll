@@ -3,7 +3,7 @@ layout: post100
 title:  Configuration
 categories: XAP100
 parent: security-overview.html
-weight: 130
+weight: 400
 ---
 
 {% summary %}{% endsummary %}

@@ -2,7 +2,7 @@
 layout: post100
 title:  The Space Interface
 categories: XAP100NET
-weight: 2000
+weight: 400
 parent: programmers-guide.html
 ---
 

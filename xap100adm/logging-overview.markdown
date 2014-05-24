@@ -3,7 +3,7 @@ layout: post100adm
 title:  Logging
 categories: XAP100ADM
 parent: none
-weight: 750
+weight: 500
 ---
 {%wbr%}
 This section explains how you can configure logging with XAP. We will show you how you can format the log output, choose file names and rollover policies.

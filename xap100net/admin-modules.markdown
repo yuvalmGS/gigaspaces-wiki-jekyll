@@ -3,7 +3,7 @@ layout: post100
 title:  Admin Modules
 categories: XAP100NET
 parent: programmers-guide.html
-weight: 3000
+weight: 1300
 ---
 
 {%wbr%}

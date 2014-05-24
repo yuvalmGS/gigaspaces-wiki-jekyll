@@ -3,7 +3,7 @@ layout: post100
 title:  Default File-Based Security
 categories: XAP100
 parent: security-overview.html
-weight: 300
+weight: 600
 ---
 
 {% summary %} {% endsummary %}

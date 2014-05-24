@@ -3,7 +3,7 @@ layout: post100adm
 title:  C++ Benchmark
 categories: XAP100ADM
 parent: benchmarking.html
-weight: 300
+weight: 400
 ---
 
 {% summary %} {% endsummary %}

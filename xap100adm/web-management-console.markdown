@@ -3,7 +3,7 @@ layout: post100adm
 title:  Web Management Console
 categories: XAP100ADM
 parent: none
-weight: 700
+weight: 200
 ---
 
 {%wbr%}

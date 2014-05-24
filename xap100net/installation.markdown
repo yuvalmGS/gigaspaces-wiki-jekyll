@@ -3,7 +3,7 @@ layout: post100
 title:  Overview
 categories: XAP100NET
 parent: installation-overview.html
-weight: 50
+weight: 100
 ---
 
 {%wbr%}

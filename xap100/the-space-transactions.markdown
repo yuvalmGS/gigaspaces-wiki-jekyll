@@ -2,7 +2,7 @@
 layout: post100
 title:  Transactions
 categories: XAP100
-weight: 500
+weight: 600
 parent: the-gigaspace-interface-overview.html
 ---
 

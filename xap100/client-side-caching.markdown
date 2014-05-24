@@ -3,7 +3,7 @@ layout: post100
 title:  Client Side Caching
 categories: XAP100
 parent: programmers-guide.html
-weight: 810
+weight: 1000
 ---
 {%wbr%}
 

@@ -3,7 +3,7 @@ layout: post100adm
 title:  Management Center
 categories: XAP100ADM
 parent: none
-weight: 600
+weight: 100
 ---
 
 {%wbr%}

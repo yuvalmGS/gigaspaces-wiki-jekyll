@@ -3,7 +3,7 @@ layout: post100
 title:  Platform Interoperability
 categories: XAP100NET
 parent: none
-weight: 250
+weight: 600
 ---
 
 {%wbr%}

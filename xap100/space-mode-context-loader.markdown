@@ -2,7 +2,7 @@
 layout: post100
 title:  Space Mode Context Loader
 categories: XAP100
-weight: 700
+weight: 900
 parent: the-gigaspace-interface-overview.html
 ---
 

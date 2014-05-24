@@ -3,7 +3,7 @@ layout: post100
 title:  Dynamic Properties
 categories: XAP100NET
 parent: poco-overview.html
-weight: 300
+weight: 200
 ---
 
 

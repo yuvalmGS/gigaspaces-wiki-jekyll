@@ -3,7 +3,7 @@ layout: post100
 title:  Unique Index
 categories: XAP100NET
 parent: indexing-overview.html
-weight: 600
+weight: 500
 ---
 
 

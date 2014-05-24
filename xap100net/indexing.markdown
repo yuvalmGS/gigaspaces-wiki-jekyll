@@ -3,7 +3,7 @@ layout: post100
 title:  Basic Index
 categories: XAP100NET
 parent: indexing-overview.html
-weight: 50
+weight: 100
 ---
 
 {% summary %} {% endsummary %}

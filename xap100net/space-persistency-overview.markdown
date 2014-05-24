@@ -3,7 +3,7 @@ layout: post100
 title:  Space Persistency
 categories: XAP100NET
 parent: programmers-guide.html
-weight: 2500
+weight: 800
 ---
 
 {%wbr%}

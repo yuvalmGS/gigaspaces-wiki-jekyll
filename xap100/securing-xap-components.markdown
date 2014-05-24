@@ -3,7 +3,7 @@ layout: post100
 title:  Securing Components
 categories: XAP100
 parent: security-overview.html
-weight: 400
+weight: 700
 ---
 
 {%wbr%}

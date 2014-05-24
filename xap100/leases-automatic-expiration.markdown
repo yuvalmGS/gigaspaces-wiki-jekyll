@@ -2,7 +2,7 @@
 layout: post100
 title:  Lease Time
 categories: XAP100
-weight: 800
+weight: 1000
 parent: the-gigaspace-interface-overview.html
 ---
 

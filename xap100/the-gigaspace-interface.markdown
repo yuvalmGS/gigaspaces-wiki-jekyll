@@ -2,7 +2,7 @@
 layout: post100
 title:  Overview
 categories: XAP100
-weight: 50
+weight: 100
 parent: the-gigaspace-interface-overview.html
 ---
 

@@ -3,7 +3,7 @@ layout: post100adm
 title:  Troubleshooting
 categories: XAP100ADM
 parent: none
-weight: 1000
+weight: 1200
 ---
 
 {%wbr%}

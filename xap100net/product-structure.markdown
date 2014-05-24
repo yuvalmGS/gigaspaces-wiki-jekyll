@@ -3,7 +3,7 @@ layout: post100
 title:  Product structure
 categories: XAP100NET
 parent: installation-overview.html
-weight: 200
+weight: 300
 ---
 
 

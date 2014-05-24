@@ -2,7 +2,7 @@
 layout: post100
 title:  Change API
 categories: XAP100
-weight: 300
+weight: 400
 parent: the-gigaspace-interface-overview.html
 ---
 

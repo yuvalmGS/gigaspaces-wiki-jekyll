@@ -3,7 +3,7 @@ layout: post100
 title:  Modeling your Data
 categories: XAP100
 parent: programmers-guide.html
-weight: 30
+weight: 300
 ---
 
 

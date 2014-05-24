@@ -3,7 +3,7 @@ layout: post100
 title:  Compound Index
 categories: XAP100NET
 parent: indexing-overview.html
-weight: 300
+weight: 400
 ---
 
 A Compound Index is a space index composed from several properties or nested properties (aka paths). Each property of a compound index is called a segment and each segment is described by its path. The benefit of using a compound index is shorter scanning of potential matching entries - which is equivalent to the intersection of all the entries having the values described by the segments. In other words - when having a set of objects within the space where:?

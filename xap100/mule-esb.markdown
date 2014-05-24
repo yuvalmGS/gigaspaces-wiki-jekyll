@@ -3,7 +3,7 @@ layout: post100
 title:  Mule ESB Integration
 categories: XAP100
 parent: programmers-guide.html
-weight: 1550
+weight: 1500
 ---
 
 {%wbr%}

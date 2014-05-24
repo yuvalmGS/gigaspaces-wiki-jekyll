@@ -2,7 +2,7 @@
 layout: post100adm
 title:  Data Grid Clustering
 categories: XAP100ADM
-weight: 710
+weight: 300
 parent: none
 ---
 

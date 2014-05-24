@@ -3,7 +3,7 @@ layout: post100
 title:  POJO Support
 categories: XAP100
 parent: programmers-guide.html
-weight: 10
+weight: 100
 ---
 
 {%wbr%}

@@ -3,7 +3,7 @@ layout: post100
 title:  Event Processing
 categories: XAP100NET
 parent: programmers-guide.html
-weight: 2800
+weight: 1100
 ---
 
 {%wbr%}

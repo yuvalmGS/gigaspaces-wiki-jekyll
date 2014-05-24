@@ -3,7 +3,7 @@ layout: post100
 title:  Space Based Remoting
 categories: XAP100NET
 parent: programmers-guide.html
-weight: 2900
+weight: 1200
 ---
 
 {%wbr%}

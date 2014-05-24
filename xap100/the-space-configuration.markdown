@@ -2,7 +2,7 @@
 layout: post100
 title:  Configuration
 categories: XAP100
-weight: 100
+weight: 200
 parent: the-gigaspace-interface-overview.html
 ---
 

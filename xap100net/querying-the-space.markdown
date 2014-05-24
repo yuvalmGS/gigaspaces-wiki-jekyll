@@ -3,7 +3,7 @@ layout: post100
 title:  Querying the Space
 categories: XAP100NET
 parent: programmers-guide.html
-weight: 2100
+weight: 500
 ---
 
 {%wbr%}

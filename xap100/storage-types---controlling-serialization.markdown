@@ -3,7 +3,7 @@ layout: post100
 title:  Storage Types
 categories: XAP100
 parent: modeling-your-data.html
-weight: 200
+weight: 500
 ---
 
 

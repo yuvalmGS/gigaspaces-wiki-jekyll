@@ -3,7 +3,7 @@ layout: post100
 title:  Logging API
 categories: XAP100
 parent: programmers-guide.html
-weight: 1650
+weight: 1700
 ---
 
 {% summary %}{% endsummary %}

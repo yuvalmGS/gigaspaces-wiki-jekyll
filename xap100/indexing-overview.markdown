@@ -3,7 +3,7 @@ layout: post100
 title:  Indexing
 categories: XAP100
 parent: programmers-guide.html
-weight: 400
+weight: 600
 ---
 
 {%wbr%}

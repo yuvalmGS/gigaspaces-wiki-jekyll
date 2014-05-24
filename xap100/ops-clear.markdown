@@ -61,5 +61,3 @@ void clear(ISpaceQuery<T> query) throws DataAccessException
 {% endgcloak  %}
 
 
-
-http://www.gigaspaces.com/docs/dotnetdocs9.7/html/N_GigaSpaces_Core.htm

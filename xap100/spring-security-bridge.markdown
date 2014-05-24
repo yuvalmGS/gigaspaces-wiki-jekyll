@@ -3,7 +3,7 @@ layout: post100
 title:  Spring Security Bridge
 categories: XAP100
 parent: security-overview.html
-weight: 800
+weight: 900
 ---
 
 

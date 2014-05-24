@@ -3,7 +3,7 @@ layout: post100
 title:  Directory Management
 categories: XAP100
 parent: security-overview.html
-weight: 140
+weight: 500
 ---
 
 {% summary %}{% endsummary %}

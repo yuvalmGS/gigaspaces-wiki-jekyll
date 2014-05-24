@@ -3,7 +3,7 @@ layout: post100
 title:  Routing In Partitioned Spaces
 categories: XAP100
 parent: modeling-your-data.html
-weight: 300
+weight: 600
 ---
 
 {% summary %}{% endsummary %}

@@ -3,7 +3,7 @@ layout: post100
 title:  Writing Existing Class to Space
 categories: XAP100
 parent: cpp-api-examples.html
-weight: 300
+weight: 400
 ---
 
 

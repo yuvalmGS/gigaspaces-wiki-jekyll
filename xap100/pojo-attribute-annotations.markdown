@@ -3,7 +3,7 @@ layout: post100
 title:  Property Metadata
 categories: XAP100
 parent: modeling-your-data.html
-weight: 120
+weight: 300
 ---
 
 {% summary %}{% endsummary %}

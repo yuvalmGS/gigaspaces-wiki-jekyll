@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  The In-Memory Data Grid
-categories: XAP97
 categories: PRODUCT_OVERVIEW
 parent: none
 weight: 560

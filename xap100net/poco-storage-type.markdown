@@ -3,7 +3,7 @@ layout: post100
 title:  Property Storage Type
 categories: XAP100NET
 parent: modeling-your-data.html
-weight: 700
+weight: 400
 ---
 
 {% summary   %} {% endsummary %}

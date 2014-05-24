@@ -3,7 +3,7 @@ layout: post100
 title:  Filters
 categories: XAP100NET
 parent: the-gigaspace-interface-overview.html
-weight: 1000
+weight: 800
 ---
 
 {%summary%}{%endsummary%}

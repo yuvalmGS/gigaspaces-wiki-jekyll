@@ -119,7 +119,7 @@ To remove a batch of objects without returning these back into the client use `G
 -  should be handled with care, since it can return a large data set (potentially all the space data). This might cause an out of memory error in the space and client process. You should use the [GSIterator](#Space Iterator) to return the result in batches (paging) in such cases.
 -  should be performed with transactions - this allows the client to roll back the space to its initial state prior the operation was started, in case of a failure.
 -  operation **dos not support timeout** operations. The simple way to achieve this is by calling the `read` operation first with the proper timeout, and if non-null values are returned, perform the batch operation.
--  in the event of a take error, DataAccessException will wrap a TakeMultipleException, accessible via DataAccessException.getRootCause().  [TakeMultipleException](http://www.gigaspaces.com/docs/dotnetdocs9.7/html/Overload_GigaSpaces_Core_Exceptions_TakeMultipleException__ctor.htm)
+-  in the event of a take error, DataAccessException will wrap a TakeMultipleException, accessible via DataAccessException.getRootCause().
 {%endnote%}
 
 {%anchor takeIfExists%}

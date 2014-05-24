@@ -3,7 +3,7 @@ layout: post100
 title:  Advanced Scenarios
 categories: XAP100NET
 parent: installation-overview.html
-weight: 100
+weight: 400
 ---
 
 {% summary %} {% endsummary %}

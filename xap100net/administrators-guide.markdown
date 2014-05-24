@@ -3,7 +3,7 @@ layout: post100
 title:  Deployment and Administration
 categories: XAP100NET
 parent: none
-weight: 400
+weight: 500
 ---
 
 {%wbr%}
@@ -12,8 +12,6 @@ As the administrator of your organization's computing applications, you are resp
 
 <hr/>
 
-- [The Processing Unit](./processing-units.html){%wbr%}
-The processing unit is the unit of packaging and deployment in the GigaSpaces XAP platform. This section describes the details of the processing unit.
 
 - [Configurations](./configuration.html){%wbr%}
 This section describes configuration parameters.

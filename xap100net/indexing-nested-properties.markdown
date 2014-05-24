@@ -3,7 +3,7 @@ layout: post100
 title:  Nested Property Index
 categories: XAP100NET
 parent: indexing-overview.html
-weight: 100
+weight: 200
 ---
 {% summary %} {% endsummary %}
 

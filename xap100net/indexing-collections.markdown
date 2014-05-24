@@ -3,7 +3,7 @@ layout: post100
 title:  Collection Index
 categories: XAP100NET
 parent: indexing-overview.html
-weight: 200
+weight: 300
 ---
 
 An index can be defined on a Collection property (such as List). Setting such an index means that each of the Collection's items is indexed.

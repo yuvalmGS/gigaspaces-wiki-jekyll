@@ -3,7 +3,7 @@ layout: post100
 title:  Services Manager
 categories: XAP100NET
 parent: installation-overview.html
-weight: 300
+weight: 500
 ---
 
 
