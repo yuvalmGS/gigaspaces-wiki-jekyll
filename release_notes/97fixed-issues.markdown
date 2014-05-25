@@ -76,7 +76,30 @@ Below is a list of issues that have been fixed in GigaSpaces 9.7.X.
 | GS-11489 | Wrong display of Machine SLA Enforcment event | 9.7.0 |  | All |
 | GS-11490 | GSC failed to create a JMX server and listen on a port | 9.7.0 | 8496 | All |
 | GS-11491 | Space shutdown may hang while closing Background fifo thread on rare scenarios | 9.6.2 patch2, 9.7.0 | 8451 | All |
+| GS-11505 | StandaloneProcessingUnitContainerProvider#close() raise Interruption that cause problems in unit tests | 9.7.1, 1.0.0 | 8518 | Java |
 | GS-11522 | Durable notification do not arrive when there is a gateway configured | 9.7.0 |  | Java, .Net|
 | GS-11527 | 'DiscoveredMachineProvisioningConfigurer' is missing the 'reservedMemoryCapacityPerManagementMachine' method | 9.7.0 |  | Java |
 | GS-11532 | NullPointerException in LeaseManager | 9.7.0 | 8555 | All |
+| GS-11536 | LRMI threads cause JVM-wide slowdown with parallel reads | 9.7.1, 10.0.0 | 8527 | Java |
 | GS-11559 | ESM - Scale undeployment is in progress, stuck in a loop caused by ExpectedMachineWithMoreMemoryException | 9.7.0 | 8586 | Java |
+| GS-11561 | Reading a POJO which contains a document using mongo EDS fails | 9.7.1, 10.0.0 |  | Java |
+| GS-11606 | Deterministic Deployment is not working on secured grid | 9.7.1, 10.0.0 | 8642 | All |
+| GS-11615 | SpaceDataSourceSplitter#initialMetadataLoad might causes NPE | 9.7.1, 10.0.0 | 8655 | All |
+| GS-11616 | ReadModifiers  missing default constructor  | 9.7.1, 10.0.0 | 8657 | Java |
+| GS-11619 | Fix  installmavenrep.bat script in windows | 9.7.1, 10.0.0 |  | All |
+| GS-11631 | PrimaryZoneController.afterPropertiesSet() throws NullPointerException | 9.7.1, 10.0.0 |  | Java |
+| GS-11633 | Add Multi thread support to XAResourceImpl | 9.7.1, 10.0.0 | 8698 | Java |
+| GS-11640 | Installmavenrep.bat fails because POMGenerator doesn't generate mongo-datasource pom | 9.7.1, 10.0.0 |  | Java |
+| GS-11651 | Web-ui: NumberFormatException thrown while parsing cpu values for specific Local values | 9.7.1, 10.0.0 |  | Java |
+| GS-11652 | Calendar instance is not formatted nicely in GS-ui query results | 9.7.1, 10.0.0 |  | Java |
+| GS-11661 | Using enums with Linq throws an exception | 9.7.1, 10.0.0 |  | .Net |
+| GS-11664 | AccessDeniedException in write only operation  - when using role including WRITE permission | 9.7.1, 10.0.0 | 8757 | All |
+| GS-11681 | Ping cli command does not work | 9.7.1, 10.0.0 |  | Java |
+| GS-11689 | Protective mode primitiveWithoutNullValue is thrown from replication | 9.7.1, 10.0.0 | 8808 | All |
+| GS-11690 | Linq expressions without where cause throw exception | 9.7.1, 10.0.0 |  | .Net |
+| GS-11704 | Queries with empty ranges IndexOutOfBoundsException | 9.7.1, 10.0.0 | 8894 | All |
+| GS-11717 | XAP benchmark fails on primitiveWithoutNullValue protective mode | 9.7.1, 10.0.0 |  | All |
+| GS-11739 | Benchmark Write using batches writes actually only part of expected objects | 9.7.1, 10.0.0 |  | Java |
+
+
+

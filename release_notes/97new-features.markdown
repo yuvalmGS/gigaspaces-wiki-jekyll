@@ -74,3 +74,15 @@ Below is a list of new features and improvements in GigaSpaces 9.7.X.
 | GS-11526 | Provide capability of automatic thread dump generation upon LRMI critical resource level warning | 9.7.0 | | | All |
 | GS-11539 | Web-ui should expose reconnect option | 9.7.0 | | | Java |
 | GS-11544 | Modify XAP.Net assemblyVersion to Major.Minor format | 9.7.0 | | | .Net |
+| GS-11596 | Log severe messages when warning persists | 9.7.1 | 8622 | | All |
+| GS-11612 | Deploy process optimization | 9.7.1 | | | Java, .NET |
+| GS-11621 | Bad linux scripts for the benchmark cli tool | 9.7.1 | | | Java |
+| GS-11666 | Pojo to Document Conversion should not convert Class,URI,Locale types | 9.7.1 | | | Java |
+| GS-11691 | Create a setting to skip authentication for transaction commit/abort | 9.7.1 | 8765 | | All |
+| GS-11693 | Enhance nHibernate EDS to support overriding initial load | 9.7.1 | | | .Net |
+| GS-11696 | Support custom initial Load query for mongo data source | 9.7.1 | | | Java |
+| GS-11702 | Added support for configuring a persistent space without custom code in XAP.NET | 9.7.1 | | | .Net |
+| GS-11706 | Added static ProcessingUnitContainer.Current to provide cluster info to any pu component | 9.7.1 | | | .Net |
+| GS-11710 | Simplify processing unit configuration in XAP.NET | 9.7.1 | | | .Net |
+| GS-11731 | Simplify mirror configuration in XAP.NET | 9.7.1 | | | .Net |
+| GS-11737 | Enhance XAP.NET processing unit to support properties replacement | 9.7.1 | | | .Net |

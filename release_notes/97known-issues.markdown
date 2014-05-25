@@ -48,4 +48,7 @@ Below is a list of known issues in GigaSpaces 9.7.X.
 | GS-11619 | Fix installation scripts in windows | | 9.7.0 | | All |
 | GS-11621 | Bad linux scripts for the benchmark cli tool | | 9.7.0 | | Java |
 | GS-11640 | Installmavenrep.bat fails because POMGenerator doesn't generate mongo-datasource pom | | 9.7.0 | | Java |
-| GS-11664 | AccessDeniedException in write only operation - when using role including WRITE permission | 8757 | 9.7.0 | | all |
+| GS-11664 | AccessDeniedException in write only operation - when using role including WRITE permission | 8757 | 9.7.0 | | All |
+| GS-11679 | Admin statistics history size overridden with default value |  | 9.7.1 | | Java |
+| GS-11703 | XAP.NET yields CLSCompliant warnings | 8903 | 9.7.1 | | .NET |
+| GS-11736 | Can't see space in gs-ui when running gsInstance.bat when using jdk 7u55 |  | 9.7.1 | | Java |
