@@ -70,7 +70,7 @@ SecurityManager securityManager = SecurityFactory.createSecurityManager(security
 DirectoryManager directoryManager = securityManager.createDirectoryManager(new User("admin", "admin"));
 {% endhighlight %}
 
-We can now add a new user using the [UserManager](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/security/UserManager.html) API. "Alice" will be added with `READ` authority for class "eg.ClassA".
+We can now add a new user using the [UserManager](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/security/directory/UserManager.html) API. "Alice" will be added with `READ` authority for class "eg.ClassA".
 
 {% highlight java %}
 UserManager userManager = directoryManager.getUserManager();
@@ -80,7 +80,7 @@ userManager.createUser(new User("alice", "password",
     ));
 {% endhighlight %}
 
-A role can be declared using the [RoleManager](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/security/RoleManager.html) API. The "author" role will be added with `READ, WRITE, TAKE` authorities for class "eg.ClassA".
+A role can be declared using the [RoleManager](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/security/directory/RoleManager.html) API. The "author" role will be added with `READ, WRITE, TAKE` authorities for class "eg.ClassA".
 
 {% highlight java %}
 RoleManager roleManager = directoryManager.getRoleManager();

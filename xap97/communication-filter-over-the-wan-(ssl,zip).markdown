@@ -15,7 +15,7 @@ Filtering network communication across the WAN are done for two main reasons:
 1. Compressing the network traffic between the sites.
 1. Securing the network using SSL in case the communication between the sites is going over open WAN (not via VPN or other underlying encryption mechanisms).
 
-For both cases there are two built-in [LRMI](./tuning-communication-protocol.html) [Filters](./securing-the-transport-layer-(using-ssl).html).
+For both cases there are two built-in [LRMI]({%currentadmurl%}/tuning-communication-protocol.html) [Filters](./securing-the-transport-layer-(using-ssl).html).
 
 # Selecting the Filter
 
