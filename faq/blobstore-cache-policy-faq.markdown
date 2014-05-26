@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  Flash drive Storage - MemoryXtend for SSD
+title:  Flash Drive Storage - MemoryXtend for SSD FAQ
 categories: FAQ
 parent: none
 weight: 400
