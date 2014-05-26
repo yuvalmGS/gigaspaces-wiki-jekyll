@@ -110,7 +110,7 @@ In order to use your license on the cloud environment you should perform the fol
 
 ### Testing on a `localcloud`
 
-XAP 9.0 comes with a cloud emulator called [`localcloud`](http://www.cloudifysource.org/guide/bootstrapping/bootstrapping_localcloud) that allows you to test the recipe execution
+XAP 9.0 comes with a cloud emulator called [`localcloud`](http://getcloudify.org/guide/{%latestcloudifyrelease%}/bootstrapping/bootstrapping_localcloud) that allows you to test the recipe execution
 
 To start the localcloud environment:
 
@@ -124,12 +124,12 @@ install-application c:/rt-app
 {% endhighlight %}
 
 You can track the progress in the shell and in the Web Management Console at localhost:8099.
-For more information refer to [the cloudify application deployment guide](http://www.cloudifysource.org/guide/deploying/deploying_apps).
+For more information refer to [the cloudify application deployment guide](http://getcloudify.org/guide/{%latestcloudifyrelease%}/deploying/deploying_apps.html).
 
 ### Running on Any Cloud
 
 To deploy your recipe to one a cloud environment, follow the below steps:
 
-- Obtain your cloud's credentials and [configure the cloud driver](http://www.cloudifysource.org/guide/setup/post_installation_configuration.html))
-- Bootstrap the cloud using [`bootstrap-cloud` command](http://www.cloudifysource.org/guide/bootstrapping/bootstrapping_process).
-- [Install the application](http://www.cloudifysource.org/guide/deploying/deploying_apps) using the `install-application` command, as described in the previous section.
+- Obtain your cloud's credentials and [configure the cloud driver](http://getcloudify.org/guide/{%latestcloudifyrelease%}/setup/post_installation_configuration.html))
+- Bootstrap the cloud using [`bootstrap-cloud` command](http://getcloudify.org/guide/{%latestcloudifyrelease%}/bootstrapping/bootstrapping_process.html).
+- [Install the application](http://getcloudify.org/guide/{%latestcloudifyrelease%}/deploying/deploying_apps.html) using the `install-application` command, as described in the previous section.

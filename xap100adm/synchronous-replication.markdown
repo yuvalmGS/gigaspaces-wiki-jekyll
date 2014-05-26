@@ -110,8 +110,10 @@ Prefix the property with 'cluster-config.groups.group.repl-policy.async-replicat
 
 When performing batch operations (`writeMultiple`, `takeMultiple`, `clear`), using a synchronous replication mode , the actual data (space objects/UID) is replicated to the target spaces in batches during the single space operation. This is done in order to avoid to issues, one of them is to run out of memory due to all the data that is generated in the redolog for the replication or cause the redolog capacity limitation being breached. For example, when performing the take (clear) operation, you don't necessarily know how many space objects exist in the space, and all of these need to be removed. Therefore, these operations are split into several chunks, thus providing better memory usage, stability, and scalability.
 
-Splitting large batches into chunks is defined using the `cluster-config.groups.group.repl-policy.sync-replication.multiple-opers-chunk-size` parameter. This parameter default value is 10000. This means that by default the operation is performed using chunks of 10000 objects each. To split the replication activity into smaller chunks, you can do so by overriding this property, for instance, using the pu.xml
+Splitting large batches into chunks is defined using the `cluster-config.groups.group.repl-policy.sync-replication.multiple-opers-chunk-size` parameter. This parameter default value is 10000. This means that by default the operation is performed using chunks of 10000 objects each. To split the replication activity into smaller chunks, you can do so by overriding this property, for instance, using the pu configuration file.
 
+{%accordion id=acc1%}
+{%accord title=Java ... pu.xml | parent=acc1%}
 {% highlight xml %}
 <os-core:space id="space" url="/./mySpace">
     <os-core:properties>
@@ -121,6 +123,24 @@ Splitting large batches into chunks is defined using the `cluster-config.groups.
     </os-core:properties>
 </os-core:space>
 {% endhighlight %}
+{%endaccord%}
+
+{%accord title=.NET ... pu.config | parent=acc1%}
+{% highlight xml %}
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+   <configSections>
+      <section name="GigaSpaces" type="GigaSpaces.Core.Configuration.GigaSpacesCoreConfiguration, GigaSpaces.Core"/>
+   </configSections>
+   <GigaSpaces>
+      <SystemProperties>
+         <add Name="cluster-config.groups.group.repl-policy.sync-replication.multiple-opers-chunk-size" Value="5000"/>
+      </SystemProperties>
+   </GigaSpaces>
+</configuration>
+{% endhighlight %}
+{%endaccord%}
+{%endaccordion%}
 
 {% note %}
 Splitting large batches into smaller chunks is not supported for transactional operations.
