@@ -14,7 +14,7 @@ weight: 400
 
 ![flash-imdg.png](/attachment_files/subject/flash-imdg.png)
 {% endcolumn %}
-XAP 10 introduces a new Storage interface allowing Blob/Block/external type storage to act as a natural memory space for the IMDG. This storage model allows the IMDG to interact with the Storage interface as an integral data space together with the RAM/Heap based memory space.
+XAP 10 introduces a new Storage interface that allows an external storage mechanism (one that does not reside on the JVM heap) to act as storage medium for the data in the IMDG. This storage model allows the IMDG to interact with the storage medium for storing IMDG data.
 
 {% column width=90% %}
 
@@ -22,38 +22,35 @@ XAP 10 introduces a new Storage interface allowing Blob/Block/external type stor
 {% endsection %}
 
 
-This storage model allows you to leverage high capacity storage such as Enterprise flash drives (SSD) as the IMDG memory storage area instead of the IMDG container Process (Heap). This storage model leveraging the RAM (Heap) to store indexes and SSD for the raw data in a serialized form.  
+This storage model allows you to leverage high capacity storage mediums such as enterprise flash drives (SSD) or the RAM capacity external to heap of the JVM process that contains the IMDG. This storage model leverages the JVM heap to store indexes and the external storage medium to store the raw data in a serialized form. This page referes to the SSD based implementation, future implementations such as RAM based off-heap storage will be added in one the next XAP releases. 
 
 ![blobstore1.jpg](/attachment_files/blobstore1.jpg)
 
-Heap (RAM) used also as a first level cache for frequently used data. Read operations (ById, Template or SQL based) for the same data will be first loaded from the SSD and later will be served from the RAM based cache.
+The JVM heap is used also as a first level cache for frequently used data. Repetitive read operations (by Id, by template or using a SQL query) for the same data will be loaded from the external storage medium upon the first reqeust and later be served from the JVM heap based cache.
 
-## How the Storage Model is different than the Persistence Model?
-Unlike the traditional Persistence model where the IMDG backend store is usually a database with relatively slow response time located in a central location , the Storage interface assumes very fast access time for write and read operations where each IMDG instance accessing a local dedicated store via key/value interface. Each IMDG primary and backup instance across the grid is interacting with its dedicated storage drive independently in an atomic manner. 
+## How Is This Storage Model Different from the Traditional XAP Persistence Model?
+Unlike the traditional XAP persistence model, where the IMDG backing store is usually a database with relatively slow response time, located in a central location, the storage interface assumes very fast access for write and read operations, and a local, dedicated data store that supports a key/value interface. Each IMDG primary and backup instance across the grid is interacting with its dedicated storage medium (in our case SSD drive) independently in an atomic manner. 
 
-When running a traditional persistence configuration, the IMDG front-end the database, acting as a transactional cache storing a subset of the data. In this configuration data is loaded in a lazy manner to the IMDG as the assumption is RAM capacity is limited.
+When running a traditional persistence configuration, the IMDG serves as a front-end to the database, and is acting as a transactional cache storing a subset of the data. In this configuration data is loaded in a lazy manner to the IMDG with the assumption that the heap capacity is smaller than the entire data set.
 
-With the Storage Model the entire data is kept on SSD. The assumption is the SSD capacity across the grid is large enough to accommodate the entire application data set.
 
-## BlobStore Target Applications
-
-Real time analytics applications , Big Data applications , Customer 360 degree information applications would find the XAP Solid-State Drive flash-based IMDG Storage very useful. As these applications consume relatively large data capacity and have relatively fast data access requirements, reducing database dependency and leveraging distributed In-memory storage fabric to improve their performance, scalability, reliability and overall cost is important.
+In the enternal storage medium mode, the entire data data set is kept on the external SSD drive. The assumption is the SSD capacity across the grid is large enough to accommodate for the entire data set of the application.
 
 ## Reduced Garbage Collection Activity
 
-Since the IMDG raw data is stored outside the Heap (SSD) the Garbage collector would not need to manage this memory. This is reducing pauses related to garbage collection. The SSD BlobStore increasing the amount of data an IMDG node can manage to the local SSD capacity (several TB) rather the maximum heap size (hundreds of GB). This allows you to manage hundreds of TB just with few IMDG nodes.
+Since the IMDG raw data is stored outside of the JVM heap (the default implementation is using an SSD device) the garbage collector does not need to manage this memory. This reduces the garbage collection pauses. This in turn allows the IMDG to manage significantly larger data sets using the SSD drive's capacity (typically several TBs of data) and not be constrained by the size of the JVM heap. When using multiple IMSG nodes, a single data grid cluster can easily manage a few tens of TBs.
 
-## All SSD Vendors Supported
+## Supported SSD Devices
 
-All Enterprise flash drives are supported. SanDisk, Fusion-IO, Intel® SSD , etc are supported with the IMDG Storage technology. Central SSD (RAID) devices such as Tegile, Cisco Whiptail , DSSD , Violin Memory are also supported.
+All Enterprise flash drives are supported. SanDisk, Fusion-IO, Intel® SSD , etc are supported with the IMDG storage technology. Central SSD (RAID) devices such as Tegile, Cisco Whiptail, DSSD, and Violin Memory are also supported.
 
-## ALL APIs Supported
+## Supported XAP APIs
 
-All XAP APIs are supported with the BlobStore configuration. By default Space API (POJO and Document), JDBC API , JPA API , JMS API , Map API, MemCache API data items are BlobStore enabled. If the data grid is Blobstore enabled its data no matter the API used will be stored within the SSD.
+All XAP APIs are supported with the BlobStore configuration. This includes the Space API (POJO and Document), JDBC API, JPA API, JMS API, and Map API. 
 
+## How It Works
 
-## How it Works?
-XAP is using [SanDisk Flash Data Fabric (FDF)](http://www.sandisk.com/) which enables direct flash access for In-Memory performance. It eliminate any other storage interface, when writing an object to the space , its indexed data maintained on Heap where the Storage interface implementing using the FDF libraries to interact with the underlying flash drive. 
+XAP is using [SanDisk Flash Data Fabric (FDF)](http://www.sandisk.com/) library, which uses direct flash access. It circumvents OS level storage interfaces when writing an object to the space, its indexed data maintained on Heap where the Storage interface implementing using the FDF libraries to interact with the underlying flash drive. 
 
 ![blobstore2.jpg](/attachment_files/blobstore2.jpg)
 
