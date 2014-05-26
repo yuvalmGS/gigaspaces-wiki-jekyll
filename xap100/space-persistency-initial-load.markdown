@@ -81,49 +81,65 @@ public class SpaceDataSourceInitialLoadExample extends DefaultHibernateSpaceData
 
 # Controlling the Initial Load
 
-Additional level of customization can be done by loading only the relevant data into each partition.
+Since each space partition stores a subset of the data , based on the entry routing field hash code value, you need to load the data from the database in the same manner the client load balance the data when interacting with the different partitions.
 
-In this case you should use the `partition ID` and `total amount of partitions` parameters to form the correct database query. The relevant table column mapped to the routing field should have `numeric` type to allow simple calculation of the matching rows that need to be retrieved from the database and loaded into the partition. This means your database query needs to "slice" the correct data set from the database tables based on the `partition ID`.
-`Partition ID` retrieval is explained in the [Obtaining Cluster Information](./obtaining-cluster-information.html) page. For example:
+It is best to use a database query using the `MOD`, `number of partitions` and the `partition ID` to perform an identical action to that which is performed by a space client when performing write/read/take operations with partitioned space to route the operation into the correct partition.
+
+Additional levels of customization can be achieved for loading only the relevant data into each partition.
+
+## Custom Initial Load Queries
+
+You can specify custom initial load queries for entry types, by writing a method that may receive an instance of `ClusterInfo` (or no parameter) and returns the 'where' clause of the query. You can place this method in any class, so long as it is annotated with `SpaceInitialLoadQuery`, a new annotation that holds the type for which the query applies. If the method is included inside a class that is marked with `SpaceClass`, there is no need to specify the query type. You can also write more than one such method in any class, as long as there is no duplicate query (globally) for the same type. For example:
 
 {% highlight java %}
-import org.openspaces.persistency.hibernate.DefaultHibernateSpaceDataSource;
-import org.openspaces.persistency.hibernate.iterator.DefaultScrollableDataIterator;
-import com.gigaspaces.datasource.DataIterator;
+package com.example.lorem.ipsum;
 
-public class SpaceDataSourceInitialLoadExample extends DefaultHibernateSpaceDataSource {
-	@ClusterInfoContext
-	private ClusterInfo clusterInfo;
+import com.gigaspaces.annotation.pojo.SpaceInitialLoadQuery;
 
-	@Override
-	public DataIterator initialLoad() {
-		String hquery;
-		if (clusterInfo.getNumberOfInstances() > 1) {
-			hquery = "FROM com.test.domain.Person WHERE MOD(department,"
-					+ clusterInfo.getNumberOfInstances() + ") = " + (clusterInfo.getInstanceId() - 1);
-		} else {
-			hquery = "from com.test.domain.Person ";
-		}
-
-		DataIterator[] iterators = new DataIterator[1];
-		int iteratorCounter = 0;
-		int fetchSize = 100;
-		int from = -1;
-		int size = -1;
-		iterators[iteratorCounter++] = new DefaultScrollableDataIterator(hquery, getSessionFactory() , fetchSize, from, size);
-		return createInitialLoadIterator(iterators);
-	}
+public class InitialLoadQueryExample {
+    @SpaceInitialLoadQuery(type="com.example.domain.MyClass")
+    public String foo(ClusterInfo clusterInfo) {
+        Integer num = clusterInfo.getNumberOfInstances(), instanceId = clusterInfo.getInstanceId();
+        return "propertyA > 50 AND routingProperty % " + num + " = " + instanceId;
+    }
 }
 {% endhighlight %}
+
+When the initial load process begins, the system will search for these methods by recursively scanning certain base packages in the classpath, which you should specify as the value of the `SpaceDataSource` property `initialLoadQueryScanningBasePackages'. An empty list means no scan.
+
+## Initial Load Entries
+
+The default behaviour of the system is to search for any available entry metadata and load the entry as a whole, discarding of unneeded data afterwards. To avoid loading all entries, you can specify a list of initial load entries when creating the `SpaceDataSource`, by setting the property `initialLoadEntries` with a list of fully-qualified type names.
+
+The system will try, by default, to identify the routing field for each entry type and to construct a simple partition-specific initial load query for this type. To suppress this augmentation of the initial load entries, set the `augmentInitialLoadEntries` property of the `SpaceDataSource` to `false`.
 
 {% note %}
 Make sure the routing field (i.e. department) will be an Integer type.
 {%endnote%}
 
-Since each space partition stores a subset of the data , based on the entry routing field hash code value , you need to load the data from the database in the same manner the client load balance the data when interacting with the different partitions.
+After all initial load queries have been gathered, these are processed along with the initial load entries to compile a compound `DataIterator`. As written above, you can override all this logic by writing your own `initialLoad` method. Bear in mind that all `SpaceDataSource` objects are `ClusterInfoAware`, therefore you have access to the protected `ClusterInfo` field.
 
-The database query using the `MOD`, `department`, `number of partitions` and the `partition ID` to perform identical activity performed by a space client when performing write/read/take operations with partitioned space to rout the operation into the correct partition.
+The following example XML snippet summarizes your options of controlling the initial load process.
 
+{% highlight xml %}
+<bean id="hibernateSpaceDataSource" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceDataSourceFactoryBean">
+    <property name="sessionFactory" ref="sessionFactory"/>
+    <property name="initialLoadEntries">
+        <!-- If absent or empty, the system will search for all available entry metadata -->
+        <list>
+            <value>com.example.domain.MyEntry</value>
+        </list>
+    </property>
+    <!-- switch for creating partition-specific queries for entries -->
+    <property name="augmentInitialLoadEntries" value="false"/>
+    <property name="initialLoadQueryScanningBasePackages">
+        <!-- If absent or empty, the system will not search for initial load query methods -->
+        <list>
+            <value>com.example.domain</value>
+        </list>
+    </property>
+</bean>
+{% endhighlight %}
 
 # Multi-Parallel Initial Load
 
