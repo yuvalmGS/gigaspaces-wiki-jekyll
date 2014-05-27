@@ -96,7 +96,7 @@ application {
 }
 {% endhighlight %}
 
-You can find a working example that includes a stateful and a stateless PU [here](https://github.com/Gigaspaces/rt-analytics/tree/master/rt_app).
+You can find a working example that includes a stateful and a stateless PU [here](https://github.com/CloudifySource/cloudify-recipes/tree/master/apps/streaming-bigdata).
 
 # Deploying Your Recipe
 
