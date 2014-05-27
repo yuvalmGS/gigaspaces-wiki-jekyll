@@ -145,7 +145,7 @@ Time based Parameters Units:
 - The **default-timeout** parameter is specified in seconds
 - Other parameters such as the commit and abort timeout, lookup-timeout, and others are specified in millisecond
 
-When using Spring declarative transaction management, a transaction timeout can be set on the transaction scope. For more details, see [above](#spring).
+When using Spring declarative transaction management, a transaction timeout can be set on the transaction scope. For more details, see [below](#spring-transactiondefinition-mapping-to-gigaspaces-readmodifiers).
 {%endinfo%}
 
 When using Jini based transactions, a timeout value can be set for both the commit and abort operations. This values can also be set on the transaction manager.
@@ -248,7 +248,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space).transactionManager(ptm).gig
 {% endinittab %}
 
 {% info %}
-When using Spring declarative transaction management, a transaction timeout can be set on the transaction scope. For more details, see [above](#spring).
+When using Spring declarative transaction management, a transaction timeout can be set on the transaction scope. For more details, see [below](#spring-transactiondefinition-mapping-to-gigaspaces-readmodifiers).
 {%endinfo%}
 
 When using Jini based transactions, a timeout value can be set for both the commit and abort operations. This values can also be set on the transaction manager.
