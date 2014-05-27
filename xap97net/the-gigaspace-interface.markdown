@@ -38,10 +38,34 @@ A client communicating with a an embedded space performs all its operation via l
 Here is an example how to create an embedded space. The `GigaSpacesFactory` is used to configure the space url:
 
 
+
+{%inittab%}
+{%tabcontent Code%}
 {% highlight csharp %}
 // Create the ISpaceProxy
 ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace("/./space");
 {% endhighlight %}
+{%endtabcontent%}
+{%tabcontent XML%}
+{% highlight xml %}
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <configSections>
+    <section name="GigaSpaces.XAP" type="GigaSpaces.XAP.Configuration.GigaSpacesXAPConfiguration, GigaSpaces.Core"/>
+  </configSections>
+  <GigaSpaces.XAP>
+		<ProcessingUnitContainer Type="GigaSpaces.XAP.ProcessingUnit.Containers.BasicContainer.BasicProcessingUnitContainer, GigaSpaces.Core">
+			<BasicContainer>
+				<SpaceProxies>
+					<add Name="mySpace" Url="/./space"/>
+				</SpaceProxies>
+			</BasicContainer>
+		</ProcessingUnitContainer>
+  </GigaSpaces.XAP>
+</configuration>
+{%endhighlight%}
+{%endtabcontent%}
+{%endinittab%}
 
 
 The Embedded space can be used in a distributed architecture such as the replicated or partitioned clustered space:
@@ -64,12 +88,33 @@ A client communicating with a remote space performs all its operation via a remo
 
 Here is an example how a client application can create a proxy to interacting with a remote space:
 
-
+{%inittab%}
+{%tabcontent Code%}
 {% highlight csharp %}
 // Create the ISpaceProxy
-ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace("jini://*/*/space");
+ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace("jini://*/*/mySpace");
 {% endhighlight %}
-
+{%endtabcontent%}
+{%tabcontent XML%}
+{% highlight xml %}
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <configSections>
+    <section name="GigaSpaces.XAP" type="GigaSpaces.XAP.Configuration.GigaSpacesXAPConfiguration, GigaSpaces.Core"/>
+  </configSections>
+  <GigaSpaces.XAP>
+		<ProcessingUnitContainer Type="GigaSpaces.XAP.ProcessingUnit.Containers.BasicContainer.BasicProcessingUnitContainer, GigaSpaces.Core">
+			<BasicContainer>
+				<SpaceProxies>
+					<add Name="mySpace" Url="jini:/*/*/space"/>
+				</SpaceProxies>
+			</BasicContainer>
+		</ProcessingUnitContainer>
+  </GigaSpaces.XAP>
+</configuration>
+{%endhighlight%}
+{%endtabcontent%}
+{%endinittab%}
 
 {%info%}
 A full description of the Space URL Properties can be found [here.](./the-space-configuration.html)
@@ -137,21 +182,33 @@ IReadOnlySpaceProxy localView = GigaSpacesFactory.CreateLocalView(spaceProxy, vi
 A secured space should be configured with a security context so that it can be accessed (when connecting to it remotely). Here is an example of how this can be configured:
 
 
+{%inittab%}
+{% tabcontent Code%}
 {% highlight csharp %}
-
  GigaSpacesFactory.FindSpace("/./mySpace", new SecurityContext("username", "password"));
-
 {% endhighlight %}
+{%endtabcontent%}
+{%tabcontent XML%}
+{%highlight xml%}
+<SpaceProxies>
+    <add Name="MySpaceWithCustom" Url="/./mySpaceWithSecurity">
+        <Properties>
+            <add Name=" security.username" Value="username"/>
+            <add Name=" security.password" Value="password"/>
+        </Properties>
+    </add>
+</SpaceProxies>
+{%endhighlight%}
+{%endtabcontent%}
+{%endinittab%}
+
+
+The grid components are secured using the Security Administration.
 
 
 
+{%learn %}{%currentjavaurl%}/security-administration.html{%endlearn %}
 
-
-It is possible to configure the space to be secured using deploy time properties (bean level properties), without declaring the security element. The `security.username` and `security.password` can be provided, and the spaces defined within the processing unit are automatically secured.
-
-{%comment%}
-{%learn %}./security.html{%endlearn %}
-{%endcomment%}
 
 
 

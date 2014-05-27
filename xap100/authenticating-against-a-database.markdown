@@ -6,10 +6,10 @@ parent: spring-security-bridge.html
 weight: 300
 ---
 
-{% compositionsetup %}
-{% summary %}Storing user details in a relational database using DaoAuthenticationProvider{% endsummary %}
 
-# Introduction
+{% summary %} {% endsummary %}
+
+
 
 Spring's Security `DaoAuthenticationProvider` is a simple authentication provider that uses a fData Access Object (DAO) to retrieve user information from a relational database. It leverages a `UserDetailsService` (as a DAO) in order to lookup the username, password and `GrantedAuthority` s. It authenticates the user simply by comparing the password submitted in a `UsernamePasswordAuthenticationToken`  against the one loaded by the `UserDetailsService`.
 

@@ -6,10 +6,10 @@ parent: spring-security-bridge.html
 weight: 400
 ---
 
-{% compositionsetup %}
-{% summary %}Using LDAP (Lightweight Directory Access Protocol) with Spring Security{% endsummary %}
 
-# Introduction
+{% summary %} {% endsummary %}
+
+
 
 LDAP is often used by organizations as a central repository for user information and as an authentication service. It can also be used to store the role information for application users.
 

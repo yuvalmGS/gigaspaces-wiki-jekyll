@@ -9,7 +9,7 @@ weight: 100
 
 {% summary %}Customize authentication to meet your application requirements{% endsummary %}
 
-# Overview
+
 
 There are three actors in the authentication life cycle:
 

@@ -54,7 +54,7 @@ For a standalone space, the default Space security configuration file is `<Space
 
 #### Configure using a System property
 
-An alternative to the +component's+ security property file, is the System Property override.
+An alternative to the component's security property file, is the System Property override.
 
 {% highlight java %}
 -Dcom.gs.security.properties-file = my-security.properties

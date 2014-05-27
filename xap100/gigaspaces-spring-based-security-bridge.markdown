@@ -6,11 +6,11 @@ parent: spring-security-bridge.html
 weight: 200
 ---
 
-{% compositionsetup %}
 
-{% summary %}Introducing GigaSpaces Spring-based security bridge{% endsummary %}
 
-# Introduction
+{% summary %} {% endsummary %}
+
+
 
 You may have noticed that Spring's Security `AuthenticationProvider` and `AuthenticationManager`, aren't much different from the GigaSpaces `com.gigaspaces.security.SecurityManager`. In Fact, they share a similar `authentication` method that handles authentication.
 

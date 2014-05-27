@@ -8,8 +8,6 @@ weight: 200
 
 Customize user/role management to meet your application requirements
 
-# User/Role management
-
 The `DirectoryManager` interface provides an API for managing users and roles. Implementing this interface is **optional** - and is usually the case if you have an external tool that manages it for you.
 
 From the `DirectoryManager` you can gain a `UserManager` interface and a `RoleManager` interface. Use the `UserManager` interface to create, delete, update `UserDetails` and the `RoleManager` interface to create, delete, update `RoleDetails`. This is just a logical separation - in reality you can choose how you want your users to be stored, and how you structure the one-to-many role to user relationship.
