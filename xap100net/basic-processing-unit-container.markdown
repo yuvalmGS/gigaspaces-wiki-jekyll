@@ -126,7 +126,9 @@ The container automatically detects components by scanning all the assembly (dll
 </configuration>
 {% endhighlight %}
 
-{% exclamation %} The assembly name is the actual name and not a file path, the assembly should be part of the processing unit project output directory and be placed beside the `pu.config` file.
+{% note %}
+The assembly name is the actual name and not a file path, the assembly should be part of the processing unit project output directory and be placed beside the `pu.config` file.
+{%endnote%}
 
 {% anchor services %}
 
