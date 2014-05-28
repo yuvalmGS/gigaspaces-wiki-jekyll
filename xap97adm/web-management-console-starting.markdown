@@ -59,6 +59,32 @@ gs-webui.bat
 
 Note that you can also use the `WEBUI_JAVA_OPTIONS` environment variable to set any JVM parameter, such as heap size (defaults to `-Xmx512m`) and other JVM settings.
 
+In order to define user name login field as mandatory use `com.gigaspaces.webui.username.mandatory` system property. Here is an example on how it's done:
+
+{% inittab starting-stanalone|top %}
+{% tabcontent Linux %}
+
+{% highlight console %}
+
+#Specify user name field as mandatory
+export WEBUI_JAVA_OPTIONS=-Dcom.gigaspaces.webui.username.mandatory=true
+./gs-webui.sh
+{% endhighlight %}
+
+{% endtabcontent %}
+{% tabcontent Windows %}
+
+{% highlight console %}
+
+#Specify user name field as mandatory
+set WEBUI_JAVA_OPTIONS=-Dcom.gigaspaces.webui.username.mandatory=true
+gs-webui.bat
+{% endhighlight %}
+
+{% endtabcontent %}
+{% endinittab %}
+
+
 ### Deploying the Management Console Web Application to the XAP Runtime Environment
 
 To deploy the management console web application to the XAP [Runtime Environment](./the-runtime-environment.html), you should simply point your deployment tool of choice (CLI, Admin API or the standalone Java-based UI) to the `<XAP root>/tools/gs-webui/gs-webui.war` file and deploy it.
