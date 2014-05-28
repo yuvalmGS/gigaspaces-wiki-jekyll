@@ -252,11 +252,17 @@ For more information see the [Collection Indexing](./indexing.html#Collection In
 {%endnote%}
 
 
+
+
 # Limitations
 
-{%warning%}
-The SQLQuery syntax for Nested Properties does not support the `IN` operation.
-{%endwarning%}
+{%vbar%}
+- The SQLQuery syntax for Nested Properties does not support the `IN` operation.
+- The type of the nested object must be a class - querying interfaces is not supported.
+- Nested properties' classes should be `Serializable`, otherwise the entry will not be accessible from remote clients.
+- Arrays of primitive types (int, boolean, etc.) are not supported - use the equivalent wrapper type (java.lang.Integer, java.lang.Boolean, etc.) instead.
+
+{%endvbar%}
 
 <ul class="pager">
   <li class="previous"><a href="./query-sql.html">&larr; SQLQuery</a></li>

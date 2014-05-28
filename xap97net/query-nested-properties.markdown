@@ -157,7 +157,7 @@ For more information see the [Nested Properties Indexing](./indexing.html#Nested
 The GigaSpaces SQL syntax supports a special operand `[*]`, which is sometimes referred to as the 'contains' operand. This operand is used in conjunction with collection properties to indicate that each collection item should be evaluated, and if at least one such item matches, the owner entry is considered as matched.
 
 {% info%}
-Arrays are supported as well, except for arrays of primitive types (int, boolean, etc.) which are are **not** supported - use the equivalent wrapper type (java.lang.Integer, java.lang.Boolean, etc.) instead.
+Arrays are supported as well, except for arrays of primitive types (int, bool, etc.) which are are not supported - use the equivalent nullable type (int?, bool?, etc.) instead.
 {%endinfo%}
 
 Suppose we have a type called **Dealer** with a property called **Cars** (which is a list of strings).
@@ -246,13 +246,11 @@ For more information see the [Collection Indexing](./indexing.html#Collection In
 
 # Limitations
 
-{%warning%}
-The SQLQuery syntax for Nested Properties does not support the `IN` operation.
-{%endwarning%}
+{%vbar%}
+- The SQLQuery syntax for Nested Properties does not support the `IN` operation.
+- The type of the nested object must be a class - querying interfaces is not supported.
+- Nested properties' classes should be `Serializable`, otherwise the entry will not be accessible from remote clients.
+- Arrays are supported as well, except for arrays of primitive types (int, bool, etc.) which are are not supported - use the equivalent nullable type (int?, bool?, etc.) instead.
+{%endvbar%}
 
-{%comment%}
-<ul class="pager">
-  <li class="previous"><a href="./query-sql.html">&larr; SQLQuery</a></li>
-  <li class="next"><a href="./query-user-defined-classes.html">User Defined CLasses &rarr;</a></li>
-</ul>
-{%endcomment%}
+
