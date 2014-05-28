@@ -249,6 +249,13 @@ The bigger the collection - the more memory is required to store the index at th
 For more information see the [Collection Indexing](./indexing.html#Collection Indexing) section under [Indexing](./indexing.html).
 {%endnote%}
 
+
+# Limitations
+
+{%warning%}
+The SQLQuery syntax for Nested Properties does not support the `IN` operation.
+{%endwarning%}
+
 <ul class="pager">
   <li class="previous"><a href="./query-sql.html">&larr; SQLQuery</a></li>
   <li class="next"><a href="./query-user-defined-classes.html">User Defined CLasses &rarr;</a></li>

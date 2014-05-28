@@ -231,6 +231,8 @@ The following example queries for a **Dealer** which has a **Car** whose *compan
 ![/attachment_files/nestedquery.jpg](/attachment_files/nestedquery.jpg)
 
 
+
+
 ## Indexing
 
 Collection properties can be indexed to boost performance, similar to 'regular' paths, except that each item in the collection is indexed.
@@ -248,6 +250,13 @@ Note that since the index is specified on top of the **cars** property, the `pat
 The bigger the collection - the more memory is required to store the index at the server (since each item is indexed). Use with caution!
 For more information see the [Collection Indexing](./indexing.html#Collection Indexing) section under [Indexing](./indexing.html).
 {%endnote%}
+
+
+# Limitations
+
+{%warning%}
+The SQLQuery syntax for Nested Properties does not support the `IN` operation.
+{%endwarning%}
 
 <ul class="pager">
   <li class="previous"><a href="./query-sql.html">&larr; SQLQuery</a></li>
