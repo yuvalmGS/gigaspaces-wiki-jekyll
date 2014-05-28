@@ -226,7 +226,7 @@ Markdown:
 <tr><td>{%youtube V7rbbmWo3JU | Multi Site Deployment%}</td><td>{%raw%} {%youtube V7rbbmWo3JU | Multi Site Deployment%} {%endraw%}</td></tr>
 </table>
 
-# Accordion
+# Accordion 1
 
 <table border="1" cellpadding="10">
 <colgroup><col span="1" style="width: 50%;"/><col span="1" style="width: 50%;"/></colgroup>
@@ -234,3 +234,51 @@ Markdown:
 <tr><td>{%accordion id=acc1%}{%accord title=Java | parent=acc1%}Java Code fdsfdsfdsfdsfdsfdfdfdfdsfdfdfdsfdsfdfdfdsf{%endaccord%}{%accord title=c# | parent=acc1%}c# Code{%endaccord%}{%endaccordion%}</td><td>{%raw%} {%accordion id=acc1%}{%accord title=Java | parent=acc1%}Java Code{%endaccord%}{%accord title=c# | parent=acc1%}c# Code{%endaccord%}{%endaccordion%} {%endraw%}</td></tr>
 </table>
 
+
+# Accordion 2
+
+{%accordion id=acc10%}
+
+{%accord title=Java | parent=acc10%}
+{%inittab%}
+{%tabcontent Author Entity%}
+{%highlight java%}
+class AuthorEntity
+{
+
+}
+{%endhighlight%}
+{%endtabcontent%}
+{%tabcontent Book Entity%}
+{%highlight java%}
+class BookEntity
+{
+
+}
+{%endhighlight%}
+{%endtabcontent%}
+{%endinittab%}
+{%endaccord%}
+
+{%accord title=C# | parent=acc10%}
+{%inittab%}
+{%tabcontent Author Entity%}
+{%highlight c#%}
+class AuthorEntity
+{
+
+}
+{%endhighlight%}
+{%endtabcontent%}
+{%tabcontent Book Entity%}
+{%highlight csharp%}
+class BookEntity
+{
+
+}
+{%endhighlight%}
+{%endtabcontent%}
+{%endinittab%}
+{%endaccord%}
+
+{%endaccordion%}

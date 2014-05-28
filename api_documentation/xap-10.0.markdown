@@ -31,7 +31,7 @@ parent: none
 
 #### .NET
 {%panel%}
-[.Net Documentation](http://www.gigaspaces.com/docs/dotnetdocs10.0) -- _GigaSpaces XAP.NET classes_
+[.Net Documentation](http://www.gigaspaces.com/docs/dotnetdocs10.0/) -- _GigaSpaces XAP.NET classes_
 {%endpanel%}
 
 #### Scala
