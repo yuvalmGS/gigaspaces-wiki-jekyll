@@ -38,7 +38,7 @@ To override the default port, you can either use the `com.gs.webui.port` system 
 ./gs-webui.sh -port 80
 
 #Specify port with a system property
-export WEBUI_JAVA_OPTIONS=-Dcom.gs.webui.port=80
+export WEBUI_PORT=80
 ./gs-webui.sh
 {% endhighlight %}
 
@@ -50,7 +50,7 @@ export WEBUI_JAVA_OPTIONS=-Dcom.gs.webui.port=80
 gs-webui.bat -port 80
 
 #Specify port with a system property
-set WEBUI_JAVA_OPTIONS=-Dcom.gs.webui.port=80
+set WEBUI_PORT=80
 gs-webui.bat
 {% endhighlight %}
 
@@ -67,7 +67,7 @@ In order to define user name login field as mandatory use `com.gigaspaces.webui.
 {% highlight console %}
 
 #Specify user name field as mandatory
-export WEBUI_JAVA_OPTIONS=-Dcom.gigaspaces.webui.username.mandatory=true
+export USER_NAME_MANDATORY=true
 ./gs-webui.sh
 {% endhighlight %}
 
@@ -77,7 +77,7 @@ export WEBUI_JAVA_OPTIONS=-Dcom.gigaspaces.webui.username.mandatory=true
 {% highlight console %}
 
 #Specify user name field as mandatory
-set WEBUI_JAVA_OPTIONS=-Dcom.gigaspaces.webui.username.mandatory=true
+set USER_NAME_MANDATORY=true
 gs-webui.bat
 {% endhighlight %}
 
