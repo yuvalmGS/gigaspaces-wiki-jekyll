@@ -38,7 +38,7 @@ To override the default port, you can either use the `com.gs.webui.port` system 
 ./gs-webui.sh -port 80
 
 #Specify port with a system property
-export WEBUI_JAVA_OPTIONS=-Dcom.gs.webui.port=80
+export WEBUI_PORT=80
 ./gs-webui.sh
 {% endhighlight %}
 
@@ -50,7 +50,7 @@ export WEBUI_JAVA_OPTIONS=-Dcom.gs.webui.port=80
 gs-webui.bat -port 80
 
 #Specify port with a system property
-set WEBUI_JAVA_OPTIONS=-Dcom.gs.webui.port=80
+set WEBUI_PORT=80
 gs-webui.bat
 {% endhighlight %}
 
@@ -58,6 +58,32 @@ gs-webui.bat
 {% endinittab %}
 
 Note that you can also use the `WEBUI_JAVA_OPTIONS` environment variable to set any JVM parameter, such as heap size (defaults to `-Xmx512m`) and other JVM settings.
+
+In order to define user name login field as mandatory use `com.gigaspaces.webui.username.mandatory` system property. Here is an example on how it's done:
+
+{% inittab starting-stanalone|top %}
+{% tabcontent Linux %}
+
+{% highlight console %}
+
+#Specify user name field as mandatory
+export USER_NAME_MANDATORY=true
+./gs-webui.sh
+{% endhighlight %}
+
+{% endtabcontent %}
+{% tabcontent Windows %}
+
+{% highlight console %}
+
+#Specify user name field as mandatory
+set USER_NAME_MANDATORY=true
+gs-webui.bat
+{% endhighlight %}
+
+{% endtabcontent %}
+{% endinittab %}
+
 
 ### Deploying the Management Console Web Application to the XAP Runtime Environment
 
