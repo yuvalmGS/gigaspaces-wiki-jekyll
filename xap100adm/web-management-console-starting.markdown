@@ -59,7 +59,7 @@ gs-webui.bat
 
 Note that you can also use the `WEBUI_JAVA_OPTIONS` environment variable to set any JVM parameter, such as heap size (defaults to `-Xmx512m`) and other JVM settings.
 
-In order to define user name login field as mandatory use `com.gigaspaces.webui.username.mandatory` system property. Here is an example on how it's done:
+In order to disable anonymous login, use `com.gigaspaces.webui.username.mandatory` system property. Here is an example on how it's done:
 
 {% inittab starting-stanalone|top %}
 {% tabcontent Linux %}
