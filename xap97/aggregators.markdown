@@ -105,7 +105,7 @@ import com.j_spaces.core.client.SQLQuery;
 
 public class SumAggregatorTask implements Task<Double>{
 	@TaskGigaSpace
-	GigaSpace space;
+	transient GigaSpace space;
 
 	String queryField ;
 	Integer minValue ;
