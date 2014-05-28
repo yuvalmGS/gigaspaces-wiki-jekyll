@@ -262,6 +262,13 @@ IMG200.png
 {% gist 1027674 %}
 
 
+{% inittab %}
+{% tabcontent Java %}
+ This is tab Foo {% endtabcontent %}
+{% tabcontent C# %}
+This is tab C# {% endtabcontent %}
+{% endinittab %}
+
 
 {%comment%}
 ### Platform Configuration
