@@ -81,7 +81,7 @@ public class SpaceDataSourceInitialLoadExample extends DefaultHibernateSpaceData
 
 # Controlling the Initial Load
 
-Since each space partition stores a subset of the data , based on the entry routing field hash code value, you need to load the data from the database in the same manner the client load balance the data when interacting with the different partitions.
+Since each space partition stores a subset of the data, based on the entry routing field hash code value, you need to load the data from the database in the same manner the client load balance the data when interacting with the different partitions.
 
 It is best to use a database query using the `MOD`, `number of partitions` and the `partition ID` to perform an identical action to that which is performed by a space client when performing write/read/take operations with partitioned space to route the operation into the correct partition.
 
@@ -89,7 +89,7 @@ Additional levels of customization can be achieved for loading only the relevant
 
 ## Custom Initial Load Queries
 
-You can specify custom initial load queries for entry types, by writing a method that may receive an instance of `ClusterInfo` (or no parameter) and returns the 'where' clause of the query. You can place this method in any class, so long as it is annotated with `SpaceInitialLoadQuery`, a new annotation that holds the type for which the query applies. If the method is included inside a class that is marked with `SpaceClass`, there is no need to specify the query type. You can also write more than one such method in any class, as long as there is no duplicate query (globally) for the same type. For example:
+You can specify custom initial load queries for entry types, by writing a method that may receive an instance of `ClusterInfo` (or no parameter) and returns the 'where' clause of the query. You can place this method in any class, as long as it is annotated with `SpaceInitialLoadQuery` that holds the type for which the query applies. If the method is included inside a class that is marked with `SpaceClass`, there is no need to specify the query type. You can also write more than one such method in a class, as long as there is no duplicate query (globally) for the same type. For example:
 
 {% highlight java %}
 package com.example.lorem.ipsum;
@@ -109,15 +109,15 @@ When the initial load process begins, the system will search for these methods b
 
 ## Initial Load Entries
 
-The default behaviour of the system is to search for any available entry metadata and load the entry as a whole, discarding of unneeded data afterwards. To avoid loading all entries, you can specify a list of initial load entries when creating the `SpaceDataSource`, by setting the property `initialLoadEntries` with a list of fully-qualified type names.
+The default behaviour of the system is to search for any available entry metadata and load the entry as a whole, discarding of unneeded data afterwards. To avoid loading all entries, you can specify a list of initial load entries by creating the `SpaceDataSource`. Setting the property `initialLoadEntries` with a list of fully-qualified type names.
 
 The system will try, by default, to identify the routing field for each entry type and to construct a simple partition-specific initial load query for this type. To suppress this augmentation of the initial load entries, set the `augmentInitialLoadEntries` property of the `SpaceDataSource` to `false`.
 
 {% note %}
-Make sure the routing field (i.e. department) will be an Integer type.
+Make sure the routing field will be an Integer type.
 {%endnote%}
 
-After all initial load queries have been gathered, these are processed along with the initial load entries to compile a compound `DataIterator`. As written above, you can override all this logic by writing your own `initialLoad` method. Bear in mind that all `SpaceDataSource` objects are `ClusterInfoAware`, therefore you have access to the protected `ClusterInfo` field.
+After all initial load queries have been gathered, these are processed along with the initial load entries to compile a compound `DataIterator`. As described above, you can override all this logic by writing your own `initialLoad` method. Bear in mind that all `SpaceDataSource` objects are `ClusterInfoAware`, therefore you have access to the protected `ClusterInfo` field.
 
 The following example XML snippet summarizes your options of controlling the initial load process.
 
