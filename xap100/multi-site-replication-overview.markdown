@@ -1,6 +1,6 @@
 ---
 layout: post100
-title:  Multi Site Replication
+title:  Multi Site WAN Replication
 categories: XAP100
 parent: none
 weight: 900

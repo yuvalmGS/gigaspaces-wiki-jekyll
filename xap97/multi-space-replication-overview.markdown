@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Space Replication
+title:  Multi Site LAN Replication
 categories: XAP97
 parent: none
 weight: 800

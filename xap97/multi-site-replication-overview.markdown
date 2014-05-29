@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Multi Site Replication
+title:  Multi Site WAN Replication
 categories: XAP97
 parent: none
 weight: 1000
