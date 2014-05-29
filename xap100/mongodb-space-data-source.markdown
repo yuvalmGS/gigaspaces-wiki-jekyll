@@ -156,8 +156,6 @@ Before deploying your Processing Unit, please do the following:
 ### `MongoSpaceDataSource` Properties
 
 {: .table .table-bordered}
-
-
 |Property|Description|Default|
 |:-------|:----------|:------|
 |mongoClientConnector|A configured `com.gigaspaces.persistency.MongoClientConnector` bean. Must be configured| | 

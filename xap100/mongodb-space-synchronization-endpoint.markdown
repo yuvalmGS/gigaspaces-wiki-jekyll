@@ -148,7 +148,6 @@ Before deploying your Processing Unit, please do the following:
 ## `MongoSpaceSynchronizationEndpoint` Properties
 
 {: .table .table-bordered}
-
 |Property|Description|
 |:-------|:----------|
 |client|A configured com.gigaspaces.persistency.MongoClientConnector bean. Must be configured.| 
