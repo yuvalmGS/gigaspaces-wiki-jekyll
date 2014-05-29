@@ -20,34 +20,45 @@ The [Archive Container](./archive-container.html) can be configured to work agai
 
 #### Library dependencies
 
-The MongoDB Archive Operation Handler uses the [MongoDB driver](http://www.allanbank.com/mongodb-async-driver/index.html) for communicating with the MongoDB cluster.
+The MongoDB Archive Operation Handler uses the [MongoDB driver](http://docs.mongodb.org/ecosystem/drivers/java/) for communicating with the MongoDB cluster.
 Include the following in your `pom.xml`
 
 
 {% highlight xml %}
-<dependency>
-	<groupId>org.mongodb</groupId>
-	<artifactId>mongo-java-driver</artifactId>
-	<version>2.11.2</version>
-</dependency>
 
-<dependency>
-	<groupId>com.allanbank</groupId>
-	<artifactId>mongodb-async-driver</artifactId>
-	<version>1.2.3</version>
-</dependency>
+	<!-- currently the MongoDB library is not the central maven repository --> 
+	<repositories>
+		<repository>
+			<id>org.openspaces</id>
+			<name>OpenSpaces</name>
+			<url>http://maven-repository.openspaces.org</url>
+		</repository>
+	</repositories>
 
-<dependency>
-	<groupId>org.antlr</groupId>
-	<artifactId>antlr4-runtime</artifactId>
-	<version>4.0</version>
-</dependency>
 
-<dependency>
-	<groupId>commons-pool</groupId>
-	<artifactId>commons-pool</artifactId>
-	<version>1.4</version>
-</dependency>
+	<dependencies>
+		...
+		<!-- mongodb java driver -->
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>2.11.2</version>
+		</dependency>
+
+		<dependency> 
+			<groupId>org.antlr</groupId> 
+			<artifactId>antlr4-runtime</artifactId> 
+			<version>4.0</version> 
+		</dependency> 
+
+		<dependency>
+    		<groupId>com.gigaspaces</groupId>
+	    	<artifactId>mongo-datasource</artifactId>
+    		<version>10.0.0-SNAPSHOT</version>
+		</dependency>
+		...
+	</dependencies>
+	
 {% endhighlight %}
 
 
@@ -61,10 +72,11 @@ Include the following in your `pom.xml`
 
 {% highlight xml %}
 
-<os-archive:mongo-archive-handler id="mongoArchiveHandler" 
-	giga-space="gigaSpace" 
-	config-ref="config" 
-	db="${mongodb.db}"/>
+	<os-archive:mongo-archive-handler id="mongoArchiveHandler" 
+		giga-space="gigaSpace" 
+		config-ref="config" 
+		db="${mongodb.db}"/>
+		
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -75,11 +87,12 @@ Include the following in your `pom.xml`
 
 {% highlight xml %}
 
-<bean id="mongoArchiveHandler" class="com.gigaspaces.persistency.archive.MongoArchiveOperationHandler">
-	<property name="gigaSpace" ref="gigaSpace" />
-	<property name="config" ref="config" />
-	<property name="db" value="${mongodb.db}" />
-</bean>
+	<bean id="mongoArchiveHandler" class="com.gigaspaces.persistency.archive.MongoArchiveOperationHandler">
+		<property name="gigaSpace" ref="gigaSpace" />
+		<property name="config" ref="config" />
+		<property name="db" value="${mongodb.db}" />
+	</bean>
+	
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -87,17 +100,18 @@ Include the following in your `pom.xml`
 
 {% highlight java %}
 
-ArchiveOperationHandler cassandraArchiveHandler =
-	new MongoArchiveOperationHandlerConfigurer()
-	 .gigaSpace(gigaSpace)
-	 .config(config)
-	 .db("mydb")
-	 .create();
+	ArchiveOperationHandler mongoArchiveHandler =
+		new MongoArchiveOperationHandlerConfigurer()
+		 .gigaSpace(gigaSpace)
+		 .config(config)
+		 .db("mydb")
+		 .create();
 
-// To free the resources used by the archive container make sure you close it properly.
-// A good life cycle event to place the destroy() call would be within the @PreDestroy or DisposableBean#destroy() method.
+	// To free the resources used by the archive container make sure you close it properly.
+	// A good life cycle event to place the destroy() call would be within the @PreDestroy or 	DisposableBean#destroy() method.
 
-archiveContainer.destroy();
+	archiveContainer.destroy();
+
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -106,10 +120,11 @@ archiveContainer.destroy();
 #### MongoArchiveOperationHandler Properties
 
 {: .table .table-bordered}
+
 |Property|Description|
 |:-------|:----------|
 |gigaSpace| GigaSpace reference used for type descriptors. see [Archive Container](./archive-container.html#Configuration)|
-|config | MongoClientConfiguration reference used to handle the mongodb driver configuration. see [MongoClientConfiguration](http://www.allanbank.com/mongodb-async-driver/apidocs/com/allanbank/mongodb/MongoClientConfiguration.html)|
+|config | MongoClientConfiguration reference used to handle the mongodb driver configuration. see [MongoClient](http://api.mongodb.org/java/2.11.2/com/mongodb/MongoClient.html)|
 |db | mongodb database name|
 
 
