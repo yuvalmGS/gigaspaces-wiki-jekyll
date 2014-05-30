@@ -9,55 +9,43 @@ weight: 200
 A MongoDB based implementation of the [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html). 
 
 ### Library dependencies 
-The MongoDB Space Synchronization Endpoint uses the [MongoDB Driver](http://www.allanbank.com/mongodb-async-driver/index.html) For communicating with the MongoDB cluster. 
+The MongoDB Space Synchronization Endpoint uses the [MongoDB Driver](http://docs.mongodb.org/ecosystem/drivers/java/) For communicating with the MongoDB cluster. 
 Include the following in your `pom.xml` 
 
 {% highlight xml %}
-<!-- currently the MongoDB library is not the central maven repository --> 
-<repositories>
+
+	<!-- currently the MongoDB library is not the central maven repository --> 
+	<repositories>
 		<repository>
 			<id>org.openspaces</id>
 			<name>OpenSpaces</name>
 			<url>http://maven-repository.openspaces.org</url>
 		</repository>
-
-		<repository>
-			<releases>
-				<enabled>true</enabled>
-				<updatePolicy>always</updatePolicy>
-				<checksumPolicy>warn</checksumPolicy>
-			</releases>
-			<id>allanbank</id>
-			<name>Allanbank Releases</name>
-			<url>http://www.allanbank.com/repo/</url>
-			<layout>default</layout>
-		</repository>
-</repositories>
+	</repositories>
 
 
-<!-- mongodb java driver -->
-<dependency>
-	<groupId>org.mongodb</groupId>
-	<artifactId>mongo-java-driver</artifactId>
-	<version>2.11.2</version>
-</dependency>
-<dependency>
-	<groupId>com.allanbank</groupId>
-	<artifactId>mongodb-async-driver</artifactId>
-	<version>1.2.3</version>
-</dependency>
+	<dependencies>
+		...
+		<!-- mongodb java driver -->
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>2.11.2</version>
+		</dependency>
 
-<dependeny> 
-	<groupId>org.antlr</groupId> 
-	<artifactId>antlr4-runtime</artifactId> 
-	<version>4.0</version> 
-</dependency> 
+		<dependency> 
+			<groupId>org.antlr</groupId> 
+			<artifactId>antlr4-runtime</artifactId> 
+			<version>4.0</version> 
+		</dependency> 
 
-<dependency>
-    <groupId>com.gigaspaces</groupId>
-    <artifactId>mongo-datasource</artifactId>
-    <version>9.7.0-SNAPSHOT</version>
-</dependency>
+		<dependency>
+    		<groupId>com.gigaspaces</groupId>
+	    	<artifactId>mongo-datasource</artifactId>
+    		<version>10.0.0-SNAPSHOT</version>
+		</dependency>
+		...
+	</dependencies>
 
 {% endhighlight %}
 
@@ -69,47 +57,47 @@ An example of how the MongoDB Space Synchronization Endpoint can be configured w
 {% tabcontent Spring %}
 
 {% highlight xml %}
-<?xml version="1.0" encoding="utf-8"?> 
-<beans xmlns="http://www.springframework.org/schema/beans" 
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" 
-xmlns:os-core="http://www.openspaces.org/schema/core" xmlns:os-jms="http://www.openspaces.org/schema/jms" 
-xmlns:os-events="http://www.openspaces.org/schema/events" 
-xmlns:os-remoting="http://www.openspaces.org/schema/remoting" 
-xmlns:os-sla="http://www.openspaces.org/schema/sla" xmlns:tx="http://www.springframework.org/schema/tx" 
 
-xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
-http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd 
-http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
-http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{%currentversion%}/events/openspaces-events.xsd
-http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd 
-http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{%currentversion%}/remoting/openspaces-remoting.xsd">
-
-<bean id="propertiesConfigurer" 
-class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" /> 
-
-<os-core:mirror id="mirror" url="/./mirror-service"
-	space-sync-endpoint="spaceSynchronizationEndpoint" operation-grouping="group-by-replication-bulk">
-	<os-core:source-space name="qa-space" partitions="2"
-		backups="1" />
-</os-core:mirror>
-
-<bean id="mongoClient"
-		class="com.gigaspaces.persistency.MongoClientConnectorBeanFactory">
-		<property name="db" value="${mongo.db}" />
-		<property name="config">
-			<bean class="com.allanbank.mongodb.MongoClientConfiguration">
-				<constructor-arg value="mongodb://${mongo.user}:${mongo.password}@${mongo.host}:${mongo.port}/${mongo.db}"
-					type="java.lang.String" />
-				<property name="defaultDurability" value="ACK" />
-			</bean>
-		</property>
-</bean>
-
-<bean id="spaceSynchronizationEndpoint"
-	class="com.gigaspaces.persistency.MongoSpaceSynchronizationEndpointBeanFactory">
-	<property name="mongoClientConnector" ref="mongoClient" />
-</bean> 
-</beans> 
+	<?xml version="1.0" encoding="utf-8"?> 
+	<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" 
+		xmlns:os-core="http://www.openspaces.org/schema/core" xmlns:os-jms="http://www.openspaces.org/schema/jms" 
+		xmlns:os-events="http://www.openspaces.org/schema/events" 
+		xmlns:os-remoting="http://www.openspaces.org/schema/remoting" 
+		xmlns:os-sla="http://www.openspaces.org/schema/sla" xmlns:tx="http://www.springframework.org/schema/tx" 
+		
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+		http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
+		http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{%currentversion%}/events/openspaces-events.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd 
+		http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{%currentversion%}/remoting/openspaces-remoting.xsd">
+		
+		<bean id="propertiesConfigurer" 
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" /> 
+		
+		<os-core:mirror id="mirror" url="/./mirror-service"
+			space-sync-endpoint="spaceSynchronizationEndpoint" operation-grouping="group-by-replication-bulk">
+			<os-core:source-space name="qa-space" partitions="2"
+				backups="1" />
+		</os-core:mirror>
+		
+		<bean id="mongoClient"
+			class="com.gigaspaces.persistency.MongoClientConnectorBeanFactory">
+			<property name="db" value="qadb" />
+			<property name="config">
+				<bean class="com.mongodb.MongoClient">
+					<constructor-arg value="localhost" type="java.lang.String" />
+					<constructor-arg value="27017" type="int" />
+				</bean>
+			</property>
+		</bean>
+		
+		<bean id="spaceSynchronizationEndpoint"
+			class="com.gigaspaces.persistency.MongoSpaceSynchronizationEndpointBeanFactory">
+			<property name="mongoClientConnector" ref="mongoClient" />
+		</bean> 
+	</beans> 
 
 {% endhighlight %}
 
@@ -118,27 +106,24 @@ class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" /
 
 {% highlight java %}
 
-MongoClientConfiguration config = new MongoClientConfiguration();
-
-config.addServer(host);				
-config.setDefaultDurability(Durability.ACK);
-
-MongoClientConnector client = new MongoClientConnectorConfigurer()
-		.config(config)
-		.db(dbName)
-		.create();	
-
-MongoSpaceSynchronizationEndpoint syncEndpoint = new MongoSpaceSynchronizationEndpointConfigurer() 
-		.mongoClientConnector(client) 
-		.create(); 
-
-IJSpace mirror = new UrlSpaceConfigurer("/./mirror-service") 
-.schema("mirror") 
-.spaceSynchronizationEndpoint(syncEndpoint) 
-.addProperty("space-config.mirror-service.cluster.name", "space") 
-.addProperty("space-config.mirror-service.cluster.partitions", String.valueOf(numOfPartitiones)) 
-.addProperty("space-config.mirror-service.cluster.backups-per-partition", String.valueOf(numOfBackups)) 
-.create(); 
+		MongoClient config = new MongoClient(host, port);
+		
+		MongoClientConnector client = new MongoClientConnectorConfigurer()
+				.client(config)
+				.db(dbName)
+				.create();	
+		
+		MongoSpaceSynchronizationEndpoint syncEndpoint = new MongoSpaceSynchronizationEndpointConfigurer() 
+				.mongoClientConnector(client) 
+				.create(); 
+		
+		IJSpace mirror = new UrlSpaceConfigurer("/./mirror-service") 
+		.schema("mirror") 
+		.spaceSynchronizationEndpoint(syncEndpoint) 
+		.addProperty("space-config.mirror-service.cluster.name", "space") 
+		.addProperty("space-config.mirror-service.cluster.partitions", String.valueOf(numOfPartitiones)) 
+		.addProperty("space-config.mirror-service.cluster.backups-per-partition", String.valueOf(numOfBackups)) 
+		.create();
 
 {% endhighlight %}
 
@@ -156,9 +141,7 @@ Before deploying your Processing Unit, please do the following:
 
 	- `antlr-runtime.jar` from [antlr's website](http://www.antlr.org/download.html) .
 
-	- `mongo-java-driver-2.9.3.jar` from [mongoDB's website](http://docs.mongodb.org/ecosystem/drivers/java/) .
-
-	- `mongodb-async-driver-1.2.3.jar` from [allanbank's website](http://www.allanbank.com/mongodb-async-driver/download.html) .
+	- `mongo-java-driver-2.11.2.jar` from [mongoDB's website](http://docs.mongodb.org/ecosystem/drivers/java/) .
 
 	- `guava-r08.jar` from [Guava-project's website](https://code.google.com/p/guava-libraries/wiki/Release08) . **NOTE:** you must download Guava's release 08, and extract the `guava-r08.jar` from within the `guava-r08.zip` that you have downloaded
 
