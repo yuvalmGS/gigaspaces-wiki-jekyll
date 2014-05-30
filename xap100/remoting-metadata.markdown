@@ -1,14 +1,12 @@
 ---
 layout: post100
-title:  Metadata
+title:  Metadata Summary
 categories:
-parent: space-based-remoting.html
-weight: 300
+parent: space-based-remoting-overview.html
+weight: 400
 ---
 
-{% summary %}This section explains the different remoting metadata.{% endsummary %}
-
-
+{% summary %}{% endsummary %}
 
 
 # RemotingService

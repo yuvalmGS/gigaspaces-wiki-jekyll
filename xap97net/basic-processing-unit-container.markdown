@@ -21,7 +21,6 @@ A [processing unit container](./processing-unit-container.html) is a component i
 
 The basic container simplifies the actual implementation of the processing unit by managing on its own GigaSpaces related components which are commonly used when developing application which are deployed into the grid.
 
-{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
 
 # Integrating The Container Into Your Project
 
@@ -29,7 +28,21 @@ In order to use the container as part of the processing unit project, you need a
 
 The `pu.config` file should be as follows:
 
-{% highlight xml %}
+{%inittab%}
+{%tabcontent XAP 9.7.1 %}
+{%highlight xml%}
+ <configSections>
+    <section name="GigaSpaces.XAP" type="GigaSpaces.XAP.Configuration.GigaSpacesXAPConfiguration, GigaSpaces.Core"/>
+  </configSections>
+  <GigaSpaces.XAP>
+		<ProcessingUnit>
+		</ProcessingUnit>
+  </GigaSpaces.XAP>
+</configuration>
+{%endhighlight%}
+{%endtabcontent%}
+{%tabcontent XAP 9.7.0 %}
+{%highlight xml%}
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
   <configSections>
@@ -42,6 +55,8 @@ The `pu.config` file should be as follows:
   </GigaSpaces.XAP>
 </configuration>
 {% endhighlight %}
+{%endtabcontent%}
+{%endinittab%}
 
 This configuration file specifies that the container that should be deployed is the `BasicProcessingUnitContainer`, in the same manner any other custom container implementation would have been deployed.
 
@@ -51,6 +66,26 @@ The container can create and manage the lifecycle of space proxies, and reduces 
 
 The following config file will cause the container to create and manage an embedded space proxy:
 
+
+{%inittab%}
+{%tabcontent XAP 9.7.1 %}
+{%highlight xml%}
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <configSections>
+    <section name="GigaSpaces.XAP" type="GigaSpaces.XAP.Configuration.GigaSpacesXAPConfiguration, GigaSpaces.Core"/>
+  </configSections>
+  <GigaSpaces.XAP>
+		<ProcessingUnit>
+			<SpaceProxies>
+				<add Name="mySpace" Url="/./mySpace"/>
+			</SpaceProxies>
+		</ProcessingUnit>
+  </GigaSpaces.XAP>
+</configuration>
+{%endhighlight%}
+{%endtabcontent%}
+{%tabcontent XAP 9.7.0 %}
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
@@ -70,6 +105,8 @@ The following config file will cause the container to create and manage an embed
   </GigaSpaces.XAP>
 </configuration>
 {% endhighlight %}
+{%endtabcontent%}
+{%endinittab%}
 
 {% anchor basiccomponents %}
 
@@ -79,7 +116,7 @@ There can be different user components that are part of the processing unit. Suc
 
 Here's an example of a basic component which keeps a reference to a space proxy which is managed by the container:
 
-{% highlight java %}
+{% highlight csharp %}
 [BasicProcessingUnitComponent(Name="MyComponent")]
 public class MyComponent : IDisposable
 {
@@ -106,6 +143,25 @@ The method which has one of the attributes \[ContainerInitialized\] or \[Contain
 
 The container automatically detects components by scanning all the assembly (dll) files in the processing unit's folder.
 
+{%inittab%}
+{%tabcontent XAP 9.7.1 %}
+{%highlight xml%}
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration>
+  <configSections>
+    <section name="GigaSpaces.XAP" type="GigaSpaces.XAP.Configuration.GigaSpacesXAPConfiguration, GigaSpaces.Core"/>
+  </configSections>
+  <GigaSpaces.XAP>
+		<ProcessingUnit>
+			<SpaceProxies>
+				<add Name="mySpace" Url="/./mySpace"/>
+			</SpaceProxies>
+		</ProcessingUnit>
+  </GigaSpaces.XAP>
+</configuration>
+{%endhighlight%}
+{%endtabcontent%}
+{%tabcontent XAP 9.7.0 %}
 {% highlight xml %}
 <?xml version="1.0" encoding="utf-8" ?>
 <configuration>
@@ -125,8 +181,12 @@ The container automatically detects components by scanning all the assembly (dll
   </GigaSpaces.XAP>
 </configuration>
 {% endhighlight %}
+{%endtabcontent%}
+{%endinittab%}
 
-{% exclamation %} The assembly name is the actual name and not a file path, the assembly should be part of the processing unit project output directory and be placed beside the `pu.config` file.
+{% note %}
+The assembly name is the actual name and not a file path, the assembly should be part of the processing unit project output directory and be placed beside the `pu.config` file.
+{%endnote%}
 
 {% anchor services %}
 
@@ -239,7 +299,7 @@ public void MyEventListener(ISpaceProxy spaceProxy)
 {% endhighlight %}
 
 When registering for the \[BeforePrimary\] or \[BeforeBackup\], special care should be taken. The event handling of these listeners will **delay the space instance life cycle completion** for a co-located space instance - i.e., a primary space instance will be blocked from fully becoming a primary space until it completes all the invocations of the \[BeforePrimary\] subscribers. There is no guarantee for receiving a corresponding Before event always prior to a Post event. When the processing unit starts, the event subscription is asynchronous to the space instance active election; in this case it is quite reasonable not to receive the Before events and only to receive the Post events.
-{% endtoczone %}
+
 
 {% refer %}
 For more details about the Basic Processing Unit Container please refer to the [Detailed Basic Processing Unit Container](./detailed-basic-processing-unit-container.html) page.

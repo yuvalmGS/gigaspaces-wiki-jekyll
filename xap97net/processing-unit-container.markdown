@@ -25,11 +25,11 @@ The Processing Unit Container is aware of the [cluster info](#ClusterInfo). This
 However, if you are not familiar with processing unit and event container concepts, the basic processing unit container may be confusing. We recommend you read and experiment with the processing unit container explained below for a while, then continue to read and benefit from the basic processing unit container.
 {% endtip %}
 
-# AbstractProcessingUnitContainer class
+# AbstractProcessingUnitContainer
 
 The `AbstractProcessingUnitContainer` class implements `IDisposable`, and consists of one additional method and two properties:
 
-{% highlight java %}
+{% highlight csharp %}
 public abstract class AbstractProcessingUnitContainer
 {
     // Cluster information is set into this property at deploy-time.
@@ -52,7 +52,9 @@ The Processing Unit Container lifecycle consists only of these two methods: `Ini
 
 One of the core ideas of the Processing Unit is the determination of the deployment topology in deploy-time. Therefore, when building a Processing Unit, there is almost no need to be aware of the actual cluster topology the Processing Unit is deployed under.
 
-{% infosign %} There are two aspects that are important to remember when building a Processing Unit, for it to be cluster topology-independent:
+{% info %}
+There are two aspects that are important to remember when building a Processing Unit, for it to be cluster topology-independent:
+{%endinfo%}
 
 - Define a routing index on the domain model written to the space, so the partitioned topology can work.
 - When working directly against a cluster member, make sure you don't perform operations against the backup member.
@@ -68,7 +70,9 @@ The `ClusterInfo` class holds the following information:
 | `BackupId` | 1 to the `NumberOfBackups` value, denoting the backup ID of the `InstanceId` of the current Processing Unit instance. |
 | `RunningNumber` |A running number of the cluster instance. Takes into account different topologies and provides a unique identifier (starting from `0`) of the cluster member. |
 
-{% exclamation %} Defining a `null` value in one of these properties means that they are not set.
+{% note %}
+Defining a `null` value in one of these properties means that they are not set.
+{%endnote%}
 
 # Creating Your Own Processing Unit Container
 
@@ -118,10 +122,10 @@ That file should be named `sla.xml`, and should be placed in the root directory 
 
 {% refer %}Read about SLA in [Service Grid Processing Unit Container](./basic-processing-unit-container.html).{% endrefer %}
 
-{%comment%}
+
 # Deployment
 
 There are several ways to deploy the Processing Unit Container into the Service Grid. Are all detailed extensively in the [.NET Processing Unit Data Example](./dotnet-your-first-xtp-application.html#Deployment) section.
 
 The most straightforward way is to use the GigaSpaces Management Center for deployment.
-{%endcomment%}
+
