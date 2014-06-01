@@ -50,7 +50,7 @@ public class CountTask : ISpaceTask<int>
 
   public int Execute(ISpaceProxy spaceProxy, ITransaction tx)
   {
-    System.Console.WriteLine(message);
+    System.Console.WriteLine(_message);
     return spaceProxy.Count();
   }
 }
@@ -104,14 +104,14 @@ public class DistributedCountTask : IDistributedSpaceTask<long, int>
 {
   private String _message;
 
-  public CountTask(String message)
+  public DistributedCountTask(String message)
   {
     _message = message;
   }
 
   public int Execute(ISpaceProxy spaceProxy, ITransaction tx)
   {
-    System.Console.WriteLine(message);
+    System.Console.WriteLine(_message);
     return spaceProxy.Count(new Object());
   }
 
@@ -124,7 +124,7 @@ public class DistributedCountTask : IDistributedSpaceTask<long, int>
         throw result.Exception;
       sum += result.Result;
     }
-    return result;
+    return sum;
   }
 }
 {% endhighlight %}
