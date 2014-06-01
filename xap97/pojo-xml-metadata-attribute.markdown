@@ -216,11 +216,11 @@ Example:
 {%highlight xml%}
 <gigaspaces-mapping>
 	<class name="model.Person">
-	    <property name="id" />
+	    <property name="personId" />
         <property name="firstName" />
         <property name="lastName" />
         <property name="type" />
-		<id name="id" auto-generate="true" />
+		<id name="personId" auto-generate="true" />
 	</class>
 </gigaspaces-mapping>
 {%endhighlight%}

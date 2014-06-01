@@ -388,14 +388,8 @@ Example:
 
 {%learn%}./fifo-grouping.html{%endlearn%}
 
-# SpaceClassConstructor
-
-{: .table .table-bordered}
-|Syntax     | @SpaceClassConstructor|
-|Description| This annotation can be placed on a POJO constructor to denote that this constructor should be used during object instantiation.{%wbr%}Using this annotations, it is possible for the POJO to have immutable properties (i.e. `final` fields).{%wbr%}As opposed to a standard POJO, a POJO annotated with this annotation may omit setters for its properties.{%wbr%}Except for the case where the id property is auto generated, only properties defined in this constructor will be considered space properties.{%wbr%}The annotations can be placed on at most one constructor.|
 
 
-{%learn%}./fifo-grouping.html{%endlearn%}
 
 # SpaceDynamicProperties
 
@@ -429,3 +423,28 @@ public class Person {
 
 {%learn%}./dynamic-properties.html{%endlearn%}
 
+
+
+# SpaceClassConstructor
+
+{: .table .table-bordered}
+|Syntax     | @SpaceClassConstructor|
+|Description| This annotation can be placed on a POJO constructor to denote that this constructor should be used during object instantiation.{%wbr%}Using this annotations, it is possible for the POJO to have immutable properties (i.e. `final` fields).{%wbr%}As opposed to a standard POJO, a POJO annotated with this annotation may omit setters for its properties.{%wbr%}Except for the case where the id property is auto generated, only properties defined in this constructor will be considered space properties.{%wbr%}The annotations can be placed on at most one constructor.|
+
+
+Example:
+
+{%highlight java%}
+@SpaceClass
+public class Person {
+
+    @SpaceClassConstructor
+    public Person ()
+    {
+    }
+
+    public Person (Long id, String firstName, String LastName)
+    {
+    }
+}
+{%endhighlight%}
