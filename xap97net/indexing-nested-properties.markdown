@@ -7,11 +7,12 @@ weight: 100
 ---
 {% summary %} {% endsummary %}
 
+# Overview
 An index can be defined on a nested property to improve performance of nested queries - this is highly recommended.
 
 Nested properties indexing uses an additional `[SpaceIndex]` attribute - **`Path`**.
 
-## The SpaceIndex.Path Attribute
+# The SpaceIndex.Path Attribute
 
 The **`Path`** attribute represents the path of the property within the nested object.
 
@@ -84,11 +85,10 @@ SqlQuery<Person> query = new SqlQuery<Person>(
 {%learn%}./query-sql.html#Nested Object Query{%endlearn%}
 
 
-{% info title=Nested Objects %}
+# Nested Objects
+
 By default, nested objects are kept in a binary form inside the space. In order to support nested matching, the relevant property should be stored as document, or as object if it is in an interoperability scenario and it has a corresponding Java class.
-{% endinfo %}
 
-{% info title=Dictionary based nested properties %}
-Note that the same indexing techniques above are also applicable to Dictionary-based nested properties, which means that in the example above the `Info` and `Address` classes could be replaced with a `Dictionary<String,Object>`, with the dictionary keys representing the property names.
-{% endinfo %}
+# Dictionary based Nested Properties
 
+The same indexing techniques above are also applicable to Dictionary-based nested properties, which means that in the example above the `Info` and `Address` classes could be replaced with a `Dictionary<String,Object>`, with the dictionary keys representing the property names.
