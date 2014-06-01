@@ -6,7 +6,7 @@ parent: indexing-overview.html
 weight: 500
 ---
 
-
+{% summary %} {% endsummary %}
 
 Unique constraints can be defined for an attribute or attributes of a space class. This will ensure that only one instance of the space class exists in the space with the specific attribute value. These indexes are applicable to all types of index; Basic, Extended, Compound and Collection indices.
 
@@ -78,10 +78,8 @@ public class Person
 {% endtabcontent%}
 {% endinittab%}
 
-# Limitations
+# Consideations
 
-*	Supported only for ALL_IN_CACHE cache policy, not supported for LRU and other evict able cache policies
+*	Supported only with `ALL_IN_CACHE` cache policy, not supported with LRU and other evict able cache policies
 *	Not supported for local-cache/local-view since its only per-partition enforcement
 *	Currently not supported for dynamic (on-the-fly) indices.
-
-
