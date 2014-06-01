@@ -143,11 +143,12 @@ Here is an example of a pu.xml file:
     <os-remoting:annotation-support />
 
     <!--
-        A bean representing a space. Here we configure an embedded space (note the url element which does
-        not contain any remote protocol prefix. Also note that we do not specify here the cluster topology
+        A bean representing a space. Here we configure an embedded space (note the name element which does
+        is used to build the space URL. Also note that we do not specify here the cluster topology
         of the space. It is declared by the os-sla:sla element of this pu.xml file.
+        To configure a remote space, use the `os-core:space-proxy` tag.
     -->
-    <os-core:space id="space" url="/./eventSpace" />
+    <os-core:embedded-space id="space" name="eventSpace" />
 
     <!-- Define the GigaSpace instance that the application will use to access the space  -->
     <os-core:giga-space id="eventSpace" space="space"/>
@@ -259,7 +260,7 @@ In this step will create the configuration file for the PU deployment
 	<os-core:space id="space" url="/./eventSpace" />
 
 	<!-- Define the GigaSpace instance that the application will use to access the space -->
-	<os-core:giga-space id="eventSpace" space="space"/>
+	<os-core:embedded-space id="space" name="eventSpace" />
 
 </beans>
 {%endhighlight%}
