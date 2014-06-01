@@ -151,7 +151,7 @@ The `LRMI` configuration options set as system properties. They are listed below
 | `com.gs.transport_protocol.lrmi.timeout_resolution` | Resolution in percents. Timeout resolution indicates the accuracy of the request timeout. | `10` | Client | Percent|Yes|
 
 {% tip %}
-If you are using the **notification slow consumer** mechanism see the [Slow Consumer]({%currentjavaurl%}/slow-consumer.html#Configuration -- Server Side) for additional LRMI parameters to configure.
+If you are using the **notification slow consumer** mechanism see the [Slow Consumer](./slow-consumer.html#Configuration -- Server Side) for additional LRMI parameters to configure.
 {%endtip%}
 
 {% anchor portrange %}

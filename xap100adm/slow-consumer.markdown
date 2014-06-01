@@ -1,12 +1,14 @@
 ---
-layout: post100
+layout: post100adm
 title:  Slow Consumer
-categories: XAP100
-parent: session-based-messaging-api.html
-weight: 200
+categories: XAP100ADM
+parent: tuning-gigaspaces-performance.html
+weight: 50
 ---
 
-{% summary %}The space includes a special mechanism that detects clients that cannot consume the notifications sent fast enough - i.e. slow consumers. {% endsummary %}
+{% summary %}  {% endsummary %}
+
+The space includes a special mechanism that detects clients that cannot consume the notifications sent fast enough - i.e. slow consumers.
 
 # Handling Slow Consumers
 
@@ -41,7 +43,7 @@ Slow consumers are determined by measuring the network consumption throughput (c
 ![IMG230.jpg](/attachment_files/IMG230.jpg)
 {% endindent %}
 
-To allow the client to detect that the space removed its notify registration, it should register the notification using a short lease and renew it manually or automatically. See the [Notify Container](./notify-container.html#Re-Register after complete space shutdown and restart) or the [Session Based Messaging API](./session-based-messaging-api.html#Advanced Options) for details how to renew the registration lease automatically. If the lease renewal failed, it means the space canceled the notification. In this case, the client should remove the current listener to cleanup its resources and then re-register for notify registration.
+To allow the client to detect that the space removed its notify registration, it should register the notification using a short lease and renew it manually or automatically. See the Notify Container{%currentjavanet notify-container.html %} or the [Session Based Messaging API]({%currentjavaurl%}/session-based-messaging-api.html#Advanced Options) for details how to renew the registration lease automatically. If the lease renewal failed, it means the space canceled the notification. In this case, the client should remove the current listener to cleanup its resources and then re-register for notify registration.
 
 The LRMI thread pool queue size parameter, measured in **Objects**, configures the client and space server communication queue maximum size when processing incoming requests.
 
@@ -79,5 +81,5 @@ When using FIFO notifications, the fifo notify queue should be limited as well f
 {: .table .table-bordered}
 |Property|Description|Default|Unit|
 |:-------|:----------|:------|:---|
-|com.gs.transport\_protocol.lrmi.threadpool.queue-size| specify the lrmi thread pool maximum queue size|Integer.MAX_VALUE |Notification Packets (object/batch)|
-|com.gs.fifo\_notify.queue| specify the fifo notifications queue size|Integer.MAX\_VALUE|Notification Packets (object/batch)|
+|com.gs.transport_protocol.lrmi.threadpool.queue-size| specify the lrmi thread pool maximum queue size|Integer.MAX_VALUE |Notification Packets (object/batch)|
+|com.gs.fifo_notify.queue| specify the fifo notifications queue size|Integer.MAX_VALUE|Notification Packets (object/batch)|

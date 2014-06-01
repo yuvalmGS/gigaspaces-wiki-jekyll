@@ -571,7 +571,7 @@ public class MyLeaseListener implements LeaseListener{
 
 ## Slow Consumer
 
-The [Slow Consumer](./slow-consumer.html) mechanism allows GigaSpaces to identify clients that cannot receive events and cancel their notify registration. This avoids system instability and out of memory problems.
+The [Slow Consumer]({%currentadmurl%}/slow-consumer.html) mechanism allows GigaSpaces to identify clients that cannot receive events and cancel their notify registration. This avoids system instability and out of memory problems.
 
 ## Transient Notify Registration
 

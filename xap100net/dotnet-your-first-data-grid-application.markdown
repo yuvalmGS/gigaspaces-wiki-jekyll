@@ -216,15 +216,3 @@ namespace XapDemo
 {% endhighlight %}
 {% endgcloak %}
 
-{%comment%}
-# What's Next?
-
-[The Full XAP .NET Tutorial](./net-home.html) will introduce you to the basic concepts and functionalities of XAP. Many ready to run examples are provided.
-
-Read more about the GigaSpaces runtime environment, how to model your data in a clustered environment, and how to leverage the power capabilities of the Space.
-
-- [Elastic Processing Unit]({%currentneturl%}/elastic-processing-unit.html)
-- [Modeling and Accessing Your Data](/sbp/modeling-and-accessing-your-data.html)
-- [Deploying and Interacting with the Space]({%currentjavaurl%}/deploying-and-interacting-with-the-space.html)
-- [The GigaSpaces Runtime Environment]({%currentadmurl%}/the-runtime-environment.html)
-{%endcomment%}

@@ -77,24 +77,7 @@ XAP comes with a built in implementation of Space Persistency for NHibernate. Th
 
 
 
-{%comment%}
 
-
-- Cassandra adapter
-XAP comes with built in implementations of Space Data Source and Space Synchronization Endpoint for Cassandra, called CassandraSpaceDataSource and CassandraSpaceSynchronizationEndpoint, respectively.
-
-{%learn%}{%currentjavaurl%}/cassandra.html{%endlearn%}
-
-- MongoDB adapter
-XAP comes with built in implementations of Space Data Source and Space Synchronization Endpoint for MongoDB, called MongoSpaceDataSource and MongoSpaceSynchronizationEndpoint, respectively.
-
-
-{%learn%}{%currentjavaurl%}/mongodb.html{%endlearn%}
-
-- Hibernate adapter
-
-{%learn%}{%currentjavaurl%}./hibernate-space-persistency.html{%endlearn%}
-{%endcomment%}
 
 
 Let's use our online payment system to demonstrate how we can implement direct persistence with XAP. 

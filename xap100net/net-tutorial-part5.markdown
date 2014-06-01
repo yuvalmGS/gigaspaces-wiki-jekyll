@@ -114,7 +114,7 @@ Here is an example of a pu.conf file:
 </configuration>
 {%endhighlight%}
 
-{%learn%}{%currentjavaurl%}/configuring-processing-unit-elements.html{%endlearn%}
+{%learn%}./processing-units.html{%endlearn%}
 
 
 
@@ -139,7 +139,7 @@ A sample SLA definition is shown below:
 </beans>
 {%endhighlight%}
 
-{%learn%}{%currentjavaurl%}/configuring-the-processing-unit-sla.html{%endlearn%}
+{%learn%}./processing-units.html{%endlearn%}
 
 
 

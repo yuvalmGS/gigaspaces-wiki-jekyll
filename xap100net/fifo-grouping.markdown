@@ -8,14 +8,7 @@ weight: 200
 
 {%summary%}{%endsummary%}
 
-{%comment%}
-{% summary %}
-How to read/take a group of space entries with a common property value, in FIFO order (by order of insertion),
-without having to maintain a FIFO order for all the entries in the space.
-{% endsummary %}
 
-# Overview
-{%endcomment%}
 
 The FIFO groups features is designed to allow for efficient processing of events with partial ordering constraints. To better understand FIFO groups, let's first examine the constraints of total ordering, i.e. What it takes to process events in the exact order in which they arrive. There are two elements that effectively limit the scalability of processing events with total ordering:
 
@@ -266,7 +259,7 @@ For example, declaring `SpaceFifoGroupingIndex(Path="a")`, overriding in subclas
 
 # Considerations
 
-- FG not supported with a Space using [LRU-Cache Policy]({% currentadmurl %}/lru-cache-policy.html) over [EDS]({% currentjavaurl %}/space-data-source-api.html).
+- FG not supported with a Space using [LRU-Cache Policy]({% currentadmurl %}/lru-cache-policy.html).
 - Cross partitioning of groups is not supported (same limitation as in regular FIFO operations).
 - `SpaceFifoGroupingProperty` and `SpaceFifoGroupingIndex` cannot be used as dynamic indexes.
 - `SpaceFifoGroupingProperty` and `SpaceFifoGroupingIndex` cannot be used  as collection indexes.

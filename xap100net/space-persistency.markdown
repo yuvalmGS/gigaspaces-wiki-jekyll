@@ -122,9 +122,7 @@ spaceConfig.ExternalDataSourceConfig.CustomProperties.Add("iterator-batch-size",
 
 To create a custom implementation, implement the `GigaSpaces.Core.Persistency.ISqlDataSource` interface.
 
-{% comment %}
-Before creating a custom implementation, read the following [considerations]({% currentjavaurl %}/space-data-source-api.html).
-{%endcomment%}
+
 
 {% note %}
 See an example for the NHibernate implementation under `<XAP Root>\dotnet\practices\ExternalDataSource\NHibernate`.
