@@ -21,5 +21,9 @@ Property level metadata for POJOs.
 
 <hr/>
 
+#### Additional Resources
+
+- [XML Schema](/api_documentation/xap-{%currentversion%}.html)
+
 
 

@@ -1,8 +1,8 @@
 ---
 layout: post97
 title:  Properties Metadata
-categories: XAP97
-parent: pojo-xml-metadata-overview.html
+categories: XAP97NET
+parent: pono-xml-metadata-overview.html
 weight: 200
 ---
 
@@ -23,8 +23,8 @@ Example:
 
 {% highlight xml %}
 <gigaspaces-mapping>
-<class name="model.Person" persist="false" replicate="false">
-    <property name="age" />
+<class name="Model.Person" persist="false" replicate="false">
+    <property name="Age" />
 </class>
 </gigaspaces-mapping>
 {% endhighlight %}
@@ -40,9 +40,9 @@ Example:
 
 {% highlight xml %}
 <gigaspaces-mapping>
-<class name="model.Person" persist="false" replicate="false">
-    <property name="age" null-value="-1" />
-    <property name="status" null-value="-1" />
+<class name="Model.Person" persist="false" replicate="false">
+    <property name="Age" null-value="-1" />
+    <property name="Status" null-value="-1" />
 </class>
 </gigaspaces-mapping>
 {% endhighlight %}
@@ -60,8 +60,8 @@ Example:
 {%highlight xml%}
 <gigaspaces-mapping>
 <class name="Person">
-    <property name="firstName" />
-    <property name="address" reference="model.Address" />
+    <property name="FirstName" />
+    <property name="Address" reference="Model.Address" />
 </class>
 </gigaspaces-mapping>
 {%endhighlight%}
@@ -75,7 +75,7 @@ Example:
 
 {: .table .table-bordered}
 |Syntax     | storage-type|
-|Argument   | [StorageType]({% javadoc com/gigaspaces/metadata/StorageType %})          |
+|Argument   | [StorageType](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_Metadata_StorageType.htm)          |
 |Default    | object |
 |Description| This tag is used to specify how the property is stored in the space. |
 
@@ -83,34 +83,34 @@ Example:
 
 {% highlight xml %}
 <gigaspaces-mapping>
-<class name="model.Person" persist="false" replicate="false">
-    <property name="age" null-value="-1" />
-    <property name="address" storage-type="binary" />
+<class name="Model.Person" persist="false" replicate="false">
+    <property name="Age" null-value="-1" />
+    <property name="Address" storage-type="binary" />
 </class>
 </gigaspaces-mapping>
 {% endhighlight %}
 
-{%learn%}./storage-types---controlling-serialization.html{%endlearn%}
+{%learn%}./poco-storage-type.html{%endlearn%}
 
 ### SpaceIndex
 
 {: .table .table-bordered}
 |Syntax     |  index type=""|
-|Argument   |  [SpaceIndexType]({%javadoc com/gigaspaces/metadata/index/SpaceIndexType %})  |
+|Argument   |  [SpaceIndexType](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_Metadata_SpaceIndexType.htm)  |
 |Description| Querying indexed fields speeds up read and take operations. The `index` tag should be used to specify an indexed field.|
 
 Example:
 
 {%highlight xml%}
 <gigaspaces-mapping>
-    <class name="model.Person" persist="false" replicate="false" >
-        <property name="lastName">
+    <class name="Model.Person" persist="false" replicate="false" >
+        <property name="LastName">
             <index type="basic"/>
         </property>
-        <property name="firstName">
+        <property name="FirstName">
             <index type="basic"/>
         </property>
-        <property name="age">
+        <property name="Age">
              <index type="extended"/>
         </property>
     </class>
@@ -124,17 +124,17 @@ Example:
 
 {: .table .table-bordered}
 |Syntax     |  path=" " type = " "|
-|Argument   |  [SpaceIndexType]({%javadoc com/gigaspaces/metadata/index/SpaceIndexType %}){%wbr%} path - indexed attribute|
+|Argument   |  [SpaceIndexType](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_Metadata_SpaceIndexType.htm)|
 |Description| The `path` attribute represents the path of the indexed property within a nested object. |
 
 Example:
 
-{%highlight java%}
+{%highlight xml%}
 <gigaspaces-mapping>
-    <class name="model.Person"  >
-        <property name="personalInfo">
-		    <index path="socialSecurity" type = "extended"/>
-		    <index path="address.zipCode" type = "basic"/>
+    <class name="Model.Person"  >
+        <property name="PersonalInfo">
+		    <index path="SocialSecurity" type = "extended"/>
+		    <index path="Address.zipCode" type = "basic"/>
 		</property>
     </class>
 </gigaspaces-mapping>
@@ -147,7 +147,7 @@ Example:
 
 {: .table .table-bordered}
 |Syntax     |  index type="" unique=""|
-|Argument   |  [SpaceIndexType]({%javadoc com/gigaspaces/metadata/index/SpaceIndexType %})  |
+|Argument   |  [SpaceIndexType](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_Metadata_SpaceIndexType.htm)  |
 |Description| Unique constraints can be defined for an attribute or attributes of a space class. |
 |Note |   The uniqueness is enforced per partition and not over the whole cluster. |
 
@@ -155,14 +155,14 @@ Example:
 
 {%highlight xml%}
 <gigaspaces-mapping>
-    <class name="model.Person" persist="false" replicate="false" >
-        <property name="lastName">
+    <class name="Model.Person" persist="false" replicate="false" >
+        <property name="LastName">
             <index type="BASIC" unique="true"/>
         </property>
-        <property name="firstName">
+        <property name="FirstName">
             <index type="BASIC"/>
         </property>
-        <property name="age">
+        <property name="Age">
              <index type="EXTENDED"/>
         </property>
     </class>
@@ -183,13 +183,13 @@ Example:
 
 Example:
 
-{%highlight java%}
+{%highlight xml%}
 <gigaspaces-mapping>
 	<class name="com.gigaspaces.examples.FlightReservation />
-		<property name="processingState">
+		<property name="ProcessingState">
 			<fifo-grouping-index />
 		</property>
-		<property name="customer">
+		<property name="Customer">
 			<fifo-grouping-index  path="id"/>
 		</property>
 </gigaspaces-mapping>
@@ -200,37 +200,31 @@ Example:
 
 
 
-
-
-
-
-
-
-
 # SpaceId
 
 {: .table .table-bordered}
 |Syntax     | id name=""|
 |Argument   | auto-generate |
 |Default    | false |
-|Description| Defines whether this field value is used when generating the Object ID. The field value should be unique -- i.e., no multiple objects with the same value should be written into the space (each object should have a different field value). When writing an object into the space with an existing `id` field value, an `EntryAlreadyInSpaceException` is thrown. The Object ID is created, based on the `id` field value.{%wbr%}Specifies if the object ID is generated automatically by the space when written into the space. If `false`, the field is indexed automatically, and if `true`, the field isn't indexed. If `autoGenerate` is declared as `false`, the field is indexed automatically. If `autoGenerate` is declared as `true`, the field isn't indexed. If `autoGenerate` is `true`, the field must be of the type `java.lang.String`. |
+|Description| Defines whether this field value is used when generating the Object ID. The field value should be unique -- i.e., no multiple objects with the same value should be written into the space (each object should have a different field value). When writing an object into the space with an existing `id` field value, an `EntryAlreadyInSpaceException` is thrown. The Object ID is created, based on the `id` field value.{%wbr%}Specifies if the object ID is generated automatically by the space when written into the space. If `false`, the field is indexed automatically, and if `true`, the field isn't indexed. If `autoGenerate` is declared as `false`, the field is indexed automatically. If `autoGenerate` is declared as `true`,
+the field isn't indexed. If `autoGenerate` is `true`, the field must be of the type `String`. |
 
 Example:
 
 {%highlight xml%}
 <gigaspaces-mapping>
-	<class name="model.Person">
-	    <property name="personId" />
-        <property name="firstName" />
-        <property name="lastName" />
-        <property name="type" />
-		<id name="personId" auto-generate="true" />
+	<class name="Model.Person">
+	    <property name="PersonId" />
+        <property name="FirstName" />
+        <property name="LastName" />
+        <property name="Type" />
+		<id name="PersonId" auto-generate="true" />
 	</class>
 </gigaspaces-mapping>
 {%endhighlight%}
 
 
-{%learn%}./space-object-id-operations.html{%endlearn%}
+{%learn%}./poco-object-id.html{%endlearn%}
 
 
 # SpaceRouting
@@ -243,18 +237,18 @@ Example:
 
 {%highlight xml%}
 <gigaspaces-mapping>
-	<class name="model.Person">
-		<property name="id" />
-        <property name="firstName" />
-        <property name="lastName" />
-        <property name="type" />
-		<id name="id" auto-generate="true" />
-        <routing name="type" />
+	<class name="Model.Person">
+		<property name="Id" />
+        <property name="FirstName" />
+        <property name="LastName" />
+        <property name="Type" />
+		<id name="Id" auto-generate="true" />
+        <routing name="Type" />
 	</class>
 </gigaspaces-mapping>
 {%endhighlight%}
 
-{%learn%}./data-partitioning.html{%endlearn%}
+{%learn%}{%currentjavaurl%}/data-partitioning.html{%endlearn%}
 
 # Class Reference
 
@@ -268,8 +262,8 @@ Example:
 {%highlight xml%}
 <gigaspaces-mapping>
 <class name="Person">
-    <property name="firstName" />
-    <property class-ref="model.Person" />
+    <property name="FirstName" />
+    <property class-ref="Model.Person" />
 </class>
 </gigaspaces-mapping>
 {%endhighlight%}
@@ -285,9 +279,9 @@ Example:
 
 {%highlight xml%}
 <gigaspaces-mapping>
-<class name="model.Person" persist="false" replicate="false">
-    <property name="age" null-value="-1" />
-    <persist name="persistence" />
+<class name="Model.Person" persist="false" replicate="false">
+    <property name="Age" null-value="-1" />
+    <persist name="Persistence" />
 </class>
 </gigaspaces-mapping>
 {%endhighlight%}
@@ -303,15 +297,15 @@ Example:
 
 {%highlight xml%}
 <gigaspaces-mapping>
-	<class name="model.Person">
-		<property name="id" />
-		<property name="versionId" />
-        <property name="firstName" />
-        <property name="lastName" />
-        <property name="type" />
-		<id name="id" auto-generate="true" />
-        <routing name="type" />
-        <version name="versionId" />
+	<class name="Model.Person">
+		<property name="Id" />
+		<property name="VersionId" />
+        <property name="FirstName" />
+        <property name="LastName" />
+        <property name="Type" />
+		<id name="Id" auto-generate="true" />
+        <routing name="Type" />
+        <version name="VersionId" />
 	</class>
 </gigaspaces-mapping>
 {%endhighlight%}
@@ -331,14 +325,14 @@ Example:
 
 {%highlight xml%}
 <gigaspaces-mapping>
-	<class name="model.Person">
-		<property name="id" />
-        <property name="firstName" />
-        <property name="lastName" />
-        <property name="type" />
-		<id name="id" auto-generate="true" />
-        <routing name="type" />
-        <exclude name="streetAddress" />
+	<class name="Model.Person">
+		<property name="Id" />
+        <property name="FirstName" />
+        <property name="LastName" />
+        <property name="Type" />
+		<id name="Id" auto-generate="true" />
+        <routing name="Type" />
+        <exclude name="StreetAddress" />
 	</class>
 </gigaspaces-mapping>
 {%endhighlight%}
@@ -348,20 +342,20 @@ Example:
 
 {: .table .table-bordered}
 |Syntax     |  lease-expiration name=""|
-|Description|This tag specifies the property for holding the timestamp of when the instance's lease expires (this is a standard Java timestamp based on the 1/1/1970 epoch). This property should not be populated by the user code. The space will populate this property automatically based on the lease time given by the user when writing the object. When using an external data source, you can choose to persist this value to the database. Subsequently, when data is reloaded from the external data source (at startup time for example), the space will filter out instances whose lease expiration timestamp has already passed. This field should be a `long` data type.|
+|Description|This tag specifies the property for holding the timestamp of when the instance's lease expires. This property should not be populated by the user code. The space will populate this property automatically based on the lease time given by the user when writing the object. When using an external data source, you can choose to persist this value to the database. Subsequently, when data is reloaded from the external data source (at startup time for example), the space will filter out instances whose lease expiration timestamp has already passed. This field should be a `long` data type.|
 
 Example:
 
 {%highlight xml%}
 <gigaspaces-mapping>
-	<class name="model.Person">
-		<property name="id" />
-        <property name="firstName" />
-        <property name="leaseExp" />
-        <property name="type" />
-		<id name="id" auto-generate="true" />
-        <routing name="type" />
-        <lease-expiration name="leaseExp" />
+	<class name="Model.Person">
+		<property name="Id" />
+        <property name="FirstName" />
+        <property name="LeaseExp" />
+        <property name="Type" />
+		<id name="Id" auto-generate="true" />
+        <routing name="Type" />
+        <lease-expiration name="LeaseExp" />
 	</class>
 </gigaspaces-mapping>
 {%endhighlight%}
@@ -381,7 +375,7 @@ Example:
 {%highlight xml%}
 <gigaspaces-mapping>
     <class name="com.gigaspaces.examples.FlightReservation">
-        	<fifo-grouping-property name="flightInfo" path=" flightNumber" />
+        	<fifo-grouping-property name="FlightInfo" path="FlightNumber" />
     </class>
 </gigaspaces-mapping>
 
@@ -399,21 +393,21 @@ Example:
 
 Example:
 
-{%highlight java%}
+{%highlight xml%}
 <gigaspaces-mapping>
-	<class name="model.Person">
-		<property name="id" />
-        <property name="firstName" />
-        <property name="personInfo" />
-        <property name="type" />
-		<id name="id" auto-generate="true" />
-        <routing name="type" />
-        <dynamic-properties name="personInfo" />
+	<class name="Model.Person">
+		<property name="Id" />
+        <property name="FirstName" />
+        <property name="PersonInfo" />
+        <property name="Type" />
+		<id name="Id" auto-generate="true" />
+        <routing name="Type" />
+        <dynamic-properties name="PersonInfo" />
 	</class>
 </gigaspaces-mapping>
 {%endhighlight%}
 
-{%learn%}./dynamic-properties.html{%endlearn%}
+{%learn%}./poco-dynamic-properties.html{%endlearn%}
 
 
 

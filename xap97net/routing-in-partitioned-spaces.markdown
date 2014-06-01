@@ -29,7 +29,7 @@ Target partition space ID =
     getRoutingPropertyValue(entry).hashCode() % (number of partitions)
 {% endhighlight %}
 
-The routing property can be explicitly set using the \[`SpaceRouting`\] attribute for [Object entries](./poco-metadata.html) or via the `SpaceTypeDescriptorBuilder` for [document entries](./document-api.html). If the routing property is not explicitly set, the space id property is used for routing. If the space id property is not defined, the first indexed property (alphabetically) is used for routing, otherwise the first property (alphabetically) is used for routing.
+The routing property can be explicitly set using the \[`SpaceRouting`\] attribute for [Object entries](./pono-attribute-annotations.html) or via the `SpaceTypeDescriptorBuilder` for [document entries](./document-api.html). If the routing property is not explicitly set, the space id property is used for routing. If the space id property is not defined, the first indexed property (alphabetically) is used for routing, otherwise the first property (alphabetically) is used for routing.
 
 {% note %}
 It is highly recommended to explicitly define a routing property - when both space routing and space id are not defined, relying on implicit routing property selection can be confusing, being maintained mainly for backwards compatibility.
