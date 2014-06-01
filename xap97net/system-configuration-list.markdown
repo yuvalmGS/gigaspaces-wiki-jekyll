@@ -5,6 +5,7 @@ categories: XAP97NET
 parent: configuration.html
 weight: 400
 ---
+{% summary %} {% endsummary %}
 
 This page explains how to configure XAP.NET Grid environment. In general, the default settings provided are good for small development or production environment. You should change these to satisfy your specific environment to increase the GSC capacity , specify lookup service location, specify zones , enable security, specify log files location, etc.
 
