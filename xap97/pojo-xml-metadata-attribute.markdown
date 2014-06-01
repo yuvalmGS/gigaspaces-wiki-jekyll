@@ -48,6 +48,29 @@ Example:
 {% endhighlight %}
 
 
+### Reference
+
+{: .table .table-bordered}
+|Syntax     | reference="" |
+|Argument   | class name         |
+|Description| contains mapping information for a property of a class that is not primitive, but references another entity object. |
+
+Example:
+
+{%highlight xml%}
+<gigaspaces-mapping>
+<class name="Person">
+    <property name="firstName" />
+    <property name="address" reference="model.Address" />
+</class>
+</gigaspaces-mapping>
+{%endhighlight%}
+
+
+
+
+
+
 ### SpaceStorageType
 
 {: .table .table-bordered}
@@ -229,6 +252,24 @@ Example:
 
 {%learn%}./data-partitioning.html{%endlearn%}
 
+# Class Reference
+
+{: .table .table-bordered}
+|Syntax     | class-ref="" |
+|Argument   | class name   |
+|Description| Contains the full qualified name of the specified class. |
+
+Example:
+
+{%highlight xml%}
+<gigaspaces-mapping>
+<class name="Person">
+    <property name="firstName" />
+    <property class-ref="model.Person" />
+</class>
+</gigaspaces-mapping>
+{%endhighlight%}
+
 # SpacePersist
 
 {: .table .table-bordered}
@@ -343,6 +384,8 @@ Example:
 {%endhighlight%}
 
 {%learn%}./fifo-grouping.html{%endlearn%}
+
+
 
 
 

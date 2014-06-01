@@ -12,7 +12,7 @@ weight: 100
 # Name
 
 {: .table .table-bordered}
-|Syntax     | name="model.Person" |
+|Syntax     | name="" |
 |Description| Contains the full qualified name of the specified class. Because this attribute is of the XML type `ID`, there can only be one `class-descriptor` per class. |
 
 Example:
@@ -28,7 +28,7 @@ Example:
 # Persistence
 
 {: .table .table-bordered}
-|Syntax     | persist=true |
+|Syntax     | persist="" |
 |Argument   | boolean|
 |Default    | false|
 |Description|  This field indicates the persistency mode of the object. When a space is defined as persistent, a `true` value for this attribute will persist objects of this type.  |
@@ -37,7 +37,7 @@ Example:
 
 {%highlight xml%}
 <gigaspaces-mapping>
-	<class name="model.Person"> persist="true">
+	<class name="model.Person" persist="true">
 	</class>
 </gigaspaces-mapping>
 {%endhighlight%}
@@ -48,7 +48,7 @@ Example:
 # Replication
 
 {: .table .table-bordered}
-|Syntax     | replicate=true |
+|Syntax     | replicate="" |
 |Argument   | boolean|
 |Default    | false|
 |Description|  This field indicates the replication mode of the object. When a space is defined as replicated, a `true` value for this attribute will replicate objects of this type.|
@@ -57,8 +57,7 @@ Example:
 
 {%highlight xml%}
 <gigaspaces-mapping>
-	<class name="model.Person">
-	       replicate="true">
+	<class name="model.Person" replicate="true">
 	</class>
 </gigaspaces-mapping>
 {%endhighlight%}
@@ -70,7 +69,7 @@ Example:
 # FIFO Support
 
 {: .table .table-bordered}
-|Syntax     | fifo-support="operation"  |
+|Syntax     | fifo-support=""  |
 |Argument   | [FifoSupport]({% javadoc com/gigaspaces/annotation/pojo/FifoSupport %})|
 |Default    | not_set|
 |Description| Enabling  FIFO operations.     |
@@ -90,7 +89,7 @@ Example:
 # Storage Type
 
 {: .table .table-bordered}
-|Syntax     | storage-type="binary" |
+|Syntax     | storage-type="" |
 |Argument   | [StorageType]({% javadoc com/gigaspaces/metadata/StorageType %})          |
 |Default    | object |
 |Description| To determine a default storage type for each non primitive property for which a (field level) storage type was not defined.|
@@ -111,7 +110,7 @@ Example:
 # Include Properties
 
 {: .table .table-bordered}
-|Syntax     | include-properties="explicit" |
+|Syntax     | include-properties="" |
 |Argument   | [IncludeProperties](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/annotation/pojo/SpaceClass.IncludeProperties.html)      |
 |Default    | implicit|
 |Description| `implicit` takes into account all POJO fields -- even if a `get` method is not declared   as a `SpaceProperty`, it is taken into account as a space field.`explicit` takes into account only the `get` methods which are declared in the mapping file. |
@@ -129,7 +128,7 @@ Example:
 # Inherit Index
 
 {: .table .table-bordered}
-|Syntax     | inherit-indexes="false" |
+|Syntax     | inherit-indexes="" |
 |Argument   | boolean          |
 |Default    | true|
 |Description| Whether to use the class indexes list only, or to also include the superclass' indexes. {% wbr %}If the class does not define indexes, superclass indexes are used. {% wbr %}Options:{% wbr %}- `false` -- class indexes only.{% wbr %}- `true` -- class indexes and superclass indexes.|
@@ -148,7 +147,7 @@ Example:
 # Compound Index
 
 {: .table .table-bordered}
-|Syntax     | compound-index paths="data1, data2" |
+|Syntax     | compound-index paths="" |
 |Argument(s)| string          |
 |Values     | attribute name(s)   |
 |Description| Indexes can be defined for multiple attributes of a class  |
