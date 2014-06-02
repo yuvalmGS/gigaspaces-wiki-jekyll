@@ -1,16 +1,16 @@
 ---
 layout: post100
-title:  Class Metadata
+title:  Class Annotations
 categories: XAP100
-parent: modeling-your-data.html
-weight: 200
+parent: pojo-annotation-overview.html
+weight: 100
 ---
 
 {% summary %}{% endsummary %}
 
 
 
-The [GigaSpaces API](./the-gigaspace-interface-overview.html) supports class and field-level decorations with POJOs. These can be specified via annotations on the space class source itself or external xml file accompanied with the class byte code files located within the jar/war. You can define common behavior for all class instances, and specific behavior for class fields.
+The [GigaSpaces API](./the-gigaspace-interface-overview.html) supports class level decorations with POJOs. These can be specified via annotations on the space class source itself  for all class instances.
 
 
 {%wbr%}
@@ -23,29 +23,15 @@ The [GigaSpaces API](./the-gigaspace-interface-overview.html) supports class and
 |Default    | false|
 |Description| When a space is defined as persistent, a 'true' value for this annotation persists objects of this type. |
 
+Example:
 
-{% togglecloak id=1 %}**Example**{% endtogglecloak %}
-{% gcloak 1 %}
-{% inittab os_simple_space|top %}
-{% tabcontent Annotation %}
 {%highlight java%}
-
 @SpaceClass(persist=true)
 public class Person {
 //
 }
 {%endhighlight%}
-{% endtabcontent %}
-{% tabcontent gs.xml %}
-{%highlight xml%}
- <class name="examples.model.Person"
-     persist="true">
- </class>
-}
-{%endhighlight%}
-{% endtabcontent %}
-{% endinittab %}
-{% endgcloak %}
+
 {%learn%}./space-persistency.html{%endlearn%}
 
 
@@ -57,15 +43,14 @@ public class Person {
 |Default    | IncludeProperties.IMPLICIT|
 |Description| `IncludeProperties.IMPLICIT` takes into account all POJO fields -- even if a `get` method is not declared with a `@SpaceProperty` annotation, it is taken into account as a space field.`IncludeProperties.EXPLICIT` takes into account only the `get` methods which are declared with a `@SpaceProperty` annotation. |
 
-{% togglecloak id=2 %}**Example**{% endtogglecloak %}
-{% gcloak 2 %}
+Example:
 {%highlight java%}
 @SpaceClass(includeProperties=IncludeProperties.EXPLICIT)
 public class Person {
   //
 }
 {%endhighlight%}
-{% endgcloak %}
+
 
 # FIFO Support
 
@@ -76,17 +61,15 @@ public class Person {
 |Description| To enable FIFO operations, set this attribute to `FifoSupport.OPERATION`|
 
 
-{% togglecloak id=3 %}**Example**{% endtogglecloak %}
-{% gcloak 3 %}
+Example:
 {%highlight java%}
 @SpaceClass(fifoSupport=FifoSupport.OPERATION)
 public class Person {
-
   //
 }
 {%endhighlight%}
-{% endgcloak %}
- {%learn%}./fifo-support.html{%endlearn%}
+
+{%learn%}./fifo-support.html{%endlearn%}
 
 
 # Inherit Index
@@ -97,18 +80,15 @@ public class Person {
 |Default    | true|
 |Description| Whether to use the class indexes list only, or to also include the superclass' indexes. {% wbr %}If the class does not define indexes, superclass indexes are used. {% wbr %}Options:{% wbr %}- `false` -- class indexes only.{% wbr %}- `true` -- class indexes and superclass indexes.|
 
+Example:
 
-
-{% togglecloak id=4 %}**Example**{% endtogglecloak %}
-{% gcloak 4 %}
 {%highlight java%}
 @SpaceClass(inheritIndexes=false)
 public class Person {
-
   //
 }
 {%endhighlight%}
-{% endgcloak %}
+
 {%learn%}./indexing.html{%endlearn%}
 
 # Storage Type
@@ -120,16 +100,15 @@ public class Person {
 |Description| To determine a default storage type for each non primitive property for which a (field level) storage type was not defined.|
 
 
-{% togglecloak id=5 %}**Example**{% endtogglecloak %}
-{% gcloak 5 %}
+Example:
+
 {%highlight java%}
 @SpaceClass(storageType=StorageType.BINARY)
 public class Person {
-
   //
 }
 {%endhighlight%}
-{% endgcloak %}
+
 {%learn%}./storage-types---controlling-serialization.html{%endlearn%}
 
 # Replication
@@ -140,27 +119,18 @@ public class Person {
 |Default    | true|
 |Description| When running in a partial replication mode, a **`false`** value for this property will not replicates all objects from this class type to the replica space or backup space.} |
 
-{% togglecloak id=6 %}**Example**{% endtogglecloak %}
-{% gcloak 6 %}
-{% inittab os_simple_space|top %}
-{% tabcontent Annotation %}
+Example:
+
 {%highlight java%}
 @SpaceClass(replicate=false)
 public class Person {
-
   //
 }
 {%endhighlight%}
-{% endtabcontent  %}
-{% tabcontent gs.xml %}
-{%highlight xml%}
-<class name="com.model.Person"
-         replicate="false">
-</class>
-{%endhighlight%}
-{% endtabcontent  %}
-{%endinittab%}
-{% endgcloak %}
+
+
+
+{%learn%}{%currentadmurl%}/replication.html{%endlearn%}
 
 
 # Compound Index
@@ -172,14 +142,14 @@ public class Person {
 |Description| Indexes can be defined for multiple attributes of a class  |
 
 
-{% togglecloak id=7 %}**Example**{% endtogglecloak %}
-{% gcloak 7 %}
+Example:
 {%highlight java%}
-@CompoundSpaceIndexes({ @CompoundSpaceIndex(paths = { "name", "creditLimit" }) })
+@CompoundSpaceIndexes({ @CompoundSpaceIndex(paths = { "firstName", "lastName" }) })
 @SpaceClass
 public class User {
      private Long id;
-     private String name;
+     private String firstName;
+     private String lastName;
      private Double balance;
      private Double creditLimit;
      private EAccountStatus status;
@@ -188,5 +158,6 @@ public class User {
 }
 
 {%endhighlight%}
-{% endgcloak %}
+
 {%learn%}./indexing-compound.html{%endlearn%}
+

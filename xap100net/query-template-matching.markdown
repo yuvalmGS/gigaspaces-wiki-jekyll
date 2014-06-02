@@ -106,7 +106,7 @@ public class Person
 }
 {% endhighlight %}
 
-We've indicated that `-1` should be treated as `null` when performing template matching, and initialized age to `-1` so users of Person class need not set it explicitly whenever they use it. For more information refer to [Object Metadata](./poco-metadata.html).
+We've indicated that `-1` should be treated as `null` when performing template matching, and initialized age to `-1` so users of Person class need not set it explicitly whenever they use it. For more information refer to [Object Metadata](./pono-attribute-annotations.html).
 
 {% note%}
 Properties of primitive types are implicitly boxed when stored in the space and unboxed when reconstructed to a PONO.

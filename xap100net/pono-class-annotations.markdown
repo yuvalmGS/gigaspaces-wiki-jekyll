@@ -1,7 +1,7 @@
 ---
-layout: post97
+layout: post100
 title:  Class Annotations
-categories: XAP97NET
+categories: XAP100NET
 parent: pono-annotation-overview.html
 weight: 100
 ---
@@ -140,7 +140,7 @@ public class Person {
 
 
 
-{%learn%}{%currentjavaurl%}/replication.html{%endlearn%}
+{%learn%}{%currentadmurl%}/replication.html{%endlearn%}
 
 
 # Compound Index
