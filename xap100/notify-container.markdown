@@ -1,38 +1,32 @@
 ---
 layout: post100
-title:  Notify Container
+title:  Overview
 categories: XAP100
-parent: event-processing.html
-weight: 200
+parent: notify-container-overview.html
+weight: 100
 ---
 
 {% summary  %}{%endsummary%}
 
-{%comment%}
-{% summary  %}The notify event container wraps the space data event session API with event container abstraction.{% endsummary %}
-
-# Overview
-{%endcomment%}
 
 {% section %}
 {% column width=70% %}
-The notify event container uses the space inherited support for notifications (continuous query) using a GigaSpaces unified event session API. If a notification occurs, the [data event listener](./data-event-listener.html) is invoked with the event. A notify event operation is mainly used when simulating Topic semantics.
+The notify event container uses the space inherited support for notifications (continuous query) using a XAPs unified event session API. If a notification occurs, the [data event listener](./data-event-listener.html) is invoked with the event. A notify event operation is mainly used when simulating Topic semantics.
 {% endcolumn %}
-{% column width=25% %}
-![notify_container_basic.jpg](/attachment_files/notify_container_basic.jpg)
+{% column width=30% %}
+![polling_container_basic.jpg](/attachment_files/notify_container_basic.jpg)
 {% endcolumn %}
 {% endsection %}
 
-{%comment%}
-<iframe width="640" height="360" src="//www.youtube.com/embed/GwLfDYgl6f8?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
-{%endcomment%}
 
-## Life Cycle Events
-
+### Life Cycle Events
 The notify container life cycle events described below. You may implement each of of these to perform the desired activity.
-![notify_container_life_cycle.jpg](/attachment_files/notify_container_life_cycle.jpg)
 
-## Configuration
+![polling_container_basic.jpg](/attachment_files/notify_container_life_cycle.jpg)
+
+
+
+# Configuration
 
 Here is a simple example of a notify event container configuration:
 
@@ -290,6 +284,8 @@ SimpleNotifyEventListenerContainer notifyEventListenerContainer =
 
 To free the resources used by the notify container make sure you close it properly. A good life cycle event to place the `destroy()` call would be within the `@PreDestroy` or `DisposableBean.destroy()` method.
 
+{%comment%}
+
 # Transaction Support
 
 The notify container can be configured with transaction support, so the event action can be performed under a transaction. Exceptions thrown by the event listener cause the operations performed within the listener to be rolled back automatically.
@@ -408,6 +404,8 @@ public class SimpleListener {
 
 {% endtabcontent %}
 {% endinittab %}
+
+{%endcomment%}
 
 # Masking Notifications
 

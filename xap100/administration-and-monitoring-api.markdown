@@ -1,6 +1,6 @@
 ---
 layout: post100
-title:  Admin API
+title:  Overview
 categories: XAP100
 parent: administration-and-monitoring-overview.html
 weight: 100

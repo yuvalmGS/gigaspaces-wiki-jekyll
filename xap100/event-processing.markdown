@@ -21,10 +21,10 @@ This section will guide you through event processing APIs and configuration on t
 <hr/>
 
 
-- [Notify Container](./notify-container.html){%wbr%}
+- [Notify Container](./notify-container-overview.html){%wbr%}
 The notify event container wraps the space data event session API with event container abstraction.
 
-- [Polling Container](./polling-container.html){%wbr%}
+- [Polling Container](./polling-container-overview.html){%wbr%}
 Allows you to perform polling receive operations against the space.
 
 - [Event Listener](./data-event-listener.html){%wbr%}
@@ -35,6 +35,10 @@ Describe the common Exception Event Listener and its different adapters.
 
 - [FIFO Ordering](./fifo-overview.html){%wbr%}
 XAP supports both non-ordered Entries and FIFO ordered Entries when performing space operations.
+
+- [JMS Integration](./messaging-support.html){%wbr%}
+XAP provide a JMS implementation, built on top of the core spaces architecture.
+
 
 <hr/>
 

@@ -1,30 +1,24 @@
 ---
 layout: post100
-title:  Polling Container
+title:  Overview
 categories: XAP100
-parent: event-processing.html
-weight: 300
+parent: polling-container-overview.html
+weight: 100
 ---
 
 {% summary  %}{%endsummary%}
-{%comment%}
-{% summary %}Allows you to perform polling receive operations against the space.{% endsummary %}
 
-# Overview
-{%endcomment%}
 
 {% section %}
 {% column width=70% %}
 The polling event container is an implementation of the [polling consumer pattern](http://enterpriseintegrationpatterns.com/PollingConsumer.html){:target="_blank"} which uses the space to receive events. It performs polling receive operations against the space. If a receive operation succeeds (a value is returned from the receive operation), the [Data Event Listener](./data-event-listener.html) is invoked with the event. A polling event operation is mainly used when simulating Queue semantics or when using the master-worker design pattern.
 {% endcolumn %}
-{% column width=25% %}
+{% column width=30% %}
 ![polling_container_basic.jpg](/attachment_files/polling_container_basic.jpg)
 {% endcolumn %}
 {% endsection %}
 
-{%comment%}
-<iframe width="640" height="360" src="//www.youtube.com/embed/GwLfDYgl6f8?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
-{%endcomment%}
+
 
 ## Life Cycle Events
 
@@ -167,6 +161,8 @@ This mostly applies when working with an embedded space directly with a cluster 
 
 The FIFO Grouping designed to allow efficient processing of events with partial ordering constraints. Instead of maintaining a FIFO queue per class type, it lets you have a higher level of granularity by having FIFO queue maintained according to a specific value of a specific property. For more details see [FIFO grouping](./fifo-grouping.html).
 
+{%comment%}
+
 # Concurrent Consumers
 
 By default, the polling event container starts a single thread that performs the receive operations and invokes the event listener. It can be configured to start several concurrent consumer threads and have an upper limit to the concurrent consumer threads. This provides faster processing of events, however, any FIFO behavior that might be configured in the space and/or template is lost.
@@ -264,6 +260,9 @@ Sometimes, it is very convenient to have a listener instance per concurrent poll
 
 {% endtabcontent %}
 {% endinittab %}
+
+{%endcomment%}
+
 
 # Static Template Definition
 
@@ -807,6 +806,8 @@ return events;
 
 To free the resources used by the polling container make sure you close it properly. A good life cycle event to place the `destroy()` call would be within the `@PreDestroy` or `DisposableBean.destroy()` method.
 
+{%comment%}
+
 # Transaction Support
 
 Both the receive operation and the actual event action can be configured to be performed under a transaction. Transaction support is required when, for example, an exception occurs in the event listener, and the receive operation needs to be to rolled back (and the actual data event is returned to the space). Adding transaction support is very simple in the polling container, and can be done by injecting a transaction manager into it. For example:
@@ -1053,6 +1054,8 @@ public class SimpleListener {
 
 {% endtabcontent %}
 {% endinittab %}
+
+{%endcomment%}
 
 # Trigger Receive Operation
 

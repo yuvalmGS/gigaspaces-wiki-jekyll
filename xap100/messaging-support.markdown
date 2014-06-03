@@ -1,9 +1,9 @@
 ---
 layout: post100
-title:  Messaging Support
+title:  JMS Integration
 categories: XAP100
-parent: programmers-guide.html
-weight: 1400
+parent: event-processing.html
+weight: 700
 ---
 
 {%wbr%}

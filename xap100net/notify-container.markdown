@@ -1,9 +1,9 @@
 ---
 layout: post100
-title:  Notify Container
+title:  Overview
 categories: XAP100NET
-parent: event-processing.html
-weight: 200
+parent: notify-container-overview.html
+weight: 100
 ---
 
 
@@ -162,6 +162,7 @@ notifyEventListenerContainer.Template = new SqlQuery<Data>(template, "Processed 
 
 {% endinittab %}
 
+{%comment%}
 # Transaction Support
 
 The notify container can be configured with transaction support, so the event action can be performed under a transaction. Exceptions thrown by the event listener cause the operations performed within the listener to be rolled back automatically.
@@ -237,6 +238,8 @@ notifyEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAda
 {% endinittab %}
 
 {% refer %}The order of parameters of the event handling method is strict, please refer to [Dynamic Data Event Handler Adapter](./event-listener-container.html#eventhandleradapter) for more information about it.{% endrefer %}
+
+{%endcomment%}
 
 # Masking Notifications
 
@@ -352,7 +355,9 @@ notifyEventListenerContainer.BatchDataEventArrived += new DelegateDataEventArriv
 
 The notify event container can register for events or notifications, and have the events delivered in a FIFO order.
 
-{% infosign %} For full FIFO support, the actual template also has to be marked as FIFO. For more details, refer to the [FIFO Support](./fifo-support.html) section.
+{% info %}
+For full FIFO support, the actual template also has to be marked as FIFO. For more details, refer to the [FIFO Support](./fifo-support.html) section.
+{%endinfo%}
 
 Here is an example of how FIFO events can be configured with the notify container:
 

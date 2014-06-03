@@ -61,8 +61,6 @@ Event processing on top of the space.
 - [Space Based Remoting](./space-based-remoting-overview.html){%wbr%}
 Remoting allows you to use remote invocations of POJO services, with the space as the transport layer.
 
-- [Messaging](./messaging-support.html){%wbr%}
-XAP provide a JMS implementation, built on top of the core spaces architecture.
 
 - [Interoperability](./interoperability-overview.html){%wbr%}
 Interoperability between Java, .Net, cpp, REST.

@@ -18,17 +18,6 @@ This section will guide you through event processing APIs and configuration on t
 {%endsection%}
 
 
-
-
-{%comment%}
-{% summary %}This section will guide you through event processing APIs and configuration on top of the space{% endsummary %}
-
-![archi_proce.jpg](/attachment_files/archi_proce.jpg)
-
-<iframe width="640" height="360" src="//www.youtube.com/embed/GwLfDYgl6f8?feature=player_embedded" frameborder="0" allowfullscreen></iframe>
-{%endcomment%}
-
-
 <hr/>
 
 
@@ -46,12 +35,12 @@ Allows you to perform polling receive operations against the space.
 Describe the common Exception Event Listener and its different adapters.
 {%endcomment%}
 
+
+
+- [FIFO Ordering](./fifo-overview.html){%wbr%}
+XAP supports both non-ordered Entries and FIFO ordered Entries when performing space operations.
+
+
 <hr/>
 
 
-
-{%comment%}
-{%children%}
-
-![Net_polling_notify_cont.jpg](/attachment_files/dotnet/Net_polling_notify_cont.jpg)
-{%endcomment%}

@@ -1,9 +1,9 @@
 ---
 layout: post100
-title:  Polling Container
+title:  Overview
 categories: XAP100NET
-parent: event-processing.html
-weight: 300
+parent: polling-container-overview.html
+weight: 100
 ---
 
 
@@ -114,9 +114,10 @@ This mostly applies when working with an embedded space directly with a cluster 
 
 The FIFO Grouping designed to allow efficient processing of events with partial ordering constraints. Instead of maintaining a FIFO queue per class type, it lets you have a higher level of granularity by having FIFO queue maintained according to a specific value of a specific property. For more details see [FIFO grouping](./fifo-grouping.html).
 
+{%comment%}
 # Concurrent Consumers
 
-By default, the polling event container starts a single thread that performs the receive operations and invokes the event listener. It can be configured to start several concurrent consumer threads, and have an upper limit to the concurrent consumer threads, the container will manage the scaling up and down of concurrent consumers automatically according to the load, however, there are a few parameters regarding this scaling logic which are described in [Auto Polling Consumer Scaling](./auto-polling-consumer-scaling.html). This provides faster processing of events. However, any FIFO behavior that might be configured in the space and/or template is lost.
+By default, the polling event container starts a single thread that performs the receive operations and invokes the event listener. It can be configured to start several concurrent consumer threads, and have an upper limit to the concurrent consumer threads, the container will manage the scaling up and down of concurrent consumers automatically according to the load, however, there are a few parameters regarding this scaling logic which are described in [Auto Polling Consumer Scaling](./polling-consumer-scaling.html). This provides faster processing of events. However, any FIFO behavior that might be configured in the space and/or template is lost.
 
 {% note %}
 When using a FIFO Grouping, the FIFO order of each value is not broken. See [FIFO Grouping](./fifo-grouping.html) page for more details.
@@ -196,6 +197,8 @@ pollingEventListenerContainer.CloneEventListenersPerThread = true;
 {% endtabcontent %}
 
 {% endinittab %}
+
+{%endcomment%}
 
 # Static Template Definition
 
@@ -526,6 +529,8 @@ pollingEventListenerContainer.Dispose();
 
 {% endinittab %}
 
+{%comment%}
+
 # Transaction Support
 
 Both the receive operation, and the actual event action can be configured to be performed under a transaction. Transaction support is required for example, when an exception occurs in the event listener, and the receive operation needs to be to rolled back (and the actual data event is returned to the space). Adding transaction support to the polling container is very simple. It is done by setting the `TransactionType` property. There are two transaction types: Distributed and Manual.
@@ -630,6 +635,8 @@ pollingEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAd
 {% endinittab %}
 
 {% refer %}The order of parameters of the event handling method is strict, please refer to [Dynamic Data Event Handler Adapter](./event-listener-container.html#eventhandleradapter) for more information about it.{% endrefer %}
+
+{%endcomment%}
 
 # Trigger Receive Operation
 
