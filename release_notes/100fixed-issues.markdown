@@ -33,3 +33,5 @@ Below is a list of issues that have been fixed in GigaSpaces 10.0.X.
 | GS-11668 | Jetty shared mode doesn't work | 10.0.0 | | Java |
 | GS-11689 | Protective mode primitiveWithoutNullValue is thrown from replication | 9.7.1, 10.0.0 | 8808 | All |
 | GS-11690 | Linq expressions without where clause throw exception | 9.7.1, 10.0.0 | | .NET |
+| GS-11740 | Duplicate lease renewal in MapCache | 8_0_5_patch1, 10.0.0 | 8815 | Java |
+| GS-11748 | LRU space with no EDS partitioned-sync2backup might face version conflict that will lead to replication error and increase redolog | 9.1.0 patch3, 10.0.0 | 8962 | All |
