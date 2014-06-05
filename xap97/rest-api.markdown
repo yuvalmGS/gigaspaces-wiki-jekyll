@@ -1,7 +1,7 @@
 ---
-layout: post100
+layout: post97
 title:  REST API
-categories: XAP100
+categories: XAP97
 parent: interoperability-overview.html
 weight: 300
 ---
@@ -60,7 +60,7 @@ http://localhost:8080/RESTData/rest/data/Item?space=myDataGrid
 
 {% highlight java %}
 http://localhost:8080/RESTData/rest/data/Item/count?space=myDataGrid
-{% endhightlight %}
+{% endhighlight %}
 
 - readMultiple
 
