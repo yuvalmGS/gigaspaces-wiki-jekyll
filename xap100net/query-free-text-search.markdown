@@ -1,13 +1,12 @@
 ---
 layout: post100
 title:  Free Text Search
-categories: XAP100
+categories: XAP100NET
 parent: querying-the-space.html
-weight: 350
+weight: 550
 ---
 
 {%summary%}{%endsummary%}
-
 
 
 Free text search is required almost with every application.
@@ -18,27 +17,30 @@ A simple way to enable such a search without using a regular expression query th
 
 Our Space class includes the following - note the **words** and the **freeText** fields:
 
-{% highlight java %}
+{% highlight csharp %}
 public class MyData {
-	String[] words;
-	String freeText;
 
-	public String[] getWords() {
-		return words;
+
+	private String[] Words {set; get;}
+
+	private String FreeText{set; get;}
+
+	public String[] GetWords() {
+		return Words;
 	}
 
-	public void setWords(String words[]) {
-		this.words=words;
+	public void SetWords(String[] ws) {
+		this.Words=ws;
 	}
 
 	public String getFreeText() {
-		return freeText;
+		return FreeText;
 	}
+
 	public void setFreeText(String freeText) {
-		this.freeText = freeText;
-		this.words = freeText.split(" ");
+		this.FreeText = freeText;
+		this.Words = FreeText.Split(" ");
 	}
-....
 }
 {% endhighlight %}
 
@@ -47,22 +49,22 @@ public class MyData {
 
 You may write the data into the space using the following:
 
-{% highlight java %}
-MyData data = new MyPOJO(...);
-data.setFreeText(freetext);
-gigaspace.write(data);
+{% highlight csharp %}
+MyData data = new MyData(...);
+data.FreeText(freetext);
+proxy.Write(data);
 {% endhighlight %}
 
 You can query for objects having the word **hello** as part of the freeText field using the following:
 
-{% highlight java %}
-MyData results[] = gigaspace.readMultiple(new SQLQuery<MyData>(MyData.class, words[*]='hello'));
+{% highlight csharp %}
+MyData results[] = proxy.ReadMultiple<MyData>(new SqlQuery<MyData>("Words[*]='hello'"));
 {% endhighlight %}
 
 You can also execute the following to search for object having the within the freeText field the word **hello** or **everyone**:
 
-{% highlight java %}
-MyData results[] = gigaspace.readMultiple(new SQLQuery<MyData>(MyData.class, words[*]='hello' OR words[*]='everyone'));
+{% highlight csharp %}
+MyData results[] = proxy.ReadMultiple(new SqlQuery<MyData>("Words[*]='hello' OR Words[*]='everyone')");
 {% endhighlight %}
 
 With the above approach you avoid the overhead with regular expression queries.
@@ -72,30 +74,31 @@ With the above approach you avoid the overhead with regular expression queries.
 
 To speed up the query you can create an [index](./indexing-collections.html) on the fields you want to search.
 
-Example:
 
-{% highlight java %}
+{% highlight csharp %}
 public class MyData {
-	String[] words;
-	String freeText;
 
-	@SpaceIndex (path="[*]")
-	public String[] getWords() {
-		return words;
+    [@SpaceIndex (path="[*]")]
+	private String[] Words {set; get;}
+
+	private String FreeText{set; get;}
+
+	public String[] GetWords() {
+		return Words;
 	}
 
-	public void setWords(String words[]) {
-		this.words=words;
+	public void SetWords(String[] ws) {
+		this.Words=ws;
 	}
 
 	public String getFreeText() {
-		return freeText;
+		return FreeText;
 	}
+
 	public void setFreeText(String freeText) {
-		this.freeText = freeText;
-		this.words = freeText.split(" ");
+		this.FreeText = freeText;
+		this.Words = FreeText.Split(" ");
 	}
-....
 }
 {% endhighlight %}
 
@@ -108,7 +111,3 @@ To search for specific words in a specific order within the free text field you 
 {% endcomment %}
 
 
-<ul class="pager">
-  <li class="previous"><a href="./query-sql.html">&larr; SQL Query</a></li>
-  <li class="next"><a href="./query-nested-properties.html">Nested Properties &rarr;</a></li>
-</ul>

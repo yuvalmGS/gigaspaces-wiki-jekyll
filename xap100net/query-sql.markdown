@@ -124,71 +124,7 @@ All the supported methods and options above are relevant also for using `rlike` 
 {% note %} `like` and `rlike` queries are not using indexed data, hence executing such may be relatively time consuming compared to other queries that do leverage indexed data. This means the space engine iterate the potential candidate list to find matching object using the Java regular expression utilizes. A machine using 3GHz CPU may iterate 100,000-200,000 objects per second when executing regular expression query. To speed up `like` and `rlike` queries make sure your query leveraging also at least one indexed field to minimize the candidate list. Running multiple partitions will also speed up the query execution since this will allow the system to iterate over the potential matching objects in a parallel manner across the different partitions.
 {%endnote%}
 
-# Free Text Search
 
-Free text search required almost with every application. Users placing some free text into a form and later the system allows users to search for records that includes one or more words within a free text field. A simple way to enable such fast search without using regular expression query that my have some overhead can be done using the [Collection Indexing](./indexing.html#Collection Indexing), having an array or a collection of String values used for the query. Once the query is executed the SQL Query should use the searched words as usual. See example below:
-
-Our Space class includes the following - note the **words** and the **freeText** fields:
-
-{% highlight csharp %}
-public class MyData {
-
-    [@SpaceIndex (path="[*]")]
-	private String[] Words {set; get;}
-
-	private String FreeText{set; get;}
-
-	public String[] GetWords() {
-		return Words;
-	}
-
-	public void SetWords(String[] ws) {
-		this.Words=ws;
-	}
-
-	public String getFreeText() {
-		return FreeText;
-	}
-
-	public void setFreeText(String freeText) {
-		this.FreeText = freeText;
-		this.Words = FreeText.Split(" ");
-	}
-}
-{% endhighlight %}
-
-{% note %} Note how the **freeText** field is broken into the **words** array before placed into the indexed field.
-{%endnote%}
-
-You may write the data into the space using the following:
-
-{% highlight csharp %}
-MyData data = new MyData(...);
-data.FreeText(freetext);
-proxy.Write(data);
-{% endhighlight %}
-
-You can query for objects having the word **hello** as part of the freeText field using the following:
-
-{% highlight csharp %}
-MyData results[] = proxy.ReadMultiple<MyData>(new SqlQuery<MyData>("Words[*]='hello'"));
-{% endhighlight %}
-
-You can also execute the following to search for object having the within the freeText field the word **hello** or **everyone**:
-
-{% highlight csharp %}
-MyData results[] = proxy.ReadMultiple(new SqlQuery<MyData>("Words[*]='hello' OR Words[*]='everyone')");
-{% endhighlight %}
-
-With the above approach you avoid the overhead with regular expression queries.
-
-{% tip %}
-The same approach can be implemented also with the [SpaceDocument](./document-api.html).
-{% endtip %}
-
-{% comment %}
-To search for specific words in a specific order within the free text field you should use the indexed field and regular expression with another field that stores the free text.
-{% endcomment %}
 
 # Case Insensitive Query
 
