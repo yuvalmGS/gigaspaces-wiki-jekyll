@@ -60,7 +60,7 @@ http://localhost:8080/RESTData/rest/data/Item?space=myDataGrid
 
 {% highlight java %}
 http://localhost:8080/RESTData/rest/data/Item/count?space=myDataGrid
-{% endhightlight %}
+{% endhighlight %}
 
 - readMultiple
 
