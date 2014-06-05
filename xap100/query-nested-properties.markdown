@@ -261,6 +261,6 @@ For more information see the [Collection Indexing](./indexing.html#Collection In
 {%endvbar%}
 
 <ul class="pager">
-  <li class="previous"><a href="./query-sql.html">&larr; SQLQuery</a></li>
+  <li class="previous"><a href="./query-free-text-search.html">&larr; Free Text Search</a></li>
   <li class="next"><a href="./query-user-defined-classes.html">User Defined CLasses &rarr;</a></li>
 </ul>

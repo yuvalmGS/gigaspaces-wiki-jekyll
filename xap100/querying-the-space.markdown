@@ -28,6 +28,8 @@ Template matching (a.k.a. Match by example) is a simple way to query the space.
 - [SQL Query](./query-sql.html){%wbr%}
 The SQLQuery class is used to query the space using SQL-like syntax.
 
+- [Free text search](./query-free-text-search.html){%wbr%}
+Search for records that include one or more words within a free text field.
 
 - [Nested property queries](./query-nested-properties.html){%wbr%}
 Query nested properties, maps and collections using SQL queries
