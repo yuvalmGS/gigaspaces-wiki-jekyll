@@ -14,7 +14,6 @@ Below is a list of known issues in GigaSpaces 10.0.X.
 | Key | Summary | SalesForce ID | Since version | Workaround | Platform/s
 |:----|:--------|:----------------|:---------------|:------------------|:----------|
 | GS-11589 | Not all threads are terminated when destroying UrlSapceContainer | | 10.0.0 | | All |
-| GS-11595 | Running Web-ui for long period can cause in certain conditions OOM due to too many threads | 8600 | 10.0.0 | | Java |
 | GS-11622 | Web-ui shows wrong instance count with replic | | 10.0.0 | | All |
 | GS-11626 | Failed to deploy data example using secured space | | 10.0.0 | | Java |
 | GS-11629 | sla.xml has side effect on spring import | 8597 | 10.0.0 | | Java |
@@ -34,19 +33,12 @@ Below is a list of known issues in GigaSpaces 10.0.X.
 | GS-11697 | MongoDB-Incorrect return value in DataSyncOperation.getDataAsDocument() for duble | | 10.0.0 | | All |
 | GS-11698 | Cannot override java.security.policy system property | | 10.0.0 | | Java |
 | GS-11701 | RESTData cannot handle Array | | 10.0.0 | | All |
-| GS-11703 | .NET code is not CLS-Compliant | | 10.0.0 | | .NET |
-| GS-11707 | Remove option to select persistent schema from the deploy dialog | | 10.0.0 | | All |
-| GS-11708 | Web UI missing features | | 10.0.0 | | All |
-| GS-11709 | Cache miss stats when running in LRU | | 10.0.0 | | All |
 | GS-11711 | NPE in ESM destroy in rare condition | | 10.0.0 | | ALL |
 | GS-11712 | ESM is stuck in a processing loop although the applications have been uninstalled due to unexpected exception | | 10.0.0 | | All |
-| GS-11714 | XAP.NET Default.config max/min heap size | | 10.0.0 | | .NET |
-| GS-11715 | Change GS UI Query default limit to 100 | | 10.0.0 | | All |
-| GS-11716 | Rename XAP.NET GigaSpaces.NetToJava.dll and GigaSpaces.Jav | | 10.0.0 | | .NET |
-| GS-11718 | Special config property for redo log swap files location | | 10.0.0 | | All |
 | GS-11719 | gigaspace.getTypeManager().getTypeDescriptor(type) returns the outdated type descriptor from the server | | 10.0.0 | | Java |
 | GS-11720 | GS-UI: Hidden progressbar in relocation window | | 10.0.0 | | Java |
 | GS-11727 | com.gigaspaces.management.space.SpaceQueryDetails JavaDoc missing | | 10.0.0 | | Java |
 | GS-11728 | Syntax error message in DotNetException.java class | 8927 | 10.0.0 | | Java, .NET |
 | GS-11732 | Disributed transaction over multiple clusters might cause consolidations problems | 8935 | 10.0.0 | | All |
 | GS-11736 | Can't see space in gs-ui when running gsInstance.bat when using jdk 7u55 | | 10.0.0 | | Java |
+| GS-11744 | Decreasing the height of the EDG window hides content and does not show scroll-bar | | 10.0.0 | | All |
