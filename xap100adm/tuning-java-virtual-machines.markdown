@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  Java Virtual Machines
 categories: XAP100ADM
 parent: tuning.html

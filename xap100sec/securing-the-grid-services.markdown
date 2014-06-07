@@ -1,7 +1,7 @@
 ---
 layout: post100
 title:  Grid Services
-categories: XAP100
+categories: XAP100SEC
 parent: securing-xap-components.html
 weight: 200
 ---
@@ -36,7 +36,7 @@ A secured GSM can **only** connect to another secured GSM. This means that a Pro
 
 ## Elastic Processing Units
 
-When an [Elastic Processing Unit](./elastic-processing-unit.html) is deployed, the GSM performs the initial provisioning and the *ESM* monitors it to ensure the elastic requirements are met. This means that when the service grid is secured, the ESM requires credentials with *Manage PU* and *Manage Grid* permissions to monitor and manage the elastic processing units. This is done using the `com.gs.esm.username` and `com.gs.esm.password` system properties.
+When an [Elastic Processing Unit]({%currentjavaurl%}/elastic-processing-unit.html) is deployed, the GSM performs the initial provisioning and the *ESM* monitors it to ensure the elastic requirements are met. This means that when the service grid is secured, the ESM requires credentials with *Manage PU* and *Manage Grid* permissions to monitor and manage the elastic processing units. This is done using the `com.gs.esm.username` and `com.gs.esm.password` system properties.
 
 
 # Grid Service Container

@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  Monitoring Tools
 categories: XAP100ADM
 parent: monitoring.html

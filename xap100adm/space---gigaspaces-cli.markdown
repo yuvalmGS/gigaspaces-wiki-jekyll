@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  Space Command Line Interface
 categories: XAP100ADM
 parent: administration-tools.html

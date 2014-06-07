@@ -1,9 +1,9 @@
 ---
 layout: post100
 title:  Overview
-categories: XAP100
-parent: security-overview.html
-weight: 100
+categories: XAP100SEC
+parent: none
+weight : 100
 ---
 
 {%comment%}

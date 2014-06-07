@@ -5,24 +5,24 @@ module DocUtils
       if sectionPath.start_with?("xap")
         isDotNet = sectionPath.end_with?("net");
         isAdmin = sectionPath.end_with?("adm");
-        isInstall = sectionPath.end_with?("inst");
-        isDeploy = sectionPath.end_with?("dep");
+        isSecurity = sectionPath.end_with?("sec");
+        isMultiSite = sectionPath.end_with?("msr");
         sectionPath = sectionPath.sub("xap","")
         sectionPath = sectionPath.sub("net","")
         sectionPath = sectionPath.sub("adm","")
-        sectionPath = sectionPath.sub("inst","")
-        sectionPath = sectionPath.sub("dep","")
+        sectionPath = sectionPath.sub("sec","")
+        sectionPath = sectionPath.sub("msr","")
         version = sectionPath.insert(sectionPath.length - 1, ".")
         if isDotNet 
-          ".NET " + version
+          "" + version + " C#"
         elsif isAdmin
-          return "" + version + " Admin Guide"
-        elsif isInstall
-          return "" + version + " Installation Guide"
-        elsif isDeploy
-          return "" + version + " Deployment Guide"
+          return "" + version + " Administration"
+        elsif isSecurity
+          return "" + version + " Security"
+        elsif isMultiSite
+          return "" + version + " Multi Site Replication"
         else 
-          return "Java " + version
+          return "" + version + " Java"
         end
       elsif sectionPath == "sbp" 
         "Solutions &amp; Patterns"
@@ -57,6 +57,8 @@ module DocUtils
         versionDir = versionDir.sub("xap","")
         versionDir = versionDir.sub("net","")
         versionDir = versionDir.sub("adm","")
+        versionDir = versionDir.sub("sec","")
+        versionDir = versionDir.sub("msr","")
         versionDir.insert(versionDir.length - 1, ".")
       else 
         context.registers[:site].config["latest_xap_release"]

@@ -1,7 +1,7 @@
 ---
 layout: post100
 title:  Java Security Policy File
-categories: XAP100
+categories: XAP100SEC
 parent: security-administration.html
 weight: 500
 ---

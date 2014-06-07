@@ -1,9 +1,8 @@
 ---
 layout: post100
 title:  Security
-categories: XAP100
-parent: none
-weight: 1000
+categories: XAP100SEC
+
 ---
 
 {%wbr%}

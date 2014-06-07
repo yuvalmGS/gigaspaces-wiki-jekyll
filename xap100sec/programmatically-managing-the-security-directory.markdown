@@ -1,8 +1,8 @@
 ---
 layout: post100
 title:  Directory Management
-categories: XAP100
-parent: security-overview.html
+categories: XAP100SEC
+parent: none
 weight: 500
 ---
 

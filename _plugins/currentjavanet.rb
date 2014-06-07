@@ -16,6 +16,7 @@ module Jekyll
           versionDir = versionDir.sub("xap","")
           versionDir = versionDir.sub("net","")
           versionDir = versionDir.sub("adm","")
+          versionDir = versionDir.sub("sec","")
 
           javaURL = "/xap" + versionDir +"/"  + @text
           netURL =  "/xap" + versionDir + "net/" + @text

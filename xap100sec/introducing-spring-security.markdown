@@ -1,7 +1,7 @@
 ---
 layout: post100
 title:  Spring Security
-categories: XAP100
+categories: XAP100SEC
 parent: spring-security-bridge.html
 weight: 100
 ---

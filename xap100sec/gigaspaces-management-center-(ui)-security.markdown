@@ -1,7 +1,7 @@
 ---
 layout: post100
 title:  Management Center
-categories: XAP100
+categories: XAP100SEC
 parent: security-administration.html
 weight: 100
 ---

@@ -1,8 +1,8 @@
 ---
 layout: post100
 title:  Securing Components
-categories: XAP100
-parent: security-overview.html
+categories: XAP100SEC
+parent: one
 weight: 700
 ---
 

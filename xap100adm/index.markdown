@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  Deployment and Administration
 categories: XAP100ADM
 

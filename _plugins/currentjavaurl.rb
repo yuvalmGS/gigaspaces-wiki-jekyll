@@ -12,6 +12,7 @@ module Jekyll
         if versionDir.start_with?("xap")          
           versionDir = versionDir.sub("net","")
           versionDir = versionDir.sub("adm","")
+          versionDir = versionDir.sub("sec","")
           "/#{versionDir}"
         else 
           context.registers[:site].config["latest_java_url"]

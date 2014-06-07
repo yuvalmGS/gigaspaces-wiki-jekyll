@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  Dashboard View
 categories: XAP100ADM
 parent: web-management-console.html

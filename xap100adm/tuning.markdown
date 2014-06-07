@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  Performance Tuning
 categories: XAP100ADM
 parent: none

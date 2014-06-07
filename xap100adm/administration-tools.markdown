@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  Administration Tools
 categories: XAP100ADM
 weight: 600

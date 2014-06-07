@@ -1,7 +1,7 @@
 ---
 layout: post100
 title:  Command Line Interface
-categories: XAP100
+categories: XAP100SEC
 parent: security-administration.html
 weight: 200
 ---

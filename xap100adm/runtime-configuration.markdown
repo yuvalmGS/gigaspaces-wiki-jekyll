@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  Runtime Configuration
 categories: XAP100ADM
 weight: 700

@@ -1,7 +1,7 @@
 ---
 layout: post100
 title:  Authentication
-categories: XAP100
+categories: XAP100SEC
 parent: custom-security.html
 weight: 100
 ---

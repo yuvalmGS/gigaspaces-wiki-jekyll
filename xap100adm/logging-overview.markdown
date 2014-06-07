@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  Logging
 categories: XAP100ADM
 parent: none

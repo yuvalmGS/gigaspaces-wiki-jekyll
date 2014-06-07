@@ -1,5 +1,5 @@
 module Jekyll
-  class CurrentAdmUrl < Liquid::Tag
+  class CurrentSecurityUrl < Liquid::Tag
 
     def initialize(tag_name, text, tokens)
       super
@@ -13,12 +13,12 @@ module Jekyll
           versionDir = versionDir.sub("net","")
           versionDir = versionDir.sub("adm","")
           versionDir = versionDir.sub("sec","")
-          "/#{versionDir}adm"
+          "/#{versionDir}sec"
         else 
-          context.registers[:site].config["latest_java_url"]
+          context.registers[:site].config["latest_sec_url"]
         end
       else
-        context.registers[:site].config["latest_java_url"]
+        context.registers[:site].config["latest_sec_url"]
       end
     end 
 
@@ -28,4 +28,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('currentadmurl', Jekyll::CurrentAdmUrl)
+Liquid::Template.register_tag('currentsecurl', Jekyll::CurrentSecurityUrl)

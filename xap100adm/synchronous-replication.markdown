@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  Synchronous Replication
 categories: XAP100ADM
 parent: replication.html

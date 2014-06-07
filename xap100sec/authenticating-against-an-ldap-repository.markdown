@@ -1,7 +1,7 @@
 ---
 layout: post100
-title:  LDAP Authenticating
-categories: XAP100
+title:  LDAP Authentication
+categories: XAP100SEC
 parent: spring-security-bridge.html
 weight: 400
 ---

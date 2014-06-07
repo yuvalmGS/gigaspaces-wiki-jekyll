@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  Data-Partitioning
 categories: XAP100ADM
 parent: data-grid-clustering.html

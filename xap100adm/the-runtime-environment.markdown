@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  The Runtime Environment
 categories: XAP100ADM
 parent: runtime-configuration.html

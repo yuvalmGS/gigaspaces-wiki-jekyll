@@ -44,8 +44,6 @@ Multiple site replication is the ability to replicate state between different de
 - [Platform Interoperability](./interoperability-overview.html){%wbr%}
 The possibility for organizations whose projects include a combination of Java, .NET and C++ platforms to communicate and access each other easily and efficiently while also maintaining the benefits of the XAP scale-out application server.
 
-- [Security](./security-overview.html) {%wbr%}
-This section provides an understanding of GigaSpaces XAP Security, where it fits in the GigaSpaces architecture, which components can be secured, and how to configure and customize the security depending on your application security requirements.
 
 <hr/>
 

@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  Timeout, Filters and Lease Manager
 categories: XAP100ADM
 parent: working-with-spaces---gigaspaces-browser.html

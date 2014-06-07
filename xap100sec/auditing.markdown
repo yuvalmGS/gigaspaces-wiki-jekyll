@@ -1,7 +1,7 @@
 ---
 layout: post100
 title:  Auditing
-categories: XAP100
+categories: XAP100SEC
 parent: security-administration.html
 weight: 400
 ---

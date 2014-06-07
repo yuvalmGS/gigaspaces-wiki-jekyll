@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  Deploy with Command Line
 categories: XAP100ADM
 parent: administration-tools.html
@@ -33,8 +33,8 @@ Deploys an [application]({%currentjavaurl%}/deploying-onto-the-service-grid.html
 | `-timeout` | Allows you to specify a timeout value (in milliseconds) when looking up the GSM to deploy to.{% wbr %}Defaults to `5000` milliseconds (5 seconds).| `-timeout [timeoutValue]`|
 | `-deploy-timeout` | Timeout for deploy operation (in milliseconds),{% wbr %}otherwise blocks until all successful/failed deployment events arrive (default)" |`-deploy-timeout [timeoutValue]`|
 | `-h` / `-help`  | Prints help | |
-| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security]({%currentjavaurl%}/command-line-interface-(cli)-security.html)| `-secured [true/false]`|
-| `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({%currentjavaurl%}/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
+| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security]({%currentsecurl%}/command-line-interface-(cli)-security.html)| `-secured [true/false]`|
+| `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({%currentsecurl%}/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
 
 {% togglecloak id=1 %}**Example**{% endtogglecloak %}
 {% gcloak 1 %}
@@ -102,8 +102,8 @@ Undeploys an [application]({%currentjavaurl%}/deploying-onto-the-service-grid.ht
 | `-timeout` | Allows you to specify a timeout value (in milliseconds) when looking up the GSM to deploy to.{% wbr %}Defaults to `5000` milliseconds (5 seconds).| `-timeout [timeoutValue]`|
 | `-undeploy-timeout` | Timeout for deploy operation (in milliseconds), otherwise blocks until all successful/failed deployment events arrive (default)" |`-undeploy-timeout [timeoutValue]`|
 | `-h` / `-help`  | Prints help | |
-| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security]({%currentjavaurl%}/command-line-interface-(cli)-security.html)| `-secured [true/false]`|
-| `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({%currentjavaurl%}/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
+| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security]({%currentsecurl%}/command-line-interface-(cli)-security.html)| `-secured [true/false]`|
+| `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({%currentsecurl%}/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
 
 {% togglecloak id=2 %}**Example**{% endtogglecloak %}
 {% gcloak 2 %}
@@ -162,8 +162,8 @@ Property files and other resources should be jared and placed within any of the 
 | `-max-instances-per-machine` | Allows you to set the SLA number of instances per machine | |
 | `-max-instances-per-zone` | Allows you to set the SLA number of instances per zone in the format of `zoneX/number,zoneY/number` | |
 | `h` / `help`  | Prints help | |
-| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security]({%currentjavaurl%}/command-line-interface-(cli)-security.html)| `-secured [true/false]`|
-| `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({%currentjavaurl%}/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
+| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security]({%currentsecurl%}/command-line-interface-(cli)-security.html)| `-secured [true/false]`|
+| `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({%currentsecurl%}/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
 
 {% tip %}
 You may use the [Primary-Backup Zone Controller](/sbp/primary-backup-zone-controller.html) to deploy primary and backup on specific different zones.
@@ -222,8 +222,8 @@ Undeploys an [application]({%currentjavaurl%}/deploying-onto-the-service-grid.ht
   Defaults to `5000` milliseconds (5 seconds).| `-timeout [timeoutValue]`|
 | `-undeploy-timeout` | Timeout for deploy operation (in milliseconds), otherwise blocks until all successful/failed deployment events arrive (default)" |`-undeploy-timeout [timeoutValue]`|
 | `-h` / `-help`  | Prints help | |
-| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security]({%currentjavaurl%}/command-line-interface-(cli)-security.html)| `-secured [true/false]`|
-| `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({%currentjavaurl%}/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
+| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security]({%currentsecurl%}/command-line-interface-(cli)-security.html)| `-secured [true/false]`|
+| `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({%currentsecurl%}/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
 
 {% togglecloak id=4 %}**Example**{% endtogglecloak %}
 {% gcloak 4 %}
@@ -262,8 +262,8 @@ Deploys a [memcached-enabled space]({%currentjavaurl%}/memcached-api.html), whic
 | `-max-instances-per-machine` | Allows you to set the SLA number of instances per machine | |
 | `-max-instances-per-zone` | Allows you to set the SLA number of instances per zone in the format of `zoneX/number,zoneY/number` | |
 | `h` / `help`  | Prints help | |
-| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security]({%currentjavaurl%}/command-line-interface-(cli)-security.html)| `-secured [true/false]`|
-| `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({%currentjavaurl%}/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
+| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security]({%currentsecurl%}/command-line-interface-(cli)-security.html)| `-secured [true/false]`|
+| `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({%currentsecurl%}/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
 
 {% tip %}
 You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to deploy complex multi processing unit applications.
@@ -307,8 +307,8 @@ A Space only Processing Unit can be easily deployed onto the Service Grid.
 | `-max-instances-per-machine` | Allows you to set the SLA number of instances per machine | |
 | `-max-instances-per-zone` | Allows you to set the SLA number of instances per zone in the format of `zoneX/number,zoneY/number` | |
 | `h` / `help`  | Prints help | |
-| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security]({%currentjavaurl%}/command-line-interface-(cli)-security.html)| `-secured [true/false]`|
-| `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({%currentjavaurl%}/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
+| `-secured` | Deploys a secured processing unit (implicit when using -user/-password) - [(CLI) Security]({%currentsecurl%}/command-line-interface-(cli)-security.html)| `-secured [true/false]`|
+| `-user` `-password` | Deploys a secured processing unit propagated with the supplied user and password - [(CLI) Security]({%currentsecurl%}/command-line-interface-(cli)-security.html)| `-user xxx -password yyyy`|
 
 {% tip %}
 You may use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to deploy complex multi processing unit applications.

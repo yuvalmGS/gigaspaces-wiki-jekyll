@@ -1,7 +1,7 @@
 ---
 layout: post100
-title:  Database Authenticating
-categories: XAP100
+title:  Database Authentication
+categories: XAP100SEC
 parent: spring-security-bridge.html
 weight: 300
 ---

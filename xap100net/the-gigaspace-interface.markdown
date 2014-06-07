@@ -205,7 +205,7 @@ The grid components are secured using the Security Administration.
 
 
 
-{%learn %}{%currentjavaurl%}/security-administration.html{%endlearn %}
+{%learn %}{%currentsecurl%}/security-administration.html{%endlearn %}
 
 
 

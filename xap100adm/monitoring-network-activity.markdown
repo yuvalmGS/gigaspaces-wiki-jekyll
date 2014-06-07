@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  Network Monitoring
 categories: XAP100ADM
 parent: monitoring.html

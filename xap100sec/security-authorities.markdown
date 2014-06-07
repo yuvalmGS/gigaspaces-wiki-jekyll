@@ -1,8 +1,8 @@
 ---
 layout: post100
 title:  Authorities
-categories: XAP100
-parent: security-overview.html
+categories: XAP100SEC
+parent: none
 weight: 300
 ---
 
@@ -34,7 +34,7 @@ In distributed systems, it may be confusing as to which service is performing th
 
 
 {% note %}
-When deploying an [elastic processing unit](./elastic-processing-unit.html), the *Provision PU* privilege is not enough - *Manage PU* and *Manage Grid* are required as well, since an elastic PU requires scaling and grid management.
+When deploying an [elastic processing unit]({%currentjavaurl%}/elastic-processing-unit.html), the *Provision PU* privilege is not enough - *Manage PU* and *Manage Grid* are required as well, since an elastic PU requires scaling and grid management.
 {%endnote%}
 
 # Space Authority

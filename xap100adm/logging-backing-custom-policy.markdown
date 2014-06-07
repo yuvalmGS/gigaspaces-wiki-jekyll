@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  Backing-up Files With a Custom Policy
 categories: XAP100ADM
 parent: logging-overview.html

@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  Customizing
 categories: XAP100ADM
 parent: cluster-view---gigaspaces-browser.html

@@ -1,5 +1,5 @@
 ---
-layout: post100adm
+layout: post100
 title:  Overview
 categories: XAP100ADM
 parent: logging-overview.html
@@ -375,7 +375,7 @@ The GigaSpaces Agent (GSA) acts as a process manager that can spawn and manage S
 com.gigaspaces.security.level = INFO
 {% endhighlight %}
 
-Logger corresponding to security of GigaSpaces components. This includes configuration and runtime execution of security functionality. More information regarding GigaSpaces security is [here]({%currentjavaurl%}/security.html).
+Logger corresponding to security of GigaSpaces components. This includes configuration and runtime execution of security functionality. More information regarding GigaSpaces security is [here]({%currentsecurl%}/security.html).
 {% endtabcontent %}
 {% tabcontent Web Container %}
 
