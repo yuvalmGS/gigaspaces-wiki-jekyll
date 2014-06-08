@@ -6,17 +6,20 @@ weight: 3000
 parent: none
 ---
 
-{% summary %}Real Time Analytics{% endsummary %}
-
-# Overview
-
-
-<object width="560" height="315"><param name="movie" value="http://www.youtube.com/v/ioHwEsARPWI?version=3&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/ioHwEsARPWI?version=3&amp;hl=en_US" type="application/x-shockwave-flash" width="560" height="315" allowscriptaccess="always" allowfullscreen="true"></embed></object>
+{% summary %} {% endsummary %}
 
 
 Real-time Analytics or Real-time business intelligence (RTBI) is the process of delivering information about business operations as they occur. Real time means near to zero latency and access to information whenever it is required.
 
+{%section%}
+{%column width=80% %}
 Real-time Analytics may be used with the following applications:  Algorithmic trading , Fraud detection , Systems monitoring , Application performance monitoring , Customer Relationship Management , Demand sensing , Dynamic pricing and yield management , Data validation , Operational intelligence and risk management , Payments & cash monitoring , Data security monitoring , Supply chain optimization , RFID/sensor network data analysis , Workstreaming , Call center optimization , Enterprise Mashups and Mashup Dashboards and the Transportation industry.
+{%endcolumn%}
+{%column width=20% %}
+{%youtube ioHwEsARPWI | Real-time Analytics%}
+{%endcolumn%}
+{%endsection%}
+
 
 The Transportation industry for example, leveraging real-time analytics for the railroad network management. Depending on the results provided by the real-time analytics, dispatcher can make a decision on what kind of train he can dispatch on the track depending on the train traffic and commodities shipped.
 
