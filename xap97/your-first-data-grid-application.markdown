@@ -46,7 +46,7 @@ A Data Grid requires a [Service Grid](/product_overview/service-grid.html) to ho
 In this tutorial you'll launch a single node service grid on your machine. To start the service grid, simply run the `gs-agent` script from the product's `bin` folder.
 
 
-{% gs-agent-tab %}
+{% inittab%}
 {% tabcontent Unix %}
 {% highlight bash %}
 ./gs-agent.sh
