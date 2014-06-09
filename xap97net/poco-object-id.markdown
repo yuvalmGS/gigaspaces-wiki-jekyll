@@ -28,6 +28,8 @@ The space UID for space object can be created in three different ways:
 - When a space Class has a property which is declared as `SpaceId` and `auto-generate=true` and its value is not null, the `SpaceId` field will store the original value stored within the `SpaceId` field.
 - When a space Class has a property which is declared as `SpaceId` and `auto-generate=false`, the `SpaceId` field will store the original value stored within the `SpaceId` field used to generate the UID.
 
+{%comment%}
+
 # Compound SpaceId
 
 You might need to construct an ID that will be comprised from a user defined Object rather than using a Numeric or String type field. In such a case your user defined class used as the `SpaceId` data type must implement the `ToString` , `GetHashCode` and `Equals` methods.
@@ -135,3 +137,4 @@ ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace(url);
 {% endtabcontent %}
 {% endinittab %}
 
+{%endcomment%}
