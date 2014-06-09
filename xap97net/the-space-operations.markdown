@@ -49,7 +49,7 @@ The interface includes the following main operations:
 [take](#take) object by template from space{%wbr%}
 [takeById](#take) object by id from space{%wbr%}
 [takeByIds](#takeMultiple) objects by ids from space{%wbr%}
-[takeMultiple](#takeMultiple)objects from space {%wbr%}
+[takeMultiple](#takeMultiple) objects from space {%wbr%}
 [take asynchronous](#asynchronousTake){%wbr%}
 [take if exists](#takeIfExists){%wbr%}
 [take if exists by id](#takeIfExists)
