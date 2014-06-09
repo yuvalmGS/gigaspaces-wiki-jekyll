@@ -20,7 +20,7 @@ A full Java tutorial is also provided that will introduce you to the basic capab
 
 <hr/>
 
-- [XAP in 5 Minutes](./your-first-data-grid-application.html){%wbr%}
+- [XAP in 5 Minutes](./dotnet-your-first-data-grid-application.html){%wbr%}
 This tutorial explains how to deploy and use a XAP Data Grid from a Java client application.
 
 
