@@ -166,8 +166,9 @@ If you're using the web console mentioned above to see what's going on, you'll s
 
 ### {% anchor source %} Full Source Code
 
-{% togglecloak id=1 %}`Program.java`{% endtogglecloak %}
-{% gcloak 1 %}
+{% accordion id=acc1 %}
+{% accord parent=acc1 | title=Program.java %}
+
 {% highlight java %}
 package com.gigaspaces.demo;
 
@@ -204,15 +205,17 @@ public class Program {
     }
 }
 {% endhighlight %}
-{% endgcloak %}
+{% endaccord %}
 
-{% togglecloak id=2 %}`Person.java`{% endtogglecloak %}
-{% gcloak 2 %}
+{% accord parent=acc1 | title=Person.java %}
+
 
 {% highlight java %}
 package com.gigaspaces.demo;
 
 import com.gigaspaces.annotation.pojo.SpaceId;
+import com.gigaspaces.annotation.pojo.SpaceIndex;
+import com.gigaspaces.metadata.index.SpaceIndexType;
 
 public class Person {
 
@@ -229,7 +232,7 @@ public class Person {
         this.lastName = lastName;
     }
 
-    @SpaceId
+    @SpaceId(autoGenerate=false)
     public Integer getSsn() {
         return ssn;
     }
@@ -258,7 +261,8 @@ public class Person {
     }
 }
 {% endhighlight %}
-{% endgcloak %}
+{% endaccord %}
+{%endaccordion%}
 
 # What's Next?
 

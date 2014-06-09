@@ -210,6 +210,8 @@ public class Program {
 package com.gigaspaces.demo;
 
 import com.gigaspaces.annotation.pojo.SpaceId;
+import com.gigaspaces.annotation.pojo.SpaceIndex;
+import com.gigaspaces.metadata.index.SpaceIndexType;
 
 public class Person {
 
@@ -226,7 +228,7 @@ public class Person {
         this.lastName = lastName;
     }
 
-    @SpaceId
+    @SpaceId(autoGenerate=false)
     public Integer getSsn() {
         return ssn;
     }

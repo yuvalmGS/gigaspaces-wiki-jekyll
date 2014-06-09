@@ -202,9 +202,12 @@ namespace XapDemo
 {
     public class Person
     {
-        [SpaceID]
+        [SpaceId(AutoGenerate=false)]
         public int? Ssn { get; set; }
+
+        [SpaceIndex(Type=SpaceIndexType.Basic)]
         public String FirstName { get; set; }
+
         public String LastName { get; set; }
 
         public override string ToString()

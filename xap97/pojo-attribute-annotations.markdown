@@ -17,7 +17,7 @@ The [GigaSpaces API](./the-gigaspace-interface-overview.html) supports  field-le
 {: .table .table-bordered}
 |Syntax     | @SpaceId(autoGenerate=false)|
 |Argument   |  boolean          |
-|Default    | false |
+|Default    | true |
 |Description| Defines whether this field value is used when generating the Object ID. The field value should be unique -- i.e., no multiple objects with the same value should be written into the space (each object should have a different field value). When writing an object into the space with an existing `id` field value, an `EntryAlreadyInSpaceException` is thrown. The Object ID is created, based on the `id` field value.{%wbr%}Specifies if the object ID is generated automatically by the space when written into the space. If `false`, the field is indexed automatically, and if `true`, the field isn't indexed. If `autoGenerate` is declared as `false`, the field is indexed automatically. If `autoGenerate` is declared as `true`, the field isn't indexed. If `autoGenerate` is `true`, the field must be of the type `java.lang.String`. |
 
 Example:
