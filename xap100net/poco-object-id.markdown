@@ -101,7 +101,7 @@ public class CompoundId
 {% highlight csharp %}
 [SpaceClass]
 public class MySpaceClass {
-	[SpaceId(autoGenerate = false)]
+	[SpaceId(AutoGenerate = false)]
 	public CompoundId Id {set; get;}
 	public String Data {set; get;}
 
