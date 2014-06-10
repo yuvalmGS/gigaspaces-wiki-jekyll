@@ -26,7 +26,7 @@ The change API supports [transactions](./transaction-management.html) in the sam
 
 # Example
 
-The following example demonstrates how to increase the property 'count' in a an object of type 'WordCount' with id 'the' by one.
+The following example demonstrates how to increment the property 'count' of an object of type 'WordCount' with id 'myID' by one.
 
 {% highlight java %}
 GigaSpace space = // ... obtain a space reference
