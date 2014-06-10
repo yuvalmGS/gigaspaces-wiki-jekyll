@@ -130,10 +130,8 @@ public class SimpleListener
     {
         get
         {
-            Data template = new Data();
-            template.Processed = false;
             SqlQuery<Data> templateQuery = new SqlQuery<Data>(template, "Processed = ?");
-
+	    templateQuery.SetParameter(1, false);
             return templateQuery;
         }
     }
