@@ -95,22 +95,22 @@ import static org.openspaces.extensions.QueryExtension.*;
 ...
 SQLQuery<Person> personSQLQuery = new SQLQuery<Person>();
 
-AggregationResult<Person> compundAggregationResult =
-    aggregate(gigaSpace, personSQLQuery, "age" ,
-            AggregationModifiers.MAX_ENTRY.
-        add(AggregationModifiers.MAX_VALUE).
-        add(AggregationModifiers.MIN_ENTRY).
-        add(AggregationModifiers.MAX_VALUE).
-        add(AggregationModifiers.AVERAGE).
-        add(AggregationModifiers.SUM)
-);
+List<Object> results = aggregate(space, personSQLQuery, new AggregationSet()
+        .maxEntry("age")
+        .minEntry("age")
+        .sum("age")
+        .average("age")
+        .minValue("age")
+        .maxValue("age"));
 
-average = compundAggregationResult.getAverage();
-oldest= compundAggregationResult.getMaxEntry();
-max = compundAggregationResult.getMaxValue();
-youngest = compundAggregationResult.getMinEntry();
-min = compundAggregationResult.getMinValue();
-sum = compundAggregationResult.getSum();
+
+oldest = results.get(0);
+youngest = results.get(1);
+sum = results.get(2);
+average = results.get(3);
+min = results.get(4);
+max = results.get(5);
+
 {% endhighlight %}
 
 # Aggregate Embedded Fields
