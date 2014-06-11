@@ -2,8 +2,8 @@
 layout: post100
 title:  Aggregators
 categories: XAP100
-parent: task-execution-overview.html
-weight: 200
+parent: querying-the-space.html
+weight: 900
 ---
 
 {% summary  %}  {% endsummary %}
@@ -17,126 +17,181 @@ With many systems such as pricing systems, risk management, trading and other an
 {%endcolumn%}
 {%endsection%}
 
-Openspaces comes with built-in aggregators you can use to calculate Min, Max, Avg and Sum for objects stored within the space. There is no need to retrieve the entire data set from the space to the client side , iterate the result set and perform the aggregation. This would be an expensive activity as it might return large amount of data into the client application. The Aggregators allows you to perform the entire aggregation activity at the space side avoiding any data retrieval back to the client side. Only the result of each aggregation activity performed with each partition is returned back to the client side where all the results are reduced and returned to the client application. Such aggregation activity utilize the partitioned nature of the data-grid allowing each partition to execute the aggregation with its local data in parallel, where all the partitions intermediate results are fully aggregated at the client side using the relevant reducer implementation.
+XAP provides the common functionality to perform aggregations across the space. There is no need to retrieve the entire data set from the space to the client side , iterate the result set and perform the aggregation. This would be an expensive activity as it might return large amount of data into the client application. The Aggregators allow you to perform the entire aggregation activity at the space side avoiding any data retrieval back to the client side. Only the result of each aggregation activity performed with each partition is returned back to the client side where all the results are reduced and returned to the client application. Such aggregation activity utilize the partitioned nature of the data-grid allowing each partition to execute the aggregation with its local data in parallel, where all the partitions intermediate results are fully aggregated at the client side using the relevant reducer implementation.
 
-# Built-in Aggregators
-
-The following built-in Aggregators provided:
-
-{: .table .table-bordered}
-|Task|Description|
-|:---|:----------|
-|AvgTask|An average calculation task accepting a Task to delegate the actual execution to. Implements the reduce(java.util.List) operation to calculate average of all returned values.|
-|MaxTask| A minimum calculation task accepting a Task to delegate the actual execution to. Implements the reduce(java.util.List) operation to calculate maximum of all returned values.|
-|MinTask|A maximum calculation task accepting a Task to delegate the actual execution to. Implements the reduce(java.util.List) operation to calculate minimum of all returned values.|
-|SumTask| A sum calculation task accepting a Task to delegate the actual execution to. Implements the reduce(java.util.List) operation to calculate sum of all returned values.|
-
-{% note %}
-The [JDBC Driver](./jdbc-driver.html) support aggregate functions. Still , the Built-in Aggregators will perform better, especially when using [projections](./query-partial-results.html).
-{% endnote %}
-
-# Example
-
-Below example using the `SumTask` to aggregate data using a specific field within the `MyData` objects. A [SQLQuery](./query-sql.html) using a different field to specify the set of objects the aggregation process will be using. To speed up the aggregation process a [Projection](./query-partial-results.html) is used with the SQL Query to read only the specific field required for the aggregation activity (rather the entire space object content).
-
-The example using a [SpaceDocument](./document-api.html) to illustrate a generic data aggregation where the field used to query the space and the field used for the aggregation are parameters for the `SumAggregatorTask` constructor.
-
-The basic usage of the `SumAggregatorTask` demonstrated with the following:
+# Usage
 
 {% inittab %}
 {% tabcontent Application %}
 {% highlight java %}
-GigaSpace space = ...
-SumAggregatorTask sumAggregatorTask = new SumAggregatorTask("queryField", min, max, "aggregatedField");
-AsyncFuture<Double> future = space.execute(new SumTask<Double, Double>(Double.class, sumAggregatorTask));
-Double result = future.get();
+import static org.openspaces.extensions.QueryExtension.*;
+...
+SQLQuery<Person> personSQLQuery = new SQLQuery<Person>();
+// retrieve the maximum value stored in the field "age"
+Number maxAgeInSpace = maxValue(space, personSQLQuery, "age");
+/// retrieve the minimum value stored in the field "age"
+Number minAgeInSpace = minValue(space, personSQLQuery, "age");
+// Sum the "age" field on all space objects.
+Number combinedAgeInSpace = sum(space, personSQLQuery, "age");
+// Sum's the "age" field on all space objects then divides by the number of space objects.
+Double averageAge = average(space, personSQLQuery, "age");
+// Retrieve the space object with the highest value for the field "age".
+Person oldestPersonInSpace = maxEntry(space, personSQLQuery, "age");
+/// Retrieve the space object with the lowest value for the field "age".
+Person youngestPersonInSpace = minEntry(space, personSQLQuery, "age");
 {% endhighlight %}
 {% endtabcontent%}
-
 {% tabcontent Space Class %}
 {% highlight java %}
-public class MyData {
-	public MyData (){}
-	Long	id;
-	Integer queryField;
-	Double 	aggregatedField;
-	String	str1;
+@SpaceClass
+public class Person {
+    private String id;
+    private String name;
+    private String state;
+    private Integer age;
 
-	@SpaceId(autoGenerate=false)
-	public Long getId() {
-		return id;
-	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+    @SpaceId(autoGenerate = true)
+    public String getId() {
+        return id;
+    }
 
-	public String getStr1() {
-		return str1;
-	}
-	public void setStr1(String str1) {
-		this.str1 = str1;
-	}
-	@SpaceIndex(type=SpaceIndexType.EXTENDED)
-	public Integer getQueryField() {
-		return queryField;
-	}
-	public void setQueryField(Integer queryField) {
-		this.queryField = queryField;
-	}
-	public Double getAggregatedField() {
-		return aggregatedField;
-	}
-	public void setAggregatedField(Double aggregatedField) {
-		this.aggregatedField = aggregatedField;
-	}
-}
-{% endhighlight %}
-{% endtabcontent%}
-{% tabcontent SumAggregatorTask %}
+    public void setId(String id) {
+        this.id = id;
+    }
 
+    public String getName() {
+        return name;
+    }
 
-{% highlight java %}
-import org.openspaces.core.GigaSpace;
-import org.openspaces.core.executor.Task;
-import org.openspaces.core.executor.TaskGigaSpace;
-import com.gigaspaces.document.SpaceDocument;
-import com.gigaspaces.query.QueryResultType;
-import com.j_spaces.core.client.SQLQuery;
+    public void setName(String name) {
+        this.name = name;
+    }
 
-public class SumAggregatorTask implements Task<Double>{
-	@TaskGigaSpace
-	transient GigaSpace space;
+    public String getState() {
+        return state;
+    }
 
-	String queryField ;
-	Integer minValue ;
-	Integer maxValue ;
-	String aggregatedField;
+    public void setState(String state) {
+        this.state = state;
+    }
 
-	public SumAggregatorTask(String queryField , Integer minValue ,
-		Integer maxValue , String aggregatedField)
-	{
-		this.queryField = queryField ;
-		this.minValue = minValue ;
-		this.maxValue = maxValue ;
-		this.aggregatedField= aggregatedField;
+    public Integer getAge() {
+        return age;
+    }
 
-	}
-	  public Double execute() throws Exception {
-		SQLQuery<SpaceDocument> query = new SQLQuery<SpaceDocument>(MyData.class.getName(),
-			queryField + " between ? and ?",QueryResultType.DOCUMENT);
-
-		query.setProjections(aggregatedField);
-		query.setParameter(1, minValue);
-		query.setParameter(2, maxValue);
-		double sumValue = 0;
-		SpaceDocument res[] = space.readMultiple(query);
-		for (int i = 0; i < res.length; i++) {
-			  sumValue +=  (Double)res[i].getProperty(aggregatedField);
-		}
-		return sumValue ;
-	  }
+    public void setAge(Integer age) {
+        this.age = age;
+    }
 }
 {% endhighlight %}
 {% endtabcontent%}
 {%endinittab%}
 
+# Compound Aggregation
+Compound aggregation will execute multiple aggregation operations across the space returning all of the result sets at once. When multiple aggregates are needed the compound aggregation API is significantly faster than calling each individual aggregate.
+
+{% highlight java %}
+import static org.openspaces.extensions.QueryExtension.*;
+...
+SQLQuery<Person> personSQLQuery = new SQLQuery<Person>();
+
+AggregationResult<Person> compundAggregationResult =
+    aggregate(gigaSpace, personSQLQuery, "age" ,
+            AggregationModifiers.MAX_ENTRY.
+        add(AggregationModifiers.MAX_VALUE).
+        add(AggregationModifiers.MIN_ENTRY).
+        add(AggregationModifiers.MAX_VALUE).
+        add(AggregationModifiers.AVERAGE).
+        add(AggregationModifiers.SUM)
+);
+
+average = compundAggregationResult.getAverage();
+oldest= compundAggregationResult.getMaxEntry();
+max = compundAggregationResult.getMaxValue();
+youngest = compundAggregationResult.getMinEntry();
+min = compundAggregationResult.getMinValue();
+sum = compundAggregationResult.getSum();
+{% endhighlight %}
+
+# Aggregate Embedded Fields
+Aggregation against the members of embedded space classes is supported by using the field path while invoking the desired aggregate function.
+
+{% inittab %}
+{% tabcontent Application %}
+{% highlight java %}
+import static org.openspaces.extensions.QueryExtension.*;
+...
+SQLQuery<Person> personSQLQuery = new SQLQuery<Person>();
+// retrieve the maximum value stored in the field "age"
+Number maxAgeInSpace = maxValue(space, personSQLQuery, "demographics.age");
+{% endhighlight %}
+{% endtabcontent %}
+{% tabcontent Person Space Class %}
+{% highlight java %}
+@SpaceClass
+public class Person {
+    private String id;
+    private String name;
+    private String state;
+    private Demographics demographics;
+
+    @SpaceId(autoGenerate = true)
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public Demographics getDemographics() {
+        return demographics;
+    }
+
+    public void setDemographics(Demographics demographics) {
+        this.demographics = demographics;
+    }
+}
+{% endhighlight %}
+{% endtabcontent %}
+{% tabcontent Demographic Space Class %}
+{% highlight java %}
+public class Demographics     {
+    private Integer age;
+    private char gender;
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
+    public char getGender() {
+        return gender;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
+}
+{% endhighlight %}
+{% endtabcontent %}
+{% endinittab %}
