@@ -188,6 +188,30 @@ gsc.bat
 {% endtabcontent %}
 {% endinittab %}
 
+If you have started the agent with a specific zone, have the GSC running in debug mode to use the same zone as well:
+
+{% inittab zone|top %}
+
+{% tabcontent Linux %}
+
+{% highlight java %}
+export GSC_JAVA_OPTIONS=-Dcom.gs.zones="myZone"
+./gsc.sh
+{% endhighlight %}
+
+{% endtabcontent %}
+
+{% tabcontent Windows %}
+
+{% highlight java %}
+set GSC_JAVA_OPTIONS=-Dcom.gs.zones="myZone"
+gsc.bat
+{% endhighlight %}
+
+{% endtabcontent %}
+
+{% endinittab %}
+
 Make sure you see the `Listening for transport dt_socket at address` message:
 
 {% highlight java %}
