@@ -114,7 +114,7 @@ sum = compundAggregationResult.getSum();
 {% endhighlight %}
 
 # Aggregate Embedded Fields
-Aggregation against the members of embedded space classes is supported by using the field path while invoking the desired aggregate function.
+Aggregation against the members of embedded space classes is supported by supplying the field path while invoking the desired aggregate function.
 
 {% inittab %}
 {% tabcontent Application %}
