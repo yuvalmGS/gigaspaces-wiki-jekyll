@@ -43,6 +43,9 @@ Reading large number of objects using multiple queries in one call in a continuo
 - [Partial results](./query-partial-results.html){%wbr%}
 Obtaining partial results when querying the space to improve application performance and reduce memory footprint.
 
+- [Aggregators](./aggregators.html){%wbr%}
+Aggregating data with XAP In-Memory Data-Grid using built-in aggregators.
+
 <hr/>
 
 #### Additional Resources
