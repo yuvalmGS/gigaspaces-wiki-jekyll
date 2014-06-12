@@ -65,11 +65,11 @@ This is sometimes considered a subset of Operational intelligence and is also id
 {%panel title=Related Topics %}
 
 - [Aggregators api]({%latestjavaurl%}/aggregators.html)
-- [Counters api]({%latestjavaurl%}/counters.html)
+- Counters api {%latestjavanet the-space-counters.html %}
 - [Map reduce api]({%latestjavaurl%}/task-execution-over-the-space.html)
-- [Doc API]({%latestjavaurl%}/document-api.html)
-- [Query API]({%latestjavaurl%}/querying-the-space.html)
-- [Processing API]({%latestjavaurl%}/event-processing.html)
+- Doc API {%latestjavanet document-api.html %}
+- Query API {%latestjavanet querying-the-space.html %}
+- Processing API {%latestjavanet event-processing.html%}
 - [Big Data Integration]({%latestjavaurl%}/big-data.html)
 - [Time Series](/sbp/time-series.html)
 
