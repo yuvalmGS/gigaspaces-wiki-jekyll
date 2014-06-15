@@ -1,7 +1,7 @@
 require 'kramdown'
 module Jekyll
   module Tags
-    class LatestAdmUrl < Liquid::Tag
+    class LatestSecUrl < Liquid::Tag
       include Liquid::StandardFilters
 
       def initialize(tag_name, markup, tokens)
@@ -16,4 +16,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('latestadmurl', Jekyll::Tags::LatestAdmUrl)
+Liquid::Template.register_tag('latestsecurl', Jekyll::Tags::LatestSecUrl)
