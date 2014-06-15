@@ -13,7 +13,7 @@ weight: 900
 With many systems such as pricing systems, risk management, trading and other analytic and business intelligence applications you may need to perform an aggregation activity across data stored within the data grid when generating reports or when running some business process. Such activity can leverage data stored in memory and will be much faster than performing it with a database.
 {%endcolumn%}
 {%column width=40% %}
-![aggreg.jpg](/attachment_files/aggreg.jpg)
+![aggreg.jpg](/attachment_files/built-in-aggregators.jpg)
 {%endcolumn%}
 {%endsection%}
 
@@ -88,7 +88,17 @@ public class Person {
 {%endinittab%}
 
 # Compound Aggregation
+
+{%section%}
+{%column width=60% %}
 Compound aggregation will execute multiple aggregation operations across the space returning all of the result sets at once. When multiple aggregates are needed the compound aggregation API is significantly faster than calling each individual aggregate.
+
+{%endcolumn%}
+{%column width=40% %}
+![aggreg.jpg](/attachment_files/built-in-Compound-aggregators.jpg)
+{%endcolumn%}
+{%endsection%}
+
 
 {% highlight java %}
 import static org.openspaces.extensions.QueryExtension.*;
