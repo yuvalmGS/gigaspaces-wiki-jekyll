@@ -201,7 +201,7 @@ The following example uses the JavaSpaces API, writes 1,000 POJOs into the space
 
 {%highlight console%}run -take -objecttype pojo -i 1000 -s 1024{%endhighlight%}
 
-The following example uses the JavaSpaces API, writes 1,000 Entries into the space in [FIFO mode]({%currentjavaurl%}/fifo-support.html), 1K each, and reads them back into the client three times.
+The following example uses the JavaSpaces API, writes 1,000 Entries into the space in FIFO mode {%currentjavanet fifo-support.html %}, 1K each, and reads them back into the client three times.
 
 {%highlight console%}run -read -objecttype fifo -i 1000 -s 1024 -rt 3{%endhighlight%}
 
