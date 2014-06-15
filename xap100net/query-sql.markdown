@@ -66,7 +66,7 @@ Blocking operations (i.e. `Read` or `Take` with `timeout` greater than `0`) are 
 
 {% highlight csharp %}
 long timeout = 100000;
-MyClass result = space.Take<MyClass>(new SQLQuery<MyClass>("Num > 500"), timeout);
+MyClass result = space.Take<MyClass>(new SqlQuery<MyClass>("Num > 500"), timeout);
 {% endhighlight %}
 
 # Routing
@@ -79,15 +79,15 @@ For example, suppose the routing property of **`MyClass`** is **`Num`**:
 
 {% highlight csharp %}
 // Execute query on partition #1
-SQLQuery<MyClass> query1 = new SQLQuery<MyClass>("Num = 1");
+SqlQuery<MyClass> query1 = new SqlQuery<MyClass>("Num = 1");
 
 // Execute query on all partitions -
 // no way to tell which partitions hold matching results:
-SQLQuery<MyClass> query2 = new SQLQuery<MyClass>("Num > 1");
+SqlQuery<MyClass> query2 = new SqlQuery<MyClass>("Num > 1");
 
 // Execute query on all partitions -
 // no way to tell which partitions hold matching results:
-SQLQuery<MyClass> query3 = new SQLQuery<MyClass>("Num = 1 OR Name='smith'");
+SqlQuery<MyClass> query3 = new SqlQuery<MyClass>("Num = 1 OR Name='smith'");
 {% endhighlight %}
 
 Note that in `query1` the `Num` property is used both for routing and matching.
@@ -95,43 +95,11 @@ Note that in `query1` the `Num` property is used both for routing and matching.
 In some scenarios we may want to execute the query on a specific partition without matching the routing property (e.g. blocking operation). Starting 8.0.1, this can be done via the `Routing` property:
 
 {% highlight csharp %}
-SQLQuery<MyClass> query = new SQLQuery<MyClass>("Num > 3");
+SqlQuery<MyClass> query = new SqlQuery<MyClass>("Num > 3");
 query.Routing = 1;
 MyClass[] result = space.ReadMultiple<MyClass>(query);
 {% endhighlight %}
 
-# Regular Expressions
-
-You can query the space using the SQL `like` operator or [Java Regular Expression](http://docs.oracle.com/javase/1.5.0/docs/api/java/util/regex/Pattern.html) Query syntax.
-
-When using the SQL `like` operator you may use the following:
-`%` - match any string of any length (including zero length)
-`_` - match on a single character
-
-{% highlight csharp %}
-SqlQuery<MyClass> query = new SqlQuery<MyClass>("Name like 'A%'")
-{% endhighlight %}
-
-Querying the space using the Java Regular Expression provides more options than the SQL `like` operator. The Query syntax is done using the `rlike` operator:
-
-{% highlight csharp %}
-// Match all entries of type MyClass that have a name that starts with a or c:
-SqlQuery<MyClass> query = new SqlQuery<MyClass>("Name rlike '(a|c).*'");
-{% endhighlight %}
-
-All the supported methods and options above are relevant also for using `rlike` with `SqlQuery`.
-
-{% note %} `like` and `rlike` queries are not using indexed data, hence executing such may be relatively time consuming compared to other queries that do leverage indexed data. This means the space engine iterate the potential candidate list to find matching object using the Java regular expression utilizes. A machine using 3GHz CPU may iterate 100,000-200,000 objects per second when executing regular expression query. To speed up `like` and `rlike` queries make sure your query leveraging also at least one indexed field to minimize the candidate list. Running multiple partitions will also speed up the query execution since this will allow the system to iterate over the potential matching objects in a parallel manner across the different partitions.
-{%endnote%}
-
-
-
-# Case Insensitive Query
-
-Implementing case insensitive queries can be done via:
-
-- `like` operator or `rlike` operator. Relatively slow. Not recommended when having large amount of objects.
-- Store the data in lower case and query on via lower case String value (or upper case)
 
 # Limitations
 

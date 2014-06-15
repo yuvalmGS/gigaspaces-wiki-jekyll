@@ -111,3 +111,34 @@ To search for specific words in a specific order within the free text field you 
 {% endcomment %}
 
 
+# Regular Expressions
+
+You can query the space using the SQL `like` operator or [Java Regular Expression](http://docs.oracle.com/javase/1.5.0/docs/api/java/util/regex/Pattern.html) Query syntax.
+
+When using the SQL `like` operator you may use the following:
+`%` - match any string of any length (including zero length)
+`_` - match on a single character
+
+{% highlight csharp %}
+SqlQuery<MyClass> query = new SqlQuery<MyClass>("Name like 'A%'")
+{% endhighlight %}
+
+Querying the space using the Java Regular Expression provides more options than the SQL `like` operator. The Query syntax is done using the `rlike` operator:
+
+{% highlight csharp %}
+// Match all entries of type MyClass that have a name that starts with a or c:
+SqlQuery<MyClass> query = new SqlQuery<MyClass>("Name rlike '(a|c).*'");
+{% endhighlight %}
+
+All the supported methods and options above are relevant also for using `rlike` with `SqlQuery`.
+
+
+
+# Case Insensitive Query
+
+Implementing case insensitive queries can be done via:
+
+- `like` operator or `rlike` operator. Relatively slow. Not recommended when having large amount of objects.
+- Store the data in lower case and query on via lower case String value (or upper case)
+
+

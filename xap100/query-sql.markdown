@@ -281,42 +281,6 @@ query.setRouting(1);
 MyClass[] result = gigaspace.readMultiple(query);
 {% endhighlight %}
 
-# Regular Expressions
-
-You can query the space using the SQL `like` operator or [Java Regular Expression](http://docs.oracle.com/javase/1.5.0/docs/api/java/util/regex/Pattern.html) Query syntax.
-
-When using the SQL `like` operator you may use the following:
-`%` - match any string of any length (including zero length)
-`_` - match on a single character
-
-{% highlight java %}
-SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,"name like 'A%'")
-{% endhighlight %}
-
-Querying the space using the Java Regular Expression provides more options than the SQL `like` operator. The Query syntax is done using the `rlike` operator:
-
-{% highlight java %}
-// Match all entries of type MyClass that have a name that starts with a or c:
-SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,"name rlike '(a|c).*'");
-{% endhighlight %}
-
-All the supported methods and options above are relevant also for using `rlike` with `SQLQuery`.
-
-{% note %} `like` and `rlike` queries are not using indexed data, hence executing such may be relatively time consuming compared to other queries that do leverage indexed data. This means the space engine iterate the potential candidate list to find matching object using the Java regular expression utilizes. A machine using 3GHz CPU may iterate 100,000-200,000 objects per second when executing regular expression query. To speed up `like` and `rlike` queries make sure your query leveraging also at least one indexed field to minimize the candidate list. Running multiple partitions will also speed up the query execution since this will allow the system to iterate over the potential matching objects in a parallel manner across the different partitions.
-{%endnote%}
-
-
-
-{% comment %}
-To search for specific words in a specific order within the free text field you should use the indexed field and regular expression with another field that stores the free text.
-{% endcomment %}
-
-# Case Insensitive Query
-
-Implementing case insensitive queries can be done via:
-
-- `like` operator or `rlike` operator. Relatively slow. Not recommended when having large amount of objects.
-- Store the data in lower case and query on via lower case String value (or upper case)
 
 # Best Practice
 
