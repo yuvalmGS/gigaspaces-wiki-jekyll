@@ -12,7 +12,7 @@ weight: 100
 # Name
 
 {: .table .table-bordered}
-|Syntax     | name="" |
+|Syntax     | name |
 |Description| Contains the full qualified name of the specified class. Because this attribute is of the XML type `ID`, there can only be one `class-descriptor` per class. |
 
 Example:
@@ -26,7 +26,7 @@ Example:
 # Alias name
 
 {: .table .table-bordered}
-|Syntax     | alias-name="" |
+|Syntax     | alias-name |
 |Argument   | boolean|
 |Description|  Gives the ability to map a C# class name (including namespace) to a space class name  |
 
@@ -43,7 +43,7 @@ Example:
 # Persistence
 
 {: .table .table-bordered}
-|Syntax     | persist="" |
+|Syntax     | persist |
 |Argument   | boolean|
 |Default    | false|
 |Description|  This field indicates the persistency mode of the object. When a space is defined as persistent, a `true` value for this attribute will persist objects of this type.  |
@@ -63,7 +63,7 @@ Example:
 # Replication
 
 {: .table .table-bordered}
-|Syntax     | replicate="" |
+|Syntax     | replicate |
 |Argument   | boolean|
 |Default    | false|
 |Description|  This field indicates the replication mode of the object. When a space is defined as replicated, a `true` value for this attribute will replicate objects of this type.|
@@ -84,7 +84,7 @@ Example:
 # FIFO Support
 
 {: .table .table-bordered}
-|Syntax     | fifo=""  |
+|Syntax     | fifo  |
 |Argument   | [FifoSupport](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_Metadata_FifoSupport.htm)|
 |Default    | off|
 |Description| Enabling  FIFO operations.     |
@@ -104,7 +104,7 @@ Example:
 # Storage Type
 
 {: .table .table-bordered}
-|Syntax     | storage-type="" |
+|Syntax     | storage-type |
 |Argument   | [StorageType](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_Metadata_StorageType.htm)|
 |Default    | object |
 |Description| To determine a default storage type for each non primitive property for which a (field level) storage type was not defined.|
@@ -144,7 +144,7 @@ Example:
 # Inherit Index
 
 {: .table .table-bordered}
-|Syntax     | inherit-indexes="" |
+|Syntax     | inherit-indexes |
 |Argument   | boolean          |
 |Default    | true|
 |Description| Whether to use the class indexes list only, or to also include the superclass' indexes. {% wbr %}If the class does not define indexes, superclass indexes are used. {% wbr %}Options:{% wbr %}- `false` -- class indexes only.{% wbr %}- `true` -- class indexes and superclass indexes.|
@@ -163,7 +163,7 @@ Example:
 # Compound Index
 
 {: .table .table-bordered}
-|Syntax     | compound-index paths="" |
+|Syntax     | compound-index paths |
 |Argument(s)| string          |
 |Values     | attribute name(s)   |
 |Description| Indexes can be defined for multiple properties of a class  |

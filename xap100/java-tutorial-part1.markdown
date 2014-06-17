@@ -227,7 +227,7 @@ public void writeOnlyWithLease() {
 
 In this example, we are writing an object to the space with zero delay, 10 seconds to live and write only if the object does not already exist in the space. If the object already exists, an exception will be thrown.
 
-{%learn%}./the-gigaspace-interface.html{%endlearn%}
+{%learn%}./the-space-operations.html{%endlearn%}
 
 
 #### Updating an object in space
@@ -328,6 +328,7 @@ public User[] sqlFindUsersByNameAndIds() {
 }
 {%endhighlight%}
 
+{%learn%}./query-sql.html{%endlearn%}
 
 #### Parameterized Queries
 You can separate the values for the SQL criteria expression by placing a '?' symbol instead of the actual value in the expression. When executing the query, the conditions that includes '?' are replaced with the corresponding parameter values supplied via the setParameter  method.
@@ -371,7 +372,8 @@ public User[] findUsersByGroup() {
 {%endhighlight%}
 
 There are several additional query options available. For example you can query Nested Maps by key,query with Regular Expression, Enum attributes and others.
-{%learn%}./query-sql.html{%endlearn%}
+
+{%learn%}./query-nested-properties.html{%endlearn%}
 
 
 #### Query returning partial results
@@ -388,6 +390,8 @@ public User[] findUsersByNameAndProjection() {
      return space.readMultiple(query);
 }
 {%endhighlight%}
+
+{%learn%}./query-partial-results.html{%endlearn%}
 
 
 #### Document Queries
@@ -472,6 +476,9 @@ public void clearAllObjectInSpace() {
 {%endhighlight%}
 
 
+{%learn%}./the-space-operations.html{%endlearn%}
+
+
 # Indexing
 
 To improve performance, it is possible to index one or more attributes for an object. The space maintains additional data for indexed attributes, which shortens the time required to determine a match resulting in improved performance. However, indexes consume more resources and impacts the write operations performance.
@@ -543,7 +550,7 @@ SQLQuery<User> query = new SQLQuery<User>(User.class,"name = 'John Doe' AND cred
 
 There are several additional indexing options available. For example you can index nested attributes, Nested Maps, Collections, nested attributes within a Collection, free text search and others.
 
-{%learn%}./indexing.html{%endlearn%}
+{%learn%}./indexing-overview.html{%endlearn%}
 
 
 # Best Practice

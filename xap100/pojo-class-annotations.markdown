@@ -18,7 +18,7 @@ The [GigaSpaces API](./the-gigaspace-interface-overview.html) supports class lev
 # Persistence
 
 {: .table .table-bordered}
-|Syntax     | @SpaceClass(persist=true) |
+|Syntax     | persist |
 |Argument   | boolean          |
 |Default    | false|
 |Description| When a space is defined as persistent, a 'true' value for this annotation persists objects of this type. |
@@ -38,7 +38,7 @@ public class Person {
 # Include Properties
 
 {: .table .table-bordered}
-|Syntax     | @SpaceClass(includeProperties=IncludeProperties.EXPLICIT) |
+|Syntax     | includeProperties|
 |Argument   | [IncludeProperties](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/annotation/pojo/SpaceClass.IncludeProperties.html)      |
 |Default    | IncludeProperties.IMPLICIT|
 |Description| `IncludeProperties.IMPLICIT` takes into account all POJO fields -- even if a `get` method is not declared with a `@SpaceProperty` annotation, it is taken into account as a space field.`IncludeProperties.EXPLICIT` takes into account only the `get` methods which are declared with a `@SpaceProperty` annotation. |
@@ -55,7 +55,7 @@ public class Person {
 # FIFO Support
 
 {: .table .table-bordered}
-|Syntax     | @SpaceClass(fifoSupport=FifoSupport.OPERATION) |
+|Syntax     | fifoSupport |
 |Argument   | [FifoSupport]({% javadoc com/gigaspaces/annotation/pojo/FifoSupport %})|
 |Default    | FifoSupport.NOT_SET|
 |Description| To enable FIFO operations, set this attribute to `FifoSupport.OPERATION`|
@@ -75,7 +75,7 @@ public class Person {
 # Inherit Index
 
 {: .table .table-bordered}
-|Syntax     | @SpaceClass(inheritIndexes=false) |
+|Syntax     | inheritIndexes |
 |Argument   | boolean          |
 |Default    | true|
 |Description| Whether to use the class indexes list only, or to also include the superclass' indexes. {% wbr %}If the class does not define indexes, superclass indexes are used. {% wbr %}Options:{% wbr %}- `false` -- class indexes only.{% wbr %}- `true` -- class indexes and superclass indexes.|
@@ -94,7 +94,7 @@ public class Person {
 # Storage Type
 
 {: .table .table-bordered}
-|Syntax     | @SpaceClass(storageType=StorageType.BINARY) |
+|Syntax     | storageType |
 |Argument   | [StorageType]({% javadoc com/gigaspaces/metadata/StorageType %})          |
 |Default    | StorageType.OBJECT |
 |Description| To determine a default storage type for each non primitive property for which a (field level) storage type was not defined.|
@@ -114,7 +114,7 @@ public class Person {
 # Replication
 
 {: .table .table-bordered}
-|Syntax     | @SpaceClass(replicate=false) |
+|Syntax     | replicate |
 |Argument   | boolean          |
 |Default    | true|
 |Description| When running in a partial replication mode, a **`false`** value for this property will not replicates all objects from this class type to the replica space or backup space.} |
@@ -136,7 +136,7 @@ public class Person {
 # Compound Index
 
 {: .table .table-bordered}
-|Syntax     | @CompoundSpaceIndexes( {%wbr%} {@CompoundSpaceIndex(paths = {"data1", "data2"}) }  {%wbr%}) |
+|Syntax     | CompoundSpaceIndexes CompoundSpaceIndex paths  |
 |Argument(s)| string          |
 |Values     | attribute name(s)   |
 |Description| Indexes can be defined for multiple attributes of a class  |

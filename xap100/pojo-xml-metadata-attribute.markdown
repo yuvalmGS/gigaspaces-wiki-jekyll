@@ -15,7 +15,7 @@ All the properties are written automatically into space. If the field is a refer
 # Property
 
 {: .table .table-bordered}
-|Syntax     | property name="" |
+|Syntax     | property name |
 |Argument   |  name of the attribute          |
 |Description| contains mapping info for a property of a class |
 
@@ -33,7 +33,7 @@ Example:
 ### SpaceProperty
 
 {: .table .table-bordered}
-|Syntax     | null-value="-1" |
+|Syntax     | null-value |
 |Description| Specifies that an attribute value be treated as `null` when the object is written to the space and no value is assigned to the attribute. (where `-1` functions as a `null` value in case of an int)|
 
 Example:
@@ -51,7 +51,7 @@ Example:
 ### Reference
 
 {: .table .table-bordered}
-|Syntax     | reference="" |
+|Syntax     | reference |
 |Argument   | class name         |
 |Description| contains mapping information for a property of a class that is not primitive, but references another entity object. |
 
@@ -95,7 +95,7 @@ Example:
 ### SpaceIndex
 
 {: .table .table-bordered}
-|Syntax     |  index type=""|
+|Syntax     |  index type|
 |Argument   |  [SpaceIndexType]({%javadoc com/gigaspaces/metadata/index/SpaceIndexType %})  |
 |Description| Querying indexed fields speeds up read and take operations. The `index` tag should be used to specify an indexed field.|
 
@@ -123,7 +123,7 @@ Example:
 ### SpaceIndex Path
 
 {: .table .table-bordered}
-|Syntax     |  path=" " type = " "|
+|Syntax     |  path type|
 |Argument   |  [SpaceIndexType]({%javadoc com/gigaspaces/metadata/index/SpaceIndexType %}){%wbr%} path - indexed attribute|
 |Description| The `path` attribute represents the path of the indexed property within a nested object. |
 
@@ -146,7 +146,7 @@ Example:
 ### Unique Index
 
 {: .table .table-bordered}
-|Syntax     |  index type="" unique=""|
+|Syntax     |  index type unique|
 |Argument   |  [SpaceIndexType]({%javadoc com/gigaspaces/metadata/index/SpaceIndexType %})  |
 |Description| Unique constraints can be defined for an attribute or attributes of a space class. |
 |Note |   The uniqueness is enforced per partition and not over the whole cluster. |
@@ -177,7 +177,7 @@ Example:
 ### SpaceFifoGroupingIndex
 
 {: .table .table-bordered}
-|Syntax     | fifo-grouping-index path=""|
+|Syntax     | fifo-grouping-index path|
 |Description| This tag is used to define a space FIFO grouping Index. |
 |Note |This tag can be declared on several properties in a class in order to assist in efficient traversal.{%wbr%}If defined, there must be a property in the class, marked with the `@SpaceFifoGroupingProperty` annotation.{%wbr%}A compound index that contains this FIFO grouping index and the FIFO grouping property will be created.   |
 

@@ -14,9 +14,7 @@ A data unit stored in the space is called an **Entry**. However, as you've seen 
 
 Most of the time, the terms object and entry are used interchangeably, because the meaning is clear from the context, and the semantics are trivial. However, it is important to understand the difference between them. Moreover, some  features rely on applying semantics to an object to get a specific entry behavior. This page explains how objects are transformed to (and from) entries, and how that process can be controlled and customized.
 
-{% info %}
-A new GigaSpaces developer is not required to fully understand all the terms and concepts in this page at once. If it feels like too much new stuff, just make sure you get the basic idea from each section, and move on to other topics. Later on, when you have a better grasp of the framework, and you need more information about a specific feature, come back to this page to learn more.
-{%endinfo%}
+
 
 # Including/Excluding Data from an Entry
 
