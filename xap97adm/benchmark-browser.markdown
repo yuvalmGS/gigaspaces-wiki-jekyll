@@ -1,6 +1,6 @@
 ---
 layout: post97adm
-title:  Browser View
+title:  Benchmark UI
 categories: XAP97ADM
 parent: benchmarking.html
 weight: 200
@@ -8,8 +8,7 @@ weight: 200
 
 {% summary %} {% endsummary %}
 
-
-The Benchmark view provides a user interface for benchmarking the space.
+The Benchmark panel provides a user interface for benchmarking the space.
 
 The following options are provided:
 
