@@ -68,6 +68,7 @@ public class Person {
         return this;
     }
 
+    @SpaceIndex
     public String getCountry() {
         return country;
     }

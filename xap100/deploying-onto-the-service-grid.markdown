@@ -197,7 +197,7 @@ Running the deployment code from the command line is very convenient. Rename the
 {% highlight java %}
 %JSHOMEDIR%\tools\groovy\bin\groovy deploy.groovy
 {% endhighlight %}
-                                                                                                                convinient
+
 {% endtabcontent %}
 
 {% tabcontent Linux %}
