@@ -18,25 +18,25 @@ It's becoming increasingly important for organizations to share HTTP session dat
 
 [Global Http Session Sharing](http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2)
 
-
+{%comment%}
 <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="500" height="426" id="onlinePlayer"><param name="allowScriptAccess" value="always" /><param name="movie" value="http://www.slideboom.com/player/player.swf?id_resource=631622" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /><param name="flashVars" value="mode=2&idResource=1837&siteUrl=http://www.slideboom.com" /><param name="allowFullScreen" name="true" /><embed src="http://www.slideboom.com/player/player.swf?id_resource=631622" quality="high" bgcolor="#ffffff" width="500" height="426" name="onlinePlayer" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" allowFullScreen="true" flashVars="mode=0&idResource=631622&siteUrl=http://www.slideboom.com" /></object>
-
+{%endcomment%}
 
 
 
 The following image depicts a common use case where there are multiple data centers connected across the WAN, and each is running a different type of web server.
 
-{% indent %}![httpSessionSharing1.jpg](/attachment_files/httpSessionSharing1.jpg){% endindent %}
+![httpSessionSharing1.jpg](/attachment_files/httpSessionSharing1.jpg)
 
 The GigaSpaces Global HTTP Session Sharing architecture allows users to deploy their web application across these multiple data centers where the session is shared in real-time and in a transparent manner. The HTTP session is also backed by a data grid cluster within each data center for fault tolerance and high-availability.
 
 With this solution, there is no need to deploy a database to store the session, so you avoid the use of expensive database replication across multiple sites. Setting up GigaSpaces for session sharing between each site is simple and does not involve any code changes to the application.
 
-# Overview
 
-GigaSpaces Global HTTP Session Management designed to deliver the application maximum performance with ZERO application code changes.
 
-GigaSpaces Global HTTP Session Management features the following:
+XAPs Global HTTP Session Management is designed to deliver maximum performance for the application  with ZERO application code changes.
+
+{%vbar title=Global HTTP Session Management features:%}
 - **Reduce App/Web server memory footprint** storing the session within a remote JVM.
 
 - **No code changes required** to share the session with other remote Web/App servers - Support **Serialized and Non-Serialized** Session attributes. Your attributes do not need to implement Serializable or Externalizable interface.
@@ -59,6 +59,8 @@ GigaSpaces Global HTTP Session Management features the following:
 
 - **Atomic HTTP request** session access support - multiple requests for the session attributes within the same HTTP request will be served without performing any remote calls. Master session copy will be updated when the HTTP request will be completed.
 
+{%endvbar%}
+
 # Global HTTP Session Sharing with your Application
 
 You simply need to configure your web application to use the Shiro session manager  with GigaSpaces, deploy the GigaSpaces in-memory data grid (IMDG) and its WAN Gateway in each data center and deploy your web application. That's it!
@@ -67,11 +69,11 @@ There is no need to change the web application or plug in any custom code in ord
 
 The below diagram shows a more detailed view of the IMDG deployment. In this case, there are multiple partitions for high scalability, as well as backup instances for redundancy. The WAN Gateway is also deployed and shows replication to each remote site.
 
-{% indent %}![httpSessionSharing2.jpg](/attachment_files/httpSessionSharing2.jpg){% endindent %}
+ ![httpSessionSharing2.jpg](/attachment_files/httpSessionSharing2.jpg)
 
 The end-to-end path between the 2 data center nodes includes the servlet and Shiro filters, and the IMDG with local cache and WAN Gateway.
 
-{% indent %}![httpSessionSharing3.jpg](/attachment_files/httpSessionSharing3.jpg){% endindent %}
+ ![httpSessionSharing3.jpg](/attachment_files/httpSessionSharing3.jpg)
 
 ### Load-Balancing Scenarios
 
@@ -84,7 +86,7 @@ The GigaSpaces Global HTTP Session Sharing support two Load-Balancing scenarios:
 Have `cacheManager.cacheSessionLocally = true` when you would like multiple web application instances to share the same HTTP session. In this case your load balancer should be configured to support *non-sticky sessions* routing requests to a different web application based on some load-balancing algorithm. This will improve the performance of your application by avoiding reading the latest copy of the session from the remote space on each page load.
 {% endcolumn %}
 {% column width=40% %}
-{% indent %}![http-session-non-sticky.jpg](/attachment_files/http-session-non-sticky.jpg){% endindent %}
+ ![http-session-non-sticky.jpg](/attachment_files/http-session-non-sticky.jpg)
 {% endcolumn %}
 {% endsection %}
 
@@ -95,7 +97,7 @@ Have `cacheManager.cacheSessionLocally = true` when you would like multiple web 
 Have `cacheManager.cacheSessionLocally = false` when you would like the same web application instance to serve the same client and have the client to failover to another web application in case the original web application fails. In this case **sticky sessions** should be enabled at the HTTP load-balancer allowing the HTTP request associated with the same session to be routed always to the same Web container. When there is a web container failure, other Web container will take over and have the most up-to-date session retrieved from the In-Memory-Data-Grid.
 {% endcolumn %}
 {% column width=40% %}
-{% indent %}![http-session-sticky.jpg](/attachment_files/http-session-sticky.jpg){% endindent %}
+ ![http-session-sticky.jpg](/attachment_files/http-session-sticky.jpg)
 {% endcolumn %}
 {% endsection %}
 
@@ -222,7 +224,7 @@ The `shiro.ini` file needs to be placed within the WEB-INF folder and to define 
 {% endhighlight %}
 
 
-# Example 2: Global Http Session Sharing Cross Multiple Applications Configuration
+# Global Http Session Sharing across Multiple Applications Configuration
 {% note %}Note that this example uses the basic authentication configuration but, shiro have a various authenticators types see [realm modules](http://shiro.apache.org/static/1.2.1/apidocs/org/apache/shiro/authc/class-use/AuthenticationException.html) {% endnote %}
 {% highlight console %}
 
@@ -370,7 +372,7 @@ The URL above assumes the Web Server configured to use port 8080.
 1. Set some values for the Session Name and Attribute and click the **Update Session** button.
 1. View the session within the space via the GS-UI. Click the Data-Types icon , click the `org.openspaces.sessions.shiro.SpaceSession` class and Click the query button. The Query view will be displayed. You can double click any of the sessions and drill into the attributes map within the session to view the session attributes:
 
-{% indent %}![httpSessionSharing5.jpg](/attachment_files/httpSessionSharing5.jpg){% endindent %}
+ ![httpSessionSharing5.jpg](/attachment_files/httpSessionSharing5.jpg)
 
 ### Multi-Web Servers Deployment
 
@@ -378,21 +380,32 @@ The URL above assumes the Web Server configured to use port 8080.
 
 You may share the HTTP session between different web servers. To test this on your local environment you can install multiple web servers, deploy the web application and have your browser access the same application via the same browser. See the below example:
 
-{% indent %}![httpSessionSharing8.jpg](/attachment_files/httpSessionSharing8.jpg){% endindent %}
+![httpSessionSharing8.jpg](/attachment_files/httpSessionSharing8.jpg)
 
-{% indent %}![httpSessionSharing9.jpg](/attachment_files/httpSessionSharing9.jpg){% endindent %}
+![httpSessionSharing9.jpg](/attachment_files/httpSessionSharing9.jpg)
 
 Hit the Refresh button when switching between the tabs. The session data will be refreshed with the relevant app server reading it from the space.
 
-{% note %}When deploying the web application WAR file please make sure the web app context will be identical.{% endnote %}
+{% note %}
+When deploying the web application WAR file please make sure the web app context will be identical.
+{% endnote %}
 
 ### Load-Balancer
 
 Another option would be to use a load-balancer such as the [apache httpd](http://httpd.apache.org) and configure it to load-balance the web requests between the different web servers. Here is a simple setup:
 
-1. Install [apache httpd](http://httpd.apache.org).
-1. Create a file named `HttpSession.conf` located at <Apache HTTPD 2.2 root>\conf\gigaspaces
-1. Place the following within the `HttpSession.conf` file. The `BalancerMember` should be mapped to different URLs of your web servers instances. With the example below we have Tomcat using port 8080 and Websphere using port 9080.
+{%accordion id=acc1 %}
+{%accord parent=acc1 | title=Step 1:  Install Apache httpd%}
+Install [apache httpd](http://httpd.apache.org).
+{%endaccord%}
+
+{%accord parent=acc1 | title=Step 2:  Create HttpSession.conf %}
+Create a file named `HttpSession.conf` located at <Apache HTTPD 2.2 root>\conf\gigaspaces
+{%endaccord%}
+
+{%accord parent=acc1 | title=Step 3: Configure HttpSession.conf %}
+
+Place the following within the `HttpSession.conf` file. The `BalancerMember` should be mapped to different URLs of your web servers instances. With the example below we have Tomcat using port 8080 and Websphere using port 9080.
 
 {%highlight xml%}
 <VirtualHost *:8888>
@@ -407,8 +420,10 @@ Another option would be to use a load-balancer such as the [apache httpd](http:/
 {%endhighlight%}
 
 {% note %} The `127.0.0.1` IP should be replaced with IP addresses of the machine(s)/port(s) of WebSphere/Tomcat instances.{% endnote %}
+{%endaccord%}
 
-1. Configure the `<Apache2.2 HTTPD root>\conf\httpd.conf` to have the following:
+{%accord parent=acc1 | title=Step 4:  Configure httpd.conf %}
+ Configure the `<Apache2.2 HTTPD root>\conf\httpd.conf` to have the following:
 
 {%highlight xml%}
 Include "/tools/Apache2.2/conf/gigaspaces/*.conf"
@@ -431,12 +446,18 @@ ProxyPass /balancer !
 {%endhighlight%}
 
 {% note %}The `/tools/Apache2.2` folder name should be replaced with your correct Apache httpd location. \\ The `127.0.0.1` IP should be replaced with appropriate IP addresses of the machine that is running apache.{% endnote %}
+{%endaccord%}
 
-1. Once you have the space running, Websphere running, Tomcat running, and Apache httpd configured, restart the Apache http. On windows you can use its service.
+{%accord parent=acc1 | title=Step 5: Restart Apache%}
 
-{% indent %}![httpSessionSharing7.jpg](/attachment_files/httpSessionSharing7.jpg){% endindent %}
 
-1. Once you performed the above steps, access the following URL:
+ Once you have the space running, Websphere running, Tomcat running, and Apache httpd configured, restart the Apache http. On windows you can use its service.
+
+![httpSessionSharing7.jpg](/attachment_files/httpSessionSharing7.jpg)
+{%endaccord%}
+
+{%accord parent=acc1 | title=Step 6: Apache httpd balancer console%}
+Once you performed the above steps, access the following URL:
 {%highlight console%}
 http://127.0.0.1:8888/HttpSession
 {%endhighlight%}
@@ -445,9 +466,12 @@ You should have the web application running. Any access to the web application w
 http://127.0.0.1:8888/balancer-manager
 {%endhighlight%}
 
-{% indent %}![httpSessionSharing6.jpg](/attachment_files/httpSessionSharing6.jpg){% endindent %}
+![httpSessionSharing6.jpg](/attachment_files/httpSessionSharing6.jpg)
 
 You can shutdown Websphere or Tomcat and later restart these. Your web application will not lose its session data.
+{%endaccord%}
+{%endaccordion%}
+
 
 ### Multi-Site Deployment
 
