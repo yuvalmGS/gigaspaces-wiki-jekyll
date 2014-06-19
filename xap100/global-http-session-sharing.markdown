@@ -1,19 +1,12 @@
 ---
 layout: post100
-title:  XAP as Second Level Cache
+title:  Global HTTP Session Sharing
 categories: XAP100
-parent: space-persistency-overview.html
-weight: 1100
+parent: web-application-overview.html
+weight: 600
 ---
-{%comment%}
-{% summary page%}
-Global HTTP Session Sharing allows transparent session replication between remote sites and session sharing between different application servers in real-time. The solution uses the [Shiro Session Manager library](http://shiro.apache.org/session-management.html)
-{% endsummary %}
-{%endcomment%}
 
-{%comment%}
-# Massive Web Application Scaling
-{%endcomment%}
+{%summary%}{%endsummary%}
 
 It's becoming increasingly important for organizations to share HTTP session data across multiple data centers, multiple web server instances or different types of web servers. Here are few scenarios where HTTP session sharing is required:
 
@@ -29,30 +22,7 @@ It's becoming increasingly important for organizations to share HTTP session dat
 <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="500" height="426" id="onlinePlayer"><param name="allowScriptAccess" value="always" /><param name="movie" value="http://www.slideboom.com/player/player.swf?id_resource=631622" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /><param name="flashVars" value="mode=2&idResource=1837&siteUrl=http://www.slideboom.com" /><param name="allowFullScreen" name="true" /><embed src="http://www.slideboom.com/player/player.swf?id_resource=631622" quality="high" bgcolor="#ffffff" width="500" height="426" name="onlinePlayer" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" allowFullScreen="true" flashVars="mode=0&idResource=631622&siteUrl=http://www.slideboom.com" /></object>
 
 
-{%comment%}
 
-<object width="746" height="413"><param name="movie" value="//www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2"></param><embed src="http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2" type="application/x-shockwave-flash" width="746" height="413"></embed></object>
-
-
-http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2
-
-<div style="width:425px;text-align:left"><a style="font:14px Helvetica,Arial,Sans-serif;color: #0000CC;display:block;margin:12px 0 3px 0;text-decoration:underline;" href="//www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2" title="Global Http Session Sharing">Global Http Session Sharing</a><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="425" height="370" id="onlinePlayer631622"><param name="movie" value="//www.slideboom.com/player/player.swf?id_resource=631622" /><param name="allowScriptAccess" value="always" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /><param name="allowFullScreen" value="true" /><param name="flashVars" value="" /><embed src="//www.slideboom.com/player/player.swf?id_resource=631622" width="425" height="370" name="onlinePlayer631622" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"allowScriptAccess="always" quality="high" bgcolor="#ffffff" allowFullScreen="true" flashVars="" ></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View <a href="" style="color: #0000CC;">more presentations</a> or <a href="/upload" style="color: #0000CC;">Upload</a> your own.</div></div>
-
-
-<object width="746" height="413"><param name="movie" value="//www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2"></param><embed src="http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2" type="application/x-shockwave-flash" width="746" height="413"></embed></object>
-
-
-<object width="746" height="413"><param name="movie" value="//www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2"></param><embed src="http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2" type="application/x-shockwave-flash" width="746" height="413"></embed></object>
-
-<div style="width:425px;text-align:left">
-<a style="font:14px Helvetica,Arial,Sans-serif;color: #0000CC;display:block;margin:12px 0 3px 0;text-decoration:underline;"
-href="//www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2"
-title="Global Http Session Sharing">Global Http Session Sharing</a><object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
-codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="425" height="370"
-id="onlinePlayer631622"><param name="movie" value="//www.slideboom.com/player/player.swf?id_resource=631622" />
-<param name="allowScriptAccess" value="always" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" />
-<param name="allowFullScreen" value="true" /><param name="flashVars" value="" /><embed src="//www.slideboom.com/player/player.swf?id_resource=631622" width="425" height="370" name="onlinePlayer631622" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"allowScriptAccess="always" quality="high" bgcolor="#ffffff" allowFullScreen="true" flashVars="" ></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View <a href="" style="color: #0000CC;">more presentations</a> or <a href="/upload" style="color: #0000CC;">Upload</a> your own.</div></div>
-{%endcomment%}
 
 The following image depicts a common use case where there are multiple data centers connected across the WAN, and each is running a different type of web server.
 
@@ -110,10 +80,10 @@ The GigaSpaces Global HTTP Session Sharing support two Load-Balancing scenarios:
 ##### Session Sharing Scenario
 
 {% section %}
-{% column width=40% %}
+{% column width=60% %}
 Have `cacheManager.cacheSessionLocally = true` when you would like multiple web application instances to share the same HTTP session. In this case your load balancer should be configured to support *non-sticky sessions* routing requests to a different web application based on some load-balancing algorithm. This will improve the performance of your application by avoiding reading the latest copy of the session from the remote space on each page load.
 {% endcolumn %}
-{% column %}
+{% column width=40% %}
 {% indent %}![http-session-non-sticky.jpg](/attachment_files/http-session-non-sticky.jpg){% endindent %}
 {% endcolumn %}
 {% endsection %}
@@ -121,10 +91,10 @@ Have `cacheManager.cacheSessionLocally = true` when you would like multiple web 
 ##### Session Failover Scenario
 
 {% section %}
-{% column width=40% %}
+{% column width=60% %}
 Have `cacheManager.cacheSessionLocally = false` when you would like the same web application instance to serve the same client and have the client to failover to another web application in case the original web application fails. In this case **sticky sessions** should be enabled at the HTTP load-balancer allowing the HTTP request associated with the same session to be routed always to the same Web container. When there is a web container failure, other Web container will take over and have the most up-to-date session retrieved from the In-Memory-Data-Grid.
 {% endcolumn %}
-{% column %}
+{% column width=40% %}
 {% indent %}![http-session-sticky.jpg](/attachment_files/http-session-sticky.jpg){% endindent %}
 {% endcolumn %}
 {% endsection %}
@@ -162,7 +132,7 @@ The web application requires a couple of configuration changes to the web.xml fi
 
 ### shiro.ini Properties 
 
-{: .table .table-bordered}
+{: .table   .table-condensed   .table-bordered}
 |Section|Property|Description|Required|Optional Values|Default Values|
 |:------|:-------|:----------|:-------|:--------------|:-------------|
 |main|connector| wrap SpaceProxy and perform operation aginst space|Yes|`com.gigaspaces.httpsession.SpaceConnector`|
@@ -196,7 +166,7 @@ The web application requires a couple of configuration changes to the web.xml fi
 The `shiro.ini` file needs to be placed within the WEB-INF folder and to define parameters for the session manager for it to be able to access GigaSpaces:
 
 #Single Application Example Configuration
-{% highlight java %}
+{% highlight console %}
 
 	[main]
 	# space proxy wraper
@@ -254,7 +224,7 @@ The `shiro.ini` file needs to be placed within the WEB-INF folder and to define 
 
 # Example 2: Global Http Session Sharing Cross Multiple Applications Configuration
 {% note %}Note that this example uses the basic authentication configuration but, shiro have a various authenticators types see [realm modules](http://shiro.apache.org/static/1.2.1/apidocs/org/apache/shiro/authc/class-use/AuthenticationException.html) {% endnote %}
-{% highlight java %}
+{% highlight console %}
 
 	[main]
 	authc.loginUrl = /login.jsp
@@ -343,8 +313,7 @@ The web application should include the following libraries within its \WEB-INF\l
 * gs-runtime.jar
 
 {% note %}
-
-	The gs-runtime.jar should be replaced with the relevant GigaSpaces gs-runtime.jar matching your environment. \\ Use appropriate 	version of gs-session-manager-<version>.jar (example uses version 2.0-b103 version)
+The gs-runtime.jar should be replaced with the relevant GigaSpaces gs-runtime.jar matching your environment. \\ Use appropriate 	version of gs-session-manager-<version>.jar (example uses version 2.0-b103 version)
 {% endnote %}
 
 ### GigaSpaces In Memory Data Grid (IMDG)
@@ -374,7 +343,7 @@ The [WAN Gateway]({%latestjavaurl%}/multi-site-replication-over-the-wan.html) sh
 
 When using a [Secure GigaSpaces cluster]({%latestjavaurl%}/securing-your-data.html) you can pass security credentials using following parameters in `shiro.ini` file,
 
-{%highlight java%}
+{%highlight console%}
 
 	# When using secured GigaSpace cluster, pass the credentials here
 	cacheManager.username = gs
@@ -410,6 +379,7 @@ The URL above assumes the Web Server configured to use port 8080.
 You may share the HTTP session between different web servers. To test this on your local environment you can install multiple web servers, deploy the web application and have your browser access the same application via the same browser. See the below example:
 
 {% indent %}![httpSessionSharing8.jpg](/attachment_files/httpSessionSharing8.jpg){% endindent %}
+
 {% indent %}![httpSessionSharing9.jpg](/attachment_files/httpSessionSharing9.jpg){% endindent %}
 
 Hit the Refresh button when switching between the tabs. The session data will be refreshed with the relevant app server reading it from the space.
@@ -467,11 +437,11 @@ ProxyPass /balancer !
 {% indent %}![httpSessionSharing7.jpg](/attachment_files/httpSessionSharing7.jpg){% endindent %}
 
 1. Once you performed the above steps, access the following URL:
-{%highlight java%}
+{%highlight console%}
 http://127.0.0.1:8888/HttpSession
 {%endhighlight%}
 You should have the web application running. Any access to the web application will be routed between Websphere and Tomcat. You can check this by accessing the Apache httpd balancer console:
-{%highlight java%}
+{%highlight console%}
 http://127.0.0.1:8888/balancer-manager
 {%endhighlight%}
 
