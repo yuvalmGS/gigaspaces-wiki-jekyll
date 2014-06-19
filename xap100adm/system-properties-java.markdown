@@ -8,7 +8,7 @@ weight: 200
 
 {% refer %}Refer to the [SystemProperties](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/kernel/SystemProperties.html) class for more details.{% endrefer %}
 
-{: .table .table-bordered}
+{: .table .table-responsive .table-striped .table-condensed .table-bordered}
 | Property name | Description | Default value |
 |:--------------|:------------|:--------------|
 | `com.gs.home` | GigaSpaces home directory. {% wbr %}Not required, if not set explicitly, it is resolved | `JSHOMEDIR` |
