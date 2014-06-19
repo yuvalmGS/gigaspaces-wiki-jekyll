@@ -14,8 +14,8 @@ The [GigaSpaces API](./the-gigaspace-interface-overview.html) supports  field-le
 
 # SpaceId
 
-{: .table .table-bordered}
-|Syntax     | @SpaceId(autoGenerate=false)|
+{: .table-responsive  .table-condensed   .table-bordered}
+|Syntax     |  SpaceId autoGenerate |
 |Argument   |  boolean          |
 |Default    | false |
 |Description| Defines whether this field value is used when generating the Object ID. The field value should be unique -- i.e., no multiple objects with the same value should be written into the space (each object should have a different field value). When writing an object into the space with an existing `id` field value, an `EntryAlreadyInSpaceException` is thrown. The Object ID is created, based on the `id` field value.{%wbr%}Specifies if the object ID is generated automatically by the space when written into the space. If `false`, the field is indexed automatically, and if `true`, the field isn't indexed. If `autoGenerate` is declared as `false`, the field is indexed automatically. If `autoGenerate` is declared as `true`, the field isn't indexed. If `autoGenerate` is `true`, the field must be of the type `java.lang.String`. |
@@ -41,8 +41,8 @@ public class Person {
 
 # SpaceRouting
 
-{: .table .table-bordered}
-|Syntax     | @SpaceRouting|
+{: .table-responsive  .table-condensed   .table-bordered}
+|Syntax     | SpaceRouting|
 |Description| The `@SpaceRouting` annotation specifies a get method for the field to be used to calculate the target space for the space operation (read , write...). The `@SpaceRouting` field value hash code is used to calculate the target space when the space is running in **partitioned mode**.{%wbr%}The field value hash code is used to calculate the target space when the space is running in **partitioned mode**. |
 
 Example:
@@ -66,8 +66,8 @@ public class Employee {
 
 # SpaceProperty
 
-{: .table .table-bordered}
-|Syntax     | @SpaceProperty(nullValue="-1" )|
+{: .table-responsive  .table-condensed   .table-bordered}
+|Syntax     | SpaceProperty nullValue |
 |Argument   |  nullValue          |
 |Default    |  null |
 |Description| Specifies that an attribute value be treated as `null` when the object is written to the space and no value is assigned to the attribute. (where `-1` functions as a `null` value in case of an int)|
@@ -92,8 +92,8 @@ public class Employee {
 
 # SpaceIndex
 
-{: .table .table-bordered}
-|Syntax     |  @SpaceIndex(type=SpaceIndexType.BASIC)|
+{: .table-responsive  .table-condensed   .table-bordered}
+|Syntax     |  SpaceIndex type |
 |Argument   |  [SpaceIndexType]({%javadoc com/gigaspaces/metadata/index/SpaceIndexType %})  |
 |Description| Querying indexed fields speeds up read and take operations. The `@SpaceIndex` annotation should be used to specify an indexed field.|
 
@@ -137,8 +137,8 @@ public class User {
 
 # Unique Index
 
-{: .table .table-bordered}
-|Syntax     |   @SpaceIndex(type=SpaceIndexType.BASIC, unique = true)|
+{: .table-responsive  .table-condensed   .table-bordered}
+|Syntax     |  SpaceIndex type , unique  |
 |Argument   |  [SpaceIndexType]({%javadoc com/gigaspaces/metadata/index/SpaceIndexType %})  |
 |Description| Unique constraints can be defined for an attribute or attributes of a space class. |
 |Note |   The uniqueness is enforced per partition and not over the whole cluster. |
@@ -167,8 +167,8 @@ public class Person
 
 # SpaceIndex Path
 
-{: .table .table-bordered}
-|Syntax     |  @SpaceIndex(path = "attributeName",type = SpaceIndexType.EXTENDED)|
+{: .table-responsive  .table-condensed   .table-bordered}
+|Syntax     |  SpaceIndex path  ,type  |
 |Argument   |  [SpaceIndexType]({%javadoc com/gigaspaces/metadata/index/SpaceIndexType %}){%wbr%} path - indexed attribute|
 |Description| The `path()` attribute represents the path of the indexed property within a nested object. |
 
@@ -212,8 +212,8 @@ public static class Address implements Serializable {
 
 
 
-{: .table .table-bordered}
-|Syntax     |  @SpaceVersion|
+{: .table-responsive  .table-condensed   .table-bordered}
+|Syntax     |  SpaceVersion|
 |Description| This annotation is used for object versioning used for optimistic locking. |
 |Note       | The attribute must be an `int` data type. |
 
@@ -237,8 +237,8 @@ public class Employee {
 
 # SpacePersist
 
-{: .table .table-bordered}
-|Syntax     | @SpacePersist|
+{: .table-responsive  .table-condensed   .table-bordered}
+|Syntax     | SpacePersist|
 |Description| This specifies a getter method for holding the persistency mode of the object overriding the class level persist declaration. This field should be of the boolean data type.{%wbr%}If the persist class level annotation is true, all objects of this class type will be persisted into the underlying data store (Mirror, ExternalDataSource, Storage Adapter).|
 |Note       | When using this option, you must have the space class level `persist` decoration specified.|
 
@@ -262,8 +262,8 @@ public class Employee {
 
 # SpaceExclude
 
-{: .table .table-bordered}
-|Syntax     |  @SpaceExclude|
+{: .table-responsive  .table-condensed   .table-bordered}
+|Syntax     |  SpaceExclude|
 |Description| When this annotation is specified the attribute is not written into the space.|
 |Note | - When `IncludeProperties` is defined as `IMPLICIT`, `@SpaceExclude` should usually be used. This is because `IMPLICIT` instructs the system to take all POJO fields into account.{%wbr%}- When `IncludeProperties` is defined as `EXPLICIT`, there is no need to use `@SpaceExclude`.{%wbr%}- `@SpaceExclude` can still be used, even if `IncludeProperties` is not defined.  |
 
@@ -286,7 +286,7 @@ public class Employee {
 
 # SpaceLeaseExpiration
 
-{: .table .table-bordered}
+{: .table-responsive  .table-condensed   .table-bordered}
 |Syntax     |  @SpaceLeaseExpiration|
 |Description|This annotation specifies the attribute for holding the timestamp of when the instance's lease expires (this is a standard Java timestamp based on the 1/1/1970 epoch). This property should not be populated by the user code. The space will populate this property automatically based on the lease time given by the user when writing the object. When using an external data source, you can choose to persist this value to the database. Subsequently, when data is reloaded from the external data source (at startup time for example), the space will filter out instances whose lease expiration timestamp has already passed. This field should be a `long` data type.|
 
@@ -313,8 +313,8 @@ public class MyData {
 
 # SpaceStorageType
 
-{: .table .table-bordered}
-|Syntax     | @SpaceStorageType(storageType=StorageType.BINARY)|
+{: .table-responsive  .table-condensed   .table-bordered}
+|Syntax     | SpaceStorageType storageType|
 |Argument   | [StorageType]({% javadoc com/gigaspaces/metadata/StorageType %})          |
 |Default    | StorageType.OBJECT |
 |Description| This annotation is used to specify how the attribute is stored in the space. |
@@ -340,8 +340,8 @@ public class Message {
 
 # SpaceFifoGroupingProperty
 
-{: .table .table-bordered}
-|Syntax     | @SpaceFifoGroupingProperty(path = "attributeName")|
+{: .table-responsive  .table-condensed   .table-bordered}
+|Syntax     | SpaceFifoGroupingProperty path |
 |Argument   | path          |
 |Description| This annotation is used to define a space FIFO grouping property. |
 |Note | If defined, the `TakeModifiers.FIFO_GROUPING_POLL` or `ReadModifiers.FIFO_GROUPING_POLL` modifiers can be used to return all space entries that match the selection template in FIFO order. Different values of the FG property define groups of space entries that match each value. FIFO ordering exists within each group and not between different groups. |
@@ -367,8 +367,8 @@ public class FlightReservation
 
 # SpaceFifoGroupingIndex
 
-{: .table .table-bordered}
-|Syntax     | @SpaceFifoGroupingIndex|
+{: .table-responsive  .table-condensed   .table-bordered}
+|Syntax     | SpaceFifoGroupingIndex|
 |Description| This annotation is used to define a space FIFO grouping Index. |
 |Note |This annotation can be declared on several properties in a class in order to assist in efficient traversal.{%wbr%}If defined, there must be a property in the class, marked with the `@SpaceFifoGroupingProperty` annotation.{%wbr%}A compound index that contains this FIFO grouping index and the FIFO grouping property will be created.   |
 
@@ -393,8 +393,8 @@ Example:
 
 # SpaceDynamicProperties
 
-{: .table .table-bordered}
-|Syntax     | @SpaceDynamicProperties|
+{: .table-responsive  .table-condensed   .table-bordered}
+|Syntax     | SpaceDynamicProperties|
 |Description| Allows adding properties freely to a class without worrying about the schema.|
 
 
@@ -427,8 +427,8 @@ public class Person {
 
 # SpaceClassConstructor
 
-{: .table .table-bordered}
-|Syntax     | @SpaceClassConstructor|
+{: .table-responsive  .table-condensed   .table-bordered}
+|Syntax     | SpaceClassConstructor|
 |Description| This annotation can be placed on a POJO constructor to denote that this constructor should be used during object instantiation.{%wbr%}Using this annotations, it is possible for the POJO to have immutable properties (i.e. `final` fields).{%wbr%}As opposed to a standard POJO, a POJO annotated with this annotation may omit setters for its properties.{%wbr%}Except for the case where the id property is auto generated, only properties defined in this constructor will be considered space properties.{%wbr%}The annotations can be placed on at most one constructor.|
 
 

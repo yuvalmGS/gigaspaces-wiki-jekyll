@@ -1,6 +1,6 @@
 ---
 layout: post100
-title:  Extending
+title:  Extended Document
 categories: XAP100
 parent: document-overview.html
 weight: 200

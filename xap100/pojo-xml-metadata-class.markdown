@@ -11,7 +11,7 @@ weight: 100
 
 # Name
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | name |
 |Description| Contains the full qualified name of the specified class. Because this attribute is of the XML type `ID`, there can only be one `class-descriptor` per class. |
 
@@ -27,7 +27,7 @@ Example:
 
 # Persistence
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | persist |
 |Argument   | boolean|
 |Default    | false|
@@ -47,7 +47,7 @@ Example:
 
 # Replication
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | replicate |
 |Argument   | boolean|
 |Default    | false|
@@ -68,7 +68,7 @@ Example:
 
 # FIFO Support
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | fifo-support  |
 |Argument   | [FifoSupport]({% javadoc com/gigaspaces/annotation/pojo/FifoSupport %})|
 |Default    | not_set|
@@ -88,7 +88,7 @@ Example:
 
 # Storage Type
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | storage-type |
 |Argument   | [StorageType]({% javadoc com/gigaspaces/metadata/StorageType %})          |
 |Default    | object |
@@ -109,7 +109,7 @@ Example:
 
 # Include Properties
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | include-properties |
 |Argument   | [IncludeProperties](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/annotation/pojo/SpaceClass.IncludeProperties.html)      |
 |Default    | implicit|
@@ -127,7 +127,7 @@ Example:
 
 # Inherit Index
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | inherit-indexes |
 |Argument   | boolean          |
 |Default    | true|
@@ -146,7 +146,7 @@ Example:
 
 # Compound Index
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | compound-index paths |
 |Argument(s)| string          |
 |Values     | attribute name(s)   |
@@ -165,6 +165,30 @@ Example:
 
 
 {%learn%}./indexing-compound.html{%endlearn%}
+
+
+# Blob Store
+
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | blobstore |
+|Argument| boolean          |
+|Default | false|
+|Description| By default any Space Data Type is blobStore enabled. When decorating the space class with its meta data you may turn off the blobStore behavior using the @SpaceClass blobStore annotation or gs.xml blobStore tag.  |
+
+
+Example:
+
+{%highlight xml%}
+<gigaspaces-mapping>
+    <class name="com.test.Person" "blobstore"="false" >
+     .....
+     </class>
+</gigaspaces-mapping>
+
+{%endhighlight%}
+
+
+{%learn%}{%currentadmurl%}/blobstore-cache-policy.html{%endlearn%}
 
 
 

@@ -14,7 +14,7 @@ All the properties are written automatically into space. If the field is a refer
 
 # Property
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | property name |
 |Argument   |  name of the attribute          |
 |Description| contains mapping info for a property of a class |
@@ -32,7 +32,7 @@ Example:
 
 ### SpaceProperty
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | null-value |
 |Description| Specifies that an attribute value be treated as `null` when the object is written to the space and no value is assigned to the attribute. (where `-1` functions as a `null` value in case of an int)|
 
@@ -50,7 +50,7 @@ Example:
 
 ### Reference
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | reference |
 |Argument   | class name         |
 |Description| contains mapping information for a property of a class that is not primitive, but references another entity object. |
@@ -73,7 +73,7 @@ Example:
 
 ### SpaceStorageType
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | storage-type|
 |Argument   | [StorageType]({% javadoc com/gigaspaces/metadata/StorageType %})          |
 |Default    | object |
@@ -94,7 +94,7 @@ Example:
 
 ### SpaceIndex
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     |  index type|
 |Argument   |  [SpaceIndexType]({%javadoc com/gigaspaces/metadata/index/SpaceIndexType %})  |
 |Description| Querying indexed fields speeds up read and take operations. The `index` tag should be used to specify an indexed field.|
@@ -122,7 +122,7 @@ Example:
 
 ### SpaceIndex Path
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     |  path type|
 |Argument   |  [SpaceIndexType]({%javadoc com/gigaspaces/metadata/index/SpaceIndexType %}){%wbr%} path - indexed attribute|
 |Description| The `path` attribute represents the path of the indexed property within a nested object. |
@@ -145,7 +145,7 @@ Example:
 
 ### Unique Index
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     |  index type unique|
 |Argument   |  [SpaceIndexType]({%javadoc com/gigaspaces/metadata/index/SpaceIndexType %})  |
 |Description| Unique constraints can be defined for an attribute or attributes of a space class. |
@@ -176,7 +176,7 @@ Example:
 
 ### SpaceFifoGroupingIndex
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | fifo-grouping-index path|
 |Description| This tag is used to define a space FIFO grouping Index. |
 |Note |This tag can be declared on several properties in a class in order to assist in efficient traversal.{%wbr%}If defined, there must be a property in the class, marked with the `@SpaceFifoGroupingProperty` annotation.{%wbr%}A compound index that contains this FIFO grouping index and the FIFO grouping property will be created.   |
@@ -209,8 +209,8 @@ Example:
 
 # SpaceId
 
-{: .table .table-bordered}
-|Syntax     | id name=""|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | id  |
 |Argument   | auto-generate |
 |Default    | false |
 |Description| Defines whether this field value is used when generating the Object ID. The field value should be unique -- i.e., no multiple objects with the same value should be written into the space (each object should have a different field value). When writing an object into the space with an existing `id` field value, an `EntryAlreadyInSpaceException` is thrown. The Object ID is created, based on the `id` field value.{%wbr%}Specifies if the object ID is generated automatically by the space when written into the space. If `false`, the field is indexed automatically, and if `true`, the field isn't indexed. If `autoGenerate` is declared as `false`, the field is indexed automatically. If `autoGenerate` is declared as `true`, the field isn't indexed. If `autoGenerate` is `true`, the field must be of the type `java.lang.String`. |
@@ -235,8 +235,8 @@ Example:
 
 # SpaceRouting
 
-{: .table .table-bordered}
-|Syntax     | routing name=""|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | routing  |
 |Description| The `routing` tag specifies a get method for the field to be used to calculate the target space for the space operation (read , write...). The `routing` field value hash code is used to calculate the target space when the Space is running in **partitioned mode**.{%wbr%}The field value hash code is used to calculate the target space when the space is running in **partitioned mode**. |
 
 Example:
@@ -258,8 +258,8 @@ Example:
 
 # Class Reference
 
-{: .table .table-bordered}
-|Syntax     | class-ref="" |
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | class-ref  |
 |Argument   | class name   |
 |Description| Contains the full qualified name of the specified class. |
 
@@ -276,7 +276,7 @@ Example:
 
 # SpacePersist
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | persist name=""|
 |Description| This specifies a getter method for holding the persistency mode of the object overriding the class level persist declaration. This field should be of the boolean data type.{%wbr%}If the persist class level annotation is true, all objects of this class type will be persisted into the underlying data store (Mirror, ExternalDataSource, Storage Adapter).|
 |Note       | When using this option, you must have the space class level `persist` decoration specified.|
@@ -294,8 +294,8 @@ Example:
 
 # SpaceVersion
 
-{: .table .table-bordered}
-|Syntax     |  version name=""|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     |  version  |
 |Description| This tag is used for object versioning used for optimistic locking. |
 |Note       | The attribute must be an `int` data type. |
 
@@ -322,8 +322,8 @@ Example:
 
 # SpaceExclude
 
-{: .table .table-bordered}
-|Syntax     |  exclude name=""|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     |  exclude  |
 |Description| When this tag is specified the property is not written into the space.|
 |Note | - When `include-properties` is defined as `implicit`, `exclude` should   be used. This is because `implicit` instructs the system to take all POJO fields into account.{%wbr%}- When `include-properties` is defined as `explicit`, there is no need to use `exclude`.{%wbr%}- `exclude` can still be used, even if `include-properties` is not defined.  |
 
@@ -346,8 +346,8 @@ Example:
 
 # SpaceLeaseExpiration
 
-{: .table .table-bordered}
-|Syntax     |  lease-expiration name=""|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     |  lease-expiration   |
 |Description|This tag specifies the property for holding the timestamp of when the instance's lease expires (this is a standard Java timestamp based on the 1/1/1970 epoch). This property should not be populated by the user code. The space will populate this property automatically based on the lease time given by the user when writing the object. When using an external data source, you can choose to persist this value to the database. Subsequently, when data is reloaded from the external data source (at startup time for example), the space will filter out instances whose lease expiration timestamp has already passed. This field should be a `long` data type.|
 
 Example:
@@ -370,8 +370,8 @@ Example:
 
 # SpaceFifoGroupingProperty
 
-{: .table .table-bordered}
-|Syntax     | fifo-grouping-property name="" path=""|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | fifo-grouping-property   path|
 |Argument   | path          |
 |Description| This tag is used to define a space FIFO grouping property. |
 |Note | If defined, the `TakeModifiers.FIFO_GROUPING_POLL` or `ReadModifiers.FIFO_GROUPING_POLL` modifiers can be used to return all space entries that match the selection template in FIFO order. Different values of the FG property define groups of space entries that match each value. FIFO ordering exists within each group and not between different groups. |
@@ -392,8 +392,8 @@ Example:
 
 # SpaceDynamicProperties
 
-{: .table .table-bordered}
-|Syntax     | dynamic-properties name=""|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | dynamic-properties |
 |Description| Allows adding properties freely to a class without worrying about the schema.|
 
 

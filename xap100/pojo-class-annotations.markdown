@@ -17,7 +17,7 @@ The [GigaSpaces API](./the-gigaspace-interface-overview.html) supports class lev
 
 # Persistence
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | persist |
 |Argument   | boolean          |
 |Default    | false|
@@ -37,7 +37,7 @@ public class Person {
 
 # Include Properties
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | includeProperties|
 |Argument   | [IncludeProperties](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/annotation/pojo/SpaceClass.IncludeProperties.html)      |
 |Default    | IncludeProperties.IMPLICIT|
@@ -54,7 +54,7 @@ public class Person {
 
 # FIFO Support
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | fifoSupport |
 |Argument   | [FifoSupport]({% javadoc com/gigaspaces/annotation/pojo/FifoSupport %})|
 |Default    | FifoSupport.NOT_SET|
@@ -74,7 +74,7 @@ public class Person {
 
 # Inherit Index
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | inheritIndexes |
 |Argument   | boolean          |
 |Default    | true|
@@ -93,7 +93,7 @@ public class Person {
 
 # Storage Type
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | storageType |
 |Argument   | [StorageType]({% javadoc com/gigaspaces/metadata/StorageType %})          |
 |Default    | StorageType.OBJECT |
@@ -113,7 +113,7 @@ public class Person {
 
 # Replication
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | replicate |
 |Argument   | boolean          |
 |Default    | true|
@@ -135,7 +135,7 @@ public class Person {
 
 # Compound Index
 
-{: .table .table-bordered}
+{: .table   .table-condensed  .table-bordered}
 |Syntax     | CompoundSpaceIndexes CompoundSpaceIndex paths  |
 |Argument(s)| string          |
 |Values     | attribute name(s)   |
@@ -160,4 +160,24 @@ public class User {
 {%endhighlight%}
 
 {%learn%}./indexing-compound.html{%endlearn%}
+
+# Blob Store
+
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | blobStore  |
+|Argument | boolean          |
+|Default | false|
+|Description| By default any Space Data Type is blobStore enabled. When decorating the space class with its meta data you may turn off the blobStore behavior using the @SpaceClass blobStore annotation or gs.xml blobStore tag.  |
+
+
+Example:
+{%highlight java%}
+@SpaceClass(blobStore = false)
+public class Person {
+    .......
+}
+
+{%endhighlight%}
+
+{%learn%}{%currentadmurl%}/blobstore-cache-policy.html{%endlearn%}
 
