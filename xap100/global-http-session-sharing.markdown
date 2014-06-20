@@ -6,7 +6,7 @@ parent: web-application-overview.html
 weight: 600
 ---
 
-{%summary%Global HTTP Session Sharing{%endsummary%}
+{%summary%}{%endsummary%}
 
 
 {% note %}
@@ -20,6 +20,11 @@ XAP 10 Global HTTP Session Sharing includes the following new features:
 6. Better logging
 
 {% endnote %}
+
+{% info title=Licensing %}
+This feature requires a separate license in addition to the XAP commercial license. Please contact [GigaSpaces Customer Support](http://www.gigaspaces.com/content/customer-support-services) for more details.
+{% endinfo %}
+
 
 # Overview
 
@@ -178,7 +183,7 @@ The shiro.ini support the following options:
 |main|storeMode|Provide functionallity of how to save changes to the space. there is tow sessions store mode full and delta.|Yes| use on of two options:<br> 1.`com.gigaspaces.httpsession.sessions.FullStoreMode` 2.`com.gigaspaces.httpsession.sessions.DeltaStoreMode`|
 |main|storeMode.connector| Space connector to be used|Yes|$connector|
 |main|storeMode.listener|Provides changes notification functionallity. it must extends `com.gigaspaces.httpsession.policies.GigaspacesNotifyListener`|No| `listener`|
-|main|storeMode.changeStrategy|define strategy of comparison and conflict detection response.|Yes|DeltaStoreMode:   1.`com.gigaspaces.httpsession.policies.LWWChangeStrategy` 2.`com.gigaspaces.httpsession.policies.FailFastChangeStrategy` 3.`com.gigaspaces.httpsession.policies.PartialChangeStrategy`|FullStoreMdoe: `com.gigaspaces.httpsession.policies.FullModeStrategy`    DeltaStoreMode: `com.gigaspaces.httpsession.policies.LWWChangeStrategy`
+|main|storeMode.changeStrategy|define strategy of comparison and conflict detection response.|Yes|DeltaStoreMode:   1.`com.gigaspaces.httpsession.policies.LWWChangeStrategy` 2.`com.gigaspaces.httpsession.policies.FailFastChangeStrategy` 3.`com.gigaspaces.httpsession.policies.PartialChangeStrategy`|FullStoreMode: `com.gigaspaces.httpsession.policies.FullModeStrategy`    DeltaStoreMode: `com.gigaspaces.httpsession.policies.LWWChangeStrategy`
 |main|listener|Fully qualified class name implementing `com.gigaspaces.httpsession.policies.GigaspacesNotifyListener`|No|`com.gigaspaces.httpsession.policies.TraceListener`|
 |main|serializer|Provides serialization functionallity|Yes| use you own implementation of `com.gigaspaces.httpsession.serialize.Serializer` or one of the out of the box options: 	1.`com.gigaspaces.httpsession.serialize.KryoSerializerImpl` (recomended)	2.`com.gigaspaces.httpsession.serialize.XStreamSerializerImpl`|
 |main|serializer.logLevel|internal kryo logging level|No| 1. `NONE = 6` disables all logging.<br> 2. `ERROR = 5` is for critical errors. The application may no longer work correctly.<br> 3. `WARN = 4` is for important warnings. The application will continue to work correctly.<br> 4.`INFO = 3` is for informative messages. Typically used for deployment.<br> 5. `DEBUG = 2` is for debug messages. This level is useful during development.<br> 6. `TRACE = 1` is for trace messages. A lot of information is logged, so this level is usually only needed when debugging a problem. | `LEVEL_INFO = 3`
