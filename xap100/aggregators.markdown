@@ -2,8 +2,8 @@
 layout: post100
 title:  Aggregators
 categories: XAP100
-parent: querying-the-space.html
-weight: 900
+weight: 550
+parent: the-gigaspace-interface-overview.html
 ---
 
 {% summary  %}  {% endsummary %}

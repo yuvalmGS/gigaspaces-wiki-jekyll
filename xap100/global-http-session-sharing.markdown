@@ -79,7 +79,7 @@ XAPs Global HTTP Session Management is designed to deliver maximum performance f
 
 - **Compression support** - Session attributes may be compressed to support very large session storage with minimal performance impact.
 
-- **Principle based session sharing ** - Allows session sharing across different applications using SSO. 
+- **Principle based session sharing** - Allows session sharing across different applications using SSO.
 
 
 {%endvbar%}
@@ -382,7 +382,7 @@ cacheManager.password = gs
 
 The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblogic, Jetty, GlassFish....):
 
-1. Download the demo web application [demo-app.war](/https://dl.dropboxusercontent.com/u/7390820/demo-app.war).
+1. Download the demo web application [demo app](/download_files/global-http-session-sharing.war).
 2. Deploy a space named **sessionSpace**. You many have a single instance space or deploy a clustered space using the command line or GS-UI/Web-UI.
 3. Deploy the `demo-app.war` into Tomcat (or any other app server).
 4. Start your browser and access the web application via the following URL: http://localhost:8080/demo-app
