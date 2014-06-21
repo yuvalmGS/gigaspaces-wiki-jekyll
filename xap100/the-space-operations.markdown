@@ -25,7 +25,7 @@ The interface includes the following main operations:
 {%endcolumn%}
 {%column width=50% %}
 {%panel bgColor=white | title=Change objects in Space:%}
-[change](./change-api.html) one object in Space{%wbr%}
+[change](#change) one object in Space{%wbr%}
 [changeMultiple](./change-api.html) objects in Space {%wbr%}
 [asynchronous change](./change-api.html) of objects
 {%endpanel%}
@@ -61,8 +61,9 @@ The interface includes the following main operations:
 {%section%}
 {%column width=50% %}
 {%panel bgColor=white |  title=Other operations:%}
-[aggregation](./aggregators.html)  across the Space{%wbr%}
-[count](#count) objects in space
+[aggregation](#aggregators)  across the Space{%wbr%}
+[count](#count) objects in Space{%wbr%}
+[counters](#counters) increment and decrement
 {%endpanel%}
 {%column width=50% %}
 {%endcolumn%}
@@ -105,10 +106,13 @@ In the example above, the take operation can be performed without specifying a t
 
 
 {%include xap100/ops-write.markdown %}
+{%include xap100/ops-change.markdown %}
 {%include xap100/ops-read.markdown %}
 {%include xap100/ops-take.markdown %}
 {%include xap100/ops-clear.markdown %}
 {%include xap100/ops-count.markdown %}
+{%include xap100/ops-counters.markdown %}
+{%include xap100/ops-aggregation.markdown %}
 
 
 
