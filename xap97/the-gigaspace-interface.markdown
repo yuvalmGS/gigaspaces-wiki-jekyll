@@ -256,6 +256,59 @@ GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 {%learn%}./local-view.html{%endlearn%}
 
 
+# Resource cleanup
+
+There are two types of resources associated with Space instances and Space clients that need to be freed up before shutting down your application.
+
+### Thread and memory resources
+If your space client or embedded space are running within a Spring-enabled environment (e.g. the XAP service grid or a standalone Spring application), and are configured in a Spring application context, these resources will be cleaned up automatically when the Spring application context is destroyed. <br/>
+However, if you start the space client or space instance programmatically, you must call the `UrlSpaceConfigurer destroy()` method when your application no longer uses the space instance / space client.
+
+Example:
+
+{% highlight java %}
+
+UrlSpaceConfigurer urlConfigurer = new UrlSpaceConfigurer("jini://*/*/space");
+ //....
+urlConfigurer.destroy();
+
+// Local cache
+LocalCacheSpaceConfigurer localCacheConfigurer = new LocalCacheSpaceConfigurer(urlConfigurer);
+localCacheConfigurer.destroy();
+
+// Local view
+LocalViewSpaceConfigurer localViewConfigurer = new LocalViewSpaceConfigurer(urlConfigurer);
+localViewConfigurer.destroy();
+
+{%endhighlight%}
+
+{%note%}
+When using LocalCache and LocalView you need to call the `destroy()` method on their respective configurer.
+{%endnote%}
+
+### Communication resources
+All communication related resources in XAP  are shared between all the XAP components
+at the Java classloader level. If you're using the [GigasSpaces service grid]({%currentadmurl%}/the-runtime-environment.html) to run your XAP application you do not need to handle communication resources cleanup explicitly.
+If your application runs in a standalone environment or another hosted environment (e.g. a JEE application server) you will need to explicitly clean up those resources.
+You need to shutdown these resources explicitly when your application no longer uses the XAP components (e.g. when it's un deployed from the application server). This is done by calling the static [shutdown()](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/gigaspaces/lrmi/LRMIManager.html) method on the LRMIManager.
+Note that if the JVM process is shut down anyway, you do not need to do explicitly shut down the communication resources.
+
+
+Example:
+
+{% highlight java %}
+
+UrlSpaceConfigurer urlConfigurer = new UrlSpaceConfigurer("jini://*/*/space");
+
+ //....
+
+urlConfigurer.destroy();
+
+LRMIManager.shutdown();
+
+{%endhighlight%}
+
+
 # Security
 
 A secured space should be configured with a security context so that it can be accessed (when connecting to it remotely). Here is an example of how this can be configured:
@@ -411,12 +464,12 @@ When constructing a space, it is possible to provide [Space Persistency](./space
 {% endtabcontent %}
 {% endinittab %}
 
-The above example uses Spring built-in support for configuring both a custom JDBC `DataSource` and a Hibernate `SessionFactory` to define and use the GigaSpaces built-in `HibernateSpaceDataSource`. The GigaSpaces data source is then injected into the space construction (note the specific schema change), and causes the space to use it.
+The above example uses Spring built-in support for configuring both a custom JDBC `DataSource` and a Hibernate `SessionFactory` to define and use the XAP built-in `HibernateSpaceDataSource`. The GigaSpaces data source is then injected into the space construction (note the specific schema change), and causes the space to use it.
 
 
 
 {% info %}
-This configuration can also be used with the GigaSpaces [Mirror Service](./asynchronous-persistency-with-the-mirror.html) deployed as a Processing Unit.
+This configuration can also be used with the XAP [Mirror Service](./asynchronous-persistency-with-the-mirror.html) deployed as a Processing Unit.
 {%endinfo%}
 
 {%learn%}space-persistency.html{%endlearn%}

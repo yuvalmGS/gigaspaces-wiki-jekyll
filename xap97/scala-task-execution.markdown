@@ -1,15 +1,10 @@
 ---
 layout: post97
-title:  Task Execution
+title:  Scala Task Execution
 categories: XAP97
 parent: scala.html
 weight: 500
 ---
-
-
-
-
-
 
 A wrapper around the `XAP` API provides some sugaring on top of the `GigaSpace#execute` methods.
 

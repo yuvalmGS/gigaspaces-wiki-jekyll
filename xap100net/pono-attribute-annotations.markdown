@@ -20,8 +20,8 @@ The [GigaSpaces API](./the-gigaspace-interface-overview.html) supports  field-le
 
 # SpaceId
 
-{: .table .table-bordered}
-|Syntax     | [SpaceId(AutoGenerate=)]|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | SpaceId AutoGenerate|
 |Argument   | boolean          |
 |Default    | false |
 |Description| Defines whether this field value is used when generating the Object ID. The field value should be unique -- i.e., no multiple objects with the same value should be written into the space (each object should have a different field value). When writing an object into the space with an existing `id` field value, an `EntryAlreadyInSpaceException` is thrown. The Object ID is created, based on the `id` field value.{%wbr%}Specifies if the object ID is generated automatically by the space when written into the space. If `false`, the field is indexed automatically, and if `true`, the field isn't indexed. If `autoGenerate` is declared as `false`, the field is indexed automatically. If `autoGenerate` is declared as `true`, the field isn't indexed. If `AutoGenerate` is `true`, the field must be of the type `String`. |
@@ -43,8 +43,8 @@ public class Person {
 
 # SpaceRouting
 
-{: .table .table-bordered}
-|Syntax     | [SpaceRouting]|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | SpaceRouting|
 |Description| The `[SpaceRouting]` annotation specifies a get method for the field to be used to calculate the target space for the space operation (Read , Write...). The `[SpaceRouting]` field value hash code is used to calculate the target space when the space is running in **partitioned mode**.{%wbr%}The field value hash code is used to calculate the target space when the space is running in **partitioned mode**. |
 
 Example:
@@ -65,8 +65,8 @@ public class Employee {
 
 # SpaceProperty
 
-{: .table .table-bordered}
-|Syntax     | [SpaceProperty(NullValue= )]|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | SpaceProperty NullValue  |
 |Argument   |  nullValue          |
 |Default    |  null |
 |Description| Specifies that a property value be treated as `null` when the object is written to the space and no value is assigned to the attribute. (where `-1` functions as a `null` value in case of an int)|
@@ -86,8 +86,8 @@ public class Employee {
 
 # SpaceIndex
 
-{: .table .table-bordered}
-|Syntax     |  [SpaceIndex(Type=)]|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     |  SpaceIndex Type|
 |Argument   |  [SpaceIndexType](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_Metadata_SpaceIndexType.htm)  |
 |Description| Querying indexed fields speeds up read and take operations. The `[SpaceIndex]` annotation should be used to specify an indexed field.|
 
@@ -109,8 +109,8 @@ public class User {
 
 # Unique Index
 
-{: .table .table-bordered}
-|Syntax     |  [SpaceIndex(Type=, Unique = )]|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     |  SpaceIndex Type, Unique|
 |Argument   | [SpaceIndexType](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_Metadata_SpaceIndexType.htm)  |
 |Description| Unique constraints can be defined for an attribute or attributes of a space class. |
 |Note |   The uniqueness is enforced per partition and not over the whole cluster. |
@@ -132,8 +132,8 @@ public class Person
 
 # SpaceIndex Path
 
-{: .table .table-bordered}
-|Syntax     |  [SpaceIndex(Path = "attributeName",Type = )]|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     |  SpaceIndex Path ,Type|
 |Argument   |  [SpaceIndexType](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_Metadata_SpaceIndexType.htm)|
 |Description| The `path()` attribute represents the path of the indexed property within a nested object. |
 
@@ -162,8 +162,8 @@ public class Info : Serializable {
 
 
 
-{: .table .table-bordered}
-|Syntax     | [SpaceVersion]|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | SpaceVersion|
 |Description| This annotation is used for object versioning used for optimistic locking. |
 |Note       | The attribute must be an `int` data type. |
 
@@ -184,8 +184,8 @@ public class Employee {
 
 # SpacePersist
 
-{: .table .table-bordered}
-|Syntax     | [SpacePersist]|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | SpacePersist|
 |Description| This specifies a getter method for holding the persistency mode of the object overriding the class level persist declaration. This field should be of the boolean data type.{%wbr%}If the persist class level annotation is true, all objects of this class type will be persisted into the underlying data store (Mirror, ExternalDataSource, Storage Adapter).|
 |Note       | When using this option, you must have the space class level `persist` decoration specified.|
 
@@ -204,8 +204,8 @@ public class Employee {
 
 # SpaceExclude
 
-{: .table .table-bordered}
-|Syntax     |  [SpaceExclude]|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     |  SpaceExclude|
 |Description| When this annotation is specified the attribute is not written into the space.|
 
 Example:
@@ -222,8 +222,8 @@ public class Employee {
 
 # SpaceLeaseExpiration
 
-{: .table .table-bordered}
-|Syntax     |  [SpaceLeaseExpiration]|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     |  SpaceLeaseExpiration|
 |Description|This annotation specifies the attribute for holding the timestamp of when the instance's lease expires. This property should not be populated by the user code. The space will populate this property automatically based on the lease time given by the user when writing the object. When using an external data source, you can choose to persist this value to the database. Subsequently, when data is reloaded from the external data source (at startup time for example), the space will filter out instances whose lease expiration timestamp has already passed. This field should be a `long` data type.|
 
 Example:
@@ -242,8 +242,8 @@ public class MyData {
 
 # SpaceStorageType
 
-{: .table .table-bordered}
-|Syntax     | [SpaceStorageType(StorageType= )]|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | SpaceStorageType StorageType |
 |Argument   | [StorageType](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_Metadata_StorageType.htm)          |
 |Default    | StorageType.Object |
 |Description| This annotation is used to specify how the attribute is stored in the space. |
@@ -265,8 +265,8 @@ public class Message {
 
 # SpaceFifoGroupingProperty
 
-{: .table .table-bordered}
-|Syntax     | [SpaceFifoGroupingProperty(Path = )]|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | SpaceFifoGroupingProperty Path|
 |Argument   | path          |
 |Description| This annotation is used to define a space FIFO grouping property. |
 |Note | If defined, the `TakeModifiers.FIFO_GROUPING_POLL` or `ReadModifiers.FIFO_GROUPING_POLL` modifiers can be used to return all space entries that match the selection template in FIFO order. Different values of the FG property define groups of space entries that match each value. FIFO ordering exists within each group and not between different groups. |
@@ -288,8 +288,8 @@ public class FlightReservation
 
 # SpaceFifoGroupingIndex
 
-{: .table .table-bordered}
-|Syntax     | [SpaceFifoGroupingIndex (Path= )|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | SpaceFifoGroupingIndex Path|
 |Description| This annotation is used to define a space FIFO grouping Index. |
 |Note |This annotation can be declared on several properties in a class in order to assist in efficient traversal.{%wbr%}If defined, there must be a property in the class, marked with the `[SpaceFifoGroupingProperty]` annotation.{%wbr%}A compound index that contains this FIFO grouping index and the FIFO grouping property will be created.   |
 
@@ -311,8 +311,8 @@ public Person Customer { get; set; }
 
 # SpaceDynamicProperties
 
-{: .table .table-bordered}
-|Syntax     | [SpaceDynamicProperties]|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | SpaceDynamicProperties|
 |Description| Allows adding properties freely to a class without worrying about the schema.|
 
 
@@ -334,8 +334,8 @@ public class Person {
 
 # Alias Name
 
-{: .table .table-bordered}
-|Syntax     | [AliasName=]|
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | AliasName|
 |Description| In some cases, usually in interoperability scenarios, you may need to map your C# properties to different names in the Space. You can do that using the AliasName property on [SpaceProperty].  |
 |Note| When using space SqlQuery on an object with properties which are aliased, the query text needs to use the aliased property names. For more information about SqlQuery, see [GigaSpaces.NET - Sql Query](./query-sql.html).|
 

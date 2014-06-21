@@ -130,9 +130,8 @@ public class SimpleListener
     {
         get
         {
-            Data template = new Data();
-            template.Processed = false;
             SqlQuery<Data> templateQuery = new SqlQuery<Data>(template, "Processed = ?");
+            templateQuery.SetParameter(1, false);
 
             return templateQuery;
         }
@@ -153,9 +152,9 @@ public class SimpleListener
 {% highlight csharp %}
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
-Data template = new Data();
-template.Processed = false;
-notifyEventListenerContainer.Template = new SqlQuery<Data>(template, "Processed = ?");
+SqlQuery query = new SqlQuery<Data>("Processed = ?");
+query.SetParameter (1, false);
+notifyEventListenerContainer.Template = query;
 {% endhighlight %}
 
 {% endtabcontent %}

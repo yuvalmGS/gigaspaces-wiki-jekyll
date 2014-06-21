@@ -201,10 +201,11 @@ Panel content
 
 ## Table
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-responsive .table-striped}
 | Hello | Title |   Column
 |:-----|:-------|:-----------|
-| test | test 1 | test2|
+| testfsdfdfdsfdsf | tessdsdsadsadsadsadsasat 1 | tesdsfdsfdsfdfdfdfdfdhfhdfhdhfhdjhfjdhjfhdkhfkdhfkjdhjfhdjhfdhfjhdjfhdshfdjhfhdkjfjdhsjfhdksft2|
+| testfdsfdsfdsfdsfds | tessdsdsadsadsadsadsasat 1 | tesdsfdsfdsfdfdfdfdfdhfhdfhdhfhdjhfjdhjfhdkhfkdhfkjdhjfhdjhfdhfjhdjfhdshfdjhfhdkjfjdhsjfhdksft2|
 
 
 ## Tabbed pane

@@ -57,6 +57,7 @@ This page describes how EDS implementations prior to GigaSpaces version 9.5 shou
 
 - [Second Level Hibernate Cache](./gigaspaces-for-hibernate-orm-users.html){%wbr%}
 Using XAP as a Hibernate cache provider; creating a Hibernate-integrated Data Grid with your existing ORM.
+
 <hr/>
 
 

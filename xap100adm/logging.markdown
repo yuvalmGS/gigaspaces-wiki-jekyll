@@ -65,6 +65,7 @@ Here are the different modules , their logging names and their default logging l
 {% inittab Logging Configuration|top %}
 {% tabcontent Client %}
 
+{%panel%}
 ### Client General
 
 {% highlight console %}
@@ -120,10 +121,11 @@ GigaSpaces Spring application logging
 {% highlight console %}
 com.gigaspaces.jms.level = INFO
 {% endhighlight %}
+{%endpanel%}
 
 {% endtabcontent %}
 {% tabcontent Comunication Protocol %}
-
+{%panel%}
 {% highlight console %}
 com.gigaspaces.lrmi.nio.filters.SSLFilterFactory.level = INFO
 com.gigaspaces.lrmi.level = INFO
@@ -142,9 +144,10 @@ com.gigaspaces.lrmi.channel.protocol.level = INFO
 {% endhighlight %}
 
 GigaSpaces components communicate using internal communications adaptor, LRMI (Light Remote Method Invocation), which is based on NIO communication protocol. More information about lrmi is [here]({%currentadmurl%}/tuning-communication-protocol.html).
+{%endpanel%}
 {% endtabcontent %}
 {% tabcontent Class Loader %}
-
+{%panel%}
 
 {% highlight console %}
 com.gigaspaces.core.classloadercleaner.level = INFO
@@ -153,9 +156,10 @@ com.gigaspaces.core.classloadercache.level = INFO
 
 XAP applications are running as part of a XAP runtime container and packaged using the structure described [here]({%currentjavaurl%}/the-processing-unit-structure-and-configuration.html).
 Application jars/classes are packaged in different folders and some of the classes could be loaded as part of GigaSpaces container (GSC's). There are multiple class loaders involved when an application is running. More information about the class loaders and their hierarchy is [here]({%currentjavaurl%}/the-processing-unit-structure-and-configuration.html).
+{%endpanel%}
 {% endtabcontent %}
 {% tabcontent Space %}
-
+{%panel%}
 ### Space Core & Kernel
 
 {% highlight console %}
@@ -177,7 +181,7 @@ Core runtime for the space component of GigaSpaces, above loggers relate to this
 com.gigaspaces.filters.level = INFO
 {% endhighlight %}
 
-Space filters are described [here]({%currentjavaurl%}/the-space-filters.html)
+Space filters are described here {%currentjavanet the-space-filters.html %}
 
 ### Space Persistency
 
@@ -187,7 +191,7 @@ com.gigaspaces.persistent.shared_iterator.level = INFO
 org.hibernate.level = WARNING
 {% endhighlight %}
 
-GigaSpaces persistence options are explained [here]({%currentjavaurl%}/space-persistency.html). One of the packaged External Data Source implementations uses Hibernate and it is called Hibernate External Data Source which is described [here]({%currentjavaurl%}/hibernate-space-persistency.html).
+GigaSpaces persistence options are explained here {%currentjavanet space-persistency.html%}. One of the packaged External Data Source implementations uses Hibernate and it is called Hibernate External Data Source which is described [here]({%currentjavaurl%}/hibernate-space-persistency.html).
 
 ### Space Query
 
@@ -195,7 +199,7 @@ GigaSpaces persistence options are explained [here]({%currentjavaurl%}/space-per
 com.gigaspaces.query.level = INFO
 {% endhighlight %}
 
-GigaSpaces supports SQL queries on the data in space and logger corresponds to this [functionality]({%currentjavaurl%}/query-sql.html).
+GigaSpaces supports SQL queries on the data in space and logger corresponds to this functionality {%currentjavanet query-sql.html%}.
 
 ### Space LRU and Eviction
 
@@ -220,7 +224,7 @@ Another way notifications can be used is thru Session based messaging which is d
 com.gigaspaces.core.fifo.level = INFO
 {% endhighlight %}
 
-FIFO functionality is applicable for writes, reads and events (notifications) and discussed [here]({%currentjavaurl%}/fifo-support.html).
+FIFO functionality is applicable for writes, reads and events (notifications) and discussed here {%currentjavanet fifo-support.html %}.
 
 ### Space Replication
 
@@ -263,7 +267,7 @@ Logger corresponding to GigaSpaces POJO support, more info [here]({%currentjavau
 com.gigaspaces.core.xa.level = INFO
 {% endhighlight %}
 
-Logger corresponding to XA Transaction manager running in the space, more information [here]({%currentjavaurl%}/transaction-management.html).
+Logger corresponding to XA Transaction manager running in the space, more information here {%currentjavanet transaction-management.html %}.
 
 ### Space Jini Dist. TX manager
 
@@ -272,7 +276,7 @@ com.sun.jini.mahalo.startup.level = INFO
 com.sun.jini.mahalo.destroy.level = INFO
 {% endhighlight %}
 
-Logger for Jini Distributed Transaction manager, more information [here]({%currentjavaurl%}/transaction-management.html).
+Logger for Jini Distributed Transaction manager, more information here {%currentjavanet transaction-management.html %}.
 
 ### SpaceURL, SpaceValidator, SpaceURLParser
 
@@ -283,7 +287,7 @@ com.gigaspaces.common.lookupfinder.level = INFO
 com.gigaspaces.common.resourceloader.level = INFO
 {% endhighlight %}
 
-SpaceURL and its constraints are explained [here]({%currentjavaurl%}/the-space-configuration.html).
+SpaceURL and its constraints are explained here {%currentjavanet the-space-configuration.html %}.
 Other loggers are related to this and applicable when a client trying to create a space proxy using a URL.
 
 ### Space Multicast Notifications
@@ -293,9 +297,10 @@ com.gigaspaces.worker.multicast.level = INFO
 {% endhighlight %}
 
 Space notifications support multicast mode and this logger corresponds to this [functionality]({%currentjavaurl%}/session-based-messaging-api.html#AdvancedOptions)
+{%endpanel%}
 {% endtabcontent %}
 {% tabcontent Runtime %}
-
+{%panel%}
 ### Service Container - General
 
 {% highlight console %}
@@ -368,17 +373,19 @@ com.gigaspaces.grid.gsa.level = INFO
 {% endhighlight %}
 
 The GigaSpaces Agent (GSA) acts as a process manager that can spawn and manage Service Grid processes (Operating System level processes) such as The GigaSpaces Manager (GSM), The GigaSpaces Container (GSC), and Lookup Service (LUS). More information regarding GSA can be found [here](/product_overview/service-grid.html#gsa).
+{%endpanel%}
 {% endtabcontent %}
 {% tabcontent Security %}
-
+{%panel%}
 {% highlight console %}
 com.gigaspaces.security.level = INFO
 {% endhighlight %}
 
 Logger corresponding to security of GigaSpaces components. This includes configuration and runtime execution of security functionality. More information regarding GigaSpaces security is [here]({%currentsecurl%}/security.html).
+{%endpanel%}
 {% endtabcontent %}
 {% tabcontent Web Container %}
-
+{%panel%}
 Any web application default logging level (logger name for them is web.`[processing unit name].[instance id]`)
 
 {% highlight console %}
@@ -386,10 +393,11 @@ web.level = INFO
 org.mortbay.level = WARNING
 {% endhighlight %}
 
-Web application support in GigaSpaces is provided using a Jetty container. These loggers correspond to Web Container. More information about GigaSpaces Web Application support is [here]({%currentjavaurl%}/web-jetty-processing-unit-container.html).
+Web application support in XAP is provided using a Jetty container. These loggers correspond to Web Container. More information about GigaSpaces Web Application support is [here]({%currentjavaurl%}/web-jetty-processing-unit-container.html).
+{%endpanel%}
 {% endtabcontent %}
 {% tabcontent Mule Integration %}
-
+{%panel%}
 {% highlight console %}
 org.mule.level = WARNING
 org.mule.MuleServer.level = INFO
@@ -398,9 +406,11 @@ org.openspaces.esb.mule.level = WARNING
 {% endhighlight %}
 
 These loggers correspond to Mule integration. More information about Mule integration is here, [Mule ESB]({%currentjavaurl%}/mule-esb.html) and [Mule Processing Unit]({%currentjavaurl%}/mule-processing-unit.html)
+{%endpanel%}
 {% endtabcontent %}
 
 {% tabcontent Management %}
+{%panel%}
 For GUI, browser, cluster view, JMX logging:
 
 {% highlight console %}
@@ -412,7 +422,8 @@ com.gigaspaces.admin.cli.level = INFO
 com.gigaspaces.jmx.level = INFO
 {% endhighlight %}
 
-Loggers corresponding to GigaSpaces Management Console/UI. Additional information regarding UI can be found [here]({%currentadmurl%}/gigaspaces-management-center.html).
+Loggers corresponding to XAPs Management Console/UI. Additional information regarding UI can be found [here]({%currentadmurl%}/gigaspaces-management-center.html).
+{%endpanel%}
 {% endtabcontent %}
 {% endinittab %}
 

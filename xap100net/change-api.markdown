@@ -22,7 +22,7 @@ The change API supports transactions in the same way the other space operation s
 
 # Example
 
-The following example demonstrates how to increase the property 'count' in a an object of type 'WordCount' with id 'the' by one.
+The following example demonstrates how to increment the property ‘Count’ of an object of type ‘WordCount’ with id ‘myID’ by one.
 
 {% highlight csharp %}
 ISpaceProxy space = // ... obtain a space reference

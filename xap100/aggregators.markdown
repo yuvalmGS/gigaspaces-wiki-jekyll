@@ -2,8 +2,8 @@
 layout: post100
 title:  Aggregators
 categories: XAP100
-parent: querying-the-space.html
-weight: 900
+weight: 550
+parent: the-gigaspace-interface-overview.html
 ---
 
 {% summary  %}  {% endsummary %}
@@ -13,7 +13,7 @@ weight: 900
 With many systems such as pricing systems, risk management, trading and other analytic and business intelligence applications you may need to perform an aggregation activity across data stored within the data grid when generating reports or when running some business process. Such activity can leverage data stored in memory and will be much faster than performing it with a database.
 {%endcolumn%}
 {%column width=40% %}
-![aggreg.jpg](/attachment_files/aggreg.jpg)
+![aggreg.jpg](/attachment_files/built-in-aggregators.jpg)
 {%endcolumn%}
 {%endsection%}
 
@@ -45,42 +45,37 @@ Person youngestPersonInSpace = minEntry(space, personSQLQuery, "age");
 {% highlight java %}
 @SpaceClass
 public class Person {
-    private String id;
-    private String name;
-    private String state;
-    private Integer age;
+    private Long id;
+    private Long age;
+    private String country;
 
-    @SpaceId(autoGenerate = true)
-    public String getId() {
+    @SpaceId(autoGenerate=false)
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public Person setId(Long id) {
         this.id = id;
+        return this;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public Integer getAge() {
+    public Long getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public Person setAge(Long age) {
         this.age = age;
+        return this;
+    }
+
+    @SpaceIndex
+    public String getCountry() {
+        return country;
+    }
+
+    public Person setCountry(String country) {
+        this.country = country;
+        return this;
     }
 }
 {% endhighlight %}
@@ -88,29 +83,34 @@ public class Person {
 {%endinittab%}
 
 # Compound Aggregation
+
+{%section%}
+{%column width=60% %}
 Compound aggregation will execute multiple aggregation operations across the space returning all of the result sets at once. When multiple aggregates are needed the compound aggregation API is significantly faster than calling each individual aggregate.
+
+{%endcolumn%}
+{%column width=40% %}
+![aggreg.jpg](/attachment_files/built-in-Compound-aggregators.jpg)
+{%endcolumn%}
+{%endsection%}
+
 
 {% highlight java %}
 import static org.openspaces.extensions.QueryExtension.*;
 ...
-SQLQuery<Person> personSQLQuery = new SQLQuery<Person>();
+SQLQuery<Person> query = new SQLQuery<Person>(Person.class,
+		"country=? OR country=? ", "UK", "U.S.A");
 
-List<Object> results = aggregate(space, personSQLQuery, new AggregationSet()
-        .maxEntry("age")
-        .minEntry("age")
-        .sum("age")
-        .average("age")
-        .minValue("age")
-        .maxValue("age"));
+AggregationResult aggregationResult = space.aggregate(query,
+		new AggregationSet().maxEntry("age").minEntry("age").sum("age")
+			.average("age").minValue("age").maxValue("age"));
 
-
-oldest = results.get(0);
-youngest = results.get(1);
-sum = results.get(2);
-average = results.get(3);
-min = results.get(4);
-max = results.get(5);
-
+Person oldest = (Person) aggregationResult.get(0);
+Person youngest = (Person) aggregationResult.get(1);
+Number sum = (Number) aggregationResult.get(2);
+Double average = (Double) aggregationResult.get(3);
+Number min = (Number) aggregationResult.get(4);
+Number max = (Number) aggregationResult.get(5);
 {% endhighlight %}
 
 # Aggregate Embedded Fields

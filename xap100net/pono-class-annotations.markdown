@@ -17,8 +17,8 @@ The [GigaSpaces API](./the-gigaspace-interface-overview.html) supports class lev
 
 # Alias name
 
-{: .table .table-bordered}
-|Syntax     | AliasName= |
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | AliasName |
 |Argument   | String          |
 |Description| By default, the name of the class in the Space is the fully-qualified class name (i.e. including namespace). In some cases, usually in interoperability scenarios, you may need to map your C# Class name and properties to different names in the Space.  |
 
@@ -35,8 +35,8 @@ public class Person {
 
 # Persistence
 
-{: .table .table-bordered}
-|Syntax     | Persist= |
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | Persist|
 |Argument   | boolean          |
 |Default    | false|
 |Description| When a Space is defined as persistent, a 'true' value for this annotation persists objects of this type. |
@@ -55,8 +55,8 @@ public class Person {
 
 # Include Properties
 
-{: .table .table-bordered}
-|Syntax     | IncludeFields=, IncludeProperties= |
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | IncludeFields, IncludeProperties |
 |Argument   | [IncludeMembers](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_Metadata_IncludeMembers.htm)      |
 |Default    | IncludeFields=IncludeMembers.All, IncludeProperties=IncludeMembers.All)|
 |Description|  By default, all public members (fields and properties) in a class are stored in the space, whereas non-public members are ignored. Since classes are usually designed with private/protected fields and public properties wrapping them, in most cases the default behavior is also the desired one.|
@@ -83,8 +83,8 @@ Read-only properties (getter without setter) are stored in the space, but when t
 
 # FIFO Support
 
-{: .table .table-bordered}
-|Syntax     | FifoSupport= |
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | FifoSupport |
 |Argument   | [FifoSupport](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_Metadata_FifoSupport.htm)|
 |Default    | FifoSupport.Off|
 |Description| To enable FIFO operations, set this attribute to `FifoSupport.Operation`|
@@ -103,8 +103,8 @@ public class Person {
 
 # Inherit Index
 
-{: .table .table-bordered}
-|Syntax     | InheritIndexes= |
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | InheritIndexes |
 |Argument   | boolean          |
 |Default    | true|
 |Description| Whether to use the class indexes list only, or to also include the superclass' indexes. {% wbr %}If the class does not define indexes, superclass indexes are used. {% wbr %}Options:{% wbr %}- `false` -- class indexes only.{% wbr %}- `true` -- class indexes and superclass indexes.|
@@ -123,8 +123,8 @@ public class Person {
 
 # Replication
 
-{: .table .table-bordered}
-|Syntax     | Replicate= |
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | Replicate |
 |Argument   | boolean          |
 |Default    | true|
 |Description| When running in a partial replication mode, a **`false`** value for this property will not replicates all objects from this class type to the replica space or backup space.} |
@@ -145,8 +145,8 @@ public class Person {
 
 # Compound Index
 
-{: .table .table-bordered}
-|Syntax     | [CompoundSpaceIndex(Paths = new[] {"data1", "data2"})] |
+{: .table   .table-condensed  .table-bordered}
+|Syntax     | CompoundSpaceIndex Paths  |
 |Argument(s)| string          |
 |Values     | attribute name(s)   |
 |Description| Indexes can be defined for multiple properties of a class  |

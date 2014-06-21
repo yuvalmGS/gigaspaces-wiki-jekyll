@@ -288,18 +288,19 @@ The following information represents the SQL to Java mapping conducted at runtim
 
 # Supported Features
 
-**GigaSpaces JDBC supports the following**:
+{%vbar title=GigaSpaces JDBC supports the following:%}
 
 - All Basic SQL statements: `SELECT, INSERT, DELETE, UPDATE, CREATE TABLE, DROP TABLE`.
 - `AND/OR` operators to join two or more conditions in a `WHERE` clause.
 - Aggregate functions: `COUNT`, `MAX`, `MIN`, `SUM`, `AVG`.
-- All basic logical operations to create conditions: =, <>, <,>, >=, <=, `[NOT]` like, is `[NOT]` `null`, `IN`.
+- All basic logical operations to create conditions: =, <>, <,>, >=, <=, `[NOT]` like, is `[NOT]` `null`, `IN`, `BETWEEN`.
 - Nested fields query - You may use as part of the select statement nested fields within collections (maps) or objects within the Space object.
-- Multiple tables select - Starting with XAP 7.0.1 the join feature supports the selection of multiple tables (previous versions supported select with only two tables). The join feature uses the Cartesian product of the tables data to form the result set. The join will perform well when having tables with small/medium size (up to 1,000,000 rows).
+- Multiple tables select - the join feature supports the selection from multiple tables. It uses the Cartesian product of the tables data to form the result set. The join will perform well when having tables with small/medium size (up to 1,000,000 rows).
 - `ORDER BY` for multiple columns.
 - `GROUP BY` for multiple columns.
 - `DISTINCT` (although not when used with functions or aggregations)
 - Column aliases.
+{%endvbar%}
 
 {% togglecloak id=2 %}Click here for example...{% endtogglecloak %}
 {% gcloak 2 %}
@@ -359,7 +360,7 @@ Field incrementing is only supported for `Integer` fields using a '+' operator.
 
 **GigaSpaces JDBC does not support the following**:
 
-- The SQL statements: `HAVING`, `VIEW`, `TRIGGERS`, `EXISTS`, `BETWEEN`, `NOT`, `CREATE USER`, `GRANT`, `REVOKE`, `SET PASSWORD`,  `CONNECT USER`, `ON`.
+- The SQL statements: `HAVING`, `VIEW`, `TRIGGERS`, `EXISTS`, `BETWEEN` in collections, `NOT`, `CREATE USER`, `GRANT`, `REVOKE`, `SET PASSWORD`,  `CONNECT USER`, `ON`.
 - `CREATE` Database.
 - `CREATE` Index, `DROP` Index.
 - Constraints: `NOT NULL`, `IDENTITY`, `UNIQUE`, `PRIMARY KEY`, Foreign Key `REFERENCES`, `NO ACTION`, `CASCADE`, `SET NULL`, `SET DEFAULT`, `CHECK`.

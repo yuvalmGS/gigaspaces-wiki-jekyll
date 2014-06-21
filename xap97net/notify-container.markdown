@@ -130,9 +130,8 @@ public class SimpleListener
     {
         get
         {
-            Data template = new Data();
-            template.Processed = false;
             SqlQuery<Data> templateQuery = new SqlQuery<Data>(template, "Processed = ?");
+	        templateQuery.SetParameter(1, false);
 
             return templateQuery;
         }
@@ -153,9 +152,10 @@ public class SimpleListener
 {% highlight csharp %}
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = // create or obtain a reference to a notify container
 
-Data template = new Data();
-template.Processed = false;
-notifyEventListenerContainer.Template = new SqlQuery<Data>(template, "Processed = ?");
+SqlQuery query = new SqlQuery<Data>("Processed = ?");
+query.SetParameter (1, false);
+notifyEventListenerContainer.Template = query;
+
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -166,7 +166,9 @@ notifyEventListenerContainer.Template = new SqlQuery<Data>(template, "Processed 
 
 The notify container can be configured with transaction support, so the event action can be performed under a transaction. Exceptions thrown by the event listener cause the operations performed within the listener to be rolled back automatically.
 
-{% exclamation %} When using transactions, only the event listener operations are rolled back. The notifications are not sent again in case of a transaction rollback. If this behavior is required, please consider using the [Polling Event Container](./polling-container.html). Adding transaction support to the polling container is very simple. It is done by setting the `TransactionType` property. There are two transaction types: Distributed and Manual.
+{% note %}
+When using transactions, only the event listener operations are rolled back. The notifications are not sent again in case of a transaction rollback. If this behavior is required, please consider using the [Polling Event Container](./polling-container.html). Adding transaction support to the polling container is very simple. It is done by setting the `TransactionType` property. There are two transaction types: Distributed and Manual.
+{%endnote%}
 
 - Distributed transaction - an embedded distributed transaction manager will be created and it will be used for creating transaction (Only one transaction manager will be created per AppDomain).
 - Manual transaction - transactions will be created by the transaction manager that is stored in the `TransactionManager` property. By default no transaction manager is stored and therefore, no transaction will be used. For example:
@@ -352,7 +354,9 @@ notifyEventListenerContainer.BatchDataEventArrived += new DelegateDataEventArriv
 
 The notify event container can register for events or notifications, and have the events delivered in a FIFO order.
 
-{% infosign %} For full FIFO support, the actual template also has to be marked as FIFO. For more details, refer to the [FIFO Support](./fifo-support.html) section.
+{% info %}
+For full FIFO support, the actual template also has to be marked as FIFO. For more details, refer to the [FIFO Support](./fifo-support.html) section.
+{%endinfo%}
 
 Here is an example of how FIFO events can be configured with the notify container:
 

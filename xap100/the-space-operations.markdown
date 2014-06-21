@@ -17,16 +17,16 @@ The interface includes the following main operations:
 
 {%section%}
 {%column width=50% %}
-{%panel bgColor=white | title=Write objects into the space:%}
+{%panel bgColor=white | title=Write objects into the Space:%}
 [write](#write) one object into the space{%wbr%}
-[writeMultiple](#writeMultiple) objects into the space{%wbr%}
-[asynchronous write](#asynchronousWrite) to the space
+[writeMultiple](#writeMultiple) objects into the Space{%wbr%}
+[asynchronous write](#asynchronousWrite) to the Space
 {%endpanel%}
 {%endcolumn%}
-{%column width=45% %}
-{%panel bgColor=white | title=Change objects in space:%}
-[change](./change-api.html) one object in space{%wbr%}
-[changeMultiple](./change-api.html) objects in space {%wbr%}
+{%column width=50% %}
+{%panel bgColor=white | title=Change objects in Space:%}
+[change](#change) one object in Space{%wbr%}
+[changeMultiple](./change-api.html) objects in Space {%wbr%}
 [asynchronous change](./change-api.html) of objects
 {%endpanel%}
 {%endcolumn%}
@@ -35,25 +35,25 @@ The interface includes the following main operations:
 
 {%section%}
 {%column width=50% %}
-{%panel bgColor=white |  title=Reading objects from the space:%}
-[readById](#read) from the space{%wbr%}
-[readByIds](#readMultiple) from the space{%wbr%}
-[read](#read) object by template from the space{%wbr%}
-[readMultiple](#readMultiple) objects from the space {%wbr%}
-[read asynchronous](#asynchronousRead) from the space {%wbr%}
+{%panel bgColor=white |  title=Reading objects from the Space:%}
+[readById](#read) from the Space{%wbr%}
+[readByIds](#readMultiple) from the Space{%wbr%}
+[read](#read) object by template from the Space{%wbr%}
+[readMultiple](#readMultiple) objects from the Space {%wbr%}
+[read asynchronous](#asynchronousRead) from the Space {%wbr%}
 [read if exists](#readIfExists) {%wbr%}
 [read if exists by id](#readIfExists)
 {%endpanel%}
 {%endcolumn%}
-{%column width=45% %}
-{%panel bgColor=white |  title=Removing objects from the space:%}
-[take](#take) object by template from space{%wbr%}
-[takeById](#take) object by id from space{%wbr%}
-[takeByIds](#takeMultiple) objects by ids from space{%wbr%}
-[takeMultiple](#takeMultiple) objects from space {%wbr%}
+{%column width=50% %}
+{%panel bgColor=white |  title=Removing objects from the Space:%}
+[take](#take) object by template from Space{%wbr%}
+[takeById](#take) object by id from Space{%wbr%}
+[takeByIds](#takeMultiple) objects by ids from Space{%wbr%}
+[takeMultiple](#takeMultiple) objects from Space {%wbr%}
 [take asynchronous](#asynchronousTake){%wbr%}
 [take if exists](#takeIfExists){%wbr%}
-[take if exists by id](#takeIfExists)
+[clear](#clear) objects in Space
 {%endpanel%}
 {%endcolumn%}
 {%endsection%}
@@ -61,11 +61,12 @@ The interface includes the following main operations:
 {%section%}
 {%column width=50% %}
 {%panel bgColor=white |  title=Other operations:%}
-[clear](#clear) an object type from space {%wbr%}
-[count](#count) objects in space
+[aggregation](#aggregators)  across the Space{%wbr%}
+[count](#count) objects in Space{%wbr%}
+[counters](#counters) increment and decrement
 {%endpanel%}
+{%column width=50% %}
 {%endcolumn%}
-{%column width=45% %}
 {%endcolumn%}
 {%endsection%}
 
@@ -105,10 +106,13 @@ In the example above, the take operation can be performed without specifying a t
 
 
 {%include xap100/ops-write.markdown %}
+{%include xap100/ops-change.markdown %}
 {%include xap100/ops-read.markdown %}
 {%include xap100/ops-take.markdown %}
 {%include xap100/ops-clear.markdown %}
 {%include xap100/ops-count.markdown %}
+{%include xap100/ops-counters.markdown %}
+{%include xap100/ops-aggregation.markdown %}
 
 
 

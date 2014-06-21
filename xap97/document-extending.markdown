@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Extending
+title:  Extended Document
 categories: XAP97
 parent: document-overview.html
 weight: 200

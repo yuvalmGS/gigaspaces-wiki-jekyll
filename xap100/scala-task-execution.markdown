@@ -1,6 +1,6 @@
 ---
 layout: post100
-title:  Task Execution
+title:  Scala Task Execution
 categories: XAP100
 parent: scala.html
 weight: 500

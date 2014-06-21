@@ -4,10 +4,10 @@
 # The Clear Operation
 
 {%section%}
-{%column width=60% %}
+{%column width=70% %}
 You can use `GigaSpace.clear` to remove objects from the space. When using the clear operation no object/objects are returned.
 {%endcolumn%}
-{%column width=35% %}
+{%column width=30% %}
 ![POJO_clear.jpg](/attachment_files/POJO_clear.jpg)
 {%endcolumn%}
 {%endsection%}
