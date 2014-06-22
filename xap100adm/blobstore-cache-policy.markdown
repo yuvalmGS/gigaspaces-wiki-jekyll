@@ -50,7 +50,7 @@ All XAP APIs are supported with the BlobStore configuration. This includes the S
 
 ## How It Works
 
-XAP is using [SanDisk Flash Data Fabric (FDF)](http://www.sandisk.com/) library, which uses direct flash access. It circumvents OS level storage interfaces when writing an object to the space, its indexed data maintained on Heap where the Storage interface implementing using the FDF libraries to interact with the underlying flash drive. 
+XAP is using [SanDisk ZetaScale](http://www.sandisk.com/) library, which uses direct flash access. It circumvents OS level storage interfaces when writing an object to the space, its indexed data maintained on Heap where the Storage interface implementing using the ZetaScale libraries to interact with the underlying flash drive.
 
 ![blobstore2.jpg](/attachment_files/blobstore2.jpg)
 
@@ -67,11 +67,10 @@ The BlobStore settings includes the following options:
 | volume-dir | Directory path contains a symbolic link to the the SSD device. | | required |
 | blob-store-capacity-GB | Flash device allocation size in Gigabytes. | 200 | optional |
 | blob-store-capacity-MB | Flash device allocation size in Megabytes. | 204800 | optional |
-| blob-store-cache-size-MB | FDF internal cache size in Megabytes. | 100 | optional |
-| blob-store-reformat | Whether to clear all SSD data on space initialization phase or not. | false | optional |
-| enable-admin | Whether to start an FDF admin agent or not. FDF admin provides a simple command line interface (CLI) through a TCP port. The FDF CLI uses port 51350 by default. This port can be changed through the configuration parameter FDF_ADMIN_PORT. | true |
+| blob-store-cache-size-MB | ZetaScale internal cache size in Megabytes. | 100 | optional |
+| enable-admin | ZetaScale admin provides a simple command line interface (CLI) through a TCP port. ZetaScale CLI uses port 51350 by default. This port can be changed through the configuration parameter FDF_ADMIN_PORT. | false |
 | statistics-interval | Applications can optionally enable periodic dumping of statistics to a specified file (XAP_HOME/logs). This is disabled by default. | | optional |
-| durability-level | PERIODIC: sync storage every 1024	writes. Up to 1024 objects can be lost in the event of application crash.{%wbr%}SW_CRASH_SAFE: This policy guarantees no data loss in the event of software crashes. But some data might be lost in the event of hardware failure.{%wbr%}HW_CRASH_SAFE: This policy guarantees no data loss if the hardware crashes.Since there are performance implication it is recommended to work with NVRAM device and configure log-flash-dir to a folder on this device. | PERIODIC | optional |
+| durability-level | SW_CRASH_SAFE: This policy guarantees no data loss in the event of software crashes. But some data might be lost in the event of hardware failure.{%wbr%}HW_CRASH_SAFE: This policy guarantees no data loss if the hardware crashes.Since there are performance implication it is recommended to work with NVRAM device and configure log-flash-dir to a folder on this device. | SW_CRASH_SAFE | optional |
 | log-flush-dir | In case of HW_CRASH_SAFE, directory in a file system on top of NVRAM backed disk. This directory must be unique per space, you can add ${clusterInfo.runningNumber} as suffix | /tmp | optional |
 
 The IMDG BlobStore settings includes the following options:{%wbr%}
@@ -82,6 +81,26 @@ The IMDG BlobStore settings includes the following options:{%wbr%}
 | blob-store-handler | BlobStore implementation |  | required |
 | cache-entries-percentage | Cache percentage of the JVM max memory(-Xmx). In case of missing `-Xmx` configuration the cache size will `10000` objects. This is an LRU based data cache which store the entire IMDG object.| 20% | optional |
 | avg-object-size-KB |  Average object size. | 5KB | optional |
+| recover-from-blob-store |  Whether to recover from blob store or not |  | required |
+
+# Prerequisites
+
+- Blobstore supports Linux CentOS 6.x only.
+
+- Check that your user is part of disk groups.
+    {% highlight xml %}
+    $ groups
+    {% endhighlight %}
+
+   If your user is not part of disk groups, add it by calling:
+    {% highlight xml %}
+        $ sudo usermod -G disk <username>
+    {% endhighlight %}
+   and relogin.
+
+- Make sure your user has read/write permissions to flash devices
+- Make sure your user has read/write permissions to /tmp
+
 
 # Installation
 
@@ -89,16 +108,14 @@ Step 1.
 Install XAP as usual.
 
 Step 2. 
-Install FDF libraries:
+Install ZetaScale libraries:
 
 {% highlight xml %}
-sudo XAP_HOME=<XAP HOME> sh -c "rpm -ivh /blobstore-1.0-SNAPSHOT20140XXXXXXXXX.noarch.rpm"
+$ sudo XAP_HOME=<XAP HOME> sh -c "rpm -ivh /blobstore-10.0.0-RC_1.noarch.rpm"
 {% endhighlight %}
 
 Step 3. 
-Use the `XAP HOME\bin\gs-agent-blobstore.sh` to start GigaSpaces Grid Agent that configured to load the FDF libraries.
-
-{%note title=Supported OS%}XAP Flash Storage library is supported only CentOS 5.8-5.10{%endnote%}
+Use the `XAP HOME\bin\gs-agent-blobstore.sh` to start GigaSpaces Grid Agent that configured to load the ZetaScale libraries.
 
 # Configuration
 Configuring an IMDG (Space) with BlobStore should be done via the `SanDiskBlobStoreDataPolicyFactoryBean`, or the `SanDiskBlobStoreConfigurer`. For example:
@@ -119,12 +136,13 @@ Configuring an IMDG (Space) with BlobStore should be done via the `SanDiskBlobSt
 
     <bean id="propertiesConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
 
-    <blob-store:sandisk-blob-store id="blobstoreid" volume-dir="/tmp" devices="/dev/xvdb,/dev/xvdc"
-            blob-store-capacity-GB="200" blob-store-cache-size-MB="50" blob-store-reformat="true" durability-level="SW_CRASH_SAFE">
+    <blob-store:sandisk-blob-store id="myBlobStore" blob-store-capacity-GB="100" blob-store-cache-size-MB="100"
+                                            devices="/dev/sdb1,/dev/sdc1" volume-dir="/tmp/data${clusterInfo.runningNumber}" durability-level="SW_CRASH_SAFE">
+
     </blob-store:sandisk-blob-store>
 
     <os-core:space id="space" url="/./mySpace" >
-        <os-core:blob-store-data-policy blob-store-handler="blobstoreid" cache-entries-percentage="10" avg-object-size-KB="5"/>
+        <os-core:blob-store-data-policy blob-store-handler="blobstoreid" cache-entries-percentage="10" avg-object-size-KB="5" recover-from-blob-store="true"/>
     </os-core:space>
 
     <os-core:giga-space id="gigaSpace" space="space"/>
@@ -148,13 +166,13 @@ Configuring an IMDG (Space) with BlobStore should be done via the `SanDiskBlobSt
         <property name="blobStoreCapacityGB" value="200"/>
         <property name="blobStoreCacheSizeMB" value="50"/>
         <property name="blobStoreDevices" value="/dev/xvdb,/dev/xvdc"/>
-        <property name="blobStoreVolumeDir" value="/tmp"/>
+        <property name="blobStoreVolumeDir" value="/tmp/data${clusterInfo.runningNumber}"/>
         <property name="blobStoreDurabilityLevel" value="SW_CRASH_SAFE"/>
     </bean>
 
     <os-core:space id="space" url="/./mySpace" >
         <os-core:blob-store-data-policy blob-store-handler="blobstoreid" cache-entries-percentage="10"
-            avg-object-size-KB="5"/>
+            avg-object-size-KB="5" recover-from-blob-store="true"/>
     </os-core:space>
 
     <os-core:giga-space id="gigaSpace" space="space"/>
@@ -179,6 +197,7 @@ SanDiskBlobStoreHandler blobStoreHandler = configurer.create();
 BlobStoreDataCachePolicy cachePolicy = new BlobStoreDataCachePolicy();
 cachePolicy.setAvgObjectSizeKB(5l);
 cachePolicy.setCacheEntriesPercentage(10);
+cachePolicy.setRecoverFromBlobStore(true);
 cachePolicy.setBlobStoreHandler(blobStoreHandler);
 
 UrlSpaceConfigurer urlConfig = new UrlSpaceConfigurer(spaceURL);
@@ -193,6 +212,47 @@ gigaSpace = new GigaSpaceConfigurer(urlConfig).gigaSpace();
 The above example:
 - Configures the SanDisk BlobStore bean.{%wbr%}
 - Configures the Space to use the above blobStore implementation also configure the cache size, in this LRU cache the space store also the data objects and not just the object indexes in RAM.
+
+## Flash device stickiness
+In order to make sure the a space will perform recovery from the right flash device we are using [Instance level SLA]({%latestjavaurl%}/configuring-the-processing-unit-sla.html#deployment-requirements---hosts-zones-and-machine-utilization).
+With this SLA we control where a specific space will be deployed.{%wbr%}
+A processing unit template is installed at `XAP_HOME/deploy/templates/blobstore-datagrid`.
+Inside this template there is an sla configuration file at `blobstore-datagrid/META_INF/spring/sla.xml`.
+
+At this example the first instance is deployed to a specific machine (specified by its IP address), and its second instance for the same partition is deployed to a different machine.
+{% highlight xml %}
+  <os-sla:sla>
+        <os-sla:instance-SLAs>
+            <os-sla:instance-SLA instance-id="1">
+                <os-sla:requirements>
+                    <os-sla:host ip="192.168.9.152"/>
+                </os-sla:requirements>
+            </os-sla:instance-SLA>
+		<os-sla:instance-SLA instance-id="1" backup-id="1">
+                <os-sla:requirements>
+                    <os-sla:host ip="192.168.9.153"/>
+                </os-sla:requirements>
+            </os-sla:instance-SLA>
+        </os-sla:instance-SLAs>
+    </os-sla:sla>
+{% endhighlight %}
+
+The devices allocation inside a machine is managed by a file `/tmp/blobstore/devices/device-per-space.properties`, you can override this file location with the following system property `-Dcom.gs.blobstore-devices`.
+Each time a space is deployed for the first time an Entry is added to this file.
+
+# Processing Unit undeploy
+The current ZetaScale release has a limitation which does not allow processing unit deployment twice on the same GSC, the workaround is to undeploy the processing unit and restart the relevant GSCs.
+The RPM add a groovy script named `XAP_HOM/bin/undeploy-grid.groovy` which undeploy the processing unit and restart all its GSCs.
+ {% highlight xml %}
+    $ {{site.latest_gshome_dirname}}/bin/tools/groovy/bin/groovy {{site.latest_gshome_dirname}}/bin/undeploy-grid.groovy locator pu_name
+ {% endhighlight %}
+
+
+# Uninstall
+{% highlight xml %}
+$ sudo XAP_HOME=<XAP HOME> sh -c "rpm -e /blobstore-10.0.0-RC_1.noarch"
+{% endhighlight %}
+
 
 # Controlling blobStore mode at the Space Class Level
 By default any Space Data Type is `blobStore` enabled. When decorating the space class with its meta data you may turn off the `blobStore` behavior using the `@SpaceClass blobStore` annotation or gs.xml `blobStore` tag.
@@ -218,7 +278,7 @@ Here is a sample xml decoration for POJO class disabling `blobStore` mode:
 
 # BlobStore Management
 
-You may use the FDF Management command line to access underlaying SSD storage runtime. This allows you to access statistics that can be used to tune performance and analyze performance problems. These statistics counters used to monitor events within the FDF subsystem. Most events are counted on a per FDF container basis as well as for all containers within the FDF instance. 
+You may use the ZetaScale Management command line to access underlaying SSD storage runtime. This allows you to access statistics that can be used to tune performance and analyze performance problems. These statistics counters used to monitor events within the FDF subsystem. Most events are counted on a per FDF container basis as well as for all containers within the FDF instance.
 
 
 ## Statistics
@@ -345,7 +405,7 @@ Cache statistics:
 
 ## Command Line Interface
 
-FDF provides a simple command line interface (CLI) through a TCP port. The FDF CLI uses port `51350` by default. This port can be changed through the configuration parameter `FDF_ADMIN_PORT=<port number>`. The CLI functionality can be disabled by setting configuration property `FDF_ADMIN_ENABLED=0`. The CLI supports the following commands.
+ZetaScale provides a simple command line interface (CLI) through a TCP port. The ZetaScale CLI uses port `51350` by default. This port can be changed through the configuration parameter `FDF_ADMIN_PORT=<port number>`. The CLI functionality can be disabled by setting configuration property `FDF_ADMIN_ENABLED=0`. The CLI supports the following commands.
 
 {: .table .table-bordered}
 | Command | Description | 
@@ -359,7 +419,7 @@ FDF provides a simple command line interface (CLI) through a TCP port. The FDF C
 |quit |Quits the telnet session|
 
 {%accordion id=acc1%}
-{%accord title=Sample FDF CLI usage | parent=acc1%}
+{%accord title=Sample ZetaScale CLI usage | parent=acc1%}
 
 {% highlight console %}
 [root@xen200v03]~# telnet localhost 51350
@@ -435,6 +495,10 @@ abstract class BlobStoreStorageHandler
 }
 {% endhighlight %}
 
+## Considerations
+
+### General limitations
+- All classes that belong to types that are to be introduced to the space during the initial metadata load must exist on the classpath of the JVM the Space is running on.
 
 {%info%}
 Answers to frequently asked questions about MemoryXtend for SSD can be found [here](/faq/blobstore-cache-policy-faq.html)
