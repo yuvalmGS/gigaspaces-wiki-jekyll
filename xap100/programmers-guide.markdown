@@ -71,8 +71,7 @@ XAP  support for Mule ESB.
 - [Big Data Integration](./big-data.html){%wbr%}
 XAP integration with Cassandra and MongoDB NoSql data bases.
 
-- [Logging](./logging-api.html){%wbr%}
-Configuring logging.
+
 
 - [Administration API](./administration-and-monitoring-overview.html){%wbr%}
 The Admin API provides a way to administer and monitor all of XAP services and components using a simple API.

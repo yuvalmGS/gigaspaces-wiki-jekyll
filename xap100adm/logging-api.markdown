@@ -1,21 +1,15 @@
 ---
 layout: post100
 title:  Logging API
-categories: XAP100
-parent: programmers-guide.html
-weight: 1700
+categories: XAP100ADM
+parent: logging-overview.html
+weight: 350
 ---
 
 {% summary %}{% endsummary %}
 
 
-{%vbar%}
-XAP makes logging calls by use of the Java <sup>TM</sup> platform's core logging facilities. You can define runtime logging levels, log message formats and rollover policies. For a detailed description of all
-these configurable setting please consult the [Administration Guide]({%currentadmurl%}/logging-overview.html).
-{%endvbar%}
-
-
-As part of the Administration API is an extensive logging extraction and filtering from different runtime components of GigaSpaces. Here is a very simple example:
+As part of the Administration API is an extensive logging extraction and filtering from different runtime components of XAP. Here is a very simple example:
 
 {% highlight java %}
 

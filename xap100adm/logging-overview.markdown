@@ -13,6 +13,8 @@ This section explains how you can configure logging with XAP. We will show you h
 - [Overview](./logging.html){%wbr%}
 Logging concepts and options.
 
+- [Logging API](./logging-api.html){%wbr%}
+Using the API for logging.
 
 - [Formatting messages](./logging-formatting-messages.html){%wbr%}
 Formatting the logged output.
