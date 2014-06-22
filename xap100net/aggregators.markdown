@@ -1,0 +1,133 @@
+---
+layout: post100
+title:  Aggregators
+categories: XAP100NET
+weight: 550
+parent: the-gigaspace-interface-overview.html
+---
+
+{% summary  %}  {% endsummary %}
+
+{%section%}
+{%column width=60% %}
+With many systems such as pricing systems, risk management, trading and other analytic and business intelligence applications you may need to perform an aggregation activity across data stored within the data grid when generating reports or when running some business process. Such activity can leverage data stored in memory and will be much faster than performing it with a database.
+{%endcolumn%}
+{%column width=40% %}
+![aggreg.jpg](/attachment_files/built-in-aggregators.jpg)
+{%endcolumn%}
+{%endsection%}
+
+XAP provides the common functionality to perform aggregations across the space. There is no need to retrieve the entire data set from the space to the client side , iterate the result set and perform the aggregation. This would be an expensive activity as it might return large amount of data into the client application. The Aggregators allow you to perform the entire aggregation activity at the space side avoiding any data retrieval back to the client side. Only the result of each aggregation activity performed with each partition is returned back to the client side where all the results are reduced and returned to the client application. Such aggregation activity utilize the partitioned nature of the data-grid allowing each partition to execute the aggregation with its local data in parallel, where all the partitions intermediate results are fully aggregated at the client side using the relevant reducer implementation.
+
+# Usage
+
+{% inittab %}
+{% tabcontent Application %}
+{% highlight c# %}
+using GigaSpaces.Core.Linq;
+...
+var queryable = from p in spaceProxy.Query<Person>() select p;
+// retrieve the maximum value stored in the field "age"
+int maxAgeInSpace = queryable.Max(p => p.Age);
+// retrieve the minimum value stored in the field "age"
+int minAgeInSpace = queryable.Min(p => p.Age);
+// Sum the "age" field on all space objects.
+int combinedAgeInSpace = queryable.Sum(p => p.Age);
+// Sum's the "age" field on all space objects then divides by the number of space objects.
+double averageAge = queryable.Average(p => p.Age);
+// Retrieve the space object with the highest value for the field "age".
+Person oldestPersonInSpace = queryable.MaxEntry(p => p.Age);
+// Retrieve the space object with the lowest value for the field "age".
+Person youngestPersonInSpace = queryable.MinEntry(p => p.Age);
+{% endhighlight %}
+{% endtabcontent%}
+{% tabcontent Space Class %}
+{% highlight c# %}
+[SpaceClass]
+public class Person
+{
+    [SpaceID(AutoGenerate = true)]
+    public string Id { get; set; }
+
+    public string Name { get; set; }
+
+    [SpaceIndex]
+    public string Country { get; set; }
+
+    public int Age { get; set; }
+}
+{% endhighlight %}
+{% endtabcontent%}
+{%endinittab%}
+
+# Compound Aggregation
+
+{%section%}
+{%column width=60% %}
+Compound aggregation will execute multiple aggregation operations across the space returning all of the result sets at once. When multiple aggregates are needed the compound aggregation API is significantly faster than calling each individual aggregate.
+
+{%endcolumn%}
+{%column width=40% %}
+![aggreg.jpg](/attachment_files/built-in-Compound-aggregators.jpg)
+{%endcolumn%}
+{%endsection%}
+
+{% highlight c# %}
+IQuery<Person> sqlQuery = new SqlQuery<Person>(string.Empty);
+
+var aggregationSet = new AggregationSet();
+aggregationSet.MaxEntry("Age");
+aggregationSet.MinEntry("Age");
+aggregationSet.Sum("Age");
+aggregationSet.Average("Age");
+aggregationSet.MinValue("Age");
+aggregationSet.MaxValue("Age");
+
+var result = spaceProxy.Aggregate(sqlQuery, aggregationSet);
+
+var oldest = (Person)result.Results[0];
+var youngest = (Person)result.Results[1];
+var sum = (int)result.Results[2];
+var average = (double)result.Results[3];
+var min = (int)result.Results[4];
+var max = (int)result.Results[5];
+{% endhighlight %}
+
+# Aggregate Embedded Fields
+Aggregation against the members of embedded space classes is supported by supplying the field path while invoking the desired aggregate function.
+
+{% inittab %}
+{% tabcontent Application %}
+{% highlight c# %}
+using GigaSpaces.Core.Linq;
+...
+var queryable = from p in spaceProxy.Query<Person>() select p;
+// retrieve the maximum value stored in the field "age"
+var result = queryable.Max(p => p.Demographics.Age);
+{% endhighlight %}
+{% endtabcontent %}
+{% tabcontent Person Space Class %}
+{% highlight c# %}
+[SpaceClass]
+public class Person
+{
+    [SpaceID(AutoGenerate = true)]
+    public string Id { get; set; }
+    public string Name { get; set; }
+    public string State { get; set; }
+    public Demographics Demographics { get; set; }
+}
+{% endhighlight %}
+{% endtabcontent %}
+{% tabcontent Demographic Space Class %}
+{% highlight c# %}
+[Serializable]
+public class Demographics
+{
+    public int Age { get; set; }
+
+    public char Gender { get; set; }
+}
+{% endhighlight %}
+{% endtabcontent %}
+{% endinittab %}
