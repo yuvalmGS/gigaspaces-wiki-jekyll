@@ -60,6 +60,7 @@ The interface includes the following main operations:
 {%section%}
 {%column width=50% %}
 {%panel bgColor=white |  title=Other operations:%}
+[aggregation](#aggregators)  across the Space{%wbr%}
 [clear](#clear) an object type from space {%wbr%}
 [count](#count) objects in space
 {%endpanel%}
@@ -106,6 +107,7 @@ In the example above, the take operation can be performed without specifying a t
 {%include xap100net/ops-take.markdown %}
 {%include xap100net/ops-clear.markdown %}
 {%include xap100net/ops-count.markdown %}
+{%include xap100net/ops-aggregation.markdown %}
 
 
 
