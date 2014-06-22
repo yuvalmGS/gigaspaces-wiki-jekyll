@@ -29,6 +29,15 @@ When a POJO class with embedded properties uses the Space API, you may implement
 
 <br>
 
+{%warning%}
+
+- When implementing the `Externalizable` interface, the storage type of the nested property needs to be of type [OBJECT](./storage-types---controlling-serialization.html).
+- Implementing `Externalizable` for the Space class itself is not recommended.
+
+{%endwarning%}
+
+<br>
+
 Here is an example; the Person class has an Address property that is being externalized.
 
 
