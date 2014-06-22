@@ -34,6 +34,10 @@ This page covers the Change API, its usage and behavior.
 - [Counters](./the-space-counters.html){%wbr%}
 Real Time atomic counter using the XAP.change API
 
+- [Aggregators](./aggregators.html){%wbr%}
+XAP provides the common functionality to perform aggregations across the Space.
+
+
 - [Notifications](./the-space-notifications.html){%wbr%}
 Space notifications
 
