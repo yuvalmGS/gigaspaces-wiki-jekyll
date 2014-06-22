@@ -10,7 +10,7 @@ weight: 200
 
 
 
-GigaSpaces IMDG may store file and large objects in memory (audio files/movie files/large xml files). The GigaSpaces internal communication protocol implementation split large data objects passed between different remote processes (i.e. client and space) into multiple chunks (64K size by default). This provides scalable and stable system allowing clients to write and read large space objects. You may use any client interface; Java, .Net and C++ leveraging any of the supported data access API with large objects: [GigaSpace](./the-gigaspace-interface.html) , [GigaMap](./map-api.html) , [JDBC Driver](./jdbc-driver.html), [JMS](./jms-api-support.html), [JPA](./jpa-api.html), [Document](./document-api.html).
+GigaSpaces IMDG may store file and large objects in memory (audio files/movie files/large xml files). The GigaSpaces internal communication protocol implementation split large data objects passed between different remote processes (i.e. client and space) into multiple chunks (64K size by default). This provides scalable and stable system allowing clients to write and read large space objects. You may use any client interface; Java, .Net and C++ leveraging any of the supported data access API with large objects: [GigaSpace]({%currentjavaurl%}/the-gigaspace-interface.html) , [GigaMap]({%currentjavaurl%}/map-api.html) , [JDBC Driver]({%currentjavaurl%}/jdbc-driver.html), [JMS]({%currentjavaurl%}/messaging-support.html), [JPA]({%currentjavaurl%}/jpa-api.html), [Document]({%currentjavaurl%}/document-api.html).
 
 In order to store large files in memory, you should simply load the file into the relevant Data type (byte array , blob) and use the relevant API to write the data into the space. Large objects are treated like any other objects stored within the space.
 
@@ -147,18 +147,20 @@ Statement st1 = conn.createStatement();
 String createTable = "CREATE TABLE MY_DATA (ID INTEGER INDEX,BLOB_COL BLOB)";
 st1.executeUpdate(createTable);
 st1.close();
-File imgfile = new File("c:
-  temp
-  largeFile.pdf");
+
+File imgfile = new File("c:templargeFile.pdf");
+
 for (int i = 1; i < 5; i++) {
 	FileInputStream fin = new FileInputStream(imgfile);
 	PreparedStatement pre = conn.prepareStatement("insert into MY_DATA values(?,?)");
 	pre.setInt(1, i);
 	pre.setBinaryStream(2, fin, (int) imgfile.length());
 	pre.executeUpdate();
+
 	System.out.println("We have " + i + " files in the space");
-     pre.close();
-     fin.close();
+
+    pre.close();
+    fin.close();
 }
 
 for (int i = 1; i < 5; i++) {

@@ -21,14 +21,14 @@ The preferable (and easiest) way to start a Service Grid is the [Grid Service Ag
 
 The following table summarized how to start each component:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |Component | Linux (XAP) | Windows (XAP) | Windows (XAP.NET) |
 |:---------|:------------|:--------------|:------------------|
-| GSA | `gs-agent.sh` | `gs-agent.bat` | gs-agent.exe |
-| GSC | `gsc.sh` | `gsc.bat` | `gsc.exe` |
-| GSM | `gsm_nolus.sh` | `gsm_nolus.bat` | N\A |
-| LUS | `startJiniLUS.sh` | `startJiniLUS.bat` | `lus.exe` |
-| GSM + LUS | `gsm.sh` | `gsm.bat` | `gsm.exe` |
+| GSA | gs-agent.sh | gs-agent.bat | gs-agent.exe |
+| GSC | gsc.sh | gsc.bat | gsc.exe |
+| GSM | gsm_nolus.sh | gsm_nolus.bat | N\A |
+| LUS | startJiniLUS.sh | startJiniLUS.bat | lus.exe |
+| GSM + LUS | gsm.sh | gsm.bat | gsm.exe |
 
 ## GSA Parameters
 
@@ -77,7 +77,7 @@ GSA manages different process types. Each process type is defined within the `<G
 
 The following are the process types that come out of the box:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |Processes Type|Description|XML config file name|Properties file name|
 |:-------------|:----------|:-------------------|:-------------------|
 |gsc|Defines a [Grid Service Container](/product_overview/service-grid.html#gsc)|gsc.xml|gsc.properties|

@@ -32,7 +32,8 @@ When a POJO class with embedded properties uses the Space API, you may implement
 Here is an example; the Person class has an Address property that is being externalized.
 
 
-
+{%inittab%}
+{%tabcontent Person.java %}
 {%highlight java%}
 @SpaceClass
 public class Person {
@@ -79,8 +80,8 @@ public class Person {
 	}
 }
 {%endhighlight%}
-
-
+{%endtabcontent%}
+{%tabcontent Address.java %}
 {%highlight java%}
 public class Address implements Externalizable {
 
@@ -132,4 +133,6 @@ public class Address implements Externalizable {
 	}
 }
 {%endhighlight%}
+{%endtabcontent%}
+{%endinittab%}
 

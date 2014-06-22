@@ -12,7 +12,7 @@ XAP space and client components open different ports in various situations. The 
 
 {% refer %}Learn how to **[set XAP over a firewall](./network-over-firewall.html)**.{% endrefer %}
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Service | Description | Configuration Property| Default value |
 |:--------|:------------|:----------------------|:--------------|
 |Lookup Service listening port|Used as part of the unicast lookup discovery protocol.|`com.sun.jini.reggie.initialUnicastDiscoveryPort` System property|XAP 6: **4162**{% wbr %}XAP 7: **4164**{% wbr %}XAP 8: **4166**{% wbr %}XAP 9: **4170**{% wbr %}XAP 9.5: **4174**|
