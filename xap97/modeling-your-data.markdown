@@ -35,6 +35,9 @@ Class and properties  decorations for POJOs  can be specified via an external xm
 To reduce the memory footprint of the objects stored in space, different storage types can be defined for individual properties of a space class.
 Object properties can be assigned a storage type decoration which determines how it is serialized and stored in the space.
 
+- [Custom Serialization](./custom-serialization.html){%wbr%}
+Controlling Serialization of embedded properties.
+
 - [Routing property](./routing-in-partitioned-spaces.html){%wbr%}
 A partitioned space provides the ability to perform space operations against multiple spaces from a single proxy transparently. The primary goal of the partitioned space is to provide unlimited In-Memory space storage size and group objects into the same partition to speed up performance. The initial intention is to write data into the partitioned space, and route query operations based on the template data.
 In order to accomplish that, a routing property  can be defined on the entry type.
