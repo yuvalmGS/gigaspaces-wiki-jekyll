@@ -34,7 +34,7 @@ Unlike the traditional XAP persistence model, where the IMDG backing store is us
 When running a traditional persistence configuration, the IMDG serves as a front-end to the database, and is acting as a transactional cache storing a subset of the data. In this configuration data is loaded in a lazy manner to the IMDG with the assumption that the heap capacity is smaller than the entire data set.
 
 
-In the enternal storage medium mode, the entire data data set is kept on the external SSD drive. The assumption is the SSD capacity across the grid is large enough to accommodate for the entire data set of the application.
+In the external storage medium mode, the entire data data set is kept on the external SSD drive. The assumption is the SSD capacity across the grid is large enough to accommodate for the entire data set of the application.
 
 ## Reduced Garbage Collection Activity
 
@@ -60,7 +60,7 @@ The indexes maintain in RAM allowing the XAP query engine to evaluate the query 
 
 The BlobStore settings includes the following options:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed }
 | Property               | Description                                               | Default | Use |
 |:-----------------------|:----------------------------------------------------------|:--------|:--------|
 | devices | Flash devices. Comma separated available devices. The list used as a search path from left to right. The first one exists will be used. |  | required |
@@ -75,7 +75,7 @@ The BlobStore settings includes the following options:
 
 The IMDG BlobStore settings includes the following options:{%wbr%}
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed }
 | Property | Description | Default | Use |
 |:---------|:------------|:--------|:--------|
 | blob-store-handler | BlobStore implementation |  | required |
@@ -88,15 +88,16 @@ The IMDG BlobStore settings includes the following options:{%wbr%}
 - Blobstore supports Linux CentOS 6.x only.
 
 - Check that your user is part of disk groups.
-    {% highlight xml %}
-    $ groups
-    {% endhighlight %}
+{% highlight console %}
+$ groups
+{% endhighlight %}
 
-   If your user is not part of disk groups, add it by calling:
-    {% highlight xml %}
-        $ sudo usermod -G disk <username>
-    {% endhighlight %}
-   and relogin.
+If your user is not part of disk groups, add it by calling:
+{% highlight console %}
+$ sudo usermod -G disk <username>
+{% endhighlight %}
+
+and relogin.
 
 - Make sure your user has read/write permissions to flash devices
 - Make sure your user has read/write permissions to /tmp
@@ -243,13 +244,13 @@ Each time a space is deployed for the first time an Entry is added to this file.
 # Processing Unit undeploy
 The current ZetaScale release has a limitation which does not allow processing unit deployment twice on the same GSC, the workaround is to undeploy the processing unit and restart the relevant GSCs.
 The RPM add a groovy script named `XAP_HOM/bin/undeploy-grid.groovy` which undeploy the processing unit and restart all its GSCs.
- {% highlight xml %}
-    $ {{site.latest_gshome_dirname}}/bin/tools/groovy/bin/groovy {{site.latest_gshome_dirname}}/bin/undeploy-grid.groovy locator pu_name
- {% endhighlight %}
+{% highlight console %}
+$ {{site.latest_gshome_dirname}}/bin/tools/groovy/bin/groovy {{site.latest_gshome_dirname}}/bin/undeploy-grid.groovy locator pu_name
+{% endhighlight %}
 
 
 # Uninstall
-{% highlight xml %}
+{% highlight console %}
 $ sudo XAP_HOME=<XAP HOME> sh -c "rpm -e /blobstore-10.0.0-RC_1.noarch"
 {% endhighlight %}
 
@@ -283,7 +284,7 @@ You may use the ZetaScale Management command line to access underlaying SSD stor
 
 ## Statistics
 
-FDF available Statistics:
+{%vbar title=FDF available Statistics:%}
 
 - Counts of FDF access types
 - Counts of various flash activities
@@ -301,6 +302,8 @@ FDF available Statistics:
 - Flash space allocated/consumed in bytes
 - Number of overwrites
 - Number of hash collisions for get/set operations
+
+{%endvbar%}
 
 Applications can optionally enable periodic dumping of statistics to a specified file. This is disabled by default. It can be enabled using the configuration parameter `FDF_STATS_FILE=<filepath>`. The dump interval can be configured using `FDF_STATS_DUMP_INTERVAL=<interval in secs>`. The dump interval can also be dynamically changed through the CLI.
 
@@ -407,14 +410,14 @@ Cache statistics:
 
 ZetaScale provides a simple command line interface (CLI) through a TCP port. The ZetaScale CLI uses port `51350` by default. This port can be changed through the configuration parameter `FDF_ADMIN_PORT=<port number>`. The CLI functionality can be disabled by setting configuration property `FDF_ADMIN_ENABLED=0`. The CLI supports the following commands.
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed }
 | Command | Description | 
 |:--------|:------------|
 |container list|Lists all of the container names|
 |container stats `<container name>[v]` | Prints stats of the given container. The option v (verbose) prints extended stats.|
 |container `stats_dump <container name|all> [v]` | Prints stats of a given container or all containers to the stats file configured through `FDF_STATS_FILE`. The option v(verbose) prints extended stats.
 |container autodump `<enable/disable/interval/printcfg> [interval in secs]`  | This command enables or disables periodic stats dump, and configures the dump interval.|
-|log_level `<set/get> [fatal/error/warning/info/diagnostic/ debug/trace/trace_low/devel]`| Sets the log level| 
+|log_level {%wbr%}`<set/get> [fatal/error/warning/info/diagnostic/` {%wbr%}`debug/trace/trace_low/devel]`| Sets the log level|
 |help | Prints help for all supported commands|
 |quit |Quits the telnet session|
 
@@ -430,7 +433,7 @@ help
 Supported commands:
 container stats <container name> [v]
 container stats_dump <container name|all> [v]
-container autodump <enable/disable/interval/printcfg> [interval in secs]
+container autodump {%wbr%}<enable/disable/interval/printcfg> [interval in secs]
 container list
 log_level <set/get> [fatal/error/warning/info/diagnostic/debug/trace/trace_low/devel]
 help
@@ -495,9 +498,9 @@ abstract class BlobStoreStorageHandler
 }
 {% endhighlight %}
 
-## Considerations
+# Considerations
 
-### General limitations
+#### General limitations
 - All classes that belong to types that are to be introduced to the space during the initial metadata load must exist on the classpath of the JVM the Space is running on.
 
 {%info%}

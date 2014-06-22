@@ -127,7 +127,7 @@ To allow the above , the client must set the `java.rmi.server.hostname` property
 
 The `LRMI` configuration options set as system properties. They are listed below:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed }
 | System Property | Description | Default value | Server/Client Setting | Unit | Can be overridden at the client side|
 |:----------------|:------------|:--------------|:----------------------|:-----|:------------------------------------|
 | `com.gs.transport_protocol.lrmi.max-conn-pool` | The maximum amount of connections to the space server remote services that can work simultaneously in a client connection pool. Starts with 1 connection. Defined per each remote service (by default, each remote service has `1024` maximum connections). | `1024` | Server | Connection| No|
