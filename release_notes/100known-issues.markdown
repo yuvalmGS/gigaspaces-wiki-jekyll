@@ -42,3 +42,11 @@ Below is a list of known issues in GigaSpaces 10.0.X.
 | GS-11732 | Disributed transaction over multiple clusters might cause consolidations problems | 8935 | 10.0.0 | | All |
 | GS-11736 | Can't see space in gs-ui when running gsInstance.bat when using jdk 7u55 | | 10.0.0 | | Java |
 | GS-11744 | Decreasing the height of the EDG window hides content and does not show scroll-bar | | 10.0.0 | | All |
+| GS-11767 | Opening the Types tab under Data Grids throws an exception that is not catched in the webui | | 10.0.0 | | All |
+| GS-11768 | Warning message as a result of using deprecated setAutoRenew(boolean , LeaseListener , long , long, long) method | | 10.0.0 | | Java |
+| GS-11773 | ClassCastException thrown during deployment |  | 10.0.0 | | Java |
+| GS-11774 | Got SQLQueryException when using rownum < ? | 8992 | 10.0.0 | | .NET |
+| GS-11775 | NPE - when trying to resolve certain split brain scenario | 9032 | 10.0.0 | | All |
+| GS-11776 | Fix Shutdown API to close custom thread pool and client connection | 9052 | 10.0.0 | | All |
+| GS-11777 | Watchdog should stop monitoring once the server returned a result | 9031 | 10.0.0 | | All |
+| GS-11780 | Severe message in the log after killing GSA in some scenarios | 9056 | 10.0.0 | | All |
