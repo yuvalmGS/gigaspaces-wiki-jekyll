@@ -18,8 +18,6 @@ weight:
 
 [XAP Premium](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/10.0.0/rc/gigaspaces-xap-premium-10.0.0-rc-b11510.zip)
 
-[MemoryXtend](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/10.0.0/rc/blobstore-10.0.0-11510_RC.noarch.rpm)
-
 [XAP Caching](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/10.0.0/rc/gigaspaces-xap-caching-10.0.0-rc-b11510.zip)
 {%endpanel%}
 
