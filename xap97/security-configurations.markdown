@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Configuration
+title:  Security Configuration
 categories: XAP97
 parent: security-overview.html
 weight: 130
