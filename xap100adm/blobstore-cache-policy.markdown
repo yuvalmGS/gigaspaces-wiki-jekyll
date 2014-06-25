@@ -257,12 +257,12 @@ $ sudo XAP_HOME=<XAP HOME> sh -c "rpm -e /blobstore-10.0.0-RC_1.noarch"
 
 
 # Controlling blobStore mode at the Space Class Level
-By default any Space Data Type is `blobStore` enabled. When decorating the space class with its meta data you may turn off the `blobStore` behavior using the `@SpaceClass blobStoreEnabled` annotation or gs.xml `blobStoreEnabled` tag.
+By default any Space Data Type is `blobStore` enabled. When decorating the space class with its meta data you may turn off the `blobStore` behavior using the `@SpaceClass blobstoreEnabled` annotation or gs.xml `blobstoreEnabled` tag.
 
 Here is a sample annotation disabling `blobStore` mode:
 
 {% highlight java %}
-@SpaceClass(blobStoreEnabled = false)
+@SpaceClass(blobstoreEnabled = false)
 public class Person {
     .......
 }
