@@ -509,6 +509,43 @@ To connect to the US space you should have the web application use a `shiro.ini`
 connector.url = jini://*/*/wanSpaceUS?groups=US
 {%endhighlight%}
 
+### Library dependencies
+
+Developers should include the following dependencies in pom.xml file.
+
+{%highlight xml%}
+
+	<repositories>
+		<repository>
+			<id>org.openspaces</id>
+			<name>OpenSpaces</name>
+			<url>http://maven-repository.openspaces.org</url>
+			<releases>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>always</updatePolicy>
+				<checksumPolicy>warn</checksumPolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+	
+	<dependency>
+			<groupId>com.gigaspaces.httpsession</groupId>
+			<artifactId>gs-runtime</artifactId>
+			<version>{{site.latest_maven_version}}</version>
+	</dependency>
+
+	<dependency>
+			<groupId>com.gigaspaces.httpsession</groupId>
+			<artifactId>gs-session-manager</artifactId>
+			<version>{{site.latest_maven_version}}</version>
+	</dependency>
+{%endhighlight%}
+
 # Considerations
 
 ## Web Application Context
