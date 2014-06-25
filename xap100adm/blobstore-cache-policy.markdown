@@ -14,7 +14,7 @@ weight: 400
 
 ![flash-imdg.png](/attachment_files/subject/flash-imdg.png)
 {% endcolumn %}
-XAP 10 introduces a new Storage interface that allows an external storage mechanism (one that does not reside on the JVM heap) to act as storage medium for the data in the IMDG. This storage model allows the IMDG to interact with the storage medium for storing IMDG data.
+XAP 10 introduces a new Storage interface allowing an external storage mechanism (one that does not reside on the JVM heap) to act as storage medium for the data in the IMDG. This storage model allows the IMDG to interact with the storage medium for storing IMDG data. This section describing the SSD based implementation. Future implementations such as RAM based off-heap storage will be added with the incoming XAP releases. 
 
 {% column width=90% %}
 
@@ -22,19 +22,17 @@ XAP 10 introduces a new Storage interface that allows an external storage mechan
 {% endsection %}
 
 
-This storage model allows you to leverage high capacity storage mediums such as enterprise flash drives (SSD) or the RAM capacity external to heap of the JVM process that contains the IMDG. This storage model leverages the JVM heap to store indexes and the external storage medium to store the raw data in a serialized form. This page referes to the SSD based implementation, future implementations such as RAM based off-heap storage will be added in one the next XAP releases. 
-
+This storage model allows you to leverage high capacity local storage devices such as enterprise flash drives (SSD) or the RAM capacity external to heap of the JVM process. This storage model leverages the JVM heap to store indexes and the external storage device to store the raw data in a serialized form. 
 ![blobstore1.jpg](/attachment_files/blobstore1.jpg)
 
 The JVM heap is used also as a first level cache for frequently used data. Repetitive read operations (by Id, by template or using a SQL query) for the same data will be loaded from the external storage medium upon the first reqeust and later be served from the JVM heap based cache.
 
-## How Is This Storage Model Different from the Traditional XAP Persistence Model?
+## How BlobStore Storage Model Different from the Traditional XAP Persistence Model?
 Unlike the traditional XAP persistence model, where the IMDG backing store is usually a database with relatively slow response time, located in a central location, the storage interface assumes very fast access for write and read operations, and a local, dedicated data store that supports a key/value interface. Each IMDG primary and backup instance across the grid is interacting with its dedicated storage medium (in our case SSD drive) independently in an atomic manner. 
 
 When running a traditional persistence configuration, the IMDG serves as a front-end to the database, and is acting as a transactional cache storing a subset of the data. In this configuration data is loaded in a lazy manner to the IMDG with the assumption that the heap capacity is smaller than the entire data set.
 
-
-In the external storage medium mode, the entire data data set is kept on the external SSD drive. The assumption is the SSD capacity across the grid is large enough to accommodate for the entire data set of the application.
+With the external storage medium mode, the entire data data set is kept on the external SSD drive. The assumption is the SSD capacity across the grid is large enough to accommodate for the entire data set of the application.
 
 ## Reduced Garbage Collection Activity
 
@@ -48,7 +46,7 @@ All Enterprise flash drives are supported. SanDisk, Fusion-IO, Intel® SSD , etc
 
 All XAP APIs are supported with the BlobStore configuration. This includes the Space API (POJO and Document), JDBC API, JPA API, JMS API, and Map API. 
 
-## How It Works
+## How It Works?
 
 XAP is using [SanDisk ZetaScale](http://www.sandisk.com/) library, which uses direct flash access. It circumvents OS level storage interfaces when writing an object to the space, its indexed data maintained on Heap where the Storage interface implementing using the ZetaScale libraries to interact with the underlying flash drive.
 
@@ -70,8 +68,8 @@ The BlobStore settings includes the following options:
 | blob-store-cache-size-MB | ZetaScale internal cache size in Megabytes. | 100 | optional |
 | enable-admin | ZetaScale admin provides a simple command line interface (CLI) through a TCP port. ZetaScale CLI uses port 51350 by default. This port can be changed through the configuration parameter FDF_ADMIN_PORT. | false |
 | statistics-interval | Applications can optionally enable periodic dumping of statistics to a specified file (XAP_HOME/logs). This is disabled by default. | | optional |
-| durability-level | SW_CRASH_SAFE: This policy guarantees no data loss in the event of software crashes. But some data might be lost in the event of hardware failure.{%wbr%}HW_CRASH_SAFE: This policy guarantees no data loss if the hardware crashes.Since there are performance implication it is recommended to work with NVRAM device and configure log-flash-dir to a folder on this device. | SW_CRASH_SAFE | optional |
-| log-flush-dir | In case of HW_CRASH_SAFE, directory in a file system on top of NVRAM backed disk. This directory must be unique per space, you can add ${clusterInfo.runningNumber} as suffix | /tmp | optional |
+| durability-level | `SW_CRASH_SAFE` - Guarantees no data loss in the event of software crashes. But some data might be lost in the event of hardware failure.{%wbr%}`HW_CRASH_SAFE`- Guarantees no data loss if the hardware crashes.Since there are performance implication it is recommended to work with NVRAM device and configure log-flash-dir to a folder on this device. | SW_CRASH_SAFE | optional |
+| log-flush-dir | When `HW_CRASH_SAFE` used , point to a directory in a file system on top of NVRAM backed disk. This directory must be unique per space, you can add ${clusterInfo.runningNumber} as suffix to generate a uniqee name | /tmp | optional |
 
 The IMDG BlobStore settings includes the following options:{%wbr%}
 
@@ -106,16 +104,19 @@ and relogin.
 # Installation
 
 Step 1. 
-Install XAP as usual.
+Dwonload the XAP 10 distribution and the MemoryXtend RPM with the ZetaScale libraries.
 
 Step 2. 
+Install XAP as usual. Unzip the `gigaspaces-xap-premium-10.0.0-XXX.zip`.
+
+Step 3. 
 Install ZetaScale libraries:
 
 {% highlight xml %}
 $ sudo XAP_HOME=<XAP HOME> sh -c "rpm -ivh /blobstore-10.0.0-RC_1.noarch.rpm"
 {% endhighlight %}
 
-Step 3. 
+Step 4. 
 Use the `XAP HOME\bin\gs-agent-blobstore.sh` to start GigaSpaces Grid Agent that configured to load the ZetaScale libraries.
 
 # Configuration
@@ -211,7 +212,8 @@ gigaSpace = new GigaSpaceConfigurer(urlConfig).gigaSpace();
 {% endinittab %}
 
 The above example:
-- Configures the SanDisk BlobStore bean.{%wbr%}
+
+- Configures the SanDisk BlobStore bean.
 - Configures the Space to use the above blobStore implementation also configure the cache size, in this LRU cache the space store also the data objects and not just the object indexes in RAM.
 
 ## Flash device stickiness
@@ -241,9 +243,9 @@ At this example the first instance is deployed to a specific machine (specified 
 The devices allocation inside a machine is managed by a file `/tmp/blobstore/devices/device-per-space.properties`, you can override this file location with the following system property `-Dcom.gs.blobstore-devices`.
 Each time a space is deployed for the first time an Entry is added to this file.
 
-# Processing Unit undeploy
-The current ZetaScale release has a limitation which does not allow processing unit deployment twice on the same GSC, the workaround is to undeploy the processing unit and restart the relevant GSCs.
-The RPM add a groovy script named `XAP_HOM/bin/undeploy-grid.groovy` which undeploy the processing unit and restart all its GSCs.
+
+# BlobStore Space re-deploy
+When you undeploy a blobstore space use the `XAP_HOM/bin/undeploy-grid.groovy` comes with the RPM. It undeploys the blobstore space and restart all its GSCs.
 {% highlight console %}
 $ {{site.latest_gshome_dirname}}/bin/tools/groovy/bin/groovy {{site.latest_gshome_dirname}}/bin/undeploy-grid.groovy locator pu_name
 {% endhighlight %}
@@ -500,8 +502,8 @@ abstract class BlobStoreStorageHandler
 
 # Considerations
 
-#### General limitations
 - All classes that belong to types that are to be introduced to the space during the initial metadata load must exist on the classpath of the JVM the Space is running on.
+- The current MemoryXtend release support a single blobstore space instance per GSC. 
 
 {%info%}
 Answers to frequently asked questions about MemoryXtend for SSD can be found [here](/faq/blobstore-cache-policy-faq.html)
