@@ -6,6 +6,7 @@ parent: modeling-your-data.html
 weight: 550
 ---
 
+{% summary %} {% endsummary %}
 
 
 To solve the performance problems associated with class serialization, the serialization mechanism allows you to declare an embedded class is Externalizable. When the ObjectOutputStream writeObject() method is called, it performs the following sequence of actions:
