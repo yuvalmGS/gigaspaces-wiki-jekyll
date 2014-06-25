@@ -26,7 +26,10 @@ XAP provides the common functionality to perform aggregations across the space. 
 {% highlight java %}
 import static org.openspaces.extensions.QueryExtension.*;
 ...
-SQLQuery<Person> personSQLQuery = new SQLQuery<Person>();
+SQLQuery<Employee> query = new SQLQuery<Employee>(Employee.class,"country=? OR country=? ");
+query.setParameter(1, "UK");
+query.setParameter(2, "U.S.A");
+
 // retrieve the maximum value stored in the field "age"
 Number maxAgeInSpace = maxValue(space, personSQLQuery, "age");
 /// retrieve the minimum value stored in the field "age"
@@ -98,8 +101,9 @@ Compound aggregation will execute multiple aggregation operations across the spa
 {% highlight java %}
 import static org.openspaces.extensions.QueryExtension.*;
 ...
-SQLQuery<Person> query = new SQLQuery<Person>(Person.class,
-		"country=? OR country=? ", "UK", "U.S.A");
+SQLQuery<Employee> query = new SQLQuery<Employee>(Employee.class,"country=? OR country=? ");
+query.setParameter(1, "UK");
+query.setParameter(2, "U.S.A");
 
 AggregationResult aggregationResult = space.aggregate(query,
 		new AggregationSet().maxEntry("age").minEntry("age").sum("age")
@@ -121,7 +125,10 @@ Aggregation against the members of embedded space classes is supported by supply
 {% highlight java %}
 import static org.openspaces.extensions.QueryExtension.*;
 ...
-SQLQuery<Person> personSQLQuery = new SQLQuery<Person>();
+SQLQuery<Employee> query = new SQLQuery<Employee>(Employee.class,"country=? OR country=? ");
+query.setParameter(1, "UK");
+query.setParameter(2, "U.S.A");
+
 // retrieve the maximum value stored in the field "age"
 Number maxAgeInSpace = maxValue(space, personSQLQuery, "demographics.age");
 {% endhighlight %}

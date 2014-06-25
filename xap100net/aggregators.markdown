@@ -25,8 +25,9 @@ XAP provides the common functionality to perform aggregations across the space. 
 {% tabcontent Application %}
 {% highlight c# %}
 using GigaSpaces.Core.Linq;
+
 ...
-var queryable = from p in spaceProxy.Query<Person>() select p;
+var queryable = from p in spaceProxy.Query<Person>("Country='UK' OR Country='U.S.A'") select p;
 // retrieve the maximum value stored in the field "age"
 int maxAgeInSpace = queryable.Max(p => p.Age);
 // retrieve the minimum value stored in the field "age"
@@ -73,7 +74,9 @@ Compound aggregation will execute multiple aggregation operations across the spa
 {%endsection%}
 
 {% highlight c# %}
-IQuery<Person> sqlQuery = new SqlQuery<Person>(string.Empty);
+SqlQuery<Person> query = new SqlQuery<Person>("Country=? OR Country=?");
+query.SetParameter(1,"UK");
+query.SetParameter(2,"U.S.A");
 
 var aggregationSet = new AggregationSet();
 aggregationSet.MaxEntry("Age");
@@ -100,8 +103,9 @@ Aggregation against the members of embedded space classes is supported by supply
 {% tabcontent Application %}
 {% highlight c# %}
 using GigaSpaces.Core.Linq;
-...
-var queryable = from p in spaceProxy.Query<Person>() select p;
+
+
+var queryable = from p in spaceProxy.Query<Person>("Country='UK' OR Country='U.S.A'") select p;
 // retrieve the maximum value stored in the field "age"
 var result = queryable.Max(p => p.Demographics.Age);
 {% endhighlight %}
