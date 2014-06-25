@@ -21,6 +21,8 @@ XAP provides the common functionality to perform aggregations across the space. 
 
 # Usage
 
+Here are some aggregation examples using the [QueryExtension](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/index.html?org/openspaces/extensions/QueryExtension.html)
+
 {% inittab %}
 {% tabcontent Application %}
 {% highlight java %}
@@ -31,9 +33,9 @@ query.setParameter(1, "UK");
 query.setParameter(2, "U.S.A");
 
 // retrieve the maximum value stored in the field "age"
-Number maxAgeInSpace = maxValue(space, personSQLQuery, "age");
+Number maxAgeInSpace = max(space, personSQLQuery, "age");
 /// retrieve the minimum value stored in the field "age"
-Number minAgeInSpace = minValue(space, personSQLQuery, "age");
+Number minAgeInSpace = min(space, personSQLQuery, "age");
 // Sum the "age" field on all space objects.
 Number combinedAgeInSpace = sum(space, personSQLQuery, "age");
 // Sum's the "age" field on all space objects then divides by the number of space objects.
@@ -98,6 +100,7 @@ Compound aggregation will execute multiple aggregation operations across the spa
 {%endsection%}
 
 
+
 {% highlight java %}
 import static org.openspaces.extensions.QueryExtension.*;
 ...
@@ -130,7 +133,7 @@ query.setParameter(1, "UK");
 query.setParameter(2, "U.S.A");
 
 // retrieve the maximum value stored in the field "age"
-Number maxAgeInSpace = maxValue(space, personSQLQuery, "demographics.age");
+Number maxAgeInSpace = max(space, personSQLQuery, "demographics.age");
 {% endhighlight %}
 {% endtabcontent %}
 {% tabcontent Person Space Class %}
@@ -202,3 +205,60 @@ public class Demographics     {
 {% endhighlight %}
 {% endtabcontent %}
 {% endinittab %}
+
+
+# Group Aggregation
+
+
+The [GroupByAggregator](http://www.gigaspaces.com/docs//JavaDoc{%currentversion%}/index.html?com/gigaspaces/query/aggregators/GroupByAggregator.html) is used in conjunction with the aggregate functions to group the result-set by one or more columns. Here is an example:
+
+
+{%highlight java%}
+import static org.openspaces.extensions.QueryExtension.*;
+import com.gigaspaces.query.aggregators.GroupByAggregator;
+import com.gigaspaces.query.aggregators.GroupByFilter;
+import com.gigaspaces.query.aggregators.GroupByResult;
+import com.gigaspaces.query.aggregators.GroupByValue;
+
+// select AVG(salary), MIN(salary), MAX(salary) from Employees WHERE age > 50 group by Department, Gender
+SQLQuery<Employee> query = new SQLQuery<Employee>(Employee.class, "age > ?",50);
+GroupByResult groupByResult = groupBy(gigaSpace, query, new GroupByAggregator()
+				.select(average("salary"), min("salary"), max("salary"))
+				.groupBy("department", "gender"));
+
+for (GroupByValue group : groupByResult) {
+    // Getting info from the keys:
+    Department department = (Department) group.getKey().get("department");
+	Gender gender = (Gender) group.getKey().get("gender");
+	// Getting info from the value:
+	double avgSalary = group.getDouble("avg(salary)");
+	long maxSalary = group.getLong("max(salary)");
+	long minSalary = group.getLong("min(salary)");
+}
+{%endhighlight%}
+
+
+You can also use the [GroupByFilter](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/index.html?com/gigaspaces/query/aggregators/GroupByFilter.html) to restrict the groups of selected objects to only those whose condition is TRUE.
+
+{%highlight java%}
+// Select AVG(Salary) , Count(*) from Employees Where companyId = 10 group by Department Having AVG(Salary) > 18,000
+SQLQuery<Employee> query = new SQLQuery<Employee>(Employee.class,"companyId = 10");
+
+GroupByResult groupByResult = groupBy(gigaSpace, query, new GroupByAggregator()
+		.select(average("salary"), count()).groupBy("department")
+		.having(new GroupByFilter() {
+			@Override
+			public boolean process(GroupByValue group) {
+				return group.getDouble("avg(salary)") > 18000;
+			}
+        }));
+
+for (GroupByValue group : groupByResult) {
+    // Getting info from the keys:
+    Department department = (Department) group.getKey().get("department");
+    // Getting info from the value:
+	double avgSalary = group.getDouble("avg(salary)");
+	long count = group.getLong("count(*)");
+}
+
+{%endhighlight%}

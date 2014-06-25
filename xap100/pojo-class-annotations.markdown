@@ -164,7 +164,7 @@ public class User {
 # Blob Store
 
 {: .table   .table-condensed  .table-bordered}
-|Syntax     | blobStore  |
+|Syntax     | blobstoreEnabled  |
 |Argument | boolean          |
 |Default | true|
 |Description| By default any Space Data Type is blobStore enabled. When decorating the space class with its meta data you may turn off the blobStore behavior using the @SpaceClass blobStore annotation or gs.xml blobStore tag.  |
@@ -172,7 +172,7 @@ public class User {
 
 Example:
 {%highlight java%}
-@SpaceClass(blobStore = false)
+@SpaceClass(blobstoreEnabled = false)
 public class Person {
     .......
 }

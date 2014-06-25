@@ -170,7 +170,7 @@ Example:
 # Blob Store
 
 {: .table   .table-condensed  .table-bordered}
-|Syntax     | blobstore |
+|Syntax     | blobstoreEnabled |
 |Argument| boolean          |
 |Default | true|
 |Description| By default any Space Data Type is blobStore enabled. When decorating the space class with its meta data you may turn off the blobStore behavior using the @SpaceClass blobStore annotation or gs.xml blobStore tag.  |
@@ -180,7 +180,7 @@ Example:
 
 {%highlight xml%}
 <gigaspaces-mapping>
-    <class name="com.test.Person" "blobstore"="false" >
+    <class name="com.test.Person" "blobstoreEnabled"="false" >
      .....
      </class>
 </gigaspaces-mapping>
