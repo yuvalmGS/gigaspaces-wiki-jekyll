@@ -240,16 +240,15 @@ At this example the first instance is deployed to a specific machine (specified 
     </os-sla:sla>
 {% endhighlight %}
 
-The devices allocation inside a machine is managed by a file `/tmp/blobstore/devices/device-per-space.properties`, you can override this file location with the following system property `-Dcom.gs.blobstore-devices`.
-Each time a space is deployed for the first time an Entry is added to this file.
-
+The devices allocation inside a machine is managed via `/tmp/blobstore/devices/device-per-space.properties` file. You can override this file location using the `com.gs.blobstore-devices` system property. Each time a blobstore space is deployed an Entry is added to this file.
 
 # BlobStore Space re-deploy
 When you undeploy a blobstore space use the `XAP_HOM/bin/undeploy-grid.groovy` comes with the RPM. It undeploys the blobstore space and restart all its GSCs.
 {% highlight console %}
-$ {{site.latest_gshome_dirname}}/bin/tools/groovy/bin/groovy {{site.latest_gshome_dirname}}/bin/undeploy-grid.groovy locator pu_name
+export PATH:/gigaspaces-xap-premium-10.0.0/bin/tools/groovy/bin/
+cd /gigaspaces-xap-premium-10.0.0/bin/tools/groovy/bin
+$ groovy undeploy-grid.groovy <LUS HostName> <BlobStore-Space-Name>
 {% endhighlight %}
-
 
 # Uninstall
 {% highlight console %}
@@ -258,21 +257,21 @@ $ sudo XAP_HOME=<XAP HOME> sh -c "rpm -e /blobstore-10.0.0-RC_1.noarch"
 
 
 # Controlling blobStore mode at the Space Class Level
-By default any Space Data Type is `blobStore` enabled. When decorating the space class with its meta data you may turn off the `blobStore` behavior using the `@SpaceClass blobStore` annotation or gs.xml `blobStore` tag.
+By default any Space Data Type is `blobStore` enabled. When decorating the space class with its meta data you may turn off the `blobStore` behavior using the `@SpaceClass blobStoreEnabled` annotation or gs.xml `blobStoreEnabled` tag.
 
 Here is a sample annotation disabling `blobStore` mode:
 
 {% highlight java %}
-@SpaceClass(blobStore = false)
+@SpaceClass(blobStoreEnabled = false)
 public class Person {
     .......
 }
 {% endhighlight %}
 
-Here is a sample xml decoration for POJO class disabling `blobStore` mode:
+Here is a sample xml decoration for a POJO class disabling `blobStore` mode:
 {% highlight java %}
 <gigaspaces-mapping>
-    <class name="com.test.Person" "blobstore"="false" >
+    <class name="com.test.Person" "blobstoreEnabled"="false" >
      .....
      </class>
 </gigaspaces-mapping>
