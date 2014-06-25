@@ -32,7 +32,7 @@ The inconsistency level calculated using the mirror active primary identity and 
 
 ## Resolution - Step Two
 
-Each primary is inspected for the exact time is was elected to be a primary. The election time is stored within the lookup service. All lookup services are inspected during this process. The one which has been elected to be a primary first will be elected to be the primary. If both primary have been elected in the same time - step three is executed.
+Each primary is inspected for the exact time it was elected to be a primary. The election time is stored within the lookup service. All lookup services are inspected during this process. The one which has been elected to be a primary first will be elected to be the primary. If both primary have been elected in the same time - step three is executed.
 
 ## Resolution - Step Three
 
