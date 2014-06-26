@@ -1,6 +1,6 @@
 ---
 layout: post100
-title:  Partial Results
+title:  Partial Results - Projection
 categories: XAP100
 parent: querying-the-space.html
 weight: 800
