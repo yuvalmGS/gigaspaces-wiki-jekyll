@@ -252,6 +252,8 @@ long timeout = 100000;
 MyClass result = space.take(new SQLQuery<MyClass>(MyClass.class ,"num > 500"), timeout);
 {% endhighlight %}
 
+{%anchor routing%}
+
 # Routing
 
 When running on a partitioned space, it is important to understand how routing is determined for SQL queries.

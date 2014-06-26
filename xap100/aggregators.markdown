@@ -121,6 +121,7 @@ Number max = (Number) aggregationResult.get(5);
 {% endhighlight %}
 
 # Aggregate Embedded Fields
+
 Aggregation against the members of embedded space classes is supported by supplying the field path while invoking the desired aggregate function.
 
 {% inittab %}
@@ -260,5 +261,37 @@ for (GroupByValue group : groupByResult) {
 	double avgSalary = group.getDouble("avg(salary)");
 	long count = group.getLong("count(*)");
 }
+{%endhighlight%}
+
+
+# Routing
+When running on a partitioned space, it is important to understand how routing is determined for SQL queries.
+If the routing property is part of the criteria expression with an equality operand and without ORs, its value is used for routing.
+In some scenarios we may want to execute the query on a specific partition without matching the routing property (e.g. blocking operation). This can be done via the `setRouting` method:
+
+{%highlight java%}
+// Select AVG(Salary) , Count(*) from Employees Where companyId = 10 group by Department Having AVG(Salary) > 18,000
+SQLQuery<Employee> query = new SQLQuery<Employee>(Employee.class,"companyId = 10");
+query.setRouting(1);
+
+GroupByResult groupByResult = groupBy(gigaSpace, query, new GroupByAggregator()
+		.select(average("salary"), count()).groupBy("department")
+		.having(new GroupByFilter() {
+			@Override
+			public boolean process(GroupByValue group) {
+				return group.getDouble("avg(salary)") > 18000;
+			}
+        }));
+
+for (GroupByValue group : groupByResult) {
+    // Getting info from the keys:
+    Department department = (Department) group.getKey().get("department");
+    // Getting info from the value:
+	double avgSalary = group.getDouble("avg(salary)");
+	long count = group.getLong("count(*)");
+}
 
 {%endhighlight%}
+
+
+{%learn%}./query-sql.html#routing{%endlearn%}
