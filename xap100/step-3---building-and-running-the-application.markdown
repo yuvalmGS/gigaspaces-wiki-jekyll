@@ -29,7 +29,7 @@ To build the example you should follow the following steps:
 ~/gs/xap/{{ site.latest_gshome_dirname }}/tools/maven>installmavenrep.sh
 ""
 ""
-"Installing XAP {% latestxaprelease %}.0-RELEASE jars"
+"Installing XAP {% currentversion%}.0-RELEASE jars"
 ""
 ""
 {% endhighlight %}

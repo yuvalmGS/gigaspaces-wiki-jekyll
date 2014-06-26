@@ -42,7 +42,7 @@ Search for records that include one or more words within a free text field.
 - [Nested property queries](./query-nested-properties.html){%wbr%}
 Query nested properties, maps and collections using SQL queries.
 
-- [Partial results](./query-partial-results.html){%wbr%}
+- [Partial results - Projection](./query-partial-results.html){%wbr%}
 Obtaining partial results when querying the space to improve application performance and reduce memory footprint.
 
 - [Paging support](./query-paging-support.html){%wbr%}

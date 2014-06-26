@@ -386,7 +386,7 @@ gs deploy ..\recipes\apps\streaming-bigdata\bigDataApp\processor\rt-analytics-pr
 You should see the following output:
 
 {% highlight console %}
-Deploying [rt-analytics-processor.jar] with name [rt-processor-XAP-{% latestxaprelease %}] under groups [{{ site.latest_default_lookup_group }}] and locators []
+Deploying [rt-analytics-processor.jar] with name [rt-processor-XAP-{% currentversion %}] under groups [{{ site.latest_default_lookup_group }}] and locators []
 Uploading [rt-analytics-processor] to [http://127.0.0.1:61765/]
 Waiting indefinitely for [4] processing unit instances to be deployed...
 [rt-analytics-processor] [1] deployed successfully on [127.0.0.1]
@@ -641,7 +641,7 @@ This section describes the following components of the solution that implements 
 
 ### Getting the Tweets
 
-First, we need to get the tweets and store them in the Space (IMDG). In this example, we use [Spring Social](https://github.com/SpringSource/spring-social) to provide a Java interface to the Twitter API and get the tweets, and the [SpaceDocument]({%latestxaprelease%}/document-api.html) API of XAP to store the tweets. Using a SpaceDocument allows for a more flexible data model, the `SpaceDocument` being like a Map. The partitioning used the default 'ID' attribute.
+First, we need to get the tweets and store them in the Space (IMDG). In this example, we use [Spring Social](https://github.com/SpringSource/spring-social) to provide a Java interface to the Twitter API and get the tweets, and the [SpaceDocument](./document-api.html) API of XAP to store the tweets. Using a SpaceDocument allows for a more flexible data model, the `SpaceDocument` being like a Map. The partitioning used the default 'ID' attribute.
 
 The following snippet shows the relevant `TwitterHomeTimelineFeederTask` sections.
 
@@ -701,7 +701,7 @@ public class TwitterHomeTimelineFeederTask implement Runnable {
 
 We have the raw data but we need to tokenize and filter it, and then update the local counters - these are the tasks performed by the **Map** phase of the **Map** / **Reduce** algorithm.
 
-To generate this real-time flow, XAP uses the [event driven architecture of the event container](./messaging-support.html). Specifically, we use a [Polling Container]({%latestxaprelease%}/polling-container.html) to listen for events relating to the writing of raw tweets to the Space. These events are configured using the `SQLQuery` returned by the `unprocessedTweet` method marked as `@EventTemplate`. Then, we tokenize & filter the tweet using the `@SpaceDataEvent` to mark the event handling method. The result is an object of type `TokenizedTweet` written to the Space.
+To generate this real-time flow, XAP uses the [event driven architecture of the event container](./messaging-support.html). Specifically, we use a [Polling Container](./polling-container.html) to listen for events relating to the writing of raw tweets to the Space. These events are configured using the `SQLQuery` returned by the `unprocessedTweet` method marked as `@EventTemplate`. Then, we tokenize & filter the tweet using the `@SpaceDataEvent` to mark the event handling method. The result is an object of type `TokenizedTweet` written to the Space.
 
 The following snippet shows the relevant `TweetParser` sections.
 

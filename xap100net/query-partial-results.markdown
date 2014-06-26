@@ -1,6 +1,6 @@
 ---
 layout: post100
-title:  Partial Results
+title:  Projection
 categories: XAP100NET
 parent: querying-the-space.html
 weight: 700
@@ -48,13 +48,25 @@ Person result[] = space.ReadByIds(idsQuery).ResultsArray;
 The [SpaceDocument](./document-api.html) support projections as well:
 
 {% highlight csharp %}
-SqlQuery<SpaceDocument> docQuery = new SqlQuery<SpaceDocument>(typeof(Person).Name ,"") {Projections = new []{"FirstName", "LastName"}};
+SqlQuery<SpaceDocument> docQuery = new SqlQuery<SpaceDocument>(typeof(Person).Name ,"")
+  {Projections = new []{"FirstName", "LastName"}};
 SpaceDocument docresult[] = space.ReadMultiple(docQuery);
 {% endhighlight %}
 
+
+You can also use projection for nested properties:
+
+{% highlight csharp %}
+SqlQuery<SpaceDocument> docQuery = new SqlQuery<SpaceDocument>(typeof(Person).Name ,"")
+  {Projections = new []{"Address.Street", "Address.ZipCode"}};
+SpaceDocument docresult[] = space.ReadMultiple(docQuery);
+{% endhighlight %}
+
+
+
 # Supported Operations
 
-A projection is defined for any operation that returns data from the Space. Therefore id-based or query-based operations support projections. You can use the Projection API with `read`,`take`,`readById`,`takeById`,`readMultiple` and `takeMultiple` operations. When performing a `take` operation with projection, the entire Object will be removed from the space, but the result returned to the user will contain only the projected properties.
+A projection is defined for any operation that returns data from the Space. Therefore id-based or query-based operations support projections. You can use the Projection API with `Read`,`Take`,`ReadById`,`TakeById`,`ReadMultiple` and `TakeMultiple` operations. When performing a `Take` operation with projection, the entire Object will be removed from the space, but the result returned to the user will contain only the projected properties.
 
 You can use projections with a [Notify Container](./notify-container.html), when subscribing to notifications. You can use it with a [Polling Container](./polling-container.html), when consuming Space Objects. You can also create a [Local View](./local-view.html) with templates or a `View` using projections. The local view will maintain the relevant objects, but the view of the data will contain only the projected properties.
 Both dynamic and fixed properties can be specified - the syntax is the same. As a result, when providing a property name which is not part of the property set, it will be treated as a dynamic property: That is, if there is no like-named dynamic property present on a query result Object, then the property will be ignored entirely (and no Exception will be thrown). Please note that a result may contain multiple objects, each with a different combination of properties (fixed and/or dynamic) - each object will be treated individually when applying projections to it.

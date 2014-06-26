@@ -45,6 +45,7 @@ XAP provides the common functionality to perform aggregations across the space. 
 
 # Custom Change Operation
 
+# Performance improvement for reg ex query
 
 # Query Execution Information
 

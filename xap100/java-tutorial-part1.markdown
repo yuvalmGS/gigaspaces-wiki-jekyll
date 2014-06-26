@@ -479,6 +479,36 @@ public void clearAllObjectInSpace() {
 {%learn%}./the-space-operations.html{%endlearn%}
 
 
+#### Aggregation
+
+The Aggregators allow you to perform the entire aggregation activity at the space side avoiding any data retrieval back to the client side. Only the result of each aggregation activity performed with each partition is returned back to the client side where all the results are reduced and returned to the client application.
+
+{% highlight java %}
+import static org.openspaces.extensions.QueryExtension.*;
+...
+SQLQuery<Employee> query = new SQLQuery<Employee>(Employee.class,"country=? OR country=? ");
+query.setParameter(1, "UK");
+query.setParameter(2, "U.S.A");
+
+// retrieve the maximum value stored in the field "age"
+Number maxAgeInSpace = max(space, personSQLQuery, "age");
+/// retrieve the minimum value stored in the field "age"
+Number minAgeInSpace = min(space, personSQLQuery, "age");
+// Sum the "age" field on all space objects.
+Number combinedAgeInSpace = sum(space, personSQLQuery, "age");
+// Sum's the "age" field on all space objects then divides by the number of space objects.
+Double averageAge = average(space, personSQLQuery, "age");
+// Retrieve the space object with the highest value for the field "age".
+Person oldestPersonInSpace = maxEntry(space, personSQLQuery, "age");
+/// Retrieve the space object with the lowest value for the field "age".
+Person youngestPersonInSpace = minEntry(space, personSQLQuery, "age");
+{% endhighlight %}
+
+XAP also supports, `Compound`, `Embedded Fields` and `Group` Aggregation.
+
+{%learn%}./aggregators.html{%endlearn%}
+
+
 # Indexing
 
 To improve performance, it is possible to index one or more attributes for an object. The space maintains additional data for indexed attributes, which shortens the time required to determine a match resulting in improved performance. However, indexes consume more resources and impacts the write operations performance.
@@ -618,7 +648,7 @@ Lets look at a Spring configuration file that represents the creation of an embe
 	xsi:schemaLocation="
    http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
-   http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% latestxaprelease %}/core/openspaces-core.xsd>
+   http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd>
 
 	<!-- Scan the packages for annotations / -->
 	<context:component-scan base-package="xap" />

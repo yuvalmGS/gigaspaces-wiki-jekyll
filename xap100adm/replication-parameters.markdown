@@ -12,7 +12,7 @@ weight: 700
 
 
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | `replication-mode` | Optional values: `sync`, `async`.{% wbr %}- The `async` mode replicates space operations to target space after the client receives the acknowledgment from the source space for the operation.{% wbr %}- The `sync` mode replicates space operations to target space before the client receives the acknowledgment from the source space for the operation. The client getting the acknowledgment for the operation only after all target spaces confirms the arrival of the replicated data.| `async` used with the async-replicated schema. {% wbr %}   `sync` used with the sync-replicated, primary-backup and partitioned-sync2backup cluster schema|
@@ -29,7 +29,7 @@ Prefix the property with `cluster-config.groups.group.repl-policy.`
 
 # Asynchronous Replication Parameters
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | `repl-chunk-size` | Number of packets transmitted together on the network when the replication event is triggered. The maximum value you can assign for this property is `repl-interval-opers`. | 500 |
@@ -47,7 +47,7 @@ Prefix the property with `cluster-config.groups.group.repl-policy.async-replicat
 
 
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | `throttle-when-inactive` | Boolean value. Set to `true` if you want to throttle replicated operations when the channel is in-active (disconnection) | `true` in primary backup `false` in full sync replicated |
@@ -63,7 +63,7 @@ Prefix the property with `cluster-config.groups.group.repl-policy.sync-replicati
 
 # Recovery Parameters
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | `recovery-chunk-size` | Integer value. Defines how many operations are recovered is a single batch | 200 |
@@ -78,7 +78,7 @@ Prefix the property with `cluster-config.groups.group.repl-policy.`
 
 # Redo-log Parameters
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |* `redo-log-capacity` | Specifies the total capacity of replication packets the redo log can hold for a standard replication target.|150000|
 |* `redo-log-memory-capacity` | Specifies the maximum number of replication packets the redo log keeps in memory.|150000|
 |* `redo-log-recovery-capacity` | Specifies the total capacity of replication packets the redo log can hold for a standard replication target while it is undergoing a recovery process.|5000000|
@@ -93,7 +93,7 @@ Prefix the property with `cluster-config.groups.group.repl-policy.`
 
 The following parameters are low level configuration that relates to the swap redo log mechanism:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Space Cluster Property | Description | Default Value|
 |:-----------------------|:------------|:-------------|
 | `flush-buffer-packet-count` | Specifies the number of packets buffer size that the swap redo log is using when flushing packets to the disk. | 500 |
@@ -111,7 +111,7 @@ Prefix the property with `cluster-config.groups.group.repl-policy.swap-redo-log.
 
 # Mirror Service Parameters
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | `url` | used to locate the Mirror Service. In case you change the name of the Mirror Service specified as part of the Mirror PU, you should modify this parameter value to facilitate the correct Mirror service URL. | jini://*/mirror-service_container/mirror-service |
@@ -129,7 +129,7 @@ See the [Controlling the Replication Redo Log](./controlling-the-replication-red
 
 # Durable Notifications Parameters
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | `redo-log-durable-notification-capacity` | Specifies the total capacity of replication packets the redo log can hold for a durable notification replication target | 150000 |
@@ -141,7 +141,7 @@ Prefix the property with `cluster-config.groups.group.repl-policy.`
 
 # Local View Parameters
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | `redo-log-local-view-capacity` | Specifies the total capacity of replication packets the redo log can hold for a local view replication target | 150000 |

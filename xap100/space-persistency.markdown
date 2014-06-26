@@ -44,7 +44,7 @@ The difference between the Synchronous or Asynchronous persistency mode concerns
 {%endinfo%}
 
 {% tip %}
-If you're migrating from a GigaSpaces version prior to {% latestxaprelease %} please see the [Migrating From External Data Source API](./migrating-from-external-data-source-api.html) page.
+If you're migrating from a GigaSpaces version prior to 9.7 please see the [Migrating From External Data Source API](./migrating-from-external-data-source-api.html) page.
 {% endtip %}
 
 # Space Persistency API
@@ -53,8 +53,8 @@ The Space Persistency API contains two abstract classes one should extend in ord
 The ability to customize the space persistency functionality allows GigaSpaces to interact with any external application or data source.
 
 
-{: .table .table-bordered}
-| Client Call | Space Data Source/Synchronization Endpoint Call| Cache Policy Mode|EDS Usage Mode|
+{: .table .table-bordered .table-condensed}
+| Client Call | Space Data Source/{%wbr%}Synchronization Endpoint Call| Cache Policy Mode|EDS Usage Mode|
 |:------------|:-----------------------------------------------|:-----------------|:-------------|
  	|write , change , take , asyncTake , writeMultiple , takeMultiple , clear|onOperationsBatchSynchronization , afterOperationsBatchSynchronization|ALL_IN_CACHE, LRU|read-write|
  	|readById|getById|ALL_IN_CACHE, LRU|read-write,read-only|

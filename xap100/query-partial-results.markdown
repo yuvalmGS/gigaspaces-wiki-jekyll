@@ -1,6 +1,6 @@
 ---
 layout: post100
-title:  Partial Results - Projection
+title:  Projection
 categories: XAP100
 parent: querying-the-space.html
 weight: 800
@@ -25,7 +25,7 @@ In some cases, when querying the Space for `Objects`, only certain properties of
 In some cases, when querying the Space for `Objects`, only certain properties of those `Objects` are required (a.k.a. delta read). The same scenario is also relevant when subscribing for notifications on Space data changes, where only specific properties are of interest to the subscriber. For that purpose, the *Projection API* can be used, where one can declare which properties are of interest. The space will only populate these properties on the returned data. This approach reduces network overhead, garbage memory generation and CPU overhead due to serialization.
 
 
-# Example
+# Examples
 
 Projection supports using a [SQLQuery](./query-sql.html) or [Id Queries](./query-by-id.html). Below is a simple example reading a `Person` Object where only the 'firstName' and 'lastName' properties are returned in the array or results. All other `Person` properties will not be populated:
 
@@ -60,6 +60,9 @@ IdsQuery<Person> idsQuery = new IdsQuery<Person>(Person.class, new Long[]{id1,id
 Person result[] = space.readByIds(idsQuery).getResultsArray();
 {% endhighlight %}
 
+
+
+
 The [SpaceDocument API](./document-api.html) supports projection as well:
 
 {% highlight java %}
@@ -67,6 +70,15 @@ SQLQuery<SpaceDocument> docQuery = new SQLQuery<SpaceDocument>(Person.class.getN
 	QueryResultType.DOCUMENT).setProjections("firstName", "lastName");
 SpaceDocument docresult[] = gigaSpace.readMultiple(docQuery);
 {% endhighlight %}
+
+You can also use projection for nested properties:
+
+{% highlight java %}
+SQLQuery<SpaceDocument> docQuery = new SQLQuery<SpaceDocument>(Person.class.getName() ,"",
+	QueryResultType.DOCUMENT).setProjections("user.address.street", "user.address.zipCode");
+SpaceDocument docresult[] = gigaSpace.readMultiple(docQuery);
+{% endhighlight %}
+
 
 # Supported Operations
 

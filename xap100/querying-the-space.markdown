@@ -40,7 +40,7 @@ Query by matching a user defined class.
 - [Paging support](./query-paging-support.html){%wbr%}
 Reading large number of objects using multiple queries in one call in a continuous manner.
 
-- [Partial results](./query-partial-results.html){%wbr%}
+- [Partial results - Projection](./query-partial-results.html){%wbr%}
 Obtaining partial results when querying the space to improve application performance and reduce memory footprint.
 
 

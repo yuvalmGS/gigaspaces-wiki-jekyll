@@ -14,7 +14,7 @@ module DocUtils
         sectionPath = sectionPath.sub("msr","")
         version = sectionPath.insert(sectionPath.length - 1, ".")
         if isDotNet 
-          "" + version + " C#"
+          "" + version + " .Net"
         elsif isAdmin
           return "" + version + " Administration"
         elsif isSecurity
