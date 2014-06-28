@@ -42,30 +42,24 @@ For example, suppose we have a class called **`MyClass`** with an `Integer` prop
 
 {% highlight java %}
 // Read an entry of type MyClass whose num property is greater than 500:
-MyClass result1 = gigaSpace.read(
-    new SQLQuery<MyClass>(MyClass.class, "num > 500"));
+MyClass result1 = gigaSpace.read(new SQLQuery<MyClass>(MyClass.class, "num > 500"));
 
 // Take an entry of type MyClass whose num property is less than 500:
-MyClass result2 = gigaSpace.take(
-    new SQLQuery<MyClass>(MyClass.class, "num < 500"));
+MyClass result2 = gigaSpace.take(new SQLQuery<MyClass>(MyClass.class, "num < 500"));
 
 MyClass[] results;
 // Read all entries of type MyClass whose num is between 1 and 100:
-results = gigapace.readMultiple(
-    new SQLQuery<MyClass>(MyClass.class, "num >= 1 AND num <= 100"));
+results = gigapace.readMultiple(new SQLQuery<MyClass>(MyClass.class, "num >= 1 AND num <= 100"));
 
 // Read all entries of type MyClass who num is between 1 and 100 using BETWEEN syntax:
-results = gigapace.readMultiple(
-    new SQLQuery<MyClass>(MyClass.class, "num BETWEEN 1 AND 100"));
+results = gigapace.readMultiple(new SQLQuery<MyClass>(MyClass.class, "num BETWEEN 1 AND 100"));
 
 // Read all entries of type MyClass whose num is either 1, 2, or 3:
-results = gigapace.readMultiple(
-    new SQLQuery<MyClass>(MyClass.class, "num IN (1,2,3)"));
+results = gigapace.readMultiple(new SQLQuery<MyClass>(MyClass.class, "num IN (1,2,3)"));
 
 // Read all entries of type MyClass whose num is greater than 1,
 // and order the results by the name property:
-results = gigapace.readMultiple(
-    new SQLQuery<MyClass>(MyClass.class, "num > 1 ORDER BY name"));
+results = gigapace.readMultiple(new SQLQuery<MyClass>(MyClass.class, "num > 1 ORDER BY name"));
 {% endhighlight %}
 
 {% refer %} For an example of `SQLQuery` with `EventSession`, refer to the [Session Based Messaging API](./session-based-messaging-api.html#SQLQuery Template Registration) section.{% endrefer %}
@@ -97,6 +91,7 @@ The following operations support`SQLQuery` only with Simple Queries:
 
 - `AND` / `OR` operators to combine two or more conditions.
 - All basic logical operations to create conditions: `=, <>, <, >, >=, <=, like, NOT like, is null, is NOT null, IN`.
+- [Aggregate](./aggregators.html) functions: COUNT, MAX, MIN, SUM, AVG
 - `BETWEEN`
 - `ORDER BY (ASC | DESC)` for multiple properties. Supported only by readMultiple. `ORDER BY` supports also nested object fields.
 - `GROUP BY` - performs DISTINCT on the properties. Supported only by readMultiple. `GROUP BY` supports also nested object fields.
@@ -113,33 +108,28 @@ In many cases developers prefer to separate the concrete values from the SQL cri
 
 {% highlight java %}
 // Option 1 - Use the fluent setParameter(int index, Object value) method:
-SQLQuery<MyClass> query1 = new SQLQuery<MyClass>(MyClass.class,
-    "num > ? or num < ? and name = ?")
+SQLQuery<MyClass> query1 = new SQLQuery<MyClass>(MyClass.class,"num > ? or num < ? and name = ?")
     .setParameter(1, 2)
     .setParameter(2, 3)
     .setParameter(3, "smith");
 
 // Option 2 - Use the setParameters(Object... parameters) method:
-SQLQuery<MyClass> query2 = new SQLQuery<MyClass>(MyClass.class,
-    "num > ? or num < ? and name = ?");
+SQLQuery<MyClass> query2 = new SQLQuery<MyClass>(MyClass.class,"num > ? or num < ? and name = ?");
 query.setParameters(2, 3, "smith");
 
 // Option 3: Use the constructor to pass the parameters:
-SQLQuery<MyClass> query3 = new SQLQuery<MyClass>(MyClass.class,
-    "num > ? or num < ? and name = ?", 2, 3, "smith");
+SQLQuery<MyClass> query3 = new SQLQuery<MyClass>(MyClass.class,"num > ? or num < ? and name = ?", 2, 3, "smith");
 {% endhighlight %}
 
 {% info %} The number of **'?'** symbols in the expression string must match the number of parameters set on the query. For example, when using `IN` condition:
 {%endinfo%}
 
 {% highlight java %}
-SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,
-    "name = ? AND num IN (?,?,?)");
+SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,"name = ? AND num IN (?,?,?)");
 query.setParameters("A", 1, 2, 3);
 
 // Is equivalent to:
-SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,
-    "name = 'A' AND num IN (1,2,3)");
+SQLQuery<MyClass> query = new SQLQuery<MyClass>(MyClass.class,"name = 'A' AND num IN (1,2,3)");
 {% endhighlight %}
 
 {% warning %}
@@ -320,10 +310,13 @@ You can specify that the `SQLQuery` should contain only partial results which me
 
 {%panel title=SQLQuery **does not** support the following: %}
 
+{%comment%}
 - Aggregate functions: COUNT, MAX, MIN, SUM, AVG are only supported in sub queries (These are fully supported with the [JDBC API](./jdbc-driver.html)).
+{%endcomment%}
+
 - Multiple tables select - This is supported with the [JDBC API](./jdbc-driver.html).
 - `DISTINCT` - This is supported with the [JDBC API](./jdbc-driver.html).
-- The SQL statements: HAVING, VIEW, TRIGGERS, EXISTS, NOT, CREATE USER, GRANT, REVOKE, SET PASSWORD, CONNECT USER, ON.
+- The SQL statements: VIEW, TRIGGERS, EXISTS, NOT, CREATE USER, GRANT, REVOKE, SET PASSWORD, CONNECT USER, ON.
 - Constraints: NOT NULL, IDENTITY, UNIQUE, PRIMARY KEY, Foreign Key/REFERENCES, NO ACTION, CASCADE, SET NULL, SET DEFAULT, CHECK.
 - Set operations: Union, Minus, Union All.
 - Advanced Aggregate Functions: STDEV, STDEVP, VAR, VARP, FIRST, LAST.

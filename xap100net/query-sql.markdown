@@ -44,6 +44,7 @@ This time instead of specifying the values directly in the expression we've used
 
 - `AND` / `OR` operators to combine two or more conditions.
 - All basic logical operations to create conditions: `=, <>, <,>, >=, <=, like, NOT like, is null, is NOT null, IN`.
+- [Aggregate](./aggregators.html) functions: COUNT, MAX, MIN, SUM, AVG
 - `BETWEEN` (starting 8.0.1)
 - `ORDER BY (ASC | DESC)` for multiple PONO properties. Supported only by readMultiple. `ORDER BY` supports also nested object fields.
 - `GROUP BY` - performs DISTINCT on the PONO properties. Supported only by readMultiple. `GROUP BY` supports also nested object fields.
@@ -133,10 +134,9 @@ The following features support only simple SQL queries
 
 
 {%vbar title=SqlQuery **does not** support the following:%}
-- Aggregate functions: COUNT, MAX, MIN, SUM, AVG.
 - Multiple tables select.
 - `DISTINCT`
-- The SQL statements: HAVING, VIEW, TRIGGERS, EXISTS, BETWEEN, NOT, CREATE USER, GRANT, REVOKE, SET PASSWORD, CONNECT USER, ON.
+- The SQL statements: VIEW, TRIGGERS, EXISTS, BETWEEN, NOT, CREATE USER, GRANT, REVOKE, SET PASSWORD, CONNECT USER, ON.
 - Constraints: NOT NULL, IDENTITY, UNIQUE, PRIMARY KEY, Foreign Key/REFERENCES, NO ACTION, CASCADE, SET NULL, SET DEFAULT, CHECK.
 - Set operations: Union, Minus, Union All.
 - Advanced Aggregate Functions: STDEV, STDEVP, VAR, VARP, FIRST, LAST.
