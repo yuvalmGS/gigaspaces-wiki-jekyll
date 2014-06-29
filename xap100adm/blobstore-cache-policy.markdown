@@ -48,7 +48,7 @@ All XAP APIs are supported with the BlobStore configuration. This includes the S
 
 ## How It Works?
 
-XAP is using [SanDisk ZetaScale](http://www.sandisk.com/) library, which uses direct flash access. It circumvents OS level storage interfaces when writing an object to the space, its indexed data maintained on Heap where the Storage interface implementing using the ZetaScale libraries to interact with the underlying flash drive.
+XAP is using [SanDisk ZetaScale](http://www.sandisk.com/enterprise/zetascale) library, which uses direct flash access. It circumvents OS level storage interfaces when writing an object to the space, its indexed data maintained on Heap where the Storage interface implementing using the ZetaScale libraries to interact with the underlying flash drive.
 
 ![blobstore2.jpg](/attachment_files/blobstore2.jpg)
 
@@ -64,7 +64,6 @@ The BlobStore settings includes the following options:
 | devices | Flash devices. Comma separated available devices. The list used as a search path from left to right. The first one exists will be used. |  | required |
 | volume-dir | Directory path contains a symbolic link to the the SSD device. | | required |
 | blob-store-capacity-GB | Flash device allocation size in Gigabytes. | 200 | optional |
-| blob-store-capacity-MB | Flash device allocation size in Megabytes. | 204800 | optional |
 | blob-store-cache-size-MB | ZetaScale internal LRU based off-heap in-process cache size in Megabytes. Keeps data in serialized format. | 100 | optional |
 | enable-admin | ZetaScale admin provides a simple command line interface (CLI) through a TCP port. ZetaScale CLI uses port 51350 by default. This port can be changed through the configuration parameter FDF_ADMIN_PORT. | false |
 | statistics-interval | Applications can optionally enable periodic dumping of statistics to a specified file (XAP_HOME/logs). This is disabled by default. | | optional |
@@ -96,6 +95,9 @@ $ sudo usermod -G disk <username>
 {% endhighlight %}
 
 and relogin.
+
+The number of of flash devices/partitions should be aligned with the space instances number that you want to deploy on a machine.
+For creating partitions you can use fdisk like explained [here](http://www.howtogeek.com/106873/how-to-use-fdisk-to-manage-partitions-on-linux/).
 
 - Make sure your user has read/write permissions to flash devices
 - Make sure your user has read/write permissions to /tmp
