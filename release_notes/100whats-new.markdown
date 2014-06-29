@@ -14,14 +14,11 @@ This page lists the main new features in XAP 10.0 (Java and .Net editions). It's
 
 
 
-# Off Heap Storage Abstraction
-
-
 # Native Integration with Solid State Drives
 
 # Global HTTP Session Sharing
 
-# Query Aggregation
+# Query Aggregations
 
 XAP provides the common functionality to perform aggregations across the space. There is no need to retrieve the entire data set from the space to the client side , iterate the result set and perform the aggregation. This would be an expensive activity as it might return large amount of data into the client application. The Aggregators allow you to perform the entire aggregation activity at the space side avoiding any data retrieval back to the client side. Only the result of each aggregation activity performed with each partition is returned back to the client side where all the results are reduced and returned to the client application.
 
@@ -42,6 +39,8 @@ XAP provides the common functionality to perform aggregations across the space. 
 {%endsection%}
 
 # Optimized Initial Data Load
+
+# Elastic Management of XAP Using Cloudify 
 
 # Custom Change Operation
 
