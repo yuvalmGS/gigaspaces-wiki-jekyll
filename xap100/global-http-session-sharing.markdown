@@ -10,7 +10,7 @@ weight: 600
 
 
 {% note %}
-XAP 10 Global HTTP Session Sharing includes the following new features:
+XAP 10.0 Global HTTP Session Sharing includes the following new features:
 
 1. Delta update support – changes identified at the session attribute level.
 2. Better serialization (Kryo instead of xstream)
@@ -26,7 +26,9 @@ This feature requires a separate license in addition to the XAP commercial licen
 {% endinfo %}
 
 
+
 # Overview
+
 
 It's becoming increasingly important for organizations to share HTTP session data across multiple data centers, multiple web server instances or different types of web servers. Here are few scenarios where HTTP session sharing is required:
 
@@ -35,20 +37,23 @@ It's becoming increasingly important for organizations to share HTTP session dat
 - **Reduce Web application memory footprint** - The web application storing all session within the web application process heap, consuming large amount of memory. Having the session stored within a remote process will reduce web application utilization avoiding garbage collocation and long pauses.
 - **Multiple Data-Center deployment** - You may need to deploy your application across multiple data centers for high-availability, scalability or flexibility, so session data will need to be replicated.
 
+[Global Http Session Sharing](http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2)
 
+{%comment%}
 [Global Http Session Sharing](http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2)
 
 
 <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="500" height="426" id="onlinePlayer"><param name="allowScriptAccess" value="always" /><param name="movie" value="http://www.slideboom.com/player/player.swf?id_resource=631622" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /><param name="flashVars" value="mode=2&idResource=1837&siteUrl=http://www.slideboom.com" /><param name="allowFullScreen" name="true" /><embed src="http://www.slideboom.com/player/player.swf?id_resource=631622" quality="high" bgcolor="#ffffff" width="500" height="426" name="onlinePlayer" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" allowFullScreen="true" flashVars="mode=0&idResource=631622&siteUrl=http://www.slideboom.com" /></object>
+{%endcomment%}
 
 
-The following image depicts a common use case where there are multiple data centers connected across the WAN, and each is running a different type of web server.
+The following diagram depicts a common use case where there are multiple data centers connected across the WAN, and each is running a different type of web server.
 
 ![httpSessionSharing1.jpg](/attachment_files/httpSessionSharing1.jpg)
 
-The GigaSpaces Global HTTP Session Sharing architecture allows users to deploy their web application across these multiple data centers where the session is shared in real-time and in a transparent manner. The HTTP session is also backed by a data grid cluster within each data center for fault tolerance and high-availability.
+The XAP Global HTTP Session Sharing architecture allows users to deploy their web application across these multiple data centers where the session is shared in real-time and in a transparent manner. The HTTP session is also backed by a data grid cluster within each data center for fault tolerance and high-availability.
 
-With this solution, there is no need to deploy a database to store the session, so you avoid the use of expensive database replication across multiple sites. Setting up GigaSpaces for session sharing between each site is simple and does not involve any code changes to the application.
+With this solution, there is no need to deploy a database to store the session, so you avoid the use of expensive database replication across multiple sites. Setting up XAP for session sharing between each site is simple and does not involve any code changes to the application.
 
 XAPs Global HTTP Session Management is designed to deliver maximum performance for the application with ZERO application code changes.
 
@@ -61,9 +66,9 @@ XAPs Global HTTP Session Management is designed to deliver maximum performance f
 
 - **Application elasticity** - Support **session replication** across different App/Web applications located within the same or different data-centers/clouds allowing the application to scale dynamically without any downtime.
 
-- **Unlimited number of sessions and concurrent users** support - Sub-millisecond session data access by using GigaSpaces In-Memory-Data-Grid.
+- **Unlimited number of sessions and concurrent users** support - Sub-millisecond session data access by using XAP In-Memory-Data-Grid.
 
-- **Session replication over the WAN** support - Utilizing GigaSpaces Multi-Site Replication over the WAN technology.
+- **Session replication over the WAN** support - Utilizing XAP Multi-Site Replication over the WAN technology.
 
 - HTTP Session **data access scalability** - Session data can utilize any of the supported In-Memory-Data-Grid topologies ; replicated , partitioned , with and without local cache.
 
@@ -84,9 +89,9 @@ XAPs Global HTTP Session Management is designed to deliver maximum performance f
 
 {%endvbar%}
 
-# Session Sharing with your Application
+# Application Session Sharing
 
-Configure your web application to use the GigaSpaces session manager, deploy the GigaSpaces in-memory data grid (IMDG) and deploy your web application. That's it!
+Configure your web application to use the XAP session manager, deploy the XAP in-memory data grid (IMDG) and deploy your web application. That's it!
 
 There is no need to change the web application or plug in any custom code in order to enable session sharing between servers running in remote data centers. In addition, you don't have to add the HTTP session classes to the IMDG classpath.
 
@@ -94,7 +99,7 @@ The below diagram shows a more detailed view of the IMDG deployment. In this cas
 
  ![httpSessionSharing2.jpg](/attachment_files/httpSessionSharing2.jpg)
 
-The end-to-end path between the 2 data center nodes includes the servlet and Shiro filters, and the IMDG with local cache and WAN Gateway.
+The end-to-end path between the two data center nodes includes the servlet and Shiro filters, and the IMDG with local cache and WAN Gateway.
 
  ![httpSessionSharing3.jpg](/attachment_files/httpSessionSharing3.jpg)
 
@@ -102,7 +107,7 @@ The end-to-end path between the 2 data center nodes includes the servlet and Shi
 
 ### Load-Balancing Scenarios
 
-The GigaSpaces Global HTTP Session Sharing support two Load-Balancing scenarios:
+The XAP Global HTTP Session Sharing support two Load-Balancing scenarios:
 
 ##### Session Sharing Scenario
 
@@ -128,7 +133,11 @@ Have `cacheManager.cacheSessionLocally = false` when you would like the same web
 
 {% endcomment %}
 
-## The Web Application Configuration
+
+
+# Configuration
+
+### The Web Application Configuration
 
 The web application requires a couple of configuration changes to the `web.xml` file in order to enabled XAP Session sharing:
 
@@ -158,9 +167,11 @@ The web application requires a couple of configuration changes to the `web.xml` 
 
 {% note %}The **GigaSpacesHttpSessionFilter** must be the first filter defined.{% endnote %}
 
-### The shiro.ini Properties 
+### Shiro configuration
 
-The shiro.ini support the following options:
+{%accordion id=acc0%}
+
+{% accord title=shiro.ini settings ... | parent=acc0%}
 
 {: .table   .table-condensed   .table-bordered}
 |Section|Property|Description|Required|Optional Values|Default Values|
@@ -171,31 +182,34 @@ The shiro.ini support the following options:
 |main|connector.password| Space password|No|`<space password>`|
 |main|connector.sessionLease|Lease timeout in milliseconds|No|Any positive integer. Millisecond time unit| 1800000 |
 |main|connector.readTimeout|Read timeout in milliseconds|No|Any positive interger. Millisecond time unit| 300000 |
-|main|sessionManager|Gigaspaces Session Manager Implementation|Yes|com.gigaspaces.httpsession.GigaSpacesWebSessionManager|
+|main|sessionManager|XAP Session Manager Implementation|Yes|com.gigaspaces.httpsession.GigaSpacesWebSessionManager|
 |main|sessionManager.sessionDAO||Yes|$sessionDAO|
 |main|sessionDAO|Provides a transparent caching layer between the components that use it and the underlying EIS (Enterprise Information System) session backing store |Yes|org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO|
-|main|cacheManager|Gigaspaces extension of org.apache.shiro.cache.CacheManager Provides and maintains the lifecycles of `com.gigaspaces.httpsession.sessions.GigaSpacesCache` instances|Yes|com.gigaspaces.httpsession.sessions.GigaSpacesCacheManager|
+|main|cacheManager|XAP extension of org.apache.shiro.cache.CacheManager Provides and maintains the lifecycles of `com.gigaspaces.httpsession.sessions.GigaSpacesCache` instances|Yes|com.gigaspaces.httpsession.sessions.GigaSpacesCacheManager|
 |main|cacheManager.compressor|Set the compressor instance to be used|No|$compressor|`com.gigaspaces.httpsession.serialize.NonCompressCompressor`
 |main|cacheManager.serializer|instance of the serializer implementation|Yes|$serializer|
 |main|cacheManager.policy|instance of session policy implementation|Yes|$policy|
 |main|cacheManager.connector|instance of space connector implementation|Yes|$connector|
-|main|compressor|Provides compress fuctionallity|No| Provides your own `com.gigaspaces.httpsession.serialize.Compressor` implementation or use one of the out of the box option:<br> 1.`com.gigaspaces.httpsession.serialize.CompressorImpl`<br>2.`com.gigaspaces.httpsession.serialize.NonCompressCompressor`|
-|main|storeMode|Provide functionallity of how to save changes to the space. there is tow sessions store mode full and delta.|Yes| use on of two options:<br> 1.`com.gigaspaces.httpsession.sessions.FullStoreMode` 2.`com.gigaspaces.httpsession.sessions.DeltaStoreMode`|
+|main|compressor|Provides compress functionality|No| Provides your own `com.gigaspaces.httpsession.serialize.Compressor` implementation or use one of the out of the box option:<br> 1.`com.gigaspaces.httpsession.serialize.CompressorImpl`<br>2.`com.gigaspaces.httpsession.serialize.NonCompressCompressor`|
+|main|storeMode|Provide functionality of how to save changes to the space. there is tow sessions store mode full and delta.|Yes| use on of two options:<br> 1.`com.gigaspaces.httpsession.sessions.FullStoreMode` 2.`com.gigaspaces.httpsession.sessions.DeltaStoreMode`|
 |main|storeMode.connector| Space connector to be used|Yes|$connector|
-|main|storeMode.listener|Provides changes notification functionallity. it must extends `com.gigaspaces.httpsession.policies.GigaspacesNotifyListener`|No| `listener`|
+|main|storeMode.listener|Provides changes notification functionality. it must extends `com.gigaspaces.httpsession.policies.GigaspacesNotifyListener`|No| `listener`|
 |main|storeMode.changeStrategy|define strategy of comparison and conflict detection response.|Yes|DeltaStoreMode:   1.`com.gigaspaces.httpsession.policies.LWWChangeStrategy` 2.`com.gigaspaces.httpsession.policies.FailFastChangeStrategy` 3.`com.gigaspaces.httpsession.policies.PartialChangeStrategy`|FullStoreMode: `com.gigaspaces.httpsession.policies.FullModeStrategy`    DeltaStoreMode: `com.gigaspaces.httpsession.policies.LWWChangeStrategy`
 |main|listener|Fully qualified class name implementing `com.gigaspaces.httpsession.policies.GigaspacesNotifyListener`|No|`com.gigaspaces.httpsession.policies.TraceListener`|
-|main|serializer|Provides serialization functionallity|Yes| use you own implementation of `com.gigaspaces.httpsession.serialize.Serializer` or one of the out of the box options: 	1.`com.gigaspaces.httpsession.serialize.KryoSerializerImpl` (recomended)	2.`com.gigaspaces.httpsession.serialize.XStreamSerializerImpl`|
+|main|serializer|Provides serialization functionality|Yes| use you own implementation of `com.gigaspaces.httpsession.serialize.Serializer` or one of the out of the box options: 	1.`com.gigaspaces.httpsession.serialize.KryoSerializerImpl` (recomended)	2.`com.gigaspaces.httpsession.serialize.XStreamSerializerImpl`|
 |main|serializer.logLevel|internal kryo logging level|No| 1. `NONE = 6` disables all logging.<br> 2. `ERROR = 5` is for critical errors. The application may no longer work correctly.<br> 3. `WARN = 4` is for important warnings. The application will continue to work correctly.<br> 4.`INFO = 3` is for informative messages. Typically used for deployment.<br> 5. `DEBUG = 2` is for debug messages. This level is useful during development.<br> 6. `TRACE = 1` is for trace messages. A lot of information is logged, so this level is usually only needed when debugging a problem. | `LEVEL_INFO = 3`
-|main|serializer.classes|comma seperate list full qualified class names to be loaded at the initialization of the Kryo Serializer|No||
-|main|policy|Provides functionalitty of session policy to apply e.g. with and without authentication|Yes| Options:<br>1.`com.gigaspaces.httpsession.policies.SessionPolicyWithLogin` for sharing session cross multiple aplplications<br>2.`com.gigaspaces.httpsession.policies.SessionPolicyWithoutLogin` for single application session store|
+|main|serializer.classes|comma separate list full qualified class names to be loaded at the initialization of the Kryo Serializer|No||
+|main|policy|Provides functionality of session policy to apply e.g. with and without authentication|Yes| Options:<br>1.`com.gigaspaces.httpsession.policies.SessionPolicyWithLogin` for sharing session cross multiple aplplications<br>2.`com.gigaspaces.httpsession.policies.SessionPolicyWithoutLogin` for single application session store|
 |main|policy.connector = $connector|instance of space connector implementation|Yes||
 |main|policy.storeMode = $storeMode|instance of space storeMode implementation|Yes||
 
 
 The `shiro.ini` file should to be placed within the `WEB-INF` folder. See below examples for the `shiro.ini` file:
 
-# Single Application Session Sharing Configuration Example 
+{%endaccord%}
+
+
+{%accord title=Single Application Session Sharing Configuration Example... | parent=acc0%}
 
 {% highlight console %}
 
@@ -250,10 +264,10 @@ The `shiro.ini` file should to be placed within the `WEB-INF` folder. See below 
 	securityManager.cacheManager = $cacheManager
 
 {% endhighlight %}
+{%endaccord%}
 
-
-# Multiple Applications Session Sharing Configuration Example 
-{% note %}Note that this example uses the basic authentication configuration but, shiro have a various authenticators types see [realm modules](http://shiro.apache.org/static/1.2.1/apidocs/org/apache/shiro/authc/class-use/AuthenticationException.html) {% endnote %}
+{%accord title=Multiple Applications Session Sharing Configuration Example...  | parent=acc0%}
+{% note %}Note that this example uses the basic authentication configuration but, Shiro has various authenticator types see [realm modules](http://shiro.apache.org/static/1.2.1/apidocs/org/apache/shiro/authc/class-use/AuthenticationException.html) {% endnote %}
 {% highlight console %}
 
 	[main]
@@ -333,9 +347,12 @@ The `shiro.ini` file should to be placed within the `WEB-INF` folder. See below 
 	##/account/** = authc
 	/remoting/** = authc, roles[b2bClient], perms["remote:invoke:lan,wan"
 {% endhighlight %}
+{%endaccord%}
+{%endaccordion%}
 
+<br>
 
-# Web Application Libraries
+### Web Application Libraries
 
 The web application should include the following libraries within its `\WEB-INF\lib` folder:
  
@@ -343,47 +360,48 @@ The web application should include the following libraries within its `\WEB-INF\
 * gs-runtime.jar
 
 {% note %}
-The `gs-runtime.jar` should be replaced with the relevant GigaSpaces `gs-runtime.jar` matching your environment. 
+The `gs-runtime.jar` should be replaced with the relevant XAP `gs-runtime.jar` matching your environment.
 {% endnote %}
 
-# Deploying a Data Grid
+# Deployment
 
-GigaSpaces IMDG should be deployed using your favorite topology (replicated and/or partitioned, static or elastic). You may also include a reference to a WAN Gateway.
+The XAP IMDG should be deployed using one of the [topologies.](/product_overview/space-topologies.html) You may also include a reference to a WAN Gateway.
 
-To deploy the IMDG called `sessionSpace` start the GigaSpaces agent using:
-{% highlight console %}
-gs-agent
+{% highlight bash %}
+# To deploy the IMDG called `sessionSpace` start the XAP agent using:
+<XAP-HOME>/bin/gs-agent
+
+# and run the following command to deploy the session Space:
+<XAP-HOME>/bin/gs deploy-space sessionSpace
+
 {% endhighlight %}
 
-and run the following to deploy the IMDG:
-{% highlight console %}
-gs deploy-space sessionSpace
-{% endhighlight %}
 
 {% tip %}See the [deploy-space]({%latestadmurl%}/deploy-command-line-interface.html) command for details.{% endtip %}
 
-# Deploying the WAN Gateway
+### Deploying the WAN Gateway
 
 The [WAN Gateway]({%latestjavaurl%}/multi-site-replication-over-the-wan.html) should be deployed using your preferred replication topography, such as multi-master or master-slave. See the [WAN Replication Gateway](/sbp/wan-replication-gateway.html) best practice for an example of how a multi-master Gateway architecture can be deployed.
 
-# Secured GigaSpaces cluster Configuration
+### Securing the XAP IMDG
 
-When using a [Secure GigaSpaces cluster]({%latestjavaurl%}/securing-your-data.html) you can pass security credentials using following parameters in `shiro.ini` file,
+When using a [Secure XAP cluster]({%latestjavaurl%}/securing-your-data.html) you can pass security credentials using following parameters in the `shiro.ini` file:
 
 {%highlight console%}
-# When using secured GigaSpace cluster, pass the credentials here
+# When using secured XAP cluster, pass the credentials here
 cacheManager.username = gs
 cacheManager.password = gs
 {%endhighlight%}
 
-# Running Example
 
-## Single-Site Deployment
+# Example
 
-The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblogic, Jetty, GlassFish....):
+### Single-Site Deployment
+
+The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblogic, Jetty, GlassFish)
 
 1. Download the demo web application [demo app](/download_files/global-http-session-sharing.war).
-2. Deploy a space named **sessionSpace**. You many have a single instance space or deploy a clustered space using the command line or GS-UI/Web-UI.
+2. Deploy a space named **sessionSpace**. You many have a single instance Space or deploy a clustered Space using the command line or GS-UI/Web-UI.
 3. Deploy the `demo-app.war` into Tomcat (or any other app server).
 4. Start your browser and access the web application via the following URL: http://localhost:8080/demo-app
 
@@ -391,27 +409,43 @@ The example can be deployed into any web server (Tomcat, JBoss, Websphere, Weblo
 The URL above assumes the Web Server configured to use port 8080.
 {% endnote %}
 
+{%panel%}
+
 ![httpSessionSharing4.jpg](/attachment_files/httpSessionSharing4.jpg)
 
-1. Set some attributes woth their name and value and click the **Update Session** button.
+1. Set some attributes with their name and value and click the **Update Session** button.
 2. View the session updated within the space via the GS-UI or Web-UI. 
 3. Restart your web application and refresh the page. The session will be reloaded from the data grid.
 
-## Multi-Web Servers Deployment
+{%endpanel%}
+
+
+### Multi-Web Servers Deployment
 
 You may share the HTTP session between different web servers. To test this on your local environment you can install multiple web servers, deploy the web application and have your browser access the same application via the same browser. See the below example:
 
+{%panel%}
+{%section%}
+{%column width=50% %}
 ![httpSessionSharing8.jpg](/attachment_files/httpSessionSharing8.jpg)
-
+{%endcolumn%}
+{%column width=50% %}
 ![httpSessionSharing9.jpg](/attachment_files/httpSessionSharing9.jpg)
+{%endcolumn%}
+{%endsection%}
+{%endpanel%}
 
-Hit the Refresh button when switching between the tabs. The session data will be refreshed with the relevant app server reading it from the space.
+
+Hit the Refresh button when switching between the tabs. The session data will be refreshed with the relevant app server reading it from the Space.
 
 {% note %}
 When deploying the web application WAR file please make sure the web app context will be identical.
 {% endnote %}
 
-### Apache Load-Balancer Configuration
+
+# Apache Load-Balancer
+
+### Configuration
 
 Another option would be to use a load-balancer such as the [apache httpd](http://httpd.apache.org) and configure it to load-balance the web requests between the different web servers. Here is a simple setup:
 
@@ -495,7 +529,7 @@ You can shutdown Websphere or Tomcat and later restart these. Your web applicati
 
 <br/>
 
-### Multi-Site Deployment
+# Multi-Site Deployment
 
 When deploying the [multi-site example](/sbp/wan-replication-gateway.html) you should change the `shiro.ini` for each site to match the local site Space URL. For example, to connect to the DE space you should have the web application use a `shiro.ini` with the following:
 
@@ -509,7 +543,7 @@ To connect to the US space you should have the web application use a `shiro.ini`
 connector.url = jini://*/*/wanSpaceUS?groups=US
 {%endhighlight%}
 
-### Library dependencies
+# Library dependencies
 
 Developers should include the following dependencies in pom.xml file.
 
