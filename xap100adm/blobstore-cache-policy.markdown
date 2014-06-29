@@ -2,7 +2,7 @@
 layout: post100
 title:  Flash drive IMDG Storage - MemoryXtend for SSD
 categories: XAP100ADM
-parent: memory-management-overview.htmlZetaScale internal cache size in Megabytes
+parent: memory-management-overview.html
 weight: 400
 ---
 
