@@ -433,10 +433,12 @@ You may share the HTTP session between different web servers. To test this on yo
 ![httpSessionSharing9.jpg](/attachment_files/httpSessionSharing9.jpg)
 {%endcolumn%}
 {%endsection%}
-{%endpanel%}
+
 
 
 Hit the Refresh button when switching between the tabs. The session data will be refreshed with the relevant app server reading it from the Space.
+
+{%endpanel%}
 
 {% note %}
 When deploying the web application WAR file please make sure the web app context will be identical.
