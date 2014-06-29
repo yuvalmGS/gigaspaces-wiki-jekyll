@@ -2,7 +2,7 @@
 layout: post100
 title:  Flash drive IMDG Storage - MemoryXtend for SSD
 categories: XAP100ADM
-parent: memory-management-overview.html
+parent: memory-management-overview.htmlZetaScale internal cache size in Megabytes
 weight: 400
 ---
 
@@ -65,7 +65,7 @@ The BlobStore settings includes the following options:
 | volume-dir | Directory path contains a symbolic link to the the SSD device. | | required |
 | blob-store-capacity-GB | Flash device allocation size in Gigabytes. | 200 | optional |
 | blob-store-capacity-MB | Flash device allocation size in Megabytes. | 204800 | optional |
-| blob-store-cache-size-MB | ZetaScale internal cache size in Megabytes. | 100 | optional |
+| blob-store-cache-size-MB | ZetaScale internal LRU based off-heap in-process cache size in Megabytes. Keeps data in serialized format. | 100 | optional |
 | enable-admin | ZetaScale admin provides a simple command line interface (CLI) through a TCP port. ZetaScale CLI uses port 51350 by default. This port can be changed through the configuration parameter FDF_ADMIN_PORT. | false |
 | statistics-interval | Applications can optionally enable periodic dumping of statistics to a specified file (XAP_HOME/logs). This is disabled by default. | | optional |
 | durability-level | `SW_CRASH_SAFE` - Guarantees no data loss in the event of software crashes. But some data might be lost in the event of hardware failure.{%wbr%}`HW_CRASH_SAFE`- Guarantees no data loss if the hardware crashes.Since there are performance implication it is recommended to work with NVRAM device and configure log-flash-dir to a folder on this device. | SW_CRASH_SAFE | optional |
@@ -77,7 +77,7 @@ The IMDG BlobStore settings includes the following options:{%wbr%}
 | Property | Description | Default | Use |
 |:---------|:------------|:--------|:--------|
 | blob-store-handler | BlobStore implementation |  | required |
-| cache-entries-percentage | Cache percentage of the JVM max memory(-Xmx). In case of missing `-Xmx` configuration the cache size will `10000` objects. This is an LRU based data cache which store the entire IMDG object.| 20% | optional |
+| cache-entries-percentage | On-Heap cache stores objects in their native format. This cache size determined based on the percentage of the GSC JVM max memory(-Xmx). If `-Xmx` is not speficied the cache size default to `10000` objects. This is an LRU based data cache.| 20% | optional |
 | avg-object-size-KB |  Average object size. | 5KB | optional |
 | recover-from-blob-store |  Whether to recover from blob store or not |  | required |
 
