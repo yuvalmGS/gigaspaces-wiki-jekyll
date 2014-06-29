@@ -36,15 +36,15 @@ XAP comes with several built-in Aggregators you may use. The aggregation process
 {: .table .table-bordered}
 | Name | Description |
 |:-----|:------------|
-|Min|Returns the minimum value for a set of data grid entries for a given field (path) based on a given query.|
-|Max|Returns the maximum value for a set of data grid entries for a given field (path) based on a given query.|
-|Count|Returns the count (matching entries) value for a set of data grid entries based on a given query.|
-|Average|Returns the average value for a given set of data grid entries for a given field (path) based on a given query.|
+|Min| Returns the minimum value for a set of data grid entries for a given field (path) based on a given query.|
+|Max| Returns the maximum value for a set of data grid entries for a given field (path) based on a given query.|
+|Count| Returns the count (matching entries) value for a set of data grid entries based on a given query.|
+|Average| Returns the average value for a given set of data grid entries for a given field (path) based on a given query.|
 |Sum|Returns the sum value for a set of data grid entries for a given field (path) based on a given query.|
 |GroupBy| Returns a key/value map of generated result set for multiple aggregations based on a given query and a given field(s)/paths(s). Perform similar aggregation as the SQL GROUP BY Statement|
-|Having| | Used to perform additional filtering on the aggregation result set. Perform similar aggregation as the SQL `HAVING` Clause|
-|maxEntry|Returns the Entry (space object) with the maximum value for a set of data grid entries for a given field (path) based on a given query.|
-|minEntry|Returns the Entry (space object) with the minimum value for a set of data grid entries for a given field (path) based on a given query.|
+|Having|Used to perform additional filtering on the aggregation result set. Perform similar aggregation as the SQL `HAVING` Clause|
+|maxEntry| Returns the Entry (space object) with the maximum value for a set of data grid entries for a given field (path) based on a given query.|
+|minEntry| Returns the Entry (space object) with the minimum value for a set of data grid entries for a given field (path) based on a given query.|
 |Custom| An extention to the `com.gigaspaces.query.aggregators.SpaceEntriesAggregator'. Return the aggregation for a user defined logic on a given field (path) and a given entries set based on a query.|
 
 
