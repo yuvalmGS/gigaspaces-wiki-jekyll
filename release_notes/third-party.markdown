@@ -15,7 +15,7 @@ weight: 300
 
 {% tabcontent Core %}
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Product | Product Page | Version | License | License Page | Required | Component |
 |:--------|:-------------|:--------|:--------|:-------------|:---------|:----------|
 | HyperSonic SQL | [http://www.hsqldb.org](http://www.hsqldb.org/) | 1.8.0 | Hypersonic SQL | [http://www.hsqldb.org/web/hsqlLicense.html](http://www.hsqldb.org/web/hsqlLicense.html) | No | Persistency |

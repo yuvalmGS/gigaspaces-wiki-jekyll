@@ -15,7 +15,7 @@ weight: 200
 Below is a list of new features and improvements in GigaSpaces 10.0.X.
 
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Key | Summary | Fixed in Version | SalesForce ID | Documentation Link | Platform/s
 |:--|:------|:------------|:------------|:-----------------|:----------|
 | GS-11446 | End of life IRemoteJSpaceAdmin.start/stop/restart() operations | 10.0.0 | 8407 | | All |

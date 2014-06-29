@@ -11,7 +11,7 @@ Below is a list of issues that have been fixed in GigaSpaces 9.7.X.
 
 
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Key | Summary | Fixed in Version | SalesForce ID | Platform/s |
 |:----|:--------|:----------------|:---------------|:------------------|
 | GS-11069 | Add the ability to set OpenSpacesMuleMessageReceiver max batch size on os-queue:connector | 9.5.2 patch3, 9.6.2, 9.7.0 | 7943 | Java |

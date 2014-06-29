@@ -2,26 +2,26 @@
 layout: post
 title:  Backward compatibility
 categories:  RELEASE_NOTES
-parent: xap97.html
+parent: xap100.html
 weight: 600
 ---
 
-
+{%comment%}
 
 ## Overview
 Backward Compatibility in GigaSpaces
-XAP 9.7 is a minor release which includes new features and improvements, including the Change API, Custom Eviction Policy and more.
+XAP 10.0 is a major release which includes [new features and improvements.](./xap100whats-new.html)
 
 We try to maintain backward compatibility wherever possible. However, in some cases, no backward compatibility is provided.
 
 {%note%}
-As a best practice, when upgrading to GigaSpaces 9.7, unzip the latest version of GigaSpaces 9.7 and port the necessary changes from your pre-9.7 environment into your new 9.7 environment. It is recommended to use the GigaSpaces 9.7 distribution as-is. Please refer to the  Upgrade Guide for more details.
+As a best practice, when upgrading to XAP 10.0, unzip the latest version of XAP 10.0 and port the necessary changes from your pre-10.0 environment into your new 10.0 environment. It is recommended to use the XAP 10.0 distribution as-is. Please refer to the  Upgrade Guide for more details.
 {%endnote%}
 
 {%note title=The following elements affect backward compatibility:%}
 
-- GigaSpaces API and Configuration
-- GigaSpaces XAP binary compatibility (including GigaSpaces management tools)
+- XAP API and Configuration
+- XAP XAP binary compatibility (including XAP management tools)
 - Client-Server
 - Server-Server
 {%endnote%}
@@ -32,7 +32,7 @@ As a best practice, when upgrading to GigaSpaces 9.7, unzip the latest version o
 - Disclaimer - A patch or minor release might demand a compatibility break in extreme cases. If it is required, this will be made very clear in the the release notes.
 
 
-The below table describes backwards compatibility support in XAP 9.7:
+The below table describes backwards compatibility support in XAP 10.0:
 
 ## OpenSpaces
 
@@ -45,9 +45,9 @@ The below table describes backwards compatibility support in XAP 9.7:
 
 * The following is supported:
 
-- Applications built using 8.0.x or 9.0.x run without any code changes on a clean 9.7 installation.
-- Mixing clients and Space servers from different XAP Major Releases:Clients running on 8.0 or 9.0 can run against 9.7 servers. 8.0, 9.0 servers cannot be part of the same cluster with 9.7 servers.
+- Applications built using 8.0.x or 9.0.x run without any code changes on a clean 10.0 installation.
+- Mixing clients and Space servers from different XAP Major Releases:Clients running on 8.0 or 9.0 can run against 10.0 servers. 8.0, 9.0 servers cannot be part of the same cluster with 10.0 servers.
 
-
+{%endcomment%}
 
 

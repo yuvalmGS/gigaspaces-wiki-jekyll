@@ -10,7 +10,7 @@ weight: 400
 Below is a list of known issues in GigaSpaces 9.7.X.
 
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Key | Summary | SalesForce ID | Since version | Workaround | Platform/s
 |:----|:--------|:----------------|:---------------|:------------------|:----------|
 | GS-11222 | Unable to run GigaSpaces component when installed under folder with '(',')' chars | 8169 | 9.7.0 | | All |

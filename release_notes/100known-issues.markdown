@@ -10,7 +10,7 @@ weight: 400
 Below is a list of known issues in GigaSpaces 10.0.X.
 
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Key | Summary | SalesForce ID | Since version | Workaround | Platform/s
 |:----|:--------|:----------------|:---------------|:------------------|:----------|
 | GS-11589 | Not all threads are terminated when destroying UrlSapceContainer | | 10.0.0 | | All |

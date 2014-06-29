@@ -11,7 +11,7 @@ Features that are deprecated as of version 9.7
 
 ## Deprecation
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |Key|Summary|Component/s|
 |:--|:------|:----------|
 | GS-11309 | Deprecation - EventSessionFactory - use GigaSpace.newDataEventSession() instead | API, Events |

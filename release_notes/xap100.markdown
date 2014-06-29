@@ -14,5 +14,5 @@ weight: 100
 
 ## Previouse releases
 
-You can find release notes of earlier versions [here](http://wiki.gigaspaces.com/wiki/display/RN/GigaSpaces+Release+Notes).
+You can find release notes of earlier versions then 9.7 [here](http://wiki.gigaspaces.com/wiki/display/RN/GigaSpaces+Release+Notes).
 

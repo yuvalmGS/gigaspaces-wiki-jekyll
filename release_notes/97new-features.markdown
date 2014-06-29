@@ -15,7 +15,7 @@ weight: 200
 Below is a list of new features and improvements in GigaSpaces 9.7.X.
 
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |Key|Summary|Since Version|SalesForce ID|Documentation Link| Platform/s
 |:--|:------|:------------|:------------|:-----------------|:----------|
 | GS-23    | Added LINQ Support for XAP.Net | 9.7.0 | | | .Net |
