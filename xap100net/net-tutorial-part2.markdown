@@ -57,7 +57,7 @@ The Grid Service Container provides an isolated runtime for one (or more) proces
 
 {%endcolumn%}
 {%column width=30% %}
-<img src="/attachment_files/qsg/gs_runtime-core.jpg"  >
+<img src="/attachment_files/gs_runtime.jpg"  >
 {%endcolumn%}
 {%endsection%}
 
