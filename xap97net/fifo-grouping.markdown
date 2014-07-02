@@ -28,7 +28,7 @@ In most cases, your application does not require total ordering, but rather orde
 - Across groups, any number of events can be processed simultaneously.
 
 {% indent %}
-![fifo-group.jpg](/attachment_files/dotnet/fifo-group.jpg)
+![fifo-group.jpg](/attachment_files/fifo-group.jpg)
 {% endindent %}
 
 The FIFO-Grouping can be used with financial systems to process **trade orders** , in healthcare systems to processes **patient medical data** , with transportation systems to process **reservations** , with airlines systems to process **flight schedule** , with billing system to processes **payments**, etc. With the flight reservation system scenario several reservations can be processed simultaneously but the reservations of a particular fight must be processed exclusively and in FIFO order.

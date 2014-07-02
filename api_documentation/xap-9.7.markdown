@@ -39,13 +39,11 @@ parent: none
 
 #### C++
 {%panel%}
-[C+\+ API Documentation](http://www.gigaspaces.com/docs/cppdocs9.7) -- _GigaSpaces C+\+ classes_
+[C+\+ API Documentation](http://www.gigaspaces.com/docs/cppdocs9.7/annotated.html) -- _GigaSpaces C+\+ classes_
 {%endpanel%}
 
 #### MongoDB
 {%panel%}
 [Mongo-Datasource API Documentation](http://www.gigaspaces.com/docs/mongoeds-docs9.7/apidocs/)
 {%endpanel%}
-
-
 

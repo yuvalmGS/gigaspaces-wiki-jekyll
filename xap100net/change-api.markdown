@@ -16,7 +16,7 @@ The `ISpaceProxy.Change` and the `ChangeSet` allows updating existing objects in
 The change API supports transactions in the same way the other space operation supports it.
 {%endcolumn%}
 {%column width=30% %}
-![change-api.jpg](/attachment_files/dotnet/change-api.jpg)
+![change-api.jpg](/attachment_files/change-api.jpg)
 {%endcolumn%}
 {%endsection%}
 

@@ -14,7 +14,9 @@ weight: 400
 
 ![flash-imdg.png](/attachment_files/subject/flash-imdg.png)
 {% endcolumn %}
-XAP 10 introduces a new Storage interface allowing an external storage mechanism (one that does not reside on the JVM heap) to act as storage medium for the data in the IMDG. This storage model allows the IMDG to interact with the storage medium for storing IMDG data. This section describing the SSD based implementation. Future implementations such as RAM based off-heap storage will be added with the incoming XAP releases. 
+XAP 10 introduces a new storage model called BlobStore Storage Model, which allows an external storage medium (one that does not reside on the JVM heap) to store the IMDG data. This page describes the general architecture and functionality of this storage model, and its SSD based implementation, called MemoryXtend. Other implementations such as RAM based off-heap storage will be added in future XAP releases. 
+
+{% note %} For a higher level overview of the technology and motivation behind MemoryXtend please refer to [this](http://d3a0pn6rx5g9yg.cloudfront.net/sites/default/files/private/resource/White%20Paper%20ssd-V2.pdf) white paper. {% endnote %}
 
 {% column width=90% %}
 
@@ -22,7 +24,8 @@ XAP 10 introduces a new Storage interface allowing an external storage mechanism
 {% endsection %}
 
 
-This storage model allows you to leverage high capacity local storage devices such as enterprise flash drives (SSD) or the RAM capacity external to heap of the JVM process. This storage model leverages the JVM heap to store indexes and the external storage device to store the raw data in a serialized form. 
+This storage model leverages the JVM heap to store indexes and the external storage device to store the raw data in a serialized form. 
+
 ![blobstore1.jpg](/attachment_files/blobstore1.jpg)
 
 The JVM heap is used also as a first level cache for frequently used data. Repetitive read operations (by Id, by template or using a SQL query) for the same data will be loaded from the external storage medium upon the first reqeust and later be served from the JVM heap based cache.

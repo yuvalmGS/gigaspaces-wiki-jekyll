@@ -14,7 +14,7 @@ weight: 200
 
 Executor based remoting uses [Executors](./task-execution-over-the-space.html) to implement remoting capabilities on top of the space. Executor based remoting allows for direct invocation of services, both in synchronous and an asynchronous manner as well as broadcast capabilities. Executor remoting works with services that are exposed within a processing unit that started a collocated space.
 
-![Executor.jpg](/attachment_files/dotnet/Executor.jpg)
+![Executor.jpg](/attachment_files/Executor.jpg)
 
 
 # Defining the Contract
@@ -29,7 +29,9 @@ public interface IDataProcessor
 }
 {% endhighlight %}
 
-{% exclamation %} The `Data` object should be `Serializable`
+{% note %}
+The `Data` object should be `Serializable`
+{%endnote%}
 
 # Implementing the Contract
 
@@ -343,10 +345,10 @@ The way to access the meta arguments on the server side is to configure a [serve
 When using executor remoting, a remote invocation can be broadcasted to all active (primary) cluster members. Each Service instance is invoked and return a result to its called which in turn reduce these and pass the final result to the application.
 
 The First phase involves the Service invocation:
-![Executor1.jpg](/attachment_files/dotnet/Executor1.jpg)
+![Executor1.jpg](/attachment_files/Executor1.jpg)
 
 The Second phase involves reducing the results retrieved from the Services:
-![Executor2.jpg](/attachment_files/dotnet/Executor2.jpg)
+![Executor2.jpg](/attachment_files/Executor2.jpg)
 
 In order to use broadcast remoting, the executor broadcast remoting builder should be used:
 
