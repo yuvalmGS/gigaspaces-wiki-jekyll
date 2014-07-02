@@ -54,6 +54,7 @@ int safeABS( int value)
 The routing field must implement the `hashCode` method and will be used both when performing write and read operations. When using this approach the assumption is there is normal distribution of routing field values to have even distribution of the data across all the cluster partitions.
 
 Getting the # of partitions can be done via:
+
 {% highlight java %}
 Admin admin = new AdminFactory().discoverUnmanagedSpaces().addLocator(locators).createAdmin();
 int partitionCount = admin.getSpaces().waitFor("MyDataGridName", 5, TimeUnit.SECONDS).getPartitions().length;
