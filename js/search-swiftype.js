@@ -21,9 +21,12 @@ $(document).ready(function () {
     });
 
     function shouldIncludeInResults(currentSection, section) {
-        if (currentSection.docSection == "XAP" && section.docSection == "XAP" && 
-            currentSection.version != section.version) 
-            return false; 
+        if (currentSection.docSection == "XAP" && section.docSection == "XAP") {
+            if (currentSection.version != section.version) 
+                return false; 
+            if (currentSection.lang != null && section.lang != null &&
+                currentSection.lang != section.lang) return false;             
+        }  
         return true; 
     }
 
@@ -191,33 +194,32 @@ $(document).ready(function () {
                     sectionPath = sectionPath.replace("sec","")
                     var version = sectionPath.slice(0, -1) +"."+sectionPath.slice(-1);
                     if (isDotNet)
-                        return {desc: "XAP.NET " + version, version:version, docSection:"XAP"};
+                        return {desc: "XAP.NET " + version, version:version, docSection:"XAP", lang:"dotnet"};
                     if (isAdmin)
                         return {desc: "XAP " + version + " Admin", version:version, docSection:"XAP"};;
                     if (isSecurity)
                         return {desc: "XAP " + version + " Security", version:version, docSection:"XAP"};;
-                    return {desc: "XAP " + version, version:version, docSection:"XAP"};
+                    return {desc: "XAP " + version, version:version, docSection:"XAP", lang:"java"};
                 }
                 else if (sectionPath == "sbp")
-                    return {desc: "Solutions &amp; Patterns", version:null, docSection:"SBP"};
+                    return {desc: "Solutions &amp; Patterns", docSection:"SBP"};
                 else if (sectionPath == "api_documentation")
-                    return {desc:"API Documentation", version:null, docSection:"API"};
+                    return {desc:"API Documentation", docSection:"API"};
                 else if (sectionPath == "early_access")
-                    return {desc:"Early Access", version:null, docSection:"EA"};
+                    return {desc:"Early Access", docSection:"EA"};
                 else if (sectionPath == "product_overview")
-                    return {desc:"Product Overview", version:null, docSection:"PO"};
+                    return {desc:"Product Overview", docSection:"PO"};
                 else if (sectionPath == "tutorials")
-                    return {desc:"Tutorials", version:null, docSection:"TUT"};
+                    return {desc:"Tutorials", docSection:"TUT"};
                 else if (sectionPath == "howto")
-                    return {desc:"How To", version:null, docSection:"HT"};
+                    return {desc:"How To", docSection:"HT"};
                 else if (sectionPath == "release_notes")
-                    return {desc:"Release Notes", version:null, docSection:"EA"};
+                    return {desc:"Release Notes", docSection:"EA"};
                 else if (sectionPath == "faq")
-                    return {desc:"FAQ", version:null, docSection:"FAQ"};
-            }
-            return {desc:"", version: null, docSection:""};
+                    return {desc:"FAQ", docSection:"FAQ"};
+            }            
         }
-        return {desc:"", version: null, docSection:""};
+        return {desc:"", docSection:""};
     }
 
     var customRenderFunction = function(document_type, item) {
