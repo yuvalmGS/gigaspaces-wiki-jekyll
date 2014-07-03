@@ -17,7 +17,8 @@ $(document).ready(function () {
     
     $('#go-search').click(function (e) {  
         e.preventDefault();      
-        search();
+        if ($("#q").val() != null && $("#q").val().trim() != "")
+            search();
         return false;
     });
 
