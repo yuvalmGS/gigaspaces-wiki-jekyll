@@ -15,7 +15,8 @@ $(document).ready(function () {
     }
 
     
-    $('#go-search').click(function () {        
+    $('#go-search').click(function (e) {  
+        e.preventDefault();      
         search();
         return false;
     });
@@ -86,6 +87,7 @@ $(document).ready(function () {
     }
 
     function search(settings) {
+        $("#search-icon").removeClass("fa-search").addClass("fa-spinner").addClass("fa-spin");
 
         var query = $('#q').val() || "";
         if (query.trim() == "") return; 
@@ -129,15 +131,17 @@ $(document).ready(function () {
                 },
                 error: function(e) {
                     console.log(e +"");
-                }
+                }, 
+                complete: function() {                    
+                    $("#search-icon").removeClass("fa-spinner").removeClass("fa-spin").addClass("fa-search");
+                }, 
+        
             });
         }
         catch (e) {
             console.log(e + '');
         }
         
-
-
     }
 
     function result(r, section) {
@@ -256,6 +260,6 @@ $(document).ready(function () {
         engineKey: "vskywTXhmRpTsNEQ9nux"
     });
 
-
-
 });
+
+
