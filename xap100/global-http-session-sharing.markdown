@@ -169,9 +169,7 @@ The web application requires a couple of configuration changes to the `web.xml` 
 
 ### Shiro configuration
 
-{%accordion id=acc0%}
-
-{% accord title=shiro.ini settings ... | parent=acc0%}
+shiro.ini settings 
 
 {: .table   .table-condensed   .table-bordered}
 |Section|Property|Description|Required|Optional Values|Default Values|
@@ -206,7 +204,7 @@ The web application requires a couple of configuration changes to the `web.xml` 
 
 The `shiro.ini` file should to be placed within the `WEB-INF` folder. See below examples for the `shiro.ini` file:
 
-{%endaccord%}
+{%accordion id=acc0%}
 
 
 {%accord title=Single Application Session Sharing Configuration Example... | parent=acc0%}
@@ -388,9 +386,8 @@ The [WAN Gateway]({%latestjavaurl%}/multi-site-replication-over-the-wan.html) sh
 When using a [Secure XAP cluster]({%latestjavaurl%}/securing-your-data.html) you can pass security credentials using following parameters in the `shiro.ini` file:
 
 {%highlight console%}
-# When using secured XAP cluster, pass the credentials here
-cacheManager.username = gs
-cacheManager.password = gs
+connector.username = user
+connector.password = pass
 {%endhighlight%}
 
 
