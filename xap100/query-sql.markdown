@@ -230,6 +230,19 @@ The `sysdate` value is evaluated differently when using the JDBC API vs when usi
 GigaSpaces using internally the **TimeStamp** data type to store dates. This means the date includes beyond the year, month and day, the hour/min/sec portions. If you are looking to query for a specific date you should perform a date range query.
 {% endtip %}
 
+
+# Aggregators
+
+{%section%}
+{%column width=60% %}
+[Aggregators](./aggregators.html) allows you to perform aggregations (Average , Max , Min , Sum , Group By , Having) on a relatively large space objects data set. A query (SQLQuery or template) may be specified to determine the exact subset of space objects to iterate while performing the aggregation. Aggregators support single and compound based execution and a fully customized Aggregation.
+
+{%endcolumn%}
+{%column width=40% %}
+![aggreg.jpg](/attachment_files/built-in-Compound-aggregators.jpg)
+{%endcolumn%}
+{%endsection%}
+
 # Blocking Operations
 
 Blocking operations (i.e. `read` or `take` with `timeout` greater than `0`) are supported with the following restrictions:
@@ -319,7 +332,7 @@ You can specify that the `SQLQuery` should contain only partial results which me
 - The SQL statements: VIEW, TRIGGERS, EXISTS, NOT, CREATE USER, GRANT, REVOKE, SET PASSWORD, CONNECT USER, ON.
 - Constraints: NOT NULL, IDENTITY, UNIQUE, PRIMARY KEY, Foreign Key/REFERENCES, NO ACTION, CASCADE, SET NULL, SET DEFAULT, CHECK.
 - Set operations: Union, Minus, Union All.
-- Advanced Aggregate Functions: STDEV, STDEVP, VAR, VARP, FIRST, LAST.
+- Advanced Aggregate Functions: STDEV, STDEVP, VAR, VARP, FIRST, LAST. These may be implemented via [Custom Aggregation](./aggregators.html#custom-aggregation).
 - Mathematical expressions.
 - `LEFT OUTER JOIN`
 - `RIGHT OUTER JOIN`
