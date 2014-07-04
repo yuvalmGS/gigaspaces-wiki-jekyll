@@ -14,7 +14,7 @@ weight: 400
 
 ![flash-imdg.png](/attachment_files/subject/flash-imdg.png)
 {% endcolumn %}
-XAP 10 introduces a new storage model called BlobStore Storage Model, which allows an external storage medium (one that does not reside on the JVM heap) to store the IMDG data. This page describes the general architecture and functionality of this storage model, and its SSD based implementation, called MemoryXtend. Other implementations such as RAM based off-heap storage will be added in future XAP releases. 
+XAP 10 introduces a new storage model called BlobStore Storage Model, which allows an external storage medium (one that does not reside on the JVM heap) to store the IMDG data. This page describes the general architecture and functionality of this storage model, that is leevraging both on-heap, off-heap and SSD implementation, called `MemoryXtend`. 
 
 {% note %} For a higher level overview of the technology and motivation behind MemoryXtend please refer to [this](http://d3a0pn6rx5g9yg.cloudfront.net/sites/default/files/private/resource/White%20Paper%20ssd-V2.pdf) white paper. {% endnote %}
 
@@ -24,11 +24,11 @@ XAP 10 introduces a new storage model called BlobStore Storage Model, which allo
 {% endsection %}
 
 
-This storage model leverages the JVM heap to store indexes and the external storage device to store the raw data in a serialized form. 
+This storage model leverages on-heap LRU cache (deserialized form) and off-heap LRU cache (serialized form) to store data, on-heap to store indexes and external storage device to store the raw data in a serialized form. 
 
 ![blobstore1.jpg](/attachment_files/blobstore1.jpg)
 
-The JVM heap is used also as a first level cache for frequently used data. Repetitive read operations (by Id, by template or using a SQL query) for the same data will be loaded from the external storage medium upon the first reqeust and later be served from the JVM heap based cache.
+The JVM heap is used as a first level LRU cache for frequently used data. Repetitive read operations (by Id, by template or using a SQL query) for the same data will be loaded from off-heap LRU cache or from an external storage medium (SSD) upon the first reqeust and later be served from the on-heap or off-heap based cache.
 
 ## How BlobStore Storage Model Different from the Traditional XAP Persistence Model?
 Unlike the traditional XAP persistence model, where the IMDG backing store is usually a database with relatively slow response time, located in a central location, the storage interface assumes very fast access for write and read operations, and a local, dedicated data store that supports a key/value interface. Each IMDG primary and backup instance across the grid is interacting with its dedicated storage medium (in our case SSD drive) independently in an atomic manner. 
@@ -55,7 +55,7 @@ XAP is using [SanDisk ZetaScale](http://www.sandisk.com/enterprise/zetascale) li
 
 ![blobstore2.jpg](/attachment_files/blobstore2.jpg)
 
-The indexes maintain in RAM allowing the XAP query engine to evaluate the query without accessing the raw data stored on the flash device. This allows XAP to execute SQL based queries extremely efficiently even across large number of nodes. All XAP Data Grid APIs are supported including distributed transactions, leasing (Time To live) , FIFO , batch operations ,etc. All clustering topologies supported. All client side cache options are supported.
+The indexes maintain in RAM (on-heap) allowing the XAP query engine to evaluate the query without accessing the raw data stored on the flash device. This allows XAP to execute SQL based queries extremely efficiently even across large number of nodes. All XAP Data Grid APIs are supported including distributed transactions, leasing (Time To live) , FIFO , batch operations , etc. All clustering topologies supported. All client side cache options are supported.
 
 # The BlobStore Configuration
 
@@ -85,7 +85,7 @@ The IMDG BlobStore settings includes the following options:{%wbr%}
 
 # Prerequisites
 
-- Blobstore supports Linux CentOS 6.x only.
+- MemoryXtend currently supports Linux CentOS 6.x only. 
 
 - Check that your user is part of disk groups.
 {% highlight console %}
@@ -109,7 +109,7 @@ For creating partitions you can use fdisk like explained [here](http://www.howto
 # Installation
 
 Step 1. 
-Dwonload the XAP 10 distribution and the MemoryXtend RPM with the ZetaScale libraries.
+Dwonload the XAP 10 distribution and the `MemoryXtend` RPM with the ZetaScale libraries.
 
 Step 2. 
 Install XAP as usual. Unzip the `gigaspaces-xap-premium-10.0.0-XXX.zip`.
@@ -221,13 +221,13 @@ The above example:
 - Configures the SanDisk BlobStore bean.
 - Configures the Space to use the above blobStore implementation also configure the cache size, in this LRU cache the space store also the data objects and not just the object indexes in RAM.
 
-## Flash device stickiness
-In order to make sure the a space will perform recovery from the right flash device we are using [Instance level SLA]({%latestjavaurl%}/configuring-the-processing-unit-sla.html#deployment-requirements---hosts-zones-and-machine-utilization).
-With this SLA we control where a specific space will be deployed.{%wbr%}
-A processing unit template is installed at `XAP_HOME/deploy/templates/blobstore-datagrid`.
-Inside this template there is an sla configuration file at `blobstore-datagrid/META_INF/spring/sla.xml`.
+# Automatic Data Recovery
 
-At this example the first instance is deployed to a specific machine (specified by its IP address), and its second instance for the same partition is deployed to a different machine.
+To allow the data grid perform data recovery from the right flash device on startup you should use [Instance level SLA]({%latestjavaurl%}/configuring-the-processing-unit-sla.html#deployment-requirements---hosts-zones-and-machine-utilization).
+
+With this SLA you control where a specific space instance will be provisioned. You may find a bloblstore data grid processing unit template at `XAP_HOME/deploy/templates/blobstore-datagrid`. Within this template there is an sla configuration file `blobstore-datagrid/META_INF/spring/sla.xml`.
+
+With the following example the first instance is provisioned into a specific machine (specified by its IP address), and its second instance for the same partition is provisioned into a different machine.
 {% highlight xml %}
   <os-sla:sla>
         <os-sla:instance-SLAs>
@@ -245,7 +245,7 @@ At this example the first instance is deployed to a specific machine (specified 
     </os-sla:sla>
 {% endhighlight %}
 
-The devices allocation inside a machine is managed via `/tmp/blobstore/devices/device-per-space.properties` file. You can override this file location using the `com.gs.blobstore-devices` system property. Each time a blobstore space is deployed an Entry is added to this file.
+The device allocation per a machine is managed via `/tmp/blobstore/devices/device-per-space.properties` file. You can override this file location using the `com.gs.blobstore-devices` system property when setting the `GSC_JAVA_OPTIONS`. Each time a blobstore space is deployed an Entry is added to this file.
 
 # BlobStore Space re-deploy
 When you undeploy a blobstore space use the `XAP_HOM/bin/undeploy-grid.groovy` comes with the RPM. It undeploys the blobstore space and restart all its GSCs.
