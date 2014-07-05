@@ -8,7 +8,7 @@ weight: 200
 
 {% summary %} {% endsummary %}
 
-Load-balancing (Data-Partitioning) is essential in any truly scalable architecture, as it enables scaling beyond the physical resources of a single-server machine. In GigaSpaces, load-balancing is the mechanism used by the clustered proxy to distribute space operations among the different cluster members. Each cluster member can run on a different physical or virtual machine.
+Load-balancing (Data-Partitioning) is essential in any truly scalable architecture, as it enables scaling beyond the physical resources of a single-server machine. In XAP, load-balancing is the mechanism used by the clustered proxy to distribute space operations among the different cluster members. Each cluster member can run on a different physical or virtual machine.
 
 A clustered proxy for a partitioned data grid holds logical references to all space members in the cluster. The references are "logical", in the sense that no active connection to a space member is opened until it is needed. This is illustrated in the following diagram:
 
@@ -20,11 +20,11 @@ For details about scaling a running space cluster **in runtime** see the [Elasti
 
 # Partitioning Types
 
-GigaSpaces ships with a number of built-in load-balancing policies. These range from relatively static policies, where each proxy "attaches" to a specific instance and directs all operations to it, to a dynamic policies where the target of an operation takes into account the data and rout the operation based on the content.
+XAP ships with a number of built-in load-balancing policies. These range from relatively static policies, where each proxy "attaches" to a specific instance and directs all operations to it, to a dynamic policies where the target of an operation takes into account the data and rout the operation based on the content.
 
 The following table describes the built-in load balancing types.
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |Policy|Description|
 |:-----|:----------|
 |hash-based|As above, except a new hash is computed for each user operation, and so each operation may be routed to a different space. This ensures, with high probability, that operations are evenly distributed. This is the **default mode** and the recommended mode.|
@@ -103,6 +103,7 @@ Target Space number = (accountID hashCode value) modulo (Partitions Amount)
 {% endhighlight %}
 
 If we will write 30 Account space objects with different `accountID` values into the cluster, the space objects will be routed into the 3 partitions in the following manner:
+
 ![load_balancing2.jpg](/attachment_files/load_balancing2.jpg)
 
 {% tip %}
@@ -168,7 +169,7 @@ public class LoadBalancingCalc {
 
 Here is an example output:
 
-{% highlight java %}
+{% highlight console %}
 Total amount of objects:1000
 Total amount of partitions:10
 Partition 0 has 107 objects
@@ -204,13 +205,13 @@ There are three Broadcast options:
 
 The following table specifies when the different batch operations executed in parallel manner and when in serial manner when the space running in partitioned mode:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | **Operation** | **Transactional** | **Max values** | **Execution Mode** | Returns when.. |
 |:--------------|:------------------|:---------------|:-------------------|:---------------|
 | readMultiple | NO | n/a | Parallel | Returns when all spaces completed their operation |
-| readMultiple | YES (should use JiniTX) | < Integer.MAX_VALUE | **Serial** | Returns when found enough matching space objects |
+| readMultiple | YES (should use JiniTX) | Integer.MAX_VALUE | **Serial** | Returns when found enough matching space objects |
 | readMultiple | n/a(if YES should use JiniTX) | Integer. MAX_VALUE | Parallel | Returns when all spaces completed their operation |
-| takeMultiple | n/a | < Integer.MAX_VALUE | **Serial** | Returns when all spaces completed their operation |
+| takeMultiple | n/a | Integer.MAX_VALUE | **Serial** | Returns when all spaces completed their operation |
 | takeMultiple | n/a (if YES should use JiniTX) | Integer.MAX_VALUE | Parallel | Returns when all spaces completed their operation |
 | writeMultiple | n/a | n/a | Parallel | Returns when all spaces completed their operation |
 | updateMultiple | n/a | n/a | Parallel | Returns when all spaces completed their operation |
@@ -237,4 +238,4 @@ The client performs parallel operations using a dedicated thread pool managed at
 - In some cases broadcast can cause ownership/SSI problems to happen.
 - All objects with a given routing value will be stored in the _same partition_. This means that a given partition _must_ be able to hold all similarly-routed objects. If the routing value does not have uniform distribution the partitioning will be uneven. Use a derived routing field (such as ID field) as the routing field value that gives a flat distribution across all nodes, if possible.
 
-{% endtoczone %}
+
