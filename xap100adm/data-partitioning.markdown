@@ -46,7 +46,7 @@ int safeABS( int value)
 
 The routing field must implement the `hashCode` method and will be used both when performing write and read operations. When using this approach the assumption is there is normal distribution of routing field values to have even distribution of the data across all the cluster partitions.
 
-Getting the # of partitions can be done via:
+Getting the number of partitions can be done via:
 
 {% highlight java %}
 Admin admin = new AdminFactory().discoverUnmanagedSpaces().addLocator(locators).createAdmin();
@@ -209,10 +209,10 @@ The following table specifies when the different batch operations executed in pa
 | **Operation** | **Transactional** | **Max values** | **Execution Mode** | Returns when.. |
 |:--------------|:------------------|:---------------|:-------------------|:---------------|
 | readMultiple | NO | n/a | Parallel | Returns when all spaces completed their operation |
-| readMultiple | YES (should use JiniTX) | Integer.MAX_VALUE | **Serial** | Returns when found enough matching space objects |
-| readMultiple | n/a(if YES should use JiniTX) | Integer. MAX_VALUE | Parallel | Returns when all spaces completed their operation |
+| readMultiple | YES | Integer.MAX_VALUE | **Serial** | Returns when found enough matching space objects |
+| readMultiple | n/a | Integer. MAX_VALUE | Parallel | Returns when all spaces completed their operation |
 | takeMultiple | n/a | Integer.MAX_VALUE | **Serial** | Returns when all spaces completed their operation |
-| takeMultiple | n/a (if YES should use JiniTX) | Integer.MAX_VALUE | Parallel | Returns when all spaces completed their operation |
+| takeMultiple | n/a  | Integer.MAX_VALUE | Parallel | Returns when all spaces completed their operation |
 | writeMultiple | n/a | n/a | Parallel | Returns when all spaces completed their operation |
 | updateMultiple | n/a | n/a | Parallel | Returns when all spaces completed their operation |
 
@@ -223,6 +223,7 @@ The following table specifies when the different batch operations executed in pa
 - When calling any of the batch operations with a template and set the routing id in the template (making sure all the space objects go to the same physical space in a cluster) you do not need to use jini transaction. Local transaction will suffice.
 - readMultiple/takeMultiple against any single partition is a synchronous call in the associated partition specific client proxy. The space operation is a synchronous operation. It will return as many requested objects as are currently present in the space, up to the number requested. If no objects are matched an empty array is returned.
 
+{%comment%}
 # Parallel Operation Thread Pool
 
 The client performs parallel operations using a dedicated thread pool managed at the proxy. You may tune this pool size via the following settings at the cluster config:
@@ -231,6 +232,8 @@ The client performs parallel operations using a dedicated thread pool managed at
 <proxy-broadcast-threadpool-min-size>4</proxy-broadcast-threadpool-min-size>
 <proxy-broadcast-threadpool-max-size>64</proxy-broadcast-threadpool-max-size>
 {% endhighlight %}
+{%endcomment%}
+
 
 # Considerations
 
