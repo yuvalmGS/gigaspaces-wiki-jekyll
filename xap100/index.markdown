@@ -1,6 +1,6 @@
 ---
 layout: post100
-title:  Developers Guide
+title:  Java Developers Guide
 categories: XAP100
 ---
 

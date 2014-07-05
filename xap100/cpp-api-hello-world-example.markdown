@@ -1,6 +1,6 @@
 ---
 layout: post100
-title:  Hello World Example
+title:  Hello World
 categories: XAP100
 parent: cpp-api-examples.html
 weight: 100

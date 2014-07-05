@@ -1,6 +1,6 @@
 ---
 layout: post100
-title:  Security
+title:  Security Guide
 categories: XAP100SEC
 
 ---
