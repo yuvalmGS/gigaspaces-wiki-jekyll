@@ -20,7 +20,7 @@ XAP using Thread resources in an extensive manner to scale the different activit
 Starting with XAP 8.0, all GigaSpaces threads running within the JVM, using the same prefix, **GS-** as part of their name.
 {% endtip %}
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Thread Name | Description | Configuration Parameters | Client{%wbr%}Server|
 |:------------|:------------|:-------------------------|:-------------|
 |LRMI Connection-pool#| See the [Communication Protocol](./tuning-communication-protocol.html) for details. |com.gs.transport_protocol.{%wbr%}lrmi.min-threads, com.gs.transport_protocol.{%wbr%}lrmi.max-threads| Server|

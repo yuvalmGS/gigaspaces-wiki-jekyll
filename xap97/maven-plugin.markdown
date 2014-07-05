@@ -57,7 +57,9 @@ This installs the GigaSpaces libraries and the OpenSpaces Maven plugin into the 
 
 **Library Location**:
 
-- GigaSpaces libraries are installed under: `<maven-repository-dir>/com/gigaspaces`
+- XAP libraries are installed under: `<maven-repository-dir>/com/gigaspaces`
+
+{%anchor dependencies%}
 
 ### Dependencies
 
@@ -99,7 +101,7 @@ mvn os:create
 
 The result is a list of available template names and descriptions:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |Template Name | Description|
 |:-------------|:-----------|
 |basic|Creates a basic SBA application with two processing units. The Feeder processing unit sends Data objects through the Space to a Processor. The Space and the Processor are collocated in the same processing unit.|
@@ -125,7 +127,7 @@ mvn os:create
     -Dtemplate=<project-template>
 {% endhighlight %}
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
 | `groupId` | The project package name | {% remove %} | `com.mycompany.app` |
@@ -185,7 +187,7 @@ mvn os:run
     -Dmodule=<module-name>
 {% endhighlight %}
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Properties | Example |
 |:---------|:------------|:---------|:-----------|:--------|
 | `cluster` | Cluster properties | {% remove %} | * `schema` -- the cluster schema name{% wbr %}- `total_members` -- a list of the cluster members, separated by a comma{% wbr %}- `id` -- the cluster ID{% wbr %}- `backup_id` -- the backup ID | * `schema=partitioned`{% wbr %}- `total_members=1,1`{% wbr %}- `id=1`{% wbr %}- `backup_id=1` |
@@ -241,7 +243,7 @@ If not specified explicitly, unit tests are executed when packaging the Processi
 
 To suppress the execution of unit tests, add one of the following arguments to the command line: `skipTests` or `maven.test.skip`:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Argument | Description |
 |:---------|:------------|
 | `skipTests` | Skips the unit test execution, but still performs unit test compilation |
@@ -273,7 +275,7 @@ mvn os:run-standalone
     -Dmodule=<module-name>
 {% endhighlight %}
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Properties | Example |
 |:---------|:------------|:---------|:-----------|:--------|
 | `cluster` | Cluster properties | {% remove %} | * `schema` -- the cluster schema name{% wbr %}- `total_members` -- a list of the cluster members, separated by a comma{% wbr %}- `id` -- the cluster ID{% wbr %}- `backup_id` -- the backup ID | * `schema=partitioned`{% wbr %}- `total_members=1,1`{% wbr %}- `id=1`{% wbr %}- `backup_id=1` |
@@ -324,7 +326,7 @@ mvn os:deploy
     -Dmodule=<module-name>
 {% endhighlight %}
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
 | `sla` | The SLA policy | {% remove %} | |
@@ -356,7 +358,7 @@ mvn os:undeploy
     -Dmodule=<module-name>
 {% endhighlight %}
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
 | `groups` | Comma-delimited list of lookup group names | {% remove %} | gigaspaces-<VERSION> |
@@ -475,7 +477,7 @@ mvn os:hsql-ui
     -Dhelp
 {% endhighlight %}
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
 | `driver` | JDBC driver class | {% remove %} | org.hsqldb.jdbcDriver |

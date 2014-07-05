@@ -119,51 +119,44 @@ You may change this to use String based routing values or numerical values.
 import java.util.Hashtable;
 import java.util.Random;
 
-public class LoadBalancingCalc {
-	public static void main(String[] args) {
-		int partitions = 10;
-//		String values[] = {"A","B","C" , "AAAAAA" , "BBB" , "CCCC", "QQQQ" , "C" , "Y"};
+public static void LoadBalancingCalc() {
+	int partitions = 10;
 
-		Random rand = new Random(1000);
-		int maxObject =1000;
-		String values[]  = new String [maxObject ];
-		for (int i=0; i<maxObject ;i++)
-		{
-			values[i] = String.valueOf(rand.nextInt(maxObject ));
-		}
-
-		Hashtable dist = new Hashtable ();
-		for (int i=0;i<values.length ; i++)
-		{
-			int hc = values[i].hashCode();
-			int targetPartitionID = safeABS(hc) % partitions;
-			Integer dist_value = (Integer)dist.get(targetPartitionID);
-
-			if (dist_value == null)
-				dist_value = new Integer(0);
-
-			dist.put(targetPartitionID , dist_value.intValue() + 1) ;
-		}
-		System.out.println("Total amount of objects:" + maxObject);
-		System.out.println("Total amount of partitions:" + partitions);
-
-		for (int i=0;i<dist.size() ; i++)
-		{
-			System.out.println("Partition " + i +  " has " + dist.get{% infosign %} + " objects");
-		}
-		System.out.println();
-		System.out.println("Routing field values:");
-		for (int i=0; i<maxObject ;i++)
-		{
-			System.out.print (values[i] + ",");
-			if ((i % 80 ==0) && (i>80))
-				System.out.println();
-		}
+	Random rand = new Random(1000);
+	int maxObject = 1000;
+	String values[] = new String[maxObject];
+	for (int i = 0; i < maxObject; i++) {
+		values[i] = String.valueOf(rand.nextInt(maxObject));
 	}
-        static int safeABS( int value)
-        {
-            return value == Integer.MIN_VALUE ? Integer.MAX_VALUE : Math.abs(value);
-        }
+
+	Hashtable<Integer, Integer> dist = new Hashtable<Integer, Integer>();
+	for (int i = 0; i < values.length; i++) {
+		int hc = values[i].hashCode();
+		int targetPartitionID = safeABS(hc) % partitions;
+		Integer dist_value = (Integer) dist.get(targetPartitionID);
+
+		if (dist_value == null)
+		dist_value = new Integer(0);
+
+		dist.put(targetPartitionID, dist_value.intValue() + 1);
+	}
+	System.out.println("Total amount of objects:" + maxObject);
+	System.out.println("Total amount of partitions:" + partitions);
+
+	for (int i = 0; i < dist.size(); i++) {
+		System.out.println("Partition " + i + " has " + dist.get(i)	+ " objects");
+	}
+	System.out.println();
+	System.out.println("Routing field values:");
+	for (int i = 0; i < maxObject; i++) {
+		System.out.print(values[i] + ",");
+		if ((i % 80 == 0) && (i > 80))
+			System.out.println();
+	}
+}
+
+static int safeABS(int value) {
+	return value == Integer.MIN_VALUE ? Integer.MAX_VALUE : Math.abs(value);
 }
 {% endhighlight %}
 
@@ -209,9 +202,9 @@ The following table specifies when the different batch operations executed in pa
 | **Operation** | **Transactional** | **Max values** | **Execution Mode** | Returns when.. |
 |:--------------|:------------------|:---------------|:-------------------|:---------------|
 | readMultiple | NO | n/a | Parallel | Returns when all spaces completed their operation |
-| readMultiple | YES | Integer.MAX_VALUE | **Serial** | Returns when found enough matching space objects |
+| readMultiple | YES | <Integer.MAX_VALUE | **Serial** | Returns when found enough matching space objects |
 | readMultiple | n/a | Integer. MAX_VALUE | Parallel | Returns when all spaces completed their operation |
-| takeMultiple | n/a | Integer.MAX_VALUE | **Serial** | Returns when all spaces completed their operation |
+| takeMultiple | n/a | <Integer.MAX_VALUE | **Serial** | Returns when all spaces completed their operation |
 | takeMultiple | n/a  | Integer.MAX_VALUE | Parallel | Returns when all spaces completed their operation |
 | writeMultiple | n/a | n/a | Parallel | Returns when all spaces completed their operation |
 | updateMultiple | n/a | n/a | Parallel | Returns when all spaces completed their operation |

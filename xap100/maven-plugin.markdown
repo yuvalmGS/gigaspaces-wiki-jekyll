@@ -20,7 +20,7 @@ You don't need to be an experienced Maven user to start working with this plugin
 
 # Prior to Installation
 
-In order to use the OpenSpaces Maven plugin, Maven needs to be installed on the machine. If a Maven installation already exists on the machine, it can be used. If not, GigaSpaces comes with a ready-to-use distribution of Maven 3.0, located under: `<JSHOMEDIR>/tools/maven/apache-maven-3.0`.
+In order to use the OpenSpaces Maven plugin, Maven needs to be installed on the machine. If a Maven installation already exists on the machine, it can be used. If not, XAP comes with a ready-to-use distribution of Maven 3.0, located under: `<JSHOMEDIR>/tools/maven/apache-maven-3.0`.
 
 All you need to do is add the Maven `bin` directory to the system `PATH` variable, and you are ready to go. To test whether the Maven command is accessible, open a command line window, type `mvn \-version`, and press Enter.
 The following message should be displayed:
@@ -43,13 +43,13 @@ Maven uses repositories: a local repository where all required dependencies (art
 
 To install the OpenSpaces Maven plugin:
 
-Run the `installmavenrep` script from the `<GigaSpaces Root>\tools\maven` directory:
+Run the `installmavenrep` script from the `<XAP Root>\tools\maven` directory:
 
 {% highlight bash %}
 D:\gigaspaces-xap-premium-8.0.0-ga\tools\maven>installmavenrep.bat
 {% endhighlight %}
 
-This installs the GigaSpaces libraries and the OpenSpaces Maven plugin into the local Maven repository. Once the installation is finished, the Maven plugin is ready to be used.
+This installs the XAP libraries and the OpenSpaces Maven plugin into the local Maven repository. Once the installation is finished, the Maven plugin is ready to be used.
 
 {% info %} The OpenSpaces Maven plugin is installed under: `<maven-repository-dir>\org\apache\maven\plugins\maven-openspaces-plugin`{%endinfo%}
 
@@ -57,7 +57,9 @@ This installs the GigaSpaces libraries and the OpenSpaces Maven plugin into the 
 
 **Library Location**:
 
-- GigaSpaces libraries are installed under: `<maven-repository-dir>/com/gigaspaces`
+- XAP libraries are installed under: `<maven-repository-dir>/com/gigaspaces`
+
+{%anchor dependencies%}
 
 ### Dependencies
 
@@ -99,7 +101,7 @@ mvn os:create
 
 The result is a list of available template names and descriptions:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |Template Name | Description|
 |:-------------|:-----------|
 |basic|Creates a basic SBA application with two processing units. The Feeder processing unit sends Data objects through the Space to a Processor. The Space and the Processor are collocated in the same processing unit.|
@@ -125,7 +127,7 @@ mvn os:create
     -Dtemplate=<project-template>
 {% endhighlight %}
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
 | `groupId` | The project package name | {% remove %} | `com.mycompany.app` |
@@ -185,7 +187,7 @@ mvn os:run
     -Dmodule=<module-name>
 {% endhighlight %}
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Properties | Example |
 |:---------|:------------|:---------|:-----------|:--------|
 | `cluster` | Cluster properties | {% remove %} | * `schema` -- the cluster schema name{% wbr %}- `total_members` -- a list of the cluster members, separated by a comma{% wbr %}- `id` -- the cluster ID{% wbr %}- `backup_id` -- the backup ID | * `schema=partitioned`{% wbr %}- `total_members=1,1`{% wbr %}- `id=1`{% wbr %}- `backup_id=1` |
@@ -222,7 +224,7 @@ To change the security permissions place the new _policy.all_ file in the _polic
 
 # Packaging Processing Units
 
-In order to deploy Processing Units, you need to package them in a distributable form. The OpenSpaces Maven plugin allows you to package two types of distributables supported by GigaSpaces: a single JAR archive and an open directory structure.
+In order to deploy Processing Units, you need to package them in a distributable form. The OpenSpaces Maven plugin allows you to package two types of distributable supported by XAP: a single JAR archive and an open directory structure.
 
 Make sure you are in the directory of the project.
 To package the Processing Units, use the following command-line from the main project directory:
@@ -241,7 +243,7 @@ If not specified explicitly, unit tests are executed when packaging the Processi
 
 To suppress the execution of unit tests, add one of the following arguments to the command line: `skipTests` or `maven.test.skip`:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Argument | Description |
 |:---------|:------------|
 | `skipTests` | Skips the unit test execution, but still performs unit test compilation |
@@ -273,7 +275,7 @@ mvn os:run-standalone
     -Dmodule=<module-name>
 {% endhighlight %}
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Properties | Example |
 |:---------|:------------|:---------|:-----------|:--------|
 | `cluster` | Cluster properties | {% remove %} | * `schema` -- the cluster schema name{% wbr %}- `total_members` -- a list of the cluster members, separated by a comma{% wbr %}- `id` -- the cluster ID{% wbr %}- `backup_id` -- the backup ID | * `schema=partitioned`{% wbr %}- `total_members=1,1`{% wbr %}- `id=1`{% wbr %}- `backup_id=1` |
@@ -303,7 +305,7 @@ Overriding the space and cluster configuration is explained in [Running Processi
 
 Processing Units usually run in the Service Grid. In order to deploy a Processing Unit, you first need to package it (see [Packaging Processing Units](#packaging)).
 
-GigaSpaces supports two forms of Processing Unit distributables: A single JAR archive and an open directory structure. The OpenSpaces Maven plugin allows you to deploy Processing Units simply -- packaged as JAR archives -- into the Service Grid.
+XAP supports two forms of Processing Unit distributable: A single JAR archive and an open directory structure. The OpenSpaces Maven plugin allows you to deploy Processing Units simply -- packaged as JAR archives -- into the Service Grid.
 
 {% note %} When deploying Processing Units, make sure that the Grid Service Manager (GSM) and the Grid Service Container (GSC) are running.{%endnote%}
 
@@ -324,7 +326,7 @@ mvn os:deploy
     -Dmodule=<module-name>
 {% endhighlight %}
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
 | `sla` | The SLA policy | {% remove %} | |
@@ -356,7 +358,7 @@ mvn os:undeploy
     -Dmodule=<module-name>
 {% endhighlight %}
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
 | `groups` | Comma-delimited list of lookup group names | {% remove %} | gigaspaces-<VERSION> |
@@ -475,7 +477,7 @@ mvn os:hsql-ui
     -Dhelp
 {% endhighlight %}
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
 | `driver` | JDBC driver class | {% remove %} | org.hsqldb.jdbcDriver |
