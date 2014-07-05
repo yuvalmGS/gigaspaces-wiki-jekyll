@@ -46,7 +46,7 @@ To install the OpenSpaces Maven plugin:
 Run the `installmavenrep` script from the `<XAP Root>\tools\maven` directory:
 
 {% highlight bash %}
-D:\gigaspaces-xap-premium-8.0.0-ga\tools\maven>installmavenrep.bat
+D:<XAP Home>\tools\maven>installmavenrep.bat
 {% endhighlight %}
 
 This installs the XAP libraries and the OpenSpaces Maven plugin into the local Maven repository. Once the installation is finished, the Maven plugin is ready to be used.
@@ -199,8 +199,7 @@ mvn os:run
 **Example:**
 
 {% highlight bash %}
-mvn compile os:run -Dcluster="schema=partitioned total_members=1,1
-id=1" -Dproperties="embed://prop1=value1" -Dmodule=feeder
+mvn compile os:run -Dcluster="schema=partitioned total_members=1,1 id=1" -Dproperties="embed://prop1=value1" -Dmodule=feeder
 {% endhighlight %}
 
 ## Determining Module Execution

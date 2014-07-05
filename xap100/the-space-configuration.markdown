@@ -25,7 +25,7 @@ The general format of the space URL is:
 
 The following parameters can be defined:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Name | Description |
 |:-----|:------------|
 | Protocol | `[jini](java)`{% wbr %}- Jini -- Remote access using Jini for lookup{% wbr %}- Java -- Local (embedded) access |
@@ -97,7 +97,7 @@ java://localhost:10098/mySpace_container/mySpace?schema=default
 
 The following are optional property string values:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |Property String | Description | Optional values |
 |:--------------|:----------------|:------------|
 |`create` | Creates a new space using the container's default parameters. New spaces use the default space configuration file. Example: `java://localhost:10098/containerName`{% wbr %}`/mySpaces?create=true` | |
@@ -295,7 +295,7 @@ The application is always injected with `os-core:giga-space` bean that wraps alw
 
 The `GigaSpace` Bean can have the following elements:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |Element|Description|Required|Default Value|
 |:------|:----------|:-------|:------------|
 |space|This can be an embedded space , remote space , local view or local cache. |YES| |
@@ -506,7 +506,7 @@ For further details on each of the available modifiers see:
 - [TakeModifiers]({%javadoc com/gigaspaces/client/TakeModifiers%})
 - [CountModifiers]({%javadoc com/gigaspaces/client/CountModifiers%})
 - [ClearModifiers]({%javadoc com/gigaspaces/client/ClearModifiers%})
-- [{%color green%}ChangeModifiers{%endcolor%}]({%javadoc com/gigaspaces/client/ChangeModifiers%})
+- [ChangeModifiers({%javadoc com/gigaspaces/client/ChangeModifiers%})
 
 # Exception Hierarchy
 
