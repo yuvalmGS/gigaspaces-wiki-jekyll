@@ -8,90 +8,52 @@ weight: 500
 
 {%summary%}{%endsummary%}
 
-XAP 9 Comes with a built-in Cloudify recipe feature that allows the deployment and management of an entire application onto any cloud. For more information on supported Cloud and Cloud Drivers see the [Cloudify User Guide](http://www.cloudifysource.org/guide/). The following sections will demonstrate how to compose a recipe for deploying and managing your XAP application on the Cloud.
+XAP 10 Comes with a built-in Cloudify recipe feature that allows the deployment and management of an elastic Data Grid onto any cloud. For more information on supported Cloud and Cloud Drivers see the [Cloudify User Guide](http://www.cloudifysource.org/guide/). The following sections will demonstrate how to compose a recipe for deploying and managing your XAP Elastic Data Grid on the Cloud.
 
 The following XAP types of services are supported:
 
-- In memory data grid
-- Stateful Procesing Units
-- Stateless Processing Units
-- Mirror Service
+- In memory elastic data grid
 
-# Using a Stateless Processing Unit or a Web Processing Unit
+# Using an Elastic Data Grid
 
 {% highlight java %}
-service {
-  icon "icon.png"
-  name "statelessPU"
-  numInstances 3
-  statelessProcessingUnit {
-    binaries "servlet.war" //can be a folder, or a war file
-    sla {
-      memoryCapacity 128
-      maxMemoryCapacity 128
-      highlyAvailable false
-      memoryCapacityPerContainer 128
-    }
-  }
-}
+	service {
+		name = "xap-management"		
+	}
+
+	service {
+		name = "xap-datagrid"
+		dependsOn = ["xap-management"]
+	}
 {% endhighlight %}
 
-# Using a Stateful Processing Unit
-
-{% highlight java %}
-service {
-  icon "icon.png"
-  name "stockAnalyticsFeeder"
-  statefulProcessingUnit {
-    binaries "stockAnalyticsFeeder.jar" //can be a folder, or a war file
-    sla {
-      memoryCapacity 128
-      maxMemoryCapacity 128
-      highlyAvailable false
-      memoryCapacityPerContainer 128
-    }
-  }
-}
-{% endhighlight %}
-
-# Adding a Mirror Service
-
-{% highlight java %}
-service {
-  icon "icon.png"
-  name "stockAnalyticsMirror"
-  statelessProcessingUnit {
-    binaries "stockAnalyticsMirror" //can be a folder, or a war file
-    sla {
-      memoryCapacity 256
-      maxMemoryCapacity 256
-      highlyAvailable false
-      memoryCapacityPerContainer 256
-    }
-  }
-}
-{% endhighlight %}
 
 # Packing Your Recipe
 
-In order to have a mixture of services (XAP EPU and non XAP) you need to prepare the following structure:
+In order to have a mixture of services (XAP EDG and non XAP) you need to prepare the following structure:
 ![recipe_folder.png](/attachment_files/recipe_folder.png)
 The application recipe should describe the different services and the dependencies between services:
 
 {% highlight java %}
 application {
-	name="rt_app"
+	name="myApp"
+
+	service {
+		name = "xap-management"		
+	}
+
+	service {
+		name = "xap-datagrid"
+		dependsOn = ["xap-management"]
+	}
 
 	service {
 		name = "feeder"
-		dependsOn = ["processor"]
+		dependsOn = ["xap-datagrid"]
 	}
 	service {
 		name = "processor"
-		dependsOn = ["rt_cassandra"]
-	}
-	service {
-		name = "rt_cassandra"
+		dependsOn = ["xap-datagrid"]
 	}
 }
 {% endhighlight %}
