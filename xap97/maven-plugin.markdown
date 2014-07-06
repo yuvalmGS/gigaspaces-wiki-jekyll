@@ -130,9 +130,9 @@ mvn os:create
 {: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
-| `groupId` | The project package name | {% remove %} | `com.mycompany.app` |
-| `artifactId` | The project name | {% remove %} | `my-app` |
-| `template` | The project template | {% oksign %} | |
+| `groupId` | The project package name | No | `com.mycompany.app` |
+| `artifactId` | The project name | No | `my-app` |
+| `template` | The project template | Yes | |
 
 The project is generated in the current directory (`my-app` directory).
 
@@ -190,11 +190,11 @@ mvn os:run
 {: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Properties | Example |
 |:---------|:------------|:---------|:-----------|:--------|
-| `cluster` | Cluster properties | {% remove %} | * `schema` -- the cluster schema name{% wbr %}- `total_members` -- a list of the cluster members, separated by a comma{% wbr %}- `id` -- the cluster ID{% wbr %}- `backup_id` -- the backup ID | * `schema=partitioned`{% wbr %}- `total_members=1,1`{% wbr %}- `id=1`{% wbr %}- `backup_id=1` |
-| `groups` | Comma-delimited list of lookup group names | {% remove %} | | group1,group2 |
-| `locators` | Comma-delimited list of Jini locators hosts | {% remove %} | | jini://<hostname1>, jini://<hostname2> |
-| `properties` | Location of context-level properties | {% remove %} | * `file` -- the properties file{% wbr %}- `embed` -- property definition | file://config/context.properties{% wbr %}    embed://prop1=value1 |
-| `module` | The name of the Processing Unit module to run | {% remove %} | | `feeder` |
+| `cluster` | Cluster properties | No | * `schema` -- the cluster schema name{% wbr %}- `total_members` -- a list of the cluster members, separated by a comma{% wbr %}- `id` -- the cluster ID{% wbr %}- `backup_id` -- the backup ID | * `schema=partitioned`{% wbr %}- `total_members=1,1`{% wbr %}- `id=1`{% wbr %}- `backup_id=1` |
+| `groups` | Comma-delimited list of lookup group names | No | | group1,group2 |
+| `locators` | Comma-delimited list of Jini locators hosts | No | | jini://<hostname1>, jini://<hostname2> |
+| `properties` | Location of context-level properties | No| * `file` -- the properties file{% wbr %}- `embed` -- property definition | file://config/context.properties{% wbr %}    embed://prop1=value1 |
+| `module` | The name of the Processing Unit module to run | No| | `feeder` |
 
 **Example:**
 
@@ -278,11 +278,11 @@ mvn os:run-standalone
 {: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Properties | Example |
 |:---------|:------------|:---------|:-----------|:--------|
-| `cluster` | Cluster properties | {% remove %} | * `schema` -- the cluster schema name{% wbr %}- `total_members` -- a list of the cluster members, separated by a comma{% wbr %}- `id` -- the cluster ID{% wbr %}- `backup_id` -- the backup ID | * `schema=partitioned`{% wbr %}- `total_members=1,1`{% wbr %}- `id=1`{% wbr %}- `backup_id=1` |
-| `groups` | Comma-delimited list of lookup group names | {% remove %} | | group1,group2 |
-| `locators` | Comma-delimited list of Jini locators hosts | {% remove %} | | jini://<hostname1>, jini://<hostname2> |
-| `properties` | Context-level properties location | {% remove %} | * `file` -- properties file{% wbr %}- `embed` -- properties definition | {% wbr %}    file://config/context.properties{% wbr %}    embed://prop1=value1 |
-| `module` | The name of the Processing Unit module to run | {% remove %} | | `feeder` |
+| `cluster` | Cluster properties | No | * `schema` -- the cluster schema name{% wbr %}- `total_members` -- a list of the cluster members, separated by a comma{% wbr %}- `id` -- the cluster ID{% wbr %}- `backup_id` -- the backup ID | * `schema=partitioned`{% wbr %}- `total_members=1,1`{% wbr %}- `id=1`{% wbr %}- `backup_id=1` |
+| `groups` | Comma-delimited list of lookup group names | No | | group1,group2 |
+| `locators` | Comma-delimited list of Jini locators hosts | No | | jini://<hostname1>, jini://<hostname2> |
+| `properties` | Context-level properties location | No | * `file` -- properties file{% wbr %}- `embed` -- properties definition | {% wbr %}    file://config/context.properties{% wbr %}    embed://prop1=value1 |
+| `module` | The name of the Processing Unit module to run | No | | `feeder` |
 
 **Example:**
 
@@ -329,16 +329,16 @@ mvn os:deploy
 {: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
-| `sla` | The SLA policy | {% remove %} | |
-| `cluster` | The name of the cluster | {% remove %} | |
-| `groups` | Comma-delimited list of lookup group names | {% remove %} | gigaspaces-<VERSION> |
-| `locators` | Comma-delimited list of Jini locators hosts | {% remove %} | |
-| `timeout` | Timeout | {% remove %} | 10000 |
-| `properties` | The properties file name or key-value pairs | {% remove %} | |
-| `override-name` | Override name | {% remove %} | |
-| `max-instances-per-vm` | The maximum instances per virtual machine | {% remove %} | |
-| `max-instances-per-machine` | The maximum instances per machine (host) | {% remove %} | |
-| `module` | The name of the Processing Unit module to deploy | {% remove %} | |
+| `sla` | The SLA policy | No | |
+| `cluster` | The name of the cluster | No | |
+| `groups` | Comma-delimited list of lookup group names | No | gigaspaces-\<VERSION\> |
+| `locators` | Comma-delimited list of Jini locators hosts | No | |
+| `timeout` | Timeout | No | 10000 |
+| `properties` | The properties file name or key-value pairs | No | |
+| `override-name` | Override name | No | |
+| `max-instances-per-vm` | The maximum instances per virtual machine | No | |
+| `max-instances-per-machine` | The maximum instances per machine (host) | No | |
+| `module` | The name of the Processing Unit module to deploy | No | |
 
 If the current directory is a Processing Unit module's base directory, only this processing unit is deployed.
 
@@ -361,10 +361,10 @@ mvn os:undeploy
 {: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
-| `groups` | Comma-delimited list of lookup group names | {% remove %} | gigaspaces-<VERSION> |
-| `locators` | Comma-delimited list of Jini locators hosts | {% remove %} | |
-| `timeout` | Timeout | {% remove %} | 10000 |
-| `module` | The name of the Processing Unit module to undeploy | {% remove %} | |
+| `groups` | Comma-delimited list of lookup group names | No | gigaspaces-\<VERSION\> |
+| `locators` | Comma-delimited list of Jini locators hosts | No | |
+| `timeout` | Timeout | No | 10000 |
+| `module` | The name of the Processing Unit module to undeploy | No | |
 
 - If the current directory is a Processing Unit module's base directory, only this Processing Unit is undeployed.
 - If the current directory is the main project directory and the `pu-name` argument is not set, Maven undeploys the Processing Unit the order described [below](#order).
@@ -480,11 +480,11 @@ mvn os:hsql-ui
 {: .table .table-bordered .table-condensed}
 | Argument | Description | Required | Default |
 |:---------|:------------|:---------|:--------|
-| `driver` | JDBC driver class | {% remove %} | org.hsqldb.jdbcDriver |
-| `url` | JDBC url | {% remove %} | jdbc:hsqldb:hsql://localhost/testDB |
-| `user` | User name used for the connection | {% remove %} | |
-| `password` | Password used for this user | {% remove %} | |
-| `help` | Prints the usage options | {% remove %} | |
+| `driver` | JDBC driver class | No | org.hsqldb.jdbcDriver |
+| `url` | JDBC url | No | jdbc:hsqldb:hsql://localhost/testDB |
+| `user` | User name used for the connection | No | |
+| `password` | Password used for this user | No | |
+| `help` | Prints the usage options | No | |
 
 {% info %} The default values are sufficient when using the data source values generated by the plugin. {%endinfo%}
 
