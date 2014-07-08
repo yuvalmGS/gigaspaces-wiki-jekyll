@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Failover
+title:  JMS Failover
 categories: XAP97
 parent: jms-advanced.html
 weight: 100
