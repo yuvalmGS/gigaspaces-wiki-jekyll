@@ -125,6 +125,13 @@ $ sudo XAP_HOME=<XAP HOME> sh -c "rpm -ivh /blobstore-10.0.0-RC_1.noarch.rpm"
 Step 4. 
 Use the `XAP HOME\bin\gs-agent-blobstore.sh` to start GigaSpaces Grid Agent that configured to load the ZetaScale libraries.
 
+# Uninstall
+
+To uninstall the blobstore libraries run the following command:
+{% highlight console %}
+$ sudo XAP_HOME=<XAP HOME> sh -c "rpm -e /blobstore-10.0.0-RC_1.noarch"
+{% endhighlight %}
+
 # Configuration
 Configuring an IMDG (Space) with BlobStore should be done via the `SanDiskBlobStoreDataPolicyFactoryBean`, or the `SanDiskBlobStoreConfigurer`. For example:
 
@@ -220,45 +227,70 @@ gigaSpace = new GigaSpaceConfigurer(urlConfig).gigaSpace();
 The above example:
 
 - Configures the SanDisk BlobStore bean.
-- Configures the Space to use the above blobStore implementation also configure the cache size, in this LRU cache the space store also the data objects and not just the object indexes in RAM.
+- Configures the Space bean (Data Grid) to use the blobStore implementation. 
 
-# Automatic Data Recovery
+# Automatic Data Recovery and ReIndexing
 
-To allow the data grid perform data recovery from the right flash device on startup you should use [Instance level SLA]({%latestjavaurl%}/configuring-the-processing-unit-sla.html#deployment-requirements---hosts-zones-and-machine-utilization).
+Once the Data grid is shutdown and redeployed it may reload its entire data from its flash drive store. Loading data from a local drive may provide fast data recovery - much faster than loading data from a central database. The data reload process iterate the data on the flash drive and generate the indexed data based on the indexed data list per space class. As each data grid partition perform this reload and reindexing process in parallel across multiple servers it may complete this indexing process relativly fast. With 8 cores server running 2 partitions with two drives , 100,000 items / second (1K payload) may be scanned and indexed with a single machine.
 
-With this SLA you control where a specific space instance will be provisioned. You may find a bloblstore data grid processing unit template at `XAP_HOME/deploy/templates/blobstore-datagrid`. Within this template there is an sla configuration file `blobstore-datagrid/META_INF/spring/sla.xml`.
+To allow the data grid to perform an automatic data recovery from the right flash device on startup you should use [Instance level SLA]({%latestjavaurl%}/configuring-the-processing-unit-sla.html#deployment-requirements---hosts-zones-and-machine-utilization).
 
-With the following example the first instance is provisioned into a specific machine (specified by its IP address), and its second instance for the same partition is provisioned into a different machine.
+With this SLA you control where a specific space instance will be provisioned. You may find a bloblstore data grid processing unit template at `XAP_HOME/deploy/templates/blobstore-datagrid`. Within this template there is an sla configuration file `blobstore-datagrid/META_INF/spring/sla.xml` you may use.
+
+You can copy the `XAP_HOME/deploy/templates/blobstore-datagrid` into `XAP_HOME/deploy` with the same folder name or a different name to have a customized blobstore-datagrid PU. 
+
+## SLA Examples
+
+### Partitioned with a backup SLA
+With the following example we have a single partition with a backup where the first instance is provisioned into `HostA` , and the second instance for the same partition is provisioned into `HostB`.
 {% highlight xml %}
-  <os-sla:sla>
+<os-sla:sla>
         <os-sla:instance-SLAs>
             <os-sla:instance-SLA instance-id="1">
                 <os-sla:requirements>
-                    <os-sla:host ip="192.168.9.152"/>
+                    <os-sla:host ip="HostA"/>
                 </os-sla:requirements>
             </os-sla:instance-SLA>
 		<os-sla:instance-SLA instance-id="1" backup-id="1">
                 <os-sla:requirements>
-                    <os-sla:host ip="192.168.9.153"/>
+                    <os-sla:host ip="HostB"/>
                 </os-sla:requirements>
             </os-sla:instance-SLA>
         </os-sla:instance-SLAs>
-    </os-sla:sla>
+</os-sla:sla>
 {% endhighlight %}
 
-The device allocation per a machine is managed via `/tmp/blobstore/devices/device-per-space.properties` file. You can override this file location using the `com.gs.blobstore-devices` system property when setting the `GSC_JAVA_OPTIONS`. Each time a blobstore space is deployed an Entry is added to this file.
+### Partitioned without a backup SLA
+
+With the following we have a partitioned (2 partitions) data grid without backups SLA example where both instances are provisioned into the `HostA`:
+{% highlight xml %}
+<os-sla:sla>
+        <os-sla:instance-SLAs>
+            <os-sla:instance-SLA instance-id="1">
+                <os-sla:requirements>
+                    <os-sla:host ip="HostA"/>
+                </os-sla:requirements>
+            </os-sla:instance-SLA>
+	    <os-sla:instance-SLA instance-id="2">
+                <os-sla:requirements>
+                    <os-sla:host ip="HostA"/>
+                </os-sla:requirements>
+            </os-sla:instance-SLA>
+        </os-sla:instance-SLAs>
+</os-sla:sla>
+{% endhighlight %}
+
+## Device Allocation
+
+The device allocation per a machine is managed via the `/tmp/blobstore/devices/device-per-space.properties` file. You can specify this file location using the `com.gs.blobstore-devices` system property when setting the `GSC_JAVA_OPTIONS`. Each time a new blobstore space is deployed an Entry is added to this file listing the data grid instances provisioned on the machine.
 
 # BlobStore Space re-deploy
+
 When you undeploy a blobstore space use the `XAP_HOM/bin/undeploy-grid.groovy` comes with the RPM. It undeploys the blobstore space and restart all its GSCs.
 {% highlight console %}
 export PATH:/gigaspaces-xap-premium-10.0.0/bin/tools/groovy/bin/
 cd /gigaspaces-xap-premium-10.0.0/bin/tools/groovy/bin
 $ groovy undeploy-grid.groovy <LUS HostName> <BlobStore-Space-Name>
-{% endhighlight %}
-
-# Uninstall
-{% highlight console %}
-$ sudo XAP_HOME=<XAP HOME> sh -c "rpm -e /blobstore-10.0.0-RC_1.noarch"
 {% endhighlight %}
 
 
