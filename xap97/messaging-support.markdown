@@ -1,9 +1,9 @@
 ---
 layout: post97
-title:  Messaging Support
+title:  JMS Messaging Support
 categories: XAP97
-parent: programmers-guide.html
-weight: 1400
+parent: event-processing.html
+weight: 700
 ---
 
 {%wbr%}
