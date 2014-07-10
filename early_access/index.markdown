@@ -23,13 +23,13 @@ weight:
 
 
 {%panel title=.Net%}
-[XAP Premium x86](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/10.0.0/rc2/GigaSpaces-XAP.NET-Premium-10.0.0.11510-RC2-x86.msi)
+[XAP Premium x86](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/10.0.0/rc2/GigaSpaces-XAP.NET-Premium-10.0.0.11511-RC2-x86.msi)
 
-[XAP Premium x64](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/10.0.0/rc2/GigaSpaces-XAP.NET-Premium-10.0.0.11510-RC2-x64.msi)
+[XAP Premium x64](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/10.0.0/rc2/GigaSpaces-XAP.NET-Premium-10.0.0.11511-RC2-x64.msi)
 
-[XAP Caching x86](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/10.0.0/rc2/GigaSpaces-XAP.NET-Caching-10.0.0.11510-RC2-x86.msi)
+[XAP Caching x86](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/10.0.0/rc2/GigaSpaces-XAP.NET-Caching-10.0.0.11511-RC2-x86.msi)
 
-[XAP Caching x64](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/10.0.0/rc2/GigaSpaces-XAP.NET-Caching-10.0.0.11510-RC2-x64.msi)
+[XAP Caching x64](http://www.gigaspaces.com/tempfiles/downloads/EarlyAccess/xap/10.0.0/rc2/GigaSpaces-XAP.NET-Caching-10.0.0.11511-RC2-x64.msi)
 {%endpanel%}
 
 {%panel title=CPP%}
