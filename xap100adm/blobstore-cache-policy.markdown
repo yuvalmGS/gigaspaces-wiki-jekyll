@@ -231,7 +231,7 @@ The above example:
 
 # Automatic Data Recovery and ReIndexing
 
-Once the Data grid is shutdown and redeployed it may reload its entire data from its flash drive store. Loading data from a local drive may provide fast data recovery - much faster than loading data from a central database. The data reload process iterate the data on the flash drive and generate the indexed data based on the indexed data list per space class. As each data grid partition perform this reload and reindexing process in parallel across multiple servers it may complete this indexing process relativly fast. With 8 cores server running 2 partitions with two drives , 100,000 items / second (1K payload) may be scanned and indexed with a single machine.
+Once the Data grid is shutdown and redeployed it may reload its entire data from its flash drive store. Loading data from a local drive may provide fast data recovery - much faster than loading data from a central database. The data reload process iterate the data on the flash drive and generate the indexed data based on the indexed data list per space class. As each data grid partition perform this reload and reindexing process in parallel across multiple servers it may complete this indexing process relativly fast. With 8 cores server running 4 partitions with four drives , 100,000 items / second (1K payload) may be scanned and indexed with a single machine. To enable the Data Recovery and ReIndexing activity the `recover-from-blob-store` should be set to `true`.
 
 To allow the data grid to perform an automatic data recovery from the right flash device on startup you should use [Instance level SLA]({%latestjavaurl%}/configuring-the-processing-unit-sla.html#deployment-requirements---hosts-zones-and-machine-utilization).
 
@@ -242,7 +242,7 @@ You can copy the `XAP_HOME/deploy/templates/blobstore-datagrid` into `XAP_HOME/d
 ## SLA Examples
 
 ### Partitioned with a backup SLA
-With the following example we have a single partition with a backup where the first instance is provisioned into `HostA` , and the second instance for the same partition is provisioned into `HostB`.
+With the following `sla.xml` example we have a single partition with a backup where the first instance is provisioned into `HostA` , and the second instance for the same partition is provisioned into `HostB`.
 {% highlight xml %}
 <os-sla:sla>
         <os-sla:instance-SLAs>
@@ -262,7 +262,7 @@ With the following example we have a single partition with a backup where the fi
 
 ### Partitioned without a backup SLA
 
-With the following we have a partitioned (2 partitions) data grid without backups SLA example where both instances are provisioned into the `HostA`:
+With the following `sla.xml` we have a partitioned (2 partitions) data grid without backups SLA example where both instances are provisioned into the `HostA`:
 {% highlight xml %}
 <os-sla:sla>
         <os-sla:instance-SLAs>
@@ -279,6 +279,10 @@ With the following we have a partitioned (2 partitions) data grid without backup
         </os-sla:instance-SLAs>
 </os-sla:sla>
 {% endhighlight %}
+
+
+{% note %} Make sure you provide the `sla.xml` location at the deploy time (`-sla` deploy command option) or locate it at the root of the processing unit jar or under the `META-INF/spring` directory, alongside the processing unit’s `pu.xml` file. {% endnote %}
+
 
 ## Device Allocation
 
