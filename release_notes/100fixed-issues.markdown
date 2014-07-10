@@ -16,7 +16,6 @@ Below is a list of issues that have been fixed in GigaSpaces 10.0.X.
 |:----|:--------|:----------------|:---------------|:------------------|
 | GS-11505 | StandaloneProcessingUnitContainerProvider#close() raise Interruption that cause problems in unit tests | 10.0.0 | 8518 | Java |
 | GS-11536 | LRMI threads cause JVM-wide slowdown with parallel reads | 10.0.0 | 8527 | Java |
-| GS-11561 | Reading a POJO which contains a document using mongo EDS fails | 9.7.1, 10.0.0 |  | Java |
 | GS-11587 | Concurrency bug in LRU/Off-heap - unpin is called when entry not locked when ifExists waiting templates removed | 10.0.0 | | All |
 | GS-11606 | Deterministic Deployment is not working on secured grid | 10.0.0 | 8642 | All |
 | GS-11615 | SpaceDataSourceSplitter#initialMetadataLoad might causes NPE | 9.7.1, 10.0.0 | 8655 | All |
@@ -32,6 +31,7 @@ Below is a list of issues that have been fixed in GigaSpaces 10.0.X.
 | GS-11664 | AccessDeniedException in write only operation - when using role including WRITE permission | 9.7.1, 10.0.0, 9.7.0 patch2 | 8757 | All |
 | GS-11667 | Storing http-sessions in the space is broken | 10.0.0 |  | Java |
 | GS-11668 | Jetty shared mode doesn't work | 10.0.0 | | Java |
+| GS-11670 | Change does not support enums in XAP.NET | 10.0.0 | 8739 | .NET |
 | GS-11681 | Ping cli command does not work | 9.7.1, 10.0.0 | | Java |
 | GS-11686 | CLI don't alert when a wrong parameters is used | 10.0.0 | | All |
 | GS-11689 | Protective mode primitiveWithoutNullValue is thrown from replication | 9.7.1, 10.0.0 | 8808 | All |
