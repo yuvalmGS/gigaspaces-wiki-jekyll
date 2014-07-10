@@ -25,7 +25,6 @@ Below is a list of known issues in GigaSpaces 10.0.X.
 | GS-11647 | "Create" Permission wasn't added in GS-ui | 8758 | 10.0.0 | | All |
 | GS-11654 | .Net localCache freeze on a clear operation in rare condition | 8740 | 10.0.0 | | .NET |
 | GS-11660 | Bug in Linq - Parameters are valid only on the right side of the expression | | 10.0.0 | | .NET |
-| GS-11670 | .Net- Enum does not work in change api | 8739 | 10.0.0 | | .NET |
 | GS-11675 | Setting spaceDataSource should not move the space to LRU cache policy | | 10.0.0 | | All |
 | GS-11679 | Admin statistics history size overridden with default value | | 10.0.0 | | Java |
 | GS-11682 | Web-UI: After running and terminating gs-agent, gsa is displayed for about one minute under Hosts | | 10.0.0 | | .NET |
@@ -50,3 +49,9 @@ Below is a list of known issues in GigaSpaces 10.0.X.
 | GS-11776 | Fix Shutdown API to close custom thread pool and client connection | 9052 | 10.0.0 | | All |
 | GS-11777 | Watchdog should stop monitoring once the server returned a result | 9031 | 10.0.0 | | All |
 | GS-11780 | Severe message in the log after killing GSA in some scenarios | 9056 | 10.0.0 | | All |
+| GS-11793 | jboss should have the dependency in test scope only | 9089 | 10.0.0 | | Java |
+| GS-11820 | Fix pom.xml & WIKI to work with 9.7 RELEASE instead of SNAPSHOT | 9094 | 10.0.0 | | Java |
+| GS-11822 | NPE in replicating change in rare condition | 9097 | 10.0.0 | | All |
+| GS-11824 | Fail to shutdown GSC due to recovery thread that hang on socket trying to load class | 9081 | 10.0.0 | | All |
+| GS-11825 | Got never ended SpaceMetadataException in the logs when adding index to an unregistered type | 9044 | 10.0.0 | | java |
+| GS-11826 | Management tools do not display properly blob store setting immediately after deployment |  | 10.0.0 | | Java |

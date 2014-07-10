@@ -22,8 +22,6 @@ Below is a list of new features and improvements in GigaSpaces 10.0.X.
 | GS-11549 | Remove standalone service grid launchers (GSM, GSC, LUS) from XAP.NET | 10.0.0 |  | | .NET |
 | GS-11558 | Remove space container registration from lookup service | 10.0.0 | | | All |
 | GS-11568 | Support user-defined change operations | 10.0.0 | | | Java |
-| GS-11569 | Enhance CassandraSpaceDataSource and ManagedEntriesSpaceDataSource to be ClusterInfoAware | 10.0.0 | | | Java |
-| GS-11570 | Add @SpaceInitialLoadQuery annotation to simplify data source initial load customization | 10.0.0 | | | Java |
 | GS-11575 | Log Index and query statistics and status | 10.0.0 | | | All |
 | GS-11576 | Add Protective mode for query without any indexes | 10.0.0 | | | All |
 | GS-11596 | Log severe messages when warning persists | 10.0.0 | 8622 | | All |
@@ -32,6 +30,8 @@ Below is a list of new features and improvements in GigaSpaces 10.0.X.
 | GS-11610 | End of life - shutting down a space from a remote proxy | 10.0.0 | | | All |
 | GS-11612 | Deploy process optimization | 9.7.1, 10.0.0 | | | Java, .NET |
 | GS-11620 | Simplify view-query definition in openspaces-core.xsd | 10.0.0 | | | Java |
+| GS-11621 | Bad linux scripts for the benchmark cli tool | 9.7.1, 10.0.0 | | | Java |
+| GS-11628 | Upgrade groovy from 1.8 to 2.2 | 10.0.0 | | | Java |
 | GS-11645 | Configure CHMAP segments for entries, default | 10.0.0 | | | Java |
 | GS-11656 | Notification event triggering is moved to a custom LRMI thread pool (together with space tasks) | 10.0.0 | | | All |
 | GS-11657 | Change lrmi.space-task threadpool system properties to lrmi.custom | 10.0.0 | | | All |
@@ -50,3 +50,17 @@ Below is a list of new features and improvements in GigaSpaces 10.0.X.
 | GS-11757 | Support storing object properties in compressed mode in XAP.NET | 10.0.0 | | | .NET |
 | GS-11758 | Support creating/configuring a space without url | 10.0.0 | | | Java |
 | GS-11760 | Expose JConsole URL as part of config details | 10.0.0 | | | Java |
+| GS-11766 | Create Space proxy configurers for XAP.NET | 10.0.0 | | | .NET |
+| GS-11771 | Allow to define zones during deployment in GS-UI | 10.0.0 | | | Java |
+| GS-11772 | Allow to define zones during deployment in WEB-UI | 10.0.0 | | | Java |
+| GS-11782 | End Of Life - data event sessions with transactions | 10.0.0 | | | .NET |
+| GS-11783 | End Of Life - ISpaceProxy.CreateLocalView | 10.0.0 | | | .NET |
+| GS-11784 | End Of Life - local transaction manager in XAP.NET | 10.0.0 | | | .NET |
+| GS-11785 | End Of Life - non-generic SQLQuery in XAP.NET | 10.0.0 | | | .NET |
+| GS-11786 | End Of Life - IServerAdmin.GetTypeDescriptor | 10.0.0 | | | .NET |
+| GS-11787 | End Of Life - SpaceClassAttribute.Fifo | 10.0.0 | | | .NET |
+| GS-11789 | End Of Life - NoWriteLease | 10.0.0 | | | All |
+| GS-11790 | Modify XAP.NET to support .NET 3.5 instead of 2.0 (in addition to 4.0) | 10.0.0 | | | .NET |
+| GS-11791 | Simplify processing unit configuration in XAP.NET | 10.0.0 | | | .NET |
+| GS-11792 | Prefer internal serialization for externalizable POJOs | 10.0.0 | | | Java |
+| GS-11823 | Add ISpaceTypeDescriptor.AliasName | 10.0.0 | | | .NET |
