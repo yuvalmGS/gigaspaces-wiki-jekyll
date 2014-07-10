@@ -72,7 +72,7 @@ The BlobStore settings includes the following options:
 | enable-admin | ZetaScale admin provides a simple command line interface (CLI) through a TCP port. ZetaScale CLI uses port 51350 by default. This port can be changed through the configuration parameter `FDF_ADMIN_PORT`. | false |
 | statistics-interval | Applications can optionally enable periodic dumping of statistics to a specified file (XAP_HOME/logs). This is disabled by default. | | optional |
 | durability-level | `SW_CRASH_SAFE` - Guarantees no data loss in the event of software crashes. But some data might be lost in the event of hardware failure.{%wbr%}`HW_CRASH_SAFE`- Guarantees no data loss if the hardware crashes.Since there are performance implication it is recommended to work with NVRAM device and configure log-flash-dir to a folder on this device. | SW_CRASH_SAFE | optional |
-| log-flush-dir | When `HW_CRASH_SAFE` used , point to a directory in a file system on top of NVRAM backed disk. This directory must be unique per space, you can add ${clusterInfo.runningNumber} as suffix to generate a uniqee name | /tmp | optional |
+| log-flush-dir | When `HW_CRASH_SAFE` used , point to a directory in a file system on top of NVRAM backed disk. This directory must be unique per space, you can add ${clusterInfo.runningNumber} as suffix to generate a uniqee name | as volume-dir | optional |
 
 The IMDG BlobStore settings includes the following options:{%wbr%}
 
