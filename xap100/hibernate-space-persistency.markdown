@@ -225,6 +225,8 @@ The Hibernate Space Persistency implementation includes the following properties
 |useScrollableResultSet|Controls if scrollable resultsets will be used with inital load operation.|true|
 |useMerge| If set to true, will use Hibernate merge to perform the create/update, and will merge before calling delete.{% wbr %}This might be required for complex mappings (depends on Hibernate) at the expense of slower performance. Available only for the `Default Hibernate Space Persistency Implementation`|false|
 |deleteById| Since 7.1. If set to true, will delete objects by their id, otherwise the object itself will be used in delete. This is necessary for objects with not-nullable fields. Available only for the `Default Hibernate Space Persistency Implementation`|true|
+|augmentInitialLoadEntries| Since 10.0. Feature flag for intelligent partition-specific initial load of entries. Read [here](http://docs.gigaspaces.com/xap100/space-persistency-initial-load.html#controlling-the-initial-load) for more details.|true|
+|initialLoadQueryScanningBasePackages| Since 10.0. A list of base packages to be scanned for special initial load query methods. Read [here](http://docs.gigaspaces.com/xap100/space-persistency-initial-load.html#controlling-the-initial-load) for more details.| |
 
 {% tip %}
 Tuning the `fetchSize`, `initialLoadChunkSize`, `initialLoadThreadPoolSize` and `performOrderById` will allow you to control the initial load time. In addition, the `StatelessHibernateSpaceDataSource` should give you better performance on startup.
@@ -243,5 +245,11 @@ See example below:
 	<property name="performOrderById" value="true"/>
 	<property name="useScrollableResultSet" value="true"/>
 	<property name="useMerge" value="true"/>
+	<property name="augmentInitialLoadEntries" value="true"/>
+	<property name="initialLoadQueryScanningBasePackages">
+	        <list>
+        	    <value>com.example.domain</value>
+        	</list>
+    	</property>
 </bean>
 {% endhighlight %}
