@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  Administration API
+title:  Security Admin API
 categories: XAP97
 parent: security-administration.html
 weight: 300
