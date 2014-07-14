@@ -3,7 +3,7 @@ layout: post100
 title:  Global vs. Local GSM
 categories: XAP100ADM
 parent: runtime-configuration.html
-weight: 250
+weight: 300
 ---
 
 {%summary%}{%endsummary%}

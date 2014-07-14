@@ -3,7 +3,7 @@ layout: post100
 title:  .NET System Properties
 categories: XAP100ADM
 parent: runtime-configuration.html
-weight: 300
+weight: 500
 ---
 
 
