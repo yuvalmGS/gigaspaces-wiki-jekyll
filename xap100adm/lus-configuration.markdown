@@ -8,6 +8,7 @@ weight: 200
 
 {%summary%}{%endsummary%}
 
+{%anchor global-lus%}
 
 # Global LUS
 
@@ -32,6 +33,8 @@ gs-agent gsa.global.lus 2 gsa.lus 0
 
 Upon startup the agents will decide which ones will run a LUS and which won’t.
 To enable this dynamic setup you should have multicast enabled between all service grid machines and also between client applications machines and service grid machines. To differentiate between different service grids running on the same network you should specify a unique `LOOKUPGROUPS` environment variable value for the service grid machines before starting the agent. The client application should specify the right group via the URL (i.e. `jini://*/*/DataGridName?groups=myGroup`) or via the `lookup-groups` spring property as part of the pu.xml.
+
+{%anchor local-lus%}
 
 # Local LUS
 With the local lookup service setup you should specify a list of known machines to run the LUS. This list (two recommended) should be configured on the service grid via the `LOOKUPLOCATORS` environment variable (comma delimited) and also with the client application space URL (i.e. `jini://LUS_HOST1, LUS_HOST2/*/DataGridName`) or via the `lookup-locators` Spring property .

@@ -10,6 +10,7 @@ weight: 300
 
 
 
+{%anchor local-gsm%}
 
 # Local GSM
 
@@ -39,6 +40,7 @@ gs-agent gsa.global.gsm 0 gsa.gsm 0
 
 Upon startup the only `Machine A` and `Machine D` agent’s that are configured to start a local GSM will have it running.  In case of `Machine A` or `Machine D` failure the system will have a single GSM. Service Grid components (LUS , GSC) will be notified for this missing GSM. Once the missing GSM will be restarted on the relevant machine Service Grid components will be notified. With a network running a DNS - you may start a new machine with the same Host name to support total machine failure while keeping number of running GSMs intact.
 
+{%anchor global-gsm%}
 
 # Global GSM
 
