@@ -25,13 +25,8 @@ This page lists the main new features in XAP 10.0 (Java and .Net editions). It's
 
 - [Performance improvement for reg ex query](#7)
 
-- [Query Execution Information](#8)
-
 - [Web UI Enhancements](#9)
 
-- [Upgrade to Jetty 9.0](#10)
-
-- [Java 8.0 Certification](#11)
 
 {%endpanel%}
 
@@ -179,9 +174,6 @@ Free text search and Regular Expression queries can use indexes now, which will 
 {%endsection%}
 
 
-{%anchor 8%}
-
-# Query Execution Information
 
 
 
@@ -190,11 +182,5 @@ Free text search and Regular Expression queries can use indexes now, which will 
 # Web UI Enhancements
 
 
-{%anchor 10%}
 
-# Upgrade to Jetty 9.0
-
-{%anchor 11%}
-
-# Java 8.0 Certification
 
