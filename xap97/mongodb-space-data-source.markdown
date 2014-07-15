@@ -64,7 +64,9 @@ include the following in your `pom.xml`
 ### Setup 
 
 An example of how the MongoDB Space Data Source can be configured for a space that loads data back from MongoDB once initialized and 
-also asynchronously persists the data using a mirror (see [MongoDB Space Synchronization Endpoint](./mongodb-space-synchronization-endpoint.html))). 
+also asynchronously persists the data using a mirror (see [MongoDB Space Synchronization Endpoint](./mongodb-space-synchronization-endpoint.html))).
+Note: for 9.7.1 version please use the code example inside:
+http://docs.gigaspaces.com/xap100/mongodb-space-data-source.html
 
 {% inittab Configuration Examples %}
 {% tabcontent Spring %}{% highlight xml %} 
