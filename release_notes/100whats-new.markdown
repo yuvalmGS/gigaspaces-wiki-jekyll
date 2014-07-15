@@ -149,6 +149,12 @@ public class InitialLoadQueryExample {
 
 # Elastic Management of XAP Using Cloudify 
 
+An enhanced Cloudify recipe for XAP that allows you to deploy manage and auto scale XAP deployments on any cloud environment.
+
+{%javalearn%}/xap100/deploying-your-application-on-a-cloud.html{%endjavalearn%}
+
+
+
 {%anchor 6%}
 
 # Custom Change Operation
@@ -189,6 +195,6 @@ With this new version it is possible to use Jetty version 9.
 
 # Web UI Enhancements
 
-
+A number of additional features were added to the web ui, specifically the ability to view jmx urls, specify zones, deployment properties and view the full data grid configuration.
 
 
