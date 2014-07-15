@@ -15,13 +15,26 @@ An XAP web processing unit can use [Jetty](http://www.eclipse.org/jetty/) as the
 
 ![web_app_archi.jpg](/attachment_files/web_app_archi.jpg)
 
-{% info %}
-For general web support features that are relevant, regardless of the web container used, please refer to [Web Processing Unit Container](./web-application-support.html).
-{%endinfo%}
+{%anchor jetty-version%}
 
+# Jetty version
+
+{%panel%}
+
+XAP 10.0 ships with Jetty 8.1.8.v20121106. However, it is possible to use Jetty 9.1.3.v20140225.
+
+To install Jetty 9.1.3.v20140225 follow these steps:
+
+1. Rename the jar file in `<XAPHOME>/lib/platform/openspaces/gs-openspaces-jetty-9.jar` to `gs-openspaces-jetty.jar`
+2. Replace the files in the `<XAPHOME>/lib/platform/jetty` directory  with the Jetty 9.1.3.v20140225 distribution jar files.
+
+{%endpanel%}
+
+{%comment%}
 {% tip %}
 See the [http Session Management](./http-session-management.html) for details about clustering the Jetty HTTP session.
 {% endtip %}
+{%endcomment%}
 
 # Jetty Instance Handling
 

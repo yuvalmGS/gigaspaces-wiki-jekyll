@@ -25,6 +25,8 @@ This page lists the main new features in XAP 10.0 (Java and .Net editions). It's
 
 - [Performance improvement for reg ex query](#7)
 
+- [Jetty 9 support](#8)
+
 - [Web UI Enhancements](#9)
 
 
@@ -174,7 +176,13 @@ Free text search and Regular Expression queries can use indexes now, which will 
 {%endsection%}
 
 
+{%anchor 8 %}
 
+# Jetty 9 support
+
+With this new version it is possible to use Jetty version 9.
+
+{%javalearn%}/xap100/web-jetty-processing-unit-container.html#jetty-version{%endjavalearn%}
 
 
 {%anchor 9%}
