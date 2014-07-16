@@ -29,5 +29,4 @@ deployment:
   production:
     branch: master
     commands:
-      - bundle exec s3_website push --headless:
-          timeout: 600
+      - bundle exec s3_website push
