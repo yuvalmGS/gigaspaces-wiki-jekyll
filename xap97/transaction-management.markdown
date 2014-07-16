@@ -534,4 +534,4 @@ The following table describes the mapping between the [Spring TransactionDefinit
 |ISOLATION_REPEATABLE_READ|REPEATABLE_READ|
 |ISOLATION_SERIALIZABLE | Not Supported|
 
-{% children %}
+

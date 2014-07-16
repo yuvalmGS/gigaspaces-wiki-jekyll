@@ -25,13 +25,10 @@ This page lists the main new features in XAP 10.0 (Java and .Net editions). It's
 
 - [Performance improvement for reg ex query](#7)
 
-- [Query Execution Information](#8)
+- [Jetty 9 support](#8)
 
 - [Web UI Enhancements](#9)
 
-- [Upgrade to Jetty 9.0](#10)
-
-- [Java 8.0 Certification](#11)
 
 {%endpanel%}
 
@@ -152,6 +149,12 @@ public class InitialLoadQueryExample {
 
 # Elastic Management of XAP Using Cloudify 
 
+An enhanced Cloudify recipe for XAP that allows you to deploy manage and auto scale XAP deployments on any cloud environment.
+
+{%javalearn%}/xap100/deploying-your-application-on-a-cloud.html{%endjavalearn%}
+
+
+
 {%anchor 6%}
 
 # Custom Change Operation
@@ -179,22 +182,19 @@ Free text search and Regular Expression queries can use indexes now, which will 
 {%endsection%}
 
 
-{%anchor 8%}
+{%anchor 8 %}
 
-# Query Execution Information
+# Jetty 9 support
 
+With this new version it is possible to use Jetty version 9.
+
+{%javalearn%}/xap100/web-jetty-processing-unit-container.html#jetty-version{%endjavalearn%}
 
 
 {%anchor 9%}
 
 # Web UI Enhancements
 
+A number of additional features were added to the web ui, specifically the ability to view jmx urls, specify zones, deployment properties and view the full data grid configuration.
 
-{%anchor 10%}
-
-# Upgrade to Jetty 9.0
-
-{%anchor 11%}
-
-# Java 8.0 Certification
 

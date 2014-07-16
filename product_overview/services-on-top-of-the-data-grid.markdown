@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  Services on top of the Grid
+title:  Services on top of the Data Grid
 categories: PRODUCT_OVERVIEW
-weight: 300
-parent: the-runtime-environment.html
+weight: 400
+parent: the-in-memory-data-grid.html
 ---
 
 
