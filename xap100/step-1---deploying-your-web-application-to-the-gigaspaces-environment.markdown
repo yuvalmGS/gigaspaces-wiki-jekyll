@@ -264,7 +264,7 @@ By default, each application instance provisioned to the GSC will have its own J
 {% endinfo %}
 
 - By using the command line (when deploying using the command line). You can specify the total number of instances and the number of instances per JVM / machine as command line arguments. These arguments will override the values in the `pu.properties` file:
-`<gs root>/bin/gs.(sh/bat) deploy -cluster total_members=3 -max-instances-per-vm 1 -max-instances-per-machine 2 <.war file path>`
+`<gs root>/bin/gs.(sh/bat) deploy -cluster total_members=3 -max-instances-per-vm 1 -max-instances-per-machine 3 <.war file path>`
 
 - By using the GUI (when deploying using the GUI). You can specify the total number of instances and the number of instances per JVM / machine in the dedicated text field in the Deployment wizard. These arguments will override the values in the `pu.properties` file:
 ![sla-props.jpg](/attachment_files/sla-props.jpg)
@@ -342,7 +342,8 @@ Finally, we will terminate one of the running containers and watch the failover 
 
 1. Build the application [as described earlier in this tutorial](#BuildDirections)
 1. Start the GigaSpaces agent by calling `<gs root>/bin/gs-agent.(sh/bat)`.
-1. Start the GigaSpaces user interface by calling `<gs root>/bin/gs-ui.(sh/bat)`. When the user interface is started, you should see the three GSCs presented in it.
+1. Start the GigaSpaces user interface by calling `<gs root>/bin/gs-ui.(sh/bat)`. When the user interface is started, you should see the two GSCs presented in it.
+1. Start another GSC by a right click on the gsa under Hosts tab and choosing Start GSC
 
 {% togglecloak id=empty-gsui %} **Click to view screenshot...**{% endtogglecloak %}
 {% gcloak empty-gsui %}
