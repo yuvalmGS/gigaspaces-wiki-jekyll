@@ -8,9 +8,7 @@ weight: 300
 
 {% summary %} {%endsummary%}
 
-{%comment%}
-{% summary %}Using GigaSpaces as a distributed cache. Interacting with the space using the Hashtable/JCache (JSR-107) API. This is an optimized API to store user sessions or metadata accessed via a simple key{% endsummary %}
-{%endcomment%}
+
 
 {%wbr%}
 
@@ -34,8 +32,8 @@ Using the Map API requires two layers:
 - The GigaMap Interface which provides enriched JCache (JSR-107)API including declarative transactions, coherent runtime exception hierarchy, and more.
 In general, you would use the Map component to create the proxy layer, and then wrap it with a GigaMap instance and do all the operations against this instance.
 --------
-{% compositionsetup %}
-{% summary page|60 %}Using GigaSpaces as a distributed cache. Interacting with the space using the Hashtable API.{% endsummary %}
+
+{% summary page%}Using GigaSpaces as a distributed cache. Interacting with the space using the Hashtable API.{% endsummary %}
 {% endcomment %}
 
 
@@ -391,57 +389,47 @@ The Lock API using transactions to ensure isolation and data consistency.
 
 # GigaSpace API vs. GigaMap API
 
-Here is a simple comparison between the GigaMap API vs. the [GigaSpace API](./the-gigaspace-interface.html):
+Here is a simple comparison between the GigaMap API vs. the [GigaSpace API](./the-gigaspace-interface-overview.html):
 
-{% section %}
-{% column %}
 
-{: .table .table-bordered}
-|Feature|GigaSpace API|GigaMap API|
+{: .table .table-bordered .table-condensed}
+|Feature|XAP API|GigaMap API|
 |:------|:-----------:|:---------:|
-|Batch Operations|{% oksign %} |Limited.|
-| Externalizable Support | {% oksign %} | {% oksign %} -- The value object should implement Externalizable. |
-| Iterator | {% oksign %} | {% oksign %} |
-| Unicast Notifications | {% oksign %} | {% oksign %} -- Limited. |
-| Jini Distributed Transaction Support | {% oksign %} | {% oksign %} |
-| Local Transaction Support | {% oksign %} | {% oksign %} |
-| XA Transaction Support | {% oksign %} | {% oksign %} |
-| Key based Access | {% oksign %} | {% oksign %} |
-| Lease | {% oksign %} | {% oksign %} |
-| Simple Matching | {% oksign %} | {% oksign %} |
-| Exclusive Read Lock | {% oksign %} | {% oksign %} \* |
-| Optimistic Locking | {% oksign %} | {% oksign %} |
-| Pessimistic Locking | {% oksign %} | {% oksign %} |
-| Administration API | {% oksign %} | {% oksign %} |
-| Spring Support | {% oksign %} | {% oksign %} |
-| Timeout (blocking) operations (read/take with timeout > 0) | {% oksign %} | {% oksign %} |
-| Local Cache | {% oksign %} | {% oksign %} |
+|Batch Operations|Yes |Limited.|
+| Externalizable Support | Yes | Yes -- The value object should implement Externalizable. |
+| Iterator | Yes |Yes |
+| Unicast Notifications | Yes | Yes -- Limited. |
+| Jini Distributed Transaction Support | Yes | Yes |
+| Local Transaction Support | Yes | Yes |
+| XA Transaction Support | Yes | Yes|
+| Key based Access | Yes | Yes |
+| Lease | Yes| Yes |
+| Simple Matching | Yes | Yes |
+| Exclusive Read Lock | Yes | Yes \* |
+| Optimistic Locking | Yes| Yes |
+| Pessimistic Locking |Yes | Yes |
+| Administration API |Yes| Yes |
+| Spring Support | Yes| Yes |
+| Timeout (blocking) operations (read/take with timeout > 0) | Yes | Yes |
+| Local Cache | Yes| Yes|
+| Replicated Space | Yes | Yes |
+| Partitioned Space | Yes | Yes |
+| Service Grid Support | Yes | Yes |
+| `ISpaceFilter` Support | Yes| Yes|
+| Local View | Yes| No |
+| POJO Support | Yes | No |
+| Inheritance Support | Yes | No |
+| Master-Worker Pattern | Yes | No |
+| Continuous Query | Yes| No |
+| Custom Query Pattern | Yes | No|
+| SQL Query Support | Yes | No |
+| FIFO Support | Yes | No |
+| Indexing | Yes| No |
+| Complex Entry Attribute Query Support | Yes | No |
+| Regular Expression Query Support | Yes| No |
+| Partial Update  | Yes | No |
 
-{% endcolumn %}
-{% column %}
 
-{: .table .table-bordered}
-|Feature|GigaSpace API|GigaMap API|
-|:------|:-----------:|:---------:|
-| Replicated Space | {% oksign %} | {% oksign %} |
-| Partitioned Space | {% oksign %} | {% oksign %} |
-| Service Grid Support | {% oksign %} | {% oksign %} |
-| `ISpaceFilter` Support | {% oksign %} | {% oksign %} |
-| Local View | {% oksign %} | {% remove %} |
-| POJO Support | {% oksign %} | {% remove %} |
-| Inheritance Support | {% oksign %} | {% remove %} |
-| Master-Worker Pattern | {% oksign %} | {% remove %} |
-| Continuous Query | {% oksign %} | {% remove %} |
-| Custom Query Pattern | {% oksign %} | {% remove %} |
-| SQL Query Support | {% oksign %} | {% remove %} |
-| FIFO Support | {% oksign %} | {% remove %} |
-| Indexing | {% oksign %} | {% remove %} |
-| Complex Entry Attribute Query Support | {% oksign %} | {% remove %} |
-| Regular Expression Query Support | {% oksign %} | {% remove %} |
-| Partial Update  | {% oksign %} | {% remove %} |
-
-{% endcolumn %}
-{% endsection %}
 
 \* via `IMap.getMasterSpace()`
 
