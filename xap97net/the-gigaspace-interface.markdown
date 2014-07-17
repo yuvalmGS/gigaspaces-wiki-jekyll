@@ -185,13 +185,13 @@ A secured space should be configured with a security context so that it can be a
 {%inittab%}
 {% tabcontent Code%}
 {% highlight csharp %}
- GigaSpacesFactory.FindSpace("/./mySpace", new SecurityContext("username", "password"));
+ GigaSpacesFactory.FindSpace("jini://*/*/mySpaceWithSecurity", new SecurityContext("username", "password"));
 {% endhighlight %}
 {%endtabcontent%}
 {%tabcontent XML%}
 {%highlight xml%}
 <SpaceProxies>
-    <add Name="MySpaceWithCustom" Url="/./mySpaceWithSecurity">
+    <add Name="MySpaceWithCustom" Url="jini://*/*/mySpaceWithSecurity">
         <Properties>
             <add Name=" security.username" Value="username"/>
             <add Name=" security.password" Value="password"/>
