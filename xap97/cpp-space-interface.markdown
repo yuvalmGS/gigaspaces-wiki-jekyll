@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  The Space Interface
+title:  The CPP Space Interface
 categories: XAP97
 parent: xap-cpp.html
 weight: 20

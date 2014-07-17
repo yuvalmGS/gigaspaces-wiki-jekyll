@@ -89,9 +89,9 @@ Launch Visual Studio, create a new C# *Console Application* and add a reference 
 
 {%warning%} If you're using XAP.NET x64, note that the [default platform for Console Applications is x86](http://connect.microsoft.com/VisualStudio/feedback/details/455103/new-c-console-application-targets-x86-by-default), and you must [change it to x64](http://msdn.microsoft.com/en-us/library/ms185328.aspx).{%endwarning%}
 
-### Implementing a POCO
+### Implementing a PONO
 
-Any POCO (*P*lain *O*l' *C*LR *O*bject) can be stored in the space, so long as it has a default constructor and an ID property. For this tutorial let's define a `Person` class with the following properties:
+Any PONO can be stored in the space, so long as it has a default constructor and an ID property. For this tutorial let's define a `Person` class with the following properties:
 
 {% highlight csharp %}
 using GigaSpaces.Core.Metadata;
