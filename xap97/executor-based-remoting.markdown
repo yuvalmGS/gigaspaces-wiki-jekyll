@@ -24,7 +24,7 @@ The `executor-proxy` should be created on the client side to interact with the r
 
 The `executor-proxy` include the following properties:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | property| Class Type | Required | NameSpace Bean | Description | Default |
 |:--------|:-----------|:---------|:---------------|:------------|:--------|
 |gigaSpace | GigaSpace | giga-space | Yes |Sets the GigaSpace interface that will be used to work with the space as the transport layer for executions of Space tasks.| |
