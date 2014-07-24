@@ -198,3 +198,5 @@ With this new version it is possible to use Jetty version 9.
 A number of additional features were added to the web ui, specifically the ability to view jmx urls, specify zones, deployment properties and view the full data grid configuration.
 
 
+{%learn%}/xap100adm/web-management-data-grid-view.html{%endlearn%}
+
