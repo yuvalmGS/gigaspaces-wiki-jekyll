@@ -508,10 +508,11 @@ Last, the `Admin` interface provides a one stop method called `addEventListener`
 
 The space maintains statistics information about all the data types (e.g. space class types) it stores and the amount of space objects stored in memory for each data type. Below example how to retrieve this data. This approach avoiding the need to use the `GigaSpace.Count()` that is relatively expensive with spaces that store large number of objects.
 
+If you are monitoring the space class instance count with some monitoring tool you should use the approach below rather calling the `GigaSpace.Count()`.
+
 {% highlight java %}
-public static void printAllClassInstanceCountForAllPartitions (String spaceName) throws Exception
+public static void printAllClassInstanceCountForAllPartitions (Admin admin , String spaceName) throws Exception
 {
-	Admin admin = new AdminFactory().addLocator("127.0.0.1").createAdmin();
 	Space space = admin.getSpaces().waitFor(spaceName, 10 , TimeUnit.SECONDS);
 	SpacePartition spacePartitions[] = space.getPartitions();
 	System.out.println(spaceName + " have " +spacePartitions.length + " Partitions , Total " + space.getTotalNumberOfInstances() + " Instances");
@@ -545,7 +546,6 @@ public static void printAllClassInstanceCountForAllPartitions (String spaceName)
 			System.out.println ("Class:" + className +" Instance count:" + classInstanceCountsBackup.get(className));
 		}
 
-		admin.close();
 	}
 }
 
