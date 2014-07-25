@@ -9,22 +9,7 @@ weight: 100
 
 {% summary%}{% endsummary %}
 
-{%comment%}
-{%section%}
-{%column width=50% %}
-# Overview
-The Admin API provides a way to administer and monitor all of GigaSpaces services and components using a simple API. The API provides information and the ability to operate on the currently running [GigaSpaces Agent](/product_overview/service-grid.html#gsa), [GigaSpaces Manager](/product_overview/service-grid.html#gsm), [GigaSpaces Container](/product_overview/service-grid.html#gsc), [Lookup Service](/product_overview/service-grid.html#lus), [Processing Unit](./administrators-guide.html) and Spaces.
-{%endcolumn%}
-{%column width=45% %}
-![archi_manag.jpg](/attachment_files/archi_manag.jpg)
-{%endcolumn%}
-{%endsection%}
 
-{% tip %}
-You can use the [GigaSpaces Universal Deployer](/sbp/universal-deployer.html) to deploy complex multi processing unit applications.
-{% endtip %}
-
-{%endcomment%}
 
 Before diving into the Admin API, here are some code examples showing how the Admin API can be used to display information on the of currently deployed services / components:
 
@@ -508,10 +493,11 @@ Last, the `Admin` interface provides a one stop method called `addEventListener`
 
 The space maintains statistics information about all the data types (e.g. space class types) it stores and the amount of space objects stored in memory for each data type. Below example how to retrieve this data. This approach avoiding the need to use the `GigaSpace.Count()` that is relatively expensive with spaces that store large number of objects.
 
+If you are monitoring the space class instance count with some monitoring tool you should use the approach below rather calling the `GigaSpace.Count()`.
+
 {% highlight java %}
-public static void printAllClassInstanceCountForAllPartitions (String spaceName) throws Exception
+public static void printAllClassInstanceCountForAllPartitions (Admin admin , String spaceName) throws Exception
 {
-	Admin admin = new AdminFactory().addLocator("127.0.0.1").createAdmin();
 	Space space = admin.getSpaces().waitFor(spaceName, 10 , TimeUnit.SECONDS);
 	SpacePartition spacePartitions[] = space.getPartitions();
 	System.out.println(spaceName + " have " +spacePartitions.length + " Partitions , Total " + space.getTotalNumberOfInstances() + " Instances");
@@ -545,7 +531,6 @@ public static void printAllClassInstanceCountForAllPartitions (String spaceName)
 			System.out.println ("Class:" + className +" Instance count:" + classInstanceCountsBackup.get(className));
 		}
 
-		admin.close();
 	}
 }
 
