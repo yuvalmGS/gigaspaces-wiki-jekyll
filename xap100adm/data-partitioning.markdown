@@ -15,7 +15,7 @@ A clustered proxy for a partitioned data grid holds logical references to all sp
 ![load_balancing_basic.gif](/attachment_files/load_balancing_basic.gif)
 
 {% tip %}
-For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](./elastic-processing-unit.html) section.
+For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit]({%currentjavaurl%}/elastic-processing-unit.html) section.
 {% endtip %}
 
 # Partitioning Types

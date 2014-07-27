@@ -6,20 +6,21 @@ parent: other-data-access-apis.html
 weight: 300
 ---
 
-{% summary %} {%endsummary%}
-
-
-
-{%wbr%}
-
 {%section%}
 {%column width=10% %}
+<br>
 ![key-value.png](/attachment_files/subject/key-value.png)
 {%endcolumn%}
 {%column width=90% %}
-XAP allows applications to interact with the space and cache data using the Map API (JCache) or a [HashTable API](http://docs.oracle.com/javase/6/docs/api/java/util/Hashtable.html). Accessing the space via the Map API can be done using the [GigaMap](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaMap.html) interfaces. It includes enhanced options such as declarative transactions support, coherent runtime exception hierarchy, timeout operations , TTL, locking and versioning.
+{% summary %} {%endsummary%}
 {%endcolumn%}
 {%endsection%}
+
+
+
+
+
+XAP allows applications to interact with the space and cache data using the Map API (JCache) or a [HashTable API](http://docs.oracle.com/javase/6/docs/api/java/util/Hashtable.html). Accessing the space via the Map API can be done using the [GigaMap](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaMap.html) interfaces. It includes enhanced options such as declarative transactions support, coherent runtime exception hierarchy, timeout operations , TTL, locking and versioning.
 
 
 
@@ -33,7 +34,7 @@ Using the Map API requires two layers:
 In general, you would use the Map component to create the proxy layer, and then wrap it with a GigaMap instance and do all the operations against this instance.
 --------
 
-{% summary page%}Using GigaSpaces as a distributed cache. Interacting with the space using the Hashtable API.{% endsummary %}
+{% summary page%}Using XAP as a distributed cache. Interacting with the space using the Hashtable API.{% endsummary %}
 {% endcomment %}
 
 

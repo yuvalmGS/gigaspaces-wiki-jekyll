@@ -1,9 +1,9 @@
 ---
 layout: post100
-title:  Change API
+title:  Overview
 categories: XAP100
-weight: 400
-parent: the-gigaspace-interface-overview.html
+weight: 100
+parent: change-api-overview.html
 ---
 
 {% summary %} {% endsummary %}

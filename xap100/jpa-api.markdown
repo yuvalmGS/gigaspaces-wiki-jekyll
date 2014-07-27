@@ -1,21 +1,12 @@
 ---
 layout: post100
-title:  JPA API
+title:  Overview
 categories: XAP100
-parent: other-data-access-apis.html
-weight: 200
+parent: jpa-api-overview.html
+weight: 100
 ---
 
 {% summary %} {%endsummary%}
-
-{%section%}
-{%column width=10% %}
-![jpa.png](/attachment_files/subject/jpa.png)
-{%endcolumn%}
-{%column width=90% %}
-The Java Persistency API (JPA) is a Java programming language framework managing relational data in applications using Java Platform. XAP's JPA allows you to use JPA's functionality, annotations and execute JPQL queries on Space. XAP's JPA implementation is based on [OpenJPA](http://openjpa.apache.org/).
-{%endcolumn%}
-{%endsection%}
 
 
 {%comment%}
@@ -703,5 +694,5 @@ For more information about dynamic script execution refer to [Dynamic Language T
 
 # GigaSpaces JPA Limitations
 
-For a list of unsupported JPA features and limitations please refer to [GigaSpaces JPA Limitations](./gigaspaces-jpa-limitations.html).
+For a list of unsupported JPA features and limitations please refer to [GigaSpaces JPA Limitations](./jpa-limitations.html).
 

@@ -2,17 +2,15 @@
 layout: post100
 title:  JPA Relationships
 categories: XAP100
-parent: jpa-api.html
-weight: 200
+parent: jpa-api-overview.html
+weight: 300
 ---
 
-{% summary %}
-GigaSpaces JPA Relationships
-{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
 
-GigaSpaces JPA relationships model is different than Relational Databases model. In GigaSpaces relationships are owned, which means that an owner of a relationship holds the owned entities within itself in Space. For instance, if an Author has a One-to-many relationship with Book, in Space all the Book instances relevant for a specific Author will reside
+
+The XAP JPA relationships model is different than Relational Databases model. In GigaSpaces relationships are owned, which means that an owner of a relationship holds the owned entities within itself in Space. For instance, if an Author has a One-to-many relationship with Book, in Space all the Book instances relevant for a specific Author will reside
 within a Collection in Author.
 
 {% tip %}

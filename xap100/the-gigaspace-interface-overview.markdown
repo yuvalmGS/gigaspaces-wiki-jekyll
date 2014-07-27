@@ -28,7 +28,7 @@ Describes the Space URL and properties to configure a Space
 - [Operations](./the-space-operations.html){%wbr%}
 Describes the basic XAP API for interacting with the space
 
-- [Change API](./change-api.html){%wbr%}
+- [Change API](./change-api-overview.html){%wbr%}
 This page covers the Change API, its usage and behavior.
 
 - [Counters](./the-space-counters.html){%wbr%}
