@@ -6,7 +6,7 @@ module Jekyll
     end
 
     def render(context)
-      "<i class='icon-star'></i>"
+      "<i class='fa fa-star'></i>"
     end
   end
 end

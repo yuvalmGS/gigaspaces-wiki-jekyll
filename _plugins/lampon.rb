@@ -6,7 +6,7 @@ module Jekyll
     end
 
     def render(context)
-      "<span class='icon-stack'><i class='icon-sun icon-stack-base'></i><i class='icon-lightbulb'></i></span>"
+      "<span class='fa-stack'><i class='fa fa-sun-o fa-stack-2x'></i><i class='fa fa-lightbulb-o fa-stack-1x'></i></span>"
     end
   end
 end
