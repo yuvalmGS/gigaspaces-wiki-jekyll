@@ -6,7 +6,15 @@ weight: 300
 parent: administration-and-monitoring-overview.html
 ---
 
-{% summary %}{% endsummary %}
+
+{% section %}
+ {% column width=10% %}
+ ![counter-logo.jpg](/attachment_files/subject/alerts.png)
+ {% endcolumn %}
+ {% column width=90% %}
+ {% summary %} {% endsummary %}
+ {% endcolumn %}
+ {% endsection %}
 
 
 

@@ -7,7 +7,16 @@ weight: 450
 ---
 
 {%wbr%}
+
+{% section %}
+{% column width=10% %}
+![counter-logo.jpg](/attachment_files/subject/deploy.png)
+{% endcolumn %}
+{% column width=90% %}
 The primary focus of the Administrator's Guide, is to provide both a basic, as well as more advanced overview of the GigaSpaces XAP administration and operation components.
+{% endcolumn %}
+{% endsection %}
+
 
 <hr/>
 
