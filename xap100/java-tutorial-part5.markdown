@@ -179,7 +179,7 @@ A sample SLA definition is shown below:
 </beans>
 {%endhighlight%}
 
-{%learn%}./configuring-the-processing-unit-sla.html{%endlearn%}
+{%learn%}{%currentadmurl%}/the-sla-overview.html{%endlearn%}
 
 
 

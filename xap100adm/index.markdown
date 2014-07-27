@@ -26,6 +26,9 @@ The web management console is a new user interface for XAP allowing users to dep
 - [Data grid clustering](./data-grid-clustering.html){%wbr%}
 This section describe into details how the In-Memory-Data-Grid clustering works. It goes into the details of the fail-over, load-balancing, and replication facilities used.
 
+- [Service Level Agreement](./the-sla-overview.html){%wbr%}
+The XAP runtime environment (Service Grid) provides Service Level Agreement driven capabilities.
+
 - [Memory Management](./memory-management-overview.html){%wbr%}
 In this section we will explain the different Space cache policies, memory usage, and rules for exceeding physical memory capacity.
 

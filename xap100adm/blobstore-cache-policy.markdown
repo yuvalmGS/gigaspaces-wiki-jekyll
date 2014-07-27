@@ -232,7 +232,7 @@ The above example:
 
 Once the Data grid is shutdown and redeployed it may reload its entire data from its flash drive store. Loading data from a local drive may provide fast data recovery - much faster than loading data from a central database. The data reload process iterate the data on the flash drive and generate the indexed data based on the indexed data list per space class. As each data grid partition perform this reload and reindexing process in parallel across multiple servers it may complete this indexing process relativly fast. With with a single machine 8 cores, running 4 partitions data grid with four SSD drives , 100,000 items / second (1K payload) may be scanned and re-indexed. To enable the Data Recovery and ReIndexing activity the `recover-from-blob-store` should be set to `true`.
 
-To allow the data grid to perform an automatic data recovery from the right flash device on startup you should use [Instance level SLA]({%latestjavaurl%}/configuring-the-processing-unit-sla.html#deployment-requirements---hosts-zones-and-machine-utilization).
+To allow the data grid to perform an automatic data recovery from the right flash device on startup you should use [Instance level SLA](./the-sla-overview.html) .
 
 With this SLA you control where a specific space instance will be provisioned. You may find a bloblstore data grid processing unit template at `XAP_HOME/deploy/templates/blobstore-datagrid`. Within this template there is an sla configuration file `blobstore-datagrid/META_INF/spring/sla.xml` you may use.
 
