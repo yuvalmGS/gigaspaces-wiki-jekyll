@@ -6,7 +6,16 @@ parent: querying-the-space.html
 weight: 800
 ---
 
-{%summary%}{%endsummary%}
+{%section%}
+{%column width=10% %}
+![key-value.png](/attachment_files/subject/linq.png)
+{%endcolumn%}
+{%column width=90% %}
+{% summary %} {%endsummary%}
+{%endcolumn%}
+{%endsection%}
+
+
 
 XAP.NET includes a custom LINQ provider, which enables developers to take advantage of their existing .NET skills to query the space without learning a new language.
 To enable the provider add the following `using` statement:

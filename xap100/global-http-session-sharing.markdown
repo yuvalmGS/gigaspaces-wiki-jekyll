@@ -6,7 +6,15 @@ parent: web-application-overview.html
 weight: 600
 ---
 
-{%summary%}{%endsummary%}
+{% section %}
+ {% column width=10% %}
+ {%wbr%}
+ ![counter-logo.jpg](/attachment_files/subject/httpsession.png)
+ {% endcolumn %}
+ {% column width=90% %}
+ {% summary %} {% endsummary %}
+ {% endcolumn %}
+ {% endsection %}
 
 
 {% note %}
