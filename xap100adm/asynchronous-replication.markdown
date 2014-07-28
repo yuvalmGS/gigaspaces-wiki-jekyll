@@ -16,14 +16,14 @@ In asynchronous replication, operations are performed in the source space instan
 
 In general you should have the `cluster-config.groups.group.repl-policy.replication-mode` property set to `async`. See below example:
 
-{% highlight java %}
-<os-core:space id="space" url="/./mySpace">
+{% highlight xml %}
+<os-core:embedded-space id="space" name="mySpace">
     <os-core:properties>
         <props>
             <prop key="cluster-config.groups.group.repl-policy.replication-mode">async</prop>
         </props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 # When to Use Asynchronous Replication
@@ -80,14 +80,14 @@ Prefix the property with 'cluster-config.groups.group.repl-policy.async-replicat
 
 To change the default replication settings you should modify the space properties when deployed. You may set these properties via the pu.xml or programmatically. Here is an example how you can set the replication parameters when using the pu.xml:
 
-{% highlight java %}
-<os-core:space id="space" url="/./mySpace">
+{% highlight xml %}
+<os-core:embedded-space id="space" name="mySpace">
     <os-core:properties>
         <props>
             <prop key="cluster-config.groups.group.async-replication.repl-chunk-size">1000</prop>
         </props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 # Flushing of Pending Replication During Shutdown
