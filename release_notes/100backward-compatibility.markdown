@@ -6,7 +6,7 @@ parent: xap100.html
 weight: 600
 ---
 
-{%comment%}
+
 
 ## Overview
 Backward Compatibility in GigaSpaces
@@ -48,6 +48,6 @@ The below table describes backwards compatibility support in XAP 10.0:
 - Applications built using 8.0.x or 9.0.x run without any code changes on a clean 10.0 installation.
 - Mixing clients and Space servers from different XAP Major Releases:Clients running on 8.0 or 9.0 can run against 10.0 servers. 8.0, 9.0 servers cannot be part of the same cluster with 10.0 servers.
 
-{%endcomment%}
+
 
 
