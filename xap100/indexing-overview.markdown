@@ -10,7 +10,6 @@ weight: 600
 
 {%section%}
 {%column width=10% %}
-{%wbr%}
 ![data-access.jpg](/attachment_files/subject/data-index.png)
 {%endcolumn%}
 {%column width=90% %}

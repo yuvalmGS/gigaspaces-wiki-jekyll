@@ -6,18 +6,19 @@ weight: 1000
 parent: java-home.html
 ---
 
-{%summary%} {%endsummary%}
-
-
 
 {%section%}
-{%column width=15% %}
-<img src="/attachment_files/qsg/security.png" width="100" height="100">
+{%column width=10% %}
+![cassandra.png](/attachment_files/qsg/security.png)
 {%endcolumn%}
-{%column width=85% %}
-In this part of the tutorial we will introduce you to XAP security, where it fits in the XAP architecture, which components can be secured, and how to configure and customize the security depending on your application security requirements. XAP Security provides comprehensive support for securing your data and services.
+{%column width=90% %}
+{% summary   %} {% endsummary %}
 {%endcolumn%}
 {%endsection%}
+
+
+
+In this part of the tutorial we will introduce you to XAP security, where it fits in the XAP architecture, which components can be secured, and how to configure and customize the security depending on your application security requirements. XAP Security provides comprehensive support for securing your data and services.
 
 
 

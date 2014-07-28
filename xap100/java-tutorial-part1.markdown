@@ -7,20 +7,17 @@ parent: java-home.html
 ---
 
 
-
-{%summary%}{%endsummary%}
-
-
-
-
 {%section%}
-{%column width=15% %}
-<img src="/attachment_files/qsg/data.png" width="100" height="100">
+{%column width=10% %}
+{%wbr%}
+![cassandra.png](/attachment_files/qsg/data.png)
 {%endcolumn%}
-{%column width=85% %}
-In this part of the tutorial we will demonstrate how to create a space and how you can interact with it. We will also demonstrate how you can improve your space search performance by using indexes and returning partial results.
+{%column width=90% %}
+{% summary   %} {% endsummary %}
 {%endcolumn%}
 {%endsection%}
+
+In this part of the tutorial we will demonstrate how to create a space and how you can interact with it. We will also demonstrate how you can improve your space search performance by using indexes and returning partial results.
 
 
 # Creating a Space
@@ -28,16 +25,13 @@ Let's create a space called 'xapTutorialSpace' that is co-located within an appl
 
 Here is an example how you start an embedded space:
 {%highlight java  %}
-// Embedded Space
-String url = "/./xapTutorialSpace";
-
 // Create the Space
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer(url)).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("xapTutorialSpace")).gigaSpace();
 {%endhighlight%}
 
-This space we just created can also be accessed remotely from another JVM by connecting with a modified space URL. In order to do so you would use the following Space URL:
+This space we just created can also be accessed remotely from another JVM by connecting with a `SpaceProxyConfigurer`. In order to do so you would use the following code:
 {%highlight java  %}
-String url ="jini://*/*/xapTutorialSpace";
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("xapTutorialSpace")).gigaSpace();
 {%endhighlight%}
 
 You can configure the Space URL with several options.
@@ -657,7 +651,7 @@ Lets look at a Spring configuration file that represents the creation of an embe
 	<context:annotation-config />
 
 	<!-- A bean representing a space (an IJSpace implementation) -->
-	<os-core:space id="space" url="/./xapTutorialSpace" />
+	<os-core:embedded-space id="space" url="xapTutorialSpace" />
 
 	<!-- Define the GigaSpace instance that the application will use to access the space -->
 	<os-core:giga-space id="xapTutorialSpace" space="space"/>
