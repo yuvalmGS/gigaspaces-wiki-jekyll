@@ -1,9 +1,9 @@
 ## Customize the test machine
-machine:
+#machine:
   # Version of ruby to use
-  ruby:
-    version:
-      1.9.3
+  #ruby:
+    #version:
+      #1.9.3
 
 checkout:
   post:
