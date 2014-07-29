@@ -103,7 +103,7 @@ In order to start a space with custom eviction policy it should be configured as
 
 {% highlight java %}
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./mySpace")
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("space"))
         .cachePolicy(new CustomCachePolicy()
         .evictionStrategy(new MyCustomEvictionStrategy())
         .size(1000)

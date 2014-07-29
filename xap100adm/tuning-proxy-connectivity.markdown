@@ -43,40 +43,38 @@ In most scenarios the goal is for all proxies to be configured with the same set
 Example : To increase the lookup duration timeout to 5 minutes you should have the following:
 
 {% inittab os_simple_space|top %}
- {% tabcontent Namespace %}
- {% highlight xml %}
- 	<os-core:space id="space" url="jini://*/*/mySpace">
- 	 <os-core:properties>
- 	 <props>
- 	 <prop key="space-config.proxy.router.active-server-lookup-timeout">300000</prop>
- 	 </props>
- 	 </os-core:properties>
- 	</os-core:space>
- {% endhighlight %}
- {% endtabcontent %}
- {% tabcontent Plain XML %}
+{% tabcontent Namespace %}
+{% highlight xml %}
+<os-core:space-proxy id="space" name="mySpace">
+    <os-core:properties>
+ 	    <props>
+ 	        <prop key="space-config.proxy.router.active-server-lookup-timeout">300000</prop>
+ 	    </props>
+ 	</os-core:properties>
+</os-core:space-proxy>
+{% endhighlight %}
+{% endtabcontent %}
+{% tabcontent Plain XML %}
 
- {% highlight xml %}
+{% highlight xml %}
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="jini://*/*/mySpace" />
+    <property name="properties">
+        <props>
+            <prop key="space-config.proxy.router.active-server-lookup-timeout">300000</prop>
+        </props>
+    </property>
+</bean>
 
- 	<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
- 	 <property name="url" value="jini://*/*/mySpace" />
- 	 <property name="properties">
- 	 <props>
- 	 <prop key="space-config.proxy.router.active-server-lookup-timeout">300000</prop>
- 	 </props>
- 	 </property>
- 	</bean>
-
- 	<os-core:giga-space id="gigaSpace" space="space"/>
- 	{% endhighlight %}
- {% endtabcontent %}
- {% tabcontent Code %}
- 	{% highlight java %}
-
- 	UrlSpaceConfigurer urlConfigurer = new UrlSpaceConfigurer("jini://*/*/mySpace").
+<os-core:giga-space id="gigaSpace" space="space"/>
+{% endhighlight %}
+{% endtabcontent %}
+{% tabcontent Code %}
+{% highlight java %}
+ 	SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space").
  	 addProperty("space-config.proxy.router.active-server-lookup-timeout", String.valueOf(1000*60*5));
 
- 	GigaSpace space = new GigaSpaceConfigurer(urlConfigurer).gigaSpace();
+ 	GigaSpace space = new GigaSpaceConfigurer(configurer).gigaSpace();
  {% endhighlight %}
  {% endtabcontent %}
  {% endinittab %}

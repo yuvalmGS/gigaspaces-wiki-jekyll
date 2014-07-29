@@ -27,7 +27,7 @@ In many scenarios, you need to set up GigaSpaces in environments which have a fi
 
 # GigaSpaces Firewall Settings
 
-{% toczone minLevel=2|maxLevel=2|type=flat|separator=pipe|location=top %}
+
 
 **To enable all GigaSpaces components to work over a firewall and control all network activity through explicitly defined static ports, perform the following configuration steps**:
 
@@ -63,9 +63,9 @@ Port ranges should be chosen continuously, as Webster and LRMI port bindings are
 
 ## Required Configuration Modifications
 
-{% endtoczone %}
 
-{% toczone minLevel=3|maxLevel=3|type=flat|separator=pipe|location=top %}
+
+
 
 ### bin/gs.sh Script Modifications
 
@@ -176,7 +176,7 @@ Content of override file for Webster port definitions:
 </overrides>
 {% endhighlight %}
 
-{% endtoczone %}
+
 
 # Blocking Reliable Take
 
@@ -189,12 +189,12 @@ In such a case you could disable the `Blocking Reliable Take` activity by using 
 Here is how you can configure the space to disable the Blocking Reliable Take activity:
 
 {% highlight xml %}
-<os-core:space id="space" url="/./space">
+<os-core:embedded-space id="space" name="mySpace">
     <os-core:properties>
         <props>
             <prop key="space-config.engine.reliable_take">false</prop>
         </props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
