@@ -43,7 +43,8 @@ parent:  none
 | {%star%} This is a Star icon                | {%raw%} {%star%} This is a Star icon {%endraw%} |
 | {%lampon%} This is a Lamp On icon           | {%raw%} {%lampon%} This is a Lamp On icon {%endraw%} |
 | {%lampoff%} This is a Lamp Off icon         | {%raw%} {%lampoff%} This is a Lamp Off icon {%endraw%} |
-| {%download%} This is a download   icon         | {%raw%} {%download%} This is a download icon {%endraw%} |
+| {%download%} This is a download   icon      | {%raw%} {%download%} This is a download icon {%endraw%} |
+| {%refer%} This is a refer icon{%endrefer%}  | {%raw%} {%refer%} This is a refer icon{%endrefer%} {%endraw%} |
 
 # Panels
 
