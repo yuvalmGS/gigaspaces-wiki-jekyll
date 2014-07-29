@@ -36,8 +36,8 @@ You may use Spring based configuration or API to create a Clustered Proxy.
 
 ## Using Spring
 When using a Spring based `pu.xml` to construct the [GigaSpace]({%currentjavaurl%}/the-gigaspace-interface.html) bean to be injected into the relevant other beans the following should be used to create a clustered and a non-clustered `GigaSpace` bean:
-{%highlight java%}
-<os-core:space id="space" url="/./space" />
+{%highlight xml%}
+<os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="nonClusteredGigaSpace" space="space"/>
 <os-core:giga-space id="clusteredGigaSpace" space="space" clustered="true"/>
 {%endhighlight%}
@@ -141,7 +141,7 @@ When there is no explicit `@SpaceRouting` declared, the method annotated as the 
 With this example the `pu.xml` includes the following:
 
 {%highlight xml %}
-<os-core:space id="spaceEmbed" url="/./space" />
+<os-core:embedded-space id="spaceEmbed" name="mySpace" />
 <os-core:giga-space id="gigaSpaceEmbedNonClustered" space="spaceEmbed" />
 <os-core:annotation-support />
 <os-core:giga-space-context/>
@@ -253,7 +253,7 @@ Our `DistributedTask` implements the [ClusterInfoAware]({%currentjavaurl%}/obtai
 
 The `pu.xml` includes the following:
 {%highlight xml %}
-<os-core:space id="spaceEmbed" url="/./space" />
+<os-core:embedded-space id="spaceEmbed" name="mySpace" />
 <os-core:giga-space id="gigaSpaceEmbedNonClustered" space="spaceEmbed" />
 {%endhighlight%}
 
@@ -337,8 +337,8 @@ From Task Execute - partition 2 gigaSpaceRemote - total visible objects:2
 ## Event Container Usage of Clustered and Non-Clustered Proxy
 
 With this example the `pu.xml` includes the following:
-{%highlight java %}
-<os-core:space id="spaceEmbed" url="/./space" />
+{%highlight xml %}
+<os-core:embedded-space id="spaceEmbed" name="mySpace" />
 <os-core:giga-space id="gigaSpaceEmbedNonClustered" space="spaceEmbed" />
 <os-events:annotation-support />
 <os-core:annotation-support />

@@ -71,6 +71,7 @@ Example : To increase the lookup duration timeout to 5 minutes you should have t
 {% endtabcontent %}
 {% tabcontent Code %}
 {% highlight java %}
+
  	SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space").
  	 addProperty("space-config.proxy.router.active-server-lookup-timeout", String.valueOf(1000*60*5));
 

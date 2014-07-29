@@ -88,12 +88,12 @@ The IMDG BlobStore settings includes the following options:{%wbr%}
 - MemoryXtend currently supports Linux CentOS 6.x only. 
 
 - Check that your user is part of disk groups.
-{% highlight console %}
+{% highlight bash %}
 $ groups
 {% endhighlight %}
 
 If your user is not part of disk groups, add it by calling:
-{% highlight console %}
+{% highlight bash %}
 $ sudo usermod -G disk <username>
 {% endhighlight %}
 
@@ -117,7 +117,7 @@ Install XAP as usual. Unzip the `gigaspaces-xap-premium-10.0.0-XXX.zip`.
 Step 3. 
 Install ZetaScale libraries:
 
-{% highlight xml %}
+{% highlight bash %}
 $ sudo XAP_HOME=<XAP HOME> sh -c "rpm -ivh /blobstore-10.0.0-RC_1.noarch.rpm"
 {% endhighlight %}
 
@@ -127,7 +127,7 @@ Use the `XAP HOME\bin\gs-agent-blobstore.sh` to start GigaSpaces Grid Agent that
 # Uninstall
 
 To uninstall the blobstore libraries run the following command:
-{% highlight console %}
+{% highlight bash %}
 $ sudo XAP_HOME=<XAP HOME> sh -c "rpm -e /blobstore-10.0.0-RC_1.noarch"
 {% endhighlight %}
 
@@ -155,9 +155,9 @@ Configuring an IMDG (Space) with BlobStore should be done via the `SanDiskBlobSt
 
     </blob-store:sandisk-blob-store>
 
-    <os-core:space id="space" url="/./mySpace" >
+    <os-core:embedded-space id="space" name="mySpace" >
         <os-core:blob-store-data-policy blob-store-handler="blobstoreid" cache-entries-percentage="10" avg-object-size-KB="5" recover-from-blob-store="true"/>
-    </os-core:space>
+    </s-core:embedded-space>
 
     <os-core:giga-space id="gigaSpace" space="space"/>
 </beans>
@@ -184,10 +184,10 @@ Configuring an IMDG (Space) with BlobStore should be done via the `SanDiskBlobSt
         <property name="blobStoreDurabilityLevel" value="SW_CRASH_SAFE"/>
     </bean>
 
-    <os-core:space id="space" url="/./mySpace" >
+    <os-core:embedded-space id="space" name="mySpace">
         <os-core:blob-store-data-policy blob-store-handler="blobstoreid" cache-entries-percentage="10"
             avg-object-size-KB="5" recover-from-blob-store="true"/>
-    </os-core:space>
+    </s-core:embedded-space>
 
     <os-core:giga-space id="gigaSpace" space="space"/>
 </beans>
@@ -214,7 +214,7 @@ cachePolicy.setCacheEntriesPercentage(10);
 cachePolicy.setRecoverFromBlobStore(true);
 cachePolicy.setBlobStoreHandler(blobStoreHandler);
 
-UrlSpaceConfigurer urlConfig = new UrlSpaceConfigurer(spaceURL);
+EmbeddedSpaceConfigurer urlConfig = new EmbeddedSpaceConfigurer("mySpace");
 urlConfig.cachePolicy(cachePolicy);
 
 gigaSpace = new GigaSpaceConfigurer(urlConfig).gigaSpace();
@@ -290,7 +290,7 @@ The device allocation per a machine is managed via the `/tmp/blobstore/devices/d
 # BlobStore Space re-deploy
 
 When you undeploy a blobstore space use the `XAP_HOM/bin/undeploy-grid.groovy` comes with the RPM. It undeploys the blobstore space and restart all its GSCs.
-{% highlight console %}
+{% highlight bash %}
 export PATH:/gigaspaces-xap-premium-10.0.0/bin/tools/groovy/bin/
 cd /gigaspaces-xap-premium-10.0.0/bin/tools/groovy/bin
 $ groovy undeploy-grid.groovy <LUS HostName> <BlobStore-Space-Name>

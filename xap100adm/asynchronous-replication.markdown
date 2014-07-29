@@ -66,12 +66,12 @@ The asynchronous worker of the channel can wake up and start replicating for two
 
 The worker will wake up and replicate if either of these two occurs. The following parameters controls these behavior and a few more options:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
-| `repl-chunk-size` | Number of packets transmitted together on the network when the replication event is triggered. The maximum value you can assign for this property is `repl-interval-opers`. | 500 |
-| `repl-interval-millis` | Time (in milliseconds) to wait between replication operations. | 3000 \[ms\] |
-| `repl-interval-opers` | Number of destructive operations to wait before replicating. | 500 |
+| repl-chunk-size | Number of packets transmitted together on the network when the replication event is triggered. The maximum value you can assign for this property is `repl-interval-opers`. | 500 |
+| repl-interval-millis | Time (in milliseconds) to wait between replication operations. | 3000 \[ms\] |
+| repl-interval-opers | Number of destructive operations to wait before replicating. | 500 |
 
 
 {%note%}
@@ -94,7 +94,7 @@ To change the default replication settings you should modify the space propertie
 
 When a source space instance is closed, it may have pending replication packets in its redo log because there were still not replicated. During this process, the space instance will stop accepting new operations and try to gracefully shutdown the replication channel and wait for all pending replication packets to be sent before completely shutting down. This graceful shutdown timeout can be configured with the following property:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condesed}
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
-| `cluster-config.groups.group.repl-policy.`{%wbr%}`async-replication.async-channel-shutdown-timeout` | Determines how long (in milliseconds) the primary space will wait for pending replication to be replicated to its targets before shutting down.| 300000 \[ms\]  |
+| cluster-config.groups.group.repl-policy.{%wbr%}async-replication.async-channel-shutdown-timeout | Determines how long (in milliseconds) the primary space will wait for pending replication to be replicated to its targets before shutting down.| 300000 \[ms\]  |

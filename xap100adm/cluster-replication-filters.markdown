@@ -84,7 +84,7 @@ package com.test;
 
 import org.openspaces.core.GigaSpace;
 import org.openspaces.core.GigaSpaceConfigurer;
-import org.openspaces.core.space.UrlSpaceConfigurer;
+import org.openspaces.core.space.EmbeddedSpaceConfigurer;
 import org.openspaces.core.space.filter.replication.DefaultReplicationFilterProviderFactory;
 
 public class ReplicationFilterTestMain {
@@ -95,12 +95,12 @@ public class ReplicationFilterTestMain {
 		repFactory.afterPropertiesSet();
 
 		GigaSpace gigaspace1 = new GigaSpaceConfigurer(
-			new UrlSpaceConfigurer("/./space?cluster_schema=sync_replicated&total_members=2&id=1")
+			new EmbeddedSpaceConfigurer("mySpace?cluster_schema=sync_replicated&total_members=2&id=1")
 		.replicationFilterProvider(repFactory)).
 		gigaSpace();
 
 		GigaSpace gigaspace2 = new GigaSpaceConfigurer(
-			new UrlSpaceConfigurer("/./space?cluster_schema=sync_replicated&total_members=2&id=2")).
+			new EmbeddedSpaceConfigurer("mySpace?cluster_schema=sync_replicated&total_members=2&id=2")).
 		gigaSpace();
 
 		MyClass o1 = new MyClass();

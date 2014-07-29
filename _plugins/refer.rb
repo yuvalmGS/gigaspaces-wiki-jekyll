@@ -13,7 +13,7 @@ module Jekyll
       end
 
       def add_refer(context, content)
-      	output = "<i class=\"fa fa-share\"></i>&nbsp;"
+      	output = "<i class='fa fa-share fa-lg'  style='color:#3B73AF;'></i>&nbsp;"
         output << content
       end
     end
