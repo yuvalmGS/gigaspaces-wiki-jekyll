@@ -6,10 +6,6 @@ weight: 200
 parent: tutorials.html
 ---
 
-{%comment%}
-{%summary%}This tutorial will introduce you to the basic features of GigaSpaces' XAP platform.{%endsummary%}
-{%endcomment%}
-
 
 This Tutorial provides a high-level overview of the GigaSpaces XAP platform. Hands on examples are provided to demonstrate the core concepts and API's. The primary people who can benefit from this tutorial, are architects and developers who wish to build scaled-out applications with GigaSpaces XAP.
 
@@ -33,15 +29,11 @@ Here is the simplified Class Model:
 {%endsection%}
 {%wbr%}
 
-{%comment%}
-[<img src="/attachment_files/qsg/class_diagram.png" width="200" height="140">](/attachment_files/qsg/class_diagram.png)
-{%endcomment%}
-
 
 You can download all examples presented here from [GitHub](https://github.com/Gigaspaces/xap-tutorial). Feel free to clone, fork and contribute to the tutorial code.
 
 {%vbar title=Download and Install XAP%}
-- Download and unzip the latest XAP release from the [downloads page](http://www.gigaspaces.com/xap-download)
+- Download and unzip the latest XAP release [{%download%}](http://www.gigaspaces.com/xap-download)
 - Unzip the distribution into a working directory; GS_HOME
 - Set the JAVA_HOME environment variable to point to the JDK root directory
 - Start your favorite Java IDE
@@ -96,7 +88,7 @@ Part II
 {%align center %}
 [Part II](./java-tutorial-part2.html)
 
-<img src="/attachment_files/qsg/grid.gif" width="100" height="100">
+<img src="/attachment_files/subject/deploy.png" width="100" height="100">
 {%endalign%}
 {%endcolumn%}
 
@@ -182,7 +174,7 @@ You will learn how to use:
 {%align center %}
 [Part V](./java-tutorial-part5.html)
 
-<img src="/attachment_files/qsg/pu.gif" width="100" height="100">
+<img src="/attachment_files/subject/pu.png" width="100" height="100">
 {%endalign%}
 {%endcolumn%}
 
