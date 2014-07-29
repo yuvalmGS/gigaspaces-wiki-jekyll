@@ -3,7 +3,7 @@ machine:
   # Version of ruby to use
   ruby:
     version:
-      2.1
+      2.1.2
 
 checkout:
   post:
@@ -15,6 +15,7 @@ dependencies:
   override:
     - bundle install: 
         timeout: 3600 # fail if command has no output for 60 minutes
+    - gem install s3_website 
     - bundle exec jekyll build:
         timeout: 3600 # fail if command has no output for 60 minutes
   cache_directories:
