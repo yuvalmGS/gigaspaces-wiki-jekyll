@@ -6,7 +6,7 @@ module Jekyll
     end
 
     def render(context)
-      "<i class='icon-warning-sign' style='color:#CF9E53;'></i>"
+      "<i class='fa fa-exclamation-triangle' style='color:#CF9E53;'></i>"
     end
   end
 end

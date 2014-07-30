@@ -219,7 +219,7 @@ public class Employee {
 }
 {%endhighlight%}
 
-
+{%comment%}
 # SpaceLeaseExpiration
 
 {: .table .table-bordered}
@@ -237,6 +237,7 @@ public class MyData {
 
 }
 {%endhighlight%}
+{%endcomment%}
 
 {%learn%}./leases-automatic-expiration.html{%endlearn%}
 

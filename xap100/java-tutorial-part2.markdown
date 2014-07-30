@@ -7,18 +7,17 @@ parent: java-home.html
 ---
 
 
-{%summary%}{%endsummary%}
-
-
 {%section%}
-{%column width=15% %}
-{%wbr%}
-<img src="/attachment_files/qsg/grid.gif" width="100" height="100">
+{%column width=10% %}
+![cassandra.png](/attachment_files/subject/deploy.png)
 {%endcolumn%}
-{%column width=85% %}
-In Part I you have learned about XAP's capabilities as a data store. In this part of the tutorial we will show you how you can deploy an In Memory Data Grid (IMDG) that provides scalability and failover. XAP can be used as a scalable application platform on which you can host your Java application, similar to JEE and web containers. However, GigaSpaces XAP's IMDG can also be embedded within another Java application which is not hosted within the XAP platform. In this part of the tutorial we will show you how to start a data grid and how you can interact with it.
+{%column width=90% %}
+{% summary   %} {% endsummary %}
 {%endcolumn%}
 {%endsection%}
+
+
+In Part I you have learned about XAP's capabilities as a data store. In this part of the tutorial we will show you how you can deploy an In Memory Data Grid (IMDG) that provides scalability and failover. XAP can be used as a scalable application platform on which you can host your Java application, similar to JEE and web containers. However, GigaSpaces XAP's IMDG can also be embedded within another Java application which is not hosted within the XAP platform. In this part of the tutorial we will show you how to start a data grid and how you can interact with it.
 
 
 
@@ -136,9 +135,8 @@ GigaSpace gigaSpace = pu.waitForSpace().getGigaSpace();
 
 Here is an example how you can connect to the grid from your application:
 {%highlight java%}
-String url ="jini://*/*/xapTutorialSpace";
 // Create the Space
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer(url)).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("xapTutorialSpace")).gigaSpace();
 {%endhighlight%}
 
 

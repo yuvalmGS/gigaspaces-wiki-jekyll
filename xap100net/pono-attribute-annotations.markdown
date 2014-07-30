@@ -220,6 +220,7 @@ public class Employee {
 {%endhighlight%}
 
 
+{%comment%}
 # SpaceLeaseExpiration
 
 {: .table   .table-condensed  .table-bordered}
@@ -239,6 +240,8 @@ public class MyData {
 {%endhighlight%}
 
 {%learn%}./leases-automatic-expiration.html{%endlearn%}
+
+{%endcomment%}
 
 # SpaceStorageType
 

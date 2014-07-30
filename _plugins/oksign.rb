@@ -6,7 +6,7 @@ module Jekyll
     end
 
     def render(context)
-      "<i class='icon-ok-sign' style='color:#14892C;'></i>"
+      "<i class='fa fa-check-circle' style='color:#14892C;'></i>"
     end
   end
 end

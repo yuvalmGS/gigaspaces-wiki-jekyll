@@ -73,7 +73,7 @@ If you're using the web console mentioned above to see what's going on, you'll s
 
 ### Setting up your IDE
 
-Launch Visual Studio, create a new C# *Console Application* and add a reference to **GigaSpaces.Core.dll** from `C:\GigaSpaces\{{ site.latest_gshome_net_dirname }}\NET v4.0.30319\Bin`. If you're new to Visual Studio and .NET, follow these instructions:
+Launch Visual Studio, create a new C# *Console Application* and add a reference to **GigaSpaces.Core.dll** from `C:\GigaSpaces\{{ site.latest_gshome_net_dirname }}\NET v4.0\Bin`. If you're new to Visual Studio and .NET, follow these instructions:
 
 {% togglecloak id=0 %}How to create a XAP.NET Project in Visual Studio{% endtogglecloak %}
 {% gcloak 0 %}
@@ -82,29 +82,16 @@ Launch Visual Studio, create a new C# *Console Application* and add a reference 
 3. In the **Name** test box, type **XapDemo**. If you wish, change the default location to a path you prefer.
 4. Select **OK** to continue. Visual Studio creates the project and opens the automatically generated `program.cs` file.
 5. From the **Project** menu, select **Add Reference**. The **Add Reference** dialog appears.
-6. Select the **Browse** tab, navigate to the XAP.NET installation folder (e.g. **C:\GigaSpaces\{{ site.latest_gshome_net_dirname }}\NET v4.0.30319**). Go into the **Bin** folder, select **GigaSpaces.Core.dll**, and click **OK**.
+6. Select the **Browse** tab, navigate to the XAP.NET installation folder (e.g. **C:\GigaSpaces\{{ site.latest_gshome_net_dirname }}\NET v4.0**). Go into the **Bin** folder, select **GigaSpaces.Core.dll**, and click **OK**.
 7. In the **Solution Explorer**, make sure you see **GigaSpaces.Core** in the project references. There's no need to reference any other assembly.
 
 {% endgcloak %}
 
 {%warning%} If you're using XAP.NET x64, note that the [default platform for Console Applications is x86](http://connect.microsoft.com/VisualStudio/feedback/details/455103/new-c-console-application-targets-x86-by-default), and you must [change it to x64](http://msdn.microsoft.com/en-us/library/ms185328.aspx).{%endwarning%}
 
-
-### Connecting to the Grid
-
-Since the Data grid is not located in our client process, we need some sort of address to find it. Data grids are searched using a `Space URL`, for example: `jini://*/*/myDataGrid?groups=$(XapNet.Groups)`. This roughly translates to: Find a remote space called `myDataGrid` (for more information see [SpaceURL](./the-space-configuration.html)).
-
-Now that we have an address, we can connect to the grid:       
-
-{% highlight csharp %}
-ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace("jini://*/*/myDataGrid?groups=$(XapNet.Groups)");
-{% endhighlight %}
-
-The result is a `ISpaceProxy` instance, which is a proxy to the `myDataGrid` data grid. 
-
 ### Implementing a PONO
 
-We now have a `ISpaceProxy` instance connected to our grid, which we can use to store and retrieve entries. But what shall we write? Actually, any PONO can be stored in the space, so long as it has a default constructor and an ID property. For this tutorial let's define a `Person` class with the following properties:
+Any PONO can be stored in the space, so long as it has a default constructor and an ID property. For this tutorial let's define a `Person` class with the following properties:
 
 {% highlight csharp %}
 using GigaSpaces.Core.Metadata;
@@ -122,7 +109,13 @@ Note that we've annotated the `Ssn` property with a custom XAP.NET attribute (`[
 
 ### Interacting with the grid
 
-Now that we have a `ISpaceProxy` instance connected to our grid and a PONO which can be stored, we can store entries in the grid using the `Write()` method and read them using various `Read()` methods:
+First, let's establish a connection to the data grid we've deployed: 
+
+{% highlight csharp %}
+ISpaceProxy spaceProxy = new SpaceProxyFactory("myDataGrid").Create();
+{% endhighlight %}
+
+Now that we have a proxy connected to the data grid, we can store entries in the grid using the `Write()` method and read them using various `Read()` methods:
 
 {% highlight csharp %}
 Console.WriteLine("Write (store) a couple of entries in the data grid:");
@@ -160,9 +153,8 @@ namespace XapDemo
     {
         static void Main(string[] args)
         {
-            String url = "jini://*/*/myDataGrid?groups=$(XapNet.Groups)";
-            Console.WriteLine("Connecting to data grid " + url);
-            ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace(url);
+            Console.WriteLine("Connecting to data grid...");
+            ISpaceProxy spaceProxy = new SpaceProxyFactory("myDataGrid").Create();
 
             Console.WriteLine("Write (store) a couple of entries in the data grid:");
             spaceProxy.Write(new Person { Ssn = 1, FirstName = "Vincent", LastName = "Chase" });

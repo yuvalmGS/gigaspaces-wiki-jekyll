@@ -2,22 +2,21 @@
 layout: post100
 title:  Limitations
 categories: XAP100
-parent: jpa-api.html
-weight: 300
+parent: jpa-api-overview.html
+weight: 400
 ---
 
-{% summary %}Unsupported Features Of GigaSpaces JPA{% endsummary %}
+{% summary %}{% endsummary %}
 
-# Overview
 
-This page lists JPA features/functionalities that are unsupported by GigaSpaces JPA.
+
+Functionalities that are not supported by the XAP JPA API.
 
 # Annotations
 
-Here's a list of JPA annotations which are not supported by GigaSpaces JPA:
+Here's a list of JPA annotations which are not supported by XAP JPA:
 
-{% section %}
-{% column %}
+
 Access(AccessType.FIELD)
 JoinColumn
 Version
@@ -35,9 +34,7 @@ JoinTable
 Lob
 ManyToMany
 MapKey
-{% endcolumn %}
 
-{% column %}
 NamedNativeQuery
 NamedQuery
 OrderBy
@@ -49,8 +46,7 @@ SqlResultSetMapping
 Table
 TableGenerator
 QueryHint
-{% endcolumn %}
-{% endsection %}
+
 
 # JPQL
 

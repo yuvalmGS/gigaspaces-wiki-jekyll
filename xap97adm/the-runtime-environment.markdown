@@ -77,7 +77,7 @@ GSA manages different process types. Each process type is defined within the `<G
 
 The following are the process types that come out of the box:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |Processes Type|Description|XML config file name|Properties file name|
 |:-------------|:----------|:-------------------|:-------------------|
 |gsc|Defines a [Grid Service Container](/product_overview/service-grid.html#gsc)|gsc.xml|gsc.properties|
@@ -106,14 +106,13 @@ Here is an example of the gsc xml configuration file:
 
 The GSA can either spawn a script based process, or a pure JVM (with its arguments) process. The GSC for example, allows for both types of process spawning.
 
-- The `initial-instances` parameter controls what type of spawning will be performed when the GSA spawns processes by itself (and not on demand by the Admin API).
-- The `shutdown-class` followed by the `restart-on-exit` flag, controls if the process will be restarted upon termination.
--- There are three types of values:
---- restart-on-exit="always": Always restarts the process if it exits
---- restart-on-exit="never": Never restarts the process if it exists
---- restart-on-exit="!0": Restarts the process only if the exit code is different than 0
--- The `shutdown-class` is an implementation of `com.gigaspaces.grid.gsa.ShutdownProcessHandler` interface and provides the default shutdown hooks before and after shutdown of a process, to make sure it is shutdown properly. The `shutdown-class` can be omitted.
-- The `restart-regex` (there can be more than one element) is applied to each console output line of the managed process, and if there is a match, the GSA will automatically restart the process. By default, the GSC will be restarted if there is an `OutOfMemoryError`.
+* The `initial-instances` parameter controls what type of spawning will be performed when the GSA spawns processes by itself (and not on demand by the Admin API). <br>
+* The `shutdown-class` followed by the `restart-on-exit` flag, controls if the process will be restarted upon termination. There are three types of values: <br>
+   * restart-on-exit="always": Always restarts the process if it exits<br>
+   * restart-on-exit="never": Never restarts the process if it exists<br>
+   * restart-on-exit="!0": Restarts the process only if the exit code is different than 0<br>
+* The `shutdown-class` is an implementation of `com.gigaspaces.grid.gsa.ShutdownProcessHandler` interface and provides the default shutdown hooks before and after shutdown of a process, to make sure it is shutdown properly. The `shutdown-class` can be omitted.<br>
+* The `restart-regex` (there can be more than one element) is applied to each console output line of the managed process, and if there is a match, the GSA will automatically restart the process. By default, the GSC will be restarted if there is an `OutOfMemoryError`.
 
 # Grid Configuration
 

@@ -15,13 +15,26 @@ An XAP web processing unit can use [Jetty](http://www.eclipse.org/jetty/) as the
 
 ![web_app_archi.jpg](/attachment_files/web_app_archi.jpg)
 
-{% info %}
-For general web support features that are relevant, regardless of the web container used, please refer to [Web Processing Unit Container](./web-application-support.html).
-{%endinfo%}
+{%anchor jetty-version%}
 
+# Jetty version
+
+{%panel%}
+
+XAP 10.0 ships with Jetty 8.1.8.v20121106. However, it is possible to use Jetty 9.1.3.v20140225.
+
+To install Jetty 9.1.3.v20140225 follow these steps:
+
+1. Rename the jar file in `<XAPHOME>/lib/platform/openspaces/gs-openspaces-jetty-9.jar` to `gs-openspaces-jetty.jar`
+2. Replace the files in the `<XAPHOME>/lib/platform/jetty` directory  with the Jetty 9.1.3.v20140225 distribution jar files.
+
+{%endpanel%}
+
+{%comment%}
 {% tip %}
 See the [http Session Management](./http-session-management.html) for details about clustering the Jetty HTTP session.
 {% endtip %}
+{%endcomment%}
 
 # Jetty Instance Handling
 
@@ -178,6 +191,28 @@ This bean controls the actual web context that corresponds to the web applicatio
 {% note %}
 In the plain mode, the context path can be the same for all different instances of the web application, even if they are running on the same GSC (JVM).
 {%endnote%}
+
+## Jetty Maven Plugin
+
+If you are using Maven to create, compile, package and run unit tests, execute and deploy a Processing Unit which is a web application, make sure that inside your WAR file there are no Jetty jars. In your project pom.xml you should **exclude** jetty-all inside com.gigaspaces dependency.
+
+For example:
+
+{%highlight xml%}
+<dependency>
+	<groupId>com.gigaspaces</groupId>
+	<artifactId>gs-openspaces</artifactId>
+	<version>{{ site.latest_maven_version }}</version>
+	<exclusions>
+		<exclusion>
+			<groupId>org.eclipse.jetty.aggregate</groupId>
+			<artifactId>jetty-all</artifactId>
+		</exclusion>
+	<exclusions>
+</dependency>
+{%endhighlight%}
+
+
 
 ## Examples
 

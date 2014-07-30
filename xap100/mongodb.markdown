@@ -22,8 +22,9 @@ weight: 300
 
 MongoDB is built for scalability, performance and high availability, scaling from single server deployments to large, complex multi-site architectures. By leveraging in-memory computing, MongoDB provides high performance for both reads and writes. MongoDB’s native replication and automated failover enable enterprise-grade reliability and operational flexibility.
 
-{%wbr%}
 
+
+<hr>
 
 - [Space Persistence](./mongodb-space-persistency.html){%wbr%}
 A MongoDB Space Persistency Solution
@@ -32,34 +33,4 @@ A MongoDB Space Persistency Solution
 Archives space objects to MongoDB.
 
 
-{%comment%}
-{% summary %} A MongoDB Space Persistency Solution {% endsummary %}
-
-
-
-[MongoDB](http://www.mongodb.org/) is a simple and popular open-source document-oriented NoSQL database.
-
-
-
-# MongoDB Space Data Source and Space Synchronization Endpoint
-
-GigaSpaces comes with built in implementations of [Space Data Source](./space-data-source-api.html) and [Space Synchronization Endpoint](./space-synchronization-endpoint-api.html)
- for MongoDB, called `MongoSpaceDataSource` and `MongoSpaceSynchronizationEndpoint`, respectively.
-
-{% indent %}
-![mongodbPersistence.jpg](/attachment_files/mongodbPersistence.jpg)
-{% endindent %}
-
-
-
-For information about the two see: [MongoDB Space Data Source](./mongodb-space-data-source.html) and [MongoDB Space Synchronization Endpoint](./mongodb-space-synchronization-endpoint.html).
-
-
-For further details about the persistency APIs used see [Space Persistency](./space-persistency.html).
-
-
-
-
-{%children%}
-
-{%endcomment%}
+<hr>

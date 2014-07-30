@@ -6,7 +6,17 @@ parent: tuning-gigaspaces-performance.html
 weight: 300
 ---
 
-{% summary %}{% endsummary %}
+
+{% section %}
+ {% column width=10% %}
+ ![counter-logo.jpg](/attachment_files/subject/lrmi.png)
+ {% endcolumn %}
+ {% column width=90% %}
+ {% summary %} {% endsummary %}
+ {% endcolumn %}
+ {% endsection %}
+
+
 
 
 

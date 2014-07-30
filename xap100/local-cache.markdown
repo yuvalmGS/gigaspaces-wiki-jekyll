@@ -8,13 +8,6 @@ weight: 100
 
 {% summary page %}{% endsummary %}
 
-
-{%comment%}
- {% summary page %}A local cache allows the client application to cache recently used data at the client memory address and have it updated automatically by the space when that data changes.{% endsummary %}
-
-# Summary
-{%endcomment%}
-
 A **Local Cache** is a Client Side Cache that maintains a subset of the master space's data based on the client application's recent activity. The local cache is created empty, and whenever the client application executes a query the local cache first tries to fulfill it from the cache, otherwise it executes it on the master space and caches the result locally for future queries.
 
 {% indent %}
@@ -156,16 +149,28 @@ Each change on the master space triggers a notification at the local cache. The 
 
 - `None` - Do not register for master space updates - If an object is changed in the master space, it will remain stale in the local cache until its lease expires.
 
-{: .table .table-bordered}
-| Pull Update Policy |
-| ![local_cache_pull.jpg](/attachment_files/local_cache_pull.jpg) |
+{%section%}
+{%column%}
+**Pull Update Policy**
+{%endcolumn%}
+{%column%}
+![local_cache_pull.jpg](/attachment_files/local_cache_pull.jpg)
+{%endcolumn%}
+{%endsection%}
 
-{: .table .table-bordered}
-| Push Update Policy |
-| ![local_cache_push.jpg](/attachment_files/local_cache_push.jpg) |
+{%section%}
+{%column%}
+**Push Update Policy**
+{%endcolumn%}
+{%column%}
+![local_cache_pull.jpg](/attachment_files/local_cache_pull.jpg)
+{%endcolumn%}
+{%endsection%}
+
+
 
 {% info %}
-Only **actual* object changes in master space are propagated to the cache - *update* and *take**. Object evictions or reloads from the data source do not update the local cache.
+Only **actual** object changes in master space are propagated to the cache - *update* and *take**. Object evictions or reloads from the data source do not update the local cache.
 When the local cache updates the cached object (i.e. PUSH policy), it creates a new object with the relevant data and updates the cache to the new reference. If an application is holding a reference to the previous object it will not be changed - to get the changes the application should read it from the local cache again.
 {%endinfo%}
 
@@ -279,57 +284,11 @@ Below is the result of a simple benchmark comparing [Ehcache](http://ehcache.org
 Tests of the **local cache** with XAP 7.0 having 10 client threads using a local cache resulted in 20M read/sec using a server with eight cores.
 {% endtip %}
 
-# Upgrading From Previous Versions
 
-This section is intended to summarize the changes in 8.0.5 for users upgrading from previous versions.
-
-#### Maximum Disconnection Duration
-
-In previous versions the max disconnection duration was configured by setting the `space-config.dist-cache.events.lease` and/or `space-config.dist-cache.events.lease-renew.duration` custom properties. Configuring the max disconnection duration using these custom properties is still supported, but starting with 8.0.5 it is deprecated.
-
-In addition, since the reconnect mechanism has been improved in 8.0.5, the custom properties `space-config.dist-cache.retry-connections` and `space-config.dist-cache.delay-between-retries` are no longer required and will be ignored.
-
-#### Batch Size & Timeout
-
-In previous versions the batch size and timeout were configured by setting the `space-config.dist-cache.events.batch.size` and `space-config.dist-cache.events.batch.timeout` custom properties, respectively. Configuring the batch size and timeout using these custom properties is still supported, but starting with 8.0.5 it is deprecated.
-
-#### Summary of Configuration Changes
-
-The following table summarizes the configuration changes made in 8.0.5:
-
-{: .table .table-bordered}
-| Old Custom Property (8.0.4 and older) | `LocalCacheSpaceFactoryBean` - 8.0.5 and above| `LocalCacheSpaceConfigurer` - 8.0.5 and above|
-|:--------------------------------------|:----------------------------------------------|:---------------------------------------------|
-| `space-config.dist-cache.events.lease` | `max-disconnection-duration` | `maxDisconnectionDuration()` |
-| `space-config.dist-cache.events.lease-renew.duration` | `max-disconnection-duration` | `maxDisconnectionDuration()` |
-| `space-config.dist-cache.retry-connections` | Ignored - Irrelevant | Ignored - Irrelevant |
-| `space-config.dist-cache.delay-between-retries` | Ignored - Irrelevant | Ignored - Irrelevant |
-| `space-config.dist-cache.events.batch.size` | `batch-size` | `batchSize()` |
-| `space-config.dist-cache.events.batch.timeout` | `batch-timeout` | `batchTimeout()` |
-| `space-config.dist-cache.update-mode` | `update-mode` | `updateMode()` |
-| `space-config.dist-cache.events.enabled` | `update-mode` | `updateMode()` |
-| `space-config.dist-cache.max-object-timeout` | max-time-to-live | maxTimeToLive() |
 
 # Local Cache Properties
 
-{% inittab LocalCacheProperties|top %}
-{% tabcontent XAP 8.0.4 and older %}
-
-{: .table .table-bordered}
-| Property | Description | Default Value | Unit |
-|:---------|:------------|:--------------|:-----|
-|space-config.dist-cache.retry-connections| Specify how many times the local cache should retry to reconnect with the master space in case of a disconnection.| 3 | |
-|space-config.dist-cache.delay-between-retries | Specify wait period between connection retries in case of a disconnection with the master space. | 5000 | milliseconds |
-|space-config.dist-cache.events.enabled | Boolean value. Set this property of `true` to turn on local cache automatic updates streaming from the master space| true| |
-|space-config.dist-cache.events.lease | Local Cache lease duration.| 60000| milliseconds |
-|space-config.dist-cache.events.lease-renew.expiration | Lease renewal expiration time| 9223372036854775807|milliseconds |
-|space-config.dist-cache.events.lease-renew.duration | Lease renewal duration| 60000 |milliseconds |
-|space-config.dist-cache.events.lease-renew.round-trip-time | Lease renewal round trip time | 10000|milliseconds |
-
-{% endtabcontent %}
-{% tabcontent XAP 8.0.5 and above %}
-
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Property | Description | Default Value | Unit |
 |:---------|:------------|:--------------|:-----|
 |max-disconnection-duration| If local cache disconnection duration exceeds this value, the local cache enters a **disconnected** state, wherein each operation throws an exception stating the cache is disconnected| 60000 | milliseconds |
@@ -338,6 +297,5 @@ The following table summarizes the configuration changes made in 8.0.5:
 |update-mode | Local cache update mode. Options: PULL , PUSH , None | PULL| |
 |max-time-to-live | Time to live for objects within the local cache | 300000| milliseconds|
 
-{% endtabcontent %}
-{% endinittab %}
+
 

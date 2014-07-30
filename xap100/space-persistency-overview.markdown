@@ -15,7 +15,7 @@ weight: 800
 {% endcolumn %}
 
 {% column width=90% %}
-XAP provides advanced persistency capabilities for the space architecture.
+XAP provides advanced persistency capabilities for the Space architecture.
 {% endcolumn %}
 {% endsection %}
 
@@ -53,7 +53,7 @@ Space Persistency advanced topics such as advanced operations, tuning, troublesh
 XAP’s persistency approach consists of several paradigms for data persistency, according to the application needs. This section gives a basic overview of each paradigm.
 
 - [Migrating External Data Source](./migrating-from-external-data-source-api.html){%wbr%}
-This page describes how EDS implementations prior to GigaSpaces version 9.5 should migrate to the new Space Persistency APIs.
+This page describes how EDS implementations prior to XAP version 9.5 should migrate to the new Space Persistency APIs.
 
 - [Second Level Hibernate Cache](./gigaspaces-for-hibernate-orm-users.html){%wbr%}
 Using XAP as a Hibernate cache provider; creating a Hibernate-integrated Data Grid with your existing ORM.

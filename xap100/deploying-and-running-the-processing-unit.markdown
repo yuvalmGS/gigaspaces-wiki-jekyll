@@ -21,7 +21,7 @@ In addition, to facilitate easier development and debugging, GigaSpaces provides
 
 Similarly, the standalone processing unit container also runs your processing units in a simple isolated environment, allowing you to start and stop it quickly to avoid the overhead of starting a full-blown cluster.
 
-Note that both the integrated processing unit container and the standalone one run the processing unit as a standalone Java process and therefore cannot enforce any of the [SLA requirements](./configuring-the-processing-unit-sla.html)  of the processing unit. Their primary intention is to enable you to debug and unit test your processing units.
+Note that both the integrated processing unit container and the standalone one run the processing unit as a standalone Java process and therefore cannot enforce any of the [SLA requirements]({%currentadmurl%}/the-sla-overview.html)  of the processing unit. Their primary intention is to enable you to debug and unit test your processing units.
 
 # Choosing the Correct Runtime Mode
 

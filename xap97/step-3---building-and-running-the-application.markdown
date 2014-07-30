@@ -42,6 +42,24 @@ For example, if you are using GigaSpaces XAP {{site.latest_xap_version}} you sho
 <gsVersion>{{site.latest_maven_version}}</gsVersion>
 {% endhighlight %}
 
+{%note%}
+When using XAP versions prior to 10.0, you should also modify the 'pom.xml' and include the following exclusion:
+{%endnote%}
+
+{% highlight xml %}
+<dependency>
+	<groupId>com.gigaspaces</groupId>
+	<artifactId>gs-openspaces</artifactId>
+	<version>${gsVersion}</version>
+	<exclusions>
+		<exclusion>
+			<groupId>org.eclipse.jetty.aggregate</groupId>
+			<artifactId>jetty-all</artifactId>
+		</exclusion>
+	</exclusions>
+</dependency>
+{% endhighlight %}
+
 - Run the following Maven command:
 
 {% highlight java %}

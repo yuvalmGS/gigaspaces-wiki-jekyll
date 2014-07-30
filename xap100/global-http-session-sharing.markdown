@@ -6,7 +6,15 @@ parent: web-application-overview.html
 weight: 600
 ---
 
-{%summary%}{%endsummary%}
+{% section %}
+ {% column width=10% %}
+ {%wbr%}
+ ![counter-logo.jpg](/attachment_files/subject/httpsession.png)
+ {% endcolumn %}
+ {% column width=90% %}
+ {% summary %} {% endsummary %}
+ {% endcolumn %}
+ {% endsection %}
 
 
 {% note %}
@@ -80,9 +88,12 @@ XAPs Global HTTP Session Management is designed to deliver maximum performance f
 
 - **Atomic HTTP request** session access support - multiple requests for the session attributes within the same HTTP request will be served without performing any remote calls. Master session copy will be updated when the HTTP request will be completed.
 
-- **Delta update support** – Changes identified at the session attribute level. Minimal serialization overhead and network utilization bwteen client and IMDG , between IMDG primary and backup instances and between remote IMDG clusterrs using WAN Gateway for WAN replication.
+- **Delta update support** – Changes identified at the session attribute level. Minimal serialization overhead and network utilization between client and IMDG , between IMDG primary and backup instances and between remote IMDG clusters using WAN Gateway for WAN replication.
 
 - **Compression support** - Session attributes may be compressed to support very large session storage with minimal performance impact.
+
+- **Pluggable Serialization support** - You may use built-in serialization (Java Native, Kryo or Xstream) or implement your own serialization logic.
+
 
 - **Principle based session sharing** - Allows session sharing across different applications using SSO.
 
@@ -99,7 +110,7 @@ The below diagram shows a more detailed view of the IMDG deployment. In this cas
 
  ![httpSessionSharing2.jpg](/attachment_files/httpSessionSharing2.jpg)
 
-The end-to-end path between the two data center nodes includes the servlet and Shiro filters, and the IMDG with local cache and WAN Gateway.
+The end-to-end path between the two data center nodes includes the servlet and GigaSpaces filters, and the IMDG with local cache and WAN Gateway.
 
  ![httpSessionSharing3.jpg](/attachment_files/httpSessionSharing3.jpg)
 
@@ -194,7 +205,8 @@ shiro.ini settings
 |main|storeMode.listener|Provides changes notification functionality. it must extends `com.gigaspaces.httpsession.policies.GigaspacesNotifyListener`|No| `listener`|
 |main|storeMode.changeStrategy|define strategy of comparison and conflict detection response.|Yes|DeltaStoreMode:   1.`com.gigaspaces.httpsession.policies.LWWChangeStrategy` 2.`com.gigaspaces.httpsession.policies.FailFastChangeStrategy` 3.`com.gigaspaces.httpsession.policies.PartialChangeStrategy`|FullStoreMode: `com.gigaspaces.httpsession.policies.FullModeStrategy`    DeltaStoreMode: `com.gigaspaces.httpsession.policies.LWWChangeStrategy`
 |main|listener|Fully qualified class name implementing `com.gigaspaces.httpsession.policies.GigaspacesNotifyListener`|No|`com.gigaspaces.httpsession.policies.TraceListener`|
-|main|serializer|Provides serialization functionality|Yes| use you own implementation of `com.gigaspaces.httpsession.serialize.Serializer` or one of the out of the box options: 	1.`com.gigaspaces.httpsession.serialize.KryoSerializerImpl` (recomended)	2.`com.gigaspaces.httpsession.serialize.XStreamSerializerImpl`|
+|main|serializer|Provides serialization functionality|Yes| use one of the following options: 	1.`com.gigaspaces.httpsession.serialize.KryoSerializerImpl` (recomended)	2.`com.gigaspaces.httpsession.serialize.XStreamSerializerImpl`.<br> 
+3. Custom - an implementation of the `com.gigaspaces.httpsession.serialize.Serializer` interface|
 |main|serializer.logLevel|internal kryo logging level|No| 1. `NONE = 6` disables all logging.<br> 2. `ERROR = 5` is for critical errors. The application may no longer work correctly.<br> 3. `WARN = 4` is for important warnings. The application will continue to work correctly.<br> 4.`INFO = 3` is for informative messages. Typically used for deployment.<br> 5. `DEBUG = 2` is for debug messages. This level is useful during development.<br> 6. `TRACE = 1` is for trace messages. A lot of information is logged, so this level is usually only needed when debugging a problem. | `LEVEL_INFO = 3`
 |main|serializer.classes|comma separate list full qualified class names to be loaded at the initialization of the Kryo Serializer|No||
 |main|policy|Provides functionality of session policy to apply e.g. with and without authentication|Yes| Options:<br>1.`com.gigaspaces.httpsession.policies.SessionPolicyWithLogin` for sharing session cross multiple aplplications<br>2.`com.gigaspaces.httpsession.policies.SessionPolicyWithoutLogin` for single application session store|

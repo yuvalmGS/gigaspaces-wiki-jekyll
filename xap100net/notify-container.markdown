@@ -230,6 +230,9 @@ ISpaceProxy spaceProxy = // either create the SpaceProxy or obtain a reference t
 NotifyEventListenerContainer<Data> notifyEventListenerContainer = new NotifyEventListenerContainer<Data>(spaceProxy);
 notifyEventListenerContainer.TransactionType = TransactionType.Distributed;
 notifyEventListenerContainer.DataEventArrived += new DelegateDataEventArrivedAdapter<Data,Data>(ProcessData).WriteBackDataEventHandler;
+
+notifyEventListenerContainer.Start();
+
 {% endhighlight %}
 
 {% endtabcontent %}

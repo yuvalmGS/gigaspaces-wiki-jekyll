@@ -27,7 +27,7 @@ XAP promotes openness and interoperability, supporting common interfaces for acc
 - [JDBC Driver](./jdbc-driver.html){%wbr%}
 XAP allows applications to connect to the IMDG using a JDBC driver. AN XAP JDBC driver accepts SQL statements, translates them to space operations, and returns standard result sets.
 
-- [JPA](./jpa-api.html){%wbr%}
+- [JPA](./jpa-api-overview.html){%wbr%}
 XAP’s JPA allows you to use JPA’s functionality, annotations and execute JPQL queries on Space.
 
 - [MAP API](./map-api.html){%wbr%}

@@ -89,13 +89,13 @@ The configuration which specifies the discovery and communication ports, along w
 
 The host and discovery port are used for the lookup process only, the communication port is used for the actual replication process after the relevant gateway component have discovered its target (e.g a delegator locates the target sink). The discovery and communication port should be permitted in the firewalls between the lookup services machines and between the gateway, when using the default, the lookup services are started inside the gateways, so this ports needs to be permitted between the gateway machines only.
 
-When using the default configuration, in which the gateway starts the lookup service as embedded, the gateway should be deployed on the machine specified in its lookup entry as the 'host' attribute, this can be achieved by having a [GigaSpaces Agent](/product_overview/service-grid.html#gsa) running on that machine with a dedicated zone, and configuring the gateway to be deployed to that specific zone (see [Configuring the Processing Unit SLA](./configuring-the-processing-unit-sla.html)). Once deployed, the gateway will check if the [Container](/product_overview/service-grid.html#gsc) it was deployed into is started with the proper ports, if not it will relocate itself to a proper container, and it may instantiate a new container managed by the agent on that machine if needed.
+When using the default configuration, in which the gateway starts the lookup service as embedded, the gateway should be deployed on the machine specified in its lookup entry as the `host` attribute, this can be achieved by having a [GigaSpaces Agent](/product_overview/service-grid.html#gsa) running on that machine with a dedicated zone, and configuring the gateway to be deployed to that specific zone (see [Configuring the Processing Unit SLA]({%currentadmurl%}/the-sla-overview.html)). Once deployed, the gateway will check if the [Container](/product_overview/service-grid.html#gsc) it was deployed into is started with the proper ports, if not it will relocate itself to a proper container, and it may instantiate a new container managed by the agent on that machine if needed.
 
-The communication port is optional, if there is no firewall between the gateways or all ports are permitted, this is not needed. Its purpose is to ease the gateway deployment by having the gateway automatically detect whether it is instantiated an a GSC which was loaded with the specified communication port (LRMI), and if not it will spawn a new GSC with the correct LRMI port and relocate it self into that GSC thus saving you the need to pre-start a GSC with this specific port. If the GSC which is suppose to host the gateway is already configured with the matching LRMI port, or alternatively, the communication port is not defined, the gateway will not spawn a new GSC and will not relocate it self.
+The communication port is optional, if there is no firewall between the gateways or all ports are permitted, this is not needed. Its purpose is to ease the gateway deployment by having the gateway automatically detect whether it is instantiated a GSC which was started with the specified communication port (LRMI), and if not it will spawn a new GSC with the correct LRMI port and relocate itself into that GSC thus saving you the need to pre-start a GSC with this specific port. If the GSC that is supposed to host the gateway is already configured with the right LRMI port, or alternatively, the communication port is not defined, the gateway will not spawn a new GSC and will not relocate itself.
 
-If there is no firewall, and all ports are available, there is no need to specify a communication port as any communication port specified by the OS will be ok.
+If there is no firewall, and all ports are available, there is no need to specify a communication port as any communication port specified by the OS will work.
 
-This process of spawning a new GSC and relocation of the gateway is also done when the gateway is configured to start an embedded lookup service (default) and the hosting GSC is not started with the matching discovery (lookup) port. This will not happen if the gateway is not configured to start an embedded gateway and is using an already existing one which is determined by the 'host' and 'discovery-port' attributes. In order to disable the creation of an embedded lookup service all the gateway components in the gateway processing unit (Both delegator and sink) need to be configured with the following:
+This process of spawning a new GSC and gateway relocation done as well when the gateway is configured to start an embedded lookup service (default) and the hosting GSC is not started with the matching discovery (lookup) port. This will not happen if the gateway is not configured to start an embedded gateway and is using an already existing one that is determined by the `host` and `discovery-port` attributes. In order to disable the creation of an embedded lookup service all the gateway components in the gateway processing unit (Both delegator and sink) should be configured with the following:
 
 {% highlight xml %}
 <os-gateway:delegator id="delegator" local-gateway-name=... gateway-lookups=... start-embedded-lus="false">
@@ -111,7 +111,7 @@ This process of spawning a new GSC and relocation of the gateway is also done wh
 {% endhighlight %}
 
 In some scenarios, for example when there are many sites, it is more reasonable to use pre-started limited number of lookup services to avoid the creation of lookup services as the number of sites.
-In that case, the 'start-embedded-lus="false"' should be used and the 'host' and 'discovery-port' of the lookup attributes should point to the existing lookup services location. For example:
+In this case, the `start-embedded-lus="false"` should be used and the `host` and `discovery-port` of the lookup attributes should point to the existing lookup services location. For example:
 
 {% highlight xml %}
 <os-gateway:lookups id="gatewayLookups">
@@ -126,8 +126,7 @@ In that case, the 'start-embedded-lus="false"' should be used and the 'host' and
      meaning, all sites could designate the same ports as well-->
 {% endhighlight %}
 
-In that case it is not that important which 'host' and 'discovery-port' is specified in which site, but it is recommended to use the "nearest" available lookup service configuration per site.
-However, each existing lookup service should appear at least once under one of the `os-gateway:lookup` entries in order for it to be used in the lookup process.
+In this case it is not that important which `host` and `discovery-port` is specified in which site, but it is recommended to use the "nearest" available lookup service configuration per site. However, each existing lookup service should appear at least once under one of the `os-gateway:lookup` entries in order for it to be used in the lookup process.
 
 # Full Gateway Configuration Example File
 
@@ -289,8 +288,8 @@ When having Network Address Translation (NAT) data transit across different rout
 
 # Security
 
-On Multiple Site topologies, securing grid components and spaces is done as described in GigaSpaces [Security]({%currentsecurl%}) page. When using a secured environment it is required to provide security credentials for the Gateway components (Sink & Delegator).
-The security credentials are used for accessing a secured space and for performing administrative operations such as creating a new GSC for the gateway components if necessary.
+On Multiple Site topologies, securing grid components and Spaces is done as described in XAP [Security]({%currentsecurl%}/index.html) page. When using a secured environment it is required to provide security credentials for the Gateway components (Sink & Delegator).
+The security credentials are used for accessing a secured Space and for performing administrative operations such as creating a new GSC for the gateway components if necessary.
 
 Providing the security credentials can be done in two ways:
 

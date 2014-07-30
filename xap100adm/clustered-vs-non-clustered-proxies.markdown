@@ -36,8 +36,8 @@ You may use Spring based configuration or API to create a Clustered Proxy.
 
 ## Using Spring
 When using a Spring based `pu.xml` to construct the [GigaSpace]({%currentjavaurl%}/the-gigaspace-interface.html) bean to be injected into the relevant other beans the following should be used to create a clustered and a non-clustered `GigaSpace` bean:
-{%highlight java%}
-<os-core:space id="space" url="/./space" />
+{%highlight xml%}
+<os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="nonClusteredGigaSpace" space="space"/>
 <os-core:giga-space id="clusteredGigaSpace" space="space" clustered="true"/>
 {%endhighlight%}
@@ -47,8 +47,7 @@ The `GigaSpace.getClustered()` method allows you to get a cluster wide proxy fro
 
 Another option is to use the `GigaSpaceConfigurer`:
 {%highlight java%}
-IJSpace space = // get Space either by injection or code creation
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).clustered(true).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("space")).clustered(true).gigaSpace();
 {%endhighlight%}
 
 An example of a Remoting Service with a clustered and non-clustered proxy:
@@ -140,8 +139,9 @@ When there is no explicit `@SpaceRouting` declared, the method annotated as the 
 ## A Remote Service Usage of a Clustered and a Non-Clustered Proxy
 
 With this example the `pu.xml` includes the following:
-{%highlight java %}
-<os-core:space id="spaceEmbed" url="/./space" />
+
+{%highlight xml %}
+<os-core:embedded-space id="spaceEmbed" name="mySpace" />
 <os-core:giga-space id="gigaSpaceEmbedNonClustered" space="spaceEmbed" />
 <os-core:annotation-support />
 <os-core:giga-space-context/>
@@ -211,17 +211,17 @@ return mes;
 
 The service is called using the following:
 {%highlight java %}
-GigaSpace space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
-IMyService service = new ExecutorRemotingProxyConfigurer<IMyService>
-(space , IMyService.class).proxy();
-String mes1 = service.myMethod(0);
-String mes2 = service.myMethod(1);
-System.out.println(mes1);
-System.out.println(mes2);
+    GigaSpace space = new GigaSpaceConfigurer(new SpaceProxyConfigurer("space")).gigaSpace();
+
+    IMyService service = new ExecutorRemotingProxyConfigurer<IMyService>(space , IMyService.class).proxy();
+    String mes1 = service.myMethod(0);
+    String mes2 = service.myMethod(1);
+    System.out.println(mes1);
+    System.out.println(mes2);
 {%endhighlight%}
 
 The service output:
-{%highlight java%}
+{%highlight console%}
 ...
 From Service - partition 1 - Cluster info name[null] schema[partitioned] numberOfInstances[2] numberOfBackups[null] instanceId[1] backupId[null]
 From Service - partition 1 writing object using embedded Non-Clustered proxy
@@ -240,7 +240,7 @@ partition 2 gigaSpaceRemote - total visible objects:2
 {%endhighlight%}
 
 The client output:
-{%highlight java %}
+{%highlight console %}
 Service call - routing 0 partition 1 gigaSpaceRemote - total visible objects:2
 Service call - routing 0 partition 1 gigaSpaceEmbed - total visible objects:1
 Service call - routing 1 partition 2 gigaSpaceRemote - total visible objects:2
@@ -252,8 +252,8 @@ Service call - routing 1 partition 2 gigaSpaceEmbed - total visible objects:1
 Our `DistributedTask` implements the [ClusterInfoAware]({%currentjavaurl%}/obtaining-cluster-information.html). This allows it to be injected with the `ClusterInfo` that provides information about the cluster topology and the local partition ID. Here is how the `DistributedTask` looks like:
 
 The `pu.xml` includes the following:
-{%highlight java %}
-<os-core:space id="spaceEmbed" url="/./space" />
+{%highlight xml %}
+<os-core:embedded-space id="spaceEmbed" name="mySpace" />
 <os-core:giga-space id="gigaSpaceEmbedNonClustered" space="spaceEmbed" />
 {%endhighlight%}
 
@@ -316,7 +316,7 @@ this.routing = routing;
 {%endhighlight%}
 
 {%highlight java %}
-GigaSpace space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
+GigaSpace space = new GigaSpaceConfigurer(new SpaceProxyConfigurer("space")).gigaSpace();
 space.execute(new MyTask());
 {%endhighlight%}
 
@@ -337,8 +337,8 @@ From Task Execute - partition 2 gigaSpaceRemote - total visible objects:2
 ## Event Container Usage of Clustered and Non-Clustered Proxy
 
 With this example the `pu.xml` includes the following:
-{%highlight java %}
-<os-core:space id="spaceEmbed" url="/./space" />
+{%highlight xml %}
+<os-core:embedded-space id="spaceEmbed" name="mySpace" />
 <os-core:giga-space id="gigaSpaceEmbedNonClustered" space="spaceEmbed" />
 <os-events:annotation-support />
 <os-core:annotation-support />
@@ -398,7 +398,7 @@ public void postPrimary() {
 {%endhighlight%}
 
 {%highlight java %}
-GigaSpace space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
+GigaSpace space = new GigaSpaceConfigurer(new SpaceProxyConfigurer("space")).gigaSpace();
 Data d = new Data();
 d.setId(0);
 space.write(d);

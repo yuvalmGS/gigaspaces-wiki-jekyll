@@ -6,7 +6,16 @@ parent: modeling-your-data.html
 weight: 600
 ---
 
-{% summary %}{% endsummary %}
+{% section %}
+ {% column width=10% %}
+ {%wbr%}
+ {%wbr%}
+ ![counter-logo.jpg](/attachment_files/subject/partitioning.png)
+ {% endcolumn %}
+ {% column width=90% %}
+ {% summary %} {% endsummary %}
+ {% endcolumn %}
+ {% endsection %}
 
 A [partitioned space](/product_overview/terminology.html) provides the ability to perform space operations against multiple spaces from a single proxy transparently. The primary goal of the partitioned space is to provide unlimited In-Memory space storage size and group objects into the same partition to speed up performance. The initial intention is to write data into the partitioned space, and route query operations based on the template data.
 

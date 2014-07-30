@@ -6,21 +6,18 @@ weight: 900
 parent: java-home.html
 ---
 
-
-
-{%summary%} {%endsummary%}
-
-
 {%section%}
-{%column width=15% %}
-<img src="/attachment_files/qsg/bgdata.png" width="100" height="100">
+{%column width=10% %}
+![cassandra.png](/attachment_files/qsg/bgdata.png)
 {%endcolumn%}
-{%column width=85% %}
+{%column width=90% %}
+{% summary   %} {% endsummary %}
+{%endcolumn%}
+{%endsection%}
+
+
 
 In this part of the tutorial will introduce you to XAP's Big Data interface. Will show you how you can use Cassandra and other Big-Data storage systems to archive data or use them for space persistence.
-{%endcolumn%}
-
-{%endsection%}
 
 
 

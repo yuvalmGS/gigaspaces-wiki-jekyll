@@ -3,7 +3,7 @@ layout: post97adm
 title:  Java System Properties
 categories: XAP97ADM
 parent: runtime-configuration.html
-weight: 200
+weight: 400
 ---
 
 {% refer %}Refer to the [SystemProperties](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/com/j_spaces/kernel/SystemProperties.html) class for more details.{% endrefer %}
@@ -72,5 +72,4 @@ as the parent directory of the `JSpaces.jar` file. | |
 | `com.gs.cluster.livenessMonitorFrequency` | Defines the frequency in which liveness of 'live' members in a cluster is monitored. See [Viewing Clustered Space Status](./troubleshooting-viewing-clustered-space-status.html) for more details. | Default 10000 ms&nbsp; |
 | `com.gs.cluster.livenessDetectorFrequency` | Defines the frequency in which liveness of members in a cluster is detected. See [Viewing Clustered Space Status](./troubleshooting-viewing-clustered-space-status.html) | Default 5000 ms |
 | `com.gs.callGC` | Boolean value.{% wbr %}Call garbage collection when performing eviction. This used when running in LRU cache policy and also at client side when using local cache. | `false` |
-| `com.gs.replication.disable_multicast_adaptor` | Boolean value.{% wbr %}Force disabling replication multicast adaptor. | `false` {% anchor xa %} |
 | `com.gs.xa.failOnInvalidRollback` | Boolean value.{% wbr %}When set to `false`, the `XAResource` does not throw an error when attempting to roll back a non-existing transaction or a transaction the has already been rolled back. For more details, see {% wbr %}[Javadoc](http://docs.oracle.com/javase/1.5.0/docs/api/javax/transaction/xa/XAResource.html) | `true` {% anchor maxbuffer %} |

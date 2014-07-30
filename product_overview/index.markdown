@@ -29,7 +29,6 @@ The following diagram shows a component view of GigaSpaces XAP. The main compone
 
 ![XAP Architecture Overview.jpg](/attachment_files/XAP Architecture Overview.jpg)
 
-{% align center %}{% sub %}**Figure 1. Architecture overview for GigaSpaces XAP**{% endsub %}{% endalign %}
 
 ## OpenSpaces
 

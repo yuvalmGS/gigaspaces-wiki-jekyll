@@ -2,11 +2,13 @@
 layout: post100
 title:  JPA Entity Id
 categories: XAP100
-parent: jpa-api.html
-weight: 100
+parent: jpa-api-overview.html
+weight: 200
 ---
 
-{% summary %}This page explains the various supported options for mapping the identifier property of your JPA entities.{% endsummary %}
+{% summary %}{% endsummary %}
+
+Various options for mapping the identifier property of your JPA entities are provided.
 
 # User-Defined Id
 

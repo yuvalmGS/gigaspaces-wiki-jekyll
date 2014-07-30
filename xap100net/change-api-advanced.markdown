@@ -2,8 +2,8 @@
 layout: post100
 title:  Advanced
 categories: XAP100NET
-parent: change-api.html
-weight: 100
+parent: change-api-overview.html
+weight: 200
 ---
 
 

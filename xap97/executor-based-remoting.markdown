@@ -24,7 +24,7 @@ The `executor-proxy` should be created on the client side to interact with the r
 
 The `executor-proxy` include the following properties:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | property| Class Type | Required | NameSpace Bean | Description | Default |
 |:--------|:-----------|:---------|:---------------|:------------|:--------|
 |gigaSpace | GigaSpace | giga-space | Yes |Sets the GigaSpace interface that will be used to work with the space as the transport layer for executions of Space tasks.| |
@@ -128,7 +128,7 @@ The next step is exporting the service over the space. Exporting the service is 
 
 {% highlight xml %}
 <!-- Support @RemotingService component scanning -->
-<context:component-scan base-package="com.mycompany"/>
+<context:component-scan base-package="com.demo"/>
 
 <!-- Support the @RemotingService annotation on a service-->
 <os-remoting:annotation-support />
@@ -275,7 +275,7 @@ public class DataRemoting {
 }
 {% endhighlight %}
 
-If there are more than one `GigaSpace` beans defined within the application context, the ID of the `giga-space` bean needs to be defined on the annotations.
+If there are more than one `GigaSpace` beans defined within the application context, the ID of the `giga-space` bean should be defined explicitly on the annotations via the `name` attribute.
 
 In order to enable this feature, the following element needs to be added to the application context XML:
 

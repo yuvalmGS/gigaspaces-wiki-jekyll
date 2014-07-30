@@ -96,7 +96,6 @@ You can use [Data-Partitioning](./data-partitioning.html) to distribute the data
 - Use indexes only for attributes used for matching. Make sure your space uses the `-1` value for the space implicit indexing property. This will ensure that indexes will be created upon request only.
 - Make sure the statistics filter is turned off.
 - Make sure all space workers are turned off.
-- If you do not need `Lease` objects use the `NOWriteLease=true` as part of the URL. That's the default starting with XAP 9.
 - Encapsulates all non-indexed field into an inner custom class and have all `primitive class` (Integer,Long,..) fields as part of the inner class with primitive types (int, long).
 - Replace string space object fields with a custom implementation, which only supports basic ascii subset (backed with byte).
 - Replaced string fields with a small number of possible (source for instance) values with enum.

@@ -10,7 +10,16 @@ parent: none
 
 {%wbr%}
 
-This guide will explain the command line interface that is used to deploy, manage and monitor Processing Units and Applications.
+{% section %}
+ {% column width=10% %}
+ ![counter-logo.jpg](/attachment_files/subject/admin-api.png)
+ {% endcolumn %}
+ {% column width=90% %}
+ This guide will explain the command line interface that is used to deploy, manage and monitor Processing Units and Applications.
+ {% endcolumn %}
+ {% endsection %}
+
+
 
 
 <hr/>

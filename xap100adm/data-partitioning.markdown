@@ -6,7 +6,15 @@ parent: data-grid-clustering.html
 weight: 200
 ---
 
-{% summary %} {% endsummary %}
+{% section %}
+ {% column width=10% %}
+ {%wbr%}
+ ![counter-logo.jpg](/attachment_files/subject/partitioning.png)
+ {% endcolumn %}
+ {% column width=90% %}
+ {% summary %} {% endsummary %}
+ {% endcolumn %}
+ {% endsection %}
 
 Load-balancing (Data-Partitioning) is essential in any truly scalable architecture, as it enables scaling beyond the physical resources of a single-server machine. In XAP, load-balancing is the mechanism used by the clustered proxy to distribute space operations among the different cluster members. Each cluster member can run on a different physical or virtual machine.
 
@@ -15,7 +23,7 @@ A clustered proxy for a partitioned data grid holds logical references to all sp
 ![load_balancing_basic.gif](/attachment_files/load_balancing_basic.gif)
 
 {% tip %}
-For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit](./elastic-processing-unit.html) section.
+For details about scaling a running space cluster **in runtime** see the [Elastic Processing Unit]({%currentjavaurl%}/elastic-processing-unit.html) section.
 {% endtip %}
 
 # Partitioning Types

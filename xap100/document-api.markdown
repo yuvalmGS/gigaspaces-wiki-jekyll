@@ -458,7 +458,7 @@ SimplePollingEventListenerContainer pollingEventListenerContainer = new SimplePo
                     }
                 }).pollingContainer();
 
-// when needed dispose of the notification container
+// when needed close the polling container
 pollingEventListenerContainer.destroy();
 {% endhighlight %}
 

@@ -1,9 +1,9 @@
 ---
 layout: post100
-title:  SLA Definition
-categories: XAP100
-parent: the-processing-unit-overview.html
-weight: 300
+title:  Overview
+categories: XAP100ADM
+parent: the-sla-overview.html
+weight: 100
 ---
 
 
@@ -29,7 +29,7 @@ It can be defined in multiple ways:
 
 -  Embed the SLA definitions within the processing unit's `pu.xml` file.
 
--  Provide a separate XML files with the SLA definitions to the GSM at deployment via one of the [deployment tools](./deploying-onto-the-service-grid.html).
+-  Provide a separate XML files with the SLA definitions to the GSM at deployment via one of the [deployment tools]({%currentjavaurl%}/deploying-onto-the-service-grid.html).
 
 - Use the deployment tools themselves to provide/override the processing unit's SLA (see below). For example, the GUI deployment dialogue enables you to type in various SLA definitions, such as the number of instances, number of backups and space topology.
 
@@ -83,7 +83,7 @@ It is up to the deployer to configure the SLA correctly. Trying to deploy a Proc
 {%endtip%}
 
 {% info %}
-In previous releases, the SLA definition also included dynamic runtime policies, e.g. creating additional processing unit instances based on CPU load, relocating a certain instance when the memory becomes saturated, etc. These capabilities are still supported, but are considered deprecated.  Version 7.0 introduces the [Administration and Monitoring API](./administration-and-monitoring-api.html) which supports the above and and much more.
+In previous releases, the SLA definition also included dynamic runtime policies, e.g. creating additional processing unit instances based on CPU load, relocating a certain instance when the memory becomes saturated, etc. These capabilities are still supported, but are considered deprecated.  Version 7.0 introduces the [Administration and Monitoring API]({%currentjavaurl%}/administration-and-monitoring-api.html) which supports the above and and much more.
 {% endinfo %}
 
 # Defining the Space Cluster Topology
@@ -210,6 +210,7 @@ Here is an example of setting the max instances per machine parameter:
 {% endtabcontent %}
 {% endinittab %}
 
+{%comment%}
 # Max Instances per Zone
 
 The SLA definition allows to define maximum instances of a processing unit per zone. The semantics of the setting is different when using a processing unit that has an embedded space with primary / backup, and all other cases (non backup processing unit with embedded space, and plain processing units).
@@ -254,6 +255,9 @@ In the above case, the primary and the backup will not run on the same zone. If 
 You may use the [Primary-Backup Zone Controller](/sbp/primary-backup-zone-controller.html) to deploy primary and backup instances on specific different zones.
 {% endtip %}
 
+{%endcomment%}
+
+
 # Total Max Instances Per VM
 
 This parameter controls the total amount of PU instances that can be instantiated within a GSC. This is very different than the `max-instances-per-vm` that controls how many instances a partition may have within a GSC. It does not control the total amount of instances from different PUs or other partitions that can be provisioned into a GSC. To control the Total Max Instances Per VM you should use the system property `com.gigaspaces.grid.gsc.serviceLimit` and set its value before running the GSC:
@@ -264,6 +268,7 @@ set GSC_JAVA_OPTIONS=-Dcom.gigaspaces.grid.gsc.serviceLimit=2
 
 The default value of the `com.gigaspaces.grid.gsc.serviceLimit` is **500**.
 
+{%comment%}
 {% anchor deployment-reqs %}
 
 # Deployment Requirements - Hosts, Zones and Machine Utilization
@@ -387,6 +392,9 @@ The following table explains when a container with a specified zone can satisfy 
 |PU\[zone1\]|GSC\[zone1,zone2\]|YES|
 |PU\[zone1\]|GSC\[\]|NO|
 |PU\[zone1\]|GSC\[zone2\]|NO|
+
+
+
 
 ## Instance Level Requirements
 
@@ -540,7 +548,9 @@ http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/sla/opensp
 When using instance level SLA, max-instances settings do not apply (or any cluster level setting).
 {% endnote %}
 
+{%endcomment%}
 
+{%comment%}
 # Deterministic Deployment
 
 When a deploying a data grid, primary and backup instances will be provisioned in an arbitrary manner across the available machines running GSA/GSCs. You don't have a control where these will be physically located as the primary election mechanism determines the primary and backup instances location at the deploy time (first instance per partition elected as the primary).
@@ -660,6 +670,7 @@ Primary instances will be provisioned in the configured order - A,C,D.
 
 In the above example: max-instances-per-zone="A/1,B/1.
 
+{%endcomment%}
 
 
 {% anchor livenessDetection %}

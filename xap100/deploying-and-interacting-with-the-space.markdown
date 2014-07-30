@@ -214,7 +214,7 @@ A processing unit can define an embedded Space in the processing unit's [`pu.xml
 {% endhighlight %}
 
 This defines an embedded Space within the processing unit. The fact that the Space is embedded is determined by the `url` property. As you can see below, a URL that starts with the `jini://` prefix, indicates that a connection to a remote Space is created, not an embedded Space.
-Note that the cluster schema and number of instances are defined inside the processing unit's [SLA definitions](./configuring-the-processing-unit-sla.html) (typically within the `sla.xml` file), to allow for seamless transition between your local development environment and the actual runtime environment. Here is an example of an SLA definition within the `sla.xml` file:
+Note that the cluster schema and number of instances are defined inside the processing unit's [SLA definitions]({%currentadmurl%}/the-sla-overview.html) (typically within the `sla.xml` file), to allow for seamless transition between your local development environment and the actual runtime environment. Here is an example of an SLA definition within the `sla.xml` file:
 
 {% highlight xml %}
 <os-sla:sla cluster-schema="partitioned-sync2backup" number-of-instances="2" number-of-backups="1"/>
@@ -231,7 +231,7 @@ A-Synchronous replicated cluster should have the following:
   <os-sla:sla cluster-schema="async_replicated" number-of-instances="2" />
 {%endhighlight%}
 
-Refer to [this page](./the-gigaspace-interface-overview.html) for more details on how to configure the Space component, and to [this page](./configuring-the-processing-unit-sla.html) for more details about the SLA definitions.
+Refer to [this page](./the-gigaspace-interface-overview.html) for more details on how to configure the Space component, and to [this page]({%currentadmurl%}/the-sla-overview.html)  for more details about the SLA definitions.
 Once packaged, the processing unit can be deployed onto the service grid using one of the deployment tools (UI, CLI, admin API).
 Refer to [this page](./deploying-onto-the-service-grid.html) for more details on how to deploy your processing unit onto the service grid.
 

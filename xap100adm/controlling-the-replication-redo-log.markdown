@@ -24,7 +24,7 @@ The below configuration parameters have a significant effect on the behavior of 
 
 Here are the parameters you may configure to tune the redo log behavior. You may configure the redo log behavior between replicated spaces and between the spaces and the Mirror:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Space Cluster Property | Description | Default Value for partitioned-sync2backup | Default Value for replicated clusters |
 |:-----------------------|:------------|:------------------------------------------|:--------------------------------------|
 |cluster-config.groups.group.repl-policy.redo-log-capacity | Specifies the total capacity of replication packets the redo log can hold for a standard replication target.| 150000 | -1/unlimited |
@@ -37,7 +37,7 @@ Here are the parameters you may configure to tune the redo log behavior. You may
 
 The following parameters are low level configuration that relates to the swap redo log mechanism:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Space Cluster Property | Description | Default Value|
 |:-----------------------|:------------|:-------------|
 |cluster-config.groups.group.repl-policy.swap-redo-log.flush-buffer-packet-count | Specifies the number of packets buffer size that the swap redo log is using when flushing packets to the disk. | 500 |
@@ -48,15 +48,15 @@ The following parameters are low level configuration that relates to the swap re
 
 Here is an example how you should use the above:
 
-{% highlight java %}
-<os-core:space id="space" url="/./space" mirror="true">
+{% highlight xml %}
+<os-core:embedded-space id="space" name="mySpace" mirror="true">
     <os-core:properties>
 	<props>
 	    <prop key="cluster-config.groups.group.repl-policy.redo-log-capacity">100000</prop>
 	    <prop key="cluster-config.groups.group.repl-policy.redo-log-memory-capacity">100</prop>
 	</props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 For all of these parameters, -1 specifies unlimited behavior. When the memory capacity is smaller than the entire capacity, if the memory capacity is reached, the redo log stores the remaining packets on the disk, thus preventing the JVM from running out of memory when the redo log size is increasing for the reasons mentioned above.
