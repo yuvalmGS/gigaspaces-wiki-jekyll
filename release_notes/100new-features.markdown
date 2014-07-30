@@ -19,7 +19,6 @@ Below is a list of new features and improvements in GigaSpaces 10.0.X.
 | Key | Summary | Fixed in Version | SalesForce ID | Platform/s
 |:-------|:------|:------------|:------------|:----------|
 | GS-7211  | Support failover for JDBC Connection for remote query processing | 10.0.0 | 5267 | All |
-| GS-11446 | End of life IRemoteJSpaceAdmin.start/stop/restart() operations | 10.0.0 | 8407 | All |
 | GS-11541 | Add support for Jetty v9.1.1 | 10.0.0 | 8563,8599 | Java |
 | GS-11549 | Remove standalone service grid launchers (GSM, GSC, LUS) from XAP.NET | 10.0.0 |  | .NET |
 | GS-11558 | Remove space container registration from lookup service | 10.0.0 | | All |
@@ -27,9 +26,7 @@ Below is a list of new features and improvements in GigaSpaces 10.0.X.
 | GS-11575 | Log Index and query statistics and status | 10.0.0 | | All |
 | GS-11576 | Add Protective mode for query without any indexes | 10.0.0 | | All |
 | GS-11596 | Log severe messages when warning persists | 10.0.0 | 8622 | All |
-| GS-11607 | End of life - Clean .NET | 10.0.0 | | .NET |
 | GS-11609 | Log on warning level when LRMI class loading failed because it cannot create a connection to the source | 10.0.0 | | Java |
-| GS-11610 | End of life - shutting down a space from a remote proxy | 10.0.0 | | All |
 | GS-11612 | Deploy process optimization | 9.7.1, 10.0.0 | | Java, .NET |
 | GS-11620 | Simplify view-query definition in openspaces-core.xsd | 10.0.0 | | Java |
 | GS-11621 | Bad linux scripts for the benchmark cli tool | 9.7.1, 10.0.0 | | Java |
@@ -55,14 +52,7 @@ Below is a list of new features and improvements in GigaSpaces 10.0.X.
 | GS-11766 | Create Space proxy configurers for XAP.NET | 10.0.0 | | .NET |
 | GS-11771 | Allow to define zones during deployment in GS-UI | 10.0.0 | | Java |
 | GS-11772 | Allow to define zones during deployment in WEB-UI | 10.0.0 | | Java |
-| GS-11782 | End Of Life - data event sessions with transactions | 10.0.0 | | .NET |
-| GS-11783 | End Of Life - ISpaceProxy.CreateLocalView | 10.0.0 | | .NET |
-| GS-11784 | End Of Life - local transaction manager in XAP.NET | 10.0.0 | | .NET |
-| GS-11785 | End Of Life - non-generic SQLQuery in XAP.NET | 10.0.0 | | .NET |
-| GS-11786 | End Of Life - IServerAdmin.GetTypeDescriptor | 10.0.0 | | .NET |
-| GS-11787 | End Of Life - SpaceClassAttribute.Fifo | 10.0.0 | | .NET |
 | GS-11788 | Improve JDBC aggregate operations performance | 10.0.0 | | All |
-| GS-11789 | End Of Life - NoWriteLease | 10.0.0 | | All |
 | GS-11790 | Modify XAP.NET to support .NET 3.5 instead of 2.0 (in addition to 4.0) | 10.0.0 | | .NET |
 | GS-11791 | Simplify processing unit configuration in XAP.NET | 10.0.0 | | .NET |
 | GS-11792 | Prefer internal serialization for externalizable POJOs | 10.0.0 | | Java |
