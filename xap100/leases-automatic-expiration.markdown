@@ -33,8 +33,7 @@ Few other ways Lease can be managed include,
 Leases can be used for objects written to GigaSpaces cluster. All the write operations in [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html) interface support Lease. Lease duration is an argument that is passed to the write operations and they return a Lease Context which can be used to manage the Leases.
 
 {% highlight java %}
-UrlSpaceConfigurer configurer=new UrlSpaceConfigurer("jini://*/*/space");
-GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("space")).gigaSpace();
 
 MyMessage message1 = new MyMessage();
 
@@ -57,7 +56,7 @@ LeaseContext<MyMessage> lease3 = gigaSpace.write(message3, Lease.FOREVER);
 You may use the `Lease.getExpiration` to retrieve the time where the space object will expire. See below simple example - It writes a space into the space with 10 seconds lease and later prints how much time is left for the space object to remain in space before it will expire:
 
 {% highlight java %}
-GigaSpace space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./space")).gigaSpace();
+GigaSpace space = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("space")).gigaSpace();
 
 // Writing object into the space with 10 seconds lease time
 LeaseContext<MyClass> o = space.write(new MyClass(),10000);
@@ -230,10 +229,8 @@ public class LeaseManagerClient {
 
     public LeaseManagerClient(String url) {
 
-	// connect to the space using its URL
-	IJSpace space = new UrlSpaceConfigurer(url).space();
 	// use gigaspace wrapper to for simpler API
-	this.gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
+	this.gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("space")).gigaSpace();
 
 	createOrder();
 

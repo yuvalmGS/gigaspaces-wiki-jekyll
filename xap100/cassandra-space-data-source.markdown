@@ -148,7 +148,7 @@ CassandraSpaceDataSource spaceDataSource = new CassandraSpaceDataSourceConfigure
             .hectorClient(hectorClient)
             .create();
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./space")
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("mySpace")
   .schema("persistent")
   .mirror(true)
   .cachePolicy(new LruCachePolicy())

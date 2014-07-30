@@ -143,9 +143,9 @@ A typical usage pattern is connecting remotely to a Space. Here is an example (e
 
 {% highlight java %}
 
-UrlSpaceConfigurer spaceConfigurer = new UrlSpaceConfigurer("/./space");
+EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("space");
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(spaceConfigurer).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 
 // ...
 

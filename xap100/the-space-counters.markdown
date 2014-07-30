@@ -119,7 +119,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.openspaces.core.GigaSpace;
 import org.openspaces.core.GigaSpaceConfigurer;
-import org.openspaces.core.space.UrlSpaceConfigurer;
+import org.openspaces.core.space.SpaceProxyConfigurer;
+import org.openspaces.core.space.EmbeddedSpaceConfigurer;
 import static org.junit.Assert.*;
 
 public class CounterTest {
@@ -132,8 +133,8 @@ public class CounterTest {
 	public void setUp() throws Exception {
 		if (space == null)
 		{
-			spaceEmb= new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./mySpace")).gigaSpace();
-			space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/mySpace")).gigaSpace();
+			spaceEmb= new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("mySpace")).gigaSpace();
+			space = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace")).gigaSpace();
 			space.clear(null);
 			counter = new Counter(space, "id", "counter1", 10);
 		}

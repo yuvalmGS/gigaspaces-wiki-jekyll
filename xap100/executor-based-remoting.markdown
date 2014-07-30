@@ -8,11 +8,6 @@ weight: 200
 
 {% summary%}{%endsummary%}
 
-{%comment%}
-{% summary%}Executor Remoting allows you to use remote invocations of POJO services, with the space as the transport layer using OpenSpaces Executors.{% endsummary %}
-
-# Overview
-{%endcomment%}
 
 *Executor Based Remoting* uses [Executors](./task-execution-over-the-space.html) to provided remoting capabilities on top of the Space. Executor Based Remoting allows for direct invocation of services in an asynchronous manner in a broadcast or routed manner. Executor Remoting works with services that are deployed in a Processing Unit and execute within a collocated space.
 
@@ -248,9 +243,9 @@ Configuring the `IDataProcessor` proxy can done in the following manner:
 {% tabcontent Code %}
 
 {% highlight java %}
-IJSpace space = new UrlSpaceConfigurer("jini://*/*/space").space();
+SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 
 IDataProcessor dataProcessor = new ExecutorRemotingProxyConfigurer<IDataProcessor>(gigaSpace, IDataProcessor.class)
                                .proxy();
@@ -377,9 +372,9 @@ Finally, the wiring is done in the following manner:
 {% tabcontent Code %}
 
 {% highlight java %}
-IJSpace space = new UrlSpaceConfigurer("jini://*/*/space").space();
+SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 
 IDataProcessor dataProcessor = new ExecutorRemotingProxyConfigurer<IDataProcessor>(gigaSpace, IDataProcessor.class)
                                .remoteRoutingHandler(new DataRemoteRoutingHandler())
@@ -673,9 +668,9 @@ An implementation of such an aspect can be configured as follows:
 {% tabcontent Code %}
 
 {% highlight java %}
-IJSpace space = new UrlSpaceConfigurer("jini://*/*/space").space();
+SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 
 IDataProcessor dataProcessor = new ExecutorRemotingProxyConfigurer<IDataProcessor>(gigaSpace, IDataProcessor.class)
                                .remoteInvocationAspect(new MyRemoteInvocationAspect())
@@ -836,9 +831,9 @@ The following snippets show how to plug a custom meta arguments handler to the c
 {% tabcontent Code %}
 
 {% highlight java %}
-IJSpace space = new UrlSpaceConfigurer("jini://*/*/space").space();
+SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 
 IDataProcessor dataProcessor = new ExecutorRemotingProxyConfigurer<IDataProcessor>(gigaSpace, IDataProcessor.class)
                                .metaArgumentsHandler(new MyMetaArgumentsHandler())
@@ -910,9 +905,9 @@ The configuration of enabling broadcasting is done on the client level, by setti
 {% tabcontent Code %}
 
 {% highlight java %}
-IJSpace space = new UrlSpaceConfigurer("jini://*/*/space").space();
+SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 
 IDataProcessor dataProcessor = new ExecutorRemotingProxyConfigurer<IDataProcessor>(gigaSpace, IDataProcessor.class)
                                .broadcast(true)

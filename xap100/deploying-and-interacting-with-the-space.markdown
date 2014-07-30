@@ -249,7 +249,7 @@ When creating the Space instance in your own application, you have to provide th
 The last option is to create the Space via the API from within a plain Java application. Note that this option has the same limitation as creating the Space in your standalone Spring application, namely you have to start each of the instances separately and provide the instance ID to each of the started Space instances. Here is an example of starting the first instance of a sync-replicated Space with 10 instances:
 {% highlight java %}
 ClusterInfo clusterInfo = new ClusterInfo("sync_replicated", 1, null, 10, null);
-IJSpace space = new UrlSpaceConfigurer("/./mySpace").clusterInfo(clusterInfo).space();
+IJSpace space = new EmbeddedSpaceConfigurer("mySpace").clusterInfo(clusterInfo).space();
 {% endhighlight %}
 
 Refer to [this page](./the-gigaspace-interface-overview.html) for more details on how to configure the Space component programmatically (click the **Code** tabs in all of the examples).
@@ -277,7 +277,7 @@ Here is an example of how you would do this programmatically, or via Spring conf
 {% endtabcontent %}
 {% tabcontent Java Code %}
 {% highlight java %}
-IJSpace space = new UrlSpaceConfigurer("jini://*/*/mySpace").space();
+IJSpace space = new SpaceProxyConfigurer("mySpace").space();
 {% endhighlight %}
 {% endtabcontent %}
 {% endinittab %}
@@ -370,7 +370,7 @@ Creating a `GigaSpace` instance is done by wrapping an existing IJSpace instance
 
 {% highlight java %}
 
-IJSpace space = new UrlSpaceConfigurer("jini://*/*/mySpace").space();
+IJSpace space = new SpaceProxyConfigurer("mySpace").space();
 GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
 {% endhighlight %}
 
@@ -379,7 +379,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
 
 {% highlight java %}
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/mySpace")).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace")).gigaSpace();
 {% endhighlight %}
 
 {% endtabcontent %}

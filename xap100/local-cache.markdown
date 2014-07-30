@@ -65,7 +65,8 @@ Creating a local cache is similar to creating a GigaSpace, except that we wrap t
 
 {% highlight java %}
 // Initialize remote space configurer:
-UrlSpaceConfigurer urlConfigurer = new UrlSpaceConfigurer("jini://*/*/mySpace");
+SpaceProxyConfigurer urlConfigurer = new SpaceProxyConfigurer("mySpace");
+
 // Initialize local cache configurer
 LocalCacheSpaceConfigurer localCacheConfigurer =
     new LocalCacheSpaceConfigurer(urlConfigurer);

@@ -82,9 +82,9 @@ Below is an example of how it can be defined in a Spring application context:
 {% tabcontent Code %}
 
 {% highlight java %}
-IJSpace space = new UrlSpaceConfigurer("/./space").space();
+EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
 PlatformTransactionManager ptm = new DistributedJiniTxManagerConfigurer().transactionManager();
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).transactionManager(ptm).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -131,9 +131,9 @@ For example, to change the default timeout to 2 minutes, use the following confi
 {% tabcontent Code %}
 
 {% highlight java %}
-IJSpace space = new UrlSpaceConfigurer("/./space").space();
+EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
 PlatformTransactionManager ptm = new DistributedJiniTxManagerConfigurer().defaultTimeout(120).transactionManager();
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).transactionManager(ptm).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -191,9 +191,9 @@ Below is an example of how it can be defined in a Spring application context:
 {% tabcontent Code %}
 
 {% highlight java %}
-IJSpace space = new UrlSpaceConfigurer("/./space").space();
+EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
 PlatformTransactionManager ptm = new LookupJiniTxManagerConfigurer().lookupTimeout(5000).transactionManager();
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).transactionManager(ptm).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -239,9 +239,9 @@ The Jini lookup transaction manager allows to set the default timeout value for 
 {% tabcontent Code %}
 
 {% highlight java %}
-IJSpace space = new UrlSpaceConfigurer("/./space").space();
+EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
 PlatformTransactionManager ptm = new LookupJiniTxManagerConfigurer().defaultTimeout(1000).transactionManager();
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).transactionManager(ptm).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -308,13 +308,13 @@ Here is an example of how this can be configured:
 {% tabcontent Code %}
 
 {% highlight java %}
-IJSpace space = new UrlSpaceConfigurer("/./space").space();
+EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
 TransactionLeaseRenewalConfig config = new TransactionLeaseRenewalConfig();
 config.setPoolSize(2);
 config.setRenewDuration(1000);
 config.setRenewRTT(500);
 PlatformTransactionManager ptm = new DistributedJiniTxManagerConfigurer().leaseRenewalConfig(config).transactionManager();
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).transactionManager(ptm).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -371,8 +371,8 @@ GigaSpaces can be used within an XA transaction using JTA. The OpenSpaces API al
 {% highlight java %}
 UserTransaction userTransaction = ... //get UserTransaction via JDNI / instantiation
 PlatformTransactionManager ptm = new JtaTransactionManager(userTransaction);
-IJSpace space = new UrlSpaceConfigurer("/./space").space();
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).transactionManager(ptm).gig
+EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gig
 {% endhighlight %}
 
 {% endtabcontent %}

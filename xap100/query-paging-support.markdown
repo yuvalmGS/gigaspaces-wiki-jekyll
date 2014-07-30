@@ -35,7 +35,7 @@ The iterator constructs a match set (a collection of space objects instances) th
 Simple usage example for the `IteratorBuilder` with the `GSIterator`:
 
 {% highlight java %}
-GigaSpace gigaspace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/mySpace")).gigaSpace();
+GigaSpace gigaspace = new GigaSpaceConfigurer( new SpaceProxyConfigurer("mySpace")).gigaSpace();
 
 SQLQuery<MySpaceClass> query1 = new SQLQuery<MySpaceClass>(MySpaceClass.class,"fName like 'f%'");
 SQLQuery<MySpaceClass> query2 = new SQLQuery<MySpaceClass>(MySpaceClass.class,"lName like 'l%'");

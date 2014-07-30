@@ -117,7 +117,7 @@ An example of how the MongoDB Space Synchronization Endpoint can be configured w
 				.mongoClientConnector(client) 
 				.create(); 
 		
-		IJSpace mirror = new UrlSpaceConfigurer("/./mirror-service") 
+		IJSpace mirror = new EmbeddedSpaceConfigurer("mirror-service")
 		.schema("mirror") 
 		.spaceSynchronizationEndpoint(syncEndpoint) 
 		.addProperty("space-config.mirror-service.cluster.name", "space") 

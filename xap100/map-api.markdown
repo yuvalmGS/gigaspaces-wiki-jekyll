@@ -82,7 +82,7 @@ Here is a very simple example how a client application can create a `GigaMap` in
 {% tabcontent Code %}
 
 {% highlight java %}
-IMap map = new MapConfigurer(new UrlSpaceConfigurer("jini//*/*/space").space()).createMap();
+IMap map = new MapConfigurer(new SpaceProxyConfigurer("space").space()).createMap();
 GigaMap gigaMap = new GigaMapConfigurer(map).gigaMap();
 {% endhighlight %}
 
@@ -130,7 +130,7 @@ To create a `GigaMap` for a co-located (embedded) space the space URL should use
 {% tabcontent Code %}
 
 {% highlight java %}
-IMap map = new MapConfigurer(new UrlSpaceConfigurer("/./space").space()).createMap();
+IMap map = new MapConfigurer(new EmbeddedSpaceConfigurer("space").space()).createMap();
 GigaMap gigaMap = new GigaMapConfigurer(map).gigaMap();
 {% endhighlight %}
 
@@ -210,7 +210,7 @@ Here is an example for a `GigaMap` construct with a local cache:
 {% highlight java %}
 FIFOEvictionStrategy evictionStrategy = new FIFOEvictionStrategy();
 evictionStrategy.setBatchSize(1000);
-IMap map = new MapConfigurer(new UrlSpaceConfigurer("jini://*/*/space").space())
+IMap map = new MapConfigurer(new SpaceProxyConfigurer("space").space())
 .localCacheEvictionStrategy(evictionStrategy)
 .localCachePutFirst(false)
 .localCacheSizeLimit(100000)
@@ -374,7 +374,7 @@ void putAndUnlock(Object key,Object value)
 Here is a simple example using the Lock API:
 
 {% highlight java %}
-IMap map = new MapConfigurer(new UrlSpaceConfigurer("jini//**/**/space").space()).createMap();
+IMap map = new MapConfigurer(new SpaceProxyConfigurer("space").space()).createMap();
 GigaMap gigaMap = new GigaMapConfigurer(map).gigaMap();
 String key = "myKey";
 System.out.println("Before Lock:Is key "  + key+ " locked:" + gigaMap.isLocked(key));

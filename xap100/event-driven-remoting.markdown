@@ -256,9 +256,9 @@ Configuring the `IDataProcessor` proxy can be done in the following manner:
 {% tabcontent Code %}
 
 {% highlight java %}
-IJSpace space = new UrlSpaceConfigurer("jini://*/*/space").space();
+SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 
 IDataProcessor dataProcessor = new EventDrivenRemotingProxyConfigurer<IDataProcessor>(gigaSpace, IDataProcessor.class)
                                .timeout(15000)
@@ -391,9 +391,9 @@ Finally, the wiring is done in the following manner:
 {% tabcontent Code %}
 
 {% highlight java %}
-IJSpace space = new UrlSpaceConfigurer("jini://*/*/space").space();
+SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 
 IDataProcessor dataProcessor = new EventDrivenRemotingProxyConfigurer<IDataProcessor>(gigaSpace, IDataProcessor.class)
                                .timeout(15000)
@@ -546,9 +546,9 @@ An implementation of such an aspect can be configured as follows:
 {% tabcontent Code %}
 
 {% highlight java %}
-IJSpace space = new UrlSpaceConfigurer("jini://*/*/space").space();
+SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 
 IDataProcessor dataProcessor = new EventDrivenRemotingProxyConfigurer<IDataProcessor>(gigaSpace, IDataProcessor.class)
                                .timeout(15000)
@@ -722,9 +722,9 @@ The following snippets show how to plug a custom meta arguments handler to the c
 {% tabcontent Code %}
 
 {% highlight java %}
-IJSpace space = new UrlSpaceConfigurer("jini://*/*/space").space();
+SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 
 IDataProcessor dataProcessor = new EventDrivenRemotingProxyConfigurer<IDataProcessor>(gigaSpace, IDataProcessor.class)
                                .timeout(15000)

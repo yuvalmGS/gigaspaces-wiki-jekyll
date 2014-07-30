@@ -88,7 +88,7 @@ Creating a local view is similar to creating a [`GigaSpace`](./the-gigaspace-int
 
 {% highlight java %}
 // Initialize remote space configurer:
-UrlSpaceConfigurer urlConfigurer = new UrlSpaceConfigurer("jini://*/*/mySpace");
+SpaceProxyConfigurer urlConfigurer = new SpaceProxyConfigurer("mySpace");
 // Initialize local view configurer
 LocalViewSpaceConfigurer localViewConfigurer = new LocalViewSpaceConfigurer(urlConfigurer)
 	.batchSize(1000)
