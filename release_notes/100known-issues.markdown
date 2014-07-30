@@ -12,7 +12,7 @@ Below is a list of known issues in GigaSpaces 10.0.X.
 
 {: .table .table-bordered .table-condensed}
 | Key | Summary | SalesForce ID | Since version | Workaround | Platform/s
-|:----|:--------|:----------------|:---------------|:------------------|:----------|
+|:-------|:--------|:----------------|:---------------|:------------------|:----------|
 | GS-11589 | Not all threads are terminated when destroying UrlSapceContainer | | 10.0.0 | | All |
 | GS-11622 | Web-ui shows wrong instance count with replic | | 10.0.0 | | All |
 | GS-11626 | Failed to deploy data example using secured space | | 10.0.0 | | Java |
@@ -29,6 +29,7 @@ Below is a list of known issues in GigaSpaces 10.0.X.
 | GS-11679 | Admin statistics history size overridden with default value | | 10.0.0 | | Java |
 | GS-11682 | Web-UI: After running and terminating gs-agent, gsa is displayed for about one minute under Hosts | | 10.0.0 | | .NET |
 | GS-11695 | MongoDB SynchronizationEndpoint- NPE when storing a map that contains a null value for a non null key | | 10.0.0 | | Java |
+| GS-11696 | Support custom initial Load query for mongo data source | 9.7.1, 10.0.0 | 9.7.1 | | Java |
 | GS-11697 | MongoDB-Incorrect return value in DataSyncOperation.getDataAsDocument() for duble | | 10.0.0 | | All |
 | GS-11698 | Cannot override java.security.policy system property | | 10.0.0 | | Java |
 | GS-11701 | RESTData cannot handle Array | | 10.0.0 | | All |
@@ -38,8 +39,6 @@ Below is a list of known issues in GigaSpaces 10.0.X.
 | GS-11720 | GS-UI: Hidden progressbar in relocation window | | 10.0.0 | | Java |
 | GS-11727 | com.gigaspaces.management.space.SpaceQueryDetails JavaDoc missing | | 10.0.0 | | Java |
 | GS-11728 | Syntax error message in DotNetException.java class | 8927 | 10.0.0 | | Java, .NET |
-| GS-11732 | Disributed transaction over multiple clusters might cause consolidations problems | 8935 | 10.0.0 | | All |
-| GS-11736 | Can't see space in gs-ui when running gsInstance.bat when using jdk 7u55 | | 10.0.0 | | Java |
 | GS-11744 | Decreasing the height of the EDG window hides content and does not show scroll-bar | | 10.0.0 | | All |
 | GS-11767 | Opening the Types tab under Data Grids throws an exception that is not catched in the webui | | 10.0.0 | | All |
 | GS-11768 | Warning message as a result of using deprecated setAutoRenew(boolean , LeaseListener , long , long, long) method | | 10.0.0 | | Java |
@@ -54,4 +53,14 @@ Below is a list of known issues in GigaSpaces 10.0.X.
 | GS-11822 | NPE in replicating change in rare condition | 9097 | 10.0.0 | | All |
 | GS-11824 | Fail to shutdown GSC due to recovery thread that hang on socket trying to load class | 9081 | 10.0.0 | | All |
 | GS-11825 | Got never ended SpaceMetadataException in the logs when adding index to an unregistered type | 9044 | 10.0.0 | | java |
-| GS-11826 | Management tools do not display properly blob store setting immediately after deployment |  | 10.0.0 | | Java |
+| GS-11827 | Wrong number of instances displayed when PU with partitioned-sync2backup 2,0 and sla |  | 10.0.0 | | Java |
+| GS-11829 | HTTP session bug |  | 10.0.0 | | Java |
+| GS-11831 | D3 graph should properly update existing edge status |  | 10.0.0 | | Java |
+| GS-11832 | NPE in getCachedBuffer in rare condition | 9128 | 10.0.0 | | All |
+| GS-11833 | Missing parttition after reboot of node due to ESM negative capacity exception | 9017 | 10.0.0 | | All |
+| GS-11834 | GSC that is supposed to be terminated due to rebalancing does not terminate | 9074 | 10.0.0 | | All |
+| GS-11836 | Extra backup and zombi instance after split brain in certain conditions | 9119 | 10.0.0 | | Java |
+| GS-11839 | XAP.NET space space runtime statistics API is missing |  | 10.0.0 | | .NET |
+| GS-11843 | _progressTimeout of recovery should be increased in blobstore recovery and add time to wait for lease reaper cycle to complete |  | 10.0.0 | | Java |
+| GS-11844 | Recreation of FDFManager on the same jvm occurs once recovery fails - blobstore |  | 10.0.0 | | Java |
+| GS-11845 | Deploying the Data example with the provided sla does not work properly |  | 10.0.0 | | Java |
