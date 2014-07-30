@@ -164,12 +164,9 @@ The memcached deployment descriptor looks as follows, for deployment with a Giga
 <!--
     A bean representing an embedded space (an IJSpace implementation).
 -->
-<os-core:space id="space" url="${url}" versioned="true">
-</os-core:space>
+<os-core:embedded-space id="space" name="${name}" versioned="true" />
 
-<os-core:local-cache id="localCache" space="space">
-
-</os-core:local-cache>
+<os-core:local-cache id="localCache" space="space" />
 
 <os-core:giga-space id="gigaSpace" space="localCache" />
 

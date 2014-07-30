@@ -128,7 +128,7 @@ The next step is exporting the service over the space. Exporting the service is 
 <!-- Support the @RemotingService annotation on a service-->
 <os-remoting:annotation-support />
 
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -139,7 +139,7 @@ The next step is exporting the service over the space. Exporting the service is 
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -154,8 +154,8 @@ The next step is exporting the service over the space. Exporting the service is 
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -204,7 +204,7 @@ Configuring the `IDataProcessor` proxy can done in the following manner:
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="jini://*/*/space" />
+<os-core:space-proxy id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -221,8 +221,8 @@ Configuring the `IDataProcessor` proxy can done in the following manner:
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -327,7 +327,7 @@ Finally, the wiring is done in the following manner:
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="jini://*/*/space" />
+<os-core:space-proxy id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -347,8 +347,8 @@ Finally, the wiring is done in the following manner:
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -521,7 +521,7 @@ Client pu.xml
 
 {% highlight xml %}
 <context:component-scan base-package="com.demo"/>
-<os-core:space id="space" url="jini://*/*/space" />
+<os-core:space-proxy id="space" name="mySpace"/>
 
 <os-core:distributed-tx-manager id="myTransactionManager" />
 <os-core:giga-space id="gigaspace" space="space"  tx-manager="myTransactionManager"/>
@@ -569,10 +569,10 @@ public class Client{
 
 Service pu.xml
 
-{% highlight java %}
+{% highlight xml %}
 <context:component-scan base-package="com.demo"/>
 <os-remoting:annotation-support />
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
 <os-remoting:service-exporter id="serviceExporter" />
 {% endhighlight %}
@@ -623,7 +623,7 @@ An implementation of such an aspect can be configured as follows:
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="jini://*/*/space" />
+<os-core:space-proxy id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -643,8 +643,8 @@ An implementation of such an aspect can be configured as follows:
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -715,7 +715,7 @@ An implementation of such an aspect can be configured as follows:
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -733,8 +733,8 @@ An implementation of such an aspect can be configured as follows:
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -785,7 +785,7 @@ The following snippets show how to plug a custom meta arguments handler to the c
 
 {% highlight xml %}
 
-<os-core:space id="space" url="jini://*/*/space" />
+<os-core:space-proxy id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -806,8 +806,8 @@ The following snippets show how to plug a custom meta arguments handler to the c
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -865,7 +865,7 @@ The configuration of enabling broadcasting is done on the client level, by setti
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="jini://*/*/space" />
+<os-core:space-proxy id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -882,8 +882,8 @@ The configuration of enabling broadcasting is done on the client level, by setti
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">

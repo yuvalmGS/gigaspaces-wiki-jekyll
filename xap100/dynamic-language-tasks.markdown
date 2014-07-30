@@ -28,7 +28,7 @@ The first step in using scripting is exposing the built in scripting service ove
      <os-remoting:service ref="scriptingExecutor"/>
 </os-remoting:service-exporter>
 
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="mySpace"
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -55,8 +55,8 @@ The first step in using scripting is exposing the built in scripting service ove
     </property>
 </bean>
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -100,7 +100,7 @@ On the client side Spring XML configuration, the following needs to be defined (
 
 {% highlight xml %}
 
-<os-core:space id="space" url="jini://*/*/space" />
+<os-core:space-proxy id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -114,8 +114,8 @@ On the client side Spring XML configuration, the following needs to be defined (
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">

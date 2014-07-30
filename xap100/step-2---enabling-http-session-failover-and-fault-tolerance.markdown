@@ -219,7 +219,7 @@ The first property you have to specify is the `jetty.sessions.spaceUrl`, which s
         A bean representing a space (an IJSpace implementation).
         Note, we perform a lookup on the space since we are working against a remote space.
     -->
-    <os-core:space id="space" url="jini://*/*/mySpace" lookup-timeout="20000"/>
+    <os-core:space-proxy id="space" name="mySpace" lookup-timeout="20000"/>
 
     <os-core:local-cache id="localCache" space="space"/>
 </beans>

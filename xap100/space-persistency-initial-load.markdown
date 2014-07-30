@@ -23,7 +23,7 @@ To enable the initial load activity a `SpaceDataSource` should be specified. We 
 Here is an example for a space configuration that performs only initial load from the database without writing back any changes into the database (replication to the Mirror service is not enabled with this example):
 
 {% highlight xml %}
-<os-core:space id="space" url="/./space" schema="persistent" space-data-source="hibernateSpaceDataSource">
+<os-core:embedded-space id="space" name="space" schema="persistent" space-data-source="hibernateSpaceDataSource">
     <os-core:properties>
         <props>
             <!-- Use ALL IN CACHE -->
@@ -32,7 +32,7 @@ Here is an example for a space configuration that performs only initial load fro
             <prop key="cluster-config.cache-loader.central-data-source">true</prop>
         </props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 
 <bean id="hibernateSpaceDataSource" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceDataSourceFactoryBean">
     <property name="sessionFactory" ref="sessionFactory"/>

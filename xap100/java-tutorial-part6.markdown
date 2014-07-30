@@ -26,7 +26,7 @@ XAP provides several transaction managers, and changing the implementation you w
 Here is an example how you define a distributed transaction manager via the Spring configuration:
 {%highlight xml%}
 <!-- A bean representing a space (an IJSpace implementation) -->
-<os-core:space id="space" url="/./xapTutorialSpace" />
+<os-core:embedded-space id="space" name="xapTutorialSpace" />
 
 <!-- Defines a distributed transaction manager. -->
 <os-core:distributed-tx-manager id="transactionManager" />
@@ -144,7 +144,7 @@ GigaSpace space = new GigaSpaceConfigurer( new SpaceProxyConfigurer("xapTutorial
 
 {% tabcontent Spring %}
 {%highlight java%}
-    <os-core:space id="space" url="jini://*/*/xapTutorialSpace"  versioned="true" />
+    <os-core:space-proxy id="space" name="xapTutorialSpace"  versioned="true" />
 {%endhighlight%}
 {% endtabcontent %}
 {% endinittab %}

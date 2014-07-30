@@ -202,14 +202,14 @@ For example:
 
 {% highlight xml %}
 <beans>
-    <os-core:space id="space" url="/./space">
+    <os-core:embedded-space id="space" name="mySpace">
         <os-core:properties>
             <props>
                 <prop key="space-config.QueryProcessor.date_format">yyyy-MM-dd HH:mm:ss</prop>
                 <prop key="space-config.QueryProcessor.time_format">HH:mm:ss</prop>
             </props>
         </os-core:properties>
-    </os-core:space>
+    </os-core:embedded-space>
 </beans>
 {% endhighlight %}
 

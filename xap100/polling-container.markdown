@@ -92,8 +92,8 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -589,8 +589,8 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -716,8 +716,8 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -883,8 +883,8 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="transactionManager" class="org.openspaces.core.transaction.manager.DistributedJiniTransactionManager"/>
@@ -1018,8 +1018,8 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -1165,8 +1165,8 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">

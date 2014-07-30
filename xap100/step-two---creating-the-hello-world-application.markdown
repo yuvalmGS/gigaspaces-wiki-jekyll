@@ -203,7 +203,7 @@ On the second line, we define a transaction manager, which is referencing this s
 Finally a bean called _gigaSpace_ wraps the _space_, and provides a simple client API to interact with it, as we will see later in this tutorial.
 
 {% highlight xml %}
-<os-core:space id="space" url="/./processorSpace" />
+<os-core:embedded-space id="space" name="processorSpace"/>
 <os-core:distributed-tx-manager id="transactionManager" />
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
 {% endhighlight %}

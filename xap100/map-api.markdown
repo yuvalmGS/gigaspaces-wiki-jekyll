@@ -56,7 +56,7 @@ Here is a very simple example how a client application can create a `GigaMap` in
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="jini://*/*/space" />
+<os-core:space-proxy id="space" name="mySpace"/>
 <os-core:map id="map" space="space"/>
 <os-core:giga-map id="gigaMap" map="map" />
 {% endhighlight %}
@@ -65,8 +65,8 @@ Here is a very simple example how a client application can create a `GigaMap` in
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="map" class="org.openspaces.core.map.MapFactoryBean">
@@ -103,7 +103,7 @@ To create a `GigaMap` for a co-located (embedded) space the space URL should use
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="mySpace"/>
 <os-core:map id="map" space="space"/>
 <os-core:giga-map id="gigaMap" map="map" />
 {% endhighlight %}
@@ -112,8 +112,8 @@ To create a `GigaMap` for a co-located (embedded) space the space URL should use
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="map" class="org.openspaces.core.map.MapFactoryBean">
@@ -161,7 +161,7 @@ Here is an example for a `GigaMap` construct with a local cache:
 
 {% highlight xml %}
 
-<os-core:space id="space" url="jini//*/*/space" />
+<os-core:space-proxy id="space" name="mySpace"/>
 
 <bean id="evictionStrategy" class="com.j_spaces.map.eviction.FIFOEvictionStrategy">
     <property name="batchSize" value="1000"/>
@@ -179,8 +179,8 @@ Here is an example for a `GigaMap` construct with a local cache:
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="evictionStrategy" class="com.j_spaces.map.eviction.FIFOEvictionStrategy">
@@ -298,7 +298,7 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="jini//*/*/space" />
+<os-core:space-proxy id="space" name="mySpace"/>
 <os-core:map id="map" space="space"/>
 <os-core:giga-map id="gigaMap" map="map" default-isolation-level="READ_COMMITTED"/>
 {% endhighlight %}
@@ -307,8 +307,8 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini//*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="map" class="org.openspaces.core.map.MapFactoryBean">
@@ -456,7 +456,7 @@ The decision of working directly with a cluster member or against the whole clus
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <!-- By default, since we are starting in embedded mode, clustered=false -->
 <os-core:map id="directMap" space="space"/>
@@ -468,8 +468,8 @@ The decision of working directly with a cluster member or against the whole clus
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <!-- By default, since we are starting in embedded mode, clustered=false -->
