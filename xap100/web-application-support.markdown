@@ -121,7 +121,7 @@ A typical usage pattern is connecting remotely to a Space. Here is an example (e
 
 {% highlight xml %}
 
-<os-core:space id="space" url="jini://*/*/space" />
+<os-core:space-proxy id="space" name="mySpace" />
 <os-core:giga-space id="gigaSpace" space="space"/>
 {% endhighlight %}
 
@@ -167,7 +167,7 @@ Here is an example that starts an embedded Space as part of the web application 
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
 <os-core:giga-space id="clusteredGigaSpace" space="space" clustered="true"/>
 {% endhighlight %}

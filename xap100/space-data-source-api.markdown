@@ -53,7 +53,7 @@ Space data source configuration can be done using a Spring bean or via code as s
 
 {% highlight java %}
 SpaceDataSource spaceDataSource = new MySpaceDataSource();
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./space")
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("space")
   .schema("persistent")
   .cachePolicy(new LruCachePolicy())
   .spaceDataSource(spaceDataSource)

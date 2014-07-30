@@ -291,12 +291,10 @@ public static void main(String [] args) {
 Here's the constructor of the Feeder connects to the Processor Processing unit _Space_ by using the input URL:
 
 {% highlight java %}
-public Feeder(String url){
-     // Connect to a space using the url
-     IJSpace space = new UrlSpaceConfigurer(url).space();
+public Feeder(String spaceName){
 
      // Wrap the space with the gigaSpace API
-     this.gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
+     this.gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer(spaceName)).gigaSpace();
 }
 {% endhighlight %}
 

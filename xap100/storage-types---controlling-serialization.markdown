@@ -115,7 +115,7 @@ Specifying space level storage type can be done using any of the following:
 
 {% highlight java %}
 
-GigaSpace gigaspace= new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./mySpace").
+GigaSpace gigaspace= new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("space").
 	addProperty("space-config.serialization-type",
 	String.valueOf(StorageType.BINARY.getCode()))).gigaSpace();
 {% endhighlight %}

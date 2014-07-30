@@ -245,12 +245,8 @@ public class JDBCTask implements DistributedTask<String[], String[]>{
 {% endhighlight %}
 
 {% highlight java %}
-GigaSpace gigapace =
-	new GigaSpaceConfigurer(
-		new UrlSpaceConfigurer ("jini://*/*/mySpace")).gigaSpace();
-AsyncFuture<String[]> result=
-	gigapace.execute(new JDBCTask("select str from " +
-		MyClass.class.getName() + " group by str"));
+GigaSpace gigapace =new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace")).gigaSpace();
+AsyncFuture<String[]> result= gigapace.execute(new JDBCTask("select str from " +MyClass.class.getName() + " group by str"));
 String[] result_str = result.get();
 System.out.println("The Result:" + Arrays.asList(result_str));
 {% endhighlight %}

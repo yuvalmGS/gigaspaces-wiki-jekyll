@@ -829,7 +829,7 @@ public class NotifyHAMain {
 
     static void getSpace() {
         try {
-            space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space")).create();
+            space = new GigaSpaceConfigurer(new SpaceProxyConfigurer("space")).create();
         } catch (Exception e) {
             System.out.println("Cannot find space: " + e.getMessage());
         }
