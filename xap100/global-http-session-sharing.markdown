@@ -366,16 +366,16 @@ The `shiro.ini` file should to be placed within the `WEB-INF` folder. See below 
 
 The web application should include the following libraries within its `\WEB-INF\lib` folder:
  
-* gs-session-manager-{{site.latest_maven_version}}.jar
-* gs-runtime.jar
+* gs-session-manager-xxx.jar - located within the `XAP ROOT\lib\optional\httpsession` folder.
+* gs-runtime.jar  - located within the `XAP ROOT\lib\\required` folder.
 
 {% note %}
-The `gs-runtime.jar` should be replaced with the relevant XAP `gs-runtime.jar` matching your environment.
+The `gs-runtime.jar` should be replaced with the relevant XAP `gs-runtime.jar` matching your XAP data grid release.
 {% endnote %}
 
 # Deployment
 
-The XAP IMDG should be deployed using one of the [topologies.](/product_overview/space-topologies.html) You may also include a reference to a WAN Gateway.
+The XAP IMDG should be deployed using one of the [topologies.](/product_overview/space-topologies.html). You may also use the WAN Gateway with multi data grid deployment.
 
 {% highlight bash %}
 # To deploy the IMDG called `sessionSpace` start the XAP agent using:
