@@ -22,9 +22,9 @@ The list below represents the platforms that are regularly tested by GigaSpaces.
 # Mixing XAP Versions
 The following is supported:
 
-- Runtime backward compatibility: Starting from GigaSpaces 7.1, GigaSpaces Space instances are backward compatible with Space clients across major versions. That means that clients running on version 8.0, 9.0 or 9.1 are compatible with Space instances running on version 9.7.
-- Binary compatibility: applications built using 8.0.x or higher run without any code changes on a clean 9.7.x installation.
-- Servers (GSMs, GSCs and Space instances) running on any future service pack of version 9.7 (e.g. 9.7.1) are guaranteed to work with older service packs of that version (e.g. 9.7.0).
+- Runtime backward compatibility: Starting from GigaSpaces 8.0, GigaSpaces Space instances are backward compatible with Space clients across major versions. That means that clients running on version 9.0, 9.0 or 9.1 are compatible with Space instances running on version 10.0.
+- Binary compatibility: applications built using 9.0.x or higher run without any code changes on a clean 10.0.x installation.
+- Servers (GSMs, GSCs and Space instances) running on any future service pack of version 10.0 (e.g. 10.0.1) are guaranteed to work with older service packs of that version (e.g. 10.0).
 
 
 # Tested & Certified Platforms
@@ -49,7 +49,7 @@ Tested JVMs:
 - IBM 1.6.0 - XAP was tested using IBM JVM version 1.6.0 IBM J9VM. 
 - IBM 1.7.0 - XAP was tested using IBM JVM version 1.7.0 IBM J9VM SR6.
 
-GigaSpaces recommends that customers upgrade to a fully-supported environment, such as the latest GigaSpaces XAP 9.7.x and the latest *Java 1.6/1.7 SDK.
+GigaSpaces recommends that customers upgrade to a fully-supported environment, such as the latest GigaSpaces XAP 10.0.x and the latest *Java 1.7/1.8 SDK.
 
 # End-of-Life Java Versions
 
@@ -64,30 +64,30 @@ GigaSpaces recommends that customers upgrade to a fully-supported environment, s
 {: .table .table-bordered .table-condensed}
 | Product | Product Page | Version | Component | Documentation | 
 |:--------|:-------------|:--------|:---------|:---------------|
-| Cassandra | [http://cassandra.apache.org/](http://cassandra.apache.org/) | 1.1.6 | Cassandra archiver and Cassandra EDS | [Cassandra Integration](/xap97/cassandra.html) |
-| Hibernate | [http://www.hibernate.org/](http://www.hibernate.org/) | 3.6.1 | Persistency | [Hibernate Space Persistency](/xap97/hibernate-space-persistency.html) |
+| Cassandra | [http://cassandra.apache.org/](http://cassandra.apache.org/) | 1.1.6 | Cassandra archiver and Cassandra EDS | [Cassandra Integration](/xap100/cassandra.html) |
+| Hibernate | [http://www.hibernate.org/](http://www.hibernate.org/) | 3.6.1 | Persistency | [Hibernate Space Persistency](/xap100/hibernate-space-persistency.html) |
 | log4j | [http://logging.apache.org/log4j/1.2/](http://logging.apache.org/log4j/1.2/) | 1.2.17 | Hibernate |  | 
-| log4j-snmp-trap-appender | [http://code.google.com/p/log4j-snmp-trap-appender/](http://code.google.com/p/log4j-snmp-trap-appender/) | 1.2.9 | Alert integration example | [SNMP Connectivity via Alert Logging Gateway](/xap97/snmp-connectivity-via-alert-logging-gateway.html)  |
-| MongoDB | [http://www.mongodb.org/](http://www.mongodb.org/) | 2.11.2 | MongoDB archiver and MongoDB EDS  | [MongoDB Integration](/xap97/mongodb.html) |
-| Mule | [http://www.mulesoft.org/](http://www.mulesoft.org/) | 3.3.0 | XAP Mule PU | [Mule ESB](/xap97/mule-esb.html) |
-| Scala | [http://oss.sonatype.org/content/groups/scala-tools/](http://oss.sonatype.org/content/groups/scala-tools/) | 2.10.1 |  Express common programming patterns in a concise | [Scala](/xap97/scala.html) | 
-| snmp4j | [http://www.snmp4j.org/](http://www.snmp4j.org/) | 1.11.2 | Alert integration example | [SNMP Connectivity via Alert Logging Gateway](/xap97/snmp-connectivity-via-alert-logging-gateway.html) | 
+| log4j-snmp-trap-appender | [http://code.google.com/p/log4j-snmp-trap-appender/](http://code.google.com/p/log4j-snmp-trap-appender/) | 1.2.9 | Alert integration example | [SNMP Connectivity via Alert Logging Gateway](/xap100/snmp-connectivity-via-alert-logging-gateway.html)  |
+| MongoDB | [http://www.mongodb.org/](http://www.mongodb.org/) | 2.11.2 | MongoDB archiver and MongoDB EDS  | [MongoDB Integration](/xap100/mongodb.html) |
+| Mule | [http://www.mulesoft.org/](http://www.mulesoft.org/) | 3.3.0 | XAP Mule PU | [Mule ESB](/xap100/mule-esb.html) |
+| Scala | [http://oss.sonatype.org/content/groups/scala-tools/](http://oss.sonatype.org/content/groups/scala-tools/) | 2.10.1 |  Express common programming patterns in a concise | [Scala](/xap100/scala.html) | 
+| snmp4j | [http://www.snmp4j.org/](http://www.snmp4j.org/) | 1.11.2 | Alert integration example | [SNMP Connectivity via Alert Logging Gateway](/xap100/snmp-connectivity-via-alert-logging-gateway.html) | 
 
 
 # .NET Interface
 
 ### System Requirements
-Required Software: [Microsoft .NET Framework 2.0](http://msdn.microsoft.com/en-us/vstudio/aa496123) or later including Microsoft .NET Framework 4.0.
-Recommended: [Microsoft .NET Framework 2.0 Service Pack 2](http://www.microsoft.com/en-us/download/details.aspx?id=1639) or later.
+Required Software: [Microsoft .NET Framework 3.5](http://msdn.microsoft.com/en-us/vstudio/aa496123) or later including Microsoft .NET Framework 4.0.
+Recommended: [Microsoft .NET Framework 4](http://www.microsoft.com/en-us/download/details.aspx?id=17851).
 
-Supported Operating Systems: Any operating system supported by .NET Framework 2.0.
+Supported Operating Systems: Any operating system supported by .NET Framework 3.5.
 
 64 bit support: XAP.NET is released in two separate packages for x86 and x64. Itanium (ia64) is currently not supported. The XAP.NET x86 package can be installed on a x64 machine and run in WoW64 mode.
 
 ### Installation
 GigaSpaces XAP.NET is packaged as a standard Windows Installer package (.msi file). To start the installation simply double-click the msi file, and the installation wizard will pop up and guide you through the installation process.
 
-Once you accept the licence agreement, you will be asked to choose a setup type. Select 'Complete' to install all the features in the default path (C:\GigaSpaces\XAP.NET 9.7.0). Selecting 'Custom' will allow you to customize the installation path, which features will be installed, and more.
+Once you accept the licence agreement, you will be asked to choose a setup type. Select 'Complete' to install all the features in the default path (C:\GigaSpaces\XAP.NET 10.0.0). Selecting 'Custom' will allow you to customize the installation path, which features will be installed, and more.
 
 ### Other Installation Options
 GigaSpaces XAP.NET offers more installation scenarios and customizations. For example:
