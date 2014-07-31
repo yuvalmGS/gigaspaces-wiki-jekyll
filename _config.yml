@@ -5,18 +5,18 @@ redcarpet:
 highlight: true
 encoding: UTF-8
 
-latest_xap_release: "9.7"
-latest_xap_version: "9.7.0"
+latest_xap_release: "10.0"
+latest_xap_version: "10.0.0"
 latest_maven_version: "9.7.0-10496-RELEASE"
 petclinic_jpa_branch: "9_7_0_ga"
 latest_build_filename: "gigaspaces-xap-premium-9.7.0-ga-b10496.zip"
 latest_msi_filename: "GigaSpaces-XAP.NET-Premium-9.7.0.10496-GA-x86.msi"
-latest_gshome_dirname: "gigaspaces-xap-premium-9.7.0-ga"
-latest_gshome_net_dirname: "XAP.NET 9.7.0 x86"
-latest_default_lookup_group: "gigaspaces-9.7.0-XAPPremium-ga"
-latest_java_url: "/xap97"
-latest_net_url: "/xap97net"
-latest_adm_url: "/xap97adm"
+latest_gshome_dirname: "gigaspaces-xap-premium-10.0.0-ga"
+latest_gshome_net_dirname: "XAP.NET 10.0.0 x86"
+latest_default_lookup_group: "gigaspaces-10.0.0-XAPPremium-ga"
+latest_java_url: "/xap100"
+latest_net_url: "/xap100net"
+latest_adm_url: "/xap100adm"
 latest_sec_url: "/xap100sec"
 latest_msr_url: "/xap100msr"
 
