@@ -32,7 +32,7 @@ The space proxy is created through the `UrlSpaceConfigurer`. Several configurati
 # Embedded Space
 
 
-EA client communicating with a an embedded space performs all its operation via local connection. There is no network overhead when using this approach.
+A client communicating with a an embedded space performs all its operation via local connection. There is no network overhead when using this approach.
 
 ![embedded-space.jpg](/attachment_files/embedded-space.jpg)
 
