@@ -1,8 +1,8 @@
 ---
 layout: post100
 title:  Deploying a Space
-categories: XAP100
-weight: 200
+categories: XAP100S
+weight: 200i
 parent: java-home.html
 ---
 
@@ -136,7 +136,7 @@ GigaSpace gigaSpace = pu.waitForSpace().getGigaSpace();
 Here is an example how you can connect to the grid from your application:
 {%highlight java%}
 // Create the Space
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("xapTutorialSpace")).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/xapTutorialSpace")).gigaSpace();
 {%endhighlight%}
 
 

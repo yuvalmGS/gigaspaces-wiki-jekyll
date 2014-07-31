@@ -61,7 +61,7 @@ public class SpaceFile {
 
 {% highlight java %}
 public static void main(String[] args) {
-	GigaSpace gigaspace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("space")).gigaSpace();
+	GigaSpace gigaspace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
 	String myfileName = "d:temp\test.pdf";
 
 	File myfile = new File(myfileName);
