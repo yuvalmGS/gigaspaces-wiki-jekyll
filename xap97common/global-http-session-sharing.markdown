@@ -249,7 +249,7 @@ cacheManager.converterNameList = org.openspaces.xtreme.converter.XmlCalendarConv
 
 ##### Secured GigaSpaces cluster
 
-When using a [Secure GigaSpaces cluster]({%latestjavaurl%}/securing-your-data.html) you can pass security credentials using following parameters in `shiro.ini` file,
+When using a [Secure GigaSpaces cluster]({%latestsecurl%}/securing-your-data.html) you can pass security credentials using following parameters in `shiro.ini` file,
 
 {%highlight java%}
 # When using secured GigaSpace cluster, pass the credentials here

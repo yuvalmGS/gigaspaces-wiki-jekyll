@@ -145,7 +145,7 @@ SpaceSynchronizationEndpoint syncEndpoint = new CassandraSpaceSynchronizationEnd
     .hectorClient(hectorClient)
     .create();
 
-IJSpace mirror = new UrlSpaceConfigurer("/./mirror-service")
+IJSpace mirror = new EmbeddedSpaceConfigurer("mirror-service")
     .schema("mirror")
     .spaceSynchronizationEndpoint(syncEndpoint)
     .addProperty("space-config.mirror-service.cluster.name", "space")

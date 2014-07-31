@@ -22,9 +22,11 @@ The space is accessed via a programmatic interface which supports the following 
 
 {%learn%}./the-space-operations.html{%endlearn%}
 
+{%comment%}
 The space proxy is created through the `UrlSpaceConfigurer`. Several configuration parameters are available.
 
 {%learn%}./the-space-configuration.html{%endlearn%}
+{%endcomment%}
 
 
 # Embedded Space
@@ -35,13 +37,13 @@ A client communicating with a an embedded space performs all its operation via l
 ![embedded-space.jpg](/attachment_files/embedded-space.jpg)
 
 
-Here is an example how to create an embedded space. The `UrlSpaceConfigurer` is used to configure the space url:
+Here is an example how to create an embedded space. The `EmbeddedSpaceConfigurer` is used to configure the space url:
 
 {% inittab os_space_emb|top %}
 {% tabcontent Code %}
 
 {% highlight java %}
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./space")).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("mySpace")).gigaSpace();
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -50,7 +52,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./space")
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
 {% endhighlight %}
 
@@ -59,8 +61,8 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./space")
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -95,7 +97,7 @@ Here is an example how a client application can create a proxy to interacting wi
 
 {% highlight java %}
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace")).gigaSpace();
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -103,7 +105,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*
 
 {% highlight xml %}
 
-<os-core:space id="space" url="jini://*/*/space" />
+<os-core:space-proxy id="space" name="mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
 {% endhighlight %}
 
@@ -112,8 +114,8 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -150,10 +152,10 @@ Here is an example for a `GigaSpace` construct with a local cache:
 
 {% highlight java %}
 // Initialize remote space configurer:
-UrlSpaceConfigurer urlConfigurer = new UrlSpaceConfigurer("jini://*/*/space");
+SpaceProxyConfigurer urlConfigurer = new SpaceProxyConfigurer("space");
 // Initialize local cache configurer
-LocalCacheSpaceConfigurer localCacheConfigurer =
-    new LocalCacheSpaceConfigurer(urlConfigurer);
+LocalCacheSpaceConfigurer localCacheConfigurer = new LocalCacheSpaceConfigurer(urlConfigurer);
+
 // Create local cache:
 GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace();
 {% endhighlight %}
@@ -162,7 +164,7 @@ GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace()
 {% tabcontent   Namespace   %}
 
 {% highlight xml %}
-<os-core:space id="space" url="jini://*/*/space" />
+<os-core:space-proxy id="space" name="mySpace"/>
 <os-core:local-cache id="localCacheSpace" space="space"/>
 <os-core:giga-space id="localCache" space="localCacheSpace"/>
 {% endhighlight %}
@@ -171,8 +173,8 @@ GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace()
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="localCacheSpace"
@@ -203,11 +205,13 @@ Here is an example for a `GigaSpace` construct with a local cache:
 
 {% highlight java %}
 // Initialize remote space configurer:
-UrlSpaceConfigurer urlConfigurer = new UrlSpaceConfigurer("jini://*/*/space");
+SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
+
 // Initialize local view configurer
-LocalViewSpaceConfigurer localViewConfigurer = new LocalViewSpaceConfigurer(urlConfigurer)
-    .addViewQuery(new SQLQuery(com.example.Message1.class, "processed = true"))
-    .addViewQuery(new SQLQuery(com.example.Message2.class, "priority > 3"));
+LocalViewSpaceConfigurer localViewConfigurer = new LocalViewSpaceConfigurer(configurer)
+ 		    .addViewQuery(new SQLQuery<Message>(Message.class, "processed = true"))
+ 		    .addViewQuery(new SQLQuery<Message>(Message.class, "priority > 3"));
+
 // Create local view:
 GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 {% endhighlight %}
@@ -216,11 +220,11 @@ GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 {% tabcontent   Namespace   %}
 
 {% highlight xml %}
-<os-core:space id="space" url="jini://*/*/space" />
+<os-core:space-proxy id="space" name="mySpace" />
 
 <os-core:local-view id="localViewSpace" space="space">
-    <os-core:view-query class="com.example.Message1" where="processed = true"/>
-    <os-core:view-query class="com.example.Message2" where="priority > 3"/>
+    <os-core:view-query class="Message" where="processed = true"/>
+    <os-core:view-query class="Message" where="priority > 3"/>
 </os-core:local-view>
 
 <os-core:giga-space id="localView" space="localViewSpace"/>
@@ -230,8 +234,8 @@ GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="viewSpace" class="org.openspaces.core.space.cache.LocalViewSpaceFactoryBean">
@@ -317,9 +321,9 @@ A secured space should be configured with a security context so that it can be a
 
 {% highlight xml %}
 
-<os-core:space id="space" url="jini://*/*/space">
+<os-core:space-proxy id="space" name="mySpace">
     <os-core:security username="sa" password="adaw@##$" />
-</os-core:space>
+</os-core:space-proxy>
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -327,8 +331,8 @@ A secured space should be configured with a security context so that it can be a
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
     <property name="securityConfig">
         <bean class="org.openspaces.core.space.SecurityConfig">
             <property name="username" value="sa" />
@@ -348,7 +352,7 @@ Here is an example of how to define security with an embedded space. In this cas
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./space">
+<os-core:space-proxy id="space" name="mySpace">
     <os-core:security username="sa" password="adaw@##$" />
 </os-core:space>
 {% endhighlight %}
@@ -358,8 +362,8 @@ Here is an example of how to define security with an embedded space. In this cas
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
     <property name="securityConfig">
         <bean class="org.openspaces.core.space.SecurityConfig">
             <property name="username" value="sa" />
@@ -415,7 +419,7 @@ When constructing a space, it is possible to provide [Space Persistency](./space
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
 
-<os-core:space id="space" url="/./space" schema="persistent" space-data-source="hibernateSpaceDataSource" />
+<os-core:space-proxy id="space" name="mySpace" schema="persistent" space-data-source="hibernateSpaceDataSource" />
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -453,8 +457,8 @@ When constructing a space, it is possible to provide [Space Persistency](./space
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
     <property name="scheam" value="persistent" />
     <property name="spaceDataSource" ref="hibernateSpaceDataSource" />
 </bean>

@@ -17,7 +17,7 @@ The archive container is used to transfer historical data into Big-Data storage 
 The typical scenario is when streaming vast number of raw events through the Space, enriching them and then moving them to a Big-Data storage. Typically, there is no  intention of keeping them in the space nor querying them in the space.
 
 {%endcolumn%}
-{%column width=35% %}
+{%column width=40% %}
 ![](/attachment_files/archive-container.jpg)
 {%endcolumn%}
 {%endsection%}
@@ -56,7 +56,7 @@ Here is a simple example of an archive container configuration:
 <!-- Enable support for @Archive annotation -->
 <os-archive:annotation-support />
 
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="space" />
 
 <os-core:distributed-tx-manager id="transactionManager" space="space"/>
 
@@ -92,7 +92,7 @@ public class ExpiredTweetsArchiveContainer {
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="space" />
 
 <os-core:distributed-tx-manager id="transactionManager" space="space"/>
 
@@ -137,8 +137,8 @@ public class ExpiredTweetsFilter implements DynamicEventTemplateProvider{
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -179,9 +179,8 @@ public class ExpiredTweetsFilter implements DynamicEventTemplateProvider{
 {% highlight java %}
 
 TransactionManager txManager = new DistributedJiniTxManagerConfigurer().transactionManager();
-UrlSpaceConfigurer urlSpaceConfigurer = new UrlSpaceConfigurer("/./space");
-IJSpace space = urlSpaceConfigurer.create();
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).transactionManager(txManager).create();
+EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(txManager).create();
 
 ArchiveOperationHandler cassandraArchiveHandler =
     new CassandraArchiveOperationHandlerConfigurer()

@@ -40,7 +40,7 @@ Here is a simple example of a notify event container configuration:
 
 <!-- Enable support for @Notify annotation -->
 <os-events:annotation-support />
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
 {% endhighlight %}
 
@@ -67,7 +67,7 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
 <bean id="simpleListener" class="SimpleListener" />
 <os-events:notify-container id="eventContainer" giga-space="gigaSpace">
@@ -91,8 +91,8 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -307,7 +307,7 @@ Transaction support can be configured as follows:
 <!-- Enable support for @Polling annotation -->
 <os-events:annotation-support />
 
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:distributed-tx-manager id="transactionManager" />
 
@@ -337,7 +337,7 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:distributed-tx-manager id="transactionManager" />
 
@@ -368,8 +368,8 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="transactionManager" class="org.openspaces.core.transaction.manager.LocalJiniTransactionManager">
@@ -517,14 +517,14 @@ To increase the number of space threads that are dealing with notification deliv
 Here is an example how you can configure the minimum and the maximum of the thread pool responsible for notification delivery:
 
 {% highlight xml %}
-<os-core:space id="space" url="/./space">
+<os-core:embedded-space id="space" name="mySpace">
     <os-core:properties>
         <props>
             <prop key="space-config.engine.notify_min_threads">128</prop>
             <prop key="space-config.engine.notify_max_threads">512</prop>
         </props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -550,7 +550,7 @@ Note that you can always delegate the notification processing to a separate appl
 In your `pu.xml` file you can define a `ThreadPoolTaskExecutor` as follows:
 
 {% highlight xml %}
-<os-core:space id="space" url="/./space"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -829,7 +829,7 @@ public class NotifyHAMain {
 
     static void getSpace() {
         try {
-            space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space")).create();
+            space = new GigaSpaceConfigurer(new SpaceProxyConfigurer("space")).create();
         } catch (Exception e) {
             System.out.println("Cannot find space: " + e.getMessage());
         }
@@ -893,13 +893,13 @@ For more information see [Auto Renew](./session-based-messaging-api.html#disconn
 When a network failure occurs and the space can't communicate with the client, the space attempts to trigger the remote client listener several times. The `space-config.notifier-retries` property controls the re-try attempts. The default is 3 attempts.
 
 {% highlight java %}
- <os-core:space id="space" url="/./space">
+ <os-core:embedded-space id="space" name="mySpace">
     <os-core:properties>
         <props>
             <prop key="space-config.notifier-retries">10</prop>
         </props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 {% include /COM/notify-recovery.markdown %}

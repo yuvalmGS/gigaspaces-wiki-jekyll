@@ -7,24 +7,21 @@ parent: java-home.html
 ---
 
 
-
- 
-{%summary%} {%endsummary%}
-
-
-
 {%section%}
-{%column width=15% %}
-<img src="/attachment_files/qsg/web.png" width="100" height="100">
-
+{%column width=10% %}
+{%wbr%}
+![cassandra.png](/attachment_files/qsg/web.png)
 {%endcolumn%}
-{%column width=85% %}
+{%column width=90% %}
+{% summary   %} {% endsummary %}
+{%endcolumn%}
+{%endsection%}
+ 
+
 
 In this part of the tutorial we will show you how you can deploy a standard WAR file onto the Service Grid. XAP allows you to deploy web applications (packaged as a WAR file) onto the Service Grid. The integration is built on top of the Service Grid Processing Unit Container. The web container used behind the scenes is Jetty. 
 
-{%endcolumn%}
 
-{%endsection%}
 
 The integration allows you to make use of the following Service Grid features:
 
@@ -91,9 +88,9 @@ The web application can define a space either embedded or remote using Spring or
 
 - Creating a space using java code:
 {%highlight java%}
-UrlSpaceConfigurer spaceConfigurer = new UrlSpaceConfigurer("/./xapTutorialSpace");
+EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("xapTutorialSpace");
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(spaceConfigurer).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 {%endhighlight%}
 
 
@@ -117,7 +114,7 @@ Here is the layout of the war file structure:
 
 For example in the pu.xml file we can define our space that we want to be accessible from the web application.
 {%highlight xml%}
-<os-core:space id="space" url="/./xapTutorialSpace" />
+<os-core:embedded-space id="space" name="xapTutorialSpace" />
 <os-core:giga-space id="xapTutorialSpace" space="space"/>
 {%endhighlight%}
 

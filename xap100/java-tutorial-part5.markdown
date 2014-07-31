@@ -7,20 +7,21 @@ parent: java-home.html
 ---
 
 
-{%summary%}
-
-{%endsummary%}
-
-
 {%section%}
-{%column width=15% %}
-<img src="/attachment_files/qsg/pu.gif" width="100" height="100">
-{%endcolumn%}
-{%column width=85% %}
+{%column width=10% %}
 {%wbr%}
-The PU is the fundamental unit of deployment in XAP. The PU itself runs within a Processing Unit Container and is deployed onto the Service Grid. Once a PU is deployed, a PU instance is the actual runtime entity.
+![cassandra.png](/attachment_files/subject/pu.png)
+{%endcolumn%}
+{%column width=90% %}
+{% summary   %} {% endsummary %}
 {%endcolumn%}
 {%endsection%}
+
+
+
+
+The PU is the fundamental unit of deployment in XAP. The PU itself runs within a Processing Unit Container and is deployed onto the Service Grid. Once a PU is deployed, a PU instance is the actual runtime entity.
+
 
 There are two types of Processing Unit Containers:
 
@@ -147,7 +148,7 @@ Here is an example of a pu.xml file:
         not contain any remote protocol prefix. Also note that we do not specify here the cluster topology
         of the space. It is declared by the os-sla:sla element of this pu.xml file.
     -->
-    <os-core:space id="space" url="/./eventSpace" />
+    <os-core:embedded-space id="space" name="eventSpace" />
 
     <!-- Define the GigaSpace instance that the application will use to access the space  -->
     <os-core:giga-space id="eventSpace" space="space"/>
@@ -256,7 +257,7 @@ In this step will create the configuration file for the PU deployment
 	<os-remoting:annotation-support />
 
 	<!-- A bean representing a space (an IJSpace implementation) -->
-	<os-core:space id="space" url="/./eventSpace" />
+	<os-core:embedded-space id="space" name="eventSpace" />
 
 	<!-- Define the GigaSpace instance that the application will use to access the space -->
 	<os-core:giga-space id="eventSpace" space="space"/>

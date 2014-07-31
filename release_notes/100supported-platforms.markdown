@@ -6,7 +6,7 @@ parent: xap100.html
 weight: 700
 ---
 
-{%comment%}
+
 {%summary%}{%endsummary%}
 
 # Overview
@@ -114,4 +114,3 @@ The current supported platforms and compilers are:
 
 [Integrations with 3rd Party Products](/release_notes/97third-party.html)
 
-{%endcomment%}

@@ -122,7 +122,7 @@ A typical usage pattern is connecting remotely to a Space. Here is an example (e
 
 {% highlight xml %}
 
-<os-core:space id="space" url="jini://*/*/space" />
+<os-core:space-proxy id="space" name="mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
 {% endhighlight %}
 
@@ -131,8 +131,8 @@ A typical usage pattern is connecting remotely to a Space. Here is an example (e
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
 </bean>
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
 	<property name="space" ref="space" />
@@ -144,9 +144,9 @@ A typical usage pattern is connecting remotely to a Space. Here is an example (e
 
 {% highlight java %}
 
-UrlSpaceConfigurer spaceConfigurer = new UrlSpaceConfigurer("/./space");
+EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("space");
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(spaceConfigurer).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 
 // ...
 
@@ -167,9 +167,7 @@ Here is an example that starts an embedded Space as part of the web application 
 {% tabcontent Spring Namespace %}
 
 {% highlight xml %}
-
-<os-core:space id="space" url="/./space" />
-<os-core:giga-space id="gigaSpace" space="space"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="clusteredGigaSpace" space="space" clustered="true"/>
 {% endhighlight %}
 
@@ -178,8 +176,8 @@ Here is an example that starts an embedded Space as part of the web application 
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
 	<property name="space" ref="space" />

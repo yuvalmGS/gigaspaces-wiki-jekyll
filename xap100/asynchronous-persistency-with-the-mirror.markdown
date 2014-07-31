@@ -45,7 +45,7 @@ If you are not using the `mirror="true"` with the Data-Grid PU, you should use t
 
 The IMDG Mirror replication settings includes the following options:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Property | Description | Default |
 |:---------|:------------|:--------|
 | cluster-config.mirror-service.url | used to locate the Mirror Service. In case you change the name of the Mirror Service specified as part of the Mirror PU, you should modify this parameter value to facilitate the correct Mirror service URL. | jini://*/mirror-service_container/mirror-service |
@@ -67,7 +67,7 @@ The Data-Grid Space settings would look like this:
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
 
-<os-core:space id="space" url="/./space" schema="persistent"
+<os-core:embedded-space id="space" name="space" schema="persistent"
     mirror="true" space-data-source="hibernateSpaceDataSource">
     <os-core:properties>
         <props>
@@ -106,7 +106,7 @@ The Mirror Service is constructed using the `Mirror` tag. The Mirror Service its
 
 The Mirror settings includes the following options:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Property | Description | Default |
 |:---------|:------------|:--------|
 |operation-grouping| Options:{% wbr %}group-by-space-transaction - Mirror delegating each transaction separately to the data source (database).{% wbr %}group-by-replication-bulk - Mirror delegating all replicated items as one bulk to the data source (database).{% wbr %}See the [Mirror behavior with Distributed Transactions](./async-persistency---mirror---advanced.html#Mirror behavior with Distributed Transactions) for details| group-by-replication-bulk |
@@ -131,7 +131,7 @@ The following configuration shows how to configure a processing unit, to act as 
 The OpenSpaces mirror name space is a syntactic sugar and it is equivalent to the following configuration using regular space properties:
 
 {% highlight xml %}
-<os-core:space id="mirror" url="/./mirror-service" schema="mirror" space-sync-endpoint="hibernateSpaceSynchronizationEndpoint">
+<os-core:embedded-space id="space" name="mirror-service" schema="mirror" space-sync-endpoint="hibernateSpaceSynchronizationEndpoint">
     <os-core:properties>
 	<props>
              <prop key="space-config.mirror-service.cluster.name">mySpace</prop>
@@ -140,7 +140,7 @@ The OpenSpaces mirror name space is a syntactic sugar and it is equivalent to th
 	     <prop key="space-config.mirror-service.operation-grouping">group-by-replication-bulk</prop>
 	</props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 - The above configuration constructs a Mirror Service using GigaSpaces built-in [Hibernate Space Persistency](./hibernate-space-persistency.html). The `hibernateSpaceSynchronizationEndpoint` should have its `sessionFactory` injected.

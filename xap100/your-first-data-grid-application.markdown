@@ -99,13 +99,13 @@ Since the Data grid is not located in our client process, we need some sort of a
 Now that we have an address, we can connect to the grid:       
 
 {% highlight java %}
-UrlSpaceConfigurer configurer = new UrlSpaceConfigurer("jini://*/*/myGrid");
+SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("myGrid");
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).create();
 {% endhighlight %}
 
 The result is a `GigaSpace` instance, which is a proxy to the `myGrid` data grid. 
 
-{%info%} The `UrlSpaceConfigurer` and `GigaSpaceConfigurer` provide additional options which are not covered in this tutorial.{%endinfo%}
+{%info%} The `SpaceProxyConfigurer` and `GigaSpaceConfigurer` provide additional options which are not covered in this tutorial.{%endinfo%}
 
 ### Implementing a POJO
 
@@ -172,14 +172,14 @@ package com.gigaspaces.demo;
 import com.j_spaces.core.client.SQLQuery;
 import org.openspaces.core.GigaSpace;
 import org.openspaces.core.GigaSpaceConfigurer;
-import org.openspaces.core.space.UrlSpaceConfigurer;
+import org.openspaces.core.space.SpaceProxyConfigurer;
 
 public class Program {
 
     public static void main(String[] args) {
-        String url = "jini://*/*/myGrid";
+
         System.out.println("Connecting to data grid " + url);
-        UrlSpaceConfigurer configurer = new UrlSpaceConfigurer(url);
+        SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("myGrid");
         GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).create();
 
         System.out.println("Write (store) a couple of entries in the data grid:");

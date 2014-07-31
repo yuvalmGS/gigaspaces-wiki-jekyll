@@ -28,7 +28,7 @@ The first step in using scripting is exposing the built in scripting service ove
      <os-remoting:service ref="scriptingExecutor"/>
 </os-remoting:service-exporter>
 
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="mySpace"
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -55,8 +55,8 @@ The first step in using scripting is exposing the built in scripting service ove
     </property>
 </bean>
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -100,7 +100,7 @@ On the client side Spring XML configuration, the following needs to be defined (
 
 {% highlight xml %}
 
-<os-core:space id="space" url="jini://*/*/space" />
+<os-core:space-proxy id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -114,8 +114,8 @@ On the client side Spring XML configuration, the following needs to be defined (
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -263,21 +263,17 @@ Here is the xml definition of an async scripting proxy (the sync proxy is exactl
 Asynchronous scripting executor:
 
 {% highlight java %}
-IPojoSpace space = new UrlSpaceConfigurer("jini://*/*/mySpace")
-                   .space();
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
-ScriptingExecutor  executor = new EventDrivenScriptingProxyConfigurer (gigaSpace)
-                              .scriptingExecutor();
+
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace")).gigaSpace();
+ScriptingExecutor  executor = new EventDrivenScriptingProxyConfigurer (gigaSpace).scriptingExecutor();
 {% endhighlight %}
 
 Executor based scripting executor:
 
 {% highlight java %}
-IPojoSpace space = new UrlSpaceConfigurer("jini://*/*/mySpace")
-                   .space();
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
-ScriptingExecutor  executor = new ExecutorScriptingProxyConfigurer (gigaSpace)
-                              .scriptingExecutor();
+
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace")).gigaSpace();
+ScriptingExecutor  executor = new ExecutorScriptingProxyConfigurer (gigaSpace).scriptingExecutor();
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -290,8 +286,7 @@ The different components implemented by scripting basically enables all the diff
 The `Script` interface allows to set a routing index which controls, both in async and sync mode (not in broadcast mode), where the execution of the script is directed. Here is a simple example of it:
 
 {% highlight java %}
-asyncScriptingExecutor.execute(new StaticScript("myScript", "groovy",
-                                                        "println 'Hello Groovy'").routing(1));
+asyncScriptingExecutor.execute(new StaticScript("myScript", "groovy","println 'Hello Groovy'").routing(1));
 {% endhighlight %}
 
 This causes the routing to go the the second member (assuming hash based routing is configured). Naturally, most often a business level routing will be used, for example, direct a script that executed on a certain share to a partition based on the share symbol.
@@ -301,8 +296,7 @@ This causes the routing to go the the second member (assuming hash based routing
 The `StaticResourceScript` holds the actual script contents and it gets passed for each execution of the script. If script supports caching, there is no need to pass the actual contents of the script on each execution, since once the script was compiled, only its parameters and other values are required, not the actual script. The `LazyLoadingRemoteInvocationAspect` aspect (on the client side) with the `ResourceLazyLoadingScript` script type allow for such behavior. As an example:
 
 {% highlight java %}
-asyncScriptingExecutor.execute(new ResourceLazyLoadingScript("test4", "groovy",
-                                                             "classpath:test.groovy").cache(true));
+asyncScriptingExecutor.execute(new ResourceLazyLoadingScript("test4", "groovy", "classpath:test.groovy").cache(true));
 {% endhighlight %}
 
 The above code only loads the `test.groovy` file if it is required on the server side. By default it is not sent, and if the server has not compiled it, it returns to the client and request the actual script content. The script is then loaded and sent again to the server. This logic is implemented by the `LazyLoadingRemoteInvocationAspect`.

@@ -6,21 +6,18 @@ weight: 900
 parent: java-home.html
 ---
 
-
-
-{%summary%} {%endsummary%}
-
-
 {%section%}
-{%column width=15% %}
-<img src="/attachment_files/qsg/bgdata.png" width="100" height="100">
+{%column width=10% %}
+![cassandra.png](/attachment_files/qsg/bgdata.png)
 {%endcolumn%}
-{%column width=85% %}
+{%column width=90% %}
+{% summary   %} {% endsummary %}
+{%endcolumn%}
+{%endsection%}
+
+
 
 In this part of the tutorial will introduce you to XAP's Big Data interface. Will show you how you can use Cassandra and other Big-Data storage systems to archive data or use them for space persistence.
-{%endcolumn%}
-
-{%endsection%}
 
 
 
@@ -66,12 +63,12 @@ http://www.openspaces.org/schema/archive http://www.openspaces.org/schema/9.1/ar
 <os-archive:annotation-support />
 
 <!-- Register the Space Type ---->
-<os-core:space id="space" url="/./auditSpace">
+<os-core:embedded-space id="space" name="auditSpace">
 	<os-core:space-type type-name="AuditRecord">
 	     <os-core:id property="id" />
 	     <os-core:routing property="id" />
 	</os-core:space-type>
-</os-core:space>
+</os-core:embedded-space>
 
 <os-core:distributed-tx-manager id="transactionManager" />
 

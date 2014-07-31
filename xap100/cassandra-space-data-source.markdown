@@ -105,7 +105,7 @@ also asynchronously persists the data using a mirror (see [Cassandra Space Synch
 
     </bean>
 
-    <os-core:space id="space" url="/./dataSourceSpace"
+   <os-core:embedded-space id="space" name="dataSourceSpace"
         space-data-source="cassandraSpaceDataSource"
         schema="persistent"
         mirror="true">
@@ -117,7 +117,7 @@ also asynchronously persists the data using a mirror (see [Cassandra Space Synch
                 <prop key="cluster-config.mirror-service.supports-partial-update">true</prop>
             </props>
         </os-core:properties>
-    </os-core:space>
+    </os-core:embedded-space>
 
     <os-core:giga-space id="gigaSpace" space="space" />
 
@@ -148,7 +148,7 @@ CassandraSpaceDataSource spaceDataSource = new CassandraSpaceDataSourceConfigure
             .hectorClient(hectorClient)
             .create();
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./space")
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("mySpace")
   .schema("persistent")
   .mirror(true)
   .cachePolicy(new LruCachePolicy())

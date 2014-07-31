@@ -7,19 +7,18 @@ parent: java-home.html
 ---
 
 
-
-{%summary%} {%endsummary%}
-
 {%section%}
-{%column width=15% %}
-<img src="/attachment_files/qsg/transaction.png" width="100" height="100">
+{%column width=10% %}
+![cassandra.png](/attachment_files/qsg/transaction.png)
 {%endcolumn%}
-{%column width=85% %}
+{%column width=90% %}
+{% summary   %} {% endsummary %}
+{%endcolumn%}
+{%endsection%}
+
 
 In this part of the tutorial we will introduce you to the transaction processing capabilities of XAP. The Spring Framework provides a transaction manager abstraction using the PlatformTransactionManager interface with several different built-in implementations, such as JDBC Data Source and JTA. XAP provides several implementations for Spring's PlatformTransactionManager, allowing you to use the XAP Distributed Transaction Manager and the Jini Distributed Transaction Manager. XAP can also be used within an XA transaction manager using JTA.
-{%endcolumn%}
 
-{%endsection%}
 
 # Transaction Management
 XAP provides several transaction managers, and changing the implementation you work with is just a matter of changing the configuration. In this part of the tutorial will use XAP's Distributed Transaction Manager to demonstrate some of the features and capabilities.
@@ -27,7 +26,7 @@ XAP provides several transaction managers, and changing the implementation you w
 Here is an example how you define a distributed transaction manager via the Spring configuration:
 {%highlight xml%}
 <!-- A bean representing a space (an IJSpace implementation) -->
-<os-core:space id="space" url="/./xapTutorialSpace" />
+<os-core:embedded-space id="space" name="xapTutorialSpace" />
 
 <!-- Defines a distributed transaction manager. -->
 <os-core:distributed-tx-manager id="transactionManager" />
@@ -139,13 +138,13 @@ Here is an example of how optimistic locking is enabled in XAP. First we need to
 {% inittab d1|top %}
 {% tabcontent Java %}
 {%highlight java%}
-GigaSpace space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/xapTutorialSpace").versioned(true)).gigaSpace();
+GigaSpace space = new GigaSpaceConfigurer( new SpaceProxyConfigurer("xapTutorialSpace").versioned(true)).gigaSpace();
 {%endhighlight%}
 {% endtabcontent %}
 
 {% tabcontent Spring %}
 {%highlight java%}
-    <os-core:space id="space" url="jini://*/*/xapTutorialSpace"  versioned="true" />
+    <os-core:space-proxy id="space" name="xapTutorialSpace"  versioned="true" />
 {%endhighlight%}
 {% endtabcontent %}
 {% endinittab %}

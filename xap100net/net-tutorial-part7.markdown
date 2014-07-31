@@ -6,16 +6,16 @@ weight: 700
 parent: net-home.html
 ---
  
-{%summary%} {%endsummary%}
-
-
 {%section%}
-{%column width=15% %}
-{%wbr%}
-{%wbr%}
-<img src="/attachment_files/qsg/persistence.png" width="100" height="100">
-{%endcolumn%}
-{%column width=85% %}
+  {%column width=10% %}
+  ![cassandra.png](/attachment_files/qsg/persistence.png)
+  {%endcolumn%}
+  {%column width=90% %}
+  {% summary   %} {% endsummary %}
+  {%endcolumn%}
+  {%endsection%}
+
+
 There are many situations where space data needs to be persisted to permanent storage and retrieved from it.
 
 For example:
@@ -23,8 +23,7 @@ For example:
 * Our online payment system works primarily with the memory space for temporary storage of process data structures, and the permanent storage is used to extend or back up the physical memory of the process running the space.{%wbr%}
 * Our online payment system works primarily with the database storage and the space is used to make read processing more efficient. Since database access is expensive, the data read from the database is cached in the space, where it is available for subsequently fast read operations.{%wbr%}
 * When a space is restarted, data from its persistent store can be loaded into the space to speed up incoming query processing.
-{%endcolumn%}
-{%endsection%}
+
 
 
 Persistency can be configured to run in Synchronous(direct persistence) or Asynchronous mode.

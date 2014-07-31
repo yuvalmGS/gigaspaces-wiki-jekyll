@@ -85,7 +85,7 @@ Part II
 {%align center %}
 [Part II](./net-tutorial-part2.html)
 
-<img src="/attachment_files/qsg/grid.gif" width="100" height="100">
+<img src="/attachment_files/subject/deploy.png" width="100" height="100">
 {%endalign%}
 {%endcolumn%}
 
@@ -168,7 +168,7 @@ You will learn how to use:
 {%align center %}
 [Part V](./net-tutorial-part5.html)
 
-<img src="/attachment_files/qsg/pu.gif" width="100" height="100">
+<img src="/attachment_files/subject/pu.png" width="100" height="100">
 {%endalign%}
 {%endcolumn%}
 

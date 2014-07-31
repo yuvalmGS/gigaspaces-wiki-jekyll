@@ -90,7 +90,7 @@ Here's a sample `pu.xml` configuration file. Note the comments in the file which
         not contain any remote protocol prefix. Also note that we do not specify here the cluster topology
         of the space. It is declared by the os-sla:sla element of this pu.xml file.
     -->
-    <os-core:space id="space" url="/./space" />
+    <os-core:embedded-space id="space" name="
 
     <!-- Defines a distributed transaction manager.-->
     <os-core:distributed-tx-manager id="transactionManager" />

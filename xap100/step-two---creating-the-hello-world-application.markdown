@@ -203,7 +203,7 @@ On the second line, we define a transaction manager, which is referencing this s
 Finally a bean called _gigaSpace_ wraps the _space_, and provides a simple client API to interact with it, as we will see later in this tutorial.
 
 {% highlight xml %}
-<os-core:space id="space" url="/./processorSpace" />
+<os-core:embedded-space id="space" name="processorSpace"/>
 <os-core:distributed-tx-manager id="transactionManager" />
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
 {% endhighlight %}
@@ -291,12 +291,10 @@ public static void main(String [] args) {
 Here's the constructor of the Feeder connects to the Processor Processing unit _Space_ by using the input URL:
 
 {% highlight java %}
-public Feeder(String url){
-     // Connect to a space using the url
-     IJSpace space = new UrlSpaceConfigurer(url).space();
+public Feeder(String spaceName){
 
      // Wrap the space with the gigaSpace API
-     this.gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
+     this.gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer(spaceName)).gigaSpace();
 }
 {% endhighlight %}
 

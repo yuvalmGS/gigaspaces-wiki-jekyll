@@ -26,7 +26,7 @@ Creating a local cache is similar to creating a GigaSpace, except that we wrap t
 {% tabcontent Spring Namespace Configuration %}
 
 {% highlight xml %}
-<os-core:space id="space" url="jini://*/*/mySpace" />
+<os-core:space-proxy id="space" name="mySpace"/>
 <os-core:local-cache id="localCacheSpace" space="space">
     <os-core:properties>
 	<props>
@@ -50,8 +50,8 @@ Creating a local cache is similar to creating a GigaSpace, except that we wrap t
 {% tabcontent Plain Spring XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="localCacheSpace"
@@ -65,7 +65,8 @@ Creating a local cache is similar to creating a GigaSpace, except that we wrap t
 
 {% highlight java %}
 // Initialize remote space configurer:
-UrlSpaceConfigurer urlConfigurer = new UrlSpaceConfigurer("jini://*/*/mySpace");
+SpaceProxyConfigurer urlConfigurer = new SpaceProxyConfigurer("mySpace");
+
 // Initialize local cache configurer
 LocalCacheSpaceConfigurer localCacheConfigurer =
     new LocalCacheSpaceConfigurer(urlConfigurer);

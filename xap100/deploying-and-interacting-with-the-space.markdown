@@ -210,7 +210,7 @@ By using [processing units](./the-processing-unit-structure-and-configuration.ht
 A processing unit can define an embedded Space in the processing unit's [`pu.xml`](./configuring-processing-unit-elements.html) file. The `pu.xml` file is, in effect a [Spring](http://www.springframework.org) XML configuration file, and you simply define the Space using GigaSpaces namespace extensions, or using plain Spring format. Here is an example:
 
 {% highlight xml %}
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 {% endhighlight %}
 
 This defines an embedded Space within the processing unit. The fact that the Space is embedded is determined by the `url` property. As you can see below, a URL that starts with the `jini://` prefix, indicates that a connection to a remote Space is created, not an embedded Space.
@@ -241,7 +241,7 @@ If you would like to create a Space within your own Spring application, and do n
 When creating the Space instance in your own application, you have to provide the instance ID on your own, as described in the [Space URL](./the-space-configuration.html) section. Therefore this option is not recommended for large Space clusters.
 
 {% highlight xml %}
-<os-core:space id="space" url="/./mySpace?total_members=2&id=1"/>
+<os-core:embedded-space id="space" name="mySpace?total_members=2&id=1"/>
 {% endhighlight %}
 
 ## Creating the Space Programmatically
@@ -249,7 +249,7 @@ When creating the Space instance in your own application, you have to provide th
 The last option is to create the Space via the API from within a plain Java application. Note that this option has the same limitation as creating the Space in your standalone Spring application, namely you have to start each of the instances separately and provide the instance ID to each of the started Space instances. Here is an example of starting the first instance of a sync-replicated Space with 10 instances:
 {% highlight java %}
 ClusterInfo clusterInfo = new ClusterInfo("sync_replicated", 1, null, 10, null);
-IJSpace space = new UrlSpaceConfigurer("/./mySpace").clusterInfo(clusterInfo).space();
+IJSpace space = new EmbeddedSpaceConfigurer("mySpace").clusterInfo(clusterInfo).space();
 {% endhighlight %}
 
 Refer to [this page](./the-gigaspace-interface-overview.html) for more details on how to configure the Space component programmatically (click the **Code** tabs in all of the examples).
@@ -265,19 +265,19 @@ Here is an example of how you would do this programmatically, or via Spring conf
 {% inittab simple_Space|top %}
 {% tabcontent Spring Configuration NameSpace %}
 {% highlight xml %}
-<os-core:space id="space" url="jini://*/*/mySpace" />
+<os-core:space-proxy id="space" name="mySpace" />
 {% endhighlight %}
 {% endtabcontent %}
 {% tabcontent Spring Configuration Plain %}
 {% highlight xml %}
-<bean id="space" class="org.openSpaces.core.Space.UrlSpaceFactoryBean">
-    <property name="url" value="jini:/*/*/mySpace" />
+<bean id="space" class="org.openSpaces.core.Space.SpaceProxyFactoryBean">
+    <property name="name" value="mySpace" />
 </bean>
 {% endhighlight %}
 {% endtabcontent %}
 {% tabcontent Java Code %}
 {% highlight java %}
-IJSpace space = new UrlSpaceConfigurer("jini://*/*/mySpace").space();
+IJSpace space = new SpaceProxyConfigurer("mySpace").space();
 {% endhighlight %}
 {% endtabcontent %}
 {% endinittab %}
@@ -348,7 +348,7 @@ Creating a `GigaSpace` instance is done by wrapping an existing IJSpace instance
 
 {% highlight xml %}
 
-<os-core:space id="space" url="jini://*/*/mySpace" />
+<os-core:space-proxy id="space" name="mySpace" />
 <os-core:giga-Space id="gigaSpace" space="space"/>
 {% endhighlight %}
 
@@ -357,8 +357,8 @@ Creating a `GigaSpace` instance is done by wrapping an existing IJSpace instance
 
 {% highlight xml %}
 
-<bean id="space" class="org.openSpaces.core.Space.UrlSpaceFactoryBean">
-    <property name="url" value="jini:/*/*/mySpace" />
+<bean id="space" class="org.openSpaces.core.Space.SpaceProxyFactoryBean">
+    <property name="name" value="mySpace" />
 </bean>
 <bean id="gigaSpace" class="org.openSpaces.core.GigaSpaceFactoryBean">
 	<property name="Space" ref="space" />
@@ -370,7 +370,7 @@ Creating a `GigaSpace` instance is done by wrapping an existing IJSpace instance
 
 {% highlight java %}
 
-IJSpace space = new UrlSpaceConfigurer("jini://*/*/mySpace").space();
+IJSpace space = new SpaceProxyConfigurer("mySpace").space();
 GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
 {% endhighlight %}
 
@@ -379,7 +379,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
 
 {% highlight java %}
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/mySpace")).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace")).gigaSpace();
 {% endhighlight %}
 
 {% endtabcontent %}

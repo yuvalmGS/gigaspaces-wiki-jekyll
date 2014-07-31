@@ -256,8 +256,7 @@ There are several ways to access the Space from within your web application.
 The most obvious one is to explicitly create a space proxy inside the web application's code. This is the approach we use in the sample application:
 
 {% highlight java %}
-IJSpace space = new UrlSpaceConfigurer("jini://*/*/mySpace").space();
-GigaSpace gigaSpace = new GigaSpaceConfigurer(space).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("space")).gigaSpace();
 {% endhighlight %}
 
 This code connects to a remote space named `mySpace` using the jini discovery protocol.
@@ -272,7 +271,7 @@ To initialize a Space proxy you should include the following XML elements in you
     A bean representing a space (an IJSpace implementation).
     Note, we perform a lookup on the space since we are working against a remote space.
 -->
-<os-core:space id="space" url="jini://*/*/mySpace" lookup-timeout="20000"/>
+<os-core:space-proxy id="space" name="mySpace" lookup-timeout="20000"/>
 <!--
     OpenSpaces simplified space API built on top of IJSpace/JavaSpace.
 -->

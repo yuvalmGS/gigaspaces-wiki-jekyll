@@ -23,8 +23,8 @@ Both the In-line cache and the Side cache support the common deployment topologi
 
 With this mechanism, the IMDG is the system of record. The database data is loaded into the IMDG when it is started. The IMDG is responsible for loading the data and pushing updates back into the database. The database can be updated in synchronously or asynchronously.
 
-- When running in `all-in-cache` [cache policy mode]({%latestjavaurl%}/memory-management-facilities.html), all data is loaded from the database into the cache once it is started.
-- When running in `LRU` [cache policy]({%latestjavaurl%}/memory-management-facilities.html) mode, a subset of the data is loaded from the database into the cache when it is started. Data is evicted from the cache based on available memory or a maximum amount of cache objects. Once there is a cache miss, the cache looks for the data within the underlying data-source. If matching data is found, it is loaded into the cache and delivered to the application.
+- When running in `all-in-cache` [cache policy mode]({%latestadmurl%}/memory-management-facilities.html), all data is loaded from the database into the cache once it is started.
+- When running in `LRU` [cache policy]({%latestadmurl%}/memory-management-facilities.html) mode, a subset of the data is loaded from the database into the cache when it is started. Data is evicted from the cache based on available memory or a maximum amount of cache objects. Once there is a cache miss, the cache looks for the data within the underlying data-source. If matching data is found, it is loaded into the cache and delivered to the application.
 
 ![in-line-cache.jpg](/attachment_files/in-line-cache.jpg)
 
@@ -38,7 +38,7 @@ Persistence logic can either be the out-of-the-box [Hibernate external data sour
 The in-line cache ensures maximum performance when fetching data where the database is outside the critical path of the application transaction. (This makes more sense than it might seem: database contention is a primary source of application performance failure.)
 
 {% tip %}
-For best performance you should use the [ALL-IN-CACHE cache policy]({%latestjavaurl%}/all-in-cache-cache-policy.html) with the [write-behind mirror]({%latestjavaurl%}/asynchronous-persistency-with-the-mirror.html). This will ensure maximum hit rate when accessing the cache. With this mode, you should make sure the cache can accommodate _all_ the data you will access.
+For best performance you should use the [ALL-IN-CACHE cache policy]({%latestadmurl%}/all-in-cache-cache-policy.html) with the [write-behind mirror]({%latestjavaurl%}/asynchronous-persistency-with-the-mirror.html). This will ensure maximum hit rate when accessing the cache. With this mode, you should make sure the cache can accommodate _all_ the data you will access.
 {% endtip %}
 
 The in-line cache mechanism is widely used with the following GigaSpaces APIs:
@@ -125,12 +125,12 @@ When running the cache in LRU cache policy mode, you may need to expire or evict
 
 Here are few options you may use to refresh the cache:
 
-- Eviction - You may configure the space to evict data by running in [LRU eviction policy]({%latestjavaurl%}/lru-cache-policy.html).
+- Eviction - You may configure the space to evict data by running in [LRU eviction policy]({%latestadmurl%}/lru-cache-policy.html).
 - Lease expiration - You may write objects into the space with a specific time to live (lease duration).
 - Programmatic expiration - You may expire the object using:
     - `net.jini.core.lease.Lease.cancel()` - You can get the Lease object as a result of a write operation for a new object.
     - `GigaSpace.write` operation for an existing object (update) using a short lease time. See the [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html) interface write operation for details.
-    - Take operation with [TakeModifiers.EVICT_ONLY mode]({%latestjavaurl%}/lru-cache-policy.html#Explicit Eviction of Objects from the Space). See the [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html) interface take operation for details.
+    - Take operation with [TakeModifiers.EVICT_ONLY mode]({%latestadmurl%}/lru-cache-policy.html#Explicit Eviction of Objects from the Space). See the [GigaSpace](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/org/openspaces/core/GigaSpace.html) interface take operation for details.
 
 ## Refresh data using LRU and Timer
 

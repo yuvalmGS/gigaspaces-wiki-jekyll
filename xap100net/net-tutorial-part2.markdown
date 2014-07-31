@@ -6,20 +6,19 @@ weight: 200
 parent: net-home.html
 ---
 
- 
 
-{%summary%}{%endsummary%}
+ {%section%}
+ {%column width=10% %}
+ ![cassandra.png](/attachment_files/subject/deploy.png)
+ {%endcolumn%}
+ {%column width=90% %}
+ {% summary   %} {% endsummary %}
+ {%endcolumn%}
+ {%endsection%}
 
 
-{%section%}
-{%column width=15% %}
-<img src="/attachment_files/qsg/grid.gif" width="100" height="100">
-{%endcolumn%}
-{%column width=85% %}
 In Part I you have learned about XAP's capabilities as a data store. In this part of the tutorial we will show you how you can deploy an In Memory Data Grid (IMDG) that provides scalability and failover. GigaSpaces XAP can be used as a scalable application platform on which you can host your C# application, similar to JEE and web containers. However, GigaSpaces XAP's IMDG can also be embedded within another C# application which is not hosted within the XAP platform. In this part of the tutorial we will show you how to start a data grid and how you can interact with it.
-{%endcolumn%}
 
-{%endsection%}
 
 
 

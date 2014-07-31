@@ -17,9 +17,9 @@ In order to write objects to the Space, you use the write method of the GigaSpac
 The following example writes an `Employee` object into the space:
 
 {% highlight java %}
-    UrlSpaceConfigurer urlSpaceConfigurer = new UrlSpaceConfigurer("jini://*/*/mySpace");
-    GigaSpace space = new GigaSpaceConfigurer(urlSpaceConfigurer.space())
- 	.gigaSpace();
+
+    GigaSpace space = ....
+
 
     Employee employee = new Employee("Last Name", new Integer(32));
     employee.setFirstName("first name");
@@ -192,7 +192,7 @@ Asynchronous `write` operation can be implemented using a [Task](./task-executio
 #### Example
 
 {% highlight java %}
-  GigaSpace space = new GigaSpaceConfigurer (new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
+  GigaSpace space = new GigaSpaceConfigurer (new SpaceProxyConfigurer("space")).gigaSpace();
   MyClass obj = new MyClass(1,"AAA");
   space.write(obj,WriteModifiers.ONE_WAY);
 {% endhighlight %}

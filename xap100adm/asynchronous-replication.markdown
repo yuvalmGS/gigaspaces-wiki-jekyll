@@ -16,14 +16,14 @@ In asynchronous replication, operations are performed in the source space instan
 
 In general you should have the `cluster-config.groups.group.repl-policy.replication-mode` property set to `async`. See below example:
 
-{% highlight java %}
-<os-core:space id="space" url="/./mySpace">
+{% highlight xml %}
+<os-core:embedded-space id="space" name="mySpace">
     <os-core:properties>
         <props>
             <prop key="cluster-config.groups.group.repl-policy.replication-mode">async</prop>
         </props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 # When to Use Asynchronous Replication
@@ -66,12 +66,12 @@ The asynchronous worker of the channel can wake up and start replicating for two
 
 The worker will wake up and replicate if either of these two occurs. The following parameters controls these behavior and a few more options:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
-| `repl-chunk-size` | Number of packets transmitted together on the network when the replication event is triggered. The maximum value you can assign for this property is `repl-interval-opers`. | 500 |
-| `repl-interval-millis` | Time (in milliseconds) to wait between replication operations. | 3000 \[ms\] |
-| `repl-interval-opers` | Number of destructive operations to wait before replicating. | 500 |
+| repl-chunk-size | Number of packets transmitted together on the network when the replication event is triggered. The maximum value you can assign for this property is `repl-interval-opers`. | 500 |
+| repl-interval-millis | Time (in milliseconds) to wait between replication operations. | 3000 \[ms\] |
+| repl-interval-opers | Number of destructive operations to wait before replicating. | 500 |
 
 
 {%note%}
@@ -80,21 +80,21 @@ Prefix the property with 'cluster-config.groups.group.repl-policy.async-replicat
 
 To change the default replication settings you should modify the space properties when deployed. You may set these properties via the pu.xml or programmatically. Here is an example how you can set the replication parameters when using the pu.xml:
 
-{% highlight java %}
-<os-core:space id="space" url="/./mySpace">
+{% highlight xml %}
+<os-core:embedded-space id="space" name="mySpace">
     <os-core:properties>
         <props>
             <prop key="cluster-config.groups.group.async-replication.repl-chunk-size">1000</prop>
         </props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 # Flushing of Pending Replication During Shutdown
 
 When a source space instance is closed, it may have pending replication packets in its redo log because there were still not replicated. During this process, the space instance will stop accepting new operations and try to gracefully shutdown the replication channel and wait for all pending replication packets to be sent before completely shutting down. This graceful shutdown timeout can be configured with the following property:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condesed}
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
-| `cluster-config.groups.group.repl-policy.`{%wbr%}`async-replication.async-channel-shutdown-timeout` | Determines how long (in milliseconds) the primary space will wait for pending replication to be replicated to its targets before shutting down.| 300000 \[ms\]  |
+| cluster-config.groups.group.repl-policy.{%wbr%}async-replication.async-channel-shutdown-timeout | Determines how long (in milliseconds) the primary space will wait for pending replication to be replicated to its targets before shutting down.| 300000 \[ms\]  |

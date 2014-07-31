@@ -245,12 +245,8 @@ public class JDBCTask implements DistributedTask<String[], String[]>{
 {% endhighlight %}
 
 {% highlight java %}
-GigaSpace gigapace =
-	new GigaSpaceConfigurer(
-		new UrlSpaceConfigurer ("jini://*/*/mySpace")).gigaSpace();
-AsyncFuture<String[]> result=
-	gigapace.execute(new JDBCTask("select str from " +
-		MyClass.class.getName() + " group by str"));
+GigaSpace gigapace =new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace")).gigaSpace();
+AsyncFuture<String[]> result= gigapace.execute(new JDBCTask("select str from " +MyClass.class.getName() + " group by str"));
 String[] result_str = result.get();
 System.out.println("The Result:" + Arrays.asList(result_str));
 {% endhighlight %}
@@ -528,14 +524,14 @@ The JDBC Driver should be configured using the following properties. These shoul
 Example:
 
 {% highlight xml %}
-<os-core:space id="space" url="/./space" >
+<os-core:embedded-space id="space" name="space" >
     <os-core:properties>
         <props>
             <prop key="space-config.QueryProcessor.transaction_timeout">50000</prop>
             <prop key="space-config.QueryProcessor.date_format">yyyy-MM-dd</prop>
         </props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 # JDBC Error Codes

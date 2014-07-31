@@ -43,13 +43,13 @@ Here are the steps you should execute to update data, using the optimistic locki
 Get a space proxy in `versioned` mode. This can be done using one of the options listed below. You may get remote or embedded space proxies. Make sure the proxy is in optimistic locking mode using the (`versioned`) option. This can be done using one of the options listed below:
 
 {% highlight java %}
-GigaSpace space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space").versioned(true)).gigaSpace();
+GigaSpace space = new GigaSpaceConfigurer( new SpaceProxyConfigurer("space").versioned(true)).gigaSpace();
 {% endhighlight %}
 
 or
 
 {% highlight java %}
-<os-core:space id="space" url="jini://*/*/mySpace"  versioned="true" />
+<os-core:space-proxy id="space" name="mySpace"  versioned="true" />
 {% endhighlight %}
 
 #### Step 2 -- Enable the Space Class to Support Optimistic Locking

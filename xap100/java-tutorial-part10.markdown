@@ -6,18 +6,19 @@ weight: 1000
 parent: java-home.html
 ---
 
-{%summary%} {%endsummary%}
-
-
 
 {%section%}
-{%column width=15% %}
-<img src="/attachment_files/qsg/security.png" width="100" height="100">
+{%column width=10% %}
+![cassandra.png](/attachment_files/qsg/security.png)
 {%endcolumn%}
-{%column width=85% %}
-In this part of the tutorial we will introduce you to XAP security, where it fits in the XAP architecture, which components can be secured, and how to configure and customize the security depending on your application security requirements. XAP Security provides comprehensive support for securing your data and services.
+{%column width=90% %}
+{% summary   %} {% endsummary %}
 {%endcolumn%}
 {%endsection%}
+
+
+
+In this part of the tutorial we will introduce you to XAP security, where it fits in the XAP architecture, which components can be secured, and how to configure and customize the security depending on your application security requirements. XAP Security provides comprehensive support for securing your data and services.
 
 
 
@@ -195,16 +196,16 @@ A secured embedded Space protects access (to data) which is granted only to user
 {% inittab d2|top %}
 {% tabcontent Java %}
 {%highlight java%}
-UrlSpaceConfigurer urlSpaceConfigurer = new UrlSpaceConfigurer("/./xapTutorialSpace").secured(true);
-GigaSpace gigaSpace = new GigaSpaceConfigurer(urlSpaceConfigurer).gigaSpace();
+EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("xapTutorialSpace").secured(true);
+GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 {%endhighlight %}
 {% endtabcontent  %}
 
 {% tabcontent Spring %}
 {%highlight xml%}
-<os-core:space id="space" url="/./xapTutorialSpace">
+<os-core:embedded-space id="space" name="xapTutorialSpace">
     <os-core:security secured="true" />
-</os-core:space>
+</os-core:embedded-space>
 {%endhighlight %}
 {% endtabcontent  %}
 {% endinittab %}
@@ -217,20 +218,16 @@ When a remote Space proxy connects to a secured Space, it must provide security 
 {%highlight java%}
 public void setupSpace()
 {
-   SecurityConfig config = new SecurityConfig();
-   config.setPassword("student");
-   config.setUsername("student123");
-
-   UrlSpaceConfigurer urlSpaceConfigurer = new UrlSpaceConfigurer("jini://*/*/xapTutorialSpace").securityConfig(config);
-   GigaSpace gigaSpace = new GigaSpaceConfigurer(urlSpaceConfigurer).gigaSpace();
+   SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("xapTutorialSpace").credentials("student", "password");
+   GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 }
 {%endhighlight %}
 {% endtabcontent  %}
 {% tabcontent Spring %}
 {%highlight xml%}
-<os-core:space id="space" url="jini://*/*/xapTutorialSpace">
+<os-core:space-proxy id="space" name="xapTutorialSpace">
     <os-core:security username="student" password="student123" />
-</os-core:space>
+</os-core:space-proxy>
 {%endhighlight %}
 {% endtabcontent  %}
 {% endinittab %}
