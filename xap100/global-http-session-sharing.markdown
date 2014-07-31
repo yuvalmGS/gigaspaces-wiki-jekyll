@@ -45,8 +45,6 @@ It's becoming increasingly important for organizations to share HTTP session dat
 - **Reduce Web application memory footprint** - The web application storing all session within the web application process heap, consuming large amount of memory. Having the session stored within a remote process will reduce web application utilization avoiding garbage collocation and long pauses.
 - **Multiple Data-Center deployment** - You may need to deploy your application across multiple data centers for high-availability, scalability or flexibility, so session data will need to be replicated.
 
-[Global Http Session Sharing](http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2)
-
 {%comment%}
 [Global Http Session Sharing](http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2)
 
@@ -54,14 +52,6 @@ It's becoming increasingly important for organizations to share HTTP session dat
 <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,28,0" width="500" height="426" id="onlinePlayer"><param name="allowScriptAccess" value="always" /><param name="movie" value="http://www.slideboom.com/player/player.swf?id_resource=631622" /><param name="quality" value="high" /><param name="bgcolor" value="#ffffff" /><param name="flashVars" value="mode=2&idResource=1837&siteUrl=http://www.slideboom.com" /><param name="allowFullScreen" name="true" /><embed src="http://www.slideboom.com/player/player.swf?id_resource=631622" quality="high" bgcolor="#ffffff" width="500" height="426" name="onlinePlayer" allowScriptAccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" allowFullScreen="true" flashVars="mode=0&idResource=631622&siteUrl=http://www.slideboom.com" /></object>
 {%endcomment%}
 
-
-The following diagram depicts a common use case where there are multiple data centers connected across the WAN, and each is running a different type of web server.
-
-![httpSessionSharing1.jpg](/attachment_files/httpSessionSharing1.jpg)
-
-The XAP Global HTTP Session Sharing architecture allows users to deploy their web application across these multiple data centers where the session is shared in real-time and in a transparent manner. The HTTP session is also backed by a data grid cluster within each data center for fault tolerance and high-availability.
-
-With this solution, there is no need to deploy a database to store the session, so you avoid the use of expensive database replication across multiple sites. Setting up XAP for session sharing between each site is simple and does not involve any code changes to the application.
 
 XAPs Global HTTP Session Management is designed to deliver maximum performance for the application with ZERO application code changes.
 
@@ -106,13 +96,21 @@ Configure your web application to use the XAP session manager, deploy the XAP in
 
 There is no need to change the web application or plug in any custom code in order to enable session sharing between servers running in remote data centers. In addition, you don't have to add the HTTP session classes to the IMDG classpath.
 
-The below diagram shows a more detailed view of the IMDG deployment. In this case, there are multiple partitions for high scalability, as well as backup instances for redundancy. The WAN Gateway is also deployed and shows replication between remote site.
+## Single-Application Session Sharing
 
- ![httpSessionSharing2.jpg](/attachment_files/httpSessionSharing2.jpg)
+When having a single application deployed across multiple web containers that require their HTTP session to be shared the session is shared via its ID.
+![SingleApplicationSessionSharing.jpg](https://dl.dropboxusercontent.com/u/7390820/SingleApplicationSessionSharing.jpg)
 
-The end-to-end path between the two data center nodes includes the servlet and GigaSpaces filters, and the IMDG with local cache and WAN Gateway.
+## Multiple-Applications Session Sharing
+When having multiple different web applications deployed across multiple web containers that are considered as one logical application require their HTTP session to be shared, the session is shared via the user login principle (common across all different applications). In this case a Timestamp check is performed to ensure the most recent session is passed between the different applications. In this case the Session attributes are merged when required.
 
- ![httpSessionSharing3.jpg](/attachment_files/httpSessionSharing3.jpg)
+![MultiApplicationSessionSharing.jpg](https://dl.dropboxusercontent.com/u/7390820/MultiApplicationSessionSharing.jpg)
+
+## The GigaSpaces Session Filter
+
+The web application configuration should include the GigaSpaces Session Filter. This filter interacts with the GigaSpaces session manager that store the session content within the data grid. It maintanis a temporary cache to reduce remote activity with the data grid.
+![HTTPSessionManagementcloserLook.jpg](https://dl.dropboxusercontent.com/u/7390820/HTTPSessionManagementcloserLook.jpg)
+
 
 {% comment %}
 
@@ -145,6 +143,29 @@ Have `cacheManager.cacheSessionLocally = false` when you would like the same web
 {% endcomment %}
 
 
+# Session Replication across different JEE Containers
+
+The HTTP session stored within XAP in an agnostic netural structure. This allows XAP HTTP Session Manager to share the session between different JEE Containers. For example between IBM Websphere version 7 and IBM Websphere version 8 , or between Tomcat 6 and Tomcat 7. In the same way the same HTTP session may be shared between IBM Websphere and Jboss/Tomcat/Weblogic/etc.
+
+![MultiJEEContainerSupport.jpg](https://dl.dropboxusercontent.com/u/7390820/MultiJEEContainerSupport.jpg)
+
+# Session Replication across different Data-Centers
+
+The following diagram depicts a common use case where there are multiple data centers connected across the WAN, and each is running a different type of web server.
+
+![httpSessionSharing1.jpg](https://dl.dropboxusercontent.com/u/7390820/httpSessionSharing1.jpg)
+
+The XAP Global HTTP Session Sharing architecture allows users to deploy their web application across these multiple data centers where the session is shared in real-time and in a transparent manner. The HTTP session is also backed by a data grid cluster within each data center for fault tolerance and high-availability.
+
+With this solution, there is no need to deploy a database to store the session, so you avoid the use of expensive database replication across multiple sites. Setting up XAP for session sharing between each site is simple and does not involve any code changes to the application.
+
+The below diagram shows a more detailed view of the IMDG deployment. In this case, there are multiple partitions for high scalability, as well as backup instances for redundancy. The WAN Gateway is also deployed and shows replication between remote site.
+
+![httpSessionSharing2.jpg](https://dl.dropboxusercontent.com/u/7390820/httpSessionSharing2.jpg)
+
+The end-to-end path between the two data center nodes includes the servlet and GigaSpaces filters, and the IMDG with local cache and WAN Gateway.
+
+![httpSessionSharing3.jpg](https://dl.dropboxusercontent.com/u/7390820/httpSessionSharing3.jpg)
 
 # Configuration
 
@@ -375,7 +396,7 @@ The `gs-runtime.jar` should be replaced with the relevant XAP `gs-runtime.jar` m
 
 # Deployment
 
-The XAP IMDG should be deployed using one of the [topologies.](/product_overview/space-topologies.html). You may also use the WAN Gateway with multi data grid deployment.
+The XAP IMDG should be deployed using one of the [topologies](/product_overview/space-topologies.html). You may also use the WAN Gateway with multi data grid deployment.
 
 {% highlight bash %}
 # To deploy the IMDG called `sessionSpace` start the XAP agent using:
@@ -387,15 +408,15 @@ The XAP IMDG should be deployed using one of the [topologies.](/product_overview
 {% endhighlight %}
 
 
-{% tip %}See the [deploy-space]({%latestadmurl%}/deploy-command-line-interface.html) command for details.{% endtip %}
+{% tip %}See the [deploy-space](/deploy-command-line-interface.html) command for details.{% endtip %}
 
 ### Deploying the WAN Gateway
 
-The [WAN Gateway]({%latestjavaurl%}/multi-site-replication-over-the-wan.html) should be deployed using your preferred replication topography, such as multi-master or master-slave. See the [WAN Replication Gateway](/sbp/wan-replication-gateway.html) best practice for an example of how a multi-master Gateway architecture can be deployed.
+The [WAN Gateway](/multi-site-replication-over-the-wan.html) should be deployed using your preferred replication topography, such as multi-master or master-slave. See the [WAN Replication Gateway](/sbp/wan-replication-gateway.html) best practice for an example of how a multi-master Gateway architecture can be deployed.
 
 ### Securing the XAP IMDG
 
-When using a [Secure XAP cluster]({%latestsecurl%}/securing-your-data.html) you can pass security credentials using following parameters in the `shiro.ini` file:
+When using a [Secure XAP cluster](/securing-your-data.html) you can pass security credentials using following parameters in the `shiro.ini` file:
 
 {%highlight console%}
 connector.username = user
