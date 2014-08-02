@@ -26,12 +26,12 @@ Let's create a space called 'xapTutorialSpace' that is co-located within an appl
 Here is an example how you start an embedded space:
 {%highlight java  %}
 // Create the Space
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("xapTutorialSpace")).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./xapTutorialSpace")).gigaSpace();
 {%endhighlight%}
 
-This space we just created can also be accessed remotely from another JVM by connecting with a `SpaceProxyConfigurer`. In order to do so you would use the following code:
+This space we just created can also be accessed remotely from another JVM by connecting with a `UrlSpaceConfigurer`. In order to do so you would use the following code:
 {%highlight java  %}
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("xapTutorialSpace")).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/xapTutorialSpace")).gigaSpace();
 {%endhighlight%}
 
 You can configure the Space URL with several options.

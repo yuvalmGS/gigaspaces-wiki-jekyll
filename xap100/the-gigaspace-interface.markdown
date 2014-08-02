@@ -37,13 +37,13 @@ A client communicating with a an embedded space performs all its operation via l
 ![embedded-space.jpg](/attachment_files/embedded-space.jpg)
 
 
-Here is an example how to create an embedded space. The `EmbeddedSpaceConfigurer` is used to configure the space url:
+Here is an example how to create an embedded space. The `UrlSpaceConfigurer` is used to configure the space url:
 
 {% inittab os_space_emb|top %}
 {% tabcontent Code %}
 
 {% highlight java %}
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("mySpace")).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./mySpace")).gigaSpace();
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -97,7 +97,7 @@ Here is an example how a client application can create a proxy to interacting wi
 
 {% highlight java %}
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace")).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/mySpace")).gigaSpace();
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -152,7 +152,7 @@ Here is an example for a `GigaSpace` construct with a local cache:
 
 {% highlight java %}
 // Initialize remote space configurer:
-SpaceProxyConfigurer urlConfigurer = new SpaceProxyConfigurer("space");
+UrlSpaceConfigurer urlConfigurer = new UrlSpaceConfigurer("jini://*/*/space");
 // Initialize local cache configurer
 LocalCacheSpaceConfigurer localCacheConfigurer = new LocalCacheSpaceConfigurer(urlConfigurer);
 
@@ -205,7 +205,7 @@ Here is an example for a `GigaSpace` construct with a local cache:
 
 {% highlight java %}
 // Initialize remote space configurer:
-SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("space");
+UrlSpaceConfigurer configurer = new UrlSpaceConfigurer("jini://*/*/space");
 
 // Initialize local view configurer
 LocalViewSpaceConfigurer localViewConfigurer = new LocalViewSpaceConfigurer(configurer)

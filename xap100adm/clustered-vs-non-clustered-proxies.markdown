@@ -47,7 +47,7 @@ The `GigaSpace.getClustered()` method allows you to get a cluster wide proxy fro
 
 Another option is to use the `GigaSpaceConfigurer`:
 {%highlight java%}
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("space")).clustered(true).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space")).clustered(true).gigaSpace();
 {%endhighlight%}
 
 An example of a Remoting Service with a clustered and non-clustered proxy:
@@ -211,7 +211,7 @@ return mes;
 
 The service is called using the following:
 {%highlight java %}
-    GigaSpace space = new GigaSpaceConfigurer(new SpaceProxyConfigurer("space")).gigaSpace();
+    GigaSpace space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
 
     IMyService service = new ExecutorRemotingProxyConfigurer<IMyService>(space , IMyService.class).proxy();
     String mes1 = service.myMethod(0);
@@ -316,7 +316,7 @@ this.routing = routing;
 {%endhighlight%}
 
 {%highlight java %}
-GigaSpace space = new GigaSpaceConfigurer(new SpaceProxyConfigurer("space")).gigaSpace();
+GigaSpace space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
 space.execute(new MyTask());
 {%endhighlight%}
 
@@ -398,7 +398,7 @@ public void postPrimary() {
 {%endhighlight%}
 
 {%highlight java %}
-GigaSpace space = new GigaSpaceConfigurer(new SpaceProxyConfigurer("space")).gigaSpace();
+GigaSpace space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
 Data d = new Data();
 d.setId(0);
 space.write(d);

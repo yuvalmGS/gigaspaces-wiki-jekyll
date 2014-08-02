@@ -214,7 +214,7 @@ cachePolicy.setCacheEntriesPercentage(10);
 cachePolicy.setRecoverFromBlobStore(true);
 cachePolicy.setBlobStoreHandler(blobStoreHandler);
 
-EmbeddedSpaceConfigurer urlConfig = new EmbeddedSpaceConfigurer("mySpace");
+UrlSpaceConfigurer urlConfig = new UrlSpaceConfigurer("/./mySpace");
 urlConfig.cachePolicy(cachePolicy);
 
 gigaSpace = new GigaSpaceConfigurer(urlConfig).gigaSpace();
