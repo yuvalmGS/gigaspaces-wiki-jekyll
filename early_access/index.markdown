@@ -8,7 +8,9 @@ weight:
 
 {%summary%}Here you will find mile stone releases for XAP 10.0{%endsummary%}
 
- 
+At this point in time there is no early access version available. The latest release 10.0 can be found [here](/index.html).
+
+{%comment%}
 # Release Candidate RC2 b11511
 
 {%panel%}
@@ -62,6 +64,6 @@ weight:
 
 [The current XAP .NET release is 10.0](/xap100net)
 
-
+{%endcomment%}
 
 
