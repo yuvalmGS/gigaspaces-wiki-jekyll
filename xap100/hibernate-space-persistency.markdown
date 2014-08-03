@@ -120,8 +120,8 @@ See below example for `Hibernate Space Persistency` that is configured having a 
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
 
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./space" />
     <property name="scheam" value="persistent" />
     <property name="spaceDataSource" ref="hibernateSpaceDataSource" />
     <property name="spaceSynchronizationEndpoint" ref="hibernateSpaceSynchronizationEndpoint" />

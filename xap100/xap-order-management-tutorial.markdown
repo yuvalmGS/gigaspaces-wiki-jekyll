@@ -526,12 +526,12 @@ import com.gigaspaces.tutorials.common.model.Status;
 import com.j_spaces.core.IJSpace;
 import org.openspaces.core.GigaSpace;
 import org.openspaces.core.GigaSpaceConfigurer;
-import org.openspaces.core.space.SpaceProxyConfigurer;
+import org.openspaces.core.space.UrlSpaceConfigurer;
 
 public class CommandLineClient {
   public static void main(String... args) {
     // note remote reference to the space
-    SpaceProxyConfigurer configurer = new SpaceProxyConfigurer("orderManagement");
+    UrlSpaceConfigurer configurer = new UrlSpaceConfigurer("jini://*/*/orderManagement");
 
     GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
     SQLQuery<OrderEvent> query = new SQLQuery<OrderEvent>(OrderEvent.class,

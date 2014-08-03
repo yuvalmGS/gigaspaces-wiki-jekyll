@@ -137,8 +137,8 @@ public class ExpiredTweetsFilter implements DynamicEventTemplateProvider{
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -179,7 +179,7 @@ public class ExpiredTweetsFilter implements DynamicEventTemplateProvider{
 {% highlight java %}
 
 TransactionManager txManager = new DistributedJiniTxManagerConfigurer().transactionManager();
-EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
+UrlSpaceConfigurer configurer = new UrlSpaceConfigurer("/./mySpace");
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(txManager).create();
 
 ArchiveOperationHandler cassandraArchiveHandler =

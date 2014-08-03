@@ -125,7 +125,7 @@ also asynchronously persists the data using a mirror (see [MongoDB Space Synchro
 			.mongoClientConnector(client)
 			.create();
 	
-	GigaSpace gigaSpace = new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("space")
+	GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./space")
 	.schema("persistent") 
 	.mirror(true) 
 	.cachePolicy(new LruCachePolicy()) 

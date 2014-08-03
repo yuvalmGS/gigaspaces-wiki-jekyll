@@ -113,8 +113,8 @@ And here is how this can be configured within the mirror configuration:
     <property name="parameter" value="some value"/>
 </bean>
 
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="mirror-service" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./mirror-service" />
     <property name="schema" value="mirror" />
     <property name="spaceSyncEndpoint" ref="mirrorSpaceSynchronizationEndpoint" />
 </bean>

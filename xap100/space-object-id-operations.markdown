@@ -129,7 +129,7 @@ public class MySpaceClass {
 {% tabcontent The Application Code %}
 
 {% highlight java %}
-GigaSpace space = new GigaSpaceConfigurer (new SpaceProxyConfigurer("space")).gigaSpace();
+GigaSpace space = new GigaSpaceConfigurer (new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
 
 CompoundId id = new CompoundId();
 id.key1="1";

@@ -88,7 +88,7 @@ The web application can define a space either embedded or remote using Spring or
 
 - Creating a space using java code:
 {%highlight java%}
-EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("xapTutorialSpace");
+UrlSpaceConfigurer configurer = new UrlSpaceConfigurer("/./xapTutorialSpace");
 
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 {%endhighlight%}

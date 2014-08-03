@@ -100,8 +100,8 @@ Specifying space level storage type can be done using any of the following:
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./space" />
     <property name="properties">
         <props>
             <prop key="space-config.serialization-type">1</prop>
@@ -115,7 +115,7 @@ Specifying space level storage type can be done using any of the following:
 
 {% highlight java %}
 
-GigaSpace gigaspace= new GigaSpaceConfigurer(new EmbeddedSpaceConfigurer("space").
+GigaSpace gigaspace= new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./space").
 	addProperty("space-config.serialization-type",
 	String.valueOf(StorageType.BINARY.getCode()))).gigaSpace();
 {% endhighlight %}

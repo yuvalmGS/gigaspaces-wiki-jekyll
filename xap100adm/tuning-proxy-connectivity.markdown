@@ -57,8 +57,8 @@ Example : To increase the lookup duration timeout to 5 minutes you should have t
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
-    <property name="name" value="mySpace" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="jini://*/*/mySpace" />
     <property name="properties">
         <props>
             <prop key="space-config.proxy.router.active-server-lookup-timeout">300000</prop>

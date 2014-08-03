@@ -84,8 +84,8 @@ with the following Processing Unit definition:
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">

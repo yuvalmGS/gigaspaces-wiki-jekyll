@@ -294,7 +294,7 @@ Here's the constructor of the Feeder connects to the Processor Processing unit _
 public Feeder(String spaceName){
 
      // Wrap the space with the gigaSpace API
-     this.gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer(spaceName)).gigaSpace();
+     this.gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer(spaceName)).gigaSpace();
 }
 {% endhighlight %}
 

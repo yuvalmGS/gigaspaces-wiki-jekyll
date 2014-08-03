@@ -131,8 +131,8 @@ A typical usage pattern is connecting remotely to a Space. Here is an example (e
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="jini://*/*/space" />
 </bean>
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
 	<property name="space" ref="space" />
@@ -144,7 +144,7 @@ A typical usage pattern is connecting remotely to a Space. Here is an example (e
 
 {% highlight java %}
 
-EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("space");
+UrlSpaceConfigurer configurer = new UrlSpaceConfigurer("/./space");
 
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 
@@ -176,8 +176,8 @@ Here is an example that starts an embedded Space as part of the web application 
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./space" />
 </bean>
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
 	<property name="space" ref="space" />

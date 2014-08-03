@@ -62,8 +62,8 @@ Creating a local view is similar to creating a [`GigaSpace`](./the-gigaspace-int
 {% tabcontent Plain Spring XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="jini://*/*/space" />
 </bean>
 
 <bean id="viewSpace" class="org.openspaces.core.space.cache.LocalViewSpaceFactoryBean">
@@ -88,7 +88,7 @@ Creating a local view is similar to creating a [`GigaSpace`](./the-gigaspace-int
 
 {% highlight java %}
 // Initialize remote space configurer:
-SpaceProxyConfigurer urlConfigurer = new SpaceProxyConfigurer("mySpace");
+UrlSpaceConfigurer urlConfigurer = new UrlSpaceConfigurer("jini://*/*/mySpace");
 // Initialize local view configurer
 LocalViewSpaceConfigurer localViewConfigurer = new LocalViewSpaceConfigurer(urlConfigurer)
 	.batchSize(1000)

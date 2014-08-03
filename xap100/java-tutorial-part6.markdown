@@ -138,7 +138,7 @@ Here is an example of how optimistic locking is enabled in XAP. First we need to
 {% inittab d1|top %}
 {% tabcontent Java %}
 {%highlight java%}
-GigaSpace space = new GigaSpaceConfigurer( new SpaceProxyConfigurer("xapTutorialSpace").versioned(true)).gigaSpace();
+GigaSpace space = new GigaSpaceConfigurer( new UrlSpaceConfigurer("jini://*/*/xapTutorialSpace").versioned(true)).gigaSpace();
 {%endhighlight%}
 {% endtabcontent %}
 

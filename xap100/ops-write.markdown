@@ -192,7 +192,7 @@ Asynchronous `write` operation can be implemented using a [Task](./task-executio
 #### Example
 
 {% highlight java %}
-  GigaSpace space = new GigaSpaceConfigurer (new SpaceProxyConfigurer("space")).gigaSpace();
+  GigaSpace space = new GigaSpaceConfigurer (new UrlSpaceConfigurer("jini://*/*/space")).gigaSpace();
   MyClass obj = new MyClass(1,"AAA");
   space.write(obj,WriteModifiers.ONE_WAY);
 {% endhighlight %}

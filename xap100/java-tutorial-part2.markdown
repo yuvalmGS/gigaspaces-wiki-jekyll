@@ -1,8 +1,8 @@
 ---
 layout: post100
 title:  Deploying a Space
-categories: XAP100S
-weight: 200i
+categories: XAP100
+weight: 200
 parent: java-home.html
 ---
 

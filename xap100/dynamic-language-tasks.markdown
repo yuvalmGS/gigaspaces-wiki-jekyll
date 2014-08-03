@@ -55,8 +55,8 @@ The first step in using scripting is exposing the built in scripting service ove
     </property>
 </bean>
 
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -114,8 +114,8 @@ On the client side Spring XML configuration, the following needs to be defined (
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="jini://*/*/space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -264,7 +264,7 @@ Asynchronous scripting executor:
 
 {% highlight java %}
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace")).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/mySpace")).gigaSpace();
 ScriptingExecutor  executor = new EventDrivenScriptingProxyConfigurer (gigaSpace).scriptingExecutor();
 {% endhighlight %}
 
@@ -272,7 +272,7 @@ Executor based scripting executor:
 
 {% highlight java %}
 
-GigaSpace gigaSpace = new GigaSpaceConfigurer(new SpaceProxyConfigurer("mySpace")).gigaSpace();
+GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/mySpace")).gigaSpace();
 ScriptingExecutor  executor = new ExecutorScriptingProxyConfigurer (gigaSpace).scriptingExecutor();
 {% endhighlight %}
 

@@ -66,8 +66,8 @@ Below is an example of how it can be defined in a Spring application context:
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space"  />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./space"  />
 </bean>
 
 <bean id="transactionManager" class="org.openspaces.core.transaction.manager.DistributedJiniTransactionManager" />
@@ -82,7 +82,7 @@ Below is an example of how it can be defined in a Spring application context:
 {% tabcontent Code %}
 
 {% highlight java %}
-EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
+UrlSpaceConfigurer configurer = new UrlSpaceConfigurer("/./mySpace");
 PlatformTransactionManager ptm = new DistributedJiniTxManagerConfigurer().transactionManager();
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
 {% endhighlight %}
@@ -113,8 +113,8 @@ For example, to change the default timeout to 2 minutes, use the following confi
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property  name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property  name="url" value="/./space" />
 </bean>
 
 <bean id="transactionManager" class="org.openspaces.core.transaction.manager.DistributedJiniTransactionManager">
@@ -131,7 +131,7 @@ For example, to change the default timeout to 2 minutes, use the following confi
 {% tabcontent Code %}
 
 {% highlight java %}
-EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
+UrlSpaceConfigurer configurer = new UrlSpaceConfigurer("/./mySpace");
 PlatformTransactionManager ptm = new DistributedJiniTxManagerConfigurer().defaultTimeout(120).transactionManager();
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
 {% endhighlight %}
@@ -173,8 +173,8 @@ Below is an example of how it can be defined in a Spring application context:
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./space" />
 </bean>
 
 <bean id="transactionManager" class="org.openspaces.core.transaction.manager.LookupJiniTransactionManager">
@@ -191,7 +191,7 @@ Below is an example of how it can be defined in a Spring application context:
 {% tabcontent Code %}
 
 {% highlight java %}
-EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
+UrlSpaceConfigurer configurer = new UrlSpaceConfigurer("/./mySpace");
 PlatformTransactionManager ptm = new LookupJiniTxManagerConfigurer().lookupTimeout(5000).transactionManager();
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
 {% endhighlight %}
@@ -221,8 +221,8 @@ The Jini lookup transaction manager allows to set the default timeout value for 
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./space" />
 </bean>
 
 <bean id="transactionManager" class="org.openspaces.core.transaction.manager.LookupJiniTransactionManager">
@@ -239,7 +239,7 @@ The Jini lookup transaction manager allows to set the default timeout value for 
 {% tabcontent Code %}
 
 {% highlight java %}
-EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
+UrlSpaceConfigurer configurer = new UrlSpaceConfigurer("/./mySpace");
 PlatformTransactionManager ptm = new LookupJiniTxManagerConfigurer().defaultTimeout(1000).transactionManager();
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gigaSpace();
 {% endhighlight %}
@@ -284,8 +284,8 @@ Here is an example of how this can be configured:
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./space" />
 </bean>
 
 <bean id="transactionManager" class="org.openspaces.core.transaction.manager.DistributedJiniTransactionManager">
@@ -308,7 +308,7 @@ Here is an example of how this can be configured:
 {% tabcontent Code %}
 
 {% highlight java %}
-EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
+UrlSpaceConfigurer configurer = new UrlSpaceConfigurer("/./mySpace");
 TransactionLeaseRenewalConfig config = new TransactionLeaseRenewalConfig();
 config.setPoolSize(2);
 config.setRenewDuration(1000);
@@ -349,8 +349,8 @@ GigaSpaces can be used within an XA transaction using JTA. The OpenSpaces API al
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./space" />
 </bean>
 
 <bean id="jotm" class="org.springframework.transaction.jta.JotmFactoryBean" />
@@ -371,7 +371,7 @@ GigaSpaces can be used within an XA transaction using JTA. The OpenSpaces API al
 {% highlight java %}
 UserTransaction userTransaction = ... //get UserTransaction via JDNI / instantiation
 PlatformTransactionManager ptm = new JtaTransactionManager(userTransaction);
-EmbeddedSpaceConfigurer configurer = new EmbeddedSpaceConfigurer("mySpace");
+UrlSpaceConfigurer configurer = new UrlSpaceConfigurer("/./mySpace");
 GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).transactionManager(ptm).gig
 {% endhighlight %}
 

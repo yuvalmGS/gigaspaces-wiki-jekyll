@@ -91,8 +91,8 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -368,8 +368,8 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./space" />
 </bean>
 
 <bean id="transactionManager" class="org.openspaces.core.transaction.manager.LocalJiniTransactionManager">
@@ -829,7 +829,7 @@ public class NotifyHAMain {
 
     static void getSpace() {
         try {
-            space = new GigaSpaceConfigurer(new SpaceProxyConfigurer("space")).create();
+            space = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*/space")).create();
         } catch (Exception e) {
             System.out.println("Cannot find space: " + e.getMessage());
         }

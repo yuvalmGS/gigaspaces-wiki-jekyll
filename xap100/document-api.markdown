@@ -82,8 +82,8 @@ The following is an example of how to introduce a new document type:
 {% tabcontent Plain Spring XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./space" />
     <property name="spaceTypes" >
    	      <list>
    		<ref bean="productType"/>
@@ -406,8 +406,8 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -485,8 +485,8 @@ pollingEventListenerContainer.destroy();
 {% tabcontent Plain Spring XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./space" />
     <property name="spaceTypes" >
    	      <list>
    		<ref bean="productType"/>
@@ -548,8 +548,8 @@ Optimistic locking is disabled by default with `Document` entries (same as with 
 {% tabcontent Plain Spring XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
-    <property name="name" value="space" />
+<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
+    <property name="url" value="/./space" />
     <property name="spaceTypes" >
    	      <list>
    		<ref bean="productType"/>
