@@ -13,7 +13,7 @@ Below is a list of issues that have been fixed in GigaSpaces 10.0.X.
 
 {: .table .table-bordered .table-condensed}
 | Key | Summary | Fixed in Version | SalesForce ID | Platform/s |
-|:-------|:--------|:----------------|:---------------|:------------------|
+|:---------|:--------|:----------------|:---------------|:------------------|
 | GS-11505 | StandaloneProcessingUnitContainerProvider#close() raise Interruption that cause problems in unit tests | 10.0.0 | 8518 | Java |
 | GS-11536 | LRMI threads cause JVM-wide slowdown with parallel reads | 10.0.0 | 8527 | Java |
 | GS-11561 | Reading a POJO which contains a document using mongo EDS fails | 9.7.1, 10.0.0 |  | Java |
