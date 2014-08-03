@@ -46,8 +46,8 @@ Tested JVMs:
 
 - Oracle 6 - XAP was tested using Sun JVM version 6u43 and above.
 - Oracle 7 - XAP was tested using Sun JVM version 7u45 and above.
-- IBM 1.6.0 - XAP was tested using IBM JVM version 1.6.0 IBM J9VM. 
-- IBM 1.7.0 - XAP was tested using IBM JVM version 1.7.0 IBM J9VM SR6.
+- IBM 1.6.0 - XAP was tested using IBM JVM version 1.6.0 SR15. 
+- IBM 1.7.0 - XAP was tested using IBM JVM version 1.7.0 SR6.
 
 GigaSpaces recommends that customers upgrade to a fully-supported environment, such as the latest GigaSpaces XAP 10.0.x and the latest *Java 1.7/1.8 SDK.
 
