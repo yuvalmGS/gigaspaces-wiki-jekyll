@@ -20,7 +20,7 @@ For example (using the distributed transaction manager):
 
 {% highlight xml %}
 
-<os-core:embedded-space id="space" name="space" />
+<os-core:space id="space" url="/./space" />
 
 <os-core:distributed-tx-manager id="transactionManager"/>
 
@@ -81,7 +81,7 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 
 {% highlight xml %}
 
-<os-core:embedded-space id="space" name="space" />
+<os-core:space id="space" url="/./space" />
 
 <os-core:giga-space id="gigaSpace" space="space" default-isolation="READ_COMMITTED"/>
 {% endhighlight %}

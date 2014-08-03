@@ -170,7 +170,7 @@ The Processing Unit configuration file (`<GigaSpaces Root>\cpp\examples\CppServi
     <!--
         A bean representing a space (an IJSpace implementation).
     -->
-        <os-core:embedded-space id="space" name="space" />
+        <os-core:space id="space" url="/./space" />
 
     <!--
         OpenSpaces simplified space API built on top of IJSpace/JavaSpace.

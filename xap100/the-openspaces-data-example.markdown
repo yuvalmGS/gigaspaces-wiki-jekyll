@@ -194,7 +194,7 @@ private GigaSpace gigaSpace;
     A bean representing a space (an IJSpace implementation).
     Note, we perform a lookup on the space since we are working against a remote space.
 -->
-<os-core:space-proxy id="space" name="space" />
+<os-core:space  id="space" url="jini://*/*/space" />
 
 <!--
     OpenSpaces simplified space API built on top of IJSpace/JavaSpace.

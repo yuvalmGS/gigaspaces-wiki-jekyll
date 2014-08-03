@@ -271,7 +271,7 @@ public class MyBean implements InitializingBean{
 <bean id="mySpaceFilter" class="com.test.MySpaceFilter" />
 <bean id="myBean" class="com.test.MyBean" />
 
-<os-core:embedded-space id="space" name="space" >
+<os-core:space id="space" url="/./space" >
 	<os-core:annotation-adapter-filter priority="2">
 		<os-core:filter ref="mySpaceFilter" />
 	</os-core:annotation-adapter-filter>

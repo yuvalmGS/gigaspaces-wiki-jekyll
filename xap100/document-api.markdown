@@ -66,14 +66,14 @@ The following is an example of how to introduce a new document type:
 {% tabcontent Spring Namespace Configuration %}
 
 {% highlight xml %}
-<os-core:embedded-space id="space" name="mySpace"  >
+<os-core:space id="space" url="/./mySpace"  >
       <os-core:space-type type-name="Product" >
 		<os-core:id property="CatalogNumber"/>
 		<os-core:routing property="Category"/>
 		<os-core:basic-index path="Name"/>
 		<os-core:extended-index path="Price"/>
       </os-core:space-type>
-</os-core:embedded-space>
+</os-core:space>
 <os-core:giga-space id="gigaSpace" space="space"/>
 
 {% endhighlight %}
@@ -333,14 +333,14 @@ Here is a simple example of a polling event container configuration using a `Doc
 <!-- Enable support for @Polling annotation -->
 <os-events:annotation-support />
 
-<os-core:embedded-space id="space" name="mySpace">
+<os-core:space id="space" url="/./mySpace">
       <os-core:space-type type-name="Product" >
 		<os-core:id property="CatalogNumber"/>
 		<os-core:routing property="Category"/>
 		<os-core:basic-index path="Name"/>
 		<os-core:extended-index path="Price"/>
       </os-core:space-type>
-</os-core:embedded-space>
+</os-core:space>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 {% endhighlight %}
@@ -367,14 +367,14 @@ public class SimpleListener {
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:embedded-space id="space" name="mySpace">
+<os-core:space id="space" url="/./mySpace">
   <os-core:space-type type-name="Product" >
 		<os-core:id property="CatalogNumber"/>
 		<os-core:routing property="Category"/>
 		<os-core:basic-index path="Name"/>
 		<os-core:extended-index path="Price"/>
       </os-core:space-type>
-</os-core:embedded-space>
+</os-core:space>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -473,11 +473,11 @@ pollingEventListenerContainer.destroy();
 {% tabcontent Spring Namespace Configuration %}
 
 {% highlight xml %}
-<os-core:embedded-space id="space" name="mySpace">
+<os-core:space id="space" url="/./mySpace">
     <os-core:space-type type-name="Product" fifo-support="OPERATION" >
 		<!-- other properties definition -->
     </os-core:space-type>
-</os-core:embedded-space>
+</os-core:space>
 <os-core:giga-space id="gigaSpace" space="space"/>
 {% endhighlight %}
 
@@ -536,11 +536,11 @@ Optimistic locking is disabled by default with `Document` entries (same as with 
 {% tabcontent Spring Namespace Configuration %}
 
 {% highlight xml %}
-<os-core:embedded-space id="space" name="mySpace">
+<os-core:space id="space" url="/./mySpace">
       <os-core:space-type type-name="Product" optimistic-lock="true" >
 		<!-- other properties definition -->
       </os-core:space-type>
-</os-core:embedded-space>
+</os-core:space>
 <os-core:giga-space id="gigaSpace" space="space"/>
 {% endhighlight %}
 
@@ -606,7 +606,7 @@ Example on how to implement an EDS that persists SpaceDocuments of type "Trade":
 {% highlight xml %}
 <bean id="documentDataSource" class="com.test.DocumentEDS"/>
 
-<os-core:embedded-space id="space" name="mySpace" schema="persistent" external-data-source="documentDataSource">
+<os-core:space id="space" url="/./mySpace" schema="persistent" external-data-source="documentDataSource">
     <os-core:space-type type-name="Trade" >
 	   <os-core:id property="uid" auto-generate="true"/>
 	   <os-core:routing property="symbolLabel"/>
@@ -616,7 +616,7 @@ Example on how to implement an EDS that persists SpaceDocuments of type "Trade":
             <prop key="space-config.external-data-source.data-class">com.gigaspaces.document.SpaceDocument</prop>
         </props>
     </os-core:properties>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 
 {% endtabcontent %}

@@ -34,13 +34,13 @@ The space memory can be managed using the following mechanisms:
 The space supports two cache eviction policies: [LRU-Cache Policy](./lru-cache-policy.html) (code 0) and [ALL IN CACHE-Cache Policy](./all-in-cache-cache-policy.html) (code 1) defined via the the `space-config.engine.cache_policy` property. See below example how you can configure it:
 
 {% highlight xml %}
-<os-core:embedded-space id="space" name="mySpace">
+<os-core:space id="space" url="/./mySpace">
     <os-core:properties>
         <props>
             <prop key="space-config.engine.cache_policy">0</prop>
         </props>
     </os-core:properties>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 
 - [ALL IN CACHE-Cache Policy](./all-in-cache-cache-policy.html) - Assumes the JVM hosting the space instance has enough heap to hold all data in memory.
@@ -66,7 +66,7 @@ Only do so if you've determined it necessary, as this disables a feature designe
 When configuring the JVM to use large heap sizes (over 10GB), it is recommended to use the following values:
 
 {% highlight xml %}
-<os-core:embedded-space id="space" name="mySpace">
+<os-core:space id="space" url="/./mySpace">
     <os-core:properties>
         <props>
             <prop key="space-config.engine.memory_usage.high_watermark_percentage">97</prop>
@@ -75,7 +75,7 @@ When configuring the JVM to use large heap sizes (over 10GB), it is recommended 
             <prop key="space-config.engine.memory_usage.low_watermark_percentage">94</prop>
         </props>
     </os-core:properties>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 
 These values represent 400MB difference between the `high_watermark_percentage` and the `low_watermark_percentage` when having 10GB max heap size. The above values will make sure the memory manager will not waste memory, but throw `MemoryShortageException` when running in `ALL_IN_CACHE` or evict objects when running in `LRU` cache policy mode when the absolute amount of JVM available memory is low.

@@ -90,7 +90,7 @@ The next step is exporting the service over the space. Exporting the service is 
 <!-- Support the @RemotingService annotation on a service-->
 <os-remoting:annotation-support />
 
-<os-core:embedded-space id="space" name="mySpace"/>
+<os-core:space id="space" url="/./mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -108,7 +108,7 @@ The next step is exporting the service over the space. Exporting the service is 
 
 {% highlight xml %}
 
-<os-core:embedded-space id="space" name="mySpace"/>
+<os-core:space id="space" url="/./mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -163,7 +163,7 @@ Exporting the service as a remote space service uses the [event polling containe
 With the above example the Service is collocated with the space. There might be scenarios where the service might be running as part of a separate PU where the space and the service running in different PUs. In this case the Service configuration should use a polling container configured in non-blocking mode:
 
 {% highlight xml %}
-   <os-core:space-proxy id="space" name="mySpace"/>
+   <os-core:space  id="space" url="jini://*/*/mySpace"/>
 
    <os-core:giga-space id="gigaspace" space="space" tx-manager="transactionManager"/>
 
@@ -215,7 +215,7 @@ Configuring the `IDataProcessor` proxy can be done in the following manner:
 
 {% highlight xml %}
 
-<os-core:space-proxy id="space" name="mySpace"/>
+<os-core:space  id="space" url="jini://*/*/mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -344,7 +344,7 @@ Finally, the wiring is done in the following manner:
 
 {% highlight xml %}
 
-<os-core:space-proxy id="space" name="mySpace"/>
+<os-core:space id="space" url="jini://*/*/mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -500,7 +500,7 @@ An implementation of such an aspect can be configured as follows:
 
 {% highlight xml %}
 
-<os-core:space-proxy id="space" name="mySpace"/>
+<os-core:space  id="space" url="jini://*/*/mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -595,7 +595,7 @@ An implementation of such an aspect can be configured as follows:
 
 {% highlight xml %}
 
-<os-core:embedded-space id="space" name="mySpace"/>
+<os-core:space id="space" url="/./mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -676,7 +676,7 @@ The following snippets show how to plug a custom meta arguments handler to the c
 
 {% highlight xml %}
 
-<os-core:space-proxy id="space" name="mySpace"/>
+<os-core:space  id="space" url="jini://*/*/mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 

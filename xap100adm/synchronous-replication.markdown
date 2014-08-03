@@ -17,13 +17,13 @@ In a synchronous replication, the client receives acknowledgement for any replic
 In general you should have the `cluster-config.groups.group.repl-policy.replication-mode` property set to `sync`. See below example:
 
 {% highlight xml %}
-<os-core:embedded-space id="space" name="mySpace">
+<os-core:space id="space" url="/./mySpace">
     <os-core:properties>
         <props>
             <prop key="cluster-config.groups.group.repl-policy.replication-mode">sync</prop>
         </props>
     </os-core:properties>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 
 # When to Use Synchronous Replication
@@ -83,13 +83,13 @@ Prefix the property with 'cluster-config.groups.group.repl-policy.sync-replicati
 To change the default replication settings you should modify the space properties when deployed. You may set these properties via the pu.xml or programmatically. Here is an example how you can set the replication parameters when using the pu.xml:
 
 {% highlight xml %}
-<os-core:embedded-space id="space" name="mySpace">
+<os-core:space id="space" url="/./mySpace">
     <os-core:properties>
         <props>
             <prop key="cluster-config.groups.group.repl-policy.sync-replication.throttle-when-inactive">false</prop>
         </props>
     </os-core:properties>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 
 ## Asynchronous Operating State Related Configuration
@@ -115,13 +115,13 @@ Splitting large batches into chunks is defined using the `cluster-config.groups.
 {%accordion id=acc1%}
 {%accord title=Java ... pu.xml | parent=acc1%}
 {% highlight xml %}
-<os-core:embedded-space id="space" name="mySpace">
+<os-core:space id="space" url="/./mySpace">
     <os-core:properties>
         <props>
             <prop key="cluster-config.groups.group.repl-policy.sync-replication.multiple-opers-chunk-size">5000</prop>
         </props>
     </os-core:properties>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 {%endaccord%}
 

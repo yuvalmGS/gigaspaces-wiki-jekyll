@@ -41,7 +41,7 @@ Note that for property place holders we use the `${placeholder name`} notation.
     </props></property>
 </bean>
 
-<os-core:embedded-space id="space" name="mySpace" schema="${spaceSchema}" />
+<os-core:space id="space" url="/./mySpace" schema="${spaceSchema}" />
 
 <bean id="connBean" class="MyConnection">
     <property name="timeout" value="${connectionTimeout}" />
@@ -61,8 +61,8 @@ Note that for property place holders we use the `${placeholder name`} notation.
     </props></property>
 </bean>
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
     <property name="schema" value="${spaceSchema}" />
 </bean>
 
@@ -128,7 +128,7 @@ Here's an example for a space configured within the processing unit, and a prope
 
 {% highlight xml %}
 
-<os-core:embedded-space id="space" name="mySpace" />
+<os-core:space id="space" url="/./mySpace" />
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -136,8 +136,8 @@ Here's an example for a space configured within the processing unit, and a prope
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 {% endhighlight %}
 

@@ -76,7 +76,7 @@ also asynchronously persists the data using a mirror (see [MongoDB Space Synchro
 		<bean id="propertiesConfigurer" 
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" /> 
 
-		<os-core:embedded-space id="space" name="dataSourceSpace">
+		<os-core:space id="space" url="/./dataSourceSpace">
 			space-data-source="spaceDataSource" mirror="true" schema="persistent">
 			<os-core:properties>
 				<props>

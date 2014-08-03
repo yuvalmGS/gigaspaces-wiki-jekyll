@@ -64,13 +64,13 @@ This can be done by setting the following property:
 For example:
 
 {% highlight xml %}
-<os-core:embedded-space id="space" name="mySpace">
+<os-core:space id="space" url="/./mySpace">
     <os-core:properties>
         <props>
              <prop key="cluster-config.groups.group.repl-policy.permitted-operations">write, extend_lease, lease_expiration, notify</prop>
         </props>
     </os-core:properties>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 
 In the example above, the `take` and `update` operations are not replicated , while the `write`, `extend_lease`, `lease_expiration`, and `notify_registration` operations are replicated to all spaces.

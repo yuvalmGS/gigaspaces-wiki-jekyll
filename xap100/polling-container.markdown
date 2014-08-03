@@ -40,7 +40,7 @@ Here is a simple example of polling event container configuration:
 <!-- Enable support for @Polling annotation -->
 <os-events:annotation-support />
 
-<os-core:embedded-space id="space" name="mySpace"/>
+<os-core:space id="space" url="/./mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 {% endhighlight %}
@@ -68,7 +68,7 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<os-core:embedded-space id="space" name="mySpace"/>
+<os-core:space id="space" url="/./mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
 <bean id="simpleListener" class="SimpleListener" />
 <os-events:polling-container id="eventContainer" giga-space="gigaSpace">
@@ -92,8 +92,8 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -559,7 +559,7 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<os-core:embedded-space id="space" name="mySpace"/>
+<os-core:space id="space" url="/./mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -589,8 +589,8 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -683,7 +683,7 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<os-core:embedded-space id="space" name="mySpace"/>
+<os-core:space id="space" url="/./mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -716,8 +716,8 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -823,7 +823,7 @@ Both the receive operation and the actual event action can be configured to be p
 <!-- Enable support for @Polling annotation -->
 <os-events:annotation-support />
 
-<os-core:embedded-space id="space" name="mySpace"/>
+<os-core:space id="space" url="/./mySpace"/>
 
 <os-core:distributed-tx-manager id="transactionManager" />
 
@@ -853,7 +853,7 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<os-core:embedded-space id="space" name="mySpace"/>
+<os-core:space id="space" url="/./mySpace"/>
 
 <os-core:distributed-tx-manager id="transactionManager" />
 
@@ -883,8 +883,8 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="transactionManager" class="org.openspaces.core.transaction.manager.DistributedJiniTransactionManager"/>
@@ -958,7 +958,7 @@ Here is an example how timeout value (and transaction isolation) can be set with
 <!-- Enable support for @Polling annotation -->
 <os-events:annotation-support />
 
-<os-core:embedded-space id="space" name="mySpace"/>
+<os-core:space id="space" url="/./mySpace"/>
 
 <os-core:distributed-tx-manager id="transactionManager"/>
 
@@ -988,7 +988,7 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<os-core:embedded-space id="space" name="mySpace"/>
+<os-core:space id="space" url="/./mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -1018,8 +1018,8 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
@@ -1131,7 +1131,7 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<os-core:embedded-space id="space" name="mySpace"/>
+<os-core:space id="space" url="/./mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -1165,8 +1165,8 @@ public class SimpleListener {
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">

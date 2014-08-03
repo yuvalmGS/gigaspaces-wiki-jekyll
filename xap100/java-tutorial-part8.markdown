@@ -114,7 +114,7 @@ Here is the layout of the war file structure:
 
 For example in the pu.xml file we can define our space that we want to be accessible from the web application.
 {%highlight xml%}
-<os-core:embedded-space id="space" name="xapTutorialSpace" />
+<os-core:space id="space" url="/./xapTutorialSpace" />
 <os-core:giga-space id="xapTutorialSpace" space="space"/>
 {%endhighlight%}
 

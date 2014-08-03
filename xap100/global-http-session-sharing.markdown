@@ -407,15 +407,15 @@ The XAP IMDG should be deployed using one of the [topologies](/product_overview/
 {% endhighlight %}
 
 
-{% tip %}See the [deploy-space](/deploy-command-line-interface.html) command for details.{% endtip %}
+{% tip %}See the [deploy-space]({%currentadmurl%}/deploy-command-line-interface.html) command for details.{% endtip %}
 
 ### Deploying the WAN Gateway
 
-The [WAN Gateway](/multi-site-replication-over-the-wan.html) should be deployed using your preferred replication topography, such as multi-master or master-slave. See the [WAN Replication Gateway](/sbp/wan-replication-gateway.html) best practice for an example of how a multi-master Gateway architecture can be deployed.
+The [WAN Gateway]({%currentjavaurl%}/multi-site-replication-over-the-wan.html) should be deployed using your preferred replication topography, such as multi-master or master-slave. See the [WAN Replication Gateway](/sbp/wan-replication-gateway.html) best practice for an example of how a multi-master Gateway architecture can be deployed.
 
 ### Securing the XAP IMDG
 
-When using a [Secure XAP cluster](/securing-your-data.html) you can pass security credentials using following parameters in the `shiro.ini` file:
+When using a [Secure XAP cluster]({%currentsecurl%}/securing-your-data.html) you can pass security credentials using following parameters in the `shiro.ini` file:
 
 {%highlight console%}
 connector.username = user

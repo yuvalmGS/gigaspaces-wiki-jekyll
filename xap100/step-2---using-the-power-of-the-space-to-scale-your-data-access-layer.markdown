@@ -75,7 +75,7 @@ The clinic service relies on a connection to the remote space. This connection i
 
 {% highlight xml %}
 ...
- <os-core:space-proxy id="space" name="petclinic"   lookup-timeout="20000" lookup-groups="${user.name}"/>
+ <os-core:space  id="space" url="jini://*/*/petclinic"   lookup-timeout="20000" lookup-groups="${user.name}"/>
 
     <os-core:distributed-tx-manager id="jiniTransactionManager" />
 

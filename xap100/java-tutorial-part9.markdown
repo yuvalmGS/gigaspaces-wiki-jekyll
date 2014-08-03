@@ -63,12 +63,12 @@ http://www.openspaces.org/schema/archive http://www.openspaces.org/schema/9.1/ar
 <os-archive:annotation-support />
 
 <!-- Register the Space Type ---->
-<os-core:embedded-space id="space" name="auditSpace">
+<os-core:space id="space" url="/./auditSpace">
 	<os-core:space-type type-name="AuditRecord">
 	     <os-core:id property="id" />
 	     <os-core:routing property="id" />
 	</os-core:space-type>
-</os-core:embedded-space>
+</os-core:space>
 
 <os-core:distributed-tx-manager id="transactionManager" />
 

@@ -56,7 +56,7 @@ Here is a simple example of an archive container configuration:
 <!-- Enable support for @Archive annotation -->
 <os-archive:annotation-support />
 
-<os-core:embedded-space id="space" name="space" />
+<os-core:space id="space" url="/./space" />
 
 <os-core:distributed-tx-manager id="transactionManager" space="space"/>
 
@@ -92,7 +92,7 @@ public class ExpiredTweetsArchiveContainer {
 
 {% highlight xml %}
 
-<os-core:embedded-space id="space" name="space" />
+<os-core:space id="space" url="/./space" />
 
 <os-core:distributed-tx-manager id="transactionManager" space="space"/>
 
@@ -137,8 +137,8 @@ public class ExpiredTweetsFilter implements DynamicEventTemplateProvider{
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">

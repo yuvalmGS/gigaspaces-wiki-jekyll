@@ -58,7 +58,7 @@ public class MySpaceSynchronizationEndpoint extends SpaceSynchronizationEndpoint
 Once you have an implementation that supports some or all of the change operations, the space need to be configured in a way which specifies which change operations are supported by the mirror, and that is in order for it to know which operations can be sent to the mirror as change and which operations needs to be converted to full update. following an example of how to configure a space with mirror which supports: `set`, `unset` and `increment` change operations.
 
 {% highlight xml %}
-<os-core:embedded-space id="space" name="mySpace" mirror="true">
+<os-core:space id="space" url="/./mySpace" mirror="true">
     <os-core:properties>
         <props>
             <prop key="cluster-config.mirror-service.change-support">

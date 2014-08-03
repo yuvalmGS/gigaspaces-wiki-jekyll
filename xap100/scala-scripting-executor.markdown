@@ -20,7 +20,7 @@ Here is how you would configure a processing unit to run a scripting executor wi
 ## Processing Unit Configuration
 
 {% highlight xml %}
-<os-core:embedded-space id="space" name="mySpace"/>
+<os-core:space id="space" url="/./mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -47,7 +47,7 @@ Here is how you would configure a processing unit to run a scripting executor wi
 ## Client Side Configuration
 
 {% highlight xml %}
-<os-core:space-proxy id="space" name="mySpace"/>
+<os-core:space  id="space" url="jini://*/*/mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 

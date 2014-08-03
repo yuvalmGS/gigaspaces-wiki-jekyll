@@ -49,14 +49,14 @@ The following parameters are low level configuration that relates to the swap re
 Here is an example how you should use the above:
 
 {% highlight xml %}
-<os-core:embedded-space id="space" name="mySpace" mirror="true">
+<os-core:space id="space" url="/./mySpace" mirror="true">
     <os-core:properties>
 	<props>
 	    <prop key="cluster-config.groups.group.repl-policy.redo-log-capacity">100000</prop>
 	    <prop key="cluster-config.groups.group.repl-policy.redo-log-memory-capacity">100</prop>
 	</props>
     </os-core:properties>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 
 For all of these parameters, -1 specifies unlimited behavior. When the memory capacity is smaller than the entire capacity, if the memory capacity is reached, the redo log stores the remaining packets on the disk, thus preventing the JVM from running out of memory when the redo log size is increasing for the reasons mentioned above.

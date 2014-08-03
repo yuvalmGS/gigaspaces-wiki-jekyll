@@ -203,9 +203,9 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 
 {% tabcontent Spring %}
 {%highlight xml%}
-<os-core:embedded-space id="space" name="xapTutorialSpace">
+<os-core:space id="space" url="/./xapTutorialSpace">
     <os-core:security secured="true" />
-</os-core:embedded-space>
+</os-core:space>
 {%endhighlight %}
 {% endtabcontent  %}
 {% endinittab %}
@@ -225,9 +225,9 @@ public void setupSpace()
 {% endtabcontent  %}
 {% tabcontent Spring %}
 {%highlight xml%}
-<os-core:space-proxy id="space" name="xapTutorialSpace">
+<os-core:space  id="space" url="jini://*/*/xapTutorialSpace">
     <os-core:security username="student" password="student123" />
-</os-core:space-proxy>
+</os-core:space>
 {%endhighlight %}
 {% endtabcontent  %}
 {% endinittab %}

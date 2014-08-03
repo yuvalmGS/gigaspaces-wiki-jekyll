@@ -174,7 +174,7 @@ high_watermark_percentage >= write_only_block_percentage >= write_only_check_per
 See below example how you can configure the LRU eviction settings:
 
 {% highlight java %}
-<os-core:embedded-space id="space" name="mySpace">
+<os-core:space id="space" url="/./mySpace">
   <os-core:properties>
 	<props>
 	    <prop key="space-config.engine.memory_usage.enabled">true</prop>
@@ -190,7 +190,7 @@ See below example how you can configure the LRU eviction settings:
 	    <prop key="space-config.engine.memory_usage.explicit-gc">false</prop>
 	</props>
     </os-core:properties>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 
 # LRU Touch Activity
@@ -209,7 +209,7 @@ When the `space-config.engine.memory_usage` is `true` (evicting data from the sp
 The combination of large `space-config.engine.initial_load` and a large `space-config.engine.cache_size`, may lead to out-of-memory problems. To avoid this, configure the `space-config.engine.initial_load` to have a low value. With the example below, each partition will load 100000 objects - 10% out of the `space-config.engine.cache_size`:
 
 {% highlight xml %}
-<os-core:embedded-space id="space" name="mySpace" schema="persistent" external-data-source="hibernateDataSource">
+<os-core:space id="space" url="/./mySpace" schema="persistent" external-data-source="hibernateDataSource">
     <os-core:properties>
         <props>
 	    <prop key="space-config.engine.memory_usage.enabled">true</prop>
@@ -220,7 +220,7 @@ The combination of large `space-config.engine.initial_load` and a large `space-c
             <prop key="cluster-config.cache-loader.central-data-source">true</prop>
         </props>
     </os-core:properties>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 
 The `space-config.engine.initial_load_class` property can be used to specify specific class(s) data to load.
@@ -243,7 +243,7 @@ you should:
 Here are good settings for a JVM with a **2G heap size** and a 5K object size. With the following settings, eviction happens once the JVM consumes more than 1.4 G.
 
 {% highlight xml %}
-<os-core:embedded-space id="space" name="mySpace" schema="persistent" external-data-source="hibernateDataSource">
+<os-core:space id="space" url="/./mySpace" schema="persistent" external-data-source="hibernateDataSource">
     <os-core:properties>
         <props>
 	    <prop key="space-config.engine.cache_policy">0</prop>
@@ -259,7 +259,7 @@ Here are good settings for a JVM with a **2G heap size** and a 5K object size. W
 	    <prop key="space-config.engine.memory_usage.retry_yield_time">4000</prop>
 	</props>
     </os-core:properties>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 
 Here are the Java arguments (using incremental GC) to use for the JVM running the Space/GSC:

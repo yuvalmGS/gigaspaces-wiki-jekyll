@@ -61,7 +61,7 @@ A Data-Grid running in Direct persistency mode using central database topology, 
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
 
-<os-core:embedded-space id="space" name="space" schema="persistent" space-data-source="hibernateSpaceDataSource"
+<os-core:space id="space" url="/./space" schema="persistent" space-data-source="hibernateSpaceDataSource"
          space-sync-endpoint="hibernateSpaceSynchronizationEndpoint">
     <os-core:properties>
         <props>
@@ -71,7 +71,7 @@ A Data-Grid running in Direct persistency mode using central database topology, 
             <prop key="cluster-config.cache-loader.central-data-source">true</prop>
         </props>
     </os-core:properties>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 
 {% anchor distributed %}
@@ -90,7 +90,7 @@ A Data-Grid running in Direct persistency mode using distributed databases topol
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
 
-<os-core:embedded-space id="space" name="space" schema="persistent" space-data-source="hibernateSpaceDataSource">
+<os-core:space id="space" url="/./space" schema="persistent" space-data-source="hibernateSpaceDataSource">
          space-sync-endpoint="hibernateSpaceSynchronizationEndpoint">
     <os-core:properties>
         <props>
@@ -100,7 +100,7 @@ A Data-Grid running in Direct persistency mode using distributed databases topol
             <prop key="cluster-config.cache-loader.central-data-source">false</prop>
         </props>
     </os-core:properties>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 
 {% refer %}See the [Space Persistency](./space-persistency.html) section for full details about the properties you may configure.{% endrefer %}

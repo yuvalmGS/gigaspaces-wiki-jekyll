@@ -59,14 +59,14 @@ The following Spring configuration registers this filter for before write (`0`),
 
 <bean id="simpleFilter" class="eg.SimpleFilter" />
 
-<os-core:embedded-space id="space" name="mySpace">
+<os-core:space id="space" url="/./mySpace">
     <os-core:space-filter priority="2">
         <os-core:filter ref="simpleFilter" />
         <os-core:operation code="0" />
         <os-core:operation code="2" />
         <os-core:operation code="3" />
     </os-core:space-filter>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -172,12 +172,12 @@ The delegate filter shown above, can be configured in Spring using the following
 
 <bean id="simpleFilter" class="test.SimpleFilter" />
 
-<os-core:embedded-space id="space" name="mySpace">
+<os-core:space id="space" url="/./mySpace">
     <os-core:annotation-adapter-filter priority="2">
 
         <os-core:filter ref="simpleFilter" />
     </os-core:annotation-adapter-filter>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -210,14 +210,14 @@ The following Spring configuration XML shows how the filter can be configured, u
 
 <bean id="simpleFilter" class="test.SimpleFilter" />
 
-<os-core:embedded-space id="space" name="spaceAdapterSimpleFilterMethod">
+<os-core:space id="space" url="/./spaceAdapterSimpleFilterMethod">
     <os-core:method-adapter-filter priority="2"
                                    filter-init="init" filter-close="close"
                                    before-write="beforeWrite" after-write="afterWrite"
                                    before-read="beforeRead" before-take="beforeTake">
         <os-core:filter ref="simpleFilter"/>
     </os-core:method-adapter-filter>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -287,12 +287,12 @@ The following configuration shows how it can be injected:
 
 <bean id="simpleReplicationFilter" class="eg.SimpleReplicationFilter" />
 
-<os-core:embedded-space id="space" name="mySpace">
+<os-core:space id="space" url="/./mySpace">
     <os-core:space-replication-filter>
         <os-core:input-filter ref="simpleReplicationFilter" />
         <os-core:output-filter ref="simpleReplicationFilter" />
     </os-core:space-replication-filter>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 
 {% endtabcontent %}

@@ -45,13 +45,13 @@ Example : To increase the lookup duration timeout to 5 minutes you should have t
 {% inittab os_simple_space|top %}
 {% tabcontent Namespace %}
 {% highlight xml %}
-<os-core:space-proxy id="space" name="mySpace">
+<os-core:space  id="space" name="mySpace">
     <os-core:properties>
  	    <props>
  	        <prop key="space-config.proxy.router.active-server-lookup-timeout">300000</prop>
  	    </props>
  	</os-core:properties>
-</os-core:space-proxy>
+</os-core:space>
 {% endhighlight %}
 {% endtabcontent %}
 {% tabcontent Plain XML %}

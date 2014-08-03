@@ -524,14 +524,14 @@ The JDBC Driver should be configured using the following properties. These shoul
 Example:
 
 {% highlight xml %}
-<os-core:embedded-space id="space" name="space" >
+<os-core:space id="space" url="/./space" >
     <os-core:properties>
         <props>
             <prop key="space-config.QueryProcessor.transaction_timeout">50000</prop>
             <prop key="space-config.QueryProcessor.date_format">yyyy-MM-dd</prop>
         </props>
     </os-core:properties>
-</os-core:embedded-space>
+</os-core:space>
 {% endhighlight %}
 
 # JDBC Error Codes

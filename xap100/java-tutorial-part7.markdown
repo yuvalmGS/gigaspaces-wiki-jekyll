@@ -162,7 +162,7 @@ Next, we setup the Spring configuration for Hibernate:
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
 
-<os-core:embedded-space id="space" name="xapTutorialSpace" schema="persistent"
+<os-core:space id="space" url="/./xapTutorialSpace" schema="persistent"
      space-data-source="hibernateSpaceDataSource" 
      space-sync-endpoint="hibernateSpaceSynchronizationEndpoint"/>
     <os-core:properties>
@@ -171,7 +171,7 @@ Next, we setup the Spring configuration for Hibernate:
             <prop key="cluster-config.cache-loader.central-data-source">true</prop>
         </props>
     </os-core:properties>
-</os-core:embedded-space>
+</os-core:space>
 {%endhighlight %}
 
 {%note%}Notice that we are defining the space in the configuration with schema="persistent"{%endnote%}
