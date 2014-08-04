@@ -45,11 +45,11 @@ gs deploy -properties embed://jetty.sessions.spaceUrl=jini://*/*/sessionSpace?us
 
 ## Using Spring
 
-When deploying, include within the **META-INF/spring/pu.properties** file the **jetty.sessions.spaceUrl** property value. This should be set with the space url defining where the sessions will be stored.
+When deploying, include within the `META-INF/spring/pu.properties` file the `jetty.sessions.spaceUrl` property value. This should be set with the space url defining where the sessions will be stored.
 
-For example, if the session will be stored on a remote clustered Space with local cache, the URL can be: **jini://*/*/sessionSpace?useLocalCache** (assuming the name of the Space is _sessionSpace_). If the session should be stored on a Space that should be started within the web application (in a collocated manner) in a sync_replicated cluster schema (for example), then the url can be **/./sessionSpace?cluster_schema=sync_replicated** (note, cluster ids will be automatically set based on the number of web applications deployed).
+For example, if the session will be stored on a remote clustered Space with local cache, the URL can be: `jini://*/*/sessionSpace?useLocalCache` (assuming the name of the Space is _sessionSpace_). If the session should be stored on a Space that should be started within the web application (in a collocated manner) in a sync_replicated cluster schema (for example), then the url can be `/./sessionSpace?cluster_schema=sync_replicated` (note, cluster ids will be automatically set based on the number of web applications deployed).
 
-In case there is already a Space configured within the web application. For example, defined within **META-INF/spring/pu.xml**, it can be used as the Space where sessions will be stored as well. In this case, the **jetty.sessions.spaceUrl** can use the special prefix **bean**. For example, if the Space was defined as a bean with id of **sessionSpace**, the  **jetty.sessions.spaceUrl** can be set to **bean://sessionSpace**.
+In case there is already a Space configured within the web application. For example, defined within `META-INF/spring/pu.xml`, it can be used as the Space where sessions will be stored as well. In this case, the `jetty.sessions.spaceUrl` can use the special prefix `bean`. For example, if the Space was defined as a bean with id of `sessionSpace`, the  `jetty.sessions.spaceUrl` can be set to `bean://sessionSpace`.
 
 {% tip %}
 See the [Quick Start Guide](./step-2---enabling-http-session-failover-and-fault-tolerance.html) for an example how to use the HTTP Session Management.
@@ -69,7 +69,7 @@ Controlling the session Management done via the following properties:
 |`jetty.sessions.lease`| The lease of the [SessionData](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/jee/sessions/jetty/SessionData.html) that is written to the Space |Long.MAX_VALUE | No |
 
 {% info %}
-XAP integration implements Jetty `SessionManager` and `SessionIdManager` in `GigaSesssionManager` and `GigaSessionIdManager`. When setting the **jetty.sessions.spaceUrl** they get automatically set as the session manager and session id manager of the web app.
+XAP integration implements Jetty `SessionManager` and `SessionIdManager` in `GigaSesssionManager` and `GigaSessionIdManager`. When setting the `jetty.sessions.spaceUrl` they get automatically set as the session manager and session id manager of the web app.
 {%endinfo%}
 
 # Deployment Topologies
