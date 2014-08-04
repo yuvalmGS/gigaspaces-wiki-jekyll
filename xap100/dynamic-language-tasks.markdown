@@ -100,7 +100,7 @@ On the client side Spring XML configuration, the following needs to be defined (
 
 {% highlight xml %}
 
-<os-core:space id="space" url="jini://*/*/mySpace"/>
+<os-core:space-proxy id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 

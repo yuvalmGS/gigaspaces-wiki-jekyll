@@ -724,7 +724,7 @@ The last thing we need in order to tie all of this together is a configuration f
     </property>
   </bean>
 
-  <os-core:space  id="space" url="jini://*/*/orderManagement"/>
+  <os-core:space-proxy id="space" name="orderManagement"/>
 
   <os-core:giga-space id="gigaSpace" space="space"/>
 </beans>

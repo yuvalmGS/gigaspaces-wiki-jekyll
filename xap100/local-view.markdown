@@ -40,7 +40,7 @@ Creating a local view is similar to creating a [`GigaSpace`](./the-gigaspace-int
 {% tabcontent Spring Namespace Configuration %}
 
 {% highlight xml %}
-<os-core:space  id="space" url="jini://*/*/mySpace"/>
+<os-core:space-proxy  id="space" name="mySpace"/>
 
 <os-core:local-view id="localViewSpace" space="space">
     <os-core:properties>

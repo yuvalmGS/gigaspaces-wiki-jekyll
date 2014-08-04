@@ -49,7 +49,7 @@ GigaSpace space = new GigaSpaceConfigurer( new UrlSpaceConfigurer("jini://*/*/sp
 or
 
 {% highlight java %}
-<os-core:space  id="space" url="jini://*/*/mySpace"  versioned="true" />
+<os-core:space-proxy  id="space" name="mySpace"  versioned="true" />
 {% endhighlight %}
 
 #### Step 2 -- Enable the Space Class to Support Optimistic Locking

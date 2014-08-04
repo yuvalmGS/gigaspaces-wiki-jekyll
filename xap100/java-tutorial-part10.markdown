@@ -225,9 +225,9 @@ public void setupSpace()
 {% endtabcontent  %}
 {% tabcontent Spring %}
 {%highlight xml%}
-<os-core:space  id="space" url="jini://*/*/xapTutorialSpace">
+<os-core:space-proxy id="space" name="xapTutorialSpace">
     <os-core:security username="student" password="student123" />
-</os-core:space>
+</os-core:space-proxy>
 {%endhighlight %}
 {% endtabcontent  %}
 {% endinittab %}

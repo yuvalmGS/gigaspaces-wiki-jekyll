@@ -376,7 +376,7 @@ Declaring a remote space with a transaction manager:
 {% highlight xml %}
 <tx:annotation-driven transaction-manager="transactionManager"/>
 
-<os-core:space id="space" url="jini://*/*/space" />
+<os-core:space-proxy id="space" name="space" />
 <os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
 {% endhighlight %}
 
@@ -384,7 +384,7 @@ Declaring a remote space with a transaction manager:
 Declaring a remote space with a transaction manager and creating an embedded space:
 
 {% highlight xml %}
-<os-core:space id="spaceRemote" url="jini://*/*/space" />
+<os-core:space-proxy id="spaceRemote" name="space" />
 <os-core:giga-space id="gigaSpaceRemote" space=" spaceRemote"  tx-manager="transactionManager1"/>
 
 <os-core:space id="spaceEmbed" url="/./space" />
@@ -394,7 +394,7 @@ Declaring a remote space with a transaction manager and creating an embedded spa
 Declaring a remote space creating a local view:
 
 {% highlight xml %}
-<os-core:space id="spaceRemote" url="jini://*/*/space" />
+<os-core:space-proxy id="spaceRemote" name="space" />
 <os-core:local-view id="localViewSpace" space="spaceRemote">
 	<os-core:view-query class="com.example.Message1" where="processed = true"/>
 </os-core:local-view>
@@ -404,7 +404,7 @@ Declaring a remote space creating a local view:
 Declaring a remote space with a local view , a regular remote space (without a view) and an embedded space:
 
 {% highlight xml %}
-<os-core:space id="spaceRemote" url="jini://*/*/space" />
+<os-core:space-proxy id="spaceRemote" name="space" />
 	<os-core:local-view id="localViewSpace" space="spaceRemote">
 	<os-core:view-query class="com.example.Message1" where="processed = true"/>
 </os-core:local-view>

@@ -121,7 +121,7 @@ A typical usage pattern is connecting remotely to a Space. Here is an example (e
 
 {% highlight xml %}
 
-<os-core:space  id="space" url="jini://*/*/mySpace" />
+<os-core:space-proxy id="space" name="mySpace" />
 <os-core:giga-space id="gigaSpace" space="space"/>
 {% endhighlight %}
 

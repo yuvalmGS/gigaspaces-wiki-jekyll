@@ -265,7 +265,7 @@ Here is an example of how you would do this programmatically, or via Spring conf
 {% inittab simple_Space|top %}
 {% tabcontent Spring Configuration NameSpace %}
 {% highlight xml %}
-<os-core:space id="space" url="jini://*/*/mySpace" />
+<os-core:space-proxy id="space" name="mySpace" />
 {% endhighlight %}
 {% endtabcontent %}
 {% tabcontent Spring Configuration Plain %}
@@ -348,7 +348,7 @@ Creating a `GigaSpace` instance is done by wrapping an existing IJSpace instance
 
 {% highlight xml %}
 
-<os-core:space  id="space" url="jini://*/*/mySpace" />
+<os-core:space-proxy  id="space" name="mySpace" />
 <os-core:giga-Space id="gigaSpace" space="space"/>
 {% endhighlight %}
 

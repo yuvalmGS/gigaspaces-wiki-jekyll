@@ -143,8 +143,8 @@ GigaSpace space = new GigaSpaceConfigurer( new UrlSpaceConfigurer("jini://*/*/xa
 {% endtabcontent %}
 
 {% tabcontent Spring %}
-{%highlight java%}
-    <os-core:space  id="space" url="jini://*/*/xapTutorialSpace"  versioned="true" />
+{%highlight xml%}
+    <os-core:space-proxy id="space" name="xapTutorialSpace"  versioned="true" />
 {%endhighlight%}
 {% endtabcontent %}
 {% endinittab %}

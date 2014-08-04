@@ -56,7 +56,7 @@ Here is a very simple example how a client application can create a `GigaMap` in
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space  id="space" url="jini://*/*/mySpace"/>
+<os-core:space-proxy id="space" name="mySpace"/>
 <os-core:map id="map" space="space"/>
 <os-core:giga-map id="gigaMap" map="map" />
 {% endhighlight %}
@@ -161,7 +161,7 @@ Here is an example for a `GigaMap` construct with a local cache:
 
 {% highlight xml %}
 
-<os-core:space id="space" url="jini://*/*/mySpace"/>
+<os-core:space-proxy id="space" name="mySpace"/>
 
 <bean id="evictionStrategy" class="com.j_spaces.map.eviction.FIFOEvictionStrategy">
     <property name="batchSize" value="1000"/>
@@ -298,7 +298,7 @@ GigaSpaces supports three isolation levels: `READ_UNCOMMITTED`, `READ_COMMITTED`
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space  id="space" url="jini://*/*/mySpace"/>
+<os-core:space-proxy id="space" name="mySpace"/>
 <os-core:map id="map" space="space"/>
 <os-core:giga-map id="gigaMap" map="map" default-isolation-level="READ_COMMITTED"/>
 {% endhighlight %}

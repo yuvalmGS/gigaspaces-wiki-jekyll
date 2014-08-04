@@ -204,7 +204,7 @@ Configuring the `IDataProcessor` proxy can done in the following manner:
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space  id="space" url="jini://*/*/mySpace"/>
+<os-core:space-proxy  id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -327,7 +327,7 @@ Finally, the wiring is done in the following manner:
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space  id="space" url="jini://*/*/mySpace"/>
+<os-core:space-proxy  id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -521,7 +521,7 @@ Client pu.xml
 
 {% highlight xml %}
 <context:component-scan base-package="com.demo"/>
-<os-core:space  id="space" url="jini://*/*/mySpace"/>
+<os-core:space-proxy id="space" name="mySpace"/>
 
 <os-core:distributed-tx-manager id="myTransactionManager" />
 <os-core:giga-space id="gigaspace" space="space"  tx-manager="myTransactionManager"/>
@@ -623,7 +623,7 @@ An implementation of such an aspect can be configured as follows:
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space  id="space" url="jini://*/*/mySpace"/>
+<os-core:space-proxy  id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -785,7 +785,7 @@ The following snippets show how to plug a custom meta arguments handler to the c
 
 {% highlight xml %}
 
-<os-core:space  id="space" url="jini://*/*/mySpace"/>
+<os-core:space-proxy  id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -865,7 +865,7 @@ The configuration of enabling broadcasting is done on the client level, by setti
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="jini://*/*/mySpace"/>
+<os-core:space-proxy id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 

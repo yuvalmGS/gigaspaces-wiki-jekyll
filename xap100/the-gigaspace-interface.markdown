@@ -105,7 +105,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("jini://*/*
 
 {% highlight xml %}
 
-<os-core:space  id="space" url="jini://*/*/mySpace"/>
+<os-core:space-proxy  id="space" name="mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
 {% endhighlight %}
 
@@ -164,7 +164,7 @@ GigaSpace localCache = new GigaSpaceConfigurer(localCacheConfigurer).gigaSpace()
 {% tabcontent   Namespace   %}
 
 {% highlight xml %}
-<os-core:space  id="space" url="jini://*/*/mySpace"/>
+<os-core:space-proxy  id="space" name="mySpace"/>
 <os-core:local-cache id="localCacheSpace" space="space"/>
 <os-core:giga-space id="localCache" space="localCacheSpace"/>
 {% endhighlight %}
@@ -220,7 +220,7 @@ GigaSpace localView = new GigaSpaceConfigurer(localViewConfigurer).gigaSpace();
 {% tabcontent   Namespace   %}
 
 {% highlight xml %}
-<os-core:space  id="space" url="jini://*/*/mySpace" />
+<os-core:space-proxy id="space" name="mySpace" />
 
 <os-core:local-view id="localViewSpace" space="space">
     <os-core:view-query class="Message" where="processed = true"/>
@@ -321,9 +321,9 @@ A secured space should be configured with a security context so that it can be a
 
 {% highlight xml %}
 
-<os-core:space  id="space" url="jini://*/*/mySpace">
+<os-core:space-proxy id="space" name="mySpace">
     <os-core:security username="sa" password="adaw@##$" />
-</os-core:space>
+</os-core:space-proxy>
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -352,9 +352,9 @@ Here is an example of how to define security with an embedded space. In this cas
 
 {% highlight xml %}
 
-<os-core:space  id="space" url="jini://*/*/mySpace">
+<os-core:space-proxy  id="space" name="mySpace">
     <os-core:security username="sa" password="adaw@##$" />
-</os-core:space>
+</os-core:space-proxy>
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -419,7 +419,7 @@ When constructing a space, it is possible to provide [Space Persistency](./space
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
 
-<os-core:space  id="space" url="jini://*/*/mySpace" schema="persistent" space-data-source="hibernateSpaceDataSource" />
+<os-core:space-proxy  id="space" name="mySpace" schema="persistent" space-data-source="hibernateSpaceDataSource" />
 {% endhighlight %}
 
 {% endtabcontent %}
