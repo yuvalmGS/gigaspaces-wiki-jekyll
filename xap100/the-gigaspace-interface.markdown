@@ -52,7 +52,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(new UrlSpaceConfigurer("/./mySpace
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
 {% endhighlight %}
 

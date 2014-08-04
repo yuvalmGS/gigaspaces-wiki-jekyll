@@ -103,7 +103,7 @@ To create a `GigaMap` for a co-located (embedded) space the space URL should use
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space  id="space" name="mySpace"/>
 <os-core:map id="map" space="space"/>
 <os-core:giga-map id="gigaMap" map="map" />
 {% endhighlight %}
@@ -456,7 +456,7 @@ The decision of working directly with a cluster member or against the whole clus
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space  id="space" name="mySpace"/>
 
 <!-- By default, since we are starting in embedded mode, clustered=false -->
 <os-core:map id="directMap" space="space"/>

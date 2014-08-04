@@ -54,7 +54,7 @@ Below is an example of how it can be defined in a Spring application context:
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:distributed-tx-manager id="transactionManager" />
 
@@ -101,7 +101,7 @@ For example, to change the default timeout to 2 minutes, use the following confi
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:distributed-tx-manager id="transactionManager" default-timeout="120"/>
 
@@ -161,7 +161,7 @@ Below is an example of how it can be defined in a Spring application context:
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:jini-tx-manager id="transactionManager" lookup-timeout="5000" />
 
@@ -209,7 +209,7 @@ The Jini lookup transaction manager allows to set the default timeout value for 
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:jini-tx-manager id="transactionManager" default-timeout="1000"/>
 
@@ -270,7 +270,7 @@ Here is an example of how this can be configured:
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:distributed-tx-manager id="transactionManager" >
     <os-core:renew pool-size="2" duration="1000" round-trip-time="500" />
@@ -333,7 +333,7 @@ GigaSpaces can be used within an XA transaction using JTA. The OpenSpaces API al
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <bean id="jotm" class="org.springframework.transaction.jta.JotmFactoryBean" />
 
@@ -463,7 +463,7 @@ To enable the declarative transaction management:
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
        http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{%currentversion%}/remoting/openspaces-remoting.xsd">
 
-	<os-core:space id="space" url="/./mySpace"/>
+	<os-core:embedded-space id="space" name="mySpace"/>
 
 	<os-core:giga-space id="gigaSpace" space="space" tx-manager="transactionManager"/>
 

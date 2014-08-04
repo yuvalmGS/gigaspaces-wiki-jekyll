@@ -67,7 +67,7 @@ with the following Processing Unit definition:
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="space" />
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 

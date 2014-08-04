@@ -90,7 +90,7 @@ The next step is exporting the service over the space. Exporting the service is 
 <!-- Support the @RemotingService annotation on a service-->
 <os-remoting:annotation-support />
 
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -108,7 +108,7 @@ The next step is exporting the service over the space. Exporting the service is 
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -595,7 +595,7 @@ An implementation of such an aspect can be configured as follows:
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 

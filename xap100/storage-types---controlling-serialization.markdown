@@ -87,13 +87,13 @@ Specifying space level storage type can be done using any of the following:
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./mySpace">
+<os-core:embedded-space id="space" name="mySpace">
     <os-core:properties>
         <props>
             <prop key="space-config.serialization-type">1</prop>
         </props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 {% endtabcontent %}

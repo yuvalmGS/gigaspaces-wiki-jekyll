@@ -46,7 +46,7 @@ There is no need to have a setter for the GigaSpace instance, and by annotating 
 
  <os-core:giga-space-context/>
 
- <os-core:space id="space" url="/./mySpace"/>
+ <os-core:embedded-space id="space" name="mySpace"/>
 
  <os-core:giga-space id="directGigaSpace" space="space"/>
 
@@ -113,7 +113,7 @@ There is no need to have a setter for the `GigaSpace` instance, and by annotatin
 
 <os-core:giga-space-late-context/>
 
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 

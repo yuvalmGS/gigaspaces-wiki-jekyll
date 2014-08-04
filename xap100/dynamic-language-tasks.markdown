@@ -28,7 +28,7 @@ The first step in using scripting is exposing the built in scripting service ove
      <os-remoting:service ref="scriptingExecutor"/>
 </os-remoting:service-exporter>
 
-<os-core:space id="space" url="/./mySpace"
+<os-core:embedded-space id="space" name="mySpace"
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 

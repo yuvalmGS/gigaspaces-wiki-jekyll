@@ -189,12 +189,12 @@ In such a case you could disable the `Blocking Reliable Take` activity by using 
 Here is how you can configure the space to disable the Blocking Reliable Take activity:
 
 {% highlight xml %}
-<os-core:space id="space" url="/./mySpace">
+<os-core:embedded-space id="space" name="mySpace">
     <os-core:properties>
         <props>
             <prop key="space-config.engine.reliable_take">false</prop>
         </props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 

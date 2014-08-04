@@ -93,9 +93,9 @@ In order to start a space with custom eviction policy it should be configured as
 {% highlight xml %}
 <bean id="myCustomEvictionStrategy" class="org.mypackage.MyCustomEvictionStrategy" />
 
-<os-core:space id="space" url="/./mySpace">
+<os-core:embedded-space id="space" name="mySpace">
   <os-core:custom-cache-policy size="1000" initial-load-percentage="20"	space-eviction-strategy="myCustomEvictionStrategy"/>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 {% endtabcontent %}

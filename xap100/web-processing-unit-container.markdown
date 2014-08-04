@@ -167,7 +167,7 @@ Here is an example that starts an embedded Space as part of the web application 
 {% tabcontent Spring Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="clusteredGigaSpace" space="space" clustered="true"/>
 {% endhighlight %}
 

@@ -67,7 +67,7 @@ The Data-Grid Space settings would look like this:
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
 
-<os-core:space id="space" url="/./space" schema="persistent"
+<os-core:embedded-space  id="space" name="space" schema="persistent"
     mirror="true" space-data-source="hibernateSpaceDataSource">
     <os-core:properties>
         <props>
@@ -84,7 +84,7 @@ The Data-Grid Space settings would look like this:
             <prop key="cluster-config.groups.group.repl-policy.repl-original-state">true</prop>
         </props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 The above example:
@@ -123,7 +123,7 @@ The following configuration shows how to configure a processing unit, to act as 
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
 
-<os-core:mirror id="mirror" url="/./mirror-service" space-sync-endpoint="hibernateSpaceSynchronizationEndpoint" operation-grouping="group-by-replication-bulk">
+<os-core:mirror id="mirror" name="mirror-service" space-sync-endpoint="hibernateSpaceSynchronizationEndpoint" operation-grouping="group-by-replication-bulk">
     <os-core:source-space name="mySpace" partitions="2" backups="1"/>
 </os-core:mirror>
 {% endhighlight %}
@@ -131,7 +131,7 @@ The following configuration shows how to configure a processing unit, to act as 
 The OpenSpaces mirror name space is a syntactic sugar and it is equivalent to the following configuration using regular space properties:
 
 {% highlight xml %}
-<os-core:space id="space" url="/./mirror-service" schema="mirror" space-sync-endpoint="hibernateSpaceSynchronizationEndpoint">
+<os-core:embedded-space id="space" name="mirror-service" schema="mirror" space-sync-endpoint="hibernateSpaceSynchronizationEndpoint">
     <os-core:properties>
 	<props>
              <prop key="space-config.mirror-service.cluster.name">mySpace</prop>
@@ -140,7 +140,7 @@ The OpenSpaces mirror name space is a syntactic sugar and it is equivalent to th
 	     <prop key="space-config.mirror-service.operation-grouping">group-by-replication-bulk</prop>
 	</props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 - The above configuration constructs a Mirror Service using GigaSpaces built-in [Hibernate Space Persistency](./hibernate-space-persistency.html). The `hibernateSpaceSynchronizationEndpoint` should have its `sessionFactory` injected.

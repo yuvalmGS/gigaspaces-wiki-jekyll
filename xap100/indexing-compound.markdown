@@ -58,11 +58,11 @@ A Compound Index can be defined within the gs.xml configuration file. Example: T
 A Compound Space Index of a [space Document](./document-api.html) can be described by `pu.xml` configuration file. Example:
 
 {% highlight xml %}
-<os-core:space id="space" url="/./space" >
+<os-core:embedded-space id="space" name="space" >
 	<os-core:space-type type-name="Data">
 		<os-core:compound-index paths="data1,data2"/>
 	</os-core:space-type>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 ## Creating a Compound Index Dynamically

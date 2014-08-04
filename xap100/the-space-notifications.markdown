@@ -125,7 +125,7 @@ Space mode registration can be overridden and explicitly set within the space fa
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./space" register-for-space-mode-notifications="false" />
+<os-core:embedded-space id="space" name="space" register-for-space-mode-notifications="false" />
 {% endhighlight %}
 
 {% endtabcontent %}

@@ -83,7 +83,7 @@ The following example shows how to configure a space with a Hibernate `SpaceData
     <property name="sessionFactory" ref="sessionFactory"/>
     <property name="initialLoadChunkSize" value="2000"/>
 </bean>
-<os-core:space id="space" url="/./space" schema="persistent"
+<os-core:embedded-space  id="space" name="space" schema="persistent"
     mirror="true" space-data-source="hibernateSpaceDataSource">
     <os-core:properties>
         <props>
@@ -91,7 +91,7 @@ The following example shows how to configure a space with a Hibernate `SpaceData
             <prop key="cluster-config.cache-loader.central-data-source">true</prop>
         </props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 
 <!-- MIRROR -->
 <bean id="hibernateSpaceSynchronizationEndpoint" class="org.openspaces.persistency.hibernate.DefaultHibernateSpaceSynchronizationEndpointFactoryBean">

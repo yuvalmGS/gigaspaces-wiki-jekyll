@@ -128,7 +128,7 @@ The next step is exporting the service over the space. Exporting the service is 
 <!-- Support the @RemotingService annotation on a service-->
 <os-remoting:annotation-support />
 
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -139,7 +139,7 @@ The next step is exporting the service over the space. Exporting the service is 
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 
@@ -572,7 +572,7 @@ Service pu.xml
 {% highlight xml %}
 <context:component-scan base-package="com.demo"/>
 <os-remoting:annotation-support />
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="gigaSpace" space="space"/>
 <os-remoting:service-exporter id="serviceExporter" />
 {% endhighlight %}
@@ -715,7 +715,7 @@ An implementation of such an aspect can be configured as follows:
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 

@@ -46,7 +46,7 @@ With the example below a replication filter is used with the source space (outpu
 
         <bean id="londonFilter" class="com.gigaspaces.examples.gateway.LondonReplicationFilter"/>
 
-        <os-core:space id="space" url="/./myNYSpace" gateway-targets="gatewayTargets">
+        <os-core:embedded-space id="space" name="myNYSpace" gateway-targets="gatewayTargets">
           <os-core:space-replication-filter>
             <os-core:output-filter ref="londonFilter"/>
           </os-core:space-replication-filter>

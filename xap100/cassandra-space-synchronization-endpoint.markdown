@@ -122,7 +122,7 @@ An example of how the Cassandra Space Synchronization Endpoint can be configured
 
     </bean>
 
-    <os-core:mirror id="mirror" url="/./mirror-service"
+    <os-core:mirror id="mirror" name="mirror-service"
         space-sync-endpoint="cassandraSpaceSyncEndpoint">
 	<os-core:source-space name="space" partitions="${numOfPartitiones}" backups="${numOfBackups}"/>
     </os-core:mirror>

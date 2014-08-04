@@ -436,7 +436,7 @@ public class MyTask implements Task<Integer>, ApplicationContextAware {
 where the pu.xml should have:
 
 {% highlight xml %}
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 <os-core:giga-space id="clusteredGigaSpace" space="space" clustered="true"/>
 {% endhighlight %}
 

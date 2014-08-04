@@ -72,7 +72,7 @@ See below example for `Hibernate Space Persistency` that is configured having a 
     <property name="sessionFactory" ref="sessionFactory"/>
 </bean>
 
-<os-core:space id="space" url="/./space" schema="persistent" space-data-source="hibernateSpaceDataSource"
+<os-core:embedded-space id="space" name="space" schema="persistent" space-data-source="hibernateSpaceDataSource"
               space-sync-endpoint="hibernateSpaceSynchronizationEndpoint" />
     <os-core:properties>
         <props>
@@ -80,7 +80,7 @@ See below example for `Hibernate Space Persistency` that is configured having a 
             <prop key="cluster-config.cache-loader.central-data-source">true</prop>
         </props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 {% endtabcontent %}
 {% tabcontent Plain XML %}

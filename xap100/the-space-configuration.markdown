@@ -136,7 +136,7 @@ Here is an example of a space working in FIFO mode, using specific lookup groups
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-  <os-core:space id="space" url="/./space" lookup-groups="test" lookup-timeout="10000"  lookup-locators="myHost" versioned="true" />
+<os-core:embedded-space id="space" name="space" lookup-groups="test" lookup-timeout="10000"  lookup-locators="myHost" versioned="true" />
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -191,13 +191,13 @@ The general properties are used to override various components such as the space
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./space">
+<os-core:embedded-space id="space" name="space">
     <os-core:properties>
         <props>
             <prop key="space-config.engine.cache_policy">0</prop>
         </props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -253,7 +253,7 @@ Here is an example on how to create the proxy:
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-  <os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="space" />
   </os-core:giga-space id="mySpace" space="space" />
 {% endhighlight %}
 
@@ -261,7 +261,7 @@ Here is an example on how to create the proxy:
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<os-core:space id="space" url="/./space">
+<os-core:embedded-space id="space" name="space">
 <bean id="mySpace" class="org.openspaces.core.space.UrlSpaceFactoryBean">
     <property name="url" value="/./space" />
 </bean>
@@ -318,7 +318,7 @@ Here is an example of the `GigaSpace` Bean:
 
 {% highlight xml %}
 
- <os-core:space id="mySpace" url="/./space"/>
+ <os-core:space id="mySpace" name="space"/>
 
  <os-core:giga-space id="gigaSpaceClustered" space="mySpace" clustered="true"
   	 default-read-timeout="10000"
@@ -387,7 +387,7 @@ Declaring a remote space with a transaction manager and creating an embedded spa
 <os-core:space-proxy id="spaceRemote" name="space" />
 <os-core:giga-space id="gigaSpaceRemote" space=" spaceRemote"  tx-manager="transactionManager1"/>
 
-<os-core:space id="spaceEmbed" url="/./space" />
+<os-core:space id="spaceEmbed" name="space" />
 <os-core:giga-space id="gigaSpaceEmbed" space="spaceEmbed"  tx-manager="transactionManager2"/>
 {% endhighlight %}
 
@@ -412,7 +412,7 @@ Declaring a remote space with a local view , a regular remote space (without a v
 <os-core:giga-space id="gigaSpaceLocalView" space="localViewSpace"/>
 <os-core:giga-space id="gigaSpaceRemote" space="spaceRemote"  tx-manager="transactionManager1"/>
 
-<os-core:space id="spaceEmbed" url="/./space" />
+<os-core:space id="spaceEmbed" name="space" />
 <os-core:giga-space id="gigaSpaceEmbed" space="spaceEmbed"  tx-manager="transactionManager2"/>
 {% endhighlight %}
 
@@ -431,7 +431,7 @@ You may configure default modifiers for the different operations in the `GigaSpa
 
 {% highlight xml %}
 
-<os-core:space id="space" url="/./space" />
+<os-core:embedded-space id="space" name="space" />
 <os-core:giga-space id="gigaSpace" space="space">
   <os-core:read-modifier value="FIFO"/>
   <os-core:change-modifier value="RETURN_DETAILED_RESULTS"/>

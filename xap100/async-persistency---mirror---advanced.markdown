@@ -24,14 +24,14 @@ The Mirror Service name is used as part of the space config, specified via the `
 As an example, let's say we would like to call my mirror service `mymirror-service` (instead of the default `mirror-service`). Here is how the mirror service should be started:
 
 {% highlight xml %}
-<os-core:space id="space" url="/./myMirror-service" schema="mirror"
+<os-core:embedded-space id="space" name="myMirror-service" schema="mirror"
     space-sync-endpoint="mirrorSynchronizationEndpoint" />
 {% endhighlight %}
 
 Here is how the space should be started:
 
 {% highlight xml %}
-<os-core:space id="space" url="/./mySpace" schema="persistent"
+<os-core:embedded-space id="space" name="mySpace" schema="persistent"
     mirror="true" space-data-source="spaceDataSource">
     <os-core:properties>
         <props>
@@ -101,7 +101,7 @@ And here is how this can be configured within the mirror configuration:
     <property name="parameter" value="some value"/>
 </bean>
 
-<os-core:space id="space" url="/./mirror-service" schema="mirror"
+<os-core:embedded-space id="space" name="mirror-service" schema="mirror"
     space-sync-endpoint="mirrorSpaceSynchronizationEndpoint" />
 {% endhighlight %}
 
@@ -158,7 +158,7 @@ To override and extend this behavior, you can implement an exception handler tha
     <constructor-arg ref="exceptionHandler"/>
 </bean>
 
-<os-core:space id="space" url="/./mirror-service" schema="mirror"
+<os-core:embedded-space id="space" name="mirror-service" schema="mirror"
     space-sync-endpoint="exceptionHandlingSpaceSynchronizationEndpoint"/>
 {% endhighlight %}
 
@@ -182,7 +182,7 @@ This can be achieved by :
 1. Setting the following property in the mirror configuration:
 
 {% highlight xml %}
-<os-core:space id="space" url="/./mirror-service" schema="mirror" space-sync-endpoint="spaceSynchronizationEndpoint">
+<os-core:embedded-space id="space" name="mirror-service" schema="mirror" space-sync-endpoint="spaceSynchronizationEndpoint">
     <os-core:properties>
 	<props>
 	     <prop key="space-config.mirror-service.operation-grouping">
@@ -190,7 +190,7 @@ This can be achieved by :
              </prop>
 	</props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 By default this property is set to `group-by-replication-bulk` and executeBulk() groups several transactions and executes them together. The group size is defined by the mirror replication bulk-size.
@@ -285,7 +285,7 @@ Since 9.1.0 - distributed transaction consolidation is enabled by default.
 {% endinfo %}
 
 {% highlight xml %}
-<os-core:space id="space" url="/./mySpace">
+<os-core:embedded-space id="space" name="mySpace">
   <os-core:properties>
     <props>
       <prop key="cluster-config.groups.group.repl-policy.processing-type">
@@ -293,7 +293,7 @@ Since 9.1.0 - distributed transaction consolidation is enabled by default.
       </prop>
     </props>
   </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 As specified in the example above, it is required to set the "`cluster-config.groups.group.repl-policy.processing-type`" property to "`multi-source`".
@@ -301,7 +301,7 @@ As specified in the example above, it is required to set the "`cluster-config.gr
 In order to take advantage of this feature, mirror operation grouping should be set to "group-by-space-transaction" in mirror:
 
 {% highlight xml %}
-<os-core:space id="space" url="/./mirror-service"
+<os-core:embedded-space id="space" name="mirror-service"
   schema="mirror" space-sync-endpoint="spaceSynchronizationEndpoint">
   <os-core:properties>
     <props>
@@ -310,7 +310,7 @@ In order to take advantage of this feature, mirror operation grouping should be 
       </prop>
     </props>
   </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 ##### Distributed Transaction Consolidation Example:
@@ -347,7 +347,7 @@ Please note that while waiting for a distributed transaction to entirely arrive 
 The following example demonstrates how to set the timeout for waiting for distributed transaction data to arrive, it is also possible to set the amount of new operations to perform before processing data individually for each participant:
 
 {% highlight xml %}
-<os-core:space id="space" url="/./mirror-service"  schema="mirror"
+<os-core:embedded-space id="space" name="mirror-service"  schema="mirror"
   space-sync-endpoint="spaceSynchronizationEndpoint">
   <os-core:properties>
     <props>
@@ -358,7 +358,7 @@ The following example demonstrates how to set the timeout for waiting for distri
   </os-core:properties>
   <os-core:tx-support dist-tx-wait-timeout-millis="10000"
     dist-tx-wait-for-opers="20" />
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 Distributed transaction participants' data will be processed individually if ten seconds have passed and all of the participants data has **not** arrived or if 20 new operations were executed after the distributed transaction.

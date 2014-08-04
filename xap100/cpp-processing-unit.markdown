@@ -200,7 +200,7 @@ See below an example:
 
 {% highlight xml %}
 <beans>
-    <os-core:space id="space" url="/./space" />
+     <os-core:embedded-space id="space" name="space" />
     <os-core:giga-space id="gigaSpace" space="space" />
     <bean id="cpp" class="com.gigaspaces.javacpp.openspaces.CXXBean">
         <property name="gigaSpace" ref="gigaSpace" />
@@ -241,7 +241,9 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
        http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/{%currentversion%}/sla/openspaces-sla.xsd
        http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd">
     <bean id="propertiesConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
-        <os-core:space id="space" url="/./space" />
+
+    <os-core:embedded-space id="space" name="space" />
+
     <os-core:giga-space id="gigaSpace" space="space" />
     <bean id="cpp" class="com.gigaspaces.javacpp.openspaces.CXXBean">
         <property name="gigaSpace" ref="gigaSpace" />

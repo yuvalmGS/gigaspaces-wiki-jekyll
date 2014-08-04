@@ -20,7 +20,7 @@ Here is how you would configure a processing unit to run a scripting executor wi
 ## Processing Unit Configuration
 
 {% highlight xml %}
-<os-core:space id="space" url="/./mySpace"/>
+<os-core:embedded-space id="space" name="mySpace"/>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 

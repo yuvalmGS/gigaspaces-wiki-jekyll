@@ -271,11 +271,11 @@ public class MyBean implements InitializingBean{
 <bean id="mySpaceFilter" class="com.test.MySpaceFilter" />
 <bean id="myBean" class="com.test.MyBean" />
 
-<os-core:space id="space" url="/./space" >
+<os-core:embedded-space id="space" name="space" >
 	<os-core:annotation-adapter-filter priority="2">
 		<os-core:filter ref="mySpaceFilter" />
 	</os-core:annotation-adapter-filter>
-</os-core:mbedded-space>
+</os-core:embedded-space>
 
 <os-core:giga-space id="gigaSpace" space="space"/>
 <os-core:giga-space-context/>

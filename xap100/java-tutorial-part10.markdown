@@ -203,7 +203,7 @@ GigaSpace gigaSpace = new GigaSpaceConfigurer(configurer).gigaSpace();
 
 {% tabcontent Spring %}
 {%highlight xml%}
-<os-core:space id="space" url="/./xapTutorialSpace">
+<os-core:embedded-space id="space" name="xapTutorialSpace">
     <os-core:security secured="true" />
 </os-core:space>
 {%endhighlight %}

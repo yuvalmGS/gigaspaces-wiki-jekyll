@@ -210,7 +210,7 @@ By using [processing units](./the-processing-unit-structure-and-configuration.ht
 A processing unit can define an embedded Space in the processing unit's [`pu.xml`](./configuring-processing-unit-elements.html) file. The `pu.xml` file is, in effect a [Spring](http://www.springframework.org) XML configuration file, and you simply define the Space using GigaSpaces namespace extensions, or using plain Spring format. Here is an example:
 
 {% highlight xml %}
-<os-core:space id="space" url="/./mySpace"/>
+ <os-core:embedded-space id="space" name="mySpace"/>
 {% endhighlight %}
 
 This defines an embedded Space within the processing unit. The fact that the Space is embedded is determined by the `url` property. As you can see below, a URL that starts with the `jini://` prefix, indicates that a connection to a remote Space is created, not an embedded Space.
@@ -241,7 +241,7 @@ If you would like to create a Space within your own Spring application, and do n
 When creating the Space instance in your own application, you have to provide the instance ID on your own, as described in the [Space URL](./the-space-configuration.html) section. Therefore this option is not recommended for large Space clusters.
 
 {% highlight xml %}
-<os-core:space id="space" url="/./mySpace?total_members=2&id=1"/>
+ <os-core:embedded-space id="space" name="mySpace?total_members=2&id=1"/>
 {% endhighlight %}
 
 ## Creating the Space Programmatically
