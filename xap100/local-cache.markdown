@@ -50,8 +50,8 @@ Creating a local cache is similar to creating a GigaSpace, except that we wrap t
 {% tabcontent Plain Spring XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
 </bean>
 
 <bean id="localCacheSpace"

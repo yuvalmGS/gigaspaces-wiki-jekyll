@@ -143,8 +143,8 @@ Here is an example of a space working in FIFO mode, using specific lookup groups
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
     <property name="versioned" value="true" />
     <property name="lookupGroups" value="test" />
     <property name="lookupTimeout" value="20000" />
@@ -204,8 +204,8 @@ The general properties are used to override various components such as the space
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
     <property name="properties">
         <props>
             <prop key="space-config.engine.cache_policy">0</prop>
@@ -262,8 +262,8 @@ Here is an example on how to create the proxy:
 
 {% highlight xml %}
 <os-core:embedded-space id="space" name="space">
-<bean id="mySpace" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="mySpace" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
 </bean>
 {% endhighlight %}
 
@@ -450,8 +450,8 @@ You may configure default modifiers for the different operations in the `GigaSpa
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-  <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+  <property name="name" value="space" />
 </bean>
 
 <bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">

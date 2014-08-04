@@ -76,8 +76,8 @@ The following Spring configuration registers this filter for before write (`0`),
 
 <bean id="simpleFilter" class="eg.SimpleFilter" />
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
     <property name="filterProviders">
         <list>
             <bean class="org.openspaces.core.space.filter.SpaceFilterProviderFactory">
@@ -187,8 +187,8 @@ The delegate filter shown above, can be configured in Spring using the following
 
 <bean id="simpleFilter" class="test.SimpleFilter" />
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
     <property name="filterProviders">
     	<bean class="org.openspaces.core.space.filter.AnnotationFilterFactoryBean">
     	    <property name="filter" ref="simpleFilter" />
@@ -227,8 +227,8 @@ The following Spring configuration XML shows how the filter can be configured, u
 
 <bean id="simpleFilter" class="test.SimpleFilter" />
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
     <property name="filterProviders">
     	<bean class="org.openspaces.core.space.filter.MethodFilterFactoryBean">
     	    <property name="filter" ref="simpleFilter" />
@@ -302,8 +302,8 @@ The following configuration shows how it can be injected:
 
 <bean id="simpleReplicationFilter" class="eg.SimpleReplicationFilter" />
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
     <property name="replicationFilterProvider">
         <bean class="org.openspaces.core.space.filter.replication.DefaultReplicationFilterProviderFactory">
             <property name="inputFilter" ref="simpleReplicationFilter" />

@@ -100,8 +100,8 @@ Specifying space level storage type can be done using any of the following:
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
     <property name="properties">
         <props>
             <prop key="space-config.serialization-type">1</prop>

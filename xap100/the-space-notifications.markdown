@@ -133,8 +133,8 @@ Space mode registration can be overridden and explicitly set within the space fa
 
 {% highlight xml %}
 
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
     <property name="registerForSpaceModeNotifications" value="false" />
 </bean>
 {% endhighlight %}
