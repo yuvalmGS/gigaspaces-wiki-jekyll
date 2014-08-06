@@ -10,14 +10,14 @@ weight: 1100
 
 {% anchor 1 %}
 
-
+- [hello](#gigaspaces-hibernate-2nd-level-cache-properties)
 
 This page explains how you can use  XAP to:
 
 - **Get a free 2nd-level distributed cache** for your [Hibernate](http://www.hibernate.org)-based database integration
-- **Scale up your database using the existing ORM** by adding a GigaSpaces Data Grid with back-end Hibernate integration
+- **Scale up your database using the existing ORM** by adding an XAP Data Grid with back-end Hibernate integration
 
-GigaSpaces as Hibernate 2nd level cache provides:
+XAP as Hibernate 2nd level cache provides:
 
 {%vbar  %}
 
@@ -34,7 +34,7 @@ GigaSpaces as Hibernate 2nd level cache provides:
 - Built-in alerting system
 {%endvbar%}
 
-Read further in this section for more details about these solutions, or jump to detailed instructions: [how to get a free distributed second-level cache](#step1) or [how to add a GigaSpaces data grid](#step2).
+Read further in this section for more details about these solutions, or jump to detailed instructions: [how to get a free distributed second-level cache](#step1) or [how to add an XAP data grid](#step2).
 
 {% info%}
 XAP fully supports the [Spring Framework](http://www.springframework.org), and can be plugged in very easily without changing your existing code.
@@ -48,7 +48,7 @@ Your existing Hibernate-based database integration probably looks like the follo
 
 ## Step 1: Getting a Free Distributed Two-Level Cache
 
-You can very easily replace your existing Hibernate cache provider, typically EHCache, with GigaSpaces. This gives you a powerful distributed cache with multiple clients.
+You can very easily replace your existing Hibernate cache provider, typically EHCache, with XAP. This gives you a powerful distributed cache with multiple clients.
 
 ![HB for community.jpg](/attachment_files/HB for community.jpg)
 
@@ -58,12 +58,12 @@ You can very easily replace your existing Hibernate cache provider, typically EH
 - **Effortless integration** using Spring
 
 {% info %}
-To learn how to do this, see [How to Switch Your Second-Level Cache Provider to GigaSpaces](#step1) below.
+To learn how to do this, see [How to Switch Your Second-Level Cache Provider to XAP](#step1) below.
 {%endinfo%}
 
 ## Step 2: Scaling Up Your Database by Adding a Data Grid
 
-If you need to scale up your database, you can use GigaSpaces as an In-Memory Data Grid. Your application communicates with the Data Grid using [The GigaSpace Interface](./the-gigaspace-interface.html) or the [Map API](./map-api.html) interfaces. On the back-end, GigaSpaces persists the data to your existing database using your existing Hibernate O/R mapping in [asynchronous manner](./asynchronous-persistency-with-the-mirror.html).
+If you need to scale up your database, you can use XAP as an In-Memory Data Grid. Your application communicates with the Data Grid using [The GigaSpace Interface](./the-gigaspace-interface.html) or the [Map API](./map-api.html) interfaces. On the back-end, XAP persists the data to your existing database using your existing Hibernate O/R mapping in [asynchronous manner](./asynchronous-persistency-with-the-mirror.html).
 
 ![Hibernate DataGrid.jpg](/attachment_files/Hibernate DataGrid.jpg)
 
@@ -72,7 +72,7 @@ If you need to scale up your database, you can use GigaSpaces as an In-Memory Da
 - **Database scalability** through partitioning and data distribution - enables higher data volumes and higher throughput with low latency
 - **Better decoupling** between your application and the database - no need to hard-wire Hibernate and database concepts into your code and runtime environment
 - **Event-driven** model enables notifications when data is modified
-- **Database access can be synchronous or asynchronous** - the [GigaSpaces Mirror Service](./asynchronous-persistency-with-the-mirror.html) allows data to be persisted to the database asynchronously, without a performance penalty
+- **Database access can be synchronous or asynchronous** - the [XAP Mirror Service](./asynchronous-persistency-with-the-mirror.html) allows data to be persisted to the database asynchronously, without a performance penalty
 
 {% info %}
 To learn how to do this, see the [Moving from Hibernate to Space](/sbp/moving-from-hibernate-to-space.html) best practice.
@@ -80,33 +80,35 @@ To learn how to do this, see the [Moving from Hibernate to Space](/sbp/moving-fr
 
 ## Beyond the Data Grid: Scaling Out Your Application Using Space-Based Architecture
 
-To gain ultimate scalability for your application, you can package your business logic together with the GigaSpaces space - which provides not only data but also messaging functionality. This creates a Processing Unit which is completely self sufficient (not dependent on a database, messaging server or any central component), meaning that you to duplicate it as many times as necessary without increasing complexity.
+To gain ultimate scalability for your application, you can package your business logic together with the XAP space - which provides not only data but also messaging functionality. This creates a Processing Unit which is completely self sufficient (not dependent on a database, messaging server or any central component), meaning that you to duplicate it as many times as necessary without increasing complexity.
 
 This approach is called Space Based Architecture, and the way to achieve it is the Spring-based OpenSpaces platform, which allows you to deploy your application as a set of services encased in a Processing Unit.
 
 
 {% refer %}To learn more about Space-Based Architecture and its implications, read our white paper, [The Scalability Revolution: From Dead End to Open Road](http://www.gigaspaces.com/WhitePapers).{% endrefer %}
 
-{% refer %}To learn more about OpenSpaces, see the [OpenSpaces](/product_overview/product-architecture.html#ProductArchitecture-OpenSpacesAPIandComponents) section in this online help.{% endrefer %}
+{% refer %}To learn more about XAP, see the [OpenSpaces](/product_overview/product-architecture.html#ProductArchitecture-OpenSpacesAPIandComponents) section in this online help.{% endrefer %}
 
 {% anchor step1 %}
 
-# How to Switch Your Cache Provider to GigaSpaces and Gain Distributed Caching
+# How to Switch Your Cache Provider to XAP and Gain Distributed Caching
 
-This section provides instructions on switching your existing Hibernate local cache, typically EhCache, with GigaSpaces. This will give you a powerful distributed cache with multiple clients and advanced clustering.
+This section provides instructions on switching your existing Hibernate local cache, typically EhCache, with XAP. This will give you a powerful distributed cache with multiple clients and advanced clustering.
 ![TwoSteps.jpg](/attachment_files/TwoSteps.jpg)
-**To switch your Hibernate cache provider to GigaSpaces and use GigaSpaces distributed caching:**
+**To switch your Hibernate cache provider to XAP and use XAP distributed caching:**
 
-1. Download the GigaSpaces {% refer %} [Download Page](http://www.gigaspaces.com/xap-download) {% endrefer %}
-2. Install GigaSpaces. If you need help, refer to the [installation instructions](./installation.html).
-3. This step is different if you are managing your Hibernate configuration using Spring (refer to the Spring documentation, ORM Data Access, section 12.2.2), or directly using `hibernate.properties` or `hibernate.cfg.xml`. Select the relevant tab below.
+Step 1. Download XAP [{%download%}](http://www.gigaspaces.com/xap-download) <br>
+Step 2. Install XAP. If you need help, refer to the [installation instructions](./installation.html).<br>
+Step 3. This step is different if you are managing your Hibernate configuration using Spring (refer to the Spring documentation, ORM Data Access, section 12.2.2), or directly using `hibernate.properties` or `hibernate.cfg.xml`. Select the relevant tab below.
 
 {% c %}
  [http://www.springframework.org/docs/reference/orm.html](http://www.springframework.org/docs/reference/orm.html)
 {% endc %}
 
 {% inittab hibernateconfig %}
+
 {% tabcontent Spring Configuration %}
+{%panel%}
 
 **Spring Configuration**
 
@@ -118,8 +120,9 @@ Edit your SessionFactory Setup. This is the section inside your Spring Applicati
 
 **Add or modify** the following properties under `<property name="hibernateProperties">`:
 
-{% indent %}
-&bull;&nbsp; Set `hibernate.cache.provider_class` to `org.openspaces.hibernate.cache.SimpleMapCacheProvider`:
+
+Set `hibernate.cache.provider_class` to `org.openspaces.hibernate.cache.SimpleMapCacheProvider`:
+
 
 {% highlight xml %}
 <prop key="hibernate.cache.provider_class">
@@ -137,15 +140,17 @@ Edit your SessionFactory Setup. This is the section inside your Spring Applicati
 {% highlight xml %}
 <prop key="gigaspace.hibernate.cache.url">/./dataGrid</prop>
 {% endhighlight %}
-{% endindent %}
 
+
+{%endpanel%}
 {% endtabcontent %}
 {% tabcontent Direct Configuration hibernate.properties %}
+{%panel%}
 **Direct Configuration (hibernate.properties**
 
 Edit your `hibernate.properties` file. **Add or modify** the following properties in the Second-Level Cache section:
 
-{% indent %}
+
 &bull;&nbsp; Set `hibernate.cache.provider_class` to `org.openspaces.hibernate.cache.SimpleMapCacheProvider`:
 
     hibernate.cache.provider_class org.openspaces.hibernate.cache.SimpleMapCacheProvider
@@ -158,14 +163,16 @@ Edit your `hibernate.properties` file. **Add or modify** the following propertie
 
     gigaspace.hibernate.cache.url /./dataGrid
 
-{% endindent %}
 
+
+{%endpanel%}
 {% endtabcontent %}
 {% tabcontent Direct Configuration hibernate.cfg.xml %}
+{%panel%}
 **Direct Configuration (hibernate.cfg.xml)**
 Edit your `hibernate.cfg.xml` file. **Add or modify** the following properties under `<session-factory>`:
 
-{% indent %}
+
 &bull;&nbsp; Set `hibernate.cache.provider_class` to `org.openspaces.hibernate.cache.SimpleMapCacheProvider`:
 
 {% highlight xml %}
@@ -184,8 +191,9 @@ Edit your `hibernate.cfg.xml` file. **Add or modify** the following properties u
 {% highlight xml %}
 <property name="gigaspace.hibernate.cache.url">/./dataGrid</property>
 {% endhighlight %}
-{% endindent %}
 
+
+{%endpanel%}
 {% endtabcontent %}
 {% endinittab %}
 
@@ -198,7 +206,7 @@ The Hibernate second level Cache implementation provided listed below:
 - [org.openspaces.hibernate.cache.TransactionalMapCacheProvider](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/hibernate/cache/TransactionalMapCacheProvider.html)
 {% endnote %}
 
-4. Set or add the cache usage (the cache concurrency strategy) in your mapping resource file (`*.hbm.xml` files) to `read-only`, `read-write` or `nonstrict-read-write`:
+Step 4. Set or add the cache usage (the cache concurrency strategy) in your mapping resource file (`*.hbm.xml` files) to `read-only`, `read-write` or `nonstrict-read-write`:
 
 {% highlight xml %}
 <class name="your.class.name" table="YourTableName">
@@ -209,53 +217,63 @@ Alternatively, use the `<class-cache>` and `<collection-cache>` elements in your
 
 You must include the following JARs from the Hibernate distribution package:
 
+{%highlight console%}
     jdbc2_0-stdext.jar; dom4j-XXX.jar; commons-collections-XXX.jar; asm.jar; asm-attrs.jar;
     antlr-XXX.jar; ejb3-persistence.jar; hibernate3.jar; hibernate-annotations.jar;
     hibernate-commons-annotations.jar
+{%endhighlight%}
 
-5. Since your Hibernate objects and their custom type will be eventually be serialized across to wire stored on remote space or replicated into a backup space In-Memoery, these need to be serialized. You should make all your Hibernate objects and their custom fields will be implementing `Serializable`.
-6. Launch your application. The application should instantiate a local cache based on an embedded GigaSpaces space.
+Step 5. Since your Hibernate objects and their custom type will be eventually be serialized across to wire stored on remote space or replicated into a backup space In-Memoery, these need to be serialized. You should make all your Hibernate objects and their custom fields will be implementing `Serializable`. <br>
+Step 6. Lau\nch your application. The application should instantiate a local cache based on an embedded XAP space.
 
 ![Hibernate with embedded gs.jpg](/attachment_files/Hibernate with embedded gs.jpg)
 
-7. If you want to use GigaSpaces as a distributed cache, select the distributed topology that interests you from the tabs below.
+Step 7. If you want to use XAP as a distributed cache, select the distributed topology that interests you from the tabs below.
 
 {% inittab topologies %}
 {% tabcontent Remote Cache %}
-
+{%panel%}
 **Remote Cache Topology**
 
 In this topology each application accessing a remote cache.
 
-{% indent 2 %}
+
 ![HB Remote GS.jpg](/attachment_files/HB Remote GS.jpg)
-{% endindent %}
+
 
 **To use the remote cache topology:**
 
 - Set your `gigaspaces.hibernate.cache.url` property to {% wbr %}
     `jini://*/*/dataGrid`
-- Copy `dom4j.jar` and `hibernate3.jar` and all relevant Hibernate distribution package libraries into the `<GigaSpaces Root>/lib/platform/ext` folder.
-- Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment]({%currentadmurl%}/the-runtime-environment.html).
+- Copy `dom4j.jar` and `hibernate3.jar` and all relevant Hibernate distribution package libraries into the `<XAP Root>/lib/platform/ext` folder.
+- Run `<XAP Root>\bin\gs-agent.bat (.sh)` to start XAP [runtime environment]({%currentadmurl%}/the-runtime-environment.html).
 - Run the deploy command to deploy the remote space:
-    <GigaSpaces root>\bin\gs.bat deploy-space datagrid
+    <XAP root>\bin\gs.bat deploy-space datagrid
+
 Wait to see the following output:
+
+{%highlight console%}
     Found 1 GSMs
     Deploying [datagrid] with name [datagrid] under groups [gigaspaces-7.1.2-XAPPremium-ga] and locators []
     SLA Not Found in PU.  Using Default SLA.
     Waiting for [1] processing unit instances to be deployed...
     [datagrid] [1] deployed successfully on [10.10.254.1]
     Finished deploying [1] processing unit instances
+{%endhighlight%}
 
 - Run your application.
+{%endpanel%}
+
 {% endtabcontent %}
 {% tabcontent Master-Local Cache %}
+
+{%panel%}
 **Master-Local Cache Topology**
 In this topology each application has a lightweight, embedded cache, which is initially empty. The first time data is read, it is loaded from a master cache to the local cache (lazy load); the next time the same data is read, it is loaded quickly from the local cache. Later on data is either updated from the master or evicted from the cache.
 
-{% indent 2 %}
+
 ![HB for community.jpg](/attachment_files/HB for community.jpg)
-{% endindent %}
+
 
 **To use the master-local topology:**
 
@@ -268,16 +286,21 @@ In this topology each application has a lightweight, embedded cache, which is in
     <GigaSpaces root>\bin\gs.bat deploy-space datagrid
 
 Wait to see the following output:
+
+{%highlight console%}
     Found 1 GSMs
     Deploying [datagrid] with name [datagrid] under groups [gigaspaces-7.1.2-XAPPremium-ga] and locators []
     SLA Not Found in PU.  Using Default SLA.
     Waiting for [1] processing unit instances to be deployed...
     [datagrid] [1] deployed successfully on [10.10.254.1]
     Finished deploying [1] processing unit instances
+{%endhighlight%}
 
 - Run your application.
+{%endpanel%}
 {% endtabcontent %}
 {% tabcontent Partitioned Master-Local Cache %}
+{%panel%}
 **Partitioned Master-Local Cache Topology**
 In this topology, data is split between two spaces (partitions) according to an index field defined in the data. An algorithm, defined in the load-balancing policy, maps values of the index field to specific partitions.
 
@@ -285,9 +308,9 @@ In this topology, data is split between two spaces (partitions) according to an 
 This topology requires XAP Premium Edition.
 {%endinfo%}
 
-{% indent 2 %}
+
 ![HB Master Local Partitioned GS.jpg](/attachment_files/HB Master Local Partitioned GS.jpg)
-{% endindent %}
+
 
 **To use the master-local partitioned topology with two partitions:**
 
@@ -300,6 +323,8 @@ This topology requires XAP Premium Edition.
     <GigaSpaces root>\bin\gs.bat deploy-space -cluster schema=partitioned total_members=2,0 datagrid
 
 Wait to see the following output:
+
+{%highlight console%}
     gs> deploy-space -cluster schema=partitioned total_members=2,0 datagrid
     Found 1 GSMs
     Deploying [datagrid] with name [datagrid] under groups [gigaspaces-7.1.2-XAPPremium-ga] and locators []
@@ -311,10 +336,13 @@ Wait to see the following output:
     [datagrid] [1] deployed successfully on [10.10.254.1]
     [datagrid] [2] deployed successfully on [10.10.254.1]
     Finished deploying [2] processing unit instances
+{%endhighlight%}
 
 - Run your application.
+{%endpanel%}
 {% endtabcontent %}
 {% tabcontent Embedded Replicated Cache %}
+{%panel%}
 **Embedded Replicated Cache Topology**
 This topology consists of two or more space instances with replication between them, allowing two or more applications to work with their own dedicated data store, while working on the same data as the other applications.
 
@@ -322,9 +350,9 @@ This topology consists of two or more space instances with replication between t
 This topology requires XAP Premium Edition.
 {%endinfo%}
 
-{% indent 2 %}
+
 ![Hibernate with 2 emedded replicated.jpg](/attachment_files/hibernate-with-2-embedded-replicated.jpg)
-{% endindent %}
+
 
 **To use the embedded replicated topology with two replicated instances:**
 
@@ -336,6 +364,7 @@ This topology requires XAP Premium Edition.
     /./dataGrid?cluster_schema=sync_replicated&amp;total_members=2&amp;id=2
 
 - Run your second application.
+{%endpanel%}
 {% endtabcontent %}
 {% endinittab %}
 
@@ -409,7 +438,7 @@ public class CustomMapCacheProvider extends AbstractMapCacheProvider {
 
 GigaSpaces Hibernate 2nd Level Cache controlled via the following system properties:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |Property|Description|Default|Mandatory?|
 |:-------|:----------|:------|:---------|
 |gigaspace.hibernate.cache.url|  [Space URL](./the-space-configuration.html) String. This could be remote (clustered space) with/without a local cache/view URL or embedded space URL. Example:  `jini://*/*/mySpace`|  | YES |
