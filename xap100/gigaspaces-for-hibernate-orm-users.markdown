@@ -10,8 +10,6 @@ weight: 1100
 
 {% anchor 1 %}
 
-- [hello](#gigaspaces-hibernate-2nd-level-cache-properties)
-
 This page explains how you can use  XAP to:
 
 - **Get a free 2nd-level distributed cache** for your [Hibernate](http://www.hibernate.org)-based database integration
