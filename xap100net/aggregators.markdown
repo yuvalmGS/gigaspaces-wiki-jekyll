@@ -134,7 +134,7 @@ Aggregation against the members of embedded space classes is supported by supply
 using GigaSpaces.Core.Linq;
 
 
-var queryable = from p in spaceProxy.Query<Person>("Country='UK' OR Country='U.S.A'") select p;
+var queryable = from p in spaceProxy.Query<Person>() where p.Country == "UK" || p.Country=="U.S.A" select p;
 // retrieve the maximum value stored in the field "Age"
 var result = queryable.Max(p => p.Demographics.Age);
 {% endhighlight %}
