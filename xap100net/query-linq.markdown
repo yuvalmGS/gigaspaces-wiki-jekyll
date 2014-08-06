@@ -244,3 +244,9 @@ The `Batch()` extension method instructs the provider to retrieve the results in
 Batching is suitable for large result sets, but on small ones it actually slows performance down, as it require multiple remote calls to the space to retrieve the data instead of fetching it all at once.
 {%endinfo%}
 
+# Aggregation
+
+XAP lets you perform aggregations across the Space. There is no need to retrieve the entire data set from the Space to the client side , iterate the result set and perform the aggregation. The Aggregators allow you to perform the entire aggregation activity at the Space side avoiding any data retrieval back to the client side. Only the result of each aggregation activity performed with each partition is returned back to the client side where all the results are reduced and returned to the client application.
+
+
+{%learn%}./aggregators.html{%endlearn%}
