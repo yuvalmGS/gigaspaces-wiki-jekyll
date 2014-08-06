@@ -32,3 +32,7 @@ XAP Integration with Cassandra
 XAP Integration with MongoDB
 
 <hr/>
+
+#### Additional Resources
+
+[XAP Kafka Integration](/sbp/kafka-integration.html)

@@ -99,17 +99,17 @@ There is no need to change the web application or plug in any custom code in ord
 ## Single-Application Session Sharing
 
 When having a single application deployed across multiple web containers that require their HTTP session to be shared the session is shared via its ID.
-![SingleApplicationSessionSharing.jpg](https://dl.dropboxusercontent.com/u/7390820/SingleApplicationSessionSharing.jpg)
+![SingleApplicationSessionSharing.jpg](/attachment_files/SingleApplicationSessionSharing.jpg)
 
 ## Multiple-Applications Session Sharing
 When having multiple different web applications deployed across multiple web containers that are considered as one logical application require their HTTP session to be shared, the session is shared via the user login principle (common across all different applications). In this case a Timestamp check is performed to ensure the most recent session is passed between the different applications. In this case the Session attributes are merged when required.
 
-![MultiApplicationSessionSharing.jpg](https://dl.dropboxusercontent.com/u/7390820/MultiApplicationSessionSharing.jpg)
+![MultiApplicationSessionSharing.jpg](/attachment_files/MultiApplicationSessionSharing.jpg)
 
 ## The GigaSpaces Session Filter
 
 The web application configuration should include the GigaSpaces Session Filter. This filter interacts with the GigaSpaces session manager that store the session content within the data grid. It maintanis a temporary cache to reduce remote activity with the data grid.
-![HTTPSessionManagementcloserLook.jpg](https://dl.dropboxusercontent.com/u/7390820/HTTPSessionManagementcloserLook.jpg)
+![HTTPSessionManagementcloserLook.jpg](/attachment_files/HTTPSessionManagementcloserLook.jpg)
 
 
 {% comment %}
@@ -147,13 +147,13 @@ Have `cacheManager.cacheSessionLocally = false` when you would like the same web
 
 The HTTP session stored within XAP in an agnostic netural structure. This allows XAP HTTP Session Manager to share the session between different JEE Containers. For example between IBM Websphere version 7 and IBM Websphere version 8 , or between Tomcat 6 and Tomcat 7. In the same way the same HTTP session may be shared between IBM Websphere and Jboss/Tomcat/Weblogic/etc.
 
-![MultiJEEContainerSupport.jpg](https://dl.dropboxusercontent.com/u/7390820/MultiJEEContainerSupport.jpg)
+![MultiJEEContainerSupport.jpg](/attachment_files/MultiJEEContainerSupport.jpg)
 
 # Session Replication across different Data-Centers
 
 The following diagram depicts a common use case where there are multiple data centers connected across the WAN, and each is running a different type of web server.
 
-![httpSessionSharing1.jpg](https://dl.dropboxusercontent.com/u/7390820/httpSessionSharing1.jpg)
+![httpSessionSharing1.jpg](/attachment_files/httpSessionSharing1.jpg)
 
 The XAP Global HTTP Session Sharing architecture allows users to deploy their web application across these multiple data centers where the session is shared in real-time and in a transparent manner. The HTTP session is also backed by a data grid cluster within each data center for fault tolerance and high-availability.
 
@@ -161,11 +161,11 @@ With this solution, there is no need to deploy a database to store the session, 
 
 The below diagram shows a more detailed view of the IMDG deployment. In this case, there are multiple partitions for high scalability, as well as backup instances for redundancy. The WAN Gateway is also deployed and shows replication between remote site.
 
-![httpSessionSharing2.jpg](https://dl.dropboxusercontent.com/u/7390820/httpSessionSharing2.jpg)
+![httpSessionSharing2.jpg](/attachment_files/httpSessionSharing2.jpg)
 
 The end-to-end path between the two data center nodes includes the servlet and GigaSpaces filters, and the IMDG with local cache and WAN Gateway.
 
-![httpSessionSharing3.jpg](https://dl.dropboxusercontent.com/u/7390820/httpSessionSharing3.jpg)
+![httpSessionSharing3.jpg](/attachment_files/httpSessionSharing3.jpg)
 
 # Configuration
 
