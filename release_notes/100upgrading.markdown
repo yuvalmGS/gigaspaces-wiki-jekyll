@@ -6,6 +6,7 @@ parent: xap100.html
 weight: 800
 ---
 
+{%comment%}
 {% summary %}This page contains information about changes in this release which can affect upgrading from previous versions.{% endsummary %}
 
 # Changes in Behavior / Syntax 
@@ -29,4 +30,5 @@ A couple of deprecated APIs have been removed in 10.0:
 * `Shutting down a space from a remote proxy`
 * `IRemoteJSpaceAdmin.start/stop/restart() operations`
 
+{%endcomment%}
 

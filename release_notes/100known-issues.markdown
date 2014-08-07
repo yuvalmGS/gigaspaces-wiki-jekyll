@@ -11,9 +11,9 @@ Below is a list of known issues in GigaSpaces 10.0.X.
 
 
 {: .table .table-bordered .table-condensed}
-| Key | Summary | SalesForce ID | Since version | Workaround | Platform/s
+| Key | Summary | SalesForce ID | Version | Workaround | Platform/s |
 |:-------|:--------|:----------------|:---------------|:------------------|:----------|
-| GS-11589 | Not all threads are terminated when destroying UrlSapceContainer | | 10.0.0 | | All |
+| <nobr>GS-11589</nobr> | Not all threads are terminated when destroying UrlSapceContainer | | 10.0.0 | | All |
 | GS-11622 | Web-ui shows wrong instance count with replic | | 10.0.0 | | All |
 | GS-11626 | Failed to deploy data example using secured space | | 10.0.0 | | Java |
 | GS-11629 | sla.xml has side effect on spring import | 8597 | 10.0.0 | | Java |
@@ -57,7 +57,7 @@ Below is a list of known issues in GigaSpaces 10.0.X.
 | GS-11829 | HTTP session bug |  | 10.0.0 | | Java |
 | GS-11831 | D3 graph should properly update existing edge status |  | 10.0.0 | | Java |
 | GS-11832 | NPE in getCachedBuffer in rare condition | 9128 | 10.0.0 | | All |
-| GS-11833 | Missing parttition after reboot of node due to ESM negative capacity exception | 9017 | 10.0.0 | | All |
+| GS-11833 | Missing partition after reboot of node due to ESM negative capacity exception | 9017 | 10.0.0 | | All |
 | GS-11834 | GSC that is supposed to be terminated due to rebalancing does not terminate | 9074 | 10.0.0 | | All |
 | GS-11836 | Extra backup and zombi instance after split brain in certain conditions | 9119 | 10.0.0 | | Java |
 | GS-11839 | XAP.NET space space runtime statistics API is missing |  | 10.0.0 | | .NET |
