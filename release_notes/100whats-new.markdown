@@ -31,6 +31,8 @@ This page lists the main new features in XAP 10.0 (Java and .Net editions). It's
 
 - [Create & configure a Space without a url](#10)
 
+- [Support for Mule 3.5](#11)
+
 
 {%endpanel%}
 
@@ -272,3 +274,9 @@ For a remote Space the `space-proxy` tag is used in the name space configuration
 
 {% endinittab %}
 
+
+{%anchor 11%}
+
+# XAP Support for Mule 3.5
+
+{%learn%}/xap100/mule-esb.html{%endlearn%}
