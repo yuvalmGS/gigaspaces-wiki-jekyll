@@ -121,6 +121,17 @@ Install ZetaScale libraries:
 $ sudo XAP_HOME=<XAP HOME> sh -c "rpm -ivh /blobstore-10.0.0-RC_1.noarch.rpm"
 {% endhighlight %}
 
+If the RPM installtion fails , please run  the following `yum` install commands using `root` user:
+{% highlight bash %}
+sudo yum -y install snappy
+sudo yum -y install snappy-devel
+sudo yum -y install libaio
+sudo yum -y install libaio-devel
+sudo yum -y install libevent
+sudo yum -y install libevent-devel
+sudo yum -y install glibc-devel
+{% endhighlight %}
+
 Step 4. 
 Use the `XAP HOME\bin\gs-agent-blobstore.sh` to start GigaSpaces Grid Agent that configured to load the ZetaScale libraries.
 
