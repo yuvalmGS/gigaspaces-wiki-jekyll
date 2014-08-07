@@ -29,6 +29,8 @@ This page lists the main new features in XAP 10.0 (Java and .Net editions). It's
 
 - [Web UI Enhancements](#9)
 
+- [Create & configure a Space without a url](#10)
+
 
 {%endpanel%}
 
@@ -195,8 +197,78 @@ With this new version it is possible to use Jetty version 9.
 
 # Web UI Enhancements
 
-A number of additional features were added to the web ui, specifically the ability to view jmx urls, specify zones, deployment properties and view the full data grid configuration.
+A number of additional features were added to the web ui, specifically the ability to view jmx urls, specify zones, deployment properties and the capability of viewing the full data grid configuration.
 
 
 {%learn%}/xap100adm/web-management-data-grid-view.html{%endlearn%}
+
+
+
+{%anchor 10%}
+
+# Create & configure a Space without a url
+
+XAP 10.0 lets you create, connect and configure a Space without declaring a url.
+
+
+#### Embedded Space:
+
+For an embedded Space the `embedded-space` tag is used in the name space configuration and in the plain XML configuration the `EmbeddedSpaceFactoryBean`.
+
+{% inittab os_space_emb|top %}
+{% tabcontent Namespace %}
+
+{% highlight xml %}
+
+<os-core:embedded-space id="space" name="mySpace"/>
+<os-core:giga-space id="gigaSpace" space="space"/>
+{% endhighlight %}
+
+{% endtabcontent %}
+{% tabcontent Plain XML %}
+
+{% highlight xml %}
+
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
+</bean>
+
+<bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
+	<property name="space" ref="space" />
+</bean>
+{% endhighlight %}
+{% endtabcontent %}
+{% endinittab %}
+
+#### Remote Space:
+
+For a remote Space the `space-proxy` tag is used in the name space configuration and in the plain XML configuration the `SpaceProxyFactoryBean`.
+
+
+{% inittab os_space_remote|top %}
+{% tabcontent Namespace %}
+
+{% highlight xml %}
+
+<os-core:space-proxy  id="space" name="mySpace"/>
+<os-core:giga-space id="gigaSpace" space="space"/>
+{% endhighlight %}
+
+{% endtabcontent %}
+{% tabcontent Plain XML %}
+
+{% highlight xml %}
+
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
+</bean>
+
+<bean id="gigaSpace" class="org.openspaces.core.GigaSpaceFactoryBean">
+	<property name="space" ref="space" />
+</bean>
+{% endhighlight %}
+
+{% endtabcontent %}
+
+{% endinittab %}
 
