@@ -32,8 +32,6 @@ This section describes the Processing Unit deployment configuration file (pu.xml
 - [Custom Processing Unit](./custom-processing-unit-details-and-monitors.html){%wbr%}
 A Processing Unit can implement the ServiceDetailsProvider and ServiceMonitorsProvider interfaces to expose information to calling APIs or to be viewable in the web-UI.
 
-- [Elastic Processing Unit](./elastic-processing-unit.html){%wbr%}
-Explains how to deploy and manage an Elastic Processing Unit (EPU)
 
 
 <hr/>

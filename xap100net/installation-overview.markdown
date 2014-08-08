@@ -20,7 +20,7 @@ This guide provides step by step instructions on how to download and install XAP
 
 {%note%}
 The latest version of XAP can be downloded [here](http://www.gigaspaces.com/xap-download).
-For a list of supported platforms please consult [the realease notes](/release_notes)
+For a list of supported platforms please consult [the release notes](/release_notes)
 {%endnote%}
 
 

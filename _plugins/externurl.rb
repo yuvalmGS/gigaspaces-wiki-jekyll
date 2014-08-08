@@ -11,4 +11,4 @@ module Jekyll
   end
 end
 
-Liquid::Template.register_tag('externurl', Jekyll::ExternUrlTag)
+Liquid::Template.register_tag('externalurl', Jekyll::ExternUrlTag)

@@ -109,7 +109,7 @@ When the initial load process begins, the system will search for these methods b
 
 ## Initial Load Entries
 
-The default behaviour of the system is to search for any available entry metadata and load the entry as a whole, discarding of unneeded data afterwards. To avoid loading all entries, you can specify a list of initial load entries by creating the `SpaceDataSource`. Setting the property `initialLoadEntries` with a list of fully-qualified type names.
+The default behavior of the system is to search for any available entry metadata and load the entry as a whole, discarding of unneeded data afterwards. To avoid loading all entries, you can specify a list of initial load entries by creating the `SpaceDataSource`. Setting the property `initialLoadEntries` with a list of fully-qualified type names.
 
 The system will try, by default, to identify the routing field for each entry type and to construct a simple partition-specific initial load query for this type. To suppress this augmentation of the initial load entries, set the `augmentInitialLoadEntries` property of the `SpaceDataSource` to `false`.
 

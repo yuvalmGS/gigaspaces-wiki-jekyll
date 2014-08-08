@@ -42,6 +42,6 @@ XAP's Mule SEDA model allows you to define services that are aware of the space 
 <hr/>
 
 #### Additional Resources
-- Mule Site [{%externurl%}](http://www.mulesoft.org/)
+- Mule Site [{%externalurl%}](http://www.mulesoft.org/)
 
 - [Distributed Multi Mule service example](/sbp/mule-esb-example.html)

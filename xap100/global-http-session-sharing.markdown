@@ -80,7 +80,7 @@ When having multiple different web applications deployed across multiple web con
 
 ## The GigaSpaces Session Filter
 
-The web application configuration should include the GigaSpaces Session Filter. This filter interacts with the GigaSpaces session manager that store the session content within the data grid. It maintanis a temporary cache to reduce remote activity with the data grid.
+The web application configuration should include the GigaSpaces Session Filter. This filter interacts with the GigaSpaces session manager that store the session content within the data grid. It maintains a temporary cache to reduce remote activity with the data grid.
 ![HTTPSessionManagementcloserLook.jpg](/attachment_files/HTTPSessionManagementcloserLook.jpg)
 
 
@@ -117,7 +117,7 @@ Have `cacheManager.cacheSessionLocally = false` when you would like the same web
 
 # Session Replication across different JEE Containers
 
-The HTTP session stored within XAP in an agnostic netural structure. This allows XAP HTTP Session Manager to share the session between different JEE Containers. For example between IBM Websphere version 7 and IBM Websphere version 8 , or between Tomcat 6 and Tomcat 7. In the same way the same HTTP session may be shared between IBM Websphere and Jboss/Tomcat/Weblogic/etc.
+The HTTP session stored within XAP in an agnostic neutral structure. This allows XAP HTTP Session Manager to share the session between different JEE Containers. For example between IBM Websphere version 7 and IBM Websphere version 8 , or between Tomcat 6 and Tomcat 7. In the same way the same HTTP session may be shared between IBM Websphere and Jboss/Tomcat/Weblogic/etc.
 
 ![MultiJEEContainerSupport.jpg](/attachment_files/MultiJEEContainerSupport.jpg)
 

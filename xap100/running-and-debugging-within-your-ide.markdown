@@ -237,7 +237,7 @@ Click the Debug button. The IDE will connect to the GSC.
 
 ### Step 7
 
-Move a running PU instance to the newly started GSC. Use the `GS-UI` Hosts tab to move the PU instance by dragging and dropping the PU instance from its existing GSC to the newly started GSC running in debug mode. You can idetify the GSC running in debug mode using its process id.
+Move a running PU instance to the newly started GSC. Use the `GS-UI` Hosts tab to move the PU instance by dragging and dropping the PU instance from its existing GSC to the newly started GSC running in debug mode. You can identify the GSC running in debug mode using its process id.
 
 {% indent %}
 ![Remote_Debugging.jpg](/attachment_files/Remote_Debugging.jpg)

@@ -29,6 +29,9 @@ The guide provides all the information and tools needed to quickly develop eithe
 - [The Processing Unit](./the-processing-unit-overview.html){%wbr%}
 The Processing Unit is the unit of packaging and deployment in the GigaSpaces XAP platform. This section describes its directory structure, deployment descriptor and SLA definition and configuration.
 
+- [Elastic Processing Unit](./elastic-processing-unit-overview.html){%wbr%}
+How to deploy and manage an Elastic Processing Unit (EPU).
+
 - [Deployment and Administration](./administrators-guide.html){%wbr%}
 The primary focus of the Administrator’s Guide, is to provide both a basic, as well as more advanced overview of the GigaSpaces XAP administration and operation components.
 
