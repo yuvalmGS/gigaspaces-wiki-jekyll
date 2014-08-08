@@ -26,10 +26,10 @@ This demo assumes you have about 300 MB available memory on your machine.
 
 # Running the Example
 
-Step 1. Download and Install
+Step 1. Download and Install<br>
 Download the example [{%download%}](/download_files/EPUScaleDemo.zip) and extract it.
 
-Step 2. Start gs-agent
+Step 2. Start gs-agent<br>
 Start gs-agent using the following command:
 
 {% highlight bash %}
@@ -38,7 +38,7 @@ gs-agent gsa.esm 1 gsa.gsc 0 gsa.lus 1 gsa.gsm 1
 
 This will start an agent without any running GSCs.
 
-Step 3. Run the Client Application
+Step 3. Run the Client Application<br>
 Run the Client Application using the following command:
 
 {% highlight bash %}
