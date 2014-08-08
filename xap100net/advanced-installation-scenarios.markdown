@@ -6,38 +6,17 @@ parent: installation-overview.html
 weight: 400
 ---
 
-{% summary %} {% endsummary %}
-
-
-
-GigaSpaces XAP.NET takes advantage of several runtime components from GigaSpaces XAP (and, as a consequence, Java). In most cases, this is transparent to the user, since the XAP.NET installation process includes the required Java and XAP files. However, in some cases, users may wish to use an existing Java or XAP installation (e.g. developing interoperability solutions, using both XAP and XAP.NET). This page explains how to install XAP.NET in such scenarios.
-
 # Customizing Java
 
-#### Q. Can I install XAP.NET using an existing java installation?
-
-Yes. See [Jvm Configuration](./jvm-configuration.html#JvmLocation) for more information.
-
-#### Q. I've already installed XAP.NET. Can I configure it to work with a different java version or location?
+#### Q. Can I configure XAP.NET to work with a different java version or location?
 
 Yes. See [Jvm Configuration](./jvm-configuration.html#JvmLocation) for more information.
 
 # Customizing XAP
 
-#### Q. How do I install XAP.NET using an existing XAP installation?
-
 GigaSpaces XAP.NET is bundled with GigaSpaces XAP components required at runtime. Developers engaged in interoperability solutions may prefer working with a full installation of the Java XAP, which contains additional documentation, examples and tutorials.
-If you wish XAP.NET to use an existing XAP installation instead of creating an additional installation, follow these steps:
 
-1. Start XAP.NET installation. Review and accept the license.
-2. In the **Choose Setup Type** dialog, select **Custom** and click **Next** to continue.
-3. In the **Custom Setup** dialog, expand the **Core Components** node in the feature tree, click **Built-in XAP Runtime**, and select **Entire feature will be unavailable**. Click **Next** to continue.
-4. In the **XAP Runtime Components Installation Path** groupbox, type the location of your installed XAP, and click **Next** to continue.
-5. Click **Install** to start the installation process.
-
-#### Q. I've already installed XAP.NET. Can I configure it to work with a different XAP location?
-
-Yes. Edit the `Settings.xml` file (located in `<ProductRoot>\Config`) and change the value of `<XapNet.Runtime.Path>` to the new location.
+If you wish to modify your XAP.NET installation to use an existing XAP installation, edit the `Settings.xml` file (located in `<ProductRoot>\Config`) and change the value of `<XapNet.Runtime.Path>` to the new location.
 
 {% note %}
 Mixing XAP.NET and XAP versions is not supported - always use the same version and build.
@@ -81,7 +60,7 @@ HKLM\SOFTWARE\GigaSpaces\XAP.NET\9.5.0.5000\CLR v2.0.50727\SettingsPath=C:\GigaS
 HKLM\SOFTWARE\GigaSpaces\XAP.NET\9.5.0.5000\CLR v4.0.30319\SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v4.0.30319\Config\Settings.xml
 
 {% info %}
-Starting 8.0.3 the HKCU is supported as well, and is searched before HKLM.
+HKCU is supported as well, and is searched before HKLM.
 {%endinfo%}
 
 Step 5. **Environment variable:** Create an environment variable named `XapNet_<version>_SettingsPath` which points to the settings file path. For example, for that same 9.5 version we would use:
@@ -110,29 +89,13 @@ Step 7. **Code:** Use the following code to set the location of the settings fil
 Yes. You can manually set the registry settings shown above to point both java and XAP to a shared folder on a remote server.
 
 {% note %}
-In such scenarios, the shared folder that contains XAP must be mapped as a network drive. XAP will fail to load if a network path is used (e.g. server\share).
+In such scenarios, the shared folder that contains XAP must be mapped as a network drive. XAP will fail to load if a network path is used (e.g. `\\server\share`).
 {%endnote%}
 
 # Using GAC (Global Assembly Cache)
 
 #### Q. My application uses the Global Assembly Cache to locate 3rd party assemblies. Which XAP.NET assemblies do I need to register?
 
-Step 1. Register the following XAP.NET assemblies in the Global Assembly Cache:
-    1. `Bin\GigaSpaces.Core.dll`
-    2. `Bin\GigaSpaces.NetToJava.dll`
-
-Step 2. Modify the GigaSpaces section definition in `Config\Default.config` and `Config\DefaultApp.config` to specify a strong-name for GigaSpaces.Core:
-
-{% highlight csharp %}
-<section name="GigaSpaces" type="GigaSpaces.Core.Configuration.GigaSpacesCoreConfiguration, GigaSpaces.Core"/>
-{% endhighlight %}
-
-Should be replaced it with:
-
-{% highlight csharp %}
-<section name="GigaSpaces" type="GigaSpaces.Core.Configuration.GigaSpacesCoreConfiguration, GigaSpaces.Core, Version=9.5.0.5000, Culture=neutral, PublicKeyToken=94297b57ee0e4ad5"/>
-{% endhighlight %}
-
-{% info %}
-The `Version` should be set according to the version of XAP.NET in use (For example, if you're using XAP.NET 9.5 set the version to 9.5.0.5000).
-{%endinfo%}
+The following XAP.NET assemblies should be registered when working with the Global Assembly Cache:
+  * `Bin\GigaSpaces.Core.dll`
+  * `Bin\GigaSpaces.NetToJava.dll`
