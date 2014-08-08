@@ -10,7 +10,7 @@ weight: 400
 
 {%section%}
 {%column width=10% %}
-![replication.png](/attachment_files/subject/replication.png)
+![replication.png](/attachment_files/subject/replication-topology.png)
 {%endcolumn%}
 {%column width=90% %}
 This section gives a detailed description of the Space's replication mechanism, and how to configure and optimize it.

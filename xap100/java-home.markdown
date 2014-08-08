@@ -293,7 +293,7 @@ You will learn about:
  {%align center %}
  [Part IX](./java-tutorial-part9.html)
 
- <img src="/attachment_files/qsg/bgdata.png" width="100" height="100">
+ <img src="/attachment_files/subject/big-data.png" width="100" height="100">
  {%endalign%}
  {%endcolumn%}
 

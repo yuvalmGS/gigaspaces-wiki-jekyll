@@ -23,7 +23,7 @@ For additional client side caching options, refer to [Client Side Caching](./cli
 Creating a local cache is similar to creating a GigaSpace, except that we wrap the space with a local cache before handing it to the GigaSpace. The local cache can be configured at design time using `LocalCacheSpaceFactoryBean`, or at runtime using `LocalCacheSpaceConfigurer`. For example:
 
 {% inittab os_simple_space|top %}
-{% tabcontent Spring Namespace Configuration %}
+{% tabcontent  Namespace   %}
 
 {% highlight xml %}
 <os-core:space-proxy  id="space" name="mySpace"/>
@@ -47,7 +47,7 @@ Creating a local cache is similar to creating a GigaSpace, except that we wrap t
 {% endhighlight %}
 
 {% endtabcontent %}
-{% tabcontent Plain Spring XML %}
+{% tabcontent Plain   XML %}
 
 {% highlight xml %}
 <bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">

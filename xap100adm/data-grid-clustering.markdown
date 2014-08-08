@@ -6,8 +6,18 @@ weight: 300
 parent: none
 ---
 
-{%wbr%}
+ {%wbr%}
+
+{%section%}
+{%column width=10% %}
+![cassandra.png](/attachment_files/subject/replication.png)
+{%endcolumn%}
+{%column width=90% %}
 This section describes in detail how In-Memory-Data-Grid clustering works. It covers fail-over, load-balancing and replication facilities.
+{%endcolumn%}
+{%endsection%}
+
+
 
 
 <hr/>

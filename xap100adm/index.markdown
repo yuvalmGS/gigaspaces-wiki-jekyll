@@ -9,7 +9,7 @@ categories: XAP100ADM
 
 {%section%}
 {%column width=15% %}
-<img src="/attachment_files/subject/MonitoringAndManagement.png" width="80" height="80">
+<img src="/attachment_files/subject/management.png" width="80" height="80">
 {%endcolumn%}
 {%column width=85% %}
 The Administrator's Guide will introduce you to the Management Center and Web Management Console which are used to deploy, configure and monitor XAP components. It also provides guidelines on how to setup your network and how to troubleshoot your XAP application.

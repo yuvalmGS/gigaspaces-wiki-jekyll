@@ -8,7 +8,7 @@ parent: java-home.html
 
 {%section%}
 {%column width=10% %}
-![cassandra.png](/attachment_files/qsg/bgdata.png)
+![cassandra.png](/attachment_files/subject/big-data.png)
 {%endcolumn%}
 {%column width=90% %}
 {% summary   %} {% endsummary %}

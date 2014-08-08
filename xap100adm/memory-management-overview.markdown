@@ -39,3 +39,8 @@ The LRU Cache policy.
 XAP 10 introduces a new Storage interface allowing Blob/Block/external type storage to act as a natural memory space for the IMDG.
 
 <hr/>
+
+#### Additional Resources
+
+Flash drive Storage [{%externalurl%}](http://www.slideshare.net/shayhassidim/xap-memory-xtendtutorial2014)
+
