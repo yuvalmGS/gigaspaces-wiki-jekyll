@@ -36,18 +36,18 @@ This feature requires a separate license in addition to the XAP commercial licen
 <hr/>
 
 - [Overview](./global-http-session-sharing.html){%wbr%}
-Allows you to deploy a web application (WAR) into the Service Grid.
+Configure your web application to use the XAP session manager, deploy the XAP in-memory data grid (IMDG) and deploy your web application.
 
 - [Configuration & Deployment](./global-http-session-sharing-configuration.html){%wbr%}
-XAP integration with Jetty as the web container when running web applications on top of the Service Grid.
+Configure the web application and Shiro for deployment on the grid.
 
 - [Apache Load Balancer](./global-http-session-sharing-load-balancer.html){%wbr%}
-HTTP Session Management
+Configuring Apache load balancer.
 
 
 <hr/>
 
 #### Additional Resources
 
-[Global Http Session Sharing](http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2)
+Global Http Session Sharing [{%externalurl%}](http://www.slideboom.com/presentations/631622/Global-Http-Session-Sharing-V2)
 
