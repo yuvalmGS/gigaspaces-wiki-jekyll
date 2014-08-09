@@ -64,13 +64,12 @@ An example of how the MongoDB Space Synchronization Endpoint can be configured w
 		xmlns:os-core="http://www.openspaces.org/schema/core" xmlns:os-jms="http://www.openspaces.org/schema/jms" 
 		xmlns:os-events="http://www.openspaces.org/schema/events" 
 		xmlns:os-remoting="http://www.openspaces.org/schema/remoting" 
-		xmlns:os-sla="http://www.openspaces.org/schema/sla" xmlns:tx="http://www.springframework.org/schema/tx" 
-		
-		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd 
+		xmlns:os-sla="http://www.openspaces.org/schema/sla" xmlns:tx="http://www.springframework.org/schema/tx"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%jarversion spring%}.xsd
 		http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
 		http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{%currentversion%}/events/openspaces-events.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd 
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-{%jarversion spring%}.xsd
 		http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{%currentversion%}/remoting/openspaces-remoting.xsd">
 		
 		<bean id="propertiesConfigurer" 

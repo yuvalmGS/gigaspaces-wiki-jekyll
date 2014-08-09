@@ -23,7 +23,6 @@ Below is a list of new features and improvements in GigaSpaces 10.0.X.
 | GS-11576 | Add Protective mode for query without any indexes | 10.0.0 | | All |
 | GS-11596 | Log severe messages when warning persists | 10.0.0 | 8622 | All |
 | GS-11609 | Log on warning level when LRMI class loading failed because it cannot <br> create a connection to the source | 10.0.0 | | Java |
-| GS-11610 | End of life - shutting down a space from a remote proxy | 10.0.0 | | All |
 | GS-11612 | Deploy process optimization | 9.7.1,<br> 10.0.0 | | Java, .NET |
 | GS-11620 | Simplify view-query definition in openspaces-core.xsd | 10.0.0 | | Java |
 | GS-11621 | Bad linux scripts for the benchmark cli tool | 9.7.1,<br> 10.0.0 | | Java |

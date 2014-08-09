@@ -31,18 +31,12 @@ With the example below a replication filter is used with the source space (outpu
 	xmlns:os-events="http://www.openspaces.org/schema/events"
 	xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
 	xmlns:os-sla="http://www.openspaces.org/schema/sla"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
-       http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-       http://www.openspaces.org/schema/core
-       http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
-       http://www.openspaces.org/schema/events
-       http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
-       http://www.openspaces.org/schema/remoting
-       http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
-       http://www.openspaces.org/schema/sla
-       http://www.openspaces.org/schema/{% currentversion %}/sla/openspaces-sla.xsd
-       http://www.openspaces.org/schema/core/gateway
-       http://www.openspaces.org/schema/{% currentversion %}/core/gateway/openspaces-gateway.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
+       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
+       http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
+       http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/{% currentversion %}/sla/openspaces-sla.xsd
+       http://www.openspaces.org/schema/core/gateway http://www.openspaces.org/schema/{% currentversion %}/core/gateway/openspaces-gateway.xsd">
 
         <bean id="londonFilter" class="com.gigaspaces.examples.gateway.LondonReplicationFilter"/>
 

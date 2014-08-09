@@ -687,14 +687,10 @@ The last thing we need in order to tie all of this together is a configuration f
   xmlns:context="http://www.springframework.org/schema/context"
   xmlns:mvc="http://www.springframework.org/schema/mvc"
   xmlns:os-core="http://www.openspaces.org/schema/core"
-  xsi:schemaLocation="http://www.springframework.org/schema/beans
-    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-    http://www.openspaces.org/schema/core
-    http://www.openspaces.org/schema/core/openspaces-core.xsd
-    http://www.springframework.org/schema/mvc
-    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
-    http://www.springframework.org/schema/context
-    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
+    http://www.openspaces.org/schema/core http://www.openspaces.org/schema/core/openspaces-core.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-schema/mvc/spring-mvc-.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%jarversion spring%}.xsd">
 
   <bean
     class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">

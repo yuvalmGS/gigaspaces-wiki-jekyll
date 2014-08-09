@@ -236,10 +236,10 @@ Here is an example for a processing unit with a c++ worker deployed, using a clu
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:os-core="http://www.openspaces.org/schema/core"
        xmlns:os-sla="http://www.openspaces.org/schema/sla"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
        http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/{%currentversion%}/sla/openspaces-sla.xsd
        http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd">
+
     <bean id="propertiesConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
 
     <os-core:embedded-space id="space" name="space" />

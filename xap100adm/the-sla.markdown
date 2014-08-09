@@ -42,10 +42,9 @@ The SLA definition, whether it comes in a separate file or embedded inside the `
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:os-sla="http://www.openspaces.org/schema/sla"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-	   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
-       http://www.openspaces.org/schema/sla
-	   http://www.openspaces.org/schema/{%currentversion%}/sla/openspaces-sla.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
+       http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/{%currentversion%}/sla/openspaces-sla.xsd">
+
     <os-sla:sla cluster-schema="partitioned-sync2backup"
             number-of-instances="2" number-of-backups="1"
             max-instances-per-vm="1">
@@ -60,8 +59,7 @@ The SLA definition, whether it comes in a separate file or embedded inside the `
 {% highlight xml %}
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans
-	   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd">
 
 	<bean id="SLA" class="org.openspaces.pu.sla.SLA">
 		<property name="clusterSchema" value="partitioned-sync2backup" />
@@ -503,7 +501,7 @@ Deploy a 3 partitions with a backup space cluster using the following sla.xml:
 <beans xmlns="http://www.springframework.org/schema/beans"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns:os-sla="http://www.openspaces.org/schema/sla"
-xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
 http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/sla/openspaces-sla.xsd">
 
 <os-sla:sla>
