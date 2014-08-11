@@ -27,11 +27,11 @@ To run this command from the command line, the environment must be set using the
 The `gsxml2cpp` command has the following parameters:
 
 {: .table .table-bordered}
-| Parameter Description | Required/Optional | Description |
+| Parameter Description | Required Optional | Description |
 |:----------------------|:------------------|:------------|
 | XML input file | required | The `gs.xml` file name, or full path if it does not exist in the working directory. Holds definitions of object classes. |
 | Package name | required | Not in use, used for backwards compatibility only. Use a valid string.  |
-| C++ serializer file (.cpp) | required | The generated C++ serializer file name. Holds the serializers for each object class defined in the input `gs.xml` file. |
+| <nobr>C++ serializer file (.cpp)</nobr> | required | The generated C++ serializer file name. Holds the serializers for each object class defined in the input `gs.xml` file. |
 | C++ classes file (.h) | required | The generated C++ classes header file name. Holds the class definitions for each object class defined in the input `gs.xml` file. If this value is defined as `DummyHeaderFile`, a dummy file named `DummyHeaderFile.txt` is created and the C++ class header file is not included automatically in the C++ serializer file. |
 | POJO output directory | optional | The target directory to hold the generated POJO (Java) files. |
 | PONO output directory | optional | The target directory to hold the generated PONO (.NET) files. |

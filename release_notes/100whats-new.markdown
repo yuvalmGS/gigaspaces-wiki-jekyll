@@ -33,6 +33,11 @@ This page lists the main new features in XAP 10.0 (Java and .Net editions). It's
 
 - [Support for Mule 3.5](#11)
 
+- [Compressed Storage Mode in .NET](#12)
+
+- [Externalizable End of Life](#13)
+
+
 
 {%endpanel%}
 
@@ -280,3 +285,20 @@ For a remote Space the `space-proxy` tag is used in the name space configuration
 # XAP Support for Mule 3.5
 
 {%learn%}/xap100/mule-esb.html{%endlearn%}
+
+
+{%anchor 12%}
+
+# Compressed Storage Mode .Net
+
+{%learn%}/xap100net/poco-storage-type.html{%endlearn%}
+
+
+
+{%anchor 13%}
+
+# Externalizable End of Life
+
+End-Of-Life: starting with XAP 10.0, the default behaviour is to ignore Externalizable and serialize Externalizable POJOs the same way as plain POJOs.
+
+{%learn%}/release_notes/100upgrading.html{%endlearn%}

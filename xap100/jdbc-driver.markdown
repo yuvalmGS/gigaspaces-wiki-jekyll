@@ -9,12 +9,6 @@ weight: 100
 {% summary%}{% endsummary %}
 
 
-{%comment%}
- {% summary%}GigaSpaces allows applications to connect to the IMDG using a JDBC driver. A GigaSpaces JDBC driver accepts SQL statements, translates them to space operations, and returns standard result sets. {% endsummary %}
-
-# Overview
-{%endcomment%}
-
 The XAP JDBC interface allows database-driven applications to interact with spaces via SQL queries and commands. A query processor transparently translates SQL queries into legal space operations. No integration is required - all you need to do is point the application to the GigaSpaces JDBC driver like any other JDBC driver.
 
 Applications can access the XAP Data Grid using the JDBC API; data written to the IMDG using the JDBC API can also be accessed using other APIs.
@@ -111,14 +105,14 @@ GigaSpaces JDBC Driver supports the following transaction managers:
 
 The transaction manager type can be configured via JDBC's connection properties (there are additional properties for lookup distributed tx manager):
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |Property|Description|
 |:-------|:----------|
-| `gs.tx_manager_type` | `Transaction manager type: "local"/"distributed"/"lookup_distributed"` |
-| `gs.lookup_tx.name` | `Lookup service name` |
-| `gs.lookup_tx.timeout` | `Lookup timeout (default=3000)` |
-| `gs.lookup_tx.groups` | `Lookup groups` |
-| `gs.lookup_tx.locators` | `Lookup locators` |
+| gs.tx_manager_type | Transaction manager type: "local"/"distributed"/"lookup_distributed" |
+| gs.lookup_tx.name | Lookup service name |
+| gs.lookup_tx.timeout | Lookup timeout (default=3000) |
+| gs.lookup_tx.groups | Lookup groups |
+| gs.lookup_tx.locators | Lookup locators |
 
 Transaction Manager Type Configuration Example:
 
@@ -160,7 +154,7 @@ Select FIELD from CLASS group by FIELD sort by FIELD
 
 The query is executed in two phases:
 
-1. A `DistributedTask` is sent to each partition to execute the following JDBC query:
+Step 1. A `DistributedTask` is sent to each partition to execute the following JDBC query:
 
 {% highlight java %}
 Select FIELD from CLASS group by FIELD
@@ -168,7 +162,7 @@ Select FIELD from CLASS group by FIELD
 
 The result is then sent into the reducer running at the client side.
 
-2. The `DistributedTask.reduce` method running at the client side aggregating the results from all the partitions and sort the final set.
+Step 2. The `DistributedTask.reduce` method running at the client side aggregating the results from all the partitions and sort the final set.
 
 {% highlight java %}
 public class JDBCTask implements DistributedTask<String[], String[]>{
@@ -262,25 +256,25 @@ The GigaSpaces JDBC Driver translates in runtime a Space object into a relationa
 
 The following information represents the SQL to Java mapping conducted at runtime when a table is created via the JDBC driver.
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |SQL Type|Java Type|
 |:-------|:--------|
-| `VARCHAR, VARCHAR2` | `java.lang.String` |
-| `CHAR` | `java.lang.String` |
-| `DATE` | `java.sql.Date` |
-| `DATE` | `java.sql.Timestamp` |
-| `TIME` | `java.sql.Time` |
-| `FLOAT` | `java.lang.Float` |
-| `REAL` | `java.lang.Float` |
-| `NUMERIC` | `java.math.BigDecimal` |
-| `DECIMAL` | `java.math.BigDecimal` |
-| `DOUBLE` | `java.lang.Double` |
-| `BOOLEAN` | `java.lang.Boolean` |
-| `INTEGER` | `java.lang.Integer` |
-| `TIMESTAMP` | `java.sql.Timestamp` |
-| `LONG` | `java.lang.Long` |
-| `BLOB` | `com.gigaspaces.jdbc.driver.Blob` |
-| `CLOB` | `com.gigaspaces.jdbc.driver.Clob` |
+| VARCHAR, VARCHAR2 | java.lang.String |
+| CHAR | java.lang.String |
+| DATE | java.sql.Date |
+| DATE | java.sql.Timestamp |
+| TIME | java.sql.Time |
+| FLOAT | java.lang.Float |
+| REAL | java.lang.Float |
+| NUMERIC | java.math.BigDecimal |
+| DECIMAL | java.math.BigDecimal |
+| DOUBLE | java.lang.Double |
+| BOOLEAN | java.lang.Boolean |
+| INTEGER | java.lang.Integer |
+| TIMESTAMP | java.sql.Timestamp |
+| LONG | java.lang.Long |
+| BLOB | com.gigaspaces.jdbc.driver.Blob |
+| CLOB | com.gigaspaces.jdbc.driver.Clob |
 
 # Supported Features
 
@@ -288,6 +282,7 @@ The following information represents the SQL to Java mapping conducted at runtim
 
 - All Basic SQL statements: `SELECT, INSERT, DELETE, UPDATE, CREATE TABLE, DROP TABLE`.
 - `AND/OR` operators to join two or more conditions in a `WHERE` clause.
+- `NOT IN` and `NOT NULL`
 - Aggregate functions: `COUNT`, `MAX`, `MIN`, `SUM`, `AVG`.
 - All basic logical operations to create conditions: =, <>, <,>, >=, <=, `[NOT]` like, is `[NOT]` `null`, `IN`, `BETWEEN`.
 - Nested fields query - You may use as part of the select statement nested fields within collections (maps) or objects within the Space object.
@@ -506,7 +501,7 @@ char timestamp long clob blob empty_clob() empty_blob() lob true false
 
 The JDBC Driver should be configured using the following properties. These should be part of the [The Space Component](./the-space-configuration.html#proxy) configuration when deployed:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Parameter | Description | Default Value |
 |:----------|:------------|:--------------|
 |space-config.QueryProcessor.space_read_lease_time|Read timeout. Millisec units.|0|
@@ -515,7 +510,7 @@ The JDBC Driver should be configured using the following properties. These shoul
 |space-config.QueryProcessor.init_jmx|Expose Tracing via JMX|false|
 |space-config.QueryProcessor.trace_exec_time|Enable Tracing |false|
 |space-config.QueryProcessor.debug_mode|Boolean value. When true show debug information.|false|
-|space-config.QueryProcessor.parser_case_sensetivity|Boolean value. Determines if Column and Table names are case sensitive.|true|
+|<nobr>space-config.QueryProcessor.parser_case_sensetivity</nobr>|Boolean value. Determines if Column and Table names are case sensitive.|true|
 |space-config.QueryProcessor.auto_commit|Boolean value. Auto Commit mode|true|
 |space-config.QueryProcessor.date_format| Date Format|yyyy-MM-dd|
 |space-config.QueryProcessor.datetime_format| DateTime Format|yyyy-MM-dd hh:mm:ss|

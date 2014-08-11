@@ -9,9 +9,6 @@ weight: 100
 {% summary %} {%endsummary%}
 
 
-{%comment%}
-{% summary %}Using JPA with GigaSpaces.{% endsummary %}
-{%endcomment%}
 
 {% info %}
 It is highly recommended that you [get yourself familiar with JPA](http://download.oracle.com/javaee/6/tutorial/doc/bnbpz.html) before reading this page.
@@ -22,7 +19,7 @@ It is also recommended that you take the [XAP PetClinic JPA Tutorial](./your-fir
 
 ### OpenJPA
 
-OpenJPA's jar file is included with the GigaSpaces distribution (provided under `<GigaSpaces root>/lib/platform/jpa`), and the GigaSpaces-specific JPA implementation classes are part of the OpenSpaces jar (located under `<GigaSpaces root>/lib/required/gs-openspaces.jar`).
+OpenJPA's jar file is included with the XAP distribution (provided under `<XAP root>/lib/platform/jpa`), and the XAP-specific JPA implementation classes are part of the OpenSpaces jar (located under `<XAP root>/lib/required/gs-openspaces.jar`).
 Maven users should define the following dependency in their `pom.xml` file:
 
 {% highlight xml %}
@@ -30,24 +27,24 @@ Maven users should define the following dependency in their `pom.xml` file:
   <dependency>
     <groupId>org.apache.openjpa</groupId>
     <artifactId>openjpa</artifactId>
-    <version>2.0.0</version>
+    <version>{%jarversion openjpa%}</version>
   </dependency>
 </dependencies>
 {% endhighlight %}
 
-{%comment%}
-![new-in-801-banner.png](/attachment_files/new-in-801-banner.png)
-{%endcomment%}
 
+{%comment%}
 #### OpenJPA 2.0.1
 
 GigaSpaces 8.0.1 uses OpenJPA version 2.0.1.
 Note that it's no longer needed to set a maven dependency for OpenJPA since OpenSpaces has an OpenJPA dependency.
 If from some reason one needs an OpenJPA maven dependency set, make sure to set the OpenJPA version to "2.0.1".
+{%endcomment%}
+
 
 ### The persistence.xml file
 
-To enable the GigaSpaces JPA implementation you should specify  the following 3 mandatory properties in your `persistence.xml`:
+To enable the XAP JPA implementation you should specify  the following 3 mandatory properties in your `persistence.xml`:
 
 - `BrokerFactory` should be set to `"abstractstore"` which tells OpenJPA that an alternate `StoreManager` (the layer responsible for interaction with underlying database) is going to be used.
 - `abstractstore.AbstractStoreManager` should be set to `"org.openspaces.jpa.StoreManager"` which tells OpenJPA to use the OpenSpaces `StoreManager`.
@@ -60,7 +57,7 @@ Your persistence.xml file should be placed in any **/META-INF folder in your cla
 In 8.0.1, it is no longer needed to set the "abstractstore.AbstractStoreManager" property.
 Instead, make sure to set the "BrokerFactory" property to "org.openspaces.jpa.BrokerFactory" as shown in the example below.
 
-The following is an example of a GigaSpaces JPA persistence.xml configuration file:
+The following is an example of a XAP JPA persistence.xml configuration file:
 
 {% highlight xml %}
 <persistence-unit name="gigaspaces" transaction-type="RESOURCE_LOCAL">
@@ -85,7 +82,7 @@ The following is an example of a GigaSpaces JPA persistence.xml configuration fi
 
 #### Transaction Read Lock Level
 
-GigaSpaces JPA default read lock level is set to "read" which is equivalent to GigaSpaces' ReadModifiers.REPEATABLE_READ.In order to use ReadModifiers.EXCLUSIVE_READLOCK the "ReadLockLevel" property should be set to "write":
+XAP JPA default read lock level is set to "read" which is equivalent to XAP' ReadModifiers.REPEATABLE_READ.In order to use ReadModifiers.EXCLUSIVE_READLOCK the "ReadLockLevel" property should be set to "write":
 
 {% highlight xml %}
   <property name="ReadLockLevel" value="write"/>
@@ -126,12 +123,12 @@ The following Spring xml configuration file declares a space, an `EntityManagerF
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-{%jarversion spring%}.xsd">
 
 	<!-- space definition -->
-        <os-core:embedded-space  id="space" name="jpaSpace" lookup-groups="test"/>
+    <os-core:embedded-space  id="space" name="jpaSpace" lookup-groups="test"/>
 
-        <!-- gigaspace definition -->
-        <os-core:giga-space id="gigaSpace" space="space"/>
+    <!-- gigaspace definition -->
+    <os-core:giga-space id="gigaSpace" space="space"/>
 
-        <!-- JPA entity manager factory definition -->
+    <!-- JPA entity manager factory definition -->
 	<bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
                 <!-- this relies on the fact that our persistence.xml file defines a persistence unit named "gigaspaces" -->
 		<property name="persistenceUnitName" value="gigaspaces"/>
@@ -142,17 +139,17 @@ The following Spring xml configuration file declares a space, an `EntityManagerF
 		</property>
 	</bean>
 
-        <!-- JPA transaction manager definition -->
+    <!-- JPA transaction manager definition -->
 	<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
 		<property name="entityManagerFactory" ref="entityManagerFactory" />
 	</bean>
 
-        <!-- support annotations -->
+    <!-- support annotations -->
 	<bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
 	<context:annotation-config/>
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 
-        <!-- JPA example service definition -->
+    <!-- JPA example service definition -->
 	<bean id="jpaService" class="org.openspaces.jpa.JpaService" />
 </beans>
 {% endhighlight %}
@@ -206,9 +203,9 @@ When working with persistent classes, you have a number of ways to make the JPA 
         <class>org.openspaces.objects.Book</class>
         <class>org.openspaces.objects.Author</class>
 	<properties>
-           <property name="BrokerFactory" value="abstractstore"/>
-           <property name="abstractstore.AbstractStoreManager" value="org.openspaces.jpa.StoreManager"/>
-           <property name="LockManager" value="none"/>
+        <property name="BrokerFactory" value="abstractstore"/>
+        <property name="abstractstore.AbstractStoreManager" value="org.openspaces.jpa.StoreManager"/>
+        <property name="LockManager" value="none"/>
 	</properties>
 </persistence-unit>
 {% endhighlight %}
@@ -241,11 +238,11 @@ An entity class must meet the following requirements:
 
 GigaSpaces JPA Entities must have both JPA and GigaSpaces annotations for the following annotations:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |GigaSpaces|JPA|
 |:---------|:--|
-| `@SpaceId`| `@Id/@EmbeddedId`|
-| `@SpaceExclude`| `@Transient`|
+| @SpaceId| @Id/@EmbeddedId|
+| @SpaceExclude| `@Transient|
 
 As with GigaSpaces POJOs, you may use the `@SpaceIndex` & `@SpaceRouting` annotations with GigaSpaces JPA entities.
 

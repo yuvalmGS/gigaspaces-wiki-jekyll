@@ -8,13 +8,13 @@ weight: 300
 
 
 {% section %}
- {% column width=10% %}
- ![counter-logo.jpg](/attachment_files/subject/lrmi.png)
- {% endcolumn %}
- {% column width=90% %}
- {% summary %} {% endsummary %}
- {% endcolumn %}
- {% endsection %}
+{% column width=10% %}
+![counter-logo.jpg](/attachment_files/subject/lrmi.png)
+{% endcolumn %}
+{% column width=90% %}
+{% summary %} {% endsummary %}
+{% endcolumn %}
+{% endsection %}
 
 
 
@@ -138,27 +138,27 @@ To allow the above , the client must set the `java.rmi.server.hostname` property
 The `LRMI` configuration options set as system properties. They are listed below:
 
 {: .table .table-bordered .table-condensed }
-| System Property | Description | Default value | Server/Client Setting | Unit | Can be overridden at the client side|
+| System Property | Description | Default value | Server Client Setting | Unit | Can be overridden at the client side|
 |:----------------|:------------|:--------------|:----------------------|:-----|:------------------------------------|
-| `com.gs.transport_protocol.lrmi.max-conn-pool` | The maximum amount of connections to the space server remote services that can work simultaneously in a client connection pool. Starts with 1 connection. Defined per each remote service (by default, each remote service has `1024` maximum connections). | `1024` | Server | Connection| No|
-| `com.gs.transport_protocol.lrmi.min-threads` | GigaSpaces maintains a thread pool in the client and server side, that manages incoming remote requests. The thread pool size is increased each time with one additional thread and shrinks when existing threads are not used for 5 minutes. This parameter specifies the minimum size of this thread pool. | `1` | Server | Threads | No|
-| `com.gs.transport_protocol.lrmi.max-threads` | This parameter specifies the maximum size of the thread pool.{% wbr %}Make sure the maximum size of the thread pool accommodates the maximum number of concurrent requests to the space. The client uses this pool for server requests into the client side - i.e. notify callbacks. When the pool is exhausted and all threads are consumed to process incoming requests, additional requests are blocked until existing requested processing are complete. Using a value as **1024** for the LRMI Connection Thread Pool should be sufficient for most large scale systems.| `128` | Server | Threads | No|
-| `com.gs.transport_protocol.lrmi.bind-port` | Server port used for incoming client requests, or notifications from server to client. The server port is set by default to `0`, which means next free port. This means that whenever GigaSpaces is launched, it allocates one of the available ports. Define a specific port value to enforce a specific port on the space server or client side. You can define a range of ports, see [below](#portrange). | `0` | Server| | No|
-| `java.rmi.server.hostname` | Binds the GigaSpaces Server on a specified network interface. See details  [below](#server)). If `java.rmi.server.hostname` is `null` the system sets the localhost IP address. | `hostname` | Client & Server | | No|
-| `com.gs.transport_protocol.lrmi.idle_connection_timeout` | Watchdog idle connection timeout. | `900` sec| Client| Seconds |Yes|
-| `com.gs.transport_protocol.lrmi.request_timeout` | Watchdog request timeout. | `30` sec| Client | Seconds |Yes|
-| `com.gs.transport_protocol.lrmi.inspect_timeout`| Watchdog dummy packet connection timeout used when the watchdog suspects a request connection is blocked (com.gs.transport_protocol.lrmi.request_timeout elapsed). | `1000` millisec| Client | millisec|Yes|
-| `com.gs.transport_protocol.lrmi.threadpool.idle_timeout` | LRMI thread pool idle timeout. Usually should be tuned for server side| `300000` milisec| Server | millisec| No|
-| `com.gs.transport_protocol.lrmi.connect_timeout` | LRMI timeout to establish a socket connection | 5000| Server | millisec| No|
-| `com.gs.transport_protocol.lrmi.maxBufferSize` | The NIO internal cache (a DirectByteBuffer) might cause an `OutOfMemoryError` due-to direct memory exhaustion. To avoid such a scenario, the LRMI layer breaks the outgoing buffer into a several chunks. By doing so, the NIO internal cache is kept small, and may not cause any error. The size of these chunks can be determined by this property| `65536` (64k)| Client & Server | Bytes | Yes |
-| `com.gs.transport_protocol.lrmi.selector.threads` | LRMI selector threads. This should be configured with multi core machines. Usualy should be tuned for server side| `4` | Client & Server | Threads| No|
-| `com.gs.transport_protocol.lrmi.classloading` | Enables LRMI dynamic class loading.| `true` | Server | boolean value| No|
-| `com.gs.transport_protocol.lrmi.classloading.import` | Enables importing of classes using LRMI dynamic class loading.| `true` | Server | boolean value| No|
-| `com.gs.transport_protocol.lrmi.classloading.export` | Enables exporting of classes using lrmi dynamic class loading.| `true` | Server | boolean value| No|
-| `com.gs.transport_protocol.lrmi.tcp-send-buffer-size` | Set the TCP Send Buffer size (SO_SNDBUF).| `OS default` | Client & Server| bytes |Yes|
-| `com.gs.transport_protocol.lrmi.tcp-receive-buffer-size` | Set the TCP receive Buffer size (SO_RCVBUF).| `OS default` | Client & Server| bytes |Yes|
-| `com.gs.transport_protocol.lrmi.tcp-keep-alive` | Set the TCP keep alive mode (SO_KEEPALIVE).| `true` | Client & Server| Seconds|Yes|
-| `com.gs.transport_protocol.lrmi.timeout_resolution` | Resolution in percents. Timeout resolution indicates the accuracy of the request timeout. | `10` | Client | Percent|Yes|
+| com.gs.transport_protocol.lrmi.max-conn-pool | The maximum amount of connections to the space server remote services that can work simultaneously in a client connection pool. Starts with 1 connection. Defined per each remote service (by default, each remote service has `1024` maximum connections). | 1024 | Server | Connection| No|
+| com.gs.transport_protocol.lrmi.min-threads | GigaSpaces maintains a thread pool in the client and server side, that manages incoming remote requests. The thread pool size is increased each time with one additional thread and shrinks when existing threads are not used for 5 minutes. This parameter specifies the minimum size of this thread pool. | 1 | Server | Threads | No|
+| com.gs.transport_protocol.lrmi.max-threads | This parameter specifies the maximum size of a thread pool used to serve remote write , writeMultiple, read , readMultiple , take , takeMultiple , clear , min, max , sum , average,  aggregate , custom aggregators , custom change, count and change operations.{% wbr %}Make sure the maximum size of the thread pool accommodates the maximum number of concurrent requests to the space. The client uses this pool for server requests into the client side - i.e. notify callbacks. When the pool is exhausted and all threads are consumed to process incoming requests, additional requests are blocked until existing requested processing are complete. Using a value as **1024** for the LRMI Connection Thread Pool should be sufficient for most large scale systems.| `128` | Server | Threads | No|
+| com.gs.transport_protocol.lrmi.bind-port | Server port used for incoming client requests, or notifications from server to client. The server port is set by default to `0`, which means next free port. This means that whenever GigaSpaces is launched, it allocates one of the available ports. Define a specific port value to enforce a specific port on the space server or client side. You can define a range of ports, see [below](#portrange). | 0 | Server| | No|
+| java.rmi.server.hostname | Binds the GigaSpaces Server on a specified network interface. See details  [below](#server)). If `java.rmi.server.hostname` is `null` the system sets the localhost IP address. | hostname | Client & Server | | No|
+| com.gs.transport_protocol.lrmi.idle_connection_timeout | Watchdog idle connection timeout. | 900 sec| Client| Seconds |Yes|
+| com.gs.transport_protocol.lrmi.request_timeout | Watchdog request timeout. | 30 sec| Client | Seconds |Yes|
+| com.gs.transport_protocol.lrmi.inspect_timeout| Watchdog dummy packet connection timeout used when the watchdog suspects a request connection is blocked (com.gs.transport_protocol.lrmi.request_timeout elapsed). | `1000` millisec| Client | millisec|Yes|
+| com.gs.transport_protocol.lrmi.threadpool.idle_timeout | LRMI thread pool idle timeout. Usually should be tuned for server side| 300000 milisec| Server | millisec| No|
+| com.gs.transport_protocol.lrmi.connect_timeout | LRMI timeout to establish a socket connection | 5000| Server | millisec| No|
+| com.gs.transport_protocol.lrmi.maxBufferSize | The NIO internal cache (a DirectByteBuffer) might cause an `OutOfMemoryError` due-to direct memory exhaustion. To avoid such a scenario, the LRMI layer breaks the outgoing buffer into a several chunks. By doing so, the NIO internal cache is kept small, and may not cause any error. The size of these chunks can be determined by this property| 65536 (64k)| Client & Server | Bytes | Yes |
+| com.gs.transport_protocol.lrmi.selector.threads | LRMI selector threads. This should be configured with multi core machines. Usualy should be tuned for server side| 4 | Client & Server | Threads| No|
+| com.gs.transport_protocol.lrmi.classloading | Enables LRMI dynamic class loading.| `true` | Server | boolean value| No|
+| com.gs.transport_protocol.lrmi.classloading.import | Enables importing of classes using LRMI dynamic class loading.| true | Server | boolean value| No|
+| com.gs.transport_protocol.lrmi.classloading.export | Enables exporting of classes using lrmi dynamic class loading.| true | Server | boolean value| No|
+| com.gs.transport_protocol.lrmi.tcp-send-buffer-size | Set the TCP Send Buffer size (SO_SNDBUF).| OS default | Client & Server| bytes |Yes|
+| com.gs.transport_protocol.lrmi.tcp-receive-buffer-size | Set the TCP receive Buffer size (SO_RCVBUF).| OS default | Client & Server| bytes |Yes|
+| com.gs.transport_protocol.lrmi.tcp-keep-alive | Set the TCP keep alive mode (SO_KEEPALIVE).| `true` | Client & Server| Seconds|Yes|
+| com.gs.transport_protocol.lrmi.timeout_resolution | Resolution in percents. Timeout resolution indicates the accuracy of the request timeout. | 10 | Client | Percent|Yes|
 
 {% tip %}
 If you are using the **notification slow consumer** mechanism see the [Slow Consumer](./slow-consumer.html#Configuration -- Server Side) for additional LRMI parameters to configure.
