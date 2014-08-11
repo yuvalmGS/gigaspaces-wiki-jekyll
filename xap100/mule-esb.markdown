@@ -10,6 +10,7 @@ weight: 1500
 
 {%section%}
 {%column width=10% %}
+<br>
 ![big-data.png](/attachment_files/subject/mule.png)
 {%endcolumn%}
 {%column width=90% %}
@@ -41,6 +42,6 @@ XAP's Mule SEDA model allows you to define services that are aware of the space 
 <hr/>
 
 #### Additional Resources
-- [Mule](http://www.mulesoft.org/)
+- Mule Site [{%externalurl%}](http://www.mulesoft.org/)
 
 - [Distributed Multi Mule service example](/sbp/mule-esb-example.html)

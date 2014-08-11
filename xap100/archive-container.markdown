@@ -417,11 +417,11 @@ public class ExpiredTweetsFilter {
 	xmlns:os-core="http://www.openspaces.org/schema/core"
 	xmlns:os-events="http://www.openspaces.org/schema/events"
 	xmlns:os-archive="http://www.openspaces.org/schema/archive"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
-	                    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-	                    http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
-	                    http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{%currentversion%}/events/openspaces-events.xsd
-	                    http://www.openspaces.org/schema/archive http://www.openspaces.org/schema/{%currentversion%}/archive/openspaces-archive.xsd">
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%jarversion spring%}.xsd
+	http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
+	http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{%currentversion%}/events/openspaces-events.xsd
+	http://www.openspaces.org/schema/archive http://www.openspaces.org/schema/{%currentversion%}/archive/openspaces-archive.xsd">
 ...
 
 </beans>

@@ -51,7 +51,7 @@ Real-time business intelligence technologies are designed to reduce all three la
 # RT Analytics Architecture Foundation Artifacts
 
 ## Event-based
-Real-time Business Intelligence systems are event driven, and may use Event Stream Processing and Mashup (web application hybrid) techniques to enable events to be analysed without being first transformed and stored in a database. These in- memory techniques have the advantage that high rates of events can be monitored, and since data does not have to be written into databases data latency can be reduced to milliseconds.
+Real-time Business Intelligence systems are event driven, and may use Event Stream Processing and Mashup (web application hybrid) techniques to enable events to be analyzed without being first transformed and stored in a database. These in- memory techniques have the advantage that high rates of events can be monitored, and since data does not have to be written into databases data latency can be reduced to milliseconds.
 
 ## Server-less Technology
 The latest alternative innovation to "real-time" event driven and/or "real-time" data warehouse architectures is MSSO Technology (Multiple Source Simple Output) which removes the need for the data warehouse and intermediary servers altogether since it is able to access live data directly from the source (even from multiple, disparate sources). Because live data is accessed directly by server-less means, it provides the potential for zero-latency, real-time data in the truest sense.

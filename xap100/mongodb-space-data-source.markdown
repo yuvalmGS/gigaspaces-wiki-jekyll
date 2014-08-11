@@ -30,19 +30,19 @@ include the following in your `pom.xml`
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
-			<version>2.11.2</version>
+			<version>{%jarversion mongo-java-driver%}</version>
 		</dependency>
 
 		<dependency> 
 			<groupId>org.antlr</groupId> 
 			<artifactId>antlr4-runtime</artifactId> 
-			<version>4.0</version> 
+			<version>{%jarversion antlr4-runtime%}</version>
 		</dependency> 
 
 		<dependency>
     		<groupId>com.gigaspaces</groupId>
 	    	<artifactId>mongo-datasource</artifactId>
-    		<version>10.0.0-SNAPSHOT</version>
+    	    <version>{%jarversion mongo-datasource%}</version>
 		</dependency>
 		...
 	</dependencies>
@@ -55,43 +55,39 @@ An example of how the MongoDB Space Data Source can be configured for a space th
 also asynchronously persists the data using a mirror (see [MongoDB Space Synchronization Endpoint](./mongodb-space-synchronization-endpoint.html))). 
 
 {% inittab Configuration Examples %}
-{% tabcontent Spring %}{% highlight xml %} 
+{% tabcontent Spring %}{% highlight xml %}
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:os-core="http://www.openspaces.org/schema/core" xmlns:os-jms="http://www.openspaces.org/schema/jms"
+	xmlns:os-events="http://www.openspaces.org/schema/events"
+	xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
+	xmlns:os-sla="http://www.openspaces.org/schema/sla" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%jarversion spring%}.xsd
+	http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
+	http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{%currentversion%}/events/openspaces-events.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-{%jarversion spring%}.xsd
+    http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{%currentversion%}/remoting/openspaces-remoting.xsd">
 
+	<bean id="propertiesConfigurer"
+	class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" />
 
-	<?xml version="1.0" encoding="utf-8"?> 
-	<beans xmlns="http://www.springframework.org/schema/beans" 
-		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://		www.springframework.org/schema/context" 
-		xmlns:os-core="http://www.openspaces.org/schema/core" xmlns:os-jms="http://www.openspaces.org/schema/jms" 
-		xmlns:os-events="http://www.openspaces.org/schema/events" 
-		xmlns:os-remoting="http://www.openspaces.org/schema/remoting" 
-		xmlns:os-sla="http://www.openspaces.org/schema/sla" xmlns:tx="http://www.springframework.org/schema/tx" 
-
-		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd 
-		http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
-		http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{%currentversion%}/events/openspaces-events.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.1.xsd 
-		http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{%currentversion%}/remoting/openspaces-remoting.xsd">
-
-		<bean id="propertiesConfigurer" 
-		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" /> 
-
-		<os-core:embedded-space id="space" name="dataSourceSpace">
-			space-data-source="spaceDataSource" mirror="true" schema="persistent">
-			<os-core:properties>
-				<props>
-					<!-- Use ALL IN CACHE, put 0 for LRU --> 
-					<prop key="space-config.engine.cache_policy">1</prop>				
-					<prop key="cluster-config.cache-loader.central-data-source">true</prop>
-					<prop key="cluster-config.mirror-service.supports-partial-update">true</prop>
-				</props>
-			</os-core:properties>
-		</os-core:embedded-space>
+	<os-core:embedded-space id="space" name="dataSourceSpace">
+		space-data-source="spaceDataSource" mirror="true" schema="persistent">
+		<os-core:properties>
+		 <props>
+			<!-- Use ALL IN CACHE, put 0 for LRU -->
+			<prop key="space-config.engine.cache_policy">1</prop>
+			<prop key="cluster-config.cache-loader.central-data-source">true</prop>
+			<prop key="cluster-config.mirror-service.supports-partial-update">true</prop>
+		 </props>
+		</os-core:properties>
+	</os-core:embedded-space>
 		
-		<os-core:giga-space id="gigaSpace" space="space" /> 
+	<os-core:giga-space id="gigaSpace" space="space" />
 		
-		<bean id="mongoClient"
-		class="com.gigaspaces.persistency.MongoClientConnectorBeanFactory">
+	<bean id="mongoClient" class="com.gigaspaces.persistency.MongoClientConnectorBeanFactory">
 		<property name="db" value="qadb" />
 		<property name="config">
 			<bean class="com.mongodb.MongoClient">
@@ -99,14 +95,13 @@ also asynchronously persists the data using a mirror (see [MongoDB Space Synchro
 				<constructor-arg value="27017" type="int" />
 			</bean>
 		</property>
-		</bean>
+	</bean>
 		
-		<bean id="spaceDataSource" 
-				class="com.gigaspaces.persistency.MongoSpaceDataSourceBeanFactory">
-				<property name="mongoClientConnector" ref="mongoClient" />
-		</bean>
+	<bean id="spaceDataSource" class="com.gigaspaces.persistency.MongoSpaceDataSourceBeanFactory">
+	    <property name="mongoClientConnector" ref="mongoClient" />
+	</bean>
 			
-	</beans> 
+</beans>
 
 
 {% endhighlight %} 

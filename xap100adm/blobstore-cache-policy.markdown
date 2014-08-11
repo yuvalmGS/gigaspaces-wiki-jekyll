@@ -18,7 +18,7 @@ weight: 400
 {% endsection %}
 
 
-XAP 10 introduces a new storage model called BlobStore Storage Model, which allows an external storage medium (one that does not reside on the JVM heap) to store the IMDG data. This page describes the general architecture and functionality of this storage model, that is leevraging both on-heap, off-heap and SSD implementation, called `MemoryXtend`. 
+XAP 10 introduces a new storage model called BlobStore Storage Model, which allows an external storage medium (one that does not reside on the JVM heap) to store the IMDG data. This page describes the general architecture and functionality of this storage model, that is leveraging both on-heap, off-heap and SSD implementation, called `MemoryXtend`.
 
 {% note %} For a higher level overview of the technology and motivation behind MemoryXtend please refer to [this](http://d3a0pn6rx5g9yg.cloudfront.net/sites/default/files/private/resource/White%20Paper%20ssd-V2.pdf) white paper. {% endnote %}
 
@@ -27,7 +27,7 @@ This storage model leverages on-heap LRU cache (deserialized form) and off-heap 
 
 ![blobstore1.jpg](/attachment_files/blobstore1.jpg)
 
-The JVM heap is used as a first level LRU cache for frequently used data. Repetitive read operations (by Id, by template or using a SQL query) for the same data will be loaded from off-heap LRU cache or from an external storage medium (SSD) upon the first reqeust and later be served from the on-heap or off-heap based cache.
+The JVM heap is used as a first level LRU cache for frequently used data. Repetitive read operations (by Id, by template or using a SQL query) for the same data will be loaded from off-heap LRU cache or from an external storage medium (SSD) upon the first request and later be served from the on-heap or off-heap based cache.
 
 ## How BlobStore Storage Model Different from the Traditional XAP Persistence Model?
 Unlike the traditional XAP persistence model, where the IMDG backing store is usually a database with relatively slow response time, located in a central location, the storage interface assumes very fast access for write and read operations, and a local, dedicated data store that supports a key/value interface. Each IMDG primary and backup instance across the grid is interacting with its dedicated storage medium (in our case SSD drive) independently in an atomic manner. 
@@ -71,7 +71,7 @@ The BlobStore settings includes the following options:
 | enable-admin | ZetaScale admin provides a simple command line interface (CLI) through a TCP port. ZetaScale CLI uses port 51350 by default. This port can be changed through the configuration parameter `FDF_ADMIN_PORT`. | false |
 | statistics-interval | Applications can optionally enable periodic dumping of statistics to a specified file (XAP_HOME/logs). This is disabled by default. | | optional |
 | durability-level | `SW_CRASH_SAFE` - Guarantees no data loss in the event of software crashes. But some data might be lost in the event of hardware failure.{%wbr%}`HW_CRASH_SAFE`- Guarantees no data loss if the hardware crashes.Since there are performance implication it is recommended to work with NVRAM device and configure log-flash-dir to a folder on this device. | SW_CRASH_SAFE | optional |
-| log-flush-dir | When `HW_CRASH_SAFE` used , point to a directory in a file system on top of NVRAM backed disk. This directory must be unique per space, you can add ${clusterInfo.runningNumber} as suffix to generate a uniqee name | as volume-dir | optional |
+| log-flush-dir | When `HW_CRASH_SAFE` used , point to a directory in a file system on top of NVRAM backed disk. This directory must be unique per space, you can add ${clusterInfo.runningNumber} as suffix to generate a unique name | as volume-dir | optional |
 
 The IMDG BlobStore settings includes the following options:{%wbr%}
 
@@ -79,7 +79,7 @@ The IMDG BlobStore settings includes the following options:{%wbr%}
 | Property | Description | Default | Use |
 |:---------|:------------|:--------|:--------|
 | blob-store-handler | BlobStore implementation |  | required |
-| cache-entries-percentage | On-Heap cache stores objects in their native format. This cache size determined based on the percentage of the GSC JVM max memory(-Xmx). If `-Xmx` is not speficied the cache size default to `10000` objects. This is an LRU based data cache.| 20% | optional |
+| cache-entries-percentage | On-Heap cache stores objects in their native format. This cache size determined based on the percentage of the GSC JVM max memory(-Xmx). If `-Xmx` is not specified the cache size default to `10000` objects. This is an LRU based data cache.| 20% | optional |
 | avg-object-size-KB |  Average object size. | 5KB | optional |
 | recover-from-blob-store |  Whether to recover from blob store or not |  | required |
 
@@ -97,7 +97,7 @@ If your user is not part of disk groups, add it by calling:
 $ sudo usermod -G disk <username>
 {% endhighlight %}
 
-and relogin.
+and re-login.
 
 The number of of flash devices/partitions should be aligned with the space instances number that you want to deploy on a machine.
 For creating partitions you can use fdisk like explained [here](http://www.howtogeek.com/106873/how-to-use-fdisk-to-manage-partitions-on-linux/).
@@ -119,6 +119,17 @@ Install ZetaScale libraries:
 
 {% highlight bash %}
 $ sudo XAP_HOME=<XAP HOME> sh -c "rpm -ivh /blobstore-10.0.0-RC_1.noarch.rpm"
+{% endhighlight %}
+
+If the RPM installation fails , please run  the following `yum` install commands using `root` user:
+{% highlight bash %}
+sudo yum -y install snappy
+sudo yum -y install snappy-devel
+sudo yum -y install libaio
+sudo yum -y install libaio-devel
+sudo yum -y install libevent
+sudo yum -y install libevent-devel
+sudo yum -y install glibc-devel
 {% endhighlight %}
 
 Step 4. 
@@ -144,7 +155,7 @@ Configuring an IMDG (Space) with BlobStore should be done via the `SanDiskBlobSt
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:os-core="http://www.openspaces.org/schema/core"
        xmlns:blob-store="http://www.openspaces.org/schema/blob-store"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
        http://www.openspaces.org/schema/core http://www.openspaces.org/schema/10.0/core/openspaces-core.xsd
        http://www.openspaces.org/schema/blob-store http://www.openspaces.org/schema/10.0/blob-store/openspaces-blobstore.xsd">
 
@@ -171,7 +182,7 @@ Configuring an IMDG (Space) with BlobStore should be done via the `SanDiskBlobSt
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:os-core="http://www.openspaces.org/schema/core"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
        http://www.openspaces.org/schema/core http://www.openspaces.org/schema/10.0/core/openspaces-core.xsd">
 
     <bean id="propertiesConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
@@ -230,7 +241,7 @@ The above example:
 
 # Automatic Data Recovery and ReIndexing
 
-Once the Data grid is shutdown and redeployed it may reload its entire data from its flash drive store. Loading data from a local drive may provide fast data recovery - much faster than loading data from a central database. The data reload process iterate the data on the flash drive and generate the indexed data based on the indexed data list per space class. As each data grid partition perform this reload and reindexing process in parallel across multiple servers it may complete this indexing process relativly fast. With with a single machine 8 cores, running 4 partitions data grid with four SSD drives , 100,000 items / second (1K payload) may be scanned and re-indexed. To enable the Data Recovery and ReIndexing activity the `recover-from-blob-store` should be set to `true`.
+Once the Data grid is shutdown and redeployed it may reload its entire data from its flash drive store. Loading data from a local drive may provide fast data recovery - much faster than loading data from a central database. The data reload process iterate the data on the flash drive and generate the indexed data based on the indexed data list per space class. As each data grid partition perform this reload and reindexing process in parallel across multiple servers it may complete this indexing process relatively fast. With with a single machine 8 cores, running 4 partitions data grid with four SSD drives , 100,000 items / second (1K payload) may be scanned and re-indexed. To enable the Data Recovery and ReIndexing activity the `recover-from-blob-store` should be set to `true`.
 
 To allow the data grid to perform an automatic data recovery from the right flash device on startup you should use [Instance level SLA](./the-sla-overview.html) .
 
@@ -321,7 +332,7 @@ Here is a sample xml decoration for a POJO class disabling `blobStore` mode:
 
 # BlobStore Management
 
-You may use the ZetaScale Management command line to access underlaying SSD storage runtime. This allows you to access statistics that can be used to tune performance and analyze performance problems. These statistics counters used to monitor events within the FDF subsystem. Most events are counted on a per FDF container basis as well as for all containers within the FDF instance.
+You may use the ZetaScale Management command line to access underlying SSD storage runtime. This allows you to access statistics that can be used to tune performance and analyze performance problems. These statistics counters used to monitor events within the FDF subsystem. Most events are counted on a per FDF container basis as well as for all containers within the FDF instance.
 
 
 ## Statistics

@@ -8,7 +8,7 @@ categories: XAP100
 
 {%section%}
 {%column width=15% %}
-<img src="/attachment_files/subject/data-access.png" width="80" height="80">
+<img src="/attachment_files/subject/imc.png" width="80" height="80">
 {%endcolumn%}
 {%column width=85% %}
 This guide introduces the key concepts for building XAP applications. The topics in this guide span installation, tutorials, the XAP API, Processing Unit, web application support, Space replication, platform interoperability and security.
@@ -28,6 +28,9 @@ The guide provides all the information and tools needed to quickly develop eithe
 
 - [The Processing Unit](./the-processing-unit-overview.html){%wbr%}
 The Processing Unit is the unit of packaging and deployment in the GigaSpaces XAP platform. This section describes its directory structure, deployment descriptor and SLA definition and configuration.
+
+- [Elastic Processing Unit](./elastic-processing-unit-overview.html){%wbr%}
+How to deploy and manage an Elastic Processing Unit (EPU).
 
 - [Deployment and Administration](./administrators-guide.html){%wbr%}
 The primary focus of the Administrator’s Guide, is to provide both a basic, as well as more advanced overview of the GigaSpaces XAP administration and operation components.

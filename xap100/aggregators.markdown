@@ -45,7 +45,7 @@ XAP comes with several built-in Aggregators you may use. The aggregation process
 |having|Used to perform additional filtering on the aggregation result set. Perform similar aggregation as the SQL `HAVING` Clause|
 |maxEntry| Returns the Entry (space object) with the maximum value for a set of data grid entries for a given field (path) based on a given query.|
 |minEntry| Returns the Entry (space object) with the minimum value for a set of data grid entries for a given field (path) based on a given query.|
-|custom| An extention to the [SpaceEntriesAggregator](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/query/aggregators/SpaceEntriesAggregator.html). Return the aggregation for a user defined logic on a given field (path) and a given entries set based on a query.|
+|custom| An extension to the [SpaceEntriesAggregator](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/query/aggregators/SpaceEntriesAggregator.html). Return the aggregation for a user defined logic on a given field (path) and a given entries set based on a query.|
 
 
 # Interoperability 
@@ -272,7 +272,7 @@ for (GroupByValue group : groupByResult) {
 {%endhighlight%}
 
 
-You can also use the [GroupByFilter](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/index.html?com/gigaspaces/query/aggregators/GroupByFilter.html) to restrict the groups of selected objects to only those whose condition is TRUE simialr to the SQL `HAVING` Clause.
+You can also use the [GroupByFilter](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/index.html?com/gigaspaces/query/aggregators/GroupByFilter.html) to restrict the groups of selected objects to only those whose condition is TRUE similar to the SQL `HAVING` Clause.
 
 {%highlight java%}
 // Select AVG(Salary) , Count(*) from Employees Where companyId = 10 group by Department Having AVG(Salary) > 18,000
@@ -335,7 +335,7 @@ for (GroupByValue group : groupByResult) {
 
 You may extend the [SpaceEntriesAggregator](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/com/gigaspaces/query/aggregators/SpaceEntriesAggregator.html) to execute user defined aggregation logic on a given field (path) and a given entries set based on a query.
 
-Below example of a `String` field concatenation aggregator - for each entry extracts the field (path) value and concatenates with the previous values extratced.
+Below example of a `String` field concatenation aggregator - for each entry extracts the field (path) value and concatenates with the previous values extracted.
 
 Executing the Aggregation logic:
 
