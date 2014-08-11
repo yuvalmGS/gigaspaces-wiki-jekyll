@@ -9,7 +9,7 @@ checkout:
   post:
     - git submodule init
     - git submodule update
-    - cd ./sbp && git pull
+    - cd ./sbp && git checkout master && git pull
     - rm -rf ./_site
 
 ## Customize dependencies
