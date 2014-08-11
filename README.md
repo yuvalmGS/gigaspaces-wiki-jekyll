@@ -21,11 +21,11 @@ To run and test the website locally, you should perform the following steps:
 
 * Create a fork of this repo and clone it to your machine.
 
-        git clone https://github.com/your-github-username/getcloudify.org.git
+        git clone https://github.com/your-github-username/gigaspaces-wiki-jekyll.git
 
 * Go to the repository directory: 
 
-        cd getcloudify.org
+        cd gigaspaces-wiki-jekyll
 
 * Invoke Bundler to install all required Ruby gems
 
