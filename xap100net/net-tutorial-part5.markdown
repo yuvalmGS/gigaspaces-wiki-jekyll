@@ -66,7 +66,7 @@ Here is an example how the directory structure looks like using Visual Studio:
 
 The file structure is composed of several key elements:
 
-- pu.config (mandatory): This is the PU's deployment descriptor. These bindings include XAP specific components (such as the space for example). The pu.conf file typically contains definitions of XAP components (space, event containers, remote service exporters) and user defined beans.
+- pu.config (mandatory): This is the PU's deployment descriptor. These bindings include XAP specific components (such as the space for example). The pu.config file typically contains definitions of XAP components (space, event containers, remote service exporters) and user defined beans.
 
 - sla.xml (not mandatory): This file contains SLA definitions for the PU (i.e. number of instances, number of backup and deployment requirements). If its is not present, the default SLA will be applied. SLA definitions can also be specified at the deploy time via command line arguments.
 
@@ -83,7 +83,7 @@ The file structure is composed of several key elements:
 
 
 
-# The pu.conf file
+# The pu.config file
 This file is an XML configuration file.
 
 The definitions in the pu.config file are divided into 2 major categories:
@@ -92,7 +92,7 @@ The definitions in the pu.config file are divided into 2 major categories:
 - User defined beans, which define instances of user classes to be used by the PU. For example, user defined event handlers to which the event containers delegate events as those are received.
 
 
-Here is an example of a pu.conf file:
+Here is an example of a pu.config file:
 
 {%highlight xml%}
 <?xml version="1.0" encoding="utf-8" ?>
@@ -188,7 +188,7 @@ public class PaymentEventProcessor {
 
 
 
-#### Create pu.conf
+#### Create pu.config
 In this step will create the configuration file for the PU deployment
 
 {%highlight xml%}
@@ -233,7 +233,7 @@ GS_HOME/bin/gs-agent.sh
 
 And now we deploy the PU onto the IMDG:
 {%highlight console%}
-GS_HOME\bin\gs.sh deploy  PaymentProcessor
+GS_HOME\bin\gs.bat deploy PaymentProcessor
 {%endhighlight%}
 
 
@@ -360,10 +360,10 @@ The deployment script for this scenario looks like this:
 {%highlight console%}
 
 With a statefull PU, embedded space
-./gs.sh deploy -cluster schema=partitioned total_members=4,0 -max-instances-per-machine 2 eventProcessor
+./gs.bat deploy -cluster schema=partitioned total_members=4,0 -max-instances-per-machine 2 eventProcessor
 
 With a stateless PU
-./gs.sh deploy -cluster total_members=4 -max-instances-per-machine 2 eventProcessor
+./gs.bat deploy -cluster total_members=4 -max-instances-per-machine 2 eventProcessor
 {%endhighlight%}
 
 {% note %}
