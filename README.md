@@ -11,13 +11,25 @@ It's important for us to encourage your feedback and contribution. Contributing 
 
 To run and test the website locally, you should perform the following steps:
 
-* Make sure Ruby and RubyGems are installed.
+* Install [Ruby](https://www.ruby-lang.org/en/downloads/).
 
-* Install the latest version of Jekyll (you can find detailed directions [here](http://jekyllrb.com/docs/installation/)).
+* Install [RubyGems](https://rubygems.org/pages/download).
 
-  * If you're using Windows, you may want to use the (unofficial) [portable jekyll for Windows](http://www.madhur.co.in/blog/2013/07/20/buildportablejekyll.html).
+* Install [Bundler](http://bundler.io/).
 
-* Install the [Kramdown markdown converter](http://kramdown.gettalong.org/installation.html).
+        sudo gem install bundler
+
+* Create a fork of this repo and clone it to your machine.
+
+        git clone https://github.com/your-github-username/getcloudify.org.git
+
+* Go to the repository directory: 
+
+        cd getcloudify.org
+
+* Invoke Bundler to install all required Ruby gems
+
+        bundler install 
 
 * If you intend to edit the docs, create a fork of this repo and clone it to your machine.
 
@@ -26,28 +38,6 @@ To run and test the website locally, you should perform the following steps:
   If you just want to run it locally, you can clone this repository:
 
         git clone https://github.com/Gigaspaces/gigaspaces-wiki-jekyll.git
-
-* (Optional) If you want to edit a page in the solutions and best practices section: 
-  The solutions and best practices section is located in a separate repository. If you have push permissions to it, clone it into the `sbp` directory as follows:
-        git clone https://github.com/Gigaspaces/gigaspaces-sbp-jekyll.git sbp 
-
-  Otherwise, fork this repo and clone the fork into the `sbp` directory as follows: 
-
-        git clone https://github.com/<your username>/gigaspaces-sbp-jekyll.git sbp 
-
-  Once you're done testing your changes in the `sbp` directory, check the changes in and push it seperately to the solutions and best practices repo you cloned:
-
-        #cd to the sbp directory
-        cd sbp 
-
-        # add the files you changed 
-        git add -A 
-
-        # commit your changes 
-        git commit -m "My changes"
-
-        # push the changes to the solutions and best practices repo: 
-        git push 
 
 * cd to the clone directory: 
 
@@ -73,7 +63,44 @@ This script is a workaround for a known issue in git which ignores symbolic link
 
 * Point your browser to [http://localhost:4000](http://localhost:4000). You should see the documentation portal home page, and verify that you're ok with your changes. 
 
+* Commit and push the changes: 
+        
+        # add the files you changed 
+        git add -A 
+
+        # commit your changes 
+        git commit -m "My changes"
+
+        # push the changes to the remote repo: 
+        git push 
+
 * If you've forked the repository and updated documentation pages, you can submit a pull request. We will review, comment and merge the pull request after approving it. 
+
+## (Optional) Making Changes to the Solutions & Best Practices Repo
+
+If you want to edit a page in the solutions and best practices section: 
+The solutions and best practices section is located in a separate repository and is a submodule of this repository.  If you have push permissions to it, update the submodule as follows: 
+        
+        git submodule init
+        git submodule update
+        cd ./sbp
+        git pull 
+    
+Once you're done testing your changes in the `sbp` directory, check the changes in and push it seperately to the solutions and best practices repo:
+
+        #cd to the sbp directory
+        cd sbp 
+
+        # add the files you changed 
+        git add -A 
+
+        # commit your changes 
+        git commit -m "My changes"
+
+        # push the changes to the solutions and best practices repo: 
+        git push 
+
+
 
 ## Continuous Deployment 
 
