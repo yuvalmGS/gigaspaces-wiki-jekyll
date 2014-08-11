@@ -14,6 +14,8 @@ Yes. See [Jvm Configuration](./jvm-configuration.html#JvmLocation) for more info
 
 # Customizing XAP
 
+#### Q. Can I configure XAP.NET to work with an existing XAP installation?
+
 GigaSpaces XAP.NET is bundled with GigaSpaces XAP components required at runtime. Developers engaged in interoperability solutions may prefer working with a full installation of the Java XAP, which contains additional documentation, examples and tutorials.
 
 If you wish to modify your XAP.NET installation to use an existing XAP installation, edit the `Settings.xml` file (located in `<ProductRoot>\Config`) and change the value of `<XapNet.Runtime.Path>` to the new location.
@@ -27,10 +29,12 @@ Mixing XAP.NET and XAP versions is not supported - always use the same version a
 #### Q. Can I run an automated, quiet install of XAP.NET from the command line?
 
 Yes. From the command line, type the following:
-`C:\>msiexec /i GigaSpaces-XAP.NET-9.0.0.5000-GA-x86.msi /quiet`
+{% highlight xml %}
+C:\>msiexec /i GigaSpaces-XAP.NET-Premium-10.0.0.11600-GA-x64.msi /quiet
+{%endhighlight%}
 
 {% info %}
-For more information about installing msi packages from command line, see [http://msdn.microsoft.com/en-us/library/aa372024(VS.85).aspx](http://msdn.microsoft.com/en-us/library/aa372024(VS.85).aspx).
+For more information about installing `msi` packages from command line, see [http://msdn.microsoft.com/en-us/library/aa372024(VS.85).aspx](http://msdn.microsoft.com/en-us/library/aa372024(VS.85).aspx).
 {%endinfo%}
 
 # Manual configuration without setup
@@ -43,45 +47,50 @@ Sometimes, however, you may want to use XAP.NET without running setup (e.g. on a
 To do that:
 
 Step 1. Install XAP.NET on another machine (e.g. a developer's machine).
+
 Step 2. Package the installed files into a zip file (or any other compression tool you prefer).
+
 Step 3. Unzip the package on the target machine(s) wherever you prefer.
 
 {% note %}
 If you plan to use XAP.NET with .NET 4.0, make sure that the **Visual C++ 2010 Redistributable Package** [x86](http://www.microsoft.com/download/en/details.aspx?id=5555)  [x64](http://www.microsoft.com/download/en/details.aspx?id=14632)) is installed on the target machine (this is required only for manual installation - if the msi is installed the C++ redistribution package is installed automatically if needed).
 {%endnote%}
 
-The final touch is to configure the location of XAP.NET. This can be achieved in one of the following ways:
+Step 4. The final touch is to configure the location of XAP.NET. This can be achieved in one of the following ways:
 
-Step 4. **Windows Registry:** Create a registry key named `HKLM\SOFTWARE\GigaSpaces\XAP.NET\<version>\<clrversion>`, with a String value named `SettingsPath` which points to the location of the `Settings.xml` file.
+Step 4.a **Windows Registry:** Create a registry key named `HKLM\SOFTWARE\GigaSpaces\XAP.NET\<version>\<clrversion>`, with a String value named `SettingsPath` which points to the location of the `Settings.xml` file.
 
-For example, the XAP.NET v9.5 x86 setup creates the following keys:
-HKLM\SOFTWARE\GigaSpaces\XAP.NET\9.5.0.5000\CLR v2.0.50727\SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml
-
-HKLM\SOFTWARE\GigaSpaces\XAP.NET\9.5.0.5000\CLR v4.0.30319\SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v4.0.30319\Config\Settings.xml
+For example, the XAP.NET v10.0 x64 setup creates the following keys:
+{% highlight xml %}
+HKLM\SOFTWARE\GigaSpaces\XAP.NET\10.0.0.11600\CLR v2.0.50727\SettingsPath=C:\GigaSpaces\XAP.NET 10.0.0 x64\NET v3.5\Config\Settings.xml
+HKLM\SOFTWARE\GigaSpaces\XAP.NET\10.0.0.11600\CLR v4.0.30319\SettingsPath=C:\GigaSpaces\XAP.NET 10.0.0 x64\NET v4.0\Config\Settings.xml
+{%endhighlight%}
 
 {% info %}
 HKCU is supported as well, and is searched before HKLM.
 {%endinfo%}
 
-Step 5. **Environment variable:** Create an environment variable named `XapNet_<version>_SettingsPath` which points to the settings file path. For example, for that same 9.5 version we would use:
+Step 4.b **Environment variable:** Create an environment variable named `XapNet_<version>_SettingsPath` which points to the settings file path. For example, for that same 10.0 version we would use:
 
-XapNet_9.5.0.5000_SettingsPath=C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml.
+{% highlight xml %}
+XapNet_10.0.0.11600_SettingsPath=C:\GigaSpaces\XAP.NET 10.0.0 x64\NET v4.0\Config\Settings.xml
+{%endhighlight%}
 
-Step 6. **Application configuration file**: Use the XapNetSettingsFile element to configure the location of the settings file. For example:
+Step 4.c **Application configuration file**: Use the `XapNetSettingsFile` element to configure the location of the settings file. For example:
 {% highlight xml %}
 <configuration>
     <configSections>
         <section name="GigaSpaces" type="GigaSpaces.Core.Configuration.GigaSpacesCoreConfiguration, GigaSpaces.Core"/>
     </configSections>
     <GigaSpaces>
-        <XapNetSettingsFile Path="C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml"/>
+        <XapNetSettingsFile Path="C:\GigaSpaces\XAP.NET 10.0.0 x64\NET v4.0\Config\Settings.xml"/>
     </GigaSpaces>
 </configuration>
 {% endhighlight %}
 
-Step 7. **Code:** Use the following code to set the location of the settings file at runtime:
+Step 4.d. **Code:** Use the following code to set the location of the settings file at runtime:
 {% highlight csharp %}
-    GigaSpacesFactory.Configuration.XapNetSettingsFile.Path = @"C:\GigaSpaces\XAP.NET 9.5.0 x86\NET v2.0.50727\Config\Settings.xml"
+    GigaSpacesFactory.Configuration.XapNetSettingsFile.Path = @"C:\GigaSpaces\XAP.NET 10.0.0 x64\NET v4.0\Config\Settings.xml"
 {% endhighlight %}
 
 #### Q. I need to minimize the installation size. Can I use a shared folder on a server to store part of the installation?
@@ -97,5 +106,7 @@ In such scenarios, the shared folder that contains XAP must be mapped as a netwo
 #### Q. My application uses the Global Assembly Cache to locate 3rd party assemblies. Which XAP.NET assemblies do I need to register?
 
 The following XAP.NET assemblies should be registered when working with the Global Assembly Cache:
+
   * `Bin\GigaSpaces.Core.dll`
+
   * `Bin\GigaSpaces.NetToJava.dll`
