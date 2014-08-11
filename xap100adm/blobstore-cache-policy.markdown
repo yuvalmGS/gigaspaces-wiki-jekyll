@@ -34,7 +34,7 @@ Unlike the traditional XAP persistence model, where the IMDG backing store is us
 
 When running a traditional persistence configuration, the IMDG serves as a front-end to the database, and is acting as a transactional cache storing a subset of the data. In this configuration data is loaded in a lazy manner to the IMDG with the assumption that the heap capacity is smaller than the entire data set.
 
-With the external storage medium mode, the entire data data set is kept on the external SSD drive. The assumption is the SSD capacity across the grid is large enough to accommodate for the entire data set of the application.
+With the external storage medium mode, the entire data set is kept on the external SSD drive. The assumption is the SSD capacity across the grid is large enough to accommodate for the entire data set of the application.
 
 ## Reduced Garbage Collection Activity
 
