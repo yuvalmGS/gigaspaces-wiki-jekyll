@@ -20,8 +20,13 @@ weight: 400
 
 XAP 10 introduces a new storage model called BlobStore Storage Model, which allows an external storage medium (one that does not reside on the JVM heap) to store the IMDG data. This page describes the general architecture and functionality of this storage model, that is leveraging both on-heap, off-heap and SSD implementation, called `MemoryXtend`.
 
-{% note %} For a higher level overview of the technology and motivation behind MemoryXtend please refer to [this](http://d3a0pn6rx5g9yg.cloudfront.net/sites/default/files/private/resource/White%20Paper%20ssd-V2.pdf) white paper. {% endnote %}
+{% note %} 
 
+[{%pdf%}](/download_files/White-Paper-ssd-V2.pdf) This MemoryXtend white paper provides a high level overview of the technology and motivation behind MemoryXtend.
+
+[{%pdf%}](/download_files/XAP-MemoryXtend-Tutorial-2014.pdf) The MemoryXtend Tutorial describes how to experiment with MemoryXtend and comparing RAM based Data Grid with SSD based Data Grid.
+
+{% endnote %}
 
 This storage model leverages on-heap LRU cache (deserialized form) and off-heap LRU cache (serialized form) to store data, on-heap to store indexes and external storage device to store the raw data in a serialized form. 
 
@@ -34,7 +39,7 @@ Unlike the traditional XAP persistence model, where the IMDG backing store is us
 
 When running a traditional persistence configuration, the IMDG serves as a front-end to the database, and is acting as a transactional cache storing a subset of the data. In this configuration data is loaded in a lazy manner to the IMDG with the assumption that the heap capacity is smaller than the entire data set.
 
-With the external storage medium mode, the entire data data set is kept on the external SSD drive. The assumption is the SSD capacity across the grid is large enough to accommodate for the entire data set of the application.
+With the external storage medium mode, the entire data set is kept on the external SSD drive. The assumption is the SSD capacity across the grid is large enough to accommodate for the entire data set of the application.
 
 ## Reduced Garbage Collection Activity
 
@@ -66,7 +71,7 @@ The BlobStore settings includes the following options:
 | devices | Flash devices. Comma separated available devices. The list used as a search path from left to right. The first one exists will be used. |  | required |
 | volume-dir | Directory path contains a symbolic link to the the SSD device. | | required |
 | blob-store-capacity-GB | Flash device allocation size in Gigabytes. | 200 | optional |
-| blob-store-cache-size-MB | ZetaScale internal LRU based off-heap in-process cache size in Megabytes. Keeps data in serialized format. | 100 | optional |
+| <nobr>blob-store-cache-size-MB</nobr> | ZetaScale internal LRU based off-heap in-process cache size in Megabytes. Keeps data in serialized format. | 100 | optional |
 | write-mode | `WRITE_THRU` - the data grid writes the data immediately into the blobstore and synchronously acknowledge the write after ZetaScale fully commits the operation. `WRITE_BEHIND` - the data grid writes the data immediately into the blobstore. ZetaScale asynchronously commits the operation to the SSD. This option improves write performance but may have a consistency issue with a sudden hardware failure.| `WRITE_THRU` | optional |
 | enable-admin | ZetaScale admin provides a simple command line interface (CLI) through a TCP port. ZetaScale CLI uses port 51350 by default. This port can be changed through the configuration parameter `FDF_ADMIN_PORT`. | false |
 | statistics-interval | Applications can optionally enable periodic dumping of statistics to a specified file (XAP_HOME/logs). This is disabled by default. | | optional |
@@ -79,7 +84,7 @@ The IMDG BlobStore settings includes the following options:{%wbr%}
 | Property | Description | Default | Use |
 |:---------|:------------|:--------|:--------|
 | blob-store-handler | BlobStore implementation |  | required |
-| cache-entries-percentage | On-Heap cache stores objects in their native format. This cache size determined based on the percentage of the GSC JVM max memory(-Xmx). If `-Xmx` is not specified the cache size default to `10000` objects. This is an LRU based data cache.| 20% | optional |
+| <nobr>cache-entries-percentage</nobr> | On-Heap cache stores objects in their native format. This cache size determined based on the percentage of the GSC JVM max memory(-Xmx). If `-Xmx` is not specified the cache size default to `10000` objects. This is an LRU based data cache.| 20% | optional |
 | avg-object-size-KB |  Average object size. | 5KB | optional |
 | recover-from-blob-store |  Whether to recover from blob store or not |  | required |
 

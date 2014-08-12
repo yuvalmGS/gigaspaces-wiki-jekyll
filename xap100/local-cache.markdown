@@ -292,7 +292,7 @@ Tests of the **local cache** with XAP 7.0 having 10 client threads using a local
 {: .table .table-bordered .table-condensed}
 | Property | Description | Default Value | Unit |
 |:---------|:------------|:--------------|:-----|
-|max-disconnection-duration| If local cache disconnection duration exceeds this value, the local cache enters a **disconnected** state, wherein each operation throws an exception stating the cache is disconnected| 60000 | milliseconds |
+|<nobr>max-disconnection-duration</nobr>| If local cache disconnection duration exceeds this value, the local cache enters a **disconnected** state, wherein each operation throws an exception stating the cache is disconnected| 60000 | milliseconds |
 |batch-size| When the batch size reaches this value, the batch is sent to the client| 1000 | operations|
 |batch-timeout| When the oldest event in the batch reaches this value, the batch is sent to the client.|100 | milliseconds |
 |update-mode | Local cache update mode. Options: PULL , PUSH , None | PULL| |

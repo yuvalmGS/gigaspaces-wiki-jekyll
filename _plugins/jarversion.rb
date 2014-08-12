@@ -8,10 +8,13 @@ module Jekyll
    # For now will only build a lookup table for 10.0
    # 11 will need its own lookup table
     @@table100 = Hash.new
-    @@table100['spring'] = '3.2'
+    @@table100['spring']            = '3.2'
     @@table100['mongo-java-driver'] = '2.11.2'
     @@table100['antlr4-runtime']    = '4.0'
     @@table100['mongo-datasource']  = '10.0.0-SNAPSHOT'
+    @@table100['openjpa']           = '2.0.1'
+
+
 
     def initialize(tag_name, text, token)
       super

@@ -70,7 +70,7 @@ The worker will wake up and replicate if either of these two occurs. The followi
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | repl-chunk-size | Number of packets transmitted together on the network when the replication event is triggered. The maximum value you can assign for this property is `repl-interval-opers`. | 500 |
-| repl-interval-millis | Time (in milliseconds) to wait between replication operations. | 3000 \[ms\] |
+| <nobr>repl-interval-millis</nobr> | Time (in milliseconds) to wait between replication operations. | 3000 \[ms\] |
 | repl-interval-opers | Number of destructive operations to wait before replicating. | 500 |
 
 
@@ -97,4 +97,4 @@ When a source space instance is closed, it may have pending replication packets 
 {: .table .table-bordered .table-condesed}
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
-| cluster-config.groups.group.repl-policy.{%wbr%}async-replication.async-channel-shutdown-timeout | Determines how long (in milliseconds) the primary space will wait for pending replication to be replicated to its targets before shutting down.| 300000 \[ms\]  |
+| cluster-config.groups.group.repl-policy.async-replication.async-channel-shutdown-timeout | Determines how long (in milliseconds) the primary space will wait for pending replication to be replicated to its targets before shutting down.| 300000 \[ms\]  |
