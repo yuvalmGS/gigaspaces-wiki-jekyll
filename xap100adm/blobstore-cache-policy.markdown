@@ -20,13 +20,24 @@ weight: 400
 
 XAP 10 introduces a new storage model called BlobStore Storage Model, which allows an external storage medium (one that does not reside on the JVM heap) to store the IMDG data. This page describes the general architecture and functionality of this storage model, that is leveraging both on-heap, off-heap and SSD implementation, called `MemoryXtend`.
 
-{% note %} 
 
-[{%pdf%}](/download_files/White-Paper-ssd-V2.pdf) This MemoryXtend white paper provides a high level overview of the technology and motivation behind MemoryXtend.
+{%section%}
+{%column width=3% %}
+[{%pdf%}](/download_files/White-Paper-ssd-V2.pdf)
+{%endcolumn%}
+{%column width=97% %}
+This MemoryXtend white paper provides a high level overview of the technology and motivation behind MemoryXtend.
+{%endcolumn%}
+{%endsection%}
 
-[{%pdf%}](/download_files/XAP-MemoryXtend-Tutorial-2014.pdf) The MemoryXtend Tutorial describes how to experiment with MemoryXtend and comparing RAM based Data Grid with SSD based Data Grid.
-
-{% endnote %}
+{%section%}
+{%column width=3% %}
+[{%pdf%}](/download_files/XAP-MemoryXtend-Tutorial-2014.pdf)
+{%endcolumn%}
+{%column width=97% %}
+The MemoryXtend Tutorial describes how to experiment with MemoryXtend and comparing RAM based Data Grid with SSD based Data Grid.
+{%endcolumn%}
+{%endsection%}
 
 This storage model leverages on-heap LRU cache (deserialized form) and off-heap LRU cache (serialized form) to store data, on-heap to store indexes and external storage device to store the raw data in a serialized form. 
 

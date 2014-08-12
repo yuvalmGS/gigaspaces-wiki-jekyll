@@ -6,7 +6,7 @@ module Jekyll
     end
 
     def render(context)
-      "<i class='fa fa-file-pdf-o fa-lg'></i>"
+      "<i class='fa fa-file-pdf-o fa-lg' style='color:#D04437;'></i>"
     end
   end
 end
