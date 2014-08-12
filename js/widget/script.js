@@ -3,6 +3,8 @@ var updatedTerm = false;
 function start() {
     //  NProgress.start();
     $('#loading').attr('style', '');
+    $("#loadingSpinner").show();
+    $("#launch").hide();
     var iframe = $("#iframe");
     var postObj = {name: 'widget_play'};
     $.postMessage(JSON.stringify(postObj), postUrl, iframe.get(0).contentWindow);
@@ -19,16 +21,27 @@ function stop() {
     $.postMessage(JSON.stringify(postObj), postUrl, iframe.get(0).contentWindow);
     // $.postMessage(JSON.stringify({name: 'widget_stopped'}), postUrl, iframe.get(0).contentWindow);
 }
+
+function isStateSuccess(state) {
+    return (state.data && state.data.exitStatus && state.data.exitStatus.code === 0);
+}
+
 function updateButtonState(state) {
 
     if (state.name == 'widget_played' || state.name == 'widget_status') {
         $('#launch').data('launched', true).
             html("<span class='glyphicon glyphicon-stop'></span> Stop");
+        $("#launch").show();
         $('#launch').css({"background": "#CD0004 ", "color": "white"});
         $(".pbarWrap").show();
         $('.panel').show(200);
+        $("#loadingSpinner").hide();
 //        $("#ytIframe").hide();
-//        $("#loading").hide();
+        if (isStateSuccess(state)) {
+            $("#loading").hide();
+        } else {
+            $("#loading").show();
+        }
 //        $("#butterflyWrapper").show();
     } else if (state.name == 'widget_stopped') {
         //    NProgress.done();
