@@ -74,10 +74,10 @@ This throttling can be configured with the following parameters:
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | throttle-when-inactive | Boolean value. Set to `true` if you want to throttle replicated operations when the channel is in-active (disconnection) | `true` in primary backup `false` in full sync replicated |.
-| max-throttle-tp-when-inactive | Integer value. If the above is true, this will specify the maximum operations per second the throttle will maintain when the channel is in-active (disconnection), if the last measured throughput when the channel was active was higher than that, the measured throughput will be used instead. | 50,000 operations/second |.
+| <nobr>max-throttle-tp-when-inactive</nobr> | Integer value. If the above is true, this will specify the maximum operations per second the throttle will maintain when the channel is in-active (disconnection), if the last measured throughput when the channel was active was higher than that, the measured throughput will be used instead. | 50,000 operations/second |.
 
 {%warning%}
-Prefix the property with 'cluster-config.groups.group.repl-policy.sync-replication.`
+Prefix the property with 'cluster-config.groups.group.repl-policy.sync-replication.
 {%endwarning%}
 
 To change the default replication settings you should modify the space properties when deployed. You may set these properties via the pu.xml or programmatically. Here is an example how you can set the replication parameters when using the pu.xml:
@@ -96,11 +96,11 @@ To change the default replication settings you should modify the space propertie
 
 While the replication channel is operating at asynchronous state due to the reasons mentioned above, the worker that sends the data from the redolog asynchronously is affected by the following configuration (which also relates to asynchronous replication):
 
-{: .table .table-bordered .table-condesed}
+{: .table .table-bordered .table-condensed}
 | Property | Description | Default Value |
 |:---------|:------------|:--------------|
 | repl-chunk-size | Number of packets that are replicated as a single chuck each time. | 500 |
-| repl-interval-millis | Time (in milliseconds) to wait from last replication iteration if there are no more packets to replicate (while disconnected) or if the last iteration was not successful due to error | 3000 \[ms\] |
+| <nobr>repl-interval-millis</nobr> | Time (in milliseconds) to wait from last replication iteration if there are no more packets to replicate (while disconnected) or if the last iteration was not successful due to error | 3000 \[ms\] |
 
 {%warning%}
 Prefix the property with 'cluster-config.groups.group.repl-policy.async-replication.`
