@@ -171,7 +171,7 @@ Non-Indexed fields that are not used for queries should be placed within a user 
 {%learn%}./indexing.html{%endlearn%}
 
 {%comment%}
-{% include xap97/pojo-code-snippets.markdown %}
+{% include /COM/xap97/pojo-code-snippets.markdown %}
 {% whr %}
 {% refer %}**Next subchapter:** [POJO Metadata](./pojo-metadata.html) - This section deals with the annotations and gs.xml mapping file, troubleshooting procedures, considerations, UID generation and usage, as well as frequently used code snippets.{% endrefer %}
 {%endcomment%}
