@@ -6,4 +6,4 @@ parent: web-application-overview.html
 weight: 500
 ---
 
-{% include /xap97common/global-http-session-sharing.markdown %}
+{% include /COM/xap97/global-http-session-sharing.markdown %}
