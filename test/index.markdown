@@ -277,7 +277,7 @@ This is tab C# {% endtabcontent %}
 You will find the platform specific configuration under GS_HOME\NET v....\Config\Settings.xml.
 
 
-{%include /xap97source/dotnet/Settings-xml.markdown %}
+{%include /COM/xap97source/dotnet/Settings-xml.markdown %}
 
 {%endcomment%}
 
