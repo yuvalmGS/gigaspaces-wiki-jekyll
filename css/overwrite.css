@@ -97,7 +97,6 @@ blockquote{
 
 label,
 input,
-button,
 select,
 textarea {
   font-size: 13px;
@@ -110,7 +109,6 @@ label{
 }
 
 input,
-button,
 select,
 textarea {
 	font-family:'Open Sans', Arial, sans-serif;
