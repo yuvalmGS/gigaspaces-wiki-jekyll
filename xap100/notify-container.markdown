@@ -411,7 +411,7 @@ public class SimpleListener {
 
 The notify container allows you to mask which operations performed against the space, should cause notifications. By default (if none is defined), notifications are sent for write operations. The operations are:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |Operation| Description |
 |:--------|:------------|
 |write| An entry matching the template has been written to the space.|
@@ -1062,7 +1062,7 @@ public class SimpleListener {
 {% endtabcontent %}
 {% endinittab %}
 
-# RemoteEvent, EntryArrivedRemoteEvent and BatchRemoteEvent
+# Event meta data
 
 When registering for notifications, using the unified event session API (or using plain notify registration), the following interface needs to be implemented:
 
