@@ -102,15 +102,9 @@ public interface ISpaceProxy {
 In the example above, the take operation can be performed without specifying a timeout. The default take timeout is `0` (no wait), and can be overridden when configuring the `GigaSpace` factory. In a similar manner, the read timeout and write lease can be specified.
 
 
-{%include xap100net/ops-write.markdown %}
-{%include xap100net/ops-read.markdown %}
-{%include xap100net/ops-take.markdown %}
-{%include xap100net/ops-clear.markdown %}
-{%include xap100net/ops-count.markdown %}
-{%include xap100net/ops-aggregation.markdown %}
-
-
-
-
-
-
+{% include /COM/xap100net/ops-write.markdown %}
+{% include /COM/xap100net/ops-read.markdown %}
+{% include /COM/xap100net/ops-take.markdown %}
+{% include /COM/xap100net/ops-clear.markdown %}
+{% include /COM/xap100net/ops-count.markdown %}
+{% include /COM/xap100net/ops-aggregation.markdown %}
