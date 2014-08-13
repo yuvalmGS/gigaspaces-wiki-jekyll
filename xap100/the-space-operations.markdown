@@ -105,16 +105,11 @@ In the example above, the take operation can be performed without specifying a t
 
 
 
-{%include xap100/ops-write.markdown %}
-{%include xap100/ops-change.markdown %}
-{%include xap100/ops-read.markdown %}
-{%include xap100/ops-take.markdown %}
-{%include xap100/ops-clear.markdown %}
-{%include xap100/ops-count.markdown %}
-{%include xap100/ops-counters.markdown %}
-{%include xap100/ops-aggregation.markdown %}
-
-
-
-
-
+{% include /COM/xap100/ops-write.markdown %}
+{% include /COM/xap100/ops-change.markdown %}
+{% include /COM/xap100/ops-read.markdown %}
+{% include /COM/xap100/ops-take.markdown %}
+{% include /COM/xap100/ops-clear.markdown %}
+{% include /COM/xap100/ops-count.markdown %}
+{% include /COM/xap100/ops-counters.markdown %}
+{% include /COM/xap100/ops-aggregation.markdown %}
