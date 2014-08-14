@@ -64,3 +64,4 @@ Below is a list of known issues in GigaSpaces 10.0.X.
 | GS-11843 | _progressTimeout of recovery should be increased in blobstore recovery and add time to wait for lease reaper cycle to complete |  | 10.0.0 | | Java |
 | GS-11844 | Recreation of FDFManager on the same jvm occurs once recovery fails - blobstore |  | 10.0.0 | | Java |
 | GS-11845 | Deploying the Data example with the provided sla does not work properly |  | 10.0.0 | | Java |
+| GS-11936 | Backwards compatibility issue: NPE is thrown when the client version is less then 10.0 and the server version is 10.0 | 9182 | 10.0.0 | | All |
