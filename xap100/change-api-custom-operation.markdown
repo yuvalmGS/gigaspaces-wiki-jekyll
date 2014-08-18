@@ -44,7 +44,7 @@ public static class MultiplyIntegerChangeOperation extends CustomChangeOperation
   public Object change(MutableServerEntry entry) {
     //Assume this is an integer property, if this is not true an exception will be thrown 
     //and the change operation will fail
-    int oldValue = (int)entry.getPathValue(path);
+    int oldValue = (Integer)entry.getPathValue(path);
     int newValue = oldValue * multiplier;
     entry.setPathValue(path, newValue);
     return newValue;
@@ -55,7 +55,7 @@ public static class MultiplyIntegerChangeOperation extends CustomChangeOperation
 Using it will be like any other change operation, while providing this custom implementation:
 
 {% highlight java %}
-gigaSpace.change(query, new ChangeSet().custom(new MultiplyIntegerChangeOperation("votes", 2));
+gigaSpace.change(query, new ChangeSet().custom(new MultiplyIntegerChangeOperation("votes", 2)));
 {% endhighlight %}
 
 # The Name of a Custom Change Operation 
