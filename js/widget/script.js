@@ -54,7 +54,9 @@ function updateButtonState(state) {
 }
 
 function updateLog(logLines) {
-    $('#log').html(logLines.join('\n'));
+    var $log = $("#log");
+    $log.html(logLines.join('\n'));
+    $log.scrollTop($log[0].scrollHeight);
 }
 function appendLog(line) {
     $('#log').append(('\n') + line);
