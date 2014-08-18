@@ -279,12 +279,12 @@ The `Feed()` method does the actual work, by creating a new `Data` object with r
 
 # Building the Example
 
-This example includes `compile.bat` script.
+This example includes `Build.bat` script.
 
 From the `<Example Root>` directory (`<XAP Root>\Examples\ProcessingUnit`), call:
 
 {% highlight console %}
-compile
+Build.bat
 {% endhighlight %}
 
 This compiles all the related projects and creates the processing unit dlls inside each project, under the `Deployment` directory. It also copies the Processing Units Deployment directory to the `<XAP Root>\Runtime\deploy` directory, which simplifies deployment through the `gs-ui`.
@@ -316,7 +316,7 @@ After you run the build script and the copy deployment files script, the two dir
 
 {% highlight console %}
 <XAP Root>\Bin\Gs-Agent.exe
-<XAP Root>\Bin\Gs-ui
+<XAP Root>\Bin\Gs-ui.exe
 {% endhighlight %}
 
 {% note %}

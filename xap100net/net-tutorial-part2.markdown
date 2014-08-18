@@ -83,7 +83,7 @@ There are several ways you can deploy a new Data Grid; by command line, with C# 
 We want to deploy a data grid that has two primary partitions and one backup for each primary partition.
 Here is the gs command that you would execute to achieve this:
 {%highlight console%}
-GS_HOME\bin\gs.sh deploy-space  -cluster schema=partitioned-sync2backup total_members=2,1  xapTutorialSpace
+GS_HOME\bin\gs.bat deploy-space  -cluster schema=partitioned-sync2backup total_members=2,1  xapTutorialSpace
 {%endhighlight%}
 This command will start a space called xapTutorialSpace with two primary partitions and a backup for failover for each primary. 
 
@@ -126,7 +126,7 @@ Here is how you would configure your IMDG:
 Lets assume we have 4 machines available. On all machines we will start a GSA. The default gs-agent script will give us a total number of 8 GSC's. We want to deploy 4 partitions each having a backup and there should only be one instance per machine. 
 
 {%highlight console%}
-GS_HOME\bin\gs.sh deploy-space  -cluster schema=partitioned-sync2backup total_members=4,1 
+GS_HOME\bin\gs.bat deploy-space  -cluster schema=partitioned-sync2backup total_members=4,1 
        -max-instances-per-machine 1 xapTutorialSpace
 {%endhighlight%}
 When the application write Payment objects into this space, XAP will use the routing information provided `[SpaceRouting]` by the Payment class to route the object to the right partition.
@@ -158,7 +158,7 @@ You can start XAP's console and inspect the Data Grid components that have been 
 {% inittab os_simple_space|top %}
 {% tabcontent Windows%}
 {%highlight csharp%}
-GS_HOME\bin\gs_webui.bat
+GS_HOME\bin\gs-webui.bat
 {%endhighlight%}
 {% endtabcontent %}
 {% tabcontent Unix%}
