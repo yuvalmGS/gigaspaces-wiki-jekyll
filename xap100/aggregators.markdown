@@ -62,16 +62,16 @@ Here are some aggregation examples using the [QueryExtension](http://www.gigaspa
 {% highlight java %}
 import static org.openspaces.extensions.QueryExtension.*;
 ...
-SQLQuery<Employee> query = new SQLQuery<Employee>(Employee.class,"country=? OR country=? ");
+SQLQuery<Person> query = new SQLQuery<Person>(Person.class,"country=? OR country=? ");
 query.setParameter(1, "UK");
 query.setParameter(2, "U.S.A");
 
 // retrieve the maximum value stored in the field "age"
-Number maxAgeInSpace = max(space, query, "age");
+Long maxAgeInSpace = max(space, query, "age");
 /// retrieve the minimum value stored in the field "age"
-Number minAgeInSpace = min(space, query, "age");
+Long minAgeInSpace = min(space, query, "age");
 // Sum the "age" field on all space objects.
-Number combinedAgeInSpace = sum(space, query, "age");
+Long combinedAgeInSpace = sum(space, query, "age");
 // Sum's the "age" field on all space objects then divides by the number of space objects.
 Double averageAge = average(space, query, "age");
 // Retrieve the space object with the highest value for the field "age".
@@ -137,7 +137,7 @@ Compound aggregation will execute multiple aggregation operations across the spa
 {% highlight java %}
 import static org.openspaces.extensions.QueryExtension.*;
 ...
-SQLQuery<Employee> query = new SQLQuery<Employee>(Employee.class,"country=? OR country=? ");
+SQLQuery<Person> query = new SQLQuery<Person>(Person.class,"country=? OR country=? ");
 query.setParameter(1, "UK");
 query.setParameter(2, "U.S.A");
 
@@ -147,10 +147,10 @@ AggregationResult aggregationResult = space.aggregate(query,
 
 Person oldest = (Person) aggregationResult.get(0);
 Person youngest = (Person) aggregationResult.get(1);
-Number sum = (Number) aggregationResult.get(2);
+Long sum = (Long) aggregationResult.get(2);
 Double average = (Double) aggregationResult.get(3);
-Number min = (Number) aggregationResult.get(4);
-Number max = (Number) aggregationResult.get(5);
+Long min = (Long) aggregationResult.get(4);
+Long max = (Long) aggregationResult.get(5);
 {% endhighlight %}
 
 # Nested Fields Aggregation
@@ -162,12 +162,12 @@ Aggregation against the members of embedded space classes (nested field) is supp
 {% highlight java %}
 import static org.openspaces.extensions.QueryExtension.*;
 ...
-SQLQuery<Employee> query = new SQLQuery<Employee>(Employee.class,"country=? OR country=? ");
+SQLQuery<Person> query = new SQLQuery<Person>(Person.class,"country=? OR country=? ");
 query.setParameter(1, "UK");
 query.setParameter(2, "U.S.A");
 
 // retrieve the maximum value stored in the field "age"
-Number maxAgeInSpace = max(space, personSQLQuery, "demographics.age");
+Integer maxAgeInSpace = max(space, personSQLQuery, "demographics.age");
 {% endhighlight %}
 {% endtabcontent %}
 {% tabcontent Person Space Class %}

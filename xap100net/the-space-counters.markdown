@@ -45,7 +45,7 @@ spaceProxy.Change(idQuery, new ChangeSet().Increment("MyCounter", 1));
 
 # Decrementing
 
-Decrementing a Counter done using the `ChangeSet().decrement` call:
+Decrementing a Counter done using the `ChangeSet().Decrement` call:
 
 {% highlight csharp %}
 ISpaceProxy spaceProxy = // ... obtain a space reference
@@ -56,13 +56,13 @@ spaceProxy.Change(idQuery, new ChangeSet().Decrement("MyCounter", 1));
 
 # Clearing
 
-Clearing the Counter value done using the `ChangeSet().unset` call:
+Clearing the Counter value done using the `ChangeSet().Unset` call:
 
 {% highlight csharp %}
 ISpaceProxy spaceProxy = // ... obtain a space reference
 String id = "myID";
 IdQuery<WordCount> idQuery = new IdQuery<WordCount>(id);
-spaceProxy.Change(idQuery, new ChangeSet().Unset("mycounter"));
+spaceProxy.Change(idQuery, new ChangeSet().Unset("MyCounter"));
 {% endhighlight %}
 
 # Getting the value

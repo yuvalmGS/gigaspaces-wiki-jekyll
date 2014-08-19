@@ -1064,7 +1064,7 @@ public class SimpleListener {
 {% endtabcontent %}
 {% endinittab %}
 
-# RemoteEvent, EntryArrivedRemoteEvent and BatchRemoteEvent
+# Event meta data
 
 When registering for notifications, using the unified event session API (or using plain notify registration), the following interface needs to be implemented:
 
