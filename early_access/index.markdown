@@ -6,11 +6,12 @@ categories: EARLY_ACCESS
 weight:
 ---
 
-{%summary%}Here you will find mile stone releases for XAP 10.0{%endsummary%}
-
-At this point in time there is no early access version available. The latest release 10.0 can be found [here](/index.html).
+{%summary%}Here you will find mile stone releases for XAP 10.1{%endsummary%}
 
 {%comment%}
+At this point in time there is no early access version available. The latest release 10.0 can be found [here](/index.html).
+{%endcomment%}
+
 # Release Candidate M1 b12581
 
 {%panel%}
@@ -54,9 +55,10 @@ At this point in time there is no early access version available. The latest rel
 * Link to the API docs
 [API Documenation](/api_documentation)
 
+{%comment%}
 * Link to Release Notes
 [Release Notes](/release_notes)
-
+{%endcomment%}
 
 # Current Release
 
@@ -64,6 +66,6 @@ At this point in time there is no early access version available. The latest rel
 
 [The current XAP .NET release is 10.0](/xap101net)
 
-{%endcomment%}
+
 
 

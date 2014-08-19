@@ -1,8 +1,8 @@
 ---
 layout: post
 title:  Known Issues and Limitations
-categories: RELEASE_NOTES
-parent: xap101.html
+categories: EARLY_ACCESS
+parent: none
 weight: 400
 ---
 
@@ -13,7 +13,7 @@ Below is a list of known issues in GigaSpaces 10.1.X.
 {: .table .table-bordered .table-condensed}
 | Key | Summary | SalesForce ID | Since version | Workaround | Platform/s |
 |:-------|:--------|:----------------|:---------------|:------------------|:----------|
-| GS-11855 | XAP 10 blobstore RPM gs-agent-blobstore.sh GSC_JAVA_OPTIONS | | 10.1.0 | | All |
+| <nobr>GS-11855</nobr> | XAP 10 blobstore RPM gs-agent-blobstore.sh GSC_JAVA_OPTIONS | | 10.1.0 | | All |
 | GS-11871 | Wrong data after reconnecting via the reconnect button in the webui | | 10.1.0 | | Java |
 | GS-11872 | Problem with "Reset layouts" in "Data Grids" tab | | 10.1.0 | | Java |
 | GS-11873 | Height of the header row is long | | 10.1.0 | | Java |
