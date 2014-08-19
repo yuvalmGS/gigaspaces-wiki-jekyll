@@ -279,7 +279,7 @@ The `Feed()` method does the actual work, by creating a new `Data` object with r
 
 # Building the Example
 
-This example includes `compile.bat` script.
+This example includes `Build.bat` script.
 
 From the `<Example Root>` directory (`<XAP Root>\Examples\ProcessingUnit`), call:
 

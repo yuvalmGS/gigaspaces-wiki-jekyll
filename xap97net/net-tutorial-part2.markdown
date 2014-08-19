@@ -84,7 +84,7 @@ There are several ways you can deploy a new Data Grid; by command line, with C# 
 We want to deploy a data grid that has two primary partitions and one backup for each primary partition.
 Here is the gs command that you would execute to achieve this:
 {%highlight console%}
-GS_HOME\bin\gs.sh deploy-space  -cluster schema=partitioned-sync2backup total_members=2,1  xapTutorialSpace
+GS_HOME\bin\gs.bat deploy-space  -cluster schema=partitioned-sync2backup total_members=2,1  xapTutorialSpace
 {%endhighlight%}
 This command will start a space called xapTutorialSpace with two primary partitions and a backup for failover for each primary. 
 
