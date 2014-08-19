@@ -2,40 +2,33 @@
 layout: post100
 title:  Interactive API Guide
 categories: XAP100
-weight: 100
-parent: tutorials.html
+weight: 800
+parent: cook-books.html
 ---
 
 {%summary%}{%endsummary%}
 
-This guide provices setup instructions for the XAP Interactive Tutorial and some code snippets for the Interactive Shell usage.
+This guide provides setup instructions for the XAP Interactive Tutorial and some code snippets for the Interactive Shell usage.
 
 The tutorial include an interactive shell that will allow you to execute the various XAP API for writing and reading data as well as open a groovy shell to write your own code and experience the full XAP API.
 
  
-# Download and Install XAP
+# Installation
 
-Getting XAP is simple: download it from the [Current Releases](http://www.gigaspaces.com/LatestProductVersion) page.
-
-{%vbar title=Download and Install XAP %}
-- Download and unzip the latest XAP release from the [downloads page](http://www.gigaspaces.com/xap-download)
-- Unzip the distribution into a working directory; GS_HOME
-- For this guide we will use `/home/user/xap-distribution` and `C:\xap-distribution` for Linux and Windows users respectively.
+{%vbar title=Download and Install%}
+- Download and unzip the latest XAP release [{%download%}](http://www.gigaspaces.com/xap-download)
+- Unzip the distribution into a working directory;
+- Set the environment variable `GS_HOME` to `/home/user/xap-distribution` and `C:\xap-distribution` for Linux and Windows respectively.
 - Set the JAVA_HOME environment variable to point to the JDK root directory
-{%endvbar%}
 
+The Interactive Tutorial is hosted on Github,
 
-# Download and Run XAP Interactive Tutorial
-
-The project is hosted on Github, download the [latest compatible version](https://github.com/Gigaspaces/XAP-Interactive-Tutorial/releases)
-
-{%vbar title=Download and Install XAP %}
-- Download the latest compatible version from [https://github.com/Gigaspaces/XAP-Interactive-Tutorial/releases](https://github.com/Gigaspaces/XAP-Interactive-Tutorial/releases)
+- Download the latest compatible version [{%download%}](https://github.com/Gigaspaces/XAP-Interactive-Tutorial/releases)
 - Unzip it to your favorite directory. For this guide we will use /home/user/xap-tutorial and C:\xap-tutorial for Linux and Windows users respectively. 
 {%endvbar%}
 
 
-# Starting a Service Grid
+# Starting the Service Grid
 
 A Data Grid requires a [Service Grid](/product_overview/service-grid.html) to host it. A service grid is composed of one or more machines (service grid nodes) running a [Service Grid Agent](/product_overview/service-grid.html#gsa) (or `GSA`), and provides a framework to deploy and monitor applications on those machines, in our case the Data Grid.
 
@@ -55,7 +48,7 @@ gs-agent.bat
 {% endinittab %}
 
 {% tip title=Optional - The Web Console %}
-XAP provides a web-based tool for monitoring and management. From the `bin` folder start the `gs-webui` script, then browse to `localhost:8099`. Click the 'Login' button and take a look at the *Dashboard* and *Hosts* tabs - you'll see the service grid components created on your machine.
+XAP provides a web-based tool for monitoring and management. From the `XAP Root/bin` folder start the `gs-webui` script, then browse to `localhost:8099`. Click the 'Login' button and take a look at the *Dashboard* and *Hosts* tabs - you'll see the service grid components created on your machine.
 {% endtip %}
 
 # Deploying the Data Grid
@@ -77,7 +70,7 @@ gs.bat deploy-space -cluster total_members=2,1 myDataGrid
 {% endtabcontent %}
 {% endinittab %}
   
-This command deploys a Data Grid (aka space) called **myDataGrid** with 2 partitions and 1 backup per partition (hence the `2,1` syntax). 
+This command deploys a Data Grid (Space) called **myDataGrid** with 2 partitions and 1 backup per partition (hence the `2,1` syntax).
 
 If you're using the web console mentioned above to see what's going on, you'll see the data grid has been deployed.
  
@@ -118,6 +111,89 @@ start_tutorial.bat
 {% endinittab %}
 <br>
 
+By now you should be seeing the following output:
+
+![xx](/attachment_files/qsg/XAP-Interactive-Tutorial-screenshot.png)
+
+The Tutorial uses a simple POJO to interact with the Data Grid.
+
+{%highlight java%}
+package demo;
+
+import java.io.Serializable;
+import java.util.Map;
+import com.gigaspaces.annotation.pojo.SpaceDynamicProperties;
+import com.gigaspaces.annotation.pojo.SpaceId;
+
+public class EngineerPojo implements Serializable {
+
+	private Integer id;
+	private String name;
+	private String language;
+	private Map<String, Object> dynamicProperties;
+
+	public EngineerPojo(){}
+
+	public EngineerPojo(Integer id){
+		this.id = id;
+	}
+
+	public EngineerPojo(Integer id, String name, String language){
+		this.id = id;
+		this.name = name;
+		this.language = language;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	@SpaceId
+	public Integer getId() {
+		return id;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setLanguage(String language) {
+		this.language = language;
+	}
+
+	public String getLanguage() {
+		return language;
+	}
+
+	public void setDynamicProperties(Map<String, Object> dynamicProperties) {
+		this.dynamicProperties = dynamicProperties;
+	}
+
+	@SpaceDynamicProperties
+	public Map<String, Object> getDynamicProperties() {
+		return dynamicProperties;
+	}
+
+	@Override
+	public String toString() {
+		String string =
+			"engineer: id=" + getId() +
+			" name=" + getName() +
+			" language=" + getLanguage();
+
+		if(dynamicProperties != null){
+			string += " " + dynamicProperties;
+		}
+		return string;
+	}
+}
+{%endhighlight%}
+
+
 ## Option 1 - XAP Demo
 
 This option demonstrates `XAP API` calls such as writing, reading and querying data to/from the deployed `myDataGrid`.
@@ -128,15 +204,15 @@ This option demonstrates `XAP API` calls such as writing, reading and querying d
 
 In this option, we go over and use two new features of XAP 10 API 
 <br>
-- [Query Aggregations](http://docs.gigaspaces.com/release_notes/100whats-new.html#3)
+- [Query Aggregations](./aggregators.html)
 <br>
-- [Custom Change Operation](http://docs.gigaspaces.com/release_notes/100whats-new.html#6)
+- [Custom Change Operation](./change-api-custom-operation.html)
 <br>
 <br>
 
 ## Option 3 - Interactive Shell 
 
-This option opens an interactive shell, a Groovy shell with `GigaSpace` classes preloaded, which allows you to freely try the `XAP API`.
+This option opens an interactive shell, a Groovy shell with `XAP` classes preloaded, which allows you to freely try the `XAP API`.
 
 Following are some code snippets that facilitates the interaction with the Interactive Shell:
 <br>
@@ -156,14 +232,17 @@ println "Found " + pus.getInstances().length + " space instances";
 {% endhighlight %}
 <br>
 
+
 #### Defining the `GigaSpace` object
-For more information see: [GigaSpace API](http://www.gigaspaces.com/docs/JavaDoc10.0/org/openspaces/core/GigaSpace.html)
+For more information see: [GigaSpace API](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/GigaSpace.html)
 {% highlight java %}
 gigaSpace = admin.getProcessingUnits().getProcessingUnit(gridname).getSpace().getGigaSpace();
 {% endhighlight %}
 <br>
 
-#### Writing and Reading EngineerPojo object
+
+#### Writing and Reading simple POJO Objects
+
 {% highlight java %}
 //Write EngineerPojo object to the space
 engineerPojo = new EngineerPojo(123456789, "EngineerPojo Pojo Object", "English");
@@ -172,41 +251,51 @@ gigaSpace.write(engineerPojo);
 //Read an EngineerPojo object from space.
 gigaSpace.read(new EngineerPojo());
 {% endhighlight %}
-<br>
 
-#### Write EnginerPojo object with dynamic properties set. dynamicProperties field is annotated with @DynamicProperties annotation.
-{% highlight java %}
-engineerPojoWithDynamicProperties = new EngineerPojo(987654321, "EngineerPojo Pojo Object With Dynamic Properties", "Hebrew")
-dynamicProperties = new DocumentProperties().setProperty("company","GigaSpaces").setProperty("age","24");
-engineerPojoWithDynamicProperties.setDynamicProperties(dynamicProperties);
-gigaSpace.write(engineerPojoWithDynamicProperties);
-{% endhighlight %}
-<br>
+{%learn%}./pojo-overview.html{%endlearn%}
 
-#### Write EngineerPojo object using Document API
-{% highlight java %}
-engineerPojoDocument = new SpaceDocument("demo.EngineerPojo");
-engineerPojoDocument.setProperty("id", 321654987);
-engineerPojoDocument.setProperty("name", "EngineerPojo Document Object");
-engineerPojoDocument.setProperty("language", "Hebrew");
-engineerPojoDocument.setProperty("age", 21);
+#### Reading multiple POJO's from the Space with criteria
 
-gigaSpace.write(engineerPojoDocument);
-{% endhighlight %}
-<br>
-
-#### Read multiple objects from the space with the criteria: language=Hebrew
 {% highlight java %}
 engineerPojoQuery = new EngineerPojo();
-engineerPojoQuery.setLanguage("Hebrew");
+engineerPojoQuery.setLanguage("English");
 writtenEngineerPojos = gigaSpace.readMultiple(engineerPojoQuery);
 for (obj in writtenEngineerPojos) {
     println obj
 }
 {% endhighlight %}
+
+#### Using POJO's with dynamic properties.
+
+{% highlight java %}
+engineerPojoWithDynamicProperties = new EngineerPojo(987654321, "EngineerPojo Pojo Object With Dynamic Properties", "English")
+dynamicProperties = new DocumentProperties().setProperty("company","GigaSpaces").setProperty("age","24");
+engineerPojoWithDynamicProperties.setDynamicProperties(dynamicProperties);
+gigaSpace.write(engineerPojoWithDynamicProperties);
+{% endhighlight %}
+
+
+{%learn%}./dynamic-properties.html{%endlearn%}
+
+#### Using the Document API
+{% highlight java %}
+engineerPojoDocument = new SpaceDocument("demo.EngineerPojo");
+engineerPojoDocument.setProperty("id", 321654987);
+engineerPojoDocument.setProperty("name", "EngineerPojo Document Object");
+engineerPojoDocument.setProperty("language", "English");
+engineerPojoDocument.setProperty("age", 21);
+
+gigaSpace.write(engineerPojoDocument);
+{% endhighlight %}
+
+
+{%learn%}./document-overview.html{%endlearn%}
+
+
 <br>
 
-#### Introduce EngineerDocument object to the space with support for dynamic properties
+#### Write multiple SpaceDocuments with dynamic properties
+
 {% highlight java %}
 spaceTypeDescriptor = new SpaceTypeDescriptorBuilder("EngineerDocument").idProperty("id").supportsDynamicProperties(true).addFixedProperty("id", "Integer").addFixedProperty("name", "String").create();
 gigaSpace.getTypeManager().registerTypeDescriptor(spaceTypeDescriptor);
@@ -223,20 +312,21 @@ gigaSpace.writeMultiple(spaceDocuments);
 {% endhighlight %}
 <br>
 
-#### Read a random EngineerDocument object from the space
+#### Read a random POJO from the Space
 {% highlight java %}
 gigaSpace.read(new SpaceDocument("EngineerDocument"));
 {% endhighlight %}
 <br>
 
+{%comment%}
 # What's Next?
 
 [The Full XAP Java Tutorial](./java-home.html) will introduce you to the basic concepts and functionalities of XAP. Many ready to run examples are provided.
 
-Read more about the GigaSpaces runtime environment, how to model your data in a clustered environment, and how to leverage the power capabilities of the Space.
+Read more about the XAP runtime environment, how to model your data in a clustered environment, and how to leverage the power capabilities of the Space.
 
 - [Elastic Processing Unit](./elastic-processing-unit.html)
 - [Modeling and Accessing Your Data](/sbp/modeling-your-data.html)
 - [Deploying and Interacting with the Space](./administrators-guide.html)
-- [The GigaSpaces Runtime Environment]({%currentadmurl%}/the-runtime-environment.html)
-
+- [The XAP Runtime Environment]({%currentadmurl%}/the-runtime-environment.html)
+{%endcomment%}
