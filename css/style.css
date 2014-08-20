@@ -204,11 +204,12 @@ a:active {
 
 .row,.row-fluid {
 	margin-bottom:30px;
-    margin-left: 30px;
+    /*margin-left: 30px;*/
 }
 
 .row .row,.row-fluid .row-fluid{
 	margin-bottom:30px;
+    margin-left: 0px;
 }
 
 .row.nomargin,.row-fluid.nomargin {
