@@ -106,6 +106,14 @@ function updateActionButton($elm, url) {
         $elm.attr("disabled", true);
     }
 }
+
+function updateExpires(state) {
+    if (state.data.nodeModel) {
+        var minutes = state.data.nodeModel.expires - new Date().getTime();
+        updateTimeLeft(Math.floor(minutes/1000/60));
+    }
+}
+
 function updateTimeLeft(minutes) {
     $('#time-left').html(minutes);
 }
@@ -125,7 +133,7 @@ function msToTime(duration) {
 
 $(function () {
     //  var src = 'http://launch.cloudifysource.org/widget/widget?' +
-    var src = ' http://thewidget.staging.gsdev.info/#/widgets/53b525a32e427e332e32a3d9/view?timestamp=1404464' //1404464751615
+    var src = ' http://thewidget.staging.gsdev.info/#/widgets/53b525a32e427e332e32a3d9/blank?timestamp=1404464'; //1404464751615
     // 'apiKey=' + WIDGET_ID +
     //  '&title=Launch' +
     //  '&origin_page_url=' + document.location.href;
@@ -150,7 +158,7 @@ $(function () {
         try {
             console.log(["parent got the message", e]);
             if (typeof(e.data) === 'string') {
-                var msg = JSON.parse(e.data)
+                var msg = JSON.parse(e.data);
             } else {
                 var msg = e.data;
                 msToTime(e.timeStamp);
@@ -164,6 +172,7 @@ $(function () {
                 // console.log(msg.status);
                 // updateTimeLeft(msg.status.timeleft);
                 updateButtonState(msg);
+                updateExpires(msg);
                 //Update manage  url
                 updateManageUrl('http://' + msg.data.nodeModel.publicIp + ':8099/');
                 if (msg.data.widget.consoleLink) {

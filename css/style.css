@@ -159,7 +159,11 @@ a:active {
 .pa{ position:absolute}
 
 
-#launch { margin:12px 0px 0 15px;} 
+#launch { margin:10px 0px 20px 0px;}
+
+#loading {
+    margin-left: 0px;
+}
 .container.pbarWrap{padding:0px}
 /*.launchStop,.launchStop:hover {margin:12px 0px 0 15px !important ;background:#CD0004 !important;color:white !important}
 .launchPlay,.launchPlay:hover {margin:12px 0px 0 15px !important ;background:#479c18 !important;color:white !important}*/
@@ -200,6 +204,7 @@ a:active {
 
 .row,.row-fluid {
 	margin-bottom:30px;
+    margin-left: 30px;
 }
 
 .row .row,.row-fluid .row-fluid{
