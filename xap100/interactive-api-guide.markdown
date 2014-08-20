@@ -8,9 +8,10 @@ parent: cook-books.html
 
 {%summary%}{%endsummary%}
 
-This guide provides setup instructions for the XAP Interactive Tutorial and some code snippets for the Interactive Shell usage.
+This tutorial lets you experience the XAP API in an interactive way.
+Three options are presented. The first two options demonstrate the various API calls you can use to interact with the Space.
+The third option provides an interactive shell that lets you exercise API calls.
 
-The tutorial include an interactive shell that will allow you to execute the various XAP API for writing and reading data as well as open a groovy shell to write your own code and experience the full XAP API.
 
  
 # Installation
@@ -31,56 +32,54 @@ The Interactive Tutorial is hosted on Github,
 # Starting the Service Grid
 
 A Data Grid requires a [Service Grid](/product_overview/service-grid.html) to host it. A service grid is composed of one or more machines (service grid nodes) running a [Service Grid Agent](/product_overview/service-grid.html#gsa) (or `GSA`), and provides a framework to deploy and monitor applications on those machines, in our case the Data Grid.
-
 In this tutorial you'll launch a single node service grid on your machine. To start the service grid, simply run the `gs-agent` script from the product's `bin` folder.
 
 {% inittab%}
 {% tabcontent Unix %}
 {% highlight bash %}
-./gs-agent.sh
+<GS_HOME>/bin/gs-agent.sh
 {% endhighlight %}
 {% endtabcontent %}
 {% tabcontent Windows %}
 {% highlight bash %}
-gs-agent.bat
+<GS_HOME>\bin\gs-agent.bat
 {% endhighlight %}
 {% endtabcontent %}
 {% endinittab %}
 
-{% tip title=Optional - The Web Console %}
-XAP provides a web-based tool for monitoring and management. From the `XAP Root/bin` folder start the `gs-webui` script, then browse to `localhost:8099`. Click the 'Login' button and take a look at the *Dashboard* and *Hosts* tabs - you'll see the service grid components created on your machine.
-{% endtip %}
+
 
 # Deploying the Data Grid
 
 The Data grid can be deployed from command line, from the web management tool or via an Administration API. In this tutorial we'll use the command line.
-
 Start a command line, navigate to the product's `bin` folder and run the following command:
 
 {% inittab %}
 {% tabcontent Unix %}
 {% highlight bash %}
-./gs.sh deploy-space -cluster total_members=2,1 myDataGrid
+<GS_HOME>/bin/gs.sh deploy-space -cluster total_members=2,1 myDataGrid
 {% endhighlight %}
 {% endtabcontent %}
 {% tabcontent Windows %}
 {% highlight bash %}
-gs.bat deploy-space -cluster total_members=2,1 myDataGrid
+<GS_HOME>\bin\gs.bat deploy-space -cluster total_members=2,1 myDataGrid
 {% endhighlight %}
 {% endtabcontent %}
 {% endinittab %}
   
 This command deploys a Data Grid (Space) called **myDataGrid** with 2 partitions and 1 backup per partition (hence the `2,1` syntax).
 
+{%comment%}
 If you're using the web console mentioned above to see what's going on, you'll see the data grid has been deployed.
- 
+{%endcomment%}
+
 {%info%}
 Note that the Lite edition is limited to a single partition - if you're using it type `total_members=1,1` instead.
 {%endinfo%}
 
 # Running the Tutorial
 
-First, we need to point to XAP distribution directory by setting the GS_HOME environment variable.
+First, we need to point to the XAP distribution directory by setting the `GS_HOME` environment variable.
 
 {% inittab %}
 {% tabcontent Unix %}
@@ -95,7 +94,8 @@ set GS_HOME="C:\xap-distribution"
 {% endtabcontent %}
 {% endinittab %}
 
-To start the tutorial simply run:
+To start the tutorial run:
+
 
 {% inittab %}
 {% tabcontent Unix %}
@@ -109,13 +109,13 @@ start_tutorial.bat
 {% endhighlight %}
 {% endtabcontent %}
 {% endinittab %}
-<br>
 
-By now you should be seeing the following output:
+
+After executing the start command you should see the following output:
 
 ![xx](/attachment_files/qsg/XAP-Interactive-Tutorial-screenshot.png)
 
-The Tutorial uses a simple POJO to interact with the Data Grid.
+The Tutorial uses a simple POJO to interact with the Space. Here is the example code:
 
 {%highlight java%}
 package demo;
@@ -194,30 +194,35 @@ public class EngineerPojo implements Serializable {
 {%endhighlight%}
 
 
-## Option 1 - XAP Demo
+There are three options presented in this tutorial:
+
+## Option 1
 
 This option demonstrates `XAP API` calls such as writing, reading and querying data to/from the deployed `myDataGrid`.
-<br>
-<br>
+The program will run by itself, you just need to `press enter` to advance to next example.
 
-## Option 2 - XAP 10 New API
 
-In this option, we go over and use two new features of XAP 10 API 
+## Option 2
+
+This option, will introduce you to some unique XAP features:
 <br>
 - [Query Aggregations](./aggregators.html)
 <br>
 - [Custom Change Operation](./change-api-custom-operation.html)
 <br>
-<br>
 
-## Option 3 - Interactive Shell 
 
-This option opens an interactive shell, a Groovy shell with `XAP` classes preloaded, which allows you to freely try the `XAP API`.
+## Option 3
 
-Following are some code snippets that facilitates the interaction with the Interactive Shell:
-<br>
+This option opens an interactive Groovy shell with `XAP` classes preloaded, that allows you to exercise the `XAP API`.
+When you launch this option you should see the following sceen:
 
-#### Defining required variables and connecting to the space
+![yy](/attachment_files/qsg/XAP-Interactive-groovy.png)
+
+Here are some code snippets that you can copy and paste into the Interactive Shell:
+
+
+#### Defining required variables
 {% highlight java %}
 //import EngineerPojo class
 import demo.EngineerPojo;
@@ -230,18 +235,22 @@ assert (pus != null), "Unable to find ${gridname}, please make sure it is deploy
 assert pus.waitFor(1), "Unable to find ${gridname}, please make sure it is deployed."
 println "Found " + pus.getInstances().length + " space instances";
 {% endhighlight %}
-<br>
 
 
-#### Defining the `GigaSpace` object
-For more information see: [GigaSpace API](http://www.gigaspaces.com/docs/JavaDoc{%currentversion%}/org/openspaces/core/GigaSpace.html)
+
+#### Connecting to the Space
+
+When a client connects to a Space, a proxy is created that holds a connection which implements the Space API. All client interaction is performed through this proxy.
+
 {% highlight java %}
 gigaSpace = admin.getProcessingUnits().getProcessingUnit(gridname).getSpace().getGigaSpace();
 {% endhighlight %}
-<br>
 
 
-#### Writing and Reading simple POJO Objects
+{%learn%}./the-gigaspace-interface.html{%endlearn%}
+
+
+#### Writing and Reading simple POJO objects
 
 {% highlight java %}
 //Write EngineerPojo object to the space
@@ -254,7 +263,7 @@ gigaSpace.read(new EngineerPojo());
 
 {%learn%}./pojo-overview.html{%endlearn%}
 
-#### Reading multiple POJO's from the Space with criteria
+#### Reading multiple POJO's from the Space with a criteria
 
 {% highlight java %}
 engineerPojoQuery = new EngineerPojo();
@@ -292,8 +301,6 @@ gigaSpace.write(engineerPojoDocument);
 {%learn%}./document-overview.html{%endlearn%}
 
 
-<br>
-
 #### Write multiple SpaceDocuments with dynamic properties
 
 {% highlight java %}
@@ -310,13 +317,102 @@ for (int i=0; i<10; i++) {
 }
 gigaSpace.writeMultiple(spaceDocuments);
 {% endhighlight %}
-<br>
+
+{%learn%}./document-extending.html{%endlearn%}
 
 #### Read a random POJO from the Space
 {% highlight java %}
 gigaSpace.read(new SpaceDocument("EngineerDocument"));
 {% endhighlight %}
-<br>
+
+{%learn%}./querying-the-space.html{%endlearn%}
+
+
+
+# WEB Admin UI
+
+You can start XAP's console and inspect the Data Grid components that have been started. In the XAP distribution you will find the command file to launch the console.
+
+{% inittab os_simple_space|top %}
+{% tabcontent Windows%}
+{%highlight console%}
+GS_HOME\bin\gs_webui.bat
+{%endhighlight%}
+{% endtabcontent %}
+{% tabcontent Unix%}
+{%highlight console%}
+GS_HOME/bin/gs_webui.sh
+{%endhighlight%}
+{% endtabcontent %}
+{% endinittab %}
+
+After you execute the above command, open a browser and goto to http://your_host:8099 and the login screen for the admin application will open up. The following screen shots will demonstrate some of the UI features: (no username and password needed)
+
+
+{%section%}
+{%column%}
+Login
+
+{%popup /attachment_files/qsg/interactive-1.png %}
+
+{%endcolumn%}
+
+{%column%}
+Dashboard
+
+{%popup /attachment_files/qsg/interactive-2.png%}
+
+{%endcolumn%}
+
+{%column%}
+Deployed Applications
+
+{%popup /attachment_files/qsg/interactive-4.png%}
+
+{%endcolumn%}
+
+{%column%}
+Hosts (GSA,GSC,GSM,LUS)
+
+{%popup /attachment_files/qsg/interactive-3.png%}
+
+{%endcolumn%}
+{%endsection%}
+
+
+{%section%}
+{%column%}
+Deployed Data Grids
+
+{%popup /attachment_files/qsg/interactive-5.png%}
+
+{%endcolumn%}
+
+{%column%}
+Classes in Space
+
+{%popup /attachment_files/qsg/interactive-6.png%}
+
+{%endcolumn%}
+
+{%column%}
+Class attributes
+
+{%popup /attachment_files/qsg/interactive-8.png%}
+
+{%endcolumn%}
+
+{%column%}
+Statistics
+
+{%popup /attachment_files/qsg/interactive-7.png%}
+
+{%endcolumn%}
+{%endsection%}
+
+
+{%learn%}{%currentadmurl%}/web-management-console.html{%endlearn%}
+
 
 {%comment%}
 # What's Next?
