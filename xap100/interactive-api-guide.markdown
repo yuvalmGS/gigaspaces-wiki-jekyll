@@ -16,14 +16,14 @@ The third option provides an interactive shell that lets you exercise API calls.
  
 # Installation
 
-{%vbar title=Download and Install%}
+{%vbar title=Download and Install XAP%}
 - Download and unzip the latest XAP release [{%download%}](http://www.gigaspaces.com/xap-download)
 - Unzip the distribution into a working directory;
 - Set the environment variable `GS_HOME` to `/home/user/xap-distribution` and `C:\xap-distribution` for Linux and Windows respectively.
 - Set the JAVA_HOME environment variable to point to the JDK root directory
+{%endvbar%}
 
-The Interactive Tutorial is hosted on Github,
-
+{%vbar title=The Interactive Tutorial is hosted on Github%}
 - Download the latest compatible version [{%download%}](https://github.com/Gigaspaces/XAP-Interactive-Tutorial/releases)
 - Unzip it to your favorite directory. For this guide we will use /home/user/xap-tutorial and C:\xap-tutorial for Linux and Windows users respectively. 
 {%endvbar%}
@@ -36,12 +36,12 @@ In this tutorial you'll launch a single node service grid on your machine. To st
 
 {% inittab%}
 {% tabcontent Unix %}
-{% highlight bash %}
+{% highlight console %}
 <GS_HOME>/bin/gs-agent.sh
 {% endhighlight %}
 {% endtabcontent %}
 {% tabcontent Windows %}
-{% highlight bash %}
+{% highlight console %}
 <GS_HOME>\bin\gs-agent.bat
 {% endhighlight %}
 {% endtabcontent %}
@@ -56,12 +56,12 @@ Start a command line, navigate to the product's `bin` folder and run the followi
 
 {% inittab %}
 {% tabcontent Unix %}
-{% highlight bash %}
+{% highlight console %}
 <GS_HOME>/bin/gs.sh deploy-space -cluster total_members=2,1 myDataGrid
 {% endhighlight %}
 {% endtabcontent %}
 {% tabcontent Windows %}
-{% highlight bash %}
+{% highlight console %}
 <GS_HOME>\bin\gs.bat deploy-space -cluster total_members=2,1 myDataGrid
 {% endhighlight %}
 {% endtabcontent %}
@@ -83,12 +83,12 @@ First, we need to point to the XAP distribution directory by setting the `GS_HOM
 
 {% inittab %}
 {% tabcontent Unix %}
-{% highlight bash %}
+{% highlight console %}
 export GS_HOME="/home/user/xap-distribution/"
 {% endhighlight %}
 {% endtabcontent %}
 {% tabcontent Windows %}
-{% highlight bash %}
+{% highlight console %}
 set GS_HOME="C:\xap-distribution"
 {% endhighlight %}
 {% endtabcontent %}
@@ -99,12 +99,12 @@ To start the tutorial run:
 
 {% inittab %}
 {% tabcontent Unix %}
-{% highlight bash %}
+{% highlight console %}
 ./start_tutorial.sh
 {% endhighlight %}
 {% endtabcontent %}
 {% tabcontent Windows %}
-{% highlight bash %}
+{% highlight console %}
 start_tutorial.bat
 {% endhighlight %}
 {% endtabcontent %}
@@ -114,6 +114,15 @@ start_tutorial.bat
 After executing the start command you should see the following output:
 
 ![xx](/attachment_files/qsg/XAP-Interactive-Tutorial-screenshot.png)
+
+
+
+There are three options presented in this tutorial:
+
+## Option 1
+
+This option demonstrates `XAP API` calls such as writing, reading and querying data to/from the deployed `myDataGrid`.
+The program will run by itself, you just need to `press enter` to advance to next example.
 
 The Tutorial uses a simple POJO to interact with the Space. Here is the example code:
 
@@ -194,14 +203,6 @@ public class EngineerPojo implements Serializable {
 {%endhighlight%}
 
 
-There are three options presented in this tutorial:
-
-## Option 1
-
-This option demonstrates `XAP API` calls such as writing, reading and querying data to/from the deployed `myDataGrid`.
-The program will run by itself, you just need to `press enter` to advance to next example.
-
-
 ## Option 2
 
 This option, will introduce you to some unique XAP features:
@@ -217,7 +218,7 @@ This option, will introduce you to some unique XAP features:
 This option opens an interactive Groovy shell with `XAP` classes preloaded, that allows you to exercise the `XAP API`.
 When you launch this option you should see the following sceen:
 
-![yy](/attachment_files/qsg/XAP-Interactive-groovy.png)
+![yy](/attachment_files/qsg/groovyshell.png)
 
 Here are some code snippets that you can copy and paste into the Interactive Shell:
 
@@ -329,19 +330,19 @@ gigaSpace.read(new SpaceDocument("EngineerDocument"));
 
 
 
-# WEB Admin UI
+# Web Admin UI
 
 You can start XAP's console and inspect the Data Grid components that have been started. In the XAP distribution you will find the command file to launch the console.
 
 {% inittab os_simple_space|top %}
-{% tabcontent Windows%}
-{%highlight console%}
-GS_HOME\bin\gs_webui.bat
-{%endhighlight%}
-{% endtabcontent %}
 {% tabcontent Unix%}
 {%highlight console%}
-GS_HOME/bin/gs_webui.sh
+<GS_HOME>/bin/gs_webui.sh
+{%endhighlight%}
+{% endtabcontent %}
+{% tabcontent Windows%}
+{%highlight console%}
+<GS_HOME>\bin\gs_webui.bat
 {%endhighlight%}
 {% endtabcontent %}
 {% endinittab %}
@@ -367,14 +368,14 @@ Dashboard
 {%column%}
 Deployed Applications
 
-{%popup /attachment_files/qsg/interactive-4.png%}
+{%popup /attachment_files/qsg/interactive-3.png%}
 
 {%endcolumn%}
 
 {%column%}
 Hosts (GSA,GSC,GSM,LUS)
 
-{%popup /attachment_files/qsg/interactive-3.png%}
+{%popup /attachment_files/qsg/interactive-4.png%}
 
 {%endcolumn%}
 {%endsection%}
@@ -398,14 +399,14 @@ Classes in Space
 {%column%}
 Class attributes
 
-{%popup /attachment_files/qsg/interactive-8.png%}
+{%popup /attachment_files/qsg/interactive-7.png%}
 
 {%endcolumn%}
 
 {%column%}
 Statistics
 
-{%popup /attachment_files/qsg/interactive-7.png%}
+{%popup /attachment_files/qsg/interactive-8.png%}
 
 {%endcolumn%}
 {%endsection%}
