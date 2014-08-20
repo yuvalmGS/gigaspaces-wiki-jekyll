@@ -96,8 +96,6 @@ blockquote{
 
 
 label,
-input,
-button,
 select,
 textarea {
   font-size: 13px;
@@ -109,8 +107,6 @@ label{
 	color:#353535;
 }
 
-input,
-button,
 select,
 textarea {
 	font-family:'Open Sans', Arial, sans-serif;
@@ -133,7 +129,6 @@ select{
 
 select,
 textarea,
-input[type="text"],
 input[type="password"],
 input[type="datetime"],
 input[type="datetime-local"],

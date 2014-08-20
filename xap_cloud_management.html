@@ -34,10 +34,10 @@ parent: none
                     <i class="fa fa-spinner fa-spin" ></i>&nbsp&nbsp&nbspLaunching...
                 </a>
 
-                <div class="container" style="width:400px;float:left;margin:5px 0 0 15px">
+                <div class="container" style="width:400px;margin:5px 0 0 15px">
 
                     <div class="progress progress-striped active">
-                        <div class="bar" style="width: 0%;"></div>
+                        <div class="bar" style="width: 0%; display: none"></div>
                     </div>
                 </div>
 
@@ -47,10 +47,8 @@ parent: none
                             Management</a>
                         <a href="#" id="use" class="btn btn-large btn-green btn-rounded disabled" target="use">» XAP Management</a>
 
-                        <div class="pull-right">
-                            <p>
-                                Time Left: <strong id="time-left">...</strong> minutes.
-                            </p>
+                        <div class="pull-right time-left">
+                            <p>Time Left: <strong id="time-left">...</strong> minutes.</p>
                         </div>
                     </div>
                     <div class="panel-body">
@@ -60,8 +58,8 @@ parent: none
                 </div>
                 <br>
                 <br>
-                <a class="btn btn-large btn-green btn-rounded" href="http://www.gigaspaces.com/xap-download"
-                   target="_blank"><i class="icon-plus"></i> Download XAP</a>
+                <!--<a class="btn btn-large btn-green btn-rounded" href="http://www.gigaspaces.com/xap-download"-->
+                   <!--target="_blank"><i class="icon-plus"></i> Download XAP</a>-->
                 <!--
                         <a id="mixpanelSubscribe" class="btn btn-large btn-green btn-rounded" href="#"><i class="icon-plus"></i>  Get Free Cloud Package</a> -->
 
@@ -72,7 +70,7 @@ parent: none
                     <div class="span12 center lead" id="loading" style="display:none">
                         <i class="icon-spinner icon-spin icon-large blue"></i>Loading interactive shell...
                         <br/>
-                        Until then feel free to watch this tutorial video.
+                        Until then feel free to watch this XAP introductory video.
 
                     </div>
                     <iframe id="ytIframe" width="500" height="400" src="//www.youtube.com/embed/P0rTANBRuWE?rel=0"
@@ -84,9 +82,11 @@ parent: none
                         <br/>
                         <iframe id="butterfly" src="#" width="768px" height="400px" frameborder="1"
                                 scrolling="auto"></iframe>
+<!--
                         <a id="watchVideoBtn" class="hover-wrap fancybox fancybox.iframe" data-fancybox-group="gallery"
                            title="Cloudify Your App on Chef" href="#" rel="gallery"><span
                                 class="btn btn-rounded btn-default"><i class="icon-play"></i> Watch</span></a>
+-->
 
                         <h2>Follow the instructions in the terminal to get XAP up and running.</h2>
                         <!-- Add Text Here for Widget Instructions -->
