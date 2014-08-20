@@ -173,6 +173,11 @@ $(function () {
                 // updateTimeLeft(msg.status.timeleft);
                 updateButtonState(msg);
                 updateExpires(msg);
+
+                if (!msg.data.nodeModel.publicIp) {
+                    msg.data.nodeModel.publicIp = msg.data.nodeModel.machineSshDetails.publicIp;
+                }
+
                 //Update manage  url
                 updateManageUrl('http://' + msg.data.nodeModel.publicIp + ':8099/');
                 if (msg.data.widget.consoleLink) {
