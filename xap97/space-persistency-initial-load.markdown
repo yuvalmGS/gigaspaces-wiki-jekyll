@@ -96,7 +96,7 @@ public class SpaceDataSourceInitialLoadExample extends DefaultHibernateSpaceData
 	private ClusterInfo clusterInfo;
 
 	@Override
-	public DataIterator initialLoad() {
+	public DataIterator initialDataLoad() {
 		String hquery;
 		if (clusterInfo.getNumberOfInstances() > 1) {
 			hquery = "FROM com.test.domain.Person WHERE MOD(department,"
