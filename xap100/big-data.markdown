@@ -35,4 +35,6 @@ XAP Integration with MongoDB
 
 #### Additional Resources
 
-[XAP Kafka Integration](/sbp/kafka-integration.html)
+- [XAP Kafka Integration](/sbp/kafka-integration.html)
+
+- [XAP Storm Integration](/sbp/storm-integration.html)

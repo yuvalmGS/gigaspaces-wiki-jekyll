@@ -72,6 +72,7 @@ This is sometimes considered a subset of Operational intelligence and is also id
 - Processing API {%latestjavanet event-processing.html%}
 - [Big Data Integration]({%latestjavaurl%}/big-data.html)
 - [Time Series](/sbp/time-series.html)
+- [Storm Integration](/sbp/storm-integration.html)
 
 {%endpanel%}
 
