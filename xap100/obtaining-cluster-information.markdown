@@ -2,8 +2,8 @@
 layout: post100
 title:  Cluster Information
 categories: XAP100
-parent: administrators-guide.html
-weight: 600
+parent: the-processing-unit-overview.html
+weight: 300
 ---
 
 {% summary %}  {% endsummary %}
@@ -18,15 +18,15 @@ This mechanism is also used internally by the platform to maintain the clusterin
 
 As mentioned above the cluster information is passed to the components of each processing unit instance via an instance of the `org.openspaces.core.cluster.ClusterInfo` class, which holds the following information:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Attribute Name | Description | Method |
 |:---------------|:------------|:-------|
-| Cluster schema | If the processing unit contains an embedded space, the cluster schema of that space | `ClusterInfo#getSchema`|
-| Number of instances | The number of instances of the processing unit. If the processing unit contains an embedded space, denotes the number of primary instances | `ClusterInfo#getNumberOfInstances` |
-| Number of backups |If the processing unit contains an embedded space with backups, denotes the number of backups per primary instance | `ClusterInfo#getNumberOfBackups` |
-| Instance ID | A value between 1 to `numberOfInstances`, denoting the instance ID of the processing unit instance | `ClusterInfo#getInstanceId` |
-| Backup ID | If the processing unit contains an embedded space with backups, a value between on 1 to `numberOfBackups`, denoting the backup ID of the processing instance. The primary instance ID which the processing unit instance is backing up is denoted by `instanceId`. If the processing unit instance is not a backup instance, `null` is returned | `ClusterInfo#getBackupId` |
-| Running number | A running number of the processing unit instance instance. Takes into account different topologies and provides a unique identifier (starting from `0`) of the processing unit instance within the cluster | `ClusterInfo#getRunningNumber` |
+| Cluster schema | If the processing unit contains an embedded space, the cluster schema of that space | `getSchema()`|
+| <nobr>Number of instances</nobr> | The number of instances of the processing unit. If the processing unit contains an embedded space, denotes the number of primary instances | `getNumberOfInstances()` |
+| Number of backups |If the processing unit contains an embedded space with backups, denotes the number of backups per primary instance | `getNumberOfBackups()` |
+| Instance ID | A value between 1 to `numberOfInstances`, denoting the instance ID of the processing unit instance | `getInstanceId()` |
+| Backup ID | If the processing unit contains an embedded space with backups, a value between on 1 to `numberOfBackups`, denoting the backup ID of the processing instance. The primary instance ID which the processing unit instance is backing up is denoted by `instanceId`. If the processing unit instance is not a backup instance, `null` is returned | `getBackupId()` |
+| Running number | A running number of the processing unit instance instance. Takes into account different topologies and provides a unique identifier (starting from `0`) of the processing unit instance within the cluster | `getRunningNumber()` |
 
 {% info %}
 `null` value for one of these properties means that they are not applicable for the processing unit instance at hand or the used deployment topology.
@@ -87,14 +87,14 @@ public class MyBean {
 
 The [Space component](./the-space-configuration.html) implements the `ClusterInfoAware`, and uses it in order to construct an embedded space by mapping `ClusterInfo` properties to Space URL properties (if provided). Here is a mapping from `ClusterInfo` to Space URL properties:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |ClusterInfo|Space URL|
 |:----------|:--------|
-| `ClusterInfo#getSchema` | `cluster_schema` |
-| `ClusterInfo#getNumberOfInstances` | `total_members` first value (before the comma) |
-| `ClusterInfo#getNumberOfBackups` | `total_members` second value (after the comma) |
-| `ClusterInfo#getInstanceId` | `id` |
-| `ClusterInfo#getBackupId` | `backup_id` |
+| ClusterInfo#getSchema | cluster_schema |
+| ClusterInfo#getNumberOfInstances | total_members first value (before the comma) |
+| ClusterInfo#getNumberOfBackups | total_members second value (after the comma) |
+| ClusterInfo#getInstanceId | id |
+| ClusterInfo#getBackupId | backup_id |
 
 # ClusterInfo XML Injection
 
@@ -109,16 +109,16 @@ When running the processing unit in any of the [runtime modes](./deploying-and-r
 
 In the above example, the value of the `connectionUrl` property of `myBean` is  built based on the `runningNumber` provided by the `ClusterInfo` instance. Here is a list mapping the `ClusterInfo` properties to their equivalent `${clusterInfo.*`} syntax:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |ClusterInfo|Space URL|
 |:----------|:--------|
-| `ClusterInfo#getSchema` | `clusterInfo.schema` |
-| `ClusterInfo#getNumberOfInstances` | `clusterInfo.numberOfInstances` |
-| `ClusterInfo#getNumberOfBackups` | `clusterInfo.numberOfBackups` |
-| `ClusterInfo#getInstanceId` | `clusterInfo.instanceId` |
-| `ClusterInfo#getBackupId` | `clusterInfo.backupId` |
-| `ClusterInfo#getRunningNumber` | `clusterInfo.runningNumber` |
-| `ClusterInfo#getRunningNumberOffest1` | `clusterInfo.runningNumberOffest1` |
+| ClusterInfo#getSchema | clusterInfo.schema |
+| ClusterInfo#getNumberOfInstances | clusterInfo.numberOfInstances |
+| ClusterInfo#getNumberOfBackups | clusterInfo.numberOfBackups |
+| ClusterInfo#getInstanceId | clusterInfo.instanceId |
+| ClusterInfo#getBackupId | clusterInfo.backupId |
+| ClusterInfo#getRunningNumber | clusterInfo.runningNumber |
+| ClusterInfo#getRunningNumberOffest1 | clusterInfo.runningNumberOffest1 |
 
 # Processing Unit Container Injection
 

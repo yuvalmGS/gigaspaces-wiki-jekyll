@@ -2,8 +2,8 @@
 layout: post100
 title:  Deploying and Interacting with the Space
 categories: XAP100
-parent: administrators-guide.html
-weight: 100
+weight: 200
+parent: cook-books.html
 ---
 
 {% summary %}  {% endsummary %}

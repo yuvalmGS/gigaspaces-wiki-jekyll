@@ -28,6 +28,13 @@ This section describes the Processing Unit directory structure.
 - [Processing Unit configuration](./configuring-processing-unit-elements.html){%wbr%}
 This section describes the Processing Unit deployment configuration file (pu.xml).
 
+- [Obtaining Cluster information](./obtaining-cluster-information.html){%wbr%}
+Obtaining information about the clustering topology, member id and other cluster related information can be useful in many cases. Cluster information can be provided to the processing unit instances at deployment time.
+
+
+- [Reloading business logic](./reloading-business-logic.html){%wbr%}
+The service reloading feature allows you to reload business logic (Spring beans) without shutting down the application or undeploying a Processing Unit.
+
 
 - [Custom Processing Unit](./custom-processing-unit-details-and-monitors.html){%wbr%}
 A Processing Unit can implement the ServiceDetailsProvider and ServiceMonitorsProvider interfaces to expose information to calling APIs or to be viewable in the web-UI.

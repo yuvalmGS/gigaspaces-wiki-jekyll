@@ -32,9 +32,6 @@ The Processing Unit is the unit of packaging and deployment in the GigaSpaces XA
 - [Elastic Processing Unit](./elastic-processing-unit-overview.html){%wbr%}
 How to deploy and manage an Elastic Processing Unit (EPU).
 
-- [Deployment and Administration](./administrators-guide.html){%wbr%}
-The primary focus of the Administrator’s Guide, is to provide both a basic, as well as more advanced overview of the GigaSpaces XAP administration and operation components.
-
 - [Web Application Support](./web-application-overview.html){%wbr%}
 XAP’s integration with the Service Grid allows you to deploy web applications (packaged as a WAR file) onto the Service Grid.
 

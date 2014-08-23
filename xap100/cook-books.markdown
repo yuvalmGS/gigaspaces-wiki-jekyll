@@ -19,6 +19,15 @@ parent: tutorials.html
 
  <hr/>
 
+
+- [Installation](./installation-guide.html){%wbr%}
+Instructions how to download and install the different versions of the XAP platform.
+
+
+- [Deploying and interacting with the space](./deploying-and-interacting-with-the-space.html){%wbr%}
+Overview of XAP's in-memory data grid - how to create a data grid, connect to it, and interact with it.
+
+
 - [Web Application](./your-first-web-application.html){%wbr%}
 This tutorial explains how your web application can be deployed into the GigaSpaces XAP platform and what are the benefits that can be obtained by doing so.
 
