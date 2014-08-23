@@ -1,19 +1,38 @@
 ---
 layout: post100
-title:  SSD Overview
+title:  Flash drive IMDG Storage - MemoryXtend for SSD
 categories: XAP100ADM
-parent: blobstore-overview.html
-weight: 100
+parent: memory-management-overview.html
+weight: 400
 ---
 
+{%wbr%}
 
-{% summary %}  {% endsummary %}
+{% section %}
+{% column  width=10% %}
+![flash-imdg.png](/attachment_files/subject/flash-imdg.png)
+{% endcolumn %}
+{%column width=90% %}
+XAP 10 introduces a new storage model called BlobStore Storage Model, which allows an external storage medium (one that does not reside on the JVM heap) to store the IMDG data. This guide describes the general architecture and functionality of this storage model that is leveraging both on-heap, off-heap and SSD implementation, called `MemoryXtend`.
+{% endcolumn %}
+{% endsection %}
+
+<hr/>
+
+- [BlobStore Storage Model Overview](./blobstore-cache-policy.html)<br>
+Overview and introduction to MemoryXtend.
+
+- [Advanced Tuning Guide](./blobstore-tuning-guide.html)<br>
+Tuning options for MemoryXtend.
+
+- [Troubleshooting](./blobstore-trouble-shooting.html)<br>
+How to troubleshoot common problems.
+
+<hr/>
+
+#### Additional Resources
 
 
-XAP 10 introduces a new storage model called BlobStore Storage Model, which allows an external storage medium (one that does not reside on the JVM heap) to store the IMDG data. This page describes the general architecture and functionality of this storage model, that is leveraging both on-heap, off-heap and SSD implementation, called `MemoryXtend`.
-
-
-{%comment%}
 {%section%}
 {%column width=3% %}
 [{%pdf%}](/download_files/White-Paper-ssd-V2.pdf)
@@ -31,7 +50,8 @@ This MemoryXtend white paper provides a high level overview of the technology an
 The MemoryXtend Tutorial describes how to experiment with MemoryXtend and comparing RAM based Data Grid with SSD based Data Grid.
 {%endcolumn%}
 {%endsection%}
-{%endcomment%}
+
+{%comment%}
 
 This storage model leverages on-heap LRU cache (deserialized form) and off-heap LRU cache (serialized form) to store data, on-heap to store indexes and external storage device to store the raw data in a serialized form. 
 
@@ -569,3 +589,5 @@ abstract class BlobStoreStorageHandler
 {%info%}
 Answers to frequently asked questions about MemoryXtend for SSD can be found [here](/faq/blobstore-cache-policy-faq.html)
 {%endinfo%}
+
+{%endcomment%}

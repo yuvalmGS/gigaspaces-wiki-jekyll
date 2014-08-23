@@ -12,10 +12,8 @@ parent: none
 
 {% section %}
 {% column  width=10% %}
-
 ![space-document.png](/attachment_files/subject/cache-eviction.png)
 {% endcolumn %}
-
 {% column width=90% %}
 In this section we will explain the different Space cache policies, memory usage, and rules for exceeding physical memory capacity.
 {% endcolumn %}
@@ -35,7 +33,7 @@ The ALL-In-Cache Cache policy.
 The LRU Cache policy.
 
 
-- [Flash drive Storage](./blobstore-cache-policy.html){%wbr%}
+- [Flash drive Storage](./blobstore-overview.html){%wbr%}
 XAP 10 introduces a new Storage interface allowing Blob/Block/external type storage to act as a natural memory space for the IMDG.
 
 <hr/>
