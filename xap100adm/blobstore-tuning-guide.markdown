@@ -9,7 +9,7 @@ weight: 200
 
 {% summary %}  {% endsummary %}
 
-
+{%comment%}
 # Introduction
 
 SSD drives have been out for more than five years now, and ,as their price comes down and performance goes up, are increasingly being used in all types of computing devices. I bought my first PCIe-based RAID more than three years ago, and currently I have only one hard drive; all my machines use SSD.
@@ -19,6 +19,7 @@ As SSD adoption grew manufacturers continued to optimize the technology. The fir
 Along the way certain observations were made. The most important observation is that flash based drives do not deteriorate as quickly as was once believed, and their failure rate is less than originally expected, making them well suited for enterprise environments.
 
 But there are other important factors, principally latency. PCIe-based devices have lower latency than SAS/SATA devices, and have equal or sometimes greater throughput. Current third generation PCIe lanes are 8Gbit/sec, which when multiplied by eight, ie. PCIe x8, give 64Gb/sec, or 8GB/sec. None of this is particularly helpful if it can’t get off the machine, so expect to see and use 10G Ethernet as well.
+{%endcomment%}
 
 
 # Configuration

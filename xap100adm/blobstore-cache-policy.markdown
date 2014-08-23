@@ -122,7 +122,7 @@ Step 1.
 Dwonload the XAP 10 distribution and the `MemoryXtend` RPM with the ZetaScale libraries.
 
 Step 2. 
-Install XAP as usual. Unzip the `gigaspaces-xap-premium-10.0.0-XXX.zip`.
+Install XAP as usual. Unzip the `gigaspaces-xap-premium-%currentversion%}.0-XXX.zip`.
 
 Step 3. 
 Install ZetaScale libraries:
@@ -166,8 +166,8 @@ Configuring an IMDG (Space) with BlobStore should be done via the `SanDiskBlobSt
        xmlns:os-core="http://www.openspaces.org/schema/core"
        xmlns:blob-store="http://www.openspaces.org/schema/blob-store"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
-       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/10.0/core/openspaces-core.xsd
-       http://www.openspaces.org/schema/blob-store http://www.openspaces.org/schema/10.0/blob-store/openspaces-blobstore.xsd">
+       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
+       http://www.openspaces.org/schema/blob-store http://www.openspaces.org/schema/{%currentversion%}/blob-store/openspaces-blobstore.xsd">
 
     <bean id="propertiesConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
 
@@ -193,7 +193,7 @@ Configuring an IMDG (Space) with BlobStore should be done via the `SanDiskBlobSt
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:os-core="http://www.openspaces.org/schema/core"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
-       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/10.0/core/openspaces-core.xsd">
+       http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd">
 
     <bean id="propertiesConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"/>
 
@@ -312,8 +312,8 @@ The device allocation per a machine is managed via the `/tmp/blobstore/devices/d
 
 When you undeploy a blobstore space use the `XAP_HOM/bin/undeploy-grid.groovy` comes with the RPM. It undeploys the blobstore space and restart all its GSCs.
 {% highlight bash %}
-export PATH:/gigaspaces-xap-premium-10.0.0/bin/tools/groovy/bin/
-cd /gigaspaces-xap-premium-10.0.0/bin/tools/groovy/bin
+export PATH:/gigaspaces-xap-premium-{%currentversion%}.0/bin/tools/groovy/bin/
+cd /gigaspaces-xap-premium-%currentversion%}/bin/tools/groovy/bin
 $ groovy undeploy-grid.groovy <LUS HostName> <BlobStore-Space-Name>
 {% endhighlight %}
 
