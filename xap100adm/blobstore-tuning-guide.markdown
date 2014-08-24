@@ -25,11 +25,15 @@ But there are other important factors, principally latency. PCIe-based devices h
 # Configuration
 
 
-In order to sustain read/write speeds anywhere near RAM-based performance we’re going to require more than a single SSD. Current drives can at best yield ~500MB write/~550 MB read at 50k IOPs/sec. Do not be deceived by manufacturers claims that their individual SAS/SATA drives are capable of 100k IOPs; this is a burst rate and not sustainable. In order to achieve sufficient read-write rates we’re going to need to use multiple drives.
+In order to sustain read/write speeds anywhere near RAM-based performance we’re going to require more than a single SSD. Current drives can at best yield ~500MB write/~550 MB read at 50k IOPs/sec.
+
+{%comment%}
+Do not be deceived by manufacturers claims that their individual SAS/SATA drives are capable of 100k IOPs; this is a burst rate and not sustainable. In order to achieve sufficient read-write rates we’re going to need to use multiple drives.
+{%endcomment%}
 
 In order to determine what level of speed is required in any particular project, the first value should be the number of reads and/or write required per second. Secondly, the percentage of writes versus reads is also very important, as when the device writes and reads at the same time the overall performance tends to degrade, to the point where reads can only be performed at the write rate. There are exceptions here, specifically with regards to SAS/SATA SSDs, which can come in different flavors, some tuned for reads, some balanced, and others write-enhanced.
 
-Here’s an example from my laptop, which has two SSDs in RAID0:
+Here is an example of a machine, which has two SSDs in RAID0:
 
 {%highlight bash%}
 sudo hdparm -tT /dev/mapper/isw_bhjbdcgibg_Volume0:
@@ -38,12 +42,19 @@ sudo hdparm -tT /dev/mapper/isw_bhjbdcgibg_Volume0:
  Timing buffered disk reads: 2630 MB in  3.00 seconds = 876.09 MB/sec
 {%endhighlight%}
 
-Yes, that means my laptop can read one CD from the volume in one second. If you have a magnetic disk you should probably see something like ~100 MB/sec.
+This means the machine can read one CD from the volume in one second. If you have a magnetic disk you should probably see something like ~100 MB/sec.
 
+{%comment%}
+Yes, that means my laptop can read one CD from the volume in one second. If you have a magnetic disk you should probably see something like ~100 MB/sec.
+{%endcomment%}
 
 ### Aggregation
 
-Most installations will require greater read/write performance than that offered by a single drive. This necessarily involves RAID technology. There are only two RAID designations we will be considering, RAID0 and RAID10. RAID0 means that data being stored is separated, or 'striped', ie. partitioned, to all the drives. RAID10 is the same, with the exception that every stripe has a backup. The MongoDB installation I use at home (RAID10) has 4 drives, and uses the HBA (Host Bus Adapter) to mirror 0/1 & 2/3, and then splits the data onto these two stripes using 'mdadm' (multi-disk administrator). This is the tool that SanDisk uses internally for testing, as an array can be taken down and reconfigured very easily. This requires one core, however, so installations using only 4 cores may wish to employ a dedicated RAID controller, as opposed to an HBA. In such instances all management functions should be turned off, as they will negatively impact performance.
+Most installations will require greater read/write performance than that offered by a single drive. This necessarily involves RAID technology. There are only two RAID designations we will be considering, RAID0 and RAID10. RAID0 means that data being stored is separated, or 'striped', ie. partitioned, to all the drives. RAID10 is the same, with the exception that every stripe has a backup.
+
+{%comment%}
+The MongoDB installation I use at home (RAID10) has 4 drives, and uses the HBA (Host Bus Adapter) to mirror 0/1 & 2/3, and then splits the data onto these two stripes using 'mdadm' (multi-disk administrator). This is the tool that SanDisk uses internally for testing, as an array can be taken down and reconfigured very easily. This requires one core, however, so installations using only 4 cores may wish to employ a dedicated RAID controller, as opposed to an HBA. In such instances all management functions should be turned off, as they will negatively impact performance.
+{%endcomment%}
 
 Although we don't yet have conclusive test data, it is believed that performance will be better using 4 drives aggregated into RAID0 and then split into 4 partitions, than it would using each drive separately. Brian O'Krafka believes that the optimal size might be 8 drives, or 16 if using RAID10. This has implications for stripe size, which determines how many bytes are used across the stripes for data storage. 8 drives would probably benefit most from using 4k or 8k-byte chunks, meaning a 32k or 64k-byte stripe. As ZetaScale manages storage internally this should not affect data storage in the manner it does normally, where storing one byte would require 64k.
 
@@ -62,7 +73,7 @@ Currently this only works on Linux. In the future it should be possible to run o
 
 ##	Installing Linux Tools
 
-Firstly, keep in mind that these commands may or not exist on the machine(s) you are using and you will need to install them if they don't. The basics are as follows (and yes, most of these commands need to be ‘sudo’):
+Firstly, keep in mind that these commands may or may not exist on the machine(s) you are using and you will need to install them if they don't. The basics are as follows (and yes, most of these commands need to be ‘sudo’):
 
 {%highlight bash%}
 sudo yum search 'command'  - this command helps you find the name of a package that contains certain things, ie. libraries or executables
@@ -120,7 +131,7 @@ if you do double-check that '/dev/fioa' exists after the command returns. if it 
 
 #	Monitoring
 
-# this will return drive and partition statistics for a given device updated every second
+Issuing the following command will return drive and partition statistics for a given device updated every second
 
 {%highlight bash%}
 iostat -h -x -p /dev/sdb 1
