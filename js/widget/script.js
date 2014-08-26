@@ -168,6 +168,8 @@ $(function () {
             if (msg.name == 'write_log') {
                 $log.append($("<li/>", {html: msg.html}).addClass(msg.className));
                 $log.scrollTop($log[0].scrollHeight);
+            } else if (msg.name == "widget_loaded") {
+                $("#launch").removeClass('disabled');
             } else if (msg.name == "widget_status") {
                 // console.log(msg.status);
                 // updateTimeLeft(msg.status.timeleft);
