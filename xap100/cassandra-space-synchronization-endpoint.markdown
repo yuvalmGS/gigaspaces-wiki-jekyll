@@ -92,7 +92,7 @@ An example of how the Cassandra Space Synchronization Endpoint can be configured
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:os-core="http://www.openspaces.org/schema/core"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
        http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd">
 
     <bean id="propertiesConfigurer"

@@ -27,7 +27,7 @@ Maven users should define the following dependency in their `pom.xml` file:
   <dependency>
     <groupId>org.apache.openjpa</groupId>
     <artifactId>openjpa</artifactId>
-    <version>{%jarversion openjpa%}</version>
+    <version>{%version openjpa%}</version>
   </dependency>
 </dependencies>
 {% endhighlight %}
@@ -117,10 +117,10 @@ The following Spring xml configuration file declares a space, an `EntityManagerF
        xmlns:os-core="http://www.openspaces.org/schema/core"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
        http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
-       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%jarversion spring%}.xsd
-       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-{%jarversion spring%}.xsd">
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%version spring%}.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-{%version spring%}.xsd">
 
 	<!-- space definition -->
     <os-core:embedded-space  id="space" name="jpaSpace" lookup-groups="test"/>

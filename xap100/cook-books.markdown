@@ -41,9 +41,10 @@ This tutorial explains how the sample Spring PetClinic application can be fine t
 - [Real Time Big Data Application](./your-first-real-time-big-data-analytics-application.html){%wbr%}
 This tutorial will introduce you to XAP's Big Data integration.
 
+- [Interactive Tutorial](./interactive-api-guide.html){%wbr%}
+This tutorial lets you experience the XAP API in an interactive way.
+
 - [Beyond the Basics](./beyond-the-basics.html){%wbr%}
-
-
 
 
  <hr/>

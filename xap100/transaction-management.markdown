@@ -31,7 +31,7 @@ The following should be added to your `pu.xml` to enable the configuration of tr
 <beans ....
        xmlns:tx="http://www.springframework.org/schema/tx"
 ...
-       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-{%jarversion spring%}.xsd">
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-{%version spring%}.xsd">
 
        <tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>
@@ -456,11 +456,11 @@ To enable the declarative transaction management:
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:os-events="http://www.openspaces.org/schema/events"
        xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
-       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%jarversion spring%}.xsd
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%version spring%}.xsd
        http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
        http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{%currentversion%}/events/openspaces-events.xsd
-       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-{%jarversion spring%}.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-{%version spring%}.xsd
        http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{%currentversion%}/remoting/openspaces-remoting.xsd">
 
 	<os-core:embedded-space id="space" name="mySpace"/>

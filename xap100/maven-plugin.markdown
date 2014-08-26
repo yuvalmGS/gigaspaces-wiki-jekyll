@@ -10,17 +10,18 @@ weight: 500
 
 
 
-Maven is a tool used to automate and simplify the development cycle of any Java-based project. The OpenSpaces plugin for Maven utilizes Maven to simplify the development cycle of OpenSpaces-based applications. You can use this plugin to easily create, compile, package, run unit tests, execute and deploy Processing Units.
+Maven is a tool used to automate and simplify the development cycle of any Java-based project. The XAP plugin for Maven utilizes Maven to simplify the development cycle of XAP-based applications. You can use this plugin to easily create, compile, package, run unit tests, execute and deploy Processing Units.
 
 You don't need to be an experienced Maven user to start working with this plugin. This section provides you with everything you need to know in order to start developing Processing Units with the Maven plugin. Experienced Maven users can use the Maven plugin to embed Processing Unit development with their existing development environment.
 
-{% info %} The OpenSpaces Maven plugin has been tested with Maven 3.0. For further information about maven see: [apache.org; What is Maven?](http://maven.apache.org/what-is-maven.html)
+{% info %}
+The XAP Maven plugin has been tested with Maven 3.0. For further information about maven see: [apache.org; What is Maven?](http://maven.apache.org/what-is-maven.html)
 {%endinfo%}
 
 
 # Prior to Installation
 
-In order to use the OpenSpaces Maven plugin, Maven needs to be installed on the machine. If a Maven installation already exists on the machine, it can be used. If not, XAP comes with a ready-to-use distribution of Maven 3.0, located under: `<JSHOMEDIR>/tools/maven/apache-maven-3.0`.
+In order to use the XAP Maven plugin, Maven needs to be installed on the machine. If a Maven installation already exists on the machine, it can be used. If not, XAP comes with a ready-to-use distribution of Maven 3.0, located under: `<XAP HOME>/tools/maven/apache-maven-3.0`.
 
 All you need to do is add the Maven `bin` directory to the system `PATH` variable, and you are ready to go. To test whether the Maven command is accessible, open a command line window, type `mvn \-version`, and press Enter.
 The following message should be displayed:
@@ -35,23 +36,23 @@ OS name: "windows 7" version: "6.1" arch: "x86" Family: "windows"
 
 {% note %} **First uses of Maven require internet connection** in order for the local repository to be populated with required libraries. Once all required libraries are in the local repository the internet connection is not mandatory. {%endnote%}
 
-{% info %} **Dependency Download by Maven**
+{% info title=Dependency Download by Maven %}
 Maven uses repositories: a local repository where all required dependencies (artifacts) are stored for Maven's use, and remote repositories from which Maven downloads required dependencies that are missing in the local repository. If a dependency is missing from the local repository during execution, Maven automatically downloads the missing dependencies from the remote repositories. The download might take a few minutes (progress messages are printed to the console). When the download is finished, Maven returns to its original tasks.
 {%endinfo%}
 
 # Installation
 
-To install the OpenSpaces Maven plugin:
+To install the XAP Maven plugin:
 
-Run the `installmavenrep` script from the `<XAP Root>\tools\maven` directory:
+Run the `installmavenrep` script from the `<XAP Home>\tools\maven` directory:
 
-{% highlight bash %}
+{% highlight console %}
 D:<XAP Home>\tools\maven>installmavenrep.bat
 {% endhighlight %}
 
-This installs the XAP libraries and the OpenSpaces Maven plugin into the local Maven repository. Once the installation is finished, the Maven plugin is ready to be used.
+This installs the XAP libraries and the XAP Maven plugin into the local Maven repository. Once the installation is finished, the Maven plugin is ready to be used.
 
-{% info %} The OpenSpaces Maven plugin is installed under: `<maven-repository-dir>\org\apache\maven\plugins\maven-openspaces-plugin`{%endinfo%}
+{% info %} The XAP Maven plugin is installed under: `<maven-repository-dir>\org\apache\maven\plugins\maven-openspaces-plugin`{%endinfo%}
 
 ## Location of Libraries and Local Repository
 
@@ -67,12 +68,12 @@ This installs the XAP libraries and the OpenSpaces Maven plugin into the local M
 <dependency>
   <artifactId>gs-runtime</artifactId>
   <groupId>com.gigaspaces</groupId>
-  <version>{{ site.latest_maven_version }}</version>
+  <version>{%version maven-version %}</version>
 </dependency>
 <dependency>
   <artifactId>gs-openspaces</artifactId>
   <groupId>com.gigaspaces</groupId>
-  <version>{{ site.latest_maven_version }}</version>
+  <version>{%version maven-version %}</version>
 </dependency>
 {% endhighlight %}
 
@@ -82,7 +83,7 @@ By default, Maven creates the local repository under the your home directory: `<
 
 ### public repository Location
 
-You can install the OpenSpaces artifacts using a public repository:
+You can install the XAP artifacts using a public repository:
 
 {% highlight xml %}
 <repository>
@@ -95,7 +96,7 @@ You can install the OpenSpaces artifacts using a public repository:
 
 You may view list of available project templates and their description using the following command:
 
-{% highlight bash %}
+{% highlight console %}
 mvn os:create
 {% endhighlight %}
 
@@ -107,7 +108,7 @@ The result is a list of available template names and descriptions:
 |basic|Creates a basic SBA application with two processing units. The Feeder processing unit sends Data objects through the Space to a Processor. The Space and the Processor are collocated in the same processing unit.|
 |basic-async-persistency| Creates a basic SBA application with three processing units. The Feeder processing unit sends Data objects through the Space to a Processor. The Space and the Processor are collocated in the same processing unit.The Processor is connected to a Mirror and provides a reliable async replication and persistency to the Database using Hibernate. |
 |basic-xml| Creates a basic SBA application with two processing units. The Feeder processing unit sends Data objects through the Space to a Processor. The Space and the Processor are collocated in the same processing unit.|
-|basic-async-persistency-xml|Creates a basic SBA application with three processing units. The Feeder processing unit sends Data objects through the Space to a Processor. The Space and the Processor are collocated in the same processing unit. The Processor is connected to a Mirror and provides a reliable asynchronous replication and persistency to the Database using Hibernate.|
+|<nobr>basic-async-persistency-xml</nobr>|Creates a basic SBA application with three processing units. The Feeder processing unit sends Data objects through the Space to a Processor. The Space and the Processor are collocated in the same processing unit. The Processor is connected to a Mirror and provides a reliable asynchronous replication and persistency to the Database using Hibernate.|
 |mule|Creates a SBA application with two processing units that use mule as an ESB. The Feeder processing unit writes Data objects to the Space. The Processor processing unit uses the extended SEDA model to defines 3 services. A Verifier service that verifies unprocessed Data objects, an Approver service that approves verified Data objects and a Processor service that processes approved Data objects. The Space and the Processor are collocated in the same processing unit.|
 
 Use the -Dtemplate=<template> argument to specify a project template. Example:
@@ -118,7 +119,7 @@ mvn os:create -Dtemplate=basic-async-persistency
 
 # Creating Processing Unit Project
 
-The OpenSpaces Maven plugin can create Processing Unit projects. It generates the resources and the appropriate directory structure, making it easy to immediately start working on the Processing Units. Projects can be created in any directory. Before creating the project change to the directory where the project should be created. To create a Processing Unit project, use the following command-line:
+The XAP Maven plugin can create Processing Unit projects. It generates the resources and the appropriate directory structure, making it easy to immediately start working on the Processing Units. Projects can be created in any directory. Before creating the project change to the directory where the project should be created. To create a Processing Unit project, use the following command-line:
 
 {% highlight bash %}
 mvn os:create
@@ -156,7 +157,7 @@ The project, created by the `default` template, consists of a main project and t
 The main project and each of the modules contain a project-descriptor file called `pom.xml`; which contains information about the project's properties, dependencies, build configuration, and so on. A module is considered a Processing Unit module if its `pom.xml` file contains the property `gsType=PU`. In this case, only the feeder and the processor are considered Processing Unit modules.
 
 {% comment %}
-For a full overview of the OpenSpaces Maven plugin project templates, refer to: _link will be added soon._
+For a full overview of the XAP Maven plugin project templates, refer to: _link will be added soon._
 {% endcomment %}
 
 # Compiling the Processing Unit Project
@@ -171,7 +172,7 @@ This compiles each module and puts the output files under the modules' _target_ 
 
 # Running Processing Unit Modules
 
-Sometimes, during development, the developer might want to run the Processing Unit module to check its functionality. The OpenSpaces Maven plugin allows you to run Processing Unit modules without the need to package them as Processing Unit distributables first. This feature saves time, while evading build phases that are not required for this task.
+Sometimes, during development, the developer might want to run the Processing Unit module to check its functionality. The XAP Maven plugin allows you to run Processing Unit modules without the need to package them as Processing Unit distributables first. This feature saves time, while evading build phases that are not required for this task.
 
 {% info %} To run modules, they need to be compiled first.{%endinfo%}
 
@@ -212,7 +213,7 @@ mvn compile os:run -Dcluster="schema=partitioned total_members=1,1 id=1" -Dprope
 
 ## Overriding Space/Cluster Configuration
 
-If you need to override the configuration of the space or cluster when running the processing units through the OpenSpaces plugin and you want to do it by replacing the original configuration files, you can do it by placing the required file in the project's root directory.
+If you need to override the configuration of the space or cluster when running the processing units through the XAP plugin and you want to do it by replacing the original configuration files, you can do it by placing the required file in the project's root directory.
 
 Examples:
 To change the logging configuration place the new _gs_logging.properties_ file in the _config_ directory (you may need to create this directory) under the project's root directory.
@@ -223,7 +224,7 @@ To change the security permissions place the new _policy.all_ file in the _polic
 
 # Packaging Processing Units
 
-In order to deploy Processing Units, you need to package them in a distributable form. The OpenSpaces Maven plugin allows you to package two types of distributable supported by XAP: a single JAR archive and an open directory structure.
+In order to deploy Processing Units, you need to package them in a distributable form. The XAP Maven plugin allows you to package two types of distributable supported by XAP: a single JAR archive and an open directory structure.
 
 Make sure you are in the directory of the project.
 To package the Processing Units, use the following command-line from the main project directory:
@@ -260,7 +261,7 @@ For example:
 
 # Running Processing Units
 
-After packaging the Processing Units, you might want to test the validity of the assemblies. The OpenSpaces Maven plugin makes it possible to run the Processing Units as standalone modules. The Maven plugin includes all the assembly dependencies in the execution classpath, making sure that the Processing Unit finds all the required resources. Managing to run the Processing Unit as a module while failing to run it as a standalone module might imply that a problem exists with the assembly definitions.
+After packaging the Processing Units, you might want to test the validity of the assemblies. The XAP Maven plugin makes it possible to run the Processing Units as standalone modules. The Maven plugin includes all the assembly dependencies in the execution classpath, making sure that the Processing Unit finds all the required resources. Managing to run the Processing Unit as a module while failing to run it as a standalone module might imply that a problem exists with the assembly definitions.
 
 Make sure you are in the directory of the project.
 To run Processing Units as standalone modules, use the following command-line:
@@ -304,7 +305,7 @@ Overriding the space and cluster configuration is explained in [Running Processi
 
 Processing Units usually run in the Service Grid. In order to deploy a Processing Unit, you first need to package it (see [Packaging Processing Units](#packaging)).
 
-XAP supports two forms of Processing Unit distributable: A single JAR archive and an open directory structure. The OpenSpaces Maven plugin allows you to deploy Processing Units simply -- packaged as JAR archives -- into the Service Grid.
+XAP supports two forms of Processing Unit distributable: A single JAR archive and an open directory structure. The XAP Maven plugin allows you to deploy Processing Units simply -- packaged as JAR archives -- into the Service Grid.
 
 {% note %} When deploying Processing Units, make sure that the Grid Service Manager (GSM) and the Grid Service Container (GSC) are running.{%endnote%}
 
@@ -347,7 +348,7 @@ If the current directory is the main project directory and the `pu-name` argumen
 
 # Undeploying Processing Units
 
-The OpenSpaces Maven plugin makes it simple to undeploy Processing Units from the Service Grid. Make sure you are in the directory of the project. To undeploy a Processing Unit from the Service Grid, use the following command-line:
+The XAP Maven plugin makes it simple to undeploy Processing Units from the Service Grid. Make sure you are in the directory of the project. To undeploy a Processing Unit from the Service Grid, use the following command-line:
 
 {% highlight bash %}
 mvn os:undeploy
@@ -461,7 +462,7 @@ Do the following for each project:
 
 # Viewing Persistent Data
 
-When running a Processing Unit that uses persistency, e.g when using the _basic-async-persistency_ template, one would like to view the persisted data. OpenSpaces Maven Plugin makes it easy to start the HSQLDB viewer to immediately view persisted data.
+When running a Processing Unit that uses persistency, e.g when using the _basic-async-persistency_ template, one would like to view the persisted data. XAP Maven Plugin makes it easy to start the HSQLDB viewer to immediately view persisted data.
 
 {% note %} The HSQLDB viewer is for monitoring HSQLDB databases only. {%endnote%}
 

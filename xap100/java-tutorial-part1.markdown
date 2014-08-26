@@ -640,8 +640,8 @@ Lets look at a Spring configuration file that represents the creation of an embe
 	xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
 	xmlns:os-sla="http://www.openspaces.org/schema/sla"
 	xsi:schemaLocation="
-   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
-   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%jarversion spring%}.xsd
+   http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
+   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%version spring%}.xsd
    http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd>
 
 	<!-- Scan the packages for annotations / -->

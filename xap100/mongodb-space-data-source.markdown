@@ -30,19 +30,19 @@ include the following in your `pom.xml`
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
-			<version>{%jarversion mongo-java-driver%}</version>
+			<version>{%version mongo-java-driver%}</version>
 		</dependency>
 
 		<dependency> 
 			<groupId>org.antlr</groupId> 
 			<artifactId>antlr4-runtime</artifactId> 
-			<version>{%jarversion antlr4-runtime%}</version>
+			<version>{%version antlr4-runtime%}</version>
 		</dependency> 
 
 		<dependency>
     		<groupId>com.gigaspaces</groupId>
 	    	<artifactId>mongo-datasource</artifactId>
-    	    <version>{%jarversion mongo-datasource%}</version>
+    	    <version>{%version mongo-datasource%}</version>
 		</dependency>
 		...
 	</dependencies>
@@ -63,11 +63,11 @@ also asynchronously persists the data using a mirror (see [MongoDB Space Synchro
 	xmlns:os-events="http://www.openspaces.org/schema/events"
 	xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
 	xmlns:os-sla="http://www.openspaces.org/schema/sla" xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
-	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%jarversion spring%}.xsd
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%version spring%}.xsd
 	http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
 	http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{%currentversion%}/events/openspaces-events.xsd
-	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-{%jarversion spring%}.xsd
+	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-{%version spring%}.xsd
     http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{%currentversion%}/remoting/openspaces-remoting.xsd">
 
 	<bean id="propertiesConfigurer"

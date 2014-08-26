@@ -247,7 +247,7 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
   xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
   xmlns:os-sla="http://www.openspaces.org/schema/sla"
   xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
-  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
     http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
     http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
     http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
@@ -277,7 +277,7 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
   xmlns:os-sla="http://www.openspaces.org/schema/sla"
   xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%jarversion spring%}.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%version spring%}.xsd
     http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
     http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
     http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
@@ -318,7 +318,7 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
   xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
   xmlns:os-sla="http://www.openspaces.org/schema/sla"
   xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
-  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
     http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
     http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
     http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
@@ -344,8 +344,8 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
   xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
   xmlns:os-sla="http://www.openspaces.org/schema/sla"
   xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
-  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
-    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%jarversion spring%}.xsd
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%version spring%}.xsd
     http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
     http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
     http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
@@ -383,7 +383,7 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
   xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
   xmlns:os-sla="http://www.openspaces.org/schema/sla"
   xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
-  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
     http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
     http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
     http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
@@ -410,8 +410,8 @@ Like all GigaSpaces Processing Units, the configuration details of each of the a
   xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
   xmlns:os-sla="http://www.openspaces.org/schema/sla"
   xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
-  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
-    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%jarversion spring%}.xsd
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%version spring%}.xsd
     http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
     http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
     http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
@@ -469,7 +469,7 @@ Here are the contents of the files for each of the components:
 	xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
 	xmlns:os-sla="http://www.openspaces.org/schema/sla"
         xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
        http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
        http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
        http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
@@ -498,8 +498,8 @@ Here are the contents of the files for each of the components:
 	xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
 	xmlns:os-sla="http://www.openspaces.org/schema/sla"
         xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
-       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%jarversion spring%}.xsd
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%version spring%}.xsd
        http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
        http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
        http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
@@ -547,7 +547,7 @@ Here are the contents of the files for each of the components:
 	xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
 	xmlns:os-sla="http://www.openspaces.org/schema/sla"
         xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
        http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
        http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
        http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
@@ -577,8 +577,8 @@ Here are the contents of the files for each of the components:
 	xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
 	xmlns:os-sla="http://www.openspaces.org/schema/sla"
         xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
-       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%jarversion spring%}.xsd
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%version spring%}.xsd
        http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
        http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
        http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd
@@ -627,8 +627,8 @@ In this example, the gateway `pu.xml` is quite symmetric, the only difference is
 	xmlns:os-remoting="http://www.openspaces.org/schema/remoting"
 	xmlns:os-sla="http://www.openspaces.org/schema/sla"
         xmlns:os-gateway="http://www.openspaces.org/schema/core/gateway"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
-       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%jarversion spring%}.xsd
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-{%version spring%}.xsd
        http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{% currentversion %}/core/openspaces-core.xsd
        http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{% currentversion %}/events/openspaces-events.xsd
        http://www.openspaces.org/schema/remoting http://www.openspaces.org/schema/{% currentversion %}/remoting/openspaces-remoting.xsd

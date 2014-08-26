@@ -42,7 +42,7 @@ The SLA definition, whether it comes in a separate file or embedded inside the `
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:os-sla="http://www.openspaces.org/schema/sla"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
        http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/{%currentversion%}/sla/openspaces-sla.xsd">
 
     <os-sla:sla cluster-schema="partitioned-sync2backup"
@@ -59,7 +59,7 @@ The SLA definition, whether it comes in a separate file or embedded inside the `
 {% highlight xml %}
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd">
 
 	<bean id="SLA" class="org.openspaces.pu.sla.SLA">
 		<property name="clusterSchema" value="partitioned-sync2backup" />
@@ -501,7 +501,7 @@ Deploy a 3 partitions with a backup space cluster using the following sla.xml:
 <beans xmlns="http://www.springframework.org/schema/beans"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 xmlns:os-sla="http://www.openspaces.org/schema/sla"
-xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
 http://www.openspaces.org/schema/sla http://www.openspaces.org/schema/sla/openspaces-sla.xsd">
 
 <os-sla:sla>

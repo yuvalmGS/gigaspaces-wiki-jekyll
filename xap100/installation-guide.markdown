@@ -22,9 +22,9 @@ Please note that the XAP Lite edition is limited to a single partition.
 # Java Installation
 Download the latest version of XAP from the [downloads page](http://www.gigaspaces.com/xap-download). Unzip it into a directory of your choice:
 
-* On Windows, you might unzip it into `c:\tools\`, which will create `c:\tools\{{ site.latest_gshome_dirname }}`.
+* On Windows, you might unzip it into `c:\tools\`, which will create `c:\tools\{%version gshome-directory %}`.
 
-* On Unix, you might unzip it into `/usr/local/`, which will create `/usr/local/{{ site.latest_gshome_dirname }}`. You’ll also need to grant execution permissions to the scripts in the bin folder.
+* On Unix, you might unzip it into `/usr/local/`, which will create `/usr/local/{%version gshome-directory %}`. You’ll also need to grant execution permissions to the scripts in the bin folder.
 
 
 
@@ -37,7 +37,7 @@ If you're using Eclipse, it is also recommended to install the [Spring Tool Suit
 
 #### Setting up your IDE
 
-Open your favorite java IDE (Eclipse, IntelliJ IDEA, etc), Create a new project, and add all the jars from `{{ site.latest_gshome_dirname }}/lib/required` to the project's classpath.
+Open your favorite java IDE (Eclipse, IntelliJ IDEA, etc), Create a new project, and add all the jars from `{%version gshome-directory %}/lib/required` to the project's classpath.
 
 
 

@@ -45,7 +45,7 @@ This section explains the topologies supported by XAP - replicated, partitioned 
 - **Topology** - a specific configuration of space instances. For example, a replicated topology is a configuration in which all space instances replicate data between one another. In GigaSpaces, space topologies are defined by _clustering policies_ (explained in the following section).
 
 {% info title=Replication Configuration %}
-For more details on how to configure the replication mechanisms of the Space, please refer to [this page]({%latestadmurl%}/replication.html) in the [Administrator's Guide]({%latestjavaurl%}/administrators-guide.html).
+For more details on how to configure the replication mechanisms of the Space, please refer to [this page]({%latestadmurl%}/replication.html) in the [Administrator's Guide]({%latestadmurl%}).
 {% endinfo %}
 
 # Data Grid Topologies

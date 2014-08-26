@@ -116,13 +116,24 @@ After executing the start command you should see the following output:
 ![xx](/attachment_files/qsg/XAP-Interactive-Tutorial-screenshot.png)
 
 
+<br>
 
-There are three options presented in this tutorial:
+### There are three options presented in this tutorial:
 
-## Option 1
+- [XAP Demo](#option1)
+
+- [Special Features](#option2)
+
+- [Interactive Shell](#option3)
+
+<br>
+
+{%anchor option1%}
+
+## XAP Demo
 
 This option demonstrates `XAP API` calls such as writing, reading and querying data to/from the deployed `myDataGrid`.
-The program will run by itself, you just need to `press enter` to advance to next example.
+The program will run by itself, you just need to `press enter` to advance to the next example.
 
 The Tutorial uses a simple POJO to interact with the Space. Here is the example code:
 
@@ -203,9 +214,11 @@ public class EngineerPojo implements Serializable {
 {%endhighlight%}
 
 
-## Option 2
+{%anchor option2%}
 
-This option, will introduce you to some unique XAP features:
+## Special Features
+
+This option will introduce you to some unique XAP features:
 <br>
 - [Query Aggregations](./aggregators.html)
 <br>
@@ -213,7 +226,9 @@ This option, will introduce you to some unique XAP features:
 <br>
 
 
-## Option 3
+{%anchor option3%}
+
+## Interactive Shell
 
 This option opens an interactive Groovy shell with `XAP` classes preloaded, that allows you to exercise the `XAP API`.
 When you launch this option you should see the following sceen:

@@ -7,11 +7,11 @@ weight: 100
 ---
 
 
-This page contains information beyond the basics. It was created for those who want to know a little bit more about how OpenSpaces and Maven integrate. Basically, the information given in [OpenSpaces Maven Plugin](./maven-plugin.html) should be sufficient for the common user.
+This page contains information beyond the basics. It was created for those who want to know a little bit more about how XAP and Maven integrate. Basically, the information given in [XAP Maven Plugin](./maven-plugin.html) should be sufficient for the common user.
 
 # Processing Unit Assembly Definition
 
-The OpenSpaces maven plugin uses the maven assembly plugin to generate the processing unit directory structure. Each PU module has the file <module-name>/src/main/assembly/assembly.xml that defines the assembly structure. One of its tasks is to determine which of the dependency JARS go into the lib directory and which go into the shared-lib directory.
+The XAP maven plugin uses the maven assembly plugin to generate the processing unit directory structure. Each PU module has the file <module-name>/src/main/assembly/assembly.xml that defines the assembly structure. One of its tasks is to determine which of the dependency JARS go into the lib directory and which go into the shared-lib directory.
 
 **assembly.xml**
 
@@ -68,7 +68,7 @@ When defining a dependency for an artifact (module), you can specify the depende
 
 Maven defines the following scopes:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Scope | Description |
 |:------|:------------|
 | **compile** | Indicates that the dependency is available for the classpaths of all phases. **This is the default scope**. |
@@ -77,7 +77,9 @@ Maven defines the following scopes:
 | **runtime** | Indicates that the dependency is available for the runtime and test classpaths, but not for the compile classpath. |
 | **system** | This scope is similar to provided, except that you have to provide the JAR location explicitly. The artifact is not looked up in a repository. Using this scope is not advised due to portability issues. |
 
-{% infosign %} During processing unit packaging only dependencies declared with the scopes **compile* and *runtime** are added to the PU distributable.
+{% info %}
+During processing unit packaging only dependencies declared with the scopes **compile* and *runtime** are added to the PU distributable.
+{%endinfo%}
 
 For more information go to [Introduction to the Dependency Mechanism](http://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html)
 

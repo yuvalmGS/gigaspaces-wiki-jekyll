@@ -160,7 +160,7 @@ public class InitialLoadQueryExample {
 
 An enhanced Cloudify recipe for XAP that allows you to deploy manage and auto scale XAP deployments on any cloud environment.
 
-{%javalearn%}/xap100/deploying-your-application-on-a-cloud.html{%endjavalearn%}
+{%javalearn%}/xap100adm/deploying-your-application-on-a-cloud.html{%endjavalearn%}
 
 
 

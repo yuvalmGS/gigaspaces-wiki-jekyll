@@ -25,7 +25,7 @@ In order to use the event container transport (using XML namespaces), the follow
       xmlns:stdio="http://www.mulesoft.org/schema/mule/stdio"
       xsi:schemaLocation="http://www.openspaces.org/schema/core http://www.openspaces.org/schema/{%currentversion%}/core/openspaces-core.xsd
       http://www.openspaces.org/schema/events http://www.openspaces.org/schema/{%currentversion%}/events/openspaces-events.xsd
-      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
+      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
       http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
       http://www.mulesoft.org/schema/mule/stdio http://www.mulesoft.org/schema/mule/stdio/3.1/mule-stdio.xsd
       http://www.openspaces.org/schema/mule/os-eventcontainer http://www.openspaces.org/schema/{%currentversion%}/mule/3.1/mule-os-eventcontainer.xsd">
@@ -197,7 +197,7 @@ In this example, POJO messages are received (`SimpleMessage`) from the Space, wi
       xmlns:stdio="http://www.mulesoft.org/schema/mule/stdio"
       xsi:schemaLocation="http://www.openspaces.org/schema/core http://www.openspaces.org/schema/core/openspaces-core.xsd
       http://www.openspaces.org/schema/events http://www.openspaces.org/schema/events/openspaces-events.xsd
-      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%jarversion spring%}.xsd
+      http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-{%version spring%}.xsd
       http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/3.1/mule.xsd
       http://www.mulesoft.org/schema/mule/stdio http://www.mulesoft.org/schema/mule/stdio/3.1/mule-stdio.xsd
       http://www.openspaces.org/schema/mule/os-eventcontainer http://www.openspaces.org/schema/{%currentversion%}/mule/3.1/mule-os-eventcontainer.xsd">

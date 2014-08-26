@@ -33,7 +33,7 @@ tar -xzvf gigaspaces-cpp-{{ site.latest_xap_version }}-ga-linux-amd64-gcc-4.1.2.
 
 Where the `gigaspaces-cpp-9.X.X-ga-linux-amd64-gcc-4.1.2.tar.gz` should be located at the `/gigaspaces-xap-premium-9.X.X-ga` folder.
 
-1. After unzipping the ZIP file, you should have the following files and folders under your `<GigaSpaces Root>\cpp` folder:
+1. After unzipping the ZIP file, you should have the following files and folders under your `<XAP Root>\cpp` folder:
 
 {% indent %}
 ![CppTree.PNG](/attachment_files/CppTree.PNG)
@@ -59,9 +59,11 @@ The following environment variables need to be defined:
 
 For example:
 
-    set JSHOMEDIR=C:\{{ site.latest_gshome_dirname }}
-    set PLATFORM=win32
-    set COMPILER=VS9.0
+{%highlight console%}
+set JSHOMEDIR=C:\{%version gshome-directory %}
+set PLATFORM=win32
+set COMPILER=VS9.0
+{%endhighlight%}
 
 In addition, for windows 32 bit the **`PATH`** variable should be updated to include:
 
@@ -119,9 +121,12 @@ Result files can be found in `<GigaSpaces Root>\cpp`:
 `benchmarkResult*.txt`  -- Benchmark tests results
 `testResult*.xml` -- Functional tests results
 
+{%comment%}
 {% panel title= | borderStyle=solid %}
 {% lampon %} **What's next?**
 
 - [Write your first C++ Application](./cpp-api-hello-world-example.html)
 - Return to the [C++ homepage](./xap-cpp.html)
 {% endpanel %}
+
+{%endcomment%}
