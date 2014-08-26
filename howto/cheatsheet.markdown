@@ -177,10 +177,13 @@ Markdown:
 | **Description** | **Macro** | **Output** |
 | Latest XAP Release version | {%raw%} {%latestxaprelease%} {%endraw%} | {%latestxaprelease%} |
 | Latest Cloudify Release version | {%raw%} {%latestcloudifyrelease%} {%endraw%} | {%latestcloudifyrelease%} |
-| Latest XAP Release file name | {%raw%} {{site.latest_build_filename}} {%endraw%} | {{site.latest_build_filename}} |
-| Latest XAP Release home dir | {%raw%} {{site.latest_gshome_dirname}} {%endraw%} | {{site.latest_gshome_dirname}} |
-| Latest Default Lookup Group | {%raw%} {{site.latest_default_lookup_group}} {%endraw%} | {{site.latest_default_lookup_group}} |
-| Latest XAP Maven | {%raw%} {{site.latest_maven_version}} {%endraw%} | {{site.latest_maven_version}} |
+| Latest XAP Release file name | {%raw%} {%version build-filename %} {%endraw%} | {%version build-filename %} |
+| Latest XAP Release home dir | {%raw%} {%version gshome-directory %} {%endraw%} | {%version gshome-directory %} |
+| Latest Default Lookup Group | {%raw%} {%version default-lookup-group %} {%endraw%} | {%version default-lookup-group %} |
+| Latest XAP Maven | {%raw%} {%version maven-version %} {%endraw%} |{%version maven-version %} |
+
+
+
 
 # Custom
 

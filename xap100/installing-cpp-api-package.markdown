@@ -28,7 +28,7 @@ The current supported platforms and compilers are:
 1. Unzip the file into your `<GigaSpaces Root>` directory (download GigaSpaces [here](http://www.gigaspaces.com/LatestProductVersion)), using your favorite unzip tool (.e.g WinZip). For example - On linux you should run the following to install the C++ libraries:
 
 {% highlight java %}
-tar -xzvf gigaspaces-cpp-{{ site.latest_xap_version }}-ga-linux-amd64-gcc-4.1.2.tar.gz
+tar -xzvf gigaspaces-cpp-{%version xap-version %}-ga-linux-amd64-gcc-4.1.2.tar.gz
 {% endhighlight %}
 
 Where the `gigaspaces-cpp-9.X.X-ga-linux-amd64-gcc-4.1.2.tar.gz` should be located at the `/gigaspaces-xap-premium-9.X.X-ga` folder.

@@ -24,8 +24,8 @@ Getting XAP is simple: download it from the [Current Releases](http://www.gigasp
 
 Installing XAP is just as easy - unzip it into a directory of your choice:
 
-* On Windows, you might unzip it into `c:\tools\`, which will create `c:\tools\{{ site.latest_gshome_dirname }}`.
-* On Unix, you might unzip it into `/usr/local/`, which will create `/usr/local/{{ site.latest_gshome_dirname }}`. You'll also need to grant execution permissions to the scripts in the `bin` folder.
+* On Windows, you might unzip it into `c:\tools\`, which will create `c:\tools\{%version gshome-directory %}`.
+* On Unix, you might unzip it into `/usr/local/`, which will create `/usr/local/{%version gshome-directory %}`. You'll also need to grant execution permissions to the scripts in the `bin` folder.
 {%endcomment%}
 
 {%vbar title=Download and Install XAP %}

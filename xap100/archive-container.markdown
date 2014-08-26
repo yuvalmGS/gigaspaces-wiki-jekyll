@@ -6,29 +6,31 @@ parent: big-data.html
 weight: 100
 ---
 
-{%comment%}
-{% summary %}Allows archiving of space objects to an external persistency service.{% endsummary %}
-{%endcomment%}
+{% summary %}{% endsummary %}
 
 {%section%}
-{%column width=60% %}
+{%column width=70% %}
 The archive container is used to transfer historical data into Big-Data storage (for example Cassandra).
 
 The typical scenario is when streaming vast number of raw events through the Space, enriching them and then moving them to a Big-Data storage. Typically, there is no  intention of keeping them in the space nor querying them in the space.
-
-{%endcolumn%}
-{%column width=40% %}
-![](/attachment_files/archive-container.jpg)
-{%endcolumn%}
-{%endsection%}
 
 {%vbar title=The Archive Container:%}
 - automatically moves objects from the Space to the Big-Data storage.
 - configures the set of objects to be archived.
 - supports Space fail-over, and Big-Data storage unavailability.
 - The persisted objects, can then be read by 3rd party tools directly from the Big-Data storage.
-- Big-Data storage is abstracted with the [`ArchiveOperationHandler`](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/archive/ArchiveOperationHandler.html) interface. [Cassandra Archive Operation Handler](./cassandra-archive-operation-handler.html) implementation is available out of the box.
+- Big-Data storage is abstracted with the [`ArchiveOperationHandler`](http://www.gigaspaces.com/docs/JavaDoc{% currentversion %}/index.html?org/openspaces/archive/ArchiveOperationHandler.html) interface.
+- [Cassandra Archive Operation Handler](./cassandra-archive-operation-handler.html) implementation is available out of the box.
+- [MongoDB Archive Operation Handler](./mongodb-archive-operation-handler.html) implementation is available out of the box.
 {%endvbar%}
+
+{%endcolumn%}
+{%column width=30% %}
+![](/attachment_files/archive-container.jpg)
+{%endcolumn%}
+{%endsection%}
+
+
 
 ## Archive Container vs Space Persistency
 

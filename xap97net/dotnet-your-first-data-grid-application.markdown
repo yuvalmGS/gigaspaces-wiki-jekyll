@@ -31,7 +31,7 @@ Getting XAP.NET is simple: download it from the [Current Releases](http://www.gi
 
 {%info%} There are two XAP.NET packages, one for `x86` and another for `x64`. This tutorial refers to the `x86` package names and locations, but it fits the `x64` as well.{%endinfo%}
  
-To install, simply double-click the `{{ site.latest_msi_filename }}` you've downloaded and follow the wizard to complete the installation. By default, the product will be installed into `C:\GigaSpaces\{{ site.latest_gshome_net_dirname }}`. 
+To install, simply double-click the `{%version msi-filename %}` you've downloaded and follow the wizard to complete the installation. By default, the product will be installed into `C:\GigaSpaces\{%version gshome-net-directory %}`.
 
 # Deploy a Data Grid
 {%endcomment%}
@@ -73,7 +73,7 @@ If you're using the web console mentioned above to see what's going on, you'll s
 
 ### Setting up your IDE
 
-Launch Visual Studio, create a new C# *Console Application* and add a reference to **GigaSpaces.Core.dll** from `C:\GigaSpaces\{{ site.latest_gshome_net_dirname }}\NET v4.0.30319\Bin`. If you're new to Visual Studio and .NET, follow these instructions:
+Launch Visual Studio, create a new C# *Console Application* and add a reference to **GigaSpaces.Core.dll** from `C:\GigaSpaces\{%version gshome-net-directory %}\NET v4.0.30319\Bin`. If you're new to Visual Studio and .NET, follow these instructions:
 
 {% togglecloak id=0 %}How to create a XAP.NET Project in Visual Studio{% endtogglecloak %}
 {% gcloak 0 %}
@@ -82,7 +82,7 @@ Launch Visual Studio, create a new C# *Console Application* and add a reference 
 3. In the **Name** test box, type **XapDemo**. If you wish, change the default location to a path you prefer.
 4. Select **OK** to continue. Visual Studio creates the project and opens the automatically generated `program.cs` file.
 5. From the **Project** menu, select **Add Reference**. The **Add Reference** dialog appears.
-6. Select the **Browse** tab, navigate to the XAP.NET installation folder (e.g. **C:\GigaSpaces\{{ site.latest_gshome_net_dirname }}\NET v4.0.30319**). Go into the **Bin** folder, select **GigaSpaces.Core.dll**, and click **OK**.
+6. Select the **Browse** tab, navigate to the XAP.NET installation folder (e.g. **C:\GigaSpaces\{%version gshome-net-directory %}\NET v4.0.30319**). Go into the **Bin** folder, select **GigaSpaces.Core.dll**, and click **OK**.
 7. In the **Solution Explorer**, make sure you see **GigaSpaces.Core** in the project references. There's no need to reference any other assembly.
 
 {% endgcloak %}

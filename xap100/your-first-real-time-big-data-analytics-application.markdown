@@ -138,7 +138,7 @@ The application uses [Apache Maven](http://maven.apache.org/). If you don't have
 
 4. Building the Application
 Move to the `<applicationRoot>` folder (contains the application's project files).
-Edit the pom.xml file and make sure the <gsVersion> include the correct GigaSpaces XAP release you have installed. For example if you have XAP {{ site.latest_xap_version }} installed you should have the following:
+Edit the pom.xml file and make sure the <gsVersion> include the correct   XAP release you have installed. For example if you have XAP {%version xap-version %} installed you should have the following:
 
 {% highlight console %}
 <properties>

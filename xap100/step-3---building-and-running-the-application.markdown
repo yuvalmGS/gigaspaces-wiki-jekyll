@@ -36,7 +36,7 @@ To build the example you should follow the following steps:
 
 - cd to the root directory of the application
 - Edit the value of the `gsVersion` property in the `pom.xml` file at the root directory to reflect the GigaSpaces build you're using (this is the build number that the Maven plugin installation script outputs to the console when invoked).
-For example, if you are using GigaSpaces XAP {{site.latest_xap_version}} you should modify the `pom.xml` to have:
+For example, if you are using GigaSpaces XAP {%version xap-version %} you should modify the `pom.xml` to have:
 
 {% highlight java %}
 <gsVersion>{%version maven-version %}</gsVersion>

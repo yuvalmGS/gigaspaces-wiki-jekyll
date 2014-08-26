@@ -32,7 +32,7 @@ GigaSpaces XAP is 100% pure Java, and therefore can run on any UNIX or Windows m
 
 # Installing on Windows
 
-Unzip the ZIP file using your favorite unzip tool (e.g., WinZip) to the location of your choice. Unzipping the file creates a `<GigaSpaces Root>` directory (e.g. `{{ site.latest_gshome_dirname }}`) with the following files and folders:
+Unzip the ZIP file using your favorite unzip tool (e.g., WinZip) to the location of your choice. Unzipping the file creates a `<GigaSpaces Root>` directory (e.g. `{%version gshome-directory %}`) with the following files and folders:
 
 ![win_dirtree_XAP95.jpg](/attachment_files/win_dirtree_XAP95.jpg)
 
@@ -47,7 +47,7 @@ Unzip the ZIP file using your favorite unzip tool (e.g., WinZip) to the location
 Step 1. Navigate into the directory where you want to install GigaSpaces XAP, e.g. `opt`, and execute an `unzip` command using the path to the GigaSpaces zip file. For example:
 
 {% highlight java %}
-unzip {{ site.latest_build_filename }}
+unzip {%version build-filename %}
 {% endhighlight %}
 
 Step 2. Make sure all `sh` file(s) in the `/bin` and the `/examples` directory are in executable mode, meaning you can run them from your machine. To check this, use the `ls \-all` command for the relevant directory, and make sure that `x` is included in the file permissions.

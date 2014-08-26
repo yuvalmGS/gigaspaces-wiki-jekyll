@@ -26,7 +26,7 @@ To build the example you should follow the following steps:
 - Install the Gigaspaces Maven Plugin as described [here]({%currentjavaurl%}/maven-plugin.html). Please take note of the GigaSpaces build number in the console output, e.g.:
 
 {% highlight java %}
-~/gs/xap/{{ site.latest_gshome_dirname }}/tools/maven>installmavenrep.sh
+~/gs/xap/{%version gshome-directory %}/tools/maven>installmavenrep.sh
 ""
 ""
 "Installing XAP {% latestxaprelease %}.0-RELEASE jars"
@@ -36,10 +36,10 @@ To build the example you should follow the following steps:
 
 - cd to the root directory of the application
 - Edit the value of the `gsVersion` property in the `pom.xml` file at the root directory to reflect the GigaSpaces build you're using (this is the build number that the Maven plugin installation script outputs to the console when invoked).
-For example, if you are using GigaSpaces XAP {{site.latest_xap_version}} you should modify the `pom.xml` to have:
+For example, if you are using   XAP {%version xap-version %} you should modify the `pom.xml` to have:
 
 {% highlight java %}
-<gsVersion>{{site.latest_maven_version}}</gsVersion>
+<gsVersion>{%version maven-version%}</gsVersion>
 {% endhighlight %}
 
 {%note%}

@@ -22,9 +22,9 @@ Please note that the XAP Lite edition is limited to a single partition.
 # Java Installation
 Download the latest version of XAP from the [downloads page](http://www.gigaspaces.com/xap-download). Unzip it into a directory of your choice:
 
-* On Windows, you might unzip it into `c:\tools\`, which will create `c:\tools\{{ site.latest_gshome_dirname }}`.
+* On Windows, you might unzip it into `c:\tools\`, which will create `c:\tools\{%version gshome-directory %}`.
 
-* On Unix, you might unzip it into `/usr/local/`, which will create `/usr/local/{{ site.latest_gshome_dirname }}`. You’ll also need to grant execution permissions to the scripts in the bin folder.
+* On Unix, you might unzip it into `/usr/local/`, which will create `/usr/local/{%version gshome-directory %}`. You’ll also need to grant execution permissions to the scripts in the bin folder.
 
 
 
@@ -37,7 +37,7 @@ If you're using Eclipse, it is also recommended to install the [Spring Tool Suit
 
 #### Setting up your IDE
 
-Open your favorite java IDE (Eclipse, IntelliJ IDEA, etc), Create a new project, and add all the jars from `{{ site.latest_gshome_dirname }}/lib/required` to the project's classpath.
+Open your favorite java IDE (Eclipse, IntelliJ IDEA, etc), Create a new project, and add all the jars from `{%version gshome-directory %}/lib/required` to the project's classpath.
 
 
 
@@ -58,7 +58,7 @@ Once you accept the licence agreement, you will be asked to choose a setup type.
 3. In the **Name** test box, type **XapDemo**. If you wish, change the default location to a path you prefer.
 4. Select **OK** to continue. Visual Studio creates the project and opens the automatically generated `program.cs` file.
 5. From the **Project** menu, select **Add Reference**. The **Add Reference** dialog appears.
-6. Select the **Browse** tab, navigate to the XAP.NET installation folder (e.g. **C:\GigaSpaces\{{ site.latest_gshome_net_dirname }}\NET v4.0.30319**). Go into the **Bin** folder, select **GigaSpaces.Core.dll**, and click **OK**.
+6. Select the **Browse** tab, navigate to the XAP.NET installation folder (e.g. **C:\GigaSpaces\{%version gshome-net-directory %}\NET v4.0.30319**). Go into the **Bin** folder, select **GigaSpaces.Core.dll**, and click **OK**.
 7. In the **Solution Explorer**, make sure you see **GigaSpaces.Core** in the project references. There's no need to reference any other assembly.
 {%endvbar%}
 

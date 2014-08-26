@@ -189,7 +189,7 @@ For example:
 <dependency>
 	<groupId>com.gigaspaces</groupId>
 	<artifactId>gs-openspaces</artifactId>
-	<version>{{ site.latest_maven_version }}</version>
+	<version>{%version maven-version%}</version>
 	<exclusions>
 		<exclusion>
 			<groupId>org.eclipse.jetty.aggregate</groupId>
