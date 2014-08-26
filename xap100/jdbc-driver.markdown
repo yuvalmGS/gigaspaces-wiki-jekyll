@@ -286,7 +286,7 @@ The following information represents the SQL to Java mapping conducted at runtim
 - Aggregate functions: `COUNT`, `MAX`, `MIN`, `SUM`, `AVG`.
 - All basic logical operations to create conditions: =, <>, <,>, >=, <=, `[NOT]` like, is `[NOT]` `null`, `IN`, `BETWEEN`.
 - Nested fields query - You may use as part of the select statement nested fields within collections (maps) or objects within the Space object.
-- Multiple tables select - Starting with XAP 7.0.1 the join feature supports the selection of multiple tables (previous versions supported select with only two tables). The join feature uses the Cartesian product of the tables data to form the result set. The join will perform well when having tables with small/medium size (up to 1,000,000 rows).
+- Multiple tables `Join` - Join supports the selection of multiple tables. It uses the Cartesian product of the tables data to form the result set. The join will perform well when having tables with small/medium size (up to 1,000,000 rows).
 - `ORDER BY` for multiple columns.
 - `GROUP BY` for multiple columns.
 - `DISTINCT` (although not when used with functions or aggregations)
