@@ -216,7 +216,7 @@ public class EngineerPojo implements Serializable {
 
 {%anchor option2%}
 
-## Special Features
+## XAP 10 new API
 
 This option will introduce you to some unique XAP features:
 <br>
