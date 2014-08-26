@@ -120,11 +120,11 @@ After executing the start command you should see the following output:
 
 ### There are three options presented in this tutorial:
 
-- [XAP Demo](#option1)
+- [XAP Demo](#option1) Write / Read to/from myDataGrid Space
 
-- [Special Features](#option2)
+- [XAP 10 new API](#option2) Query Aggregation, Custom Change
 
-- [Interactive Shell](#option3)
+- [XAP Interactive Shell](#option3)
 
 <br>
 
