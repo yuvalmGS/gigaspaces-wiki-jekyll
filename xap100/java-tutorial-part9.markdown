@@ -31,8 +31,7 @@ The archive container is used to transfer historical data into Big-Data storage.
 - Big-Data storage is abstracted with the interface.
 
 
-{%section%}
-{%column width=70% %}
+
 The Archive Container differs from Space Persistency in the following ways:
 
 - Persisted objects are not read back from the Big-Data storage into the Space.
@@ -40,21 +39,24 @@ The Archive Container differs from Space Persistency in the following ways:
 - Archive Container uses the Polling Container behind the scenes, which can be co-located with each space partition.
 
 
-### Cassandra Archive Container
+# Cassandra Integration
+{%section%}
+{%column width=80% %}
 The Apache Cassandra Project™ is a scalable multi-master database with no single points of failure. The Apache Cassandra Project provides a highly scalable second-generation distributed database, bringing together Dynamo's fully distributed design and Bigtable's ColumnFamily-based data model.
+
+XAP provides out of the box support for Cassandra and uses the [Hector Library](http://hector-client.github.com/hector/build/html/index.html) to communicate with the Cassandra cluster.
+Lets take our online payment system; every transaction that is performed in our application creates an Audit Record. Each one of these records will be persisted in Cassandra for future auditing reviews. First, lets defining the archive container:
 {%endcolumn%}
 {%column width=20% %}
 <img src="/attachment_files/qsg/archive-container-cassandra.jpg" width="200" height="200">
 {%endcolumn%}
 {%endsection%}
 
-XAP provides out of the box support for Cassandra and uses the [Hector Library](http://hector-client.github.com/hector/build/html/index.html) to communicate with the Cassandra cluster.
-Lets take our online payment system; every transaction that is performed in our application creates an Audit Record. Each one of these records will be persisted in Cassandra for future auditing reviews. First, lets defining the archive container:
 {%highlight xml%}
 ......
 xmlns:os-archive="http://www.openspaces.org/schema/archive"
 ........
-http://www.openspaces.org/schema/archive http://www.openspaces.org/schema/9.1/archive/openspaces-archive.xsd">
+http://www.openspaces.org/schema/archive http://www.openspaces.org/schema/{%currentversion%}/archive/openspaces-archive.xsd">
 
 <!-- Enable scan for OpenSpaces and Spring components -->
 <context:component-scan base-package="xap.tutorial.cassandra" />
@@ -106,13 +108,71 @@ Lets look at an example how the default attribute mapping works. We have Audit R
 
 
 {%highlight java%}
-TODO
+package xap.tutorial.audit.model;
+
+import com.gigaspaces.document.SpaceDocument;
+
+public class AuditRecord extends SpaceDocument {
+
+	private static final String TYPE_NAME = "AuditRecord";
+	private static final String ID = "id";
+	private static final String TIMESTAMP = "timeStamp";
+	private static final String USERNAME = "userName";
+	private static final String APPLICATION = "application";
+	private static final String CONTENT = "content";
+
+	public AuditRecord() {
+		super(TYPE_NAME);
+	}
+
+	public Long getId() {
+		return super.getProperty(ID);
+	}
+
+	public void setId(Long id) {
+		super.setProperty(ID, id);
+	}
+
+	public Long getTimeStamp() {
+		return super.getProperty(TIMESTAMP);
+	}
+
+	public void setTimeStamp(Long timeStamp) {
+		super.setProperty(TIMESTAMP, timeStamp);
+	}
+
+	public String getApplication() {
+		return super.getProperty(APPLICATION);
+	}
+
+	public void setApplication(String application) {
+		super.setProperty(APPLICATION, application);
+	}
+
+	public String getAuditContent() {
+		return super.getProperty(CONTENT);
+	}
+
+	public void setAuditContent(String auditContent) {
+		super.setProperty(CONTENT, auditContent);
+	}
+
+	public String getUserName() {
+		return super.getProperty(USERNAME);
+	}
+
+	public void setUserName(String userName) {
+		super.setProperty(USERNAME, userName);
+	}
+
+}
+
 {%endhighlight%}
 
 
 When one of these objects is persisted in Cassandra, the following default column mapping is performed:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |:-------|:----------------------|
 |Property|Column Name (and type) |
 |auditRecord.id|(row key) (type: Long) |
@@ -174,6 +234,7 @@ There is a fully working example on GitHub. You can download, build and execute 
 
 
 
+
 ### Write your own Archive Container
 You can implement your own Archive Container to use your NoSQL backend or RDBMS for storing your information. Your class just needs to implement the `ArchiveOperationHandler` interface.
 
@@ -193,6 +254,10 @@ The XAP Mirror Service provides reliable asynchronous persistency. This allows y
 {%endsection%}
 
 
+# Mongo Integration
+XAP provides out of the box support for the MongoDB.
+
+{%learn%}./mongodb.html{%endlearn%}
 
 <ul class="pager">
   <li class="previous"><a href="./java-tutorial-part8.html">&larr; Web Processing Unit</a></li>

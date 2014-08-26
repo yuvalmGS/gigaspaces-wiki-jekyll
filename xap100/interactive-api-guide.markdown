@@ -120,9 +120,11 @@ After executing the start command you should see the following output:
 
 ### There are three options presented in this tutorial:
 
-- [XAP Demo](#option1) Write / Read to/from myDataGrid Space
+- [XAP Demo](#option1)<br>
+Write / Read to/from myDataGrid Space
 
-- [XAP 10 new API](#option2) Query Aggregation, Custom Change
+- [XAP 10 new API](#option2)<br>
+Query Aggregation, Custom Change
 
 - [XAP Interactive Shell](#option3)
 
@@ -362,68 +364,45 @@ You can start XAP's console and inspect the Data Grid components that have been 
 {% endtabcontent %}
 {% endinittab %}
 
-After you execute the above command, open a browser and goto to http://your_host:8099 and the login screen for the admin application will open up. The following screen shots will demonstrate some of the UI features: (no username and password needed)
+After you execute the above command, open a browser and goto to `http://your_host:8099` and the login screen for the admin application will open up. The following screen shots will demonstrate some of the UI features: (no username and password needed)
 
 
 {%section%}
 {%column%}
-Login
-
-{%popup /attachment_files/qsg/interactive-1.png %}
-
+{%popup /attachment_files/qsg/interactive-1.png | Login%}
 {%endcolumn%}
 
 {%column%}
-Dashboard
-
-{%popup /attachment_files/qsg/interactive-2.png%}
-
+{%popup /attachment_files/qsg/interactive-2.png | Dashboard%}
 {%endcolumn%}
 
 {%column%}
-Deployed Applications
-
-{%popup /attachment_files/qsg/interactive-3.png%}
-
+{%popup /attachment_files/qsg/interactive-3.png |Deployed Applications %}
 {%endcolumn%}
 
 {%column%}
-Hosts (GSA,GSC,GSM,LUS)
-
-{%popup /attachment_files/qsg/interactive-4.png%}
-
+{%popup /attachment_files/qsg/interactive-4.png | Hosts (GSA,GSC,GSM,LUS)%}
 {%endcolumn%}
 {%endsection%}
 
 
 {%section%}
 {%column%}
-Deployed Data Grids
-
-{%popup /attachment_files/qsg/interactive-5.png%}
-
+{%popup /attachment_files/qsg/interactive-5.png | Deployed Data Grids%}
 {%endcolumn%}
 
 {%column%}
-Classes in Space
-
-{%popup /attachment_files/qsg/interactive-6.png%}
-
+{%popup /attachment_files/qsg/interactive-6.png | Classes in Space%}
 {%endcolumn%}
 
 {%column%}
-Class attributes
-
-{%popup /attachment_files/qsg/interactive-7.png%}
-
+{%popup /attachment_files/qsg/interactive-7.png | Class attributes %}
 {%endcolumn%}
 
 {%column%}
-Statistics
-
-{%popup /attachment_files/qsg/interactive-8.png%}
-
+{%popup /attachment_files/qsg/interactive-8.png | Statistics%}
 {%endcolumn%}
+
 {%endsection%}
 
 
