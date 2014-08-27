@@ -14,6 +14,14 @@ XAP 10.0 is a major release which includes [new features and improvements.](./xa
 
 We try to maintain backward compatibility wherever possible. However, in some cases, no backward compatibility is provided.
 
+{%note title=There is a backwards compatibility issue that was found in 10.0:%}
+Backwards compatibility issue: NPE is thrown when the client version is less then 10.0 and the server version is 10.0.
+This issue was fixed in service pack [10.0.1](http://www.gigaspaces.com/xap-download).
+If your deployment requires backwards compatibility between client and server please download this service pack.
+
+{%endnote%}
+
+
 {%note%}
 As a best practice, when upgrading to XAP 10.0, unzip the latest version of XAP 10.0 and port the necessary changes from your pre-10.0 environment into your new 10.0 environment. It is recommended to use the XAP 10.0 distribution as-is. Please refer to the  Upgrade Guide for more details.
 {%endnote%}
