@@ -11,6 +11,8 @@ This page lists the main new features in XAP 10.0 (Java and .Net editions). It's
 
 {%panel%}
 
+- [Interactive Online Tutorial](#0)
+
 - [Native Integration with Solid State Drives](#1)
 
 - [Global HTTP Session Sharing](#2)
@@ -42,6 +44,13 @@ This page lists the main new features in XAP 10.0 (Java and .Net editions). It's
 
 
 
+{%anchor 0%}
+
+# Interactive Online Tutorial
+
+This is a tutorial that will setup a XAP Cluster on a real server on demand. The tutorial include an interactive shell that will allow you to execute the various XAP API for writing and reading data as well as open a groovy shell to write your own code and experience the full XAP API.
+
+{%learn%}/tutorials{%endlearn%}
 
 {%anchor 1%}
 
