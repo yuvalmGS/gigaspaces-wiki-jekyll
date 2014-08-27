@@ -36,7 +36,7 @@ As a best practice, when upgrading to XAP 10.0, unzip the latest version of XAP 
 
 **Notes:**
 
-- Please refer to the  [public GigaSpaces' product deprecation and End-of-Life[(http://www.gigaspaces.com/EOL) policy for more details.
+- Please refer to the  [public GigaSpaces' product deprecation and End-of-Life](http://www.gigaspaces.com/EOL) policy for more details.
 - Disclaimer - A patch or minor release might demand a compatibility break in extreme cases. If it is required, this will be made very clear in the the release notes.
 
 
