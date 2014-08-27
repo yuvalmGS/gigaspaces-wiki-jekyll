@@ -651,7 +651,7 @@ Lets look at a Spring configuration file that represents the creation of an embe
 	<context:annotation-config />
 
 	<!-- A bean representing a space (an IJSpace implementation) -->
-	<os-core:embedded-space id="space" name="xapTutorialSpace" />
+	<os-core:embedded-space id="space" name="tutorialSpace" />
 
 	<!-- Define the GigaSpace instance that the application will use to access the space -->
 	<os-core:giga-space id="xapTutorialSpace" space="space"/>

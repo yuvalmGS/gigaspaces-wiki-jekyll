@@ -175,12 +175,24 @@ Markdown:
 
 {: .table .table-bordered}
 | **Description** | **Macro** | **Output** |
-| Latest XAP Release version | {%raw%} {%latestxaprelease%} {%endraw%} | {%latestxaprelease%} |
+| Latest XAP Release  | {%raw%} {%latestxaprelease%} {%endraw%} | {%latestxaprelease%} |
 | Latest Cloudify Release version | {%raw%} {%latestcloudifyrelease%} {%endraw%} | {%latestcloudifyrelease%} |
 | Latest XAP Release file name | {%raw%} {%version build-filename %} {%endraw%} | {%version build-filename %} |
 | Latest XAP Release home dir | {%raw%} {%version gshome-directory %} {%endraw%} | {%version gshome-directory %} |
 | Latest Default Lookup Group | {%raw%} {%version default-lookup-group %} {%endraw%} | {%version default-lookup-group %} |
 | Latest XAP Maven | {%raw%} {%version maven-version %} {%endraw%} |{%version maven-version %} |
+
+
+# Jar versions
+
+{: .table .table-bordered}
+| **Description** | **Macro** | **Output** |
+| spring  | {%raw%} {%version spring %} {%endraw%} |{%version spring %} |
+| antlr4-runtime  | {%raw%} {%version antlr4-runtime %} {%endraw%} |{%version antlr4-runtime %} |
+| mongo-java-driver  | {%raw%} {%version mongo-java-driver %} {%endraw%} |{%version mongo-java-driver %} |
+| mongo-datasource  | {%raw%} {%version mongo-datasource %} {%endraw%} |{%version mongo-datasource %} |
+| openjpa  | {%raw%} {%version openjpa %} {%endraw%} |{%version openjpa %} |
+
 
 
 

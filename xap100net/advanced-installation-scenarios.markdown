@@ -30,7 +30,7 @@ Mixing XAP.NET and XAP versions is not supported - always use the same version a
 
 Yes. From the command line, type the following:
 {% highlight xml %}
-C:\>msiexec /i GigaSpaces-XAP.NET-Premium-10.0.0.11600-GA-x64.msi /quiet
+C:\>msiexec /i {%version msi-filename %} /quiet
 {%endhighlight%}
 
 {% info %}

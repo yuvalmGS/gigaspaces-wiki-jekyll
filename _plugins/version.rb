@@ -22,15 +22,15 @@ module Jekyll
     @@table100['mongo-datasource']  = '10.0.0-SNAPSHOT'
     @@table100['openjpa']           = '2.0.1'
 
-    @@table100['maven-version']        = '10.0.0-11600-RELEASE'
-    @@table100['gshome-directory']     = 'gigaspaces-xap-premium-10.0.0-ga'
-    @@table100['default-lookup-group'] = 'gigaspaces-10.0.0-XAPPremium-ga'
-    @@table100['build-filename']       = 'gigaspaces-xap-premium-10.0.0-ga-b11600.zip'
-    @@table100['xap-version']          = '10.0.0'
-    @@table100['xap-release']          = '10.0'
+    @@table100['maven-version']        = '10.0.1-11800-RELEASE'
+    @@table100['gshome-directory']     = 'gigaspaces-xap-premium-10.0.1-ga'
+    @@table100['default-lookup-group'] = 'gigaspaces-10.0.1-XAPPremium-ga'
+    @@table100['build-filename']       = 'gigaspaces-xap-premium-10.0.1-ga-b11800.zip'
+    @@table100['xap-version']          = '10.0'
+    @@table100['xap-release']          = '10.0.1'
 
-    @@table100['msi-filename']          = 'GigaSpaces-XAP.NET-Premium-10.0.0.11600-GA-x86.msi'
-    @@table100['gshome-net-directory']  = 'XAP.NET 10.0.0 x86'
+    @@table100['msi-filename']          = 'GigaSpaces-XAP.NET-Premium-10.0.1.11800-GA-x86.msi'
+    @@table100['gshome-net-directory']  = 'XAP.NET 10.0.1 x86'
 
 
 

@@ -20,7 +20,7 @@ Recommended: [Microsoft .NET Framework 4.0](http://msdn.microsoft.com/en-us/libr
 
 #  Installation
 
-GigaSpaces XAP.NET is packaged as a standard Windows Installer package (`.msi` file). To start the installation simply double-click the msi file, and the installation wizard will pop up and guide you through the installation process. Once you accept the license agreement, you will see the standard installation details screen, allowing you to modify the installation path (default is `C:\GigaSpaces\XAP.NET 10.0.0 x86` or `x64`) and which features to install.
+GigaSpaces XAP.NET is packaged as a standard Windows Installer package (`.msi` file). To start the installation simply double-click the msi file, and the installation wizard will pop up and guide you through the installation process. Once you accept the license agreement, you will see the standard installation details screen, allowing you to modify the installation path (default is `C:\GigaSpaces\XAP.NET {%currentversion%} x86` or `x64`) and which features to install.
 
 ## Other Installation Options
 

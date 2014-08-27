@@ -49,3 +49,7 @@ Below is a list of issues that have been fixed in GigaSpaces 10.0.X.
 | GS-11837 | NPE thrown in gs-ui when clicked on empty space in Inspector dialog tree | 10.0.0 |  | Java |
 | GS-11840 | GS-UI throws LRMINoSuchObjectException when undeploying PlainWebAppExample | 10.0.0 |  | Java |
 | GS-11841 | Undeploy application option should not be exposed in XAP for "Unassigned Services" | 10.0.0 |  | Java |
+| GS-11856 | XAP 10 blobstore RPM hangs when installing | 10.1.0, 10.0.1  |  | All |
+| GS-11936 | Backwards compatibility issue: NPE is thrown when the client version is less then 10.0 and the server version is 10.0 | 10.1.0, 10.0.1 | 9182  | All |
+| GS-11950 | Blobstore.rpm install hang | 10.1.0, 10.0.1 |  | All |
+| GS-11962 | In .NET when BasicContainer element is missing from pu.config we got System.NullReferenceException | 10.1.0, 10.0.1 | 9201  | .NET |
