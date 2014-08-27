@@ -109,8 +109,8 @@ function updateActionButton($elm, url) {
 
 function updateExpires(state) {
     if (state.data.nodeModel) {
-        var minutes = state.data.nodeModel.expires - new Date().getTime();
-        updateTimeLeft(Math.floor(minutes/1000/60));
+        var expiresInMS = state.data.nodeModel.expires - new Date().getTime();
+        updateTimeLeft(Math.floor(expiresInMS/1000/60));
     }
 }
 
@@ -215,6 +215,7 @@ $(function () {
                 $("#butterflyWrapper").hide();
                 $("#ytIframe").show();
                 updateTimeLeft(19);
+                updatedTerm = false;
             }
 
         } catch (exception) {
