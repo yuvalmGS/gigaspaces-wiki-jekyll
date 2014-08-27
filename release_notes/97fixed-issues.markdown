@@ -14,7 +14,7 @@ Below is a list of issues that have been fixed in GigaSpaces 9.7.X.
 {: .table .table-bordered .table-condensed}
 | Key | Summary | Fixed in Version | SalesForce ID | Platform/s |
 |:----|:--------|:----------------|:---------------|:------------------|
-| GS-11069 | Add the ability to set OpenSpacesMuleMessageReceiver max batch size on os-queue:connector | 9.5.2 patch3, 9.6.2, 9.7.0 | 7943 | Java |
+| <nobr>GS-11069</nobr> | Add the ability to set OpenSpacesMuleMessageReceiver max batch size on os-queue:connector | 9.5.2 patch3, 9.6.2, 9.7.0 | 7943 | Java |
 | GS-11108 | Error in startGroovy.bat file when trying to use Java 6 style wildcard for jars to be added to classpath |  9.6.1, 9.7.0 | 8007 | Java |
 | GS-11139 | GigaSpaces was holding file handlers to deleted files | 9.5.2 patch3, 9.6.2, 9.7.0 | 7944 | All |
 | GS-11142 | ChangeException in .Net is not marked as serializable | 9.7.0 | 8046 | .Net |

@@ -13,7 +13,7 @@ Below is a list of known issues in GigaSpaces 9.7.X.
 {: .table .table-bordered .table-condensed}
 | Key | Summary | SalesForce ID | Since version | Workaround | Platform/s
 |:----|:--------|:----------------|:---------------|:------------------|:----------|
-| GS-11222 | Unable to run GigaSpaces component when installed under folder with '(',')' chars | 8169 | 9.7.0 | | All |
+| <nobr>GS-11222</nobr> | Unable to run GigaSpaces component when installed under folder with '(',')' chars | 8169 | 9.7.0 | | All |
 | GS-11249 | Error while deploying a processing unit which contains '#' in its name/directory | 8209 | 9.7.0 | | Java, .Net |
 | GS-11295 | Web-ui show strange log msg when trying to run custom command on gsc which contains stateful pu | | 9.7.0 | | All |
 | GS-11320 | Progress is missing when performing undeploy application/service via Web-ui | | 9.7.0 | | All |

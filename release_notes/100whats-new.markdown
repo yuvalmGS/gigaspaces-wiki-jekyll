@@ -19,7 +19,9 @@ This page lists the main new features in XAP 10.0 (Java and .Net editions). It's
 
 - [Optimized Initial Data Load](#4)
 
+{%comment%}
 - [Elastic Management of XAP Using Cloudify](#5)
+{%comment%}
 
 - [Custom Change Operation](#6)
 
@@ -156,12 +158,13 @@ public class InitialLoadQueryExample {
 
 {%anchor 5%}
 
+{%comment%}
 # Elastic Management of XAP Using Cloudify 
 
 An enhanced Cloudify recipe for XAP that allows you to deploy manage and auto scale XAP deployments on any cloud environment.
 
 {%javalearn%}/xap100adm/deploying-your-application-on-a-cloud.html{%endjavalearn%}
-
+{%endcomment%}
 
 
 {%anchor 6%}
