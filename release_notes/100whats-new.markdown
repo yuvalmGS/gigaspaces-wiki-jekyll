@@ -19,9 +19,6 @@ This page lists the main new features in XAP 10.0 (Java and .Net editions). It's
 
 - [Optimized Initial Data Load](#4)
 
-{%comment%}
-- [Elastic Management of XAP Using Cloudify](#5)
-{%comment%}
 
 - [Custom Change Operation](#6)
 
