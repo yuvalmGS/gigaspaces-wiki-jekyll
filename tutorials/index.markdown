@@ -4,6 +4,8 @@ title:  Online Tutorials
 categories:
 ---
 
+{%wbr%}
+
 {%section%}
 {%column width=15% %}
 <img src="/attachment_files/subject/imc.png" width="80" height="80">
