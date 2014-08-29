@@ -1,6 +1,6 @@
 ---
 layout: post97
-title:  XAP as Second Level Cache
+title:  XAP as Hibernate Second Level Cache
 categories: XAP97
 parent: space-persistency-overview.html
 weight: 1100
@@ -233,8 +233,8 @@ In this topology each application accessing a remote cache.
 
 **To use the remote cache topology:**
 
-- Set your `gigaspaces.hibernate.cache.url` property to {% wbr %}
-    `jini://*/*/dataGrid`
+- Set your `gigaspaces.hibernate.cache.url` property to `jini://*/*/dataGrid`
+
 - Copy `dom4j.jar` and `hibernate3.jar` and all relevant Hibernate distribution package libraries into the `<GigaSpaces Root>/lib/platform/ext` folder.
 - Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment]({%currentadmurl%}/the-runtime-environment.html).
 - Run the deploy command to deploy the remote space:
@@ -259,8 +259,7 @@ In this topology each application has a lightweight, embedded cache, which is in
 
 **To use the master-local topology:**
 
-- Set your `gigaspaces.hibernate.cache.url` property to
-    jini://*/*/dataGrid?useLocalCache
+- Set your `gigaspaces.hibernate.cache.url` property to `jini://*/*/dataGrid?useLocalCache`
 
 - Copy `dom4j.jar` and `hibernate3.jar` and all relevant Hibernate distribution package libraries into the `<GigaSpaces Root>/lib/platform/ext` folder.
 - Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment]({%currentadmurl%}/the-runtime-environment.html).
@@ -291,8 +290,7 @@ This topology requires XAP Premium Edition.
 
 **To use the master-local partitioned topology with two partitions:**
 
-- Configure your `gigaspaces.hibernate.cache.url` property to:
-    jini://*/*/dataGrid?useLocalCache
+- Configure your `gigaspaces.hibernate.cache.url` property to `jini://*/*/dataGrid?useLocalCache`
 
 - Copy `dom4j.jar` and `hibernate3.jar` from Hibernate distribution package into the `<GigaSpaces Root>/lib/platform/ext` folder.
 - Run `<GigaSpaces Root>\bin\gs-agent.bat (.sh)` to start the GigaSpaces [runtime environment]({%currentadmurl%}/the-runtime-environment.html).
