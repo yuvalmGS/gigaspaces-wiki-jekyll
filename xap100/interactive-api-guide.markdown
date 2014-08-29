@@ -1,6 +1,6 @@
 ---
 layout: post100
-title:  Interactive API Guide
+title:  XAP Interactive API Tutorial
 categories: XAP100
 weight: 800
 parent: cook-books.html
@@ -9,22 +9,19 @@ parent: cook-books.html
 {%summary%}{%endsummary%}
 
 This tutorial lets you experience the XAP API in an interactive way.
-Three options are presented. The first two options demonstrate the various API calls you can use to interact with the Space.
-The third option provides an interactive shell that lets you exercise API calls.
+Three options are presented. The first two options demonstrate the various API calls you can use to interact with the Space. The third option provides an interactive shell that lets you exercise API calls.
 
-
- 
 # Installation
 
 {%vbar title=Download and Install XAP%}
 - Download and unzip the latest XAP release [{%download%}](http://www.gigaspaces.com/xap-download)
 - Unzip the distribution into a working directory
-- Set the environment variable `GS_HOME` to `/home/user/xap-distribution` and `C:\xap-distribution` for Linux and Windows respectively.
+- Set the environment variable `GS_HOME` to `/home/user/xap-distribution` or `C:\xap-distribution` for Linux and Windows respectively.
 - Set the JAVA_HOME environment variable to point to the JDK root directory
 {%endvbar%}
 
 {%vbar title=The Interactive Tutorial is hosted on Github%}
-- Download the latest compatible version [{%download%}](https://github.com/Gigaspaces/XAP-Interactive-Tutorial/releases)
+- Download the Interactive Tutorial [{%download%}](https://github.com/Gigaspaces/XAP-Interactive-Tutorial/releases)
 - Unzip it to your favorite directory. For this guide we will use /home/user/xap-tutorial and C:\xap-tutorial for Linux and Windows users respectively. 
 {%endvbar%}
 
@@ -32,7 +29,7 @@ The third option provides an interactive shell that lets you exercise API calls.
 # Starting the Service Grid
 
 A Data Grid requires a [Service Grid](/product_overview/service-grid.html) to host it. A service grid is composed of one or more machines (service grid nodes) running a [Service Grid Agent](/product_overview/service-grid.html#gsa) (or `GSA`), and provides a framework to deploy and monitor applications on those machines, in our case the Data Grid.
-In this tutorial you'll launch a single node service grid on your machine. To start the service grid, simply run the `gs-agent` script from the product's `bin` folder.
+In this tutorial you'll launch a single node service grid on your machine. To start the service grid, simply run the `gs-agent` script from XAP `GS_HOME\bin` folder.
 
 {% inittab%}
 {% tabcontent Unix %}
@@ -51,8 +48,7 @@ In this tutorial you'll launch a single node service grid on your machine. To st
 
 # Deploying the Data Grid
 
-The Data grid can be deployed from command line, from the web management tool or via an Administration API. In this tutorial we'll use the command line.
-Start a command line, navigate to the product's `bin` folder and run the following command:
+The Data Grid can be deployed from command line, from the web management tool or via an Administration API. In this tutorial we'll use the command line. Start a command line, navigate to XAP `bin` folder and run the following command:
 
 {% inittab %}
 {% tabcontent Unix %}
@@ -70,7 +66,7 @@ Start a command line, navigate to the product's `bin` folder and run the followi
 This command deploys a Data Grid (Space) called **myDataGrid** with 2 partitions and 1 backup per partition (hence the `2,1` syntax).
 
 {%comment%}
-If you're using the web console mentioned above to see what's going on, you'll see the data grid has been deployed.
+If you're using the web console mentioned above to see what's going on, you'll see the Data Grid has been deployed.
 {%endcomment%}
 
 {%info%}
