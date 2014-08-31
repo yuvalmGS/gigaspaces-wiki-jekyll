@@ -80,12 +80,11 @@ function updateTermUrl(url) {
         updateYoutubeUrlBtn();
         $("#ytIframe").hide();
         $("#loading").hide();
-        $("#butterflyWrapper").show();
         $("#butterfly").attr("src", url);
+        $("#butterflyWrapper").show();
         updatedTerm = true;
     }
 }
-
 
 function updateManageUrl(url) {
     updateActionButton($('#manage'), url);
@@ -213,6 +212,7 @@ $(function () {
                 // this section hide iframe and show youtube movie
                 $("#loading").attr('style', 'display:none');
                 $("#butterflyWrapper").hide();
+                $("#butterfly").attr("src", "about:blank");
                 $("#ytIframe").show();
                 updateTimeLeft(19);
                 updatedTerm = false;
