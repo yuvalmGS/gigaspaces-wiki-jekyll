@@ -18,26 +18,23 @@ parent: net-home.html
 {%endsection%}
 
 
-In this part of the tutorial we will demonstrate how to create a Space and how you can interact with it. We will also demonstrate how you can improve your space search performance by using indexes and returning partial results.
+In this part of the tutorial we will demonstrate how to create a Space and how you can interact with it. We will also demonstrate how you can improve your Space search performance by using indexes and returning partial results.
 
 
 # Creating a Space
-Let's create a Space called 'xapTutorialSpace' that is co-located within an application. This type of Space is called embedded space.
+Let's create a Space called 'xapTutorialSpace' that is co-located within an application. This type of Space is called embedded Space.
 
 Here is an example how you start an embedded Space:
 {%highlight csharp  %}
 using GigaSpaces.Core;
 
-// Embedded Space
-String url = "/./xapTutorialSpace";
-
 // Create the SpaceProxy
-ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace(url);
+ISpaceProxy spaceProxy = new EmbeddedSpaceFactory("xapTutorialSpace").Create();
 {%endhighlight%}
 
-This space we just created can also be accessed remotely from another application by connecting with a modified Space URL. In order to do so you would use the following Space URL:
+This Space we just created can also be accessed remotely from another application. In order to do so you would use the following code:
 {%highlight csharp  %}
-String url ="jini://*/*/xapTutorialSpace";
+ISpaceProxy spaceProxy = new SpaceProxyFactory("xapTutorialSpace").Create();
 {%endhighlight%}
 
 You can configure the Space URL with several options.
@@ -45,7 +42,7 @@ You can configure the Space URL with several options.
 {%learn%}./the-space-configuration.html{%endlearn%}
 
 
-When a client connects to a space, a proxy is created that holds a connection which implements the Space API. All client interaction is performed through this proxy.
+When a client connects to a Space, a proxy is created that holds a connection which implements the Space API. All client interaction is performed through this proxy.
 
 
 With XAP you can also create a Local Cache and a Local View.
@@ -126,7 +123,7 @@ Partitioning is used when the total number of objects is too big to be stored in
 
 # Space Document
 
-The GigaSpaces document API exposes the Space as Document Store. A document, which is represented by the class SpaceDocument, is essentially a collection of key-value pairs, where the keys are strings and the values are primitives, String, Date, other documents, or collections thereof. Unlike PONOs, which force users to design a fixed data schema (in the form of a class definition) and adhere to it, a document is much more dynamic, users can add and remove properties at runtime as necessary. A Document always belongs to a certain type, represented by the class SpaceTypeDescriptor.
+The XAP document API exposes the Space as Document Store. A document, which is represented by the class SpaceDocument, is essentially a collection of key-value pairs, where the keys are strings and the values are primitives, String, Date, other documents, or collections thereof. Unlike PONOs, which force users to design a fixed data schema (in the form of a class definition) and adhere to it, a document is much more dynamic, users can add and remove properties at runtime as necessary. A Document always belongs to a certain type, represented by the class SpaceTypeDescriptor.
 
 To create a document we use a Dictionary<String,Object> for its properties. The SpaceDocument object is instantiated by using the type name and properties. XAP provides a special implementation of a Dictionary called  DocumentProperties.
 
@@ -163,7 +160,7 @@ namespace xaptutorial.model
 }
 {%endhighlight%}
 
-In order to use the SpaceDocument, we need to register its schema first with the space:
+In order to use the SpaceDocument, we need to register its schema first with the Space:
 {%highlight csharp  %}
 public void registerProductType() {
 	// Create type Document descriptor:
@@ -179,7 +176,7 @@ public void registerProductType() {
 }
 {%endhighlight%}
 
-Only properties with special roles like ID and Routing are part of the schema definition. These meta model settings cannot be changed without restarting the space or dropping the type, clearing all its instances and reintroducing it again.
+Only properties with special roles like ID and Routing are part of the schema definition. These meta model settings cannot be changed without restarting the Space or dropping the type, clearing all its instances and reintroducing it again.
 
 {%info%}It is possible to write a PONO to the Space and read it back as a document, and vice versa. This scenario is useful when you want to read or modify PONO objects without loading the concrete C# classes.{%endinfo%}
 
@@ -251,7 +248,7 @@ In this example, we are writing an object to the Space with zero delay, 10 secon
 
 
 #### Updating an object in Space
-When you want to update only a couple of attributes on an object in Space, you can use the change operation and update specific fields or even nested fields or modify collections and maps without having to supply the entire collection or map for the operation. With the following change operation example it is not necessary to read the object first from the space to update it. The Change API reduces a normal two step operation to a one step operation. This operation can vastly improve performance when you have an object with many attributes and you only need to update one or a couple of attributes.
+When you want to update only a couple of attributes on an object in Space, you can use the change operation and update specific fields or even nested fields or modify collections and maps without having to supply the entire collection or map for the operation. With the following change operation example it is not necessary to read the object first from the Space to update it. The Change API reduces a normal two step operation to a one step operation. This operation can vastly improve performance when you have an object with many attributes and you only need to update one or a couple of attributes.
 
 {%highlight csharp  %}
 public void changeSet() {
@@ -311,7 +308,7 @@ public User[] findUsersByIds() {
 
 
 #### Query by Template
-Template matching (match by example) is a simple way to query the Space. The template is a PONO of the desired entry type, and the attributes which are set on the template (i.e. not null) are matched against the respective attributes of entries of the same type in the space. Attributes with null values are ignored (not matched).
+Template matching (match by example) is a simple way to query the Space. The template is a PONO of the desired entry type, and the attributes which are set on the template (i.e. not null) are matched against the respective attributes of entries of the same type in the Space. Attributes with null values are ignored (not matched).
 
 The following examples assume the default constructor of the User class initializes all its attributes to null.
 
@@ -338,7 +335,7 @@ public User[] findUsersByTemplate() {
 Template Matching support inheritance relationships, so that entries of a sub-class are visible in the context of the super class, but not the other way around.{%endinfo%}
 
 #### SQL Query
-The SQLQuery class is used to query the space with an SQL-like syntax. The query statement includes only the WHERE statement part. An SQLQuery is composed from the class of entry to query and an expression in SQL syntax.
+The SQLQuery class is used to query the Space with an SQL-like syntax. The query statement includes only the WHERE statement part. An SQLQuery is composed from the class of entry to query and an expression in SQL syntax.
 
 {%highlight csharp  %}
 public User[] sqlFindUsersByName() {
@@ -436,7 +433,7 @@ public User[] sqlFindUsersByZipCode() {
 
 
 #### Nested Collections
-It is possible to query embedded collections. Our user class has a collection groups that he belongs to. We can query the space for all users that belong to a certain group:
+It is possible to query embedded collections. Our user class has a collection groups that he belongs to. We can query the Space for all users that belong to a certain group:
 {%highlight csharp  %}
 public User[] findUsersByGroup() {
 	SqlQuery<User> sqlQuery = new SqlQuery<User>( "Groups[*].Id = 1");
@@ -451,7 +448,7 @@ There are several additional query options available. For example you can query 
 
 #### Query returning partial results
 
-In some cases when querying the space for objects only specific attributes of an objects are required and not the entire object (delta read). For that purpose the Projection API can be used where you can specify which attributes are of interest and the space will only populate these attributes with the actual data when the result is returned back to the user. This approach reduces network overhead and can vastly improve performance.
+In some cases when querying the Space for objects only specific attributes of an objects are required and not the entire object (delta read). For that purpose the Projection API can be used where you can specify which attributes are of interest and the Space will only populate these attributes with the actual data when the result is returned back to the user. This approach reduces network overhead and can vastly improve performance.
 
 In this example below we are just interested in the name attribute of the user object:
 {%highlight csharp  %}

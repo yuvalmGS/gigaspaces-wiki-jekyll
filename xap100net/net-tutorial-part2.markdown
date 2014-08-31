@@ -145,9 +145,8 @@ ISpaceProxy spaceProxy = pu.WaitForSpace().SpaceProxy;
 
 Here is an example how you can connect to the grid from your application:
 {%highlight csharp%}
-String url ="jini://*/*/xapTutorialSpace";
 // Create the Space
-ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace(url);
+ISpaceProxy spaceProxy = new SpaceProxyFactory("xapTutorialSpace").Create();
 {%endhighlight%}
 
 

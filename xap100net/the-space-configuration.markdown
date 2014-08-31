@@ -25,11 +25,11 @@ The general format of the space URL is:
 
 The following parameters can be defined:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Name | Description |
 |:-----|:------------|
 | Protocol | `[jini](java)`{% wbr %}- Jini -- Remote access using Jini for lookup{% wbr %}- Java -- Local (embedded) access |
-| Lookup Service Host name/IP | The machine host name/IP running the lookup service. May be \* when Jini is used as a protocol. In this case the space is located using multicast or unicast with search path. |
+| <nobr>Lookup Service Host name/IP</nobr> | The machine host name/IP running the lookup service. May be \* when Jini is used as a protocol. In this case the space is located using multicast or unicast with search path. |
 | Port | The Jini lookup port. If no port is specified the default port (10098) will be used |
 | Space Container Name | The name of the space container that holds the space. May be \* when Jini is used as a protocol. In this case the container name will be ignored when performing lookup and the space will be searched regardless of the container that holds it. |
 | Space Name | The space name to search. The same name defined when space has been created via the Space browser or the `createSpace` utility. |
@@ -43,20 +43,20 @@ Make sure your network and machines running GigaSpaces are configured to have mu
 
 **Accessing Remote Space Using Jini Lookup Service - Unicast Discovery**{%wbr%}
 {%highlight console%}
-jini://LookupServiceHostname/*/mySpace{%wbr%}
+jini://LookupServiceHostname/*/mySpace
 {%endhighlight%}
 
 
 **Accessing Remote Space Using the Jini Lookup Service - Multicast Discovery**{%wbr%}
 {%highlight console%}
-jini://*/*/mySpace{%wbr%}
+jini://*/*/mySpace
 {%endhighlight%}
 
 **Starting Embedded Space Using the Java Protocol**{%wbr%}
 {%highlight console%}
-/./mySpace (which translates to java://localhost:10098/containerName/mySpace?schema=default){%wbr%}
+/./mySpace (which translates to java://localhost:10098/containerName/mySpace?schema=default)
 /./mySpace?schema=cache (which translates to java://localhost:10098/containerName/mySpace?schema=cache)
-java://LookupServiceHostName:port/myContainerName/spaceName{%wbr%}
+java://LookupServiceHostName:port/myContainerName/spaceName
 {%endhighlight%}
 
 
@@ -95,7 +95,7 @@ java://localhost:10098/mySpace_container/mySpace?schema=default
 
 The following are optional property string values:
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 |Property String | Description | Optional values |
 |:--------------|:----------------|:------------|
 |`create` | Creates a new space using the container's default parameters. New spaces use the default space configuration file. Example: `java://localhost:10098/containerName`{% wbr %}`/mySpaces?create=true` | |
@@ -126,32 +126,32 @@ jini://*/*/mySpace?useLocalCache&versioned=false
 {% endhighlight %}
 
 
-The [SpaceConfig](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_SpaceConfig.htm) class allows you to set different URL properties using a `Dictionary` object.
+The [EmbeddedSpaceFactory](http://www.gigaspaces.com/docs/dotnetdocs{%currentversion%}/html/T_GigaSpaces_Core_EmbeddedSpaceFactory.htm) class allows you to set different properties using a `Dictionary` object.
 
 Here is an example of a space working in FIFO mode, using specific lookup groups:
 
 {% highlight csharp %}
-//define the space configuration object
-SpaceConfig config = new SpaceConfig();
+    Dictionary<String,String> properties =  new Dictionary<String,String> ();
 
-Dictionary<String,String> properties =  new Dictionary<String,String> ();
+	properties.Add ("fifo", "true");
+	properties.Add("lookupGroups","test");
 
-properties.Add ("fifo", "true");
-properties.Add("lookupGroups","test");
+	// Cluster info settings
+	ClusterInfo clusterInfo = new ClusterInfo ();
+	clusterInfo.NumberOfBackups = 1;
+	clusterInfo.Schema = "sync_replication";
 
-config.CustomProperties = properties;
+	// Create the factory
+	EmbeddedSpaceFactory factory = new EmbeddedSpaceFactory ("mySpace");
 
-// Cluster info settings
-ClusterInfo cinfo = new ClusterInfo ();
-cinfo.NumberOfBackups = 1;
-cinfo.Schema = "sync_replication";
+	factory.ClusterInfo = clusterInfo;
+	factory.CustomProperties = properties;
 
-config.ClusterInfo = cinfo;
+	//create the ISpaceProxy
+	ISpaceProxy proxy = factory.Create();
 
-//create the ISpaceProxy
-ISpaceProxy proxy = GigaSpacesFactory.FindSpace("/./mySpace", config);
-
-proxy.Dispose ();
+	// .......
+	proxy.Dispose ();
 {% endhighlight %}
 
 

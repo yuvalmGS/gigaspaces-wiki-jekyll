@@ -118,7 +118,7 @@ public class MySpaceClass {
 {% tabcontent The Application Code %}
 
 {% highlight csharp %}
-ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace(url);
+ISpaceProxy spaceProxy = new EmbeddedSpaceFactory("mySpace").Create();
 
     CompoundId id = new CompoundId();
     id.Key1="1";

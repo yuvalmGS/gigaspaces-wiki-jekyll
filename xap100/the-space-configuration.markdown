@@ -29,7 +29,7 @@ The following parameters can be defined:
 | Name | Description |
 |:-----|:------------|
 | Protocol | `[jini](java)`{% wbr %}- Jini -- Remote access using Jini for lookup{% wbr %}- Java -- Local (embedded) access |
-| Lookup Service Host name/IP | The machine host name/IP running the lookup service. May be \* when Jini is used as a protocol. In this case the space is located using multicast or unicast with search path. |
+| <nobr>Lookup Service Host name/IP</nobr> | The machine host name/IP running the lookup service. May be \* when Jini is used as a protocol. In this case the space is located using multicast or unicast with search path. |
 | Port | The Jini lookup port. If no port is specified the default port (10098) will be used |
 | Space Container Name | The name of the space container that holds the space. May be \* when Jini is used as a protocol. In this case the container name will be ignored when performing lookup and the space will be searched regardless of the container that holds it. |
 | Space Name | The space name to search. The same name defined when space has been created via the Space browser or the `createSpace` utility. |
@@ -300,7 +300,7 @@ The `GigaSpace` Bean can have the following elements:
 |space|This can be an embedded space , remote space , local view or local cache. |YES| |
 |clustered|Boolean. [Cluster flag]({%currentadmurl%}/clustered-vs-non-clustered-proxies.html). Controlling if this GigaSpace will work with a clustered view of the space or directly with a cluster member. By default if this flag is not set it will be set automatically by this factory. It will be set to true if the space is an embedded one AND the space is not a local cache proxy. It will be set to false otherwise (i.e. the space is not an embedded space OR the space is a local cache proxy)| NO | true for remote proxy , false for embedded proxy|
 |default-read-timeout|Numerical Value. Sets the default read timeout for `read(Object)` and `readIfExists(Object)` operations.|NO| 0 (NO_WAIT). TimeUnit:millsec|
-|default-take-timeout|Numerical Value. Sets the default take timeout for `take(Object)` and `takeIfExists(Object)` operations.|NO| 0 (NO_WAIT). TimeUnit:millsec|
+|<nobr>default-take-timeout</nobr>|Numerical Value. Sets the default take timeout for `take(Object)` and `takeIfExists(Object)` operations.|NO| 0 (NO_WAIT). TimeUnit:millsec|
 |default-write-lease| Numerical Value. Sets the default [space object lease](./leases-automatic-expiration.html) (TTL) for `write(Object)` operation. |NO| FOREVER. TimeUnit:millsec|
 |default-isolation| Options: DEFAULT , READ_UNCOMMITTED, READ_COMMITTED , REPEATABLE_READ|NO| DEFAULT|
 |tx-manager|Set the transaction manager to enable transactional operations. Can be null if transactional support is not required or the default space is used as a transactional context. |NO| |

@@ -262,7 +262,7 @@ namespace UnitTest
     public class UnitTest
     {
         // See note below !
-        String url = "jini://*/*/eventSpace?groups=XAP-9.7.0-ga-NET-4.0.30319-x64";
+        String spaceName = "eventSpace?groups={%version default-lookup-group%}";
 
         private ISpaceProxy proxy;
 
@@ -288,13 +288,13 @@ namespace UnitTest
         Assert.AreEqual(payment.Status, ETransactionStatus.PROCESSED);
 	}
 
-       [TestInitialize]
-        public void init()
-        {
-            proxy = GigaSpacesFactory.FindSpace(url);
+    [TestInitialize]
+    public void init()
+    {
+      proxy = new SpaceProxyFactory(spaceName).Create();
 
-        }
     }
+  }
 }
 
 {%endhighlight%}

@@ -86,7 +86,7 @@ If the read operation is under a transaction, there is no need to "enlist" the s
 
 ## Locking and Blocking Rules
 
-{: .table .table-bordered}
+{: .table .table-bordered .table-condensed}
 | Operation A/Operation B | Update under transaction Y | Take under transaction Y | Read under transaction Y | Update, null transaction | Take, null transaction | Read, null transaction | Exclusive Read Lock | Dirty Read Transaction Y or null | Read Committed Transaction Y or null |
 |:------------------------|:---------------------------|:-------------------------|:-------------------------|:-------------------------|:-----------------------|:-----------------------|:--------------------|:---------------------------------|:-------------------------------------|
 | Update under transaction X | Blocked | Blocked | Blocked | Blocked | Blocked | Blocked | Blocked | Allowed | Allowed|

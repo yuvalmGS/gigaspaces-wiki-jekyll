@@ -41,7 +41,7 @@ The pu.xml and .NET code should resemble the following:
 
 ## .NET Processing Unit Container code space construction related part
 
-{% highlight java %}
+{% highlight csharp %}
 class MyInteropProcessingUnit : AbstractProcessingUnitContainer
 {
 

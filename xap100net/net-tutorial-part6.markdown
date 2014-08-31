@@ -116,10 +116,8 @@ Here is an example of how optimistic locking is enabled in XAP. First we need to
 public void creatVersionedSpace()
 {
 	// Embedded Space
-	String url = "/./xapTutorialSpace";
-
 	// Create the SpaceProxy
-	ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace(url);
+	ISpaceProxy spaceProxy = new EmbeddedSpaceFactory("xapTutorialSpace").Create();
 	spaceProxy.OptimisticLocking = true;
 }
 {%endhighlight%}

@@ -39,11 +39,8 @@ Get a space proxy in `versioned` mode. This can be done using one of the options
 {%highlight csharp%}
 public void createVersionedSpace()
 {
-	// Embedded Space
-	String url = "/./mySpace";
-
-	// Create the SpaceProxy
-	ISpaceProxy spaceProxy = GigaSpacesFactory.FindSpace(url);
+	// Create the SpaceProxy to Embedded Space
+	ISpaceProxy spaceProxy = new EmbeddedSpaceFactory("mySpace").Create();
 	spaceProxy.OptimisticLocking = true;
 }
 {%endhighlight%}

@@ -328,8 +328,7 @@ However, the data stored in binary format will be not be visible via the managem
 // Create type descriptor:
 ISpaceProxy spaceProxy = ... //Obtain a space proxy
 // Create type descriptor:
-SpaceTypeDescriptorBuilder typeBuilder =
-    new SpaceTypeDescriptorBuilder("Product");
+SpaceTypeDescriptorBuilder typeBuilder = new SpaceTypeDescriptorBuilder("Product");
 // Other type descriptor settings.
 typeBuilder.DynamicPropertiesSupport(true, StorageType.Binary);
 ISpaceTypeDescriptor typeDescriptor = typeBuilder.Create();

@@ -123,8 +123,8 @@ public class CounterTest
 	public void setUp ()
 	{
 		if (space == null) {
-			spaceEmb = GigaSpacesFactory.FindSpace ("/./mySpace");
-			space = GigaSpacesFactory.FindSpace ("jini://*/*/mySpace");
+			spaceEmb = new EmbeddedSpaceFactory("mySpace").Create();
+			space = new SpaceProxyFactory("mySpace").Create();
 			space.Clear (null);
 			counter = new Counter (space, "id", "counter1", 10);
 		}
