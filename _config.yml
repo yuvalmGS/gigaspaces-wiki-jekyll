@@ -18,7 +18,7 @@ petclinic_jpa_branch: "10_0_0_ga"
 
 # latest_gshome_dirname: "gigaspaces-xap-premium-10.0.0-ga"
 
-latest_gshome_net_dirname: "XAP.NET 10.0.0 x86"
+# latest_gshome_net_dirname: "XAP.NET 10.0.0 x86"
 
 # latest_default_lookup_group: "gigaspaces-10.0.0-XAPPremium-ga"
 
