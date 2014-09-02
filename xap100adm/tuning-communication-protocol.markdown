@@ -160,6 +160,9 @@ The `LRMI` configuration options set as system properties. They are listed below
 | com.gs.transport_protocol.lrmi.tcp-receive-buffer-size | Set the TCP receive Buffer size (SO_RCVBUF).| OS default | Client & Server| bytes |Yes|
 | com.gs.transport_protocol.lrmi.tcp-keep-alive | Set the TCP keep alive mode (SO_KEEPALIVE).| `true` | Client & Server| Seconds|Yes|
 | com.gs.transport_protocol.lrmi.timeout_resolution | Resolution in percents. Timeout resolution indicates the accuracy of the request timeout. | 10 | Client | Percent|Yes|
+|com.gs.transport_protocol.lrmi.system-priority.threadpool.min-threads|This parameter specifies the minimum size of a thread pool used to control admin API calls| 128 |  Server| Threads|No|
+|com.gs.transport_protocol.lrmi.system-priority.threadpool.max-threads | This parameter specifies the maximum size of a thread pool used to control admin API calls | 128 | Server | Threads|No|
+
 
 {% tip %}
 If you are using the **notification slow consumer** mechanism see the [Slow Consumer](./slow-consumer.html#Configuration -- Server Side) for additional LRMI parameters to configure.
