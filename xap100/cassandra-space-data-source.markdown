@@ -28,25 +28,25 @@ include the following in your `pom.xml`
 <dependency>
     <groupId>org.apache.cassandra</groupId>
     <artifactId>cassandra-clientutil</artifactId>
-    <version>1.1.6</version>
+    <version>{%version cassandra-clientutil%}</version>
 </dependency>
 
 <dependency>
     <groupId>org.apache.cassandra</groupId>
     <artifactId>cassandra-thrift</artifactId>
-    <version>1.1.6</version>
+    <version>{%version cassandra-thrift%}</version>
 </dependency>
 
 <dependency>
     <groupId>org.apache.cassandra</groupId>
     <artifactId>cassandra-jdbc</artifactId>
-    <version>1.1.2</version>
+    <version>{%version cassandra-jdbc%}</version>
 </dependency>
 
 <dependency>
     <groupId>org.hectorclient</groupId>
     <artifactId>hector-core</artifactId>
-    <version>1.1-2</version>
+    <version>{%version hector-core%}</version>
 </dependency>
 {% endhighlight %}
 

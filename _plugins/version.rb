@@ -16,11 +16,21 @@ module Jekyll
 
 # Version 10.0
     @@table100 = Hash.new
-    @@table100['spring']            = '3.2'
-    @@table100['mongo-java-driver'] = '2.11.2'
-    @@table100['antlr4-runtime']    = '4.0'
-    @@table100['mongo-datasource']  = '10.0.0-SNAPSHOT'
-    @@table100['openjpa']           = '2.0.1'
+    @@table100['spring']               = '3.2'
+    @@table100['mongo-java-driver']    = '2.11.2'
+    @@table100['antlr4-runtime']       = '4.0'
+    @@table100['mongo-datasource']     = '10.0.0-SNAPSHOT'
+    @@table100['openjpa']              = '2.0.1'
+    @@table100['cassandra-clientutil'] = '1.1.6'
+    @@table100['cassandra-thrift']     = '1.1.6'
+    @@table100['cassandra-jdbc']       = '1.1.2'
+    @@table100['hector-core']          = '1.1-2'
+    @@table100['slf4j-api']            = '1.6.6'
+    @@table100['slf4j-jdk14']          = '1.6.6'
+
+
+
+
 
     @@table100['maven-version']        = '10.0.1-11800-RELEASE'
     @@table100['gshome-directory']     = 'gigaspaces-xap-premium-10.0.1-ga'
