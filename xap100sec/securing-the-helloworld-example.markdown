@@ -32,9 +32,9 @@ Lets define a secured space in `hello-processor/META-INF/spring/pu.xml` by addin
 
 {% highlight java %}
 <!-- pu.xml -->
-<os-core:space id="space" url="/./processorSpace">
+<os-core:embedded-space id="space" name="processorSpace">
    <os-core:security secured="true"/>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 # Granting access to the embedded polling container
@@ -44,10 +44,10 @@ Lets assume the principals' credentials are: `username`="helloProcessor" and `pa
 
 There are two options for providing the principal credentials. The first, is by adding the credentials in `pu.xml`. The drawback is that the credentials are exposed. The second, which is preferred, is during deployment of the processing unit.
 
-{% highlight java %}
-<os-core:space id="space" url="/./processorSpace?secured">
+{% highlight xml %}
+<os-core:embedded-space id="space" name="processorSpace?secured">
     <os-core:security username="helloProcessor" password="helloWorld"/>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 # Granting access to the Feeder
@@ -75,10 +75,10 @@ public Feeder(String url){
 
 With production environment the user/password used by the application (for database or space access) should be passed into the application at the deploy time. This will make sure the user/password will never be stored on file and be accessible.
 
-{% highlight java %}
+{% highlight xml %}
 
-<os-core:space id="space" url="/./processorSpace">
-</os-core:space>
+<os-core:embedded-space id="space" name="processorSpace">
+</os-core:embedded-space>
 
 Using the CLI deploy command supply username and password using the -user and -password.
 > gs deploy -secured -user testing -password 1234 myPU.jar
@@ -86,12 +86,13 @@ Using the CLI deploy command supply username and password using the -user and -p
 
 Another option, is to set the security username/password as variables at the pu.xml and inject them - for example, via a deploy property:
 
-{% highlight java %}
-<os-core:space id="space" url="/./processorSpace">
+{% highlight xml %}
+<os-core:embedded-space id="space" name="processorSpace">
     <os-core:security username="${myusername}" password="${mypassword}"/>
-</os-core:space>
+</os-core:embedded-space>
 
 Using the CLI deploy command embed the username and password matching the placeholders given in the pu.xml
+
 > gs deploy -properties embed://myusername=testing;mypassword=1234 myPU.jar
 {% endhighlight %}
 

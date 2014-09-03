@@ -109,13 +109,14 @@ Custom `CredentialsProvider` can be provided in several ways, as follows:
     <constructor-arg><value>myServer</value></constructor-arg>
 </bean>
 <!-- Creating an embedded secured Space -->
-<os-core:space id="embeddedSpace" url="/./mySpace">
+<os-core:embedded-space id="embeddedSpace" name="mySpace">
     <os-core:security credentials-provider="myCredentialsProvider" />
-</os-core:space>
+</os-core:embedded-space>
+
 <!-- Looking up a secured Space -->
-<os-core:space id="space" url="jini://*/*/mySpace">
+<os-core:space-proxy id="space" name="mySpace">
     <os-core:security credentials-provider="myCredentialsProvider" />
-</os-core:space>
+</os-core:space-proxy>
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -129,13 +130,13 @@ Custom `CredentialsProvider` can be provided in several ways, as follows:
     <constructor-arg><value>myServer</value></constructor-arg>
 </bean>
 <!-- Creating an embedded secured Space -->
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url"><value>"/./mySpace"</value></property>
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name"><value>"mySpace"</value></property>
     <property name="credentialsProvider"><ref local="myCredentialsProvider"/></property>
 </bean>
 <!-- Looking up a secured Space -->
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url"><value>"jini://*/*/mySpace"</value></property>
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name"><value>"mySpace"</value></property>
     <property name="credentialsProvider"><ref local="myCredentialsProvider"/></property>
 </bean>
 {% endhighlight %}
@@ -252,7 +253,7 @@ Custom `SecurityManager` can be provided in several ways, as follows:
 
 {% highlight xml %}
 <!-- Configuring a secured space using custom properties -->
-<os-core:space id="space" url="/./space">
+<os-core:embedded-space id="space" name="space">
     <os-core:security secured="true"/>
     <os-core:properties>
         <props>
@@ -260,7 +261,7 @@ Custom `SecurityManager` can be provided in several ways, as follows:
             <prop key="custom-security.server-address">myServer</prop>
         </props>
     </os-core:properties>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 {% endtabcontent %}

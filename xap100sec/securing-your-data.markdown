@@ -17,17 +17,17 @@ A secured embedded Space protects access (to data) which is granted only to user
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="jini://*/*/space">
+<os-core:space-proxy id="space" name="space">
     <os-core:security username="sa" password="adaw@##$" />
-</os-core:space>
+</os-core:space-proxy>
 {% endhighlight %}
 
 {% endtabcontent %}
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/space" />
+<bean id="space" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="space" />
     <property name="securityConfig">
         <bean class="org.openspaces.core.space.SecurityConfig">
             <property name="username" value="sa" />
@@ -54,17 +54,17 @@ An embedded Space may be configured with internal services (Space filters, Notif
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="/./space">
+<os-core:embedded-space id="space" name="space">
     <os-core:security username="sa" password="adaw@##$" />
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 {% endtabcontent %}
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
     <property name="securityConfig">
         <bean class="org.openspaces.core.space.SecurityConfig">
             <property name="username" value="sa" />
@@ -93,17 +93,17 @@ An embedded Space with no internal services, can be simply configured as secured
 {% tabcontent Namespace %}
 
 {% highlight xml %}
-<os-core:space id="space" url="/./space">
+<os-core:embedded-space id="space" name="space">
     <os-core:security secured="true" />
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 {% endtabcontent %}
 {% tabcontent Plain XML %}
 
 {% highlight xml %}
-<bean id="space" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="/./space" />
+<bean id="space" class="org.openspaces.core.space.EmbeddedSpaceFactoryBean">
+    <property name="name" value="space" />
     <property name="secured" value="true" />
 </bean>
 {% endhighlight %}
@@ -138,9 +138,9 @@ A processing unit by itself is not secured. It inherits its security from the ma
 A processing unit (for example a feeder application) may access a secured Space using a remote Space proxy.
 
 {% highlight xml %}
-<os-core:space id="mySpace" url="jini://*/*/mySpace">
+<os-core:space-proxy id="mySpace" name="mySpace">
     <os-core:security username="sa" password="adaw@##$" />
-</os-core:space>
+</os-core:space-proxy>
 {% endhighlight %}
 
 The `username` and `password` can also be supplied using a `pu.properties` file supplied during deployment. If these are supplied, they will be used to _implicitly_ connect to a **`secured`** Space, returning an authenticated proxy for this user.
@@ -154,8 +154,8 @@ security.password=password
 The `security.username` and `security.password` are constant property keys. If you would like to set your own property placeholders, e.g. $\{mySpace.username\} and $\{mySpace.password\}, you will need to use plain XML configuration. These properties would then need to be injected at deploy time, by some property resolver.
 
 {% highlight xml %}
-<bean id="mySpace" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/mySpace" />
+<bean id="mySpace" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="mySpace" />
     <property name="securityConfig">
         <bean class="org.openspaces.core.space.SecurityConfig">
             <property name="username" value="${myusername}" />
@@ -175,8 +175,8 @@ Of course, having the username and password exposed (in pu.xml/pu.properties) is
 Here is how the CLI deploy command would look like:
 
 {% highlight xml %}
-<bean id="mySpace" class="org.openspaces.core.space.UrlSpaceFactoryBean">
-    <property name="url" value="jini://*/*/mySpace" />
+<bean id="mySpace" class="org.openspaces.core.space.SpaceProxyFactoryBean">
+    <property name="name" value="mySpace" />
 </bean>
 
 Using the CLI deploy command supply username and password using the -user and -password.
@@ -205,9 +205,9 @@ GigaSpace localCache = new GigaSpaceConfigurer(configurer.localCache()).gigaSpac
 {% tabcontent  Local Cache Namespace %}
 
 {% highlight java %}
-<os-core:space id="remoteSpace" url="jini://*/*/space" >
+<os-core:space-proxy id="remoteSpace" name="space" >
     <os-core:security username="user" password="password"/>
-</os-core:space>
+</os-core:space-proxy>
 
 <os-core:local-cache id="localCacheSpace" space="remoteSpace" update-mode="PULL"/>
 
@@ -243,10 +243,10 @@ GigaSpace localView = new GigaSpaceConfigurer(configurer.localView()).gigaSpace(
 {% endtabcontent %}
 {% tabcontent  Local View Namespace %}
 
-{% highlight java %}
-<os-core:space id="remoteSpace" url="jini://*/*/space" >
+{% highlight xml %}
+<os-core:space-proxy id="remoteSpace" name="space" >
    <os-core:security username="user" password="password"/>
-</os-core:space>
+</os-core:space-proxy>
 
 <os-core:local-view id="localViewSpace" space="space">
    <os-core:view-query where="quantity = 20" class="...Trade"/>
@@ -278,32 +278,32 @@ A filter can be registered for `before-authentication` events. Before a client t
 {% tabcontent  Namespace %}
 The following Spring configuration registers this filter for `before-authentication` (6) operation:
 
-{% highlight java %}
+{% highlight xml %}
 <bean id="simpleISpaceFilter" class="eg.SimpleISpaceFilter" />
 
-<os-core:space id="space" url="/./space">
+<os-core:embedded-space id="space" name="space">
     <os-core:security secured="true"/>
     <os-core:space-filter>
         <os-core:filter ref="simpleISpaceFilter" />
         <os-core:operation code="6" />
         ...
     </os-core:space-filter>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 {% endtabcontent %}
 {% tabcontent  Annotations %}
 An example of a simple POJO filter using annotations:
 
-{% highlight java %}
+{% highlight xml %}
 <bean id="simpleFilter" class="eg.SimpleFilter" />
 
-<os-core:space id="space" url="/./space">
+<os-core:embedded-space id="space" name="space">
 	<os-core:security secured="true"/>
 	<os-core:annotation-adapter-filter priority="1">
 		<os-core:filter ref="simpleFilter" />
 	</os-core:annotation-adapter-filter>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 **Note** that the annotated method must have the `SpaceContext` as a parameter.
@@ -329,15 +329,15 @@ public class SimpleFilter {
 The following Spring configuration XML shows how the filter can be configured, using explicit method listings. (In this case, annotations are not required.)
 Note the `before-authentication` method adapter.
 
-{% highlight java %}
+{% highlight xml %}
 <bean id="simpleFilter" class="eg.SimpleFilter" />
 
-<os-core:space id="space" url="/./space">
+<os-core:embedded-space id="space" name="space">
     <os-core:security secured="true"/>
     <os-core:method-adapter-filter before-authentication="beforeAuthenticationMethod">
         <os-core:filter ref="simpleFilter"/>
     </os-core:method-adapter-filter>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 {% endtabcontent %}
@@ -346,17 +346,17 @@ Note the `before-authentication` method adapter.
 _Implicitly_ create a **`secured`** Space, with security privileges being propagated to the filter.
 These privileges need to be sufficient for operations being perform by the filter on the embedded Space.
 
-{% highlight java %}
+{% highlight xml %}
 <!-- pu.xml -->
 <bean id="simpleFilter" class="eg.SimpleFilter" />
 
-<os-core:space id="space" url="/./space">
+<os-core:embedded-space id="space" name="space">
    <os-core:security username="user" password="password"/>
    <os-core:method-adapter-filter filter-init="init"
                                   before-write="beforeWrite">
         <os-core:filter ref="simpleFilter"/>
    </os-core:method-adapter-filter>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 The filter acquires a GigaSpaces reference on filter initialization. Now the filter can perform operations on the embedded secured Space.
@@ -392,15 +392,15 @@ Note that the `SpaceContext` may be `null` in cases related to replication/recov
 
 The filter can be declared just like any other filter, but note that the `priority` plays a role in the order of filter execution. Default priority is zero.
 
-{% highlight java %}
+{% highlight xml %}
 <bean id="customAccessControlFilter" class="example.CustomAccessControlFilter" />
 
-<os-core:space id="space" url="/./space">
+<os-core:embedded-space id="space" name="space">
 	<os-core:security secured="true"/>
 	<os-core:annotation-adapter-filter priority="0">
 		<os-core:filter ref="customAccessControlFilter" />
 	</os-core:annotation-adapter-filter>
-</os-core:space>
+</os-core:embedded-space>
 {% endhighlight %}
 
 Usage examples:
