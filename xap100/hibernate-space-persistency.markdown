@@ -21,11 +21,11 @@ There are two available implementations:
 
 ## Default Hibernate Space Persistency Implementation
 
-`DefaultHibernateSpaceDataSource` and `DefaultHibernateSpaceSynchronizationEndpoint` based on [Hibernate Session](http://docs.jboss.org/hibernate/orm/3.5/javadocs/org/hibernate/Session.html).
+`DefaultHibernateSpaceDataSource` and `DefaultHibernateSpaceSynchronizationEndpoint` based on [Hibernate Session](http://docs.jboss.org/hibernate/orm/4.1/javadocs/org/hibernate/Session.html).
 
 ## Stateless Hibernate Space Persistency Implementation
 
-`StatelessHibernateSpaceDataSource` and `StatelessHibernateSpaceSynchronizationEndpoint` based on Hiberante [StatelessSession](http://docs.jboss.org/hibernate/orm/3.5/javadocs/org/hibernate/StatelessSession.html). This implementation is faster than the `Default Hibernate Space Persistency Implementation`, but it does not have first level cache, as well as does not perform any cascading operations (both in read operations as well as dirty operations).
+`StatelessHibernateSpaceDataSource` and `StatelessHibernateSpaceSynchronizationEndpoint` based on Hiberante [StatelessSession](http://docs.jboss.org/hibernate/orm/4.1/javadocs/org/hibernate/StatelessSession.html). This implementation is faster than the `Default Hibernate Space Persistency Implementation`, but it does not have first level cache, as well as does not perform any cascading operations (both in read operations as well as dirty operations).
 
 The `Hibernate Space Persistency Implementation` is used both with the [Synchronous](./direct-persistency.html) and the [Asynchronous Persistency](./asynchronous-persistency-with-the-mirror.html) modes.
 
@@ -44,7 +44,7 @@ See below example for `Hibernate Space Persistency` that is configured having a 
     <property name="password" value=""/>
 </bean>
 
-<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
     <property name="dataSource" ref="dataSource"/>
     <property name="mappingResources">
         <list>
@@ -92,7 +92,7 @@ See below example for `Hibernate Space Persistency` that is configured having a 
     <property name="password" value=""/>
 </bean>
 
-<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
     <property name="dataSource" ref="dataSource"/>
     <property name="mappingResources">
         <list>
@@ -140,7 +140,7 @@ See below example for `Hibernate Space Persistency` that is configured having a 
 When using annotations to decorate the Space Classes the `sessionFactory` would have the following:
 
 {% highlight xml %}
-<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+<bean id="sessionFactory" class="org.springframework.orm.hibernate4.annotation.AnnotationSessionFactoryBean">
     <property name="dataSource" ref="dataSource"/>
     <property name="annotatedClasses">
         <list>
@@ -204,7 +204,7 @@ public class Data {
 
 - When mapping a Collection Data types or any other variable size field make sure the relevant database table column has a sufficient size that can accommodate the largest collection/variable size field you may have within your space object.
 
-- When fetching collections, you must use the `@Fetch(FetchMode.SELECT)` annotation for the collection field. This is a result of [hibernate bug HHH-1751](http://opensource.atlassian.com/projects/hibernate/browse/HHH-1751). The default `@Fetch(FetchMode.JOIN)` mode will not fetch all members. This will handle also duplicate entry creation when initial-load is being called.
+- ~~When fetching collections, you must use the `@Fetch(FetchMode.SELECT)` annotation for the collection field. This is a result of [hibernate bug HHH-1751](http://opensource.atlassian.com/projects/hibernate/browse/HHH-1751). The default `@Fetch(FetchMode.JOIN)` mode will not fetch all members. This will handle also duplicate entry creation when initial-load is being called.~~ Irrelevant since XAP upgraded to Hibernate 4.1.9.
 
 {% endtip %}
 
