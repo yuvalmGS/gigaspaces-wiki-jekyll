@@ -55,9 +55,6 @@ XAP’s persistency approach consists of several paradigms for data persistency,
 - [Migrating External Data Source](./migrating-from-external-data-source-api.html){%wbr%}
 This page describes how EDS implementations prior to XAP version 9.5 should migrate to the new Space Persistency APIs.
 
-- [Second Level Hibernate Cache](./gigaspaces-for-hibernate-orm-users.html){%wbr%}
-Using XAP as a Hibernate cache provider; creating a Hibernate-integrated Data Grid with your existing ORM.
-
 <hr/>
 
 
